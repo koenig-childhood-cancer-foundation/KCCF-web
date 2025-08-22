@@ -58,7 +58,7 @@ export default function HomeContent() {
                 campaign="General Donation"
                 variant="primary"
                 size="lg"
-                className="group bg-orange-500 hover:bg-orange-600 text-white py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="group bg-orange-600 hover:bg-orange-700 text-white py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 icon={
                   <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -104,7 +104,7 @@ export default function HomeContent() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <div className="inline-block bg-orange-500 px-4 py-2 rounded-full mb-6">
+              <div className="inline-block bg-orange-600 px-4 py-2 rounded-full mb-6">
                 <span className="text-white font-semibold text-sm">Our Founder</span>
               </div>
               
@@ -187,7 +187,7 @@ export default function HomeContent() {
 
             {/* Crazy Socks Day */}
             <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-              <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🧦</span>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Crazy Socks Day</h3>
@@ -420,7 +420,7 @@ export default function HomeContent() {
           </p>
           
                      <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-             <Link href="/donate" className="group bg-orange-500 hover:bg-orange-600 text-white py-4 px-10 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center">
+             <Link href="/donate" className="group bg-orange-600 hover:bg-orange-700 text-white py-4 px-10 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center">
                <span>Donate Now</span>
                <svg className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />

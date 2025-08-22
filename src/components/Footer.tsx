@@ -65,7 +65,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="w-full px-4 py-2 rounded-md font-medium transition-all duration-200 hover:opacity-90 bg-orange-500 hover:bg-orange-600 text-white"
+                className="w-full px-4 py-2 rounded-md font-medium transition-all duration-200 hover:opacity-90 bg-orange-600 hover:bg-orange-700 text-white"
               >
                 Keep Me Posted
               </button>
@@ -87,7 +87,7 @@ export default function Footer() {
                 >
                   <Image
                     src="/candid seal of transparency.png"
-                    alt="Candid Platinum Transparency 2025"
+                    alt="Candid seal of transparency logo"
                     width={100}
                     height={100}
                     className="mb-2"
@@ -104,7 +104,7 @@ export default function Footer() {
                 >
                   <Image
                     src="/greatnonprofits logo.png"
-                    alt="GreatNonprofits 2024 Top-Rated Nonprofit"
+                    alt="GreatNonprofits logo"
                     width={120}
                     height={120}
                     className="mb-2"

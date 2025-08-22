@@ -171,8 +171,8 @@ export default function Navigation() {
               onClick={() => openModal(50, 'General Donation')}
               className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer ${
                 isScrolled 
-                  ? 'bg-orange-500 hover:bg-orange-600 text-white' 
-                  : 'bg-orange-500 hover:bg-orange-600 text-white shadow-lg'
+                  ? 'bg-orange-600 hover:bg-orange-700 text-white' 
+                  : 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg'
               }`}
             >
               DONATE
@@ -185,6 +185,7 @@ export default function Navigation() {
             <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               className={`p-2 rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-800 ${
                 isScrolled 
                   ? 'text-violet-600 dark:text-white' 
@@ -225,6 +226,7 @@ export default function Navigation() {
               <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Menu</h2>
               <button
                 onClick={() => setIsMenuOpen(false)}
+                aria-label="Close navigation menu"
                 className="p-2 rounded-lg text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -289,7 +291,7 @@ export default function Navigation() {
                     openModal(50, 'General Donation')
                     setIsMenuOpen(false)
                   }}
-                  className="block w-full px-4 py-4 rounded-lg text-base font-semibold transition-all duration-200 hover:opacity-90 text-center bg-orange-500 hover:bg-orange-600 text-white cursor-pointer touch-manipulation"
+                  className="block w-full px-4 py-4 rounded-lg text-base font-semibold transition-all duration-200 hover:opacity-90 text-center bg-orange-600 hover:bg-orange-700 text-white cursor-pointer touch-manipulation"
                 >
                   DONATE
                 </button>
