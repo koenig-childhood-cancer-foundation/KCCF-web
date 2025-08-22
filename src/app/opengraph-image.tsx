@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import { headers } from 'next/headers'
 
 // Image metadata
 export const alt = 'Koenig Childhood Cancer Foundation - Life-saving support for children battling cancer'
@@ -11,8 +12,12 @@ export const contentType = 'image/png'
 
 // Image generation
 export default async function Image() {
+  const headersList = await headers()
+  const host = headersList.get('host') || 'thekccf.org'
+  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https'
+  
   // Load the KCCF logo
-  const logoData = await fetch(new URL('/android-chrome-512x512.png', 'http://localhost:3000')).then(
+  const logoData = await fetch(new URL('/android-chrome-512x512.png', `${protocol}://${host}`)).then(
     (res) => res.arrayBuffer(),
   )
   
