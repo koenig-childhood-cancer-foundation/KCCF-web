@@ -80,7 +80,7 @@ export default function SubmissionModal({ onClose }: SubmissionModalProps) {
           </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
             {isSuccess 
-              ? 'Thank you for your submission. We\'ll get back to you soon!'
+              ? 'Thank you for your submission. You\'ll hear from us soon!'
               : 'There was an error submitting your form. Please try again or contact us directly.'
             }
           </p>

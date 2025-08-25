@@ -1,25 +1,41 @@
-import type { Metadata } from 'next';
+"use client"
+
 import Image from 'next/image';
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
-
-export const metadata: Metadata = {
-  title: "Our Story - Elana Koenig's Journey | Koenig Childhood Cancer Foundation",
-  description: "Discover the inspiring story of Elana Koenig, an 11-year-old cancer survivor who founded KCCF to help families battling childhood cancer. Learn about our mission and impact.",
-  keywords: ["Elana Koenig", "our story", "founder", "cancer survivor", "childhood cancer", "KCCF history", "mission"],
-  openGraph: {
-    title: "Our Story - Elana Koenig's Journey | Koenig Childhood Cancer Foundation",
-    description: "Discover the inspiring story of Elana Koenig, an 11-year-old cancer survivor who founded KCCF to help families battling childhood cancer. Learn about our mission and impact.",
-    type: "website",
-    url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/our-story` : "https://thekccf.org/our-story",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+import { useState } from 'react';
 
 export default function OurStory() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    // Prevent multiple submissions
+    if (isSubmitting) return;
+    
+    setIsSubmitting(true);
+    
+    // Submit the form
+    const formData = new FormData(e.currentTarget);
+    
+    fetch('/api/submit', {
+      method: 'POST',
+      body: formData
+    }).then(response => {
+      if (response.ok) {
+        window.location.href = '/our-story?submitted=1';
+      } else {
+        window.location.href = '/our-story?submitted=0';
+      }
+    }).catch((error) => {
+      console.error('Form submission error:', error);
+      window.location.href = '/our-story?submitted=0';
+    }).finally(() => {
+      setIsSubmitting(false);
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <PageHeader 
@@ -207,7 +223,7 @@ export default function OurStory() {
             </div>
             
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
-              <form className="space-y-6" method="post" action="/api/submit">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <input type="hidden" name="formType" value="book_elana" />
                 <input type="hidden" name="pagePath" value="/our-story" />
                 <div className="grid md:grid-cols-2 gap-6">
@@ -392,9 +408,24 @@ export default function OurStory() {
                 
                 <button
                   type="submit"
-                  className="w-full bg-fandango-600 hover:bg-fandango-700 dark:bg-fandango-500 dark:hover:bg-fandango-600 text-white py-3 px-6 rounded-full transition duration-300 font-semibold text-lg cursor-pointer"
+                  disabled={isSubmitting}
+                  className={`w-full py-3 px-6 rounded-full transition duration-300 font-semibold text-lg cursor-pointer flex items-center justify-center ${
+                    isSubmitting 
+                      ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
+                      : 'bg-fandango-600 hover:bg-fandango-700 dark:bg-fandango-500 dark:hover:bg-fandango-600 text-white'
+                  }`}
                 >
-                  Submit Application
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Submitting Request...
+                    </>
+                  ) : (
+                    'Submit Application'
+                  )}
                 </button>
               </form>
             </div>

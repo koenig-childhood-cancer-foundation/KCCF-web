@@ -1,23 +1,39 @@
-import type { Metadata } from 'next';
-import PageHeader from '@/components/PageHeader';
+"use client"
 
-export const metadata: Metadata = {
-  title: "Volunteer - Join Our Mission | Koenig Childhood Cancer Foundation",
-  description: "Make a difference in the lives of children battling cancer. Volunteer with KCCF and help support families through various opportunities and programs.",
-  keywords: ["volunteer", "volunteering", "help", "support", "childhood cancer", "community service", "make a difference"],
-  openGraph: {
-    title: "Volunteer - Join Our Mission | Koenig Childhood Cancer Foundation",
-    description: "Make a difference in the lives of children battling cancer. Volunteer with KCCF and help support families through various opportunities and programs.",
-    type: "website",
-    url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/volunteer` : "https://thekccf.org/volunteer",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+import PageHeader from '@/components/PageHeader';
+import { useState } from 'react';
 
 export default function Volunteer() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    // Prevent multiple submissions
+    if (isSubmitting) return;
+    
+    setIsSubmitting(true);
+    
+    // Submit the form
+    const formData = new FormData(e.currentTarget);
+    
+    fetch('/api/submit', {
+      method: 'POST',
+      body: formData
+    }).then(response => {
+      if (response.ok) {
+        window.location.href = '/volunteer?submitted=1';
+      } else {
+        window.location.href = '/volunteer?submitted=0';
+      }
+    }).catch((error) => {
+      console.error('Form submission error:', error);
+      window.location.href = '/volunteer?submitted=0';
+    }).finally(() => {
+      setIsSubmitting(false);
+    });
+  };
+
   return (
     <div className="min-h-screen">
       <PageHeader 
@@ -248,7 +264,7 @@ export default function Volunteer() {
               Ready to make a difference? Complete this form to start your volunteer journey with KCCF.
             </p>
 
-            <form className="space-y-6" method="post" action="/api/submit">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <input type="hidden" name="formType" value="volunteer_application" />
               <input type="hidden" name="pagePath" value="/volunteer" />
               {/* Personal Information */}
@@ -438,9 +454,24 @@ export default function Volunteer() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 cursor-pointer"
+                  disabled={isSubmitting}
+                  className={`px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 cursor-pointer flex items-center justify-center mx-auto ${
+                    isSubmitting 
+                      ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
+                      : 'bg-orange-500 hover:bg-orange-600 text-white'
+                  }`}
                 >
-                  Submit Volunteer Application
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Submitting Application...
+                    </>
+                  ) : (
+                    'Submit Volunteer Application'
+                  )}
                 </button>
               </div>
             </form>

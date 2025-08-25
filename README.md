@@ -184,6 +184,8 @@ The application is configured to use Cloudflare R2 for file storage in productio
    CLOUDFLARE_R2_SECRET_ACCESS_KEY=your_secret_access_key
    CLOUDFLARE_R2_BUCKET_NAME=your_bucket_name
    CLOUDFLARE_R2_PUBLIC_URL=https://your-custom-domain.com (optional)
+   FORCE_R2=true/false
+   GAS_ENDPOINT='https://googlescript'
    ```
 
 4. **Optional: Set up custom domain** for public file access

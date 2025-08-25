@@ -1,24 +1,39 @@
-import type { Metadata } from 'next';
-import React from 'react';
+"use client"
+
+import React, { useState } from 'react';
 import PageHeader from '@/components/PageHeader';
 
-export const metadata: Metadata = {
-  title: "Newsletter Signup - Stay Connected with KCCF | Koenig Childhood Cancer Foundation",
-  description: "Stay updated with the latest news, events, and impact stories from the Koenig Childhood Cancer Foundation. Join our newsletter to be part of our mission.",
-  keywords: ["newsletter", "signup", "updates", "news", "events", "KCCF", "childhood cancer", "subscribe"],
-  openGraph: {
-    title: "Newsletter Signup - Stay Connected with KCCF | Koenig Childhood Cancer Foundation",
-    description: "Stay updated with the latest news, events, and impact stories from the Koenig Childhood Cancer Foundation. Join our newsletter to be part of our mission.",
-    type: "website",
-    url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/newsletter-signup` : "https://thekccf.org/newsletter-signup",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
-
 export default function NewsletterSignup() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    // Prevent multiple submissions
+    if (isSubmitting) return;
+    
+    setIsSubmitting(true);
+    
+    // Submit the form
+    const formData = new FormData(e.currentTarget);
+    
+    fetch('/api/submit', {
+      method: 'POST',
+      body: formData
+    }).then(response => {
+      if (response.ok) {
+        window.location.href = '/newsletter-signup?submitted=1';
+      } else {
+        window.location.href = '/newsletter-signup?submitted=0';
+      }
+    }).catch((error) => {
+      console.error('Form submission error:', error);
+      window.location.href = '/newsletter-signup?submitted=0';
+    }).finally(() => {
+      setIsSubmitting(false);
+    });
+  };
+
   return (
     <div className="min-h-screen bg-platinum-50">
       <PageHeader 
@@ -34,7 +49,7 @@ export default function NewsletterSignup() {
           <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
             <h2 className="text-3xl font-bold text-center text-violet-700 mb-8">Subscribe to Our Newsletter</h2>
             
-                         <form className="space-y-6" method="post" action="/api/submit">
+                         <form className="space-y-6" onSubmit={handleSubmit}>
                <input type="hidden" name="formType" value="newsletter_signup" />
                <input type="hidden" name="pagePath" value="/newsletter-signup" />
                {/* Personal Information */}
@@ -99,9 +114,24 @@ export default function NewsletterSignup() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-fandango-500 to-violet-600 hover:from-fandango-600 hover:to-violet-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg cursor-pointer"
+                  disabled={isSubmitting}
+                  className={`px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg cursor-pointer flex items-center justify-center mx-auto ${
+                    isSubmitting 
+                      ? 'bg-gray-400 text-gray-600 cursor-not-allowed scale-100' 
+                      : 'bg-gradient-to-r from-fandango-500 to-violet-600 hover:from-fandango-600 hover:to-violet-700 text-white'
+                  }`}
                 >
-                  Subscribe to Newsletter
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Subscribing...
+                    </>
+                  ) : (
+                    'Subscribe to Newsletter'
+                  )}
                 </button>
               </div>
             </form>
