@@ -23,19 +23,19 @@ export default function DonationButton({
 }: DonationButtonProps) {
   const { openModal } = useDonationModal()
 
-  const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#732154] transform hover:scale-105 active:scale-95 cursor-pointer'
+  const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#732154] cursor-pointer'
 
   const variantClasses = {
-    primary: 'bg-[#732154] hover:bg-[#732154]/90 text-white shadow-lg hover:shadow-xl',
-    secondary: 'bg-fandango-600 hover:bg-fandango-700 text-white shadow-lg hover:shadow-xl',
-    outline: 'border-2 border-[#732154] text-[#732154] hover:bg-[#732154] hover:text-white',
-    ghost: 'text-[#732154] hover:bg-[#732154]/10'
+    primary: 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1',
+    secondary: 'bg-fandango-600 hover:bg-fandango-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1',
+    outline: 'border-2 border-[#732154] text-[#732154] hover:bg-[#732154] hover:text-white transform hover:-translate-y-1',
+    ghost: 'text-[#732154] hover:bg-[#732154]/10 transform hover:-translate-y-1'
   }
 
   const sizeClasses = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg'
+    sm: 'px-4 py-2 text-sm rounded-full',
+    md: 'px-6 py-3 text-base rounded-full',
+    lg: 'px-8 py-4 text-lg rounded-full'
   }
 
   const handleClick = () => {

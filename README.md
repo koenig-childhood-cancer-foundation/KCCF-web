@@ -51,10 +51,27 @@ docker-compose up -d --build
 ```
 The app will be available at `http://localhost:3000`.
 
+### Docker Environment Variables
+Create a `.env` file in the root directory with your configuration:
+```env
+# Cloudflare R2 (required for file uploads)
+CLOUDFLARE_R2_ACCOUNT_ID=your_account_id
+CLOUDFLARE_R2_ACCESS_KEY_ID=your_access_key_id
+CLOUDFLARE_R2_SECRET_ACCESS_KEY=your_secret_access_key
+CLOUDFLARE_R2_BUCKET_NAME=kccf-file-uploads
+CLOUDFLARE_R2_PUBLIC_URL=https://your-custom-domain.com
+
+# Stripe (if using)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+```
+
 Details:
 - `thekccf.org/Dockerfile` produces a minimal runtime using Next.js standalone output.
 - `docker-compose.yml` maps port 3000 and includes a healthcheck on `/api/health`.
-- Provide Stripe keys via environment/Compose overrides instead of committing secrets.
+- Environment variables are passed through Docker build args and runtime environment.
+- Cloudflare R2 is required for file uploads in production.
 
 ## Deployment
 You can deploy in two common ways:
@@ -137,6 +154,53 @@ thekccf.org/
 - Donation modal is controlled by `src/components/DonationModal.tsx`
 - Cookie consent is required for donation form display
 - Campaign-specific donation forms can be configured in the modal
+
+## File upload configuration
+The aid application form includes file uploads for child photos and medical bills. The current implementation uses Cloudflare R2 for production storage.
+
+### Development
+- Files are saved locally to `public/uploads/` directory
+- Files are accessible via `/uploads/filename` URLs
+- No additional configuration required
+
+### Production deployment (Cloudflare R2)
+The application is configured to use Cloudflare R2 for file storage in production:
+
+1. **Install AWS SDK** (already included):
+   ```bash
+   npm install @aws-sdk/client-s3
+   ```
+
+2. **Set up Cloudflare R2**:
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
+   - Navigate to R2 Object Storage
+   - Create a new bucket for file uploads
+   - Create API tokens with R2 permissions
+
+3. **Set environment variables**:
+   ```env
+   CLOUDFLARE_R2_ACCOUNT_ID=your_account_id
+   CLOUDFLARE_R2_ACCESS_KEY_ID=your_access_key_id
+   CLOUDFLARE_R2_SECRET_ACCESS_KEY=your_secret_access_key
+   CLOUDFLARE_R2_BUCKET_NAME=your_bucket_name
+   CLOUDFLARE_R2_PUBLIC_URL=https://your-custom-domain.com (optional)
+   ```
+
+4. **Optional: Set up custom domain** for public file access
+
+### Alternative cloud storage options
+- **AWS S3**: Modify the code to use AWS S3 instead of R2
+- **Google Cloud Storage**: Use `@google-cloud/storage`
+- **Azure Blob Storage**: Use `@azure/storage-blob`
+- **Cloudinary**: Use `cloudinary` package
+- **Vercel Blob**: Use `@vercel/blob` (if deploying on Vercel)
+
+### File upload limits
+- Maximum file size: 10MB per file
+- Allowed image types: JPEG, JPG, PNG, GIF, WebP
+- Allowed document types: PDF, JPEG, JPG, PNG
+- Child photos: Minimum 6 photos required
+- Bills: Up to 3 files allowed
 
 ## Troubleshooting
 - Port already in use: stop the other service or change the port mapping in `docker-compose.yml`.

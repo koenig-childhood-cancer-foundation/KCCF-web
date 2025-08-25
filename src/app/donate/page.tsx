@@ -28,7 +28,7 @@ export default function Donate() {
       />
 
       {/* Main Donation CTA */}
-      <section className="py-16 bg-gradient-to-r from-[#732154] to-fandango-600 dark:from-[#732154] dark:to-fandango-700">
+      <section className="py-16 bg-[#732154] dark:bg-[#732154]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6 text-white">Ready to Make a Difference?</h2>
           <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
@@ -134,7 +134,7 @@ export default function Donate() {
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Corporate Matching</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">Multiply your impact through your employer.</p>
               <div className="flex justify-center">
-                <DonationButton campaign="Corporate Matching" variant="secondary" size="md">Get Started</DonationButton>
+                <DonationButton campaign="Corporate Matching" variant="primary" size="md">Get Started</DonationButton>
               </div>
             </div>
           </div>
