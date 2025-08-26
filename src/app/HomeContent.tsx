@@ -72,20 +72,20 @@ export default function HomeContent() {
             {/* Impact Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-violet-600 dark:text-saffron-400 mb-2">$1.5M+</div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Raised for families</p>
+                <div className="text-3xl md:text-4xl font-bold text-violet-600 dark:text-saffron-400 mb-2">3,600+</div>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Families Supported Financially</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-2">500+</div>
-                <p className="text-black dark:text-white text-sm">Families supported</p>
+                <div className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-2">2,700+</div>
+                <p className="text-black dark:text-white text-sm">Hospital visits/ celebrations</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-2">100%</div>
-                <p className="text-black dark:text-white text-sm">Direct to families</p>
+                <div className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-2">65,000+</div>
+                <p className="text-black dark:text-white text-sm">Care Packages</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">3</div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Years of impact</p>
+                <div className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">35+</div>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Summer Camp Children</p>
               </div>
             </div>
           </div>
