@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import DonationButton from '@/components/DonationButton';
+import PartnersCarousel from '@/components/PartnersCarousel';
 import { useTheme } from '@/contexts/ThemeContext'
 
 export default function HomeContent() {
@@ -376,30 +377,7 @@ export default function HomeContent() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { name: "Madison Square Garden", logo: "https://thekccf.org/wp-content/uploads/2024/05/madison-square-garden-logo-png-transparent-300x300.png" },
-              { name: "Meta", logo: "https://thekccf.org/wp-content/uploads/2024/05/Meta-300x162.png" },
-              { name: "Bailyn", logo: "https://thekccf.org/wp-content/uploads/2025/05/logo-bailyn-r2bmd6rq0m33cbpwuamknr8s4mzc6ojg5d9pvr59wg-300x44.png" },
-              { name: "UBS", logo: "https://thekccf.org/wp-content/uploads/2025/05/UBS_Logo-300x110.png" },
-              { name: "Bank of America", logo: "https://thekccf.org/wp-content/uploads/2025/05/Bank_of_America_logo.svg_-300x30.png" },
-              { name: "Polo Reef", logo: "https://thekccf.org/wp-content/uploads/2025/01/Polo-Reef1-300x162.png" }
-            ].map((partner, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-                <div className="flex items-center justify-center h-24">
-          <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    width={200}
-                    height={100}
-                    className="max-h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                    loading="lazy"
-                  />
-                </div>
-                <p className="text-center mt-4 text-gray-600 dark:text-gray-300 font-medium">{partner.name}</p>
-              </div>
-            ))}
-          </div>
+          <PartnersCarousel />
         </div>
       </section>
 
