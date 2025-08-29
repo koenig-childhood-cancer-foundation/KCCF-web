@@ -3,12 +3,12 @@
 import Image from 'next/image';
 
 const partners = [
-  { name: "Madison Square Garden", logo: "https://thekccf.org/wp-content/uploads/2024/05/madison-square-garden-logo-png-transparent-300x300.png" },
-  { name: "Meta", logo: "https://thekccf.org/wp-content/uploads/2024/05/Meta-300x162.png" },
-  { name: "Bailyn", logo: "https://thekccf.org/wp-content/uploads/2025/05/logo-bailyn-r2bmd6rq0m33cbpwuamknr8s4mzc6ojg5d9pvr59wg-300x44.png" },
-  { name: "UBS", logo: "https://thekccf.org/wp-content/uploads/2025/05/UBS_Logo-300x110.png" },
-  { name: "Bank of America", logo: "https://thekccf.org/wp-content/uploads/2025/05/Bank_of_America_logo.svg_-300x30.png" },
-  { name: "Polo Reef", logo: "https://thekccf.org/wp-content/uploads/2025/01/Polo-Reef1-300x162.png" }
+  { name: "Madison Square Garden", logo: "/images/madison-square-garden-logo-png-transparent-300x300.png" },
+  { name: "Meta", logo: "/images/Meta-300x162.png" },
+  { name: "Bailyn", logo: "/images/logo-bailyn-r2bmd6rq0m33cbpwuamknr8s4mzc6ojg5d9pvr59wg-300x44.png" },
+  { name: "UBS", logo: "/images/UBS_Logo-300x110.png" },
+  { name: "Bank of America", logo: "/images/Bank_of_America_logo.svg_-300x30.png" },
+  { name: "Polo Reef", logo: "/images/Polo-Reef1-300x162.png" }
 ];
 
 export default function PartnersCarousel() {

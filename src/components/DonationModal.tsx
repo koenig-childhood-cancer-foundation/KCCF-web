@@ -53,7 +53,7 @@ export default function DonationModal() {
             <div className="mb-6">
               <img 
                 src={theme === 'dark' 
-                  ? "https://thekccf.org/wp-content/uploads/2025/03/cropped-Koenig-Foundation-Logo-01.png"
+                  ? "/images/cropped-Koenig-Foundation-Logo-01.png"
                   : "/KCCF logo.png"
                 }
                 alt="Koenig Childhood Cancer Foundation Logo"
@@ -66,7 +66,7 @@ export default function DonationModal() {
             <div className="campaign-image-holder mb-6">
               <img 
                 className="w-full h-64 object-cover rounded-xl shadow-lg"
-                src="https://thekccf.org/wp-content/uploads/2025/04/MetaLeadershipMakingfitBags-scaled.jpg"
+                src="/images/MetaLeadershipMakingfitBags-scaled.jpg"
                 alt="Crazy Socks Gift Bags Campaign"
                 width="516"
                 height="289"
@@ -78,9 +78,9 @@ export default function DonationModal() {
                 {campaign || "Help hospitalized children with cancer"}
               </h2>
               <p className="text-white/90 leading-relaxed">
-                Your donation helps provide Crazy Socks Gift Bags to hospitalized children battling cancer. 
-                These gift bags bring joy, comfort, and a sense of normalcy to children during their difficult 
-                hospital stays. Every donation makes a real difference in a child's life.
+                Your donation helps provide support and resources to hospitalized children battling cancer. 
+                Your generosity brings joy, comfort, and hope to children during their difficult hospital stays. 
+                Every donation makes a real difference in a child's life.
               </p>
             </div>
           </div>
@@ -104,11 +104,11 @@ export default function DonationModal() {
         </div>
         
         {/* Donation Form - Right Side replaced entirely by Zeffy */}
-        <div className="lg:w-1/2 w-full max-h-[90vh] flex flex-col overflow-hidden">
-          <div className="sticky top-0 z-10 bg-white dark:bg-gray-800">
+        <div className="lg:w-1/2 w-full flex flex-col">
+          <div className="bg-white dark:bg-gray-800">
             <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Make a Donation</h2>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Donate to save lives</h2>
                 {campaign && (
                   <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Campaign: {campaign}</p>
                 )}
@@ -124,10 +124,10 @@ export default function DonationModal() {
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto overflow-x-hidden">
+          <div className="flex-1">
             {consent.marketing ? (
               <iframe
-                className="block w-full h-full min-h-[800px] max-w-full"
+                className="block w-full h-[600px] max-w-full"
                 src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
                 title="Zeffy donation form"
                 frameBorder={0}
@@ -136,7 +136,7 @@ export default function DonationModal() {
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
               />
             ) : (
-              <div className="h-full min-h-[600px] flex flex-col items-center justify-center text-center p-8">
+              <div className="h-[600px] flex flex-col items-center justify-center text-center p-8">
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Marketing cookies required</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 max-w-md">
                   To display our embedded donation form, please enable Marketing cookies in your preferences.

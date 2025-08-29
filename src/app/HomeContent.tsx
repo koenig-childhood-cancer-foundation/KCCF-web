@@ -15,7 +15,7 @@ export default function HomeContent() {
         {/* Background Banner Image */}
         <div className="absolute inset-0">
         <Image
-            src="https://thekccf.org/wp-content/uploads/2023/09/banner.png"
+            src="/images/banner.png"
             alt="KCCF Banner Background"
             fill
             sizes="100vw"
@@ -44,7 +44,7 @@ export default function HomeContent() {
             </h1>
             
             <p className="text-xl md:text-2xl mb-12 text-gray-700 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal">
-              Founded by 11-year-old cancer survivor Elana Koenig in 2020, we provide critical financial and emotional support to families facing childhood cancer.
+              Koenig Childhood Cancer Foundation was started by 11-year-old cancer survivor Elana Koenig in 2020 with $900 in her piggy bank.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
@@ -56,7 +56,7 @@ export default function HomeContent() {
               </Link>
               <DonationButton 
                 amount={50}
-                campaign="General Donation"
+                campaign="Donate to save lives"
                 variant="primary"
                 size="lg"
                 className="group bg-orange-600 hover:bg-orange-700 text-white py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -73,7 +73,7 @@ export default function HomeContent() {
             {/* Impact Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-violet-600 dark:text-saffron-400 mb-2">3,600+</div>
+                <div className="text-3xl md:text-4xl font-bold text-violet-600 dark:text-saffron-400 mb-2">3,700+</div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">Families Supported Financially</p>
               </div>
               <div className="text-center">
@@ -81,11 +81,11 @@ export default function HomeContent() {
                 <p className="text-black dark:text-white text-sm">Hospital visits/ celebrations</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-2">65,000+</div>
+                <div className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-2">85,000+</div>
                 <p className="text-black dark:text-white text-sm">Care Packages</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">35+</div>
+                <div className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">80+</div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">Summer Camp Children</p>
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function HomeContent() {
                 <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
           <Image
                     src={theme === 'dark' 
-                      ? "https://thekccf.org/wp-content/uploads/2025/03/cropped-Koenig-Foundation-Logo-01.png"
+                      ? "/images/cropped-Koenig-Foundation-Logo-01.png"
                       : "/KCCF logo.png"
                     }
                     alt="Koenig Foundation Logo"
@@ -319,27 +319,27 @@ export default function HomeContent() {
             {[
               {
                 name: "Derek",
-                image: "https://thekccf.org/wp-content/uploads/2025/05/cropped-Derek_5704-scaled.jpeg",
+                image: "/images/cropped-Derek_5704-scaled.jpeg",
                 quote: "KCCF helped my family stay in our home during my treatment."
               },
               {
                 name: "Khadija",
-                image: "https://thekccf.org/wp-content/uploads/2025/05/cropped-Khadija-Base-1.jpg",
+                image: "/images/cropped-Khadija-Base-1.jpg",
                 quote: "The foundation gave us hope when we needed it most."
               },
               {
                 name: "Zariyah",
-                image: "https://thekccf.org/wp-content/uploads/2025/06/cropped-Zariyah_4132-1-scaled.jpg",
+                image: "/images/cropped-Zariyah_4132-1-scaled.jpg",
                 quote: "Thank you for helping my family during my cancer journey."
               },
               {
                 name: "Mark",
-                image: "https://thekccf.org/wp-content/uploads/2025/05/cropped-cropped-Mark_2022-06-13-12.21.08.jpg",
+                image: "/images/cropped-cropped-Mark_2022-06-13-12.21.08.jpg",
                 quote: "Ependymoma warrior - KCCF's support made all the difference."
               },
               {
                 name: "Mishka",
-                image: "https://thekccf.org/wp-content/uploads/2025/05/cropped-Mishka-Belarus.jpg",
+                image: "/images/cropped-Mishka-Belarus.jpg",
                 quote: "Neuroblastoma fighter - grateful for KCCF's love and support."
               }
             ].map((warrior, index) => (
@@ -397,7 +397,7 @@ export default function HomeContent() {
             Together, we can make a difference in the lives of children battling cancer and their families. Every donation, every volunteer hour, and every act of support brings hope to those who need it most.
           </p>
           
-                     <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
              <Link href="/donate" className="group bg-orange-600 hover:bg-orange-700 text-white py-4 px-10 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center">
                <span>Donate Now</span>
                <svg className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -411,11 +411,6 @@ export default function HomeContent() {
               </svg>
             </Link>
           </div>
-          
-                     <div className="text-white/80 text-sm">
-             <p>100% of your donation goes directly to families in need</p>
-             <p className="mt-2">©2025 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN: 84-489-2279</p>
-           </div>
         </div>
       </section>
     </div>

@@ -37,7 +37,7 @@ export default function Donate() {
           </p>
           <DonationButton
             amount={50}
-            campaign="General Donation"
+            campaign="Donate to save lives"
             variant="primary"
             size="lg"
             icon={

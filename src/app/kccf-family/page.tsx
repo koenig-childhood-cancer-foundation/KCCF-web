@@ -63,7 +63,7 @@ export default function KCCFFamily() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
               <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
                 <Image
-                  src="https://thekccf.org/wp-content/uploads/2025/04/cropped-IMG_1521-scaled-1.jpg"
+                  src="/images/cropped-IMG_1521-scaled-1.jpg"
                   alt="Elana Koenig, Founder"
                   width={500}
                   height={600}
@@ -94,7 +94,7 @@ export default function KCCFFamily() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/03/Untitled-drawing-1.jpg"
+                    src="/images/Untitled-drawing-1.jpg"
                     alt="Rena Koenig"
                     width={192}
                     height={192}
@@ -114,7 +114,7 @@ export default function KCCFFamily() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/03/Untitled-drawing-33.png"
+                    src="/images/Untitled-drawing-33.png"
                     alt="Scott Koenig"
                     width={192}
                     height={192}
@@ -134,7 +134,7 @@ export default function KCCFFamily() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/04/cropped-Bradley-Bailyn-1.png"
+                    src="/images/cropped-Bradley-Bailyn-1.png"
                     alt="Bradley Bailyn"
                     width={192}
                     height={192}
@@ -167,7 +167,7 @@ export default function KCCFFamily() {
                 <div className="relative w-40 h-40 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/04/Mike-Blumenfeld-Director-copy.png"
+                    src="/images/Mike-Blumenfeld-Director-copy.png"
                     alt="Mike Blumenfeld"
                     width={160}
                     height={160}
@@ -184,7 +184,7 @@ export default function KCCFFamily() {
                 <div className="relative w-40 h-40 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/04/cropped-Clarke-Moyer-Bio-Picture-2MP.jpg"
+                    src="/images/cropped-Clarke-Moyer-Bio-Picture-2MP.jpg"
                     alt="Clarke Mayor"
                     width={160}
                     height={160}
@@ -201,7 +201,7 @@ export default function KCCFFamily() {
                 <div className="relative w-40 h-40 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/04/cropped-JKowalski.png"
+                    src="/images/cropped-JKowalski.png"
                     alt="Jim Kowalski"
                     width={160}
                     height={160}
@@ -234,7 +234,7 @@ export default function KCCFFamily() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/03/Dr.-Wexler-Honorary-Director-copy.png"
+                    src="/images/Dr.-Wexler-Honorary-Director-copy.png"
                     alt="Dr. Wexler"
                     width={192}
                     height={192}
@@ -256,7 +256,7 @@ export default function KCCFFamily() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/03/Carol-Morris-2-copy-2_FINAL.png"
+                    src="/images/Carol-Morris-2-copy-2_FINAL.png"
                     alt="Dr. Morris"
                     width={192}
                     height={192}
@@ -278,7 +278,7 @@ export default function KCCFFamily() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/04/cropped-DrPrinceElana-scaled.jpg"
+                    src="/images/cropped-DrPrinceElana-scaled.jpg"
                     alt="Dr. Prince"
                     width={192}
                     height={192}
@@ -300,7 +300,7 @@ export default function KCCFFamily() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/03/Dr.-Tomas-copy.png"
+                    src="/images/Dr.-Tomas-copy.png"
                     alt="Dr. Charas"
                     width={192}
                     height={192}
@@ -322,7 +322,7 @@ export default function KCCFFamily() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/03/kearney_170721_02_3x2-copy.png"
+                    src="/images/kearney_170721_02_3x2-copy.png"
                     alt="Dr. Kearney"
                     width={192}
                     height={192}

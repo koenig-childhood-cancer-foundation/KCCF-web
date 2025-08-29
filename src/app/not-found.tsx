@@ -18,7 +18,7 @@ export default function NotFound() {
           {/* Logo */}
           <div className="mb-8">
             <Image
-              src="https://thekccf.org/wp-content/uploads/2025/03/cropped-Koenig-Foundation-Logo-01.png"
+              src="/images/cropped-Koenig-Foundation-Logo-01.png"
               alt="Koenig Foundation Logo"
               width={200}
               height={80}

@@ -94,7 +94,7 @@ export default function Navigation() {
             <Link href="/" className="flex-shrink-0">
               <Image
                 src={theme === 'dark' 
-                  ? "https://thekccf.org/wp-content/uploads/2025/03/cropped-Koenig-Foundation-Logo-01.png"
+                  ? "/images/cropped-Koenig-Foundation-Logo-01.png"
                   : "/KCCF logo.png"
                 }
                 alt="Koenig Childhood Cancer Foundation"
@@ -168,7 +168,7 @@ export default function Navigation() {
           {/* Right side - Donate button and theme toggle */}
           <div className="hidden lg:flex items-center space-x-4">
             <button
-              onClick={() => openModal(50, 'General Donation')}
+              onClick={() => openModal(50, 'Donate to save lives')}
               className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer ${
                 isScrolled 
                   ? 'bg-orange-600 hover:bg-orange-700 text-white' 
@@ -288,7 +288,7 @@ export default function Navigation() {
               <div className="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700">
                 <button
                   onClick={() => {
-                    openModal(50, 'General Donation')
+                    openModal(50, 'Donate to save lives')
                     setIsMenuOpen(false)
                   }}
                   className="block w-full px-4 py-4 rounded-lg text-base font-semibold transition-all duration-200 hover:opacity-90 text-center bg-orange-600 hover:bg-orange-700 text-white cursor-pointer touch-manipulation"

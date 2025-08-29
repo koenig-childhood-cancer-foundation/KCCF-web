@@ -10,33 +10,33 @@ export default function CrazySocksContent() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   
   const slideshowImages = [
-    "https://thekccf.org/wp-content/uploads/2025/04/MetaLeadershipMakingfitBags-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/04/bankofamerica-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/04/AlfacGiftMakingEvent-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/04/ElanaOliviaGiftBags-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/04/MetaCSGiftBagEvent-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/04/giftbagevent2-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_6861-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_6703-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_5046-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_2841-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_1850-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_0875-scaled.jpeg"
+    "/images/MetaLeadershipMakingfitBags-scaled.jpg",
+    "/images/bankofamerica-scaled.jpeg",
+    "/images/AlfacGiftMakingEvent-scaled.jpeg",
+    "/images/ElanaOliviaGiftBags-scaled.jpg",
+    "/images/MetaCSGiftBagEvent-scaled.jpg",
+    "/images/giftbagevent2-scaled.jpeg",
+    "/images/IMG_6861-scaled.jpeg",
+    "/images/IMG_6703-scaled.jpeg",
+    "/images/IMG_5046-scaled.jpg",
+    "/images/IMG_2841-scaled.jpg",
+    "/images/IMG_1850-scaled.jpg",
+    "/images/IMG_0875-scaled.jpeg"
   ]
 
   const collageImages = [
-    "https://thekccf.org/wp-content/uploads/2025/04/MetaLeadershipMakingfitBags-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/04/bankofamerica-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/04/AlfacGiftMakingEvent-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/04/ElanaOliviaGiftBags-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/04/MetaCSGiftBagEvent-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/04/giftbagevent2-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_6861-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_6703-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_5046-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_2841-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_1850-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_0875-scaled.jpeg"
+    "/images/MetaLeadershipMakingfitBags-scaled.jpg",
+    "/images/bankofamerica-scaled.jpeg",
+    "/images/AlfacGiftMakingEvent-scaled.jpeg",
+    "/images/ElanaOliviaGiftBags-scaled.jpg",
+    "/images/MetaCSGiftBagEvent-scaled.jpg",
+    "/images/giftbagevent2-scaled.jpeg",
+    "/images/IMG_6861-scaled.jpeg",
+    "/images/IMG_6703-scaled.jpeg",
+    "/images/IMG_5046-scaled.jpg",
+    "/images/IMG_2841-scaled.jpg",
+    "/images/IMG_1850-scaled.jpg",
+    "/images/IMG_0875-scaled.jpeg"
   ]
 
   useEffect(() => {
@@ -119,7 +119,7 @@ export default function CrazySocksContent() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
               <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
                 <Image
-                  src="https://thekccf.org/wp-content/uploads/2025/03/Screen-Shot-2021-03-05-at-10.45.40-AM.png"
+                  src="/images/Screen-Shot-2021-03-05-at-10.45.40-AM.png"
                   alt="Crazy Socks Gift Bags"
                   width={500}
                   height={600}
@@ -284,7 +284,7 @@ export default function CrazySocksContent() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/04/MetaLeadershipMakingfitBags-scaled.jpg"
+                    src="/images/MetaLeadershipMakingfitBags-scaled.jpg"
                     alt="Meta Leadership"
                     width={192}
                     height={192}
@@ -302,7 +302,7 @@ export default function CrazySocksContent() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/04/bankofamerica-scaled.jpeg"
+                    src="/images/bankofamerica-scaled.jpeg"
                     alt="Bank of America"
                     width={192}
                     height={192}
@@ -320,7 +320,7 @@ export default function CrazySocksContent() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/04/AlfacGiftMakingEvent-scaled.jpeg"
+                    src="/images/AlfacGiftMakingEvent-scaled.jpeg"
                     alt="Aflac Global Investments"
                     width={192}
                     height={192}
@@ -338,7 +338,7 @@ export default function CrazySocksContent() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/04/giftbagevent2-scaled.jpeg"
+                    src="/images/giftbagevent2-scaled.jpeg"
                     alt="Forvis Mazars Group"
                     width={192}
                     height={192}
@@ -356,7 +356,7 @@ export default function CrazySocksContent() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/04/ElanaOliviaGiftBags-scaled.jpg"
+                    src="/images/ElanaOliviaGiftBags-scaled.jpg"
                     alt="Elana and Olivia Gift Bags"
                     width={192}
                     height={192}
@@ -374,7 +374,7 @@ export default function CrazySocksContent() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="https://thekccf.org/wp-content/uploads/2025/04/MetaCSGiftBagEvent-scaled.jpg"
+                    src="/images/MetaCSGiftBagEvent-scaled.jpg"
                     alt="Meta CS Gift Bag Event"
                     width={192}
                     height={192}

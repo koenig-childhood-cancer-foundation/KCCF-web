@@ -15,18 +15,18 @@ export default function PageHeader({
   title, 
   subtitle, 
   backgroundImages = [
-    "https://thekccf.org/wp-content/uploads/2025/04/MetaLeadershipMakingfitBags-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/04/bankofamerica-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/04/AlfacGiftMakingEvent-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/04/ElanaOliviaGiftBags-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/04/MetaCSGiftBagEvent-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/04/giftbagevent2-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_6861-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_6703-scaled.jpeg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_5046-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_2841-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_1850-scaled.jpg",
-    "https://thekccf.org/wp-content/uploads/2025/05/IMG_0875-scaled.jpeg"
+    "/images/MetaLeadershipMakingfitBags-scaled.jpg",
+    "/images/bankofamerica-scaled.jpeg",
+    "/images/AlfacGiftMakingEvent-scaled.jpeg",
+    "/images/ElanaOliviaGiftBags-scaled.jpg",
+    "/images/MetaCSGiftBagEvent-scaled.jpg",
+    "/images/giftbagevent2-scaled.jpeg",
+    "/images/IMG_6861-scaled.jpeg",
+    "/images/IMG_6703-scaled.jpeg",
+    "/images/IMG_5046-scaled.jpg",
+    "/images/IMG_2841-scaled.jpg",
+    "/images/IMG_1850-scaled.jpg",
+    "/images/IMG_0875-scaled.jpeg"
   ]
 }: PageHeaderProps) {
   // Use a deterministic order to avoid hydration mismatches
