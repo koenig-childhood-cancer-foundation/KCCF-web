@@ -16,8 +16,8 @@ export default function NewsletterSignup() {
       {/* Newsletter Signup Form */}
       <section className="py-16 bg-violet-500">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
-            <iframe src="https://forms.monday.com/forms/embed/b913243fb4f77326efb2866b627fc191?r=use1" className="w-full h-[850px] rounded-lg"></iframe>
+          <div className="bg-white rounded-lg shadow-xl pb-8 lg:p-8 md:p-12">
+            <iframe src="https://forms.monday.com/forms/embed/b913243fb4f77326efb2866b627fc191?r=use1" className="w-full h-[1100px] md:h-[900px] lg:h-[850px] rounded-lg"></iframe>
             <div className="mt-8 text-center">
               <p className="text-sm text-violet-600">
                 We respect your privacy. You can unsubscribe at any time by clicking the link in our emails.

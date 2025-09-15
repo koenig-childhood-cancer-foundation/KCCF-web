@@ -91,23 +91,23 @@ export default function Camp() {
 
           {/* Camper Form */}
           {activeForm === 'camper' && (
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg md:p-8 lg:p-8">
               <p className="text-violet-600 dark:text-violet-300 mb-8 text-center">
                 Register your child for our upcoming camp session. We'll contact you with more details and confirm your spot.
               </p>
 
-              <iframe src="https://forms.monday.com/forms/embed/41086441b740b6e179cbde8b574bd794?r=use1" className="w-full h-[1550px] rounded-lg"></iframe>
+              <iframe src="https://forms.monday.com/forms/embed/41086441b740b6e179cbde8b574bd794?r=use1" className="w-full h-[1700px] md:h-[1550px] lg:h-[1550px] rounded-lg"></iframe>
             </div>
           )}
 
           {/* Counselor Form */}
           {activeForm === 'counselor' && (
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg md:p-8 lg:p-8">
               <p className="text-violet-600 dark:text-violet-300 mb-8 text-center">
                 Join our team of dedicated counselors and help create an amazing camp experience for children with cancer.
               </p>
 
-              <iframe src="https://forms.monday.com/forms/embed/87920448930e50b7a0554e414662d32b?r=use1" className="w-full h-[1900px] rounded-lg"></iframe>
+              <iframe src="https://forms.monday.com/forms/embed/87920448930e50b7a0554e414662d32b?r=use1" className="w-full h-[2100px] md:h-[1850px] lg:h-[1900px] rounded-lg"></iframe>
             </div>
           )}
         </div>

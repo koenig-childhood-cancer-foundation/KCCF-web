@@ -191,8 +191,8 @@ export default function OurStory() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
-              <iframe src="https://forms.monday.com/forms/embed/0caf48b3cfeede4c889e59ac52ce5fb1?r=use1" className="w-full h-[1900px] rounded-lg"></iframe>
+            <div className="bg-white dark:bg-gray-800 rounded-2xl md:p-8 lg:p-8 shadow-lg">
+              <iframe src="https://forms.monday.com/forms/embed/0caf48b3cfeede4c889e59ac52ce5fb1?r=use1" className="w-full h-[2200px] ld:h-[1900px] md:h-[1900px] rounded-lg"></iframe>
             </div>
           </div>
         </div>

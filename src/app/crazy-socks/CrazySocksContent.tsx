@@ -376,8 +376,8 @@ export default function CrazySocksContent() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 text-gray-900">
-              <iframe src="https://forms.monday.com/forms/embed/78b71c024990383d274ad455e744923a?r=use1" className="w-full h-[2000px] rounded-lg"></iframe>
+            <div className="bg-white rounded-2xl shadow-2xl md:p-8 lg:p-8 md:p-12 text-gray-900">
+              <iframe src="https://forms.monday.com/forms/embed/78b71c024990383d274ad455e744923a?r=use1" className="w-full h-[2400px] md:h-[1900px] lg:h-[1900px] rounded-lg"></iframe>
             </div>
           </div>
         </div>

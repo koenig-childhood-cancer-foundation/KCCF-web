@@ -83,9 +83,8 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-violet-700 mb-6">Send Us a Message</h2>
-              <iframe src="https://forms.monday.com/forms/embed/7d2a1baf81662443852a38886ac80dd4?r=use1" className="w-full h-[1100px] rounded-lg"></iframe>
+            <div className="bg-white rounded-lg shadow-lg">
+              <iframe src="https://forms.monday.com/forms/embed/7d2a1baf81662443852a38886ac80dd4?r=use1" className="w-full h-[1000px] md:h-[900px] lg:h-[900px] rounded-lg"></iframe>
             </div>
           </div>
         </div>

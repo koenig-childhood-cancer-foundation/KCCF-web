@@ -228,11 +228,11 @@ export default function Volunteer() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Become a Volunteer</h2>
 
-          <div className="bg-white rounded-lg shadow-lg p-8 text-violet-900">
+          <div className="bg-white rounded-lg shadow-lg pt-8 lg:p-8 md:p-8 text-violet-900">
             <p className="text-lg text-violet-700 mb-8 text-center">
               Ready to make a difference? Complete this form to start your volunteer journey with KCCF.
             </p>
-            <iframe src="https://forms.monday.com/forms/embed/650d6c93433108a85097471c822b4cbf?r=use1" className="w-full h-[3100px] rounded-lg"></iframe>
+            <iframe src="https://forms.monday.com/forms/embed/650d6c93433108a85097471c822b4cbf?r=use1" className="w-full h-[3550px] md:h-[3100px] lg:h-[3100] rounded-lg"></iframe>
           </div>
         </div>
       </section>
