@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { DonationModalProvider } from "@/contexts/DonationModalContext";
 import DonationModal from "@/components/DonationModal";
+import { FormModalProvider } from "@/contexts/FormModalContext";
+import FormModal from "@/components/FormModal";
 import { SlideshowProvider } from "@/contexts/SlideshowContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
@@ -48,7 +50,8 @@ export default function RootLayout({
         <ThemeProvider>
           <CookieConsentProvider>
             <DonationModalProvider>
-              <SlideshowProvider>
+              <FormModalProvider>
+                <SlideshowProvider>
                 <LoadingSpinner />
                 <Navigation />
                 <main className="min-h-screen">
@@ -58,10 +61,12 @@ export default function RootLayout({
                 <ConsentPreferencesModal />
                 <Footer />
                 <DonationModal />
+                <FormModal />
                 <Suspense fallback={null}>
                   <SubmissionModal />
                 </Suspense>
-              </SlideshowProvider>
+                </SlideshowProvider>
+              </FormModalProvider>
             </DonationModalProvider>
           </CookieConsentProvider>
         </ThemeProvider>

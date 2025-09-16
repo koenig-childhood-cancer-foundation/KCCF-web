@@ -15,7 +15,7 @@ export default function HomeContent() {
         {/* Background Banner Image */}
         <div className="absolute inset-0">
         <Image
-            src="/images/banner.png"
+            src="/images/banner.webp"
             alt="KCCF Banner Background"
             fill
             sizes="100vw"
@@ -129,7 +129,7 @@ export default function HomeContent() {
                 <Link href="/our-story" className="bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white py-3 px-8 rounded-full transition duration-300 font-semibold text-center">
                   Read Her Story
                 </Link>
-                <Link href="/our-story/#bookelanaformsection" className="border-2 border-fandango-500 text-fandango-600 dark:text-fandango-400 hover:bg-fandango-500 hover:text-white dark:hover:bg-fandango-400 dark:hover:text-white py-3 px-8 rounded-full transition duration-300 font-semibold text-center">
+                <Link href="/our-story/#bookelanaformsection" className="border-2 border-fandango-500 text-fandango-600 dark:text-white hover:bg-fandango-500/10 dark:hover:bg-fandango-500/10 py-3 px-8 rounded-full transition-all duration-300 font-semibold text-center hover:shadow-lg hover:-translate-y-0.5">
                   Book Elana to Speak
                 </Link>
               </div>
@@ -382,7 +382,7 @@ export default function HomeContent() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-br from-violet-600 via-fandango-600 to-violet-800 dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-violet-600 via-fandango-600 to-violet-800 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white"></div>
           <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-white"></div>
@@ -391,7 +391,7 @@ export default function HomeContent() {
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-            Join Our <span className="text-white dark:text-[#732154]">Mission</span>
+            Join Our <span className="text-white">Mission</span>
           </h2>
           <p className="text-xl mb-12 text-white/90 max-w-3xl mx-auto leading-relaxed">
             Together, we can make a difference in the lives of children battling cancer and their families. Every donation, every volunteer hour, and every act of support brings hope to those who need it most.

@@ -1,10 +1,9 @@
 "use client"
 
 import PageHeader from '@/components/PageHeader';
-import { useState } from 'react';
+import FormButton from '@/components/FormButton';
 
 export default function Camp() {
-  const [activeForm, setActiveForm] = useState<'camper' | 'counselor'>('camper');
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
@@ -65,51 +64,44 @@ export default function Camp() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-violet-700 dark:text-violet-400 mb-12">Join Our Camp</h2>
 
-          {/* Form Toggle */}
-          <div className="flex justify-center mb-8">
-            <div className="bg-white dark:bg-gray-700 rounded-lg p-1 shadow-lg">
-              <button
-                onClick={() => setActiveForm('camper')}
-                className={`px-6 py-3 rounded-md font-semibold transition-all duration-200 cursor-pointer ${activeForm === 'camper'
-                  ? 'bg-violet-600 dark:bg-violet-500 text-white shadow-md'
-                  : 'text-violet-600 dark:text-violet-300 hover:bg-violet-50 dark:hover:bg-gray-600'
-                  }`}
+          {/* Camp Registration Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center flex-1 max-w-sm">
+              <div className="w-16 h-16 bg-violet-100 dark:bg-violet-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span className="text-2xl">🏕️</span>
+              </div>
+              <h3 className="text-xl font-bold text-violet-700 dark:text-violet-400 mb-3">Join as a Camper</h3>
+              <p className="text-violet-600 dark:text-violet-300 mb-6 text-sm">
+                Register your child for our upcoming camp session.
+              </p>
+              <FormButton
+                formType="camp-camper"
+                variant="violet"
+                size="md"
+                fullWidth={true}
               >
-                Join as a Camper
-              </button>
-              <button
-                onClick={() => setActiveForm('counselor')}
-                className={`px-6 py-3 rounded-md font-semibold transition-all duration-200 cursor-pointer ${activeForm === 'counselor'
-                  ? 'bg-violet-600 dark:bg-violet-500 text-white shadow-md'
-                  : 'text-violet-600 dark:text-violet-300 hover:bg-violet-50 dark:hover:bg-gray-600'
-                  }`}
+                Register Now
+              </FormButton>
+            </div>
+
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center flex-1 max-w-sm">
+              <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span className="text-2xl">🤝</span>
+              </div>
+              <h3 className="text-xl font-bold text-violet-700 dark:text-violet-400 mb-3">Join as a Counselor</h3>
+              <p className="text-violet-600 dark:text-violet-300 mb-6 text-sm">
+                Create magical moments for children facing cancer.
+              </p>
+              <FormButton
+                formType="camp-counselor"
+                variant="violet"
+                size="md"
+                fullWidth={true}
               >
-                Join as a Counselor
-              </button>
+                Apply Now
+              </FormButton>
             </div>
           </div>
-
-          {/* Camper Form */}
-          {activeForm === 'camper' && (
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
-              <p className="text-violet-600 dark:text-violet-300 mb-8 text-center">
-                Register your child for our upcoming camp session. We'll contact you with more details and confirm your spot.
-              </p>
-
-              <iframe src="https://forms.monday.com/forms/embed/41086441b740b6e179cbde8b574bd794?r=use1" className="w-full h-[1550px] rounded-lg"></iframe>
-            </div>
-          )}
-
-          {/* Counselor Form */}
-          {activeForm === 'counselor' && (
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
-              <p className="text-violet-600 dark:text-violet-300 mb-8 text-center">
-                Join our team of dedicated counselors and help create an amazing camp experience for children with cancer.
-              </p>
-
-              <iframe src="https://forms.monday.com/forms/embed/87920448930e50b7a0554e414662d32b?r=use1" className="w-full h-[1900px] rounded-lg"></iframe>
-            </div>
-          )}
         </div>
       </section>
 

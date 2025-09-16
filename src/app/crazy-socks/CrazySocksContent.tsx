@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import PageHeader from '@/components/PageHeader'
+import FormButton from '@/components/FormButton'
 
 export default function CrazySocksContent() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -376,8 +377,19 @@ export default function CrazySocksContent() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 text-gray-900">
-              <iframe src="https://forms.monday.com/forms/embed/78b71c024990383d274ad455e744923a?r=use1" className="w-full h-[2000px] rounded-lg"></iframe>
+            <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 text-gray-900 text-center">
+              <p className="text-lg text-gray-700 mb-8">
+                Ready to make a difference? Partner with us to sponsor a gift bag event and bring joy to hospitalized children.
+              </p>
+              
+              <FormButton
+                formType="crazy-socks-sponsor"
+                variant="primary"
+                size="lg"
+                className="min-w-[250px]"
+              >
+                Sponsor Gift Bag Event
+              </FormButton>
             </div>
           </div>
         </div>
