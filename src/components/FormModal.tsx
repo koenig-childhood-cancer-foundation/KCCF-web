@@ -3,12 +3,10 @@
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useFormModal, FORM_CONFIGS } from '@/contexts/FormModalContext'
-import { useTheme } from '@/contexts/ThemeContext'
 import { useCookieConsent } from '@/contexts/CookieConsentContext'
 
 export default function FormModal() {
   const { isOpen, formType, closeModal } = useFormModal()
-  const { theme } = useTheme()
   const { consent, openPreferences } = useCookieConsent()
 
   // Close modal on escape key

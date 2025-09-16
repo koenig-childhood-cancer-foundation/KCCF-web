@@ -148,7 +148,7 @@ export default function Aid() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
-            
+
             <h3 className="text-2xl font-bold text-violet-700 mb-4">Start Your Application</h3>
             <p className="text-lg text-violet-600 mb-8 max-w-2xl mx-auto">
               Complete our comprehensive application form to apply for financial assistance during your child's cancer treatment. All information will be kept confidential.
@@ -162,7 +162,7 @@ export default function Aid() {
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
+                          </svg>
               }
             >
               Apply for Aid
@@ -177,7 +177,7 @@ export default function Aid() {
                 <span className="bg-violet-100 text-violet-700 px-3 py-1 rounded-full">Child's Story</span>
                 <span className="bg-violet-100 text-violet-700 px-3 py-1 rounded-full">File Uploads</span>
               </div>
-            </div>
+                </div>
           </div>
         </div>
       </section>

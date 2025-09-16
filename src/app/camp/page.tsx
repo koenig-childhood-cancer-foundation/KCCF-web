@@ -85,12 +85,12 @@ export default function Camp() {
             </div>
 
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center flex-1 max-w-sm">
-              <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-16 h-16 bg-saffron-100 dark:bg-saffron-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🤝</span>
               </div>
               <h3 className="text-xl font-bold text-violet-700 dark:text-violet-400 mb-3">Join as a Counselor</h3>
               <p className="text-violet-600 dark:text-violet-300 mb-6 text-sm">
-                Create magical moments for children facing cancer.
+                Help create magical moments for children facing cancer.
               </p>
               <FormButton
                 formType="camp-counselor"

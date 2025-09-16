@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import Image from 'next/image'
 import { useDonationModal } from '@/contexts/DonationModalContext'
 // Stripe removed; using GiveLively iframe
 import { useTheme } from '@/contexts/ThemeContext'
@@ -51,7 +52,7 @@ export default function DonationModal() {
         <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-[#732154] to-fandango-600 text-white p-8 flex-col justify-between">
           <div>
             <div className="mb-6">
-              <img 
+              <Image 
                 src={theme === 'dark' 
                   ? "/images/cropped-Koenig-Foundation-Logo-01.png"
                   : "/KCCF logo.png"
@@ -64,7 +65,7 @@ export default function DonationModal() {
             </div>
             
             <div className="campaign-image-holder mb-6">
-              <img 
+              <Image 
                 className="w-full h-64 object-cover rounded-xl shadow-lg"
                 src="/images/MetaLeadershipMakingfitBags-scaled.jpg"
                 alt="Crazy Socks Gift Bags Campaign"

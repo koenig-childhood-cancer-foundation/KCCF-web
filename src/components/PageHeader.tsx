@@ -76,7 +76,7 @@ export default function PageHeader({
     } else {
       hasMountedRef.current = true;
     }
-  }, [pathname, shuffledImages.length]);
+  }, [pathname, shuffledImages.length, setSharedIndex]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -89,7 +89,7 @@ export default function PageHeader({
     }, 5000); // Change image every 5 seconds
 
     return () => clearInterval(interval);
-  }, [shuffledImages.length, pathname]);
+  }, [shuffledImages.length, pathname, setSharedIndex]);
 
   return (
     <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-24 md:pt-0">
