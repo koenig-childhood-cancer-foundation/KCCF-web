@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PageHeader from '@/components/PageHeader';
+import FormButton from '@/components/FormButton';
 
 export default function NewsletterSignup() {
   return (
@@ -16,9 +17,22 @@ export default function NewsletterSignup() {
       {/* Newsletter Signup Form */}
       <section className="py-16 bg-violet-500">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
-            <iframe src="https://forms.monday.com/forms/embed/b913243fb4f77326efb2866b627fc191?r=use1" className="w-full h-[850px] rounded-lg"></iframe>
-            <div className="mt-8 text-center">
+          <div className="bg-white rounded-lg shadow-xl p-8 md:p-12 text-center">
+            <h2 className="text-2xl font-bold text-violet-700 mb-6">Join Our Newsletter</h2>
+            <p className="text-violet-600 mb-8">
+              Stay updated with our latest programs, events, and the impact we're making together.
+            </p>
+            
+            <FormButton
+              formType="newsletter-signup"
+              variant="violet"
+              size="lg"
+              className="min-w-[200px]"
+            >
+              Sign Up for Newsletter
+            </FormButton>
+            
+            <div className="mt-8">
               <p className="text-sm text-violet-600">
                 We respect your privacy. You can unsubscribe at any time by clicking the link in our emails.
               </p>

@@ -2,39 +2,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useCookieConsent } from "@/contexts/CookieConsentContext"
-import { useState } from 'react'
+import FormButton from '@/components/FormButton'
 
 export default function Footer() {
   const { openPreferences } = useCookieConsent()
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    // Prevent multiple submissions
-    if (isSubmitting) return;
-    
-    setIsSubmitting(true);
-    
-    // Submit the form
-    const formData = new FormData(e.currentTarget);
-    
-    fetch('/api/submit', {
-      method: 'POST',
-      body: formData
-    }).then(response => {
-      if (response.ok) {
-        window.location.href = '/?submitted=1';
-      } else {
-        window.location.href = '/?submitted=0';
-      }
-    }).catch((error) => {
-      console.error('Form submission error:', error);
-      window.location.href = '/?submitted=0';
-    }).finally(() => {
-      setIsSubmitting(false);
-    });
-  };
 
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white transition-colors duration-200 overflow-x-hidden">
@@ -128,51 +99,19 @@ export default function Footer() {
           {/* Newsletter Signup */}
           <div>
             <h4 className="text-lg font-semibold mb-4 text-white">Get the Latest Nonprofit News in Our Newsletter</h4>
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <input type="hidden" name="formType" value="footer_newsletter" />
-              <input type="hidden" name="pagePath" value="footer" />
-              <div className="grid grid-cols-1 gap-4">
-                <input
-                  type="text"
-                  placeholder="First name"
-                  name="firstName"
-                  className="px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors bg-gray-800 text-white border border-gray-600 placeholder-gray-400"
-                />
-                <input
-                  type="text"
-                  placeholder="Last name"
-                  name="lastName"
-                  className="px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors bg-gray-800 text-white border border-gray-600 placeholder-gray-400"
-                />
-              </div>
-              <input
-                type="email"
-                placeholder="E.g. john@doe.com"
-                name="email"
-                className="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors bg-gray-800 text-white border border-gray-600 placeholder-gray-400"
-              />
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full px-4 py-2 rounded-md font-medium transition-all duration-200 hover:opacity-90 cursor-pointer flex items-center justify-center ${
-                  isSubmitting 
-                    ? 'bg-gray-600 text-gray-400 cursor-not-allowed' 
-                    : 'bg-orange-600 hover:bg-orange-700 text-white'
-                }`}
-              >
-                {isSubmitting ? (
-                  <>
-                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Subscribing...
-                  </>
-                ) : (
-                  'Keep Me Posted'
-                )}
-              </button>
-            </form>
+            <p className="text-gray-300 mb-6 text-sm">
+              Stay updated with our latest programs, events, and the impact we're making together.
+            </p>
+            
+            <FormButton
+              formType="newsletter-signup"
+              variant="orange"
+              size="md"
+              fullWidth={true}
+              className="bg-orange-600 hover:bg-orange-700"
+            >
+              Subscribe to Newsletter
+            </FormButton>
           </div>
         </div>
 

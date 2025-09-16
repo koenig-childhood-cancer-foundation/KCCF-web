@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
+import FormButton from '@/components/FormButton';
 
 export default function OurStory() {
   return (
@@ -191,8 +192,19 @@ export default function OurStory() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
-              <iframe src="https://forms.monday.com/forms/embed/0caf48b3cfeede4c889e59ac52ce5fb1?r=use1" className="w-full h-[1900px] rounded-lg"></iframe>
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg text-center">
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                Invite Elana to share her powerful story of hope, resilience, and the importance of supporting families facing childhood cancer.
+              </p>
+              
+              <FormButton
+                formType="book-elana"
+                variant="violet"
+                size="lg"
+                className="min-w-[200px]"
+              >
+                Book Elana for Event
+              </FormButton>
             </div>
           </div>
         </div>
