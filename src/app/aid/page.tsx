@@ -181,21 +181,6 @@ export default function Aid() {
           </div>
         </div>
       </section>
-
-      {/* Emergency Contact */}
-      <section className="py-16 bg-orange-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-violet-700 mb-6">Need Immediate Help?</h2>
-          <p className="text-lg text-violet-600 mb-8">
-            If you need immediate assistance, please call us directly at 
-            <span className="font-semibold text-orange-600"> +1 (917) 765-6272</span> or email us at 
-            <span className="font-semibold text-orange-600"> join@thekccf.org</span> with "URGENT" in the subject line.
-          </p>
-          <p className="text-violet-600">
-            We strive to respond to all urgent requests within 24 hours.
-          </p>
-        </div>
-      </section>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import PageHeader from '@/components/PageHeader'
 import FormButton from '@/components/FormButton'
+import { IMPACT_STATS } from '@/constants/impactStats'
 
 export default function CrazySocksContent() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -81,7 +82,7 @@ export default function CrazySocksContent() {
                   The moment she got home, she would pull them off and throw them away, hoping to leave behind the needles, pain, and fear. She was determined to change that experience for other children fighting cancer.
                 </p>
                 <p className="text-xl font-semibold text-[#732154] dark:text-saffron-400">
-                  To date, more than 65,000 gift bags, containing over 200,000 items, have been delivered to hospitalized children across the United States and around the world.
+                  To date, more than {IMPACT_STATS.CRAZY_SOCKS[0].value.toLowerCase()} gift bags, containing over {IMPACT_STATS.CRAZY_SOCKS[1].value.toLowerCase()} items, have been delivered to hospitalized children across the United States and around the world.
                 </p>
               </div>
             </div>
@@ -112,18 +113,14 @@ export default function CrazySocksContent() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg text-center">
-              <div className="text-4xl font-bold text-[#732154] dark:text-saffron-400 mb-4">65,000+</div>
-              <p className="text-gray-600 dark:text-gray-200 text-lg">Gift Bags Delivered</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg text-center">
-              <div className="text-4xl font-bold text-[#732154] dark:text-saffron-400 mb-4">200,000+</div>
-              <p className="text-gray-600 dark:text-gray-200 text-lg">Items Distributed</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg text-center">
-              <div className="text-4xl font-bold text-[#732154] dark:text-saffron-400 mb-4">Worldwide</div>
-              <p className="text-gray-600 dark:text-gray-200 text-lg">Global Reach</p>
-            </div>
+            {IMPACT_STATS.CRAZY_SOCKS.map((stat, index) => (
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg text-center">
+                <div className={`text-4xl font-bold ${stat.color.light} ${stat.color.dark} mb-4`}>
+                  {stat.value}
+                </div>
+                <p className="text-gray-600 dark:text-gray-200 text-lg">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

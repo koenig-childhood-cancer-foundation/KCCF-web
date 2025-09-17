@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import DonationButton from '@/components/DonationButton';
 import PartnersCarousel from '@/components/PartnersCarousel';
-import { useTheme } from '@/contexts/ThemeContext'
+import { useTheme } from '@/contexts/ThemeContext';
+import { IMPACT_STATS } from '@/constants/impactStats';
 
 export default function HomeContent() {
   const { theme } = useTheme()
@@ -72,22 +73,14 @@ export default function HomeContent() {
             
             {/* Impact Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-violet-600 dark:text-saffron-400 mb-2">3,700+</div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Families Supported Financially</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-2">2,700+</div>
-                <p className="text-black dark:text-white text-sm">Hospital visits/ celebrations</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-2">85,000+</div>
-                <p className="text-black dark:text-white text-sm">Care Packages</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">80+</div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Summer Camp Children</p>
-              </div>
+              {IMPACT_STATS.HOME.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className={`text-3xl md:text-4xl font-bold ${stat.color.light} ${stat.color.dark} mb-2`}>
+                    {stat.value}
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
