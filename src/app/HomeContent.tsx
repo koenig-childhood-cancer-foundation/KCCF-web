@@ -108,10 +108,7 @@ export default function HomeContent() {
               
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
-                  At just 11 years old, Elana was diagnosed with cancer. During her treatment, she witnessed firsthand the financial struggles families face when a child is battling cancer.
-                </p>
-                <p>
-                  Determined to help others, she founded the Koenig Childhood Cancer Foundation in 2020. Today, Elana is a thriving 14-year-old cancer survivor who continues to inspire and lead our mission.
+                  Elana Koenig is a childhood cancer survivor, singer, influencer, and founder of Koenig Childhood Cancer Foundation. At seven, Elana witnessed firsthand the financial and emotional struggles of families like her own, which motivated her to start the charity and help others facing the same experience.
                 </p>
                 <p className="text-violet-600 dark:text-saffron-400 font-semibold">
                   "Every child deserves a fighting chance, and every family deserves support during their darkest hours."
@@ -133,11 +130,8 @@ export default function HomeContent() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
           <Image
-                    src={theme === 'dark' 
-                      ? "/images/cropped-Koenig-Foundation-Logo-01.png"
-                      : "/KCCF logo.png"
-                    }
-                    alt="Koenig Foundation Logo"
+                    src="/images/NUP_206704_00566-scaled.jpg"
+                    alt="Elana Koenig"
                     width={500}
                     height={600}
                     className="rounded-2xl w-full h-auto"

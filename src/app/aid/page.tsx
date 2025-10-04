@@ -168,16 +168,6 @@ export default function Aid() {
               Apply for Aid
             </FormButton>
             
-            <div className="mt-8 text-sm text-violet-600">
-              <p>The application includes sections for:</p>
-              <div className="flex flex-wrap justify-center gap-4 mt-4 text-xs">
-                <span className="bg-violet-100 text-violet-700 px-3 py-1 rounded-full">Child Information</span>
-                <span className="bg-violet-100 text-violet-700 px-3 py-1 rounded-full">Parent Information</span>
-                <span className="bg-violet-100 text-violet-700 px-3 py-1 rounded-full">Hospital Details</span>
-                <span className="bg-violet-100 text-violet-700 px-3 py-1 rounded-full">Child's Story</span>
-                <span className="bg-violet-100 text-violet-700 px-3 py-1 rounded-full">File Uploads</span>
-              </div>
-                </div>
           </div>
         </div>
       </section>
