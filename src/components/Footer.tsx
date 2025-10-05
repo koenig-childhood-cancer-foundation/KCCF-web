@@ -17,8 +17,8 @@ export default function Footer() {
             <div className="space-y-2 text-gray-300">
               <p>1175 York Ave., Suite 15E</p>
               <p>New York, NY 10065</p>
-              <p>Phone: +1 (917) 765-6272</p>
-              <p>Email: join@thekccf.org</p>
+              <p>Phone: <a href="tel:+19177656272" className="hover:text-white transition-colors">+1 (917) 765-6272</a></p>
+              <p>Email: <a href="mailto:join@thekccf.org" className="hover:text-white transition-colors">join@thekccf.org</a></p>
             </div>
             
             {/* Social Media Links */}
