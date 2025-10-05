@@ -71,16 +71,6 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-
-              <div className="mt-8 bg-platinum-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-violet-700 mb-4">Emergency Support</h3>
-                <p className="text-violet-600 mb-4">
-                  If you're a family in need of immediate assistance, please call us directly or email us with "URGENT" in the subject line.
-                </p>
-                <p className="text-violet-600">
-                  We strive to respond to all urgent requests within 24 hours.
-                </p>
-              </div>
             </div>
 
             {/* Contact Form */}
