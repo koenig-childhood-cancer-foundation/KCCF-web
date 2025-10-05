@@ -41,6 +41,54 @@
   --color-violet-700: var(--color-kccf-purple);
   --color-violet-800: var(--color-kccf-purple);
   --color-violet-900: var(--color-kccf-purple);
+  
+  /* Orange color scale */
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-300: #fdba74;
+  --color-orange-400: #fb923c;
+  --color-orange-500: var(--color-kccf-orange);
+  --color-orange-600: var(--color-kccf-orange);
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  --color-orange-900: #7c2d12;
+  
+  /* Saffron (Yellow/Amber) color scale */
+  --color-saffron-50: #fffbeb;
+  --color-saffron-100: #fef3c7;
+  --color-saffron-200: #fde68a;
+  --color-saffron-300: #fcd34d;
+  --color-saffron-400: #fbbf24;
+  --color-saffron-500: var(--color-kccf-amber);
+  --color-saffron-600: var(--color-kccf-amber);
+  --color-saffron-700: #b45309;
+  --color-saffron-800: #92400e;
+  --color-saffron-900: #78350f;
+  
+  /* Fandango (Pink/Magenta) color scale */
+  --color-fandango-50: #fdf4ff;
+  --color-fandango-100: #fae8ff;
+  --color-fandango-200: #f5d0fe;
+  --color-fandango-300: #f0abfc;
+  --color-fandango-400: #e879f9;
+  --color-fandango-500: #d946ef;
+  --color-fandango-600: #c026d3;
+  --color-fandango-700: #a21caf;
+  --color-fandango-800: #86198f;
+  --color-fandango-900: #701a75;
+  
+  /* Platinum (Gray) color scale */
+  --color-platinum-50: #f9fafb;
+  --color-platinum-100: #f3f4f6;
+  --color-platinum-200: #e5e7eb;
+  --color-platinum-300: #d1d5db;
+  --color-platinum-400: #9ca3af;
+  --color-platinum-500: #6b7280;
+  --color-platinum-600: #4b5563;
+  --color-platinum-700: #374151;
+  --color-platinum-800: #1f2937;
+  --color-platinum-900: #111827;
 }
 
 /* ==========================================================================
