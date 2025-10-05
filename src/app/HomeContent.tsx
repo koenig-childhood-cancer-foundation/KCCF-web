@@ -148,7 +148,7 @@ export default function HomeContent() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              Our <span className="text-violet-600 dark:text-saffron-400">Impact</span> <span className="text-fandango-600 dark:text-fandango-400">Programs</span>
+              Our <span className="text-violet-600 dark:text-saffron-400">Impact</span> <span className="text-violet-600 dark:text-saffron-400">Programs</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               We provide comprehensive support to families facing childhood cancer through multiple programs designed to address their unique needs.
