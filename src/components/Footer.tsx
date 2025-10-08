@@ -3,9 +3,31 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useCookieConsent } from "@/contexts/CookieConsentContext"
 import FormButton from '@/components/FormButton'
+import { useEffect, useRef } from 'react'
 
 export default function Footer() {
   const { openPreferences } = useCookieConsent()
+  const greatNonprofitsRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Load GreatNonprofits widget script
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = 'https://widgets.greatnonprofits.org/w/review/997323769.js'
+    script.async = true
+    
+    const container = greatNonprofitsRef.current
+    if (container) {
+      container.appendChild(script)
+    }
+
+    return () => {
+      // Cleanup script on unmount
+      if (container && script.parentNode) {
+        script.parentNode.removeChild(script)
+      }
+    }
+  }, [])
 
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white transition-colors duration-200 overflow-x-hidden">
@@ -138,22 +160,29 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex flex-col items-center">
-                <a 
-                  href="https://greatnonprofits.org/org/koenig-childhood-cancer-foundation" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                <div 
+                  ref={greatNonprofitsRef}
                   className="hover:opacity-80 transition-opacity flex flex-col items-center"
+                  suppressHydrationWarning
                 >
-                  <Image
-                    src="https://cdn.greatnonprofits.org/img/2025-top-rated-awards-badge-embed.png?id=997323769"
-                    alt="Koenig Childhood Cancer Foundation Nonprofit Overview and Reviews on GreatNonprofits"
-                    width={120}
-                    height={90}
-                    className="mb-2"
-                    unoptimized
-                  />
-                  <p className="text-sm text-gray-300 text-center">GreatNonprofits 2025 Top-Rated Nonprofit</p>
-                </a>
+                  {/* GreatNonprofits widget will be loaded here */}
+                  <noscript>
+                    <a 
+                      href="https://greatnonprofits.org/org/koenig-childhood-cancer-foundation" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src="https://cdn.greatnonprofits.org/img/2025-top-rated-awards-badge-embed.png?id=997323769"
+                        alt="Koenig Childhood Cancer Foundation Nonprofit Overview and Reviews on GreatNonprofits"
+                        width={120}
+                        height={90}
+                        className="mb-2"
+                        unoptimized
+                      />
+                    </a>
+                  </noscript>
+                </div>
               </div>
             </div>
           </div>
