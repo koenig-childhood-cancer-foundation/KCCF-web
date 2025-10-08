@@ -8,6 +8,7 @@ import { useEffect, useRef } from 'react'
 export default function Footer() {
   const { openPreferences } = useCookieConsent()
   const greatNonprofitsRef = useRef<HTMLDivElement>(null)
+  const charityNavigatorRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     // Load GreatNonprofits widget script
@@ -17,6 +18,26 @@ export default function Footer() {
     script.async = true
     
     const container = greatNonprofitsRef.current
+    if (container) {
+      container.appendChild(script)
+    }
+
+    return () => {
+      // Cleanup script on unmount
+      if (container && script.parentNode) {
+        script.parentNode.removeChild(script)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    // Load Charity Navigator widget script
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = 'https://www.charitynavigator.org/widgets/rating/844892279.js'
+    script.async = true
+    
+    const container = charityNavigatorRef.current
     if (container) {
       container.appendChild(script)
     }
@@ -175,6 +196,31 @@ export default function Footer() {
                       <Image
                         src="https://cdn.greatnonprofits.org/img/2025-top-rated-awards-badge-embed.png?id=997323769"
                         alt="Koenig Childhood Cancer Foundation Nonprofit Overview and Reviews on GreatNonprofits"
+                        width={120}
+                        height={90}
+                        className="mb-2"
+                        unoptimized
+                      />
+                    </a>
+                  </noscript>
+                </div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div 
+                  ref={charityNavigatorRef}
+                  className="hover:opacity-80 transition-opacity flex flex-col items-center"
+                  suppressHydrationWarning
+                >
+                  {/* Charity Navigator widget will be loaded here */}
+                  <noscript>
+                    <a 
+                      href="https://www.charitynavigator.org/ein/844892279" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src="https://d20umu42aunjpx.cloudfront.net/_gfx_/icons/stars/4stars.png?2"
+                        alt="Koenig Childhood Cancer Foundation Charity Navigator Rating"
                         width={120}
                         height={90}
                         className="mb-2"
