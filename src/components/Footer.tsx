@@ -145,13 +145,14 @@ export default function Footer() {
                   className="hover:opacity-80 transition-opacity flex flex-col items-center"
                 >
                   <Image
-                    src="/greatnonprofits logo.png"
-                    alt="GreatNonprofits logo"
+                    src="https://cdn.greatnonprofits.org/img/2025-top-rated-awards-badge-embed.png?id=997323769"
+                    alt="Koenig Childhood Cancer Foundation Nonprofit Overview and Reviews on GreatNonprofits"
                     width={120}
-                    height={120}
+                    height={90}
                     className="mb-2"
+                    unoptimized
                   />
-                  <p className="text-sm text-gray-300 text-center">GreatNonprofits 2024 Top-Rated Nonprofit</p>
+                  <p className="text-sm text-gray-300 text-center">GreatNonprofits 2025 Top-Rated Nonprofit</p>
                 </a>
               </div>
             </div>
