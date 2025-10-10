@@ -125,17 +125,45 @@ export default function DonationModal() {
             </div>
           </div>
 
-          <div className="flex-1">
+          <div className="flex-1 overflow-y-auto">
             {consent.marketing ? (
-              <iframe
-                className="block w-full h-[600px] max-w-full"
-                src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
-                title="Zeffy donation form"
-                frameBorder={0}
-                scrolling="yes"
-                allow="payment"
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-              />
+              <>
+                <iframe
+                  className="block w-full h-[600px] max-w-full"
+                  src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
+                  title="Zeffy donation form"
+                  frameBorder={0}
+                  scrolling="yes"
+                  allow="payment"
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+                />
+                
+                {/* PayPal Alternative Option */}
+                <div className="p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                  <div className="max-w-2xl mx-auto">
+                    <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white flex items-center">
+                      <svg className="w-6 h-6 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.76-4.852a.932.932 0 0 1 .922-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/>
+                      </svg>
+                      Prefer PayPal?
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                      You can also send donations via PayPal to:
+                    </p>
+                    <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                      <a 
+                        href="mailto:join@thekccf.org"
+                        className="text-blue-600 dark:text-blue-400 font-semibold text-lg hover:underline"
+                      >
+                        join@thekccf.org
+                      </a>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                        Please include your name and contact information in the PayPal note so we can send you a tax receipt.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </>
             ) : (
               <div className="h-[600px] flex flex-col items-center justify-center text-center p-8">
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Marketing cookies required</h3>

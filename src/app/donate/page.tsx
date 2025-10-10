@@ -92,7 +92,7 @@ export default function Donate() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">One-Time Gift</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">Make an immediate impact today.</p>
@@ -119,6 +119,25 @@ export default function Donate() {
               <div className="flex justify-center">
                 <DonationButton campaign="Corporate Matching" variant="primary" size="md">Get Started</DonationButton>
               </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
+              <div className="flex items-center justify-center mb-4">
+                <svg className="w-12 h-12 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.76-4.852a.932.932 0 0 1 .922-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">PayPal</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">Send directly via PayPal.</p>
+              <a 
+                href="mailto:join@thekccf.org"
+                className="inline-flex items-center justify-center px-6 py-3 text-base rounded-full font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#732154] cursor-pointer bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Donate via PayPal
+              </a>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
+                Send to: join@thekccf.org
+              </p>
             </div>
           </div>
         </div>
