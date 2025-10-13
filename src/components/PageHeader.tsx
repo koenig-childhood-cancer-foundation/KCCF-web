@@ -92,7 +92,7 @@ export default function PageHeader({
   }, [shuffledImages.length, pathname, setSharedIndex]);
 
   return (
-    <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-24">
+    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24">
       {/* Background Images Slideshow */}
       <div className="absolute inset-0">
         {shuffledImages.map((image, index) => (
