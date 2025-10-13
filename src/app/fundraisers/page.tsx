@@ -5,10 +5,10 @@ import { useCookieConsent } from '@/contexts/CookieConsentContext';
 
 export default function Fundraisers() {
   const { consent, openPreferences } = useCookieConsent();
-  
+
   return (
     <div className="min-h-screen">
-      <PageHeader 
+      <PageHeader
         title="Fundraisers"
         subtitle="Support our mission through peer-to-peer fundraising campaigns. Start your own fundraiser or contribute to existing ones."
       />
@@ -47,11 +47,11 @@ export default function Fundraisers() {
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-violet-700 mb-4">Fundraising Leaderboard</h2>
             <p className="text-lg text-violet-600 max-w-3xl mx-auto">
-              See who's leading the charge in our peer-to-peer fundraising campaigns. 
+              See who's leading the charge in our peer-to-peer fundraising campaigns.
               Every contribution makes a difference in the lives of children with cancer.
             </p>
           </div>
-          
+
           {/* Leaderboard Iframe */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-6 border-b border-gray-200">
@@ -62,11 +62,11 @@ export default function Fundraisers() {
             </div>
             {consent.marketing ? (
               <div className="w-full">
-                <iframe 
-                  title='Donation form powered by Zeffy' 
+                <iframe
+                  title='Donation form powered by Zeffy'
                   className="w-full border-0"
                   style={{ minHeight: '400px', height: 'auto' }}
-                  src='https://www.zeffy.com/embed/leaderboard/peer-to-peer-fundraisers'  
+                  src='https://www.zeffy.com/embed/leaderboard/peer-to-peer-fundraisers'
                 />
               </div>
             ) : (

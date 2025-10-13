@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function KCCFFamily() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <PageHeader 
+      <PageHeader
         title="KCCF Family"
         subtitle="Meet the incredible team and community that makes our mission possible."
       />
@@ -35,11 +35,11 @@ export default function KCCFFamily() {
               <div className="inline-block bg-orange-500 px-4 py-2 rounded-full mb-6">
                 <span className="text-white font-semibold text-sm">Our Founder</span>
               </div>
-              
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-white">
-                <span className="text-[#732154] dark:text-saffron-400">Elana</span> <span className="text-fandango-600 dark:text-fandango-400">Koenig</span>
+
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
+                Elana Koenig
               </h2>
-              
+
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p className="text-xl font-semibold text-[#732154] dark:text-saffron-400">
                   Cancer Survivor, Singer, Influencer
@@ -51,14 +51,14 @@ export default function KCCFFamily() {
                   Elana's personal experience with cancer drives her passion for helping other families facing similar challenges. She is a powerful advocate and speaker who shares her story to inspire hope and action.
                 </p>
               </div>
-              
+
               <div className="mt-10">
                 <Link href="/our-story" className="bg-[#732154] hover:bg-[#732154]/90 dark:bg-[#732154] dark:hover:bg-[#732154]/90 text-white py-3 px-8 rounded-full transition duration-300 font-semibold text-center inline-block">
                   Read Elana's Story
                 </Link>
               </div>
             </div>
-            
+
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
               <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
@@ -79,14 +79,14 @@ export default function KCCFFamily() {
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              Board <span className="text-[#732154] dark:text-saffron-400">Members</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              Board Members
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Dedicated professionals guiding KCCF's mission and strategic direction.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Rena Koenig */}
             <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
@@ -159,7 +159,7 @@ export default function KCCFFamily() {
               <span className="text-[#732154] dark:text-saffron-400">Advisers</span>
             </h2>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {/* Mike Blumenfeld */}
             <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
@@ -219,14 +219,14 @@ export default function KCCFFamily() {
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              Honorary <span className="text-[#732154] dark:text-saffron-400">Directors</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              Honorary Directors
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               The medical professionals who saved Elana's life and continue to support our mission.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Dr. Wexler */}
             <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
@@ -352,7 +352,7 @@ export default function KCCFFamily() {
               Transparency and accountability in everything we do.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* 990 Forms */}
             <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg">
@@ -377,21 +377,21 @@ export default function KCCFFamily() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-br from-[#732154] via-fandango-600 to-[#732154] dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 relative overflow-hidden">
+      <section className="py-20 bg-violet-600 dark:bg-gray-700 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white"></div>
           <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-white"></div>
           <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-white"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-            Join Our <span className="text-white dark:text-[#732154]">Family</span>
+            Join Our Family
           </h2>
           <p className="text-xl mb-12 text-white/90 max-w-3xl mx-auto leading-relaxed">
             There are many ways to become part of the KCCF family and help children battling cancer.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/volunteer" className="group bg-orange-500 hover:bg-orange-600 text-white py-4 px-10 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center">
               <span>Volunteer</span>

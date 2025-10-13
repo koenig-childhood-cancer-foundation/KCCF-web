@@ -5,7 +5,7 @@ export default function Media() {
   return (
     <div className="min-h-screen bg-platinum-50 dark:bg-gray-900">
       {/* Hero Section */}
-      <PageHeader 
+      <PageHeader
         title="Media & Press"
         subtitle="Stay updated with the latest news, press releases, and media coverage of the Koenig Childhood Cancer Foundation"
       />
@@ -14,7 +14,7 @@ export default function Media() {
       <section className="py-16 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-violet-600 dark:text-saffron-400">Video Gallery</h2>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {/* Video 1 - Charles Esten & Kelly Clarkson */}
             <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
@@ -31,11 +31,11 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-3">
                 Charles Esten invites 15-year-old cancer survivor Elana Koenig to sing at Nashville benefit concert
               </p>
-              <a 
-                href="https://www.youtube.com/watch?v=clbbmsPRyS8" 
-                target="_blank" 
+              <a
+                href="https://www.youtube.com/watch?v=clbbmsPRyS8"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold"
+                className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold"
               >
                 Watch on YouTube →
               </a>
@@ -56,15 +56,15 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-3">
                 Elana, teen cancer survivor, sings the National Anthem at Mets Game!
               </p>
-              <a 
-                href="https://www.youtube.com/watch?v=dZmB8dH9X70" 
-                target="_blank" 
+              <a
+                href="https://www.youtube.com/watch?v=dZmB8dH9X70"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold"
+                className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold"
               >
                 Watch on YouTube →
               </a>
-        </div>
+            </div>
 
             {/* Video 3 - WNBC Mark Ukraine */}
             <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
@@ -81,11 +81,11 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-3">
                 WNBC coverage featuring Mark and Ukraine families supported by KCCF
               </p>
-              <a 
-                href="https://www.youtube.com/watch?v=Bgisln8H59w" 
-                target="_blank" 
+              <a
+                href="https://www.youtube.com/watch?v=Bgisln8H59w"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold"
+                className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold"
               >
                 Watch on YouTube →
               </a>
@@ -106,11 +106,11 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-3">
                 Nasdaq honors Elana – Teen Cancer Survivor and Founder of KCCF!
               </p>
-              <a 
-                href="https://www.youtube.com/watch?v=tiamL9EdPC0" 
-                target="_blank" 
+              <a
+                href="https://www.youtube.com/watch?v=tiamL9EdPC0"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold"
+                className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold"
               >
                 Watch on YouTube →
               </a>
@@ -131,11 +131,11 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-3">
                 Cancer survivor delivers smiles to hospitalized kids - July 8, 2022
               </p>
-              <a 
-                href="https://www.nbcnewyork.com/news/cancer-survivor-delivers-smiles-to-hospitalized-kids/3767312/" 
-                target="_blank" 
+              <a
+                href="https://www.nbcnewyork.com/news/cancer-survivor-delivers-smiles-to-hospitalized-kids/3767312/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold"
+                className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold"
               >
                 Read Full Article →
               </a>
@@ -155,11 +155,11 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-3">
                 Be Kind: Father's Day cancer survivor coverage - June 20, 2021
               </p>
-              <a 
-                href="https://abc7ny.com/be-kind-fathers-day-cancer-survivor/10814428/" 
-                target="_blank" 
+              <a
+                href="https://abc7ny.com/be-kind-fathers-day-cancer-survivor/10814428/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold"
+                className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold"
               >
                 Read Full Article →
               </a>
@@ -179,11 +179,11 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-3">
                 Be Kind: Valentine's Day cancer care packages - February 15, 2021
               </p>
-              <a 
-                href="https://abc7ny.com/be-kind-valentines-day-cancer-care-packages/10340454/" 
-                target="_blank" 
+              <a
+                href="https://abc7ny.com/be-kind-valentines-day-cancer-care-packages/10340454/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold"
+                className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold"
               >
                 Read Full Article →
               </a>
@@ -204,11 +204,11 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-3">
                 12-year-old survivor delivers heartfelt packages to kids with cancer - February 15, 2021
               </p>
-              <a 
-                href="https://www.nbcnewyork.com/news/local/12-year-old-survivor-delivers-heartfelt-packages-to-kids-with-cancer/2889964/" 
-                target="_blank" 
+              <a
+                href="https://www.nbcnewyork.com/news/local/12-year-old-survivor-delivers-heartfelt-packages-to-kids-with-cancer/2889964/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold"
+                className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold"
               >
                 Read Full Article →
               </a>
@@ -229,11 +229,11 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-3">
                 World Net Summit 2020 - Elana Koenig, Founder of Koenig Child Cancer Foundation - December 17, 2020
               </p>
-              <a 
-                href="https://worldnetsummit.com/" 
-                target="_blank" 
+              <a
+                href="https://worldnetsummit.com/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold"
+                className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold"
               >
                 Visit World Net Summit →
               </a>
@@ -246,7 +246,7 @@ export default function Media() {
       <section className="py-16 bg-platinum-100 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-violet-600 dark:text-saffron-400">Recent Press Coverage</h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Press Article 1 */}
             <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
@@ -257,7 +257,7 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-4">
                 Elana Koenig's inspiring journey from cancer patient to foundation founder is making waves across the nation...
               </p>
-              <a href="#" className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold">
+              <a href="#" className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold">
                 Read Full Article →
               </a>
             </div>
@@ -271,11 +271,11 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-4">
                 The annual Crazy Socks Day event has raised over $2 million for families battling childhood cancer...
               </p>
-              <a href="#" className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold">
+              <a href="#" className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold">
                 Read Full Article →
-                      </a>
-                    </div>
-                    
+              </a>
+            </div>
+
             {/* Press Article 3 */}
             <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">Forbes</div>
@@ -285,7 +285,7 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-4">
                 At just 14 years old, Elana Koenig has already made an indelible mark on the world of philanthropy...
               </p>
-              <a href="#" className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold">
+              <a href="#" className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold">
                 Read Full Article →
               </a>
             </div>

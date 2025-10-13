@@ -22,7 +22,7 @@ export default function NewsletterSignup() {
             <p className="text-violet-600 mb-8">
               Stay updated with our latest programs, events, and the impact we're making together.
             </p>
-            
+
             <FormButton
               formType="newsletter-signup"
               variant="violet"
@@ -31,7 +31,7 @@ export default function NewsletterSignup() {
             >
               Sign Up for Newsletter
             </FormButton>
-            
+
             <div className="mt-8">
               <p className="text-sm text-violet-600">
                 We respect your privacy. You can unsubscribe at any time by clicking the link in our emails.
@@ -100,7 +100,7 @@ export default function NewsletterSignup() {
             </a>
             <a
               href="mailto:info@thekccf.org"
-              className="bg-fandango-600 hover:bg-fandango-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+              className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
             >
               Email Us
             </a>

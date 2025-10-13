@@ -17,8 +17,8 @@ export default function OurStory() {
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              Elana's <span className="text-violet-600 dark:text-saffron-400">Journey</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              Elana's Journey
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               From a brave young girl fighting cancer to a powerful advocate helping others in their battles.
@@ -98,8 +98,8 @@ export default function OurStory() {
                 <span className="text-white font-semibold text-sm">From Patient to Founder</span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-white">
-                <span className="text-violet-600 dark:text-saffron-400">Elana's</span> <span className="text-fandango-600 dark:text-fandango-400">Story</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-saffron-400">
+                Elana's Story
               </h2>
 
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
@@ -118,7 +118,7 @@ export default function OurStory() {
                 <p className="text-violet-600 dark:text-saffron-400 font-semibold text-xl">
                   "No child should fight cancer alone."
                 </p>
-                <p className="text-fandango-600 dark:text-fandango-400 font-semibold">
+                <p className="text-violet-600 dark:text-saffron-400 font-semibold">
                   — Elana Koenig, Founder
                 </p>
               </div>
@@ -184,8 +184,8 @@ export default function OurStory() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-                Book <span className="text-violet-600 dark:text-saffron-400">Elana</span> <span className="text-fandango-600 dark:text-fandango-400">Koenig</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+                Book Elana Koenig
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Elana shares her inspiring story at schools, organizations, and events to raise awareness about childhood cancer and the importance of supporting affected families.
@@ -196,7 +196,7 @@ export default function OurStory() {
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
                 Invite Elana to share her powerful story of hope, resilience, and the importance of supporting families facing childhood cancer.
               </p>
-              
+
               <FormButton
                 formType="book-elana"
                 variant="violet"
@@ -211,7 +211,7 @@ export default function OurStory() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-br from-violet-600 via-fandango-600 to-violet-800 dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 relative overflow-hidden">
+      <section className="py-20 bg-violet-600 dark:bg-gray-700 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white"></div>
           <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-white"></div>
@@ -220,7 +220,7 @@ export default function OurStory() {
 
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-            Join <span className="text-saffron-300">Elana's</span> <span className="text-white dark:text-[#732154]">Mission</span>
+            Join Elana's Mission
           </h2>
           <p className="text-xl mb-12 text-white/90 max-w-3xl mx-auto leading-relaxed">
             Help us continue Elana's vision of supporting families battling childhood cancer.

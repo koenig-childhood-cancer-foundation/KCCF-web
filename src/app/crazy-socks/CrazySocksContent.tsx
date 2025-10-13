@@ -70,8 +70,8 @@ export default function CrazySocksContent() {
                 <span className="text-white font-semibold text-sm">Our Signature Project</span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-white">
-                Why <span className="text-[#732154] dark:text-saffron-400">Crazy Socks</span> <span className="text-fandango-600 dark:text-fandango-400">Gift Bags</span>?
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
+                Why Crazy Socks Gift Bags?
               </h2>
 
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
@@ -107,8 +107,8 @@ export default function CrazySocksContent() {
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              Our <span className="text-[#732154] dark:text-saffron-400">Impact</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              Our Impact
             </h2>
           </div>
 
@@ -129,8 +129,8 @@ export default function CrazySocksContent() {
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              <span className="text-[#732154] dark:text-saffron-400">Gallery</span> <span className="text-fandango-600 dark:text-fandango-400">Showcase</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              Gallery Showcase
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               See the joy and impact of our Crazy Socks Gift Bag events in action.
@@ -235,16 +235,16 @@ export default function CrazySocksContent() {
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              <span className="text-[#732154] dark:text-saffron-400">Corporate</span> <span className="text-fandango-600 dark:text-fandango-400">Partners</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              Corporate Partners
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
               We bring the fun event to you! Leading companies partner with us to make a difference.
             </p>
-            
+
             {/* SEO-Optimized Corporate Volunteering Paragraph */}
-            <div className="bg-gradient-to-r from-[#732154]/10 to-fandango-600/10 dark:from-[#732154]/20 dark:to-fandango-600/20 rounded-2xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4 text-[#732154] dark:text-saffron-400">Corporate Social Responsibility Through Gift Bag Volunteering</h3>
+            <div className="bg-gradient-to-r from-violet-600/10 to-fandango-600/10 dark:from-violet-600/20 dark:to-violet-600/20 rounded-2xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4 text-violet-600 dark:text-saffron-400">Corporate Social Responsibility Through Gift Bag Volunteering</h3>
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
                 Our Gift Bag Project offers a powerful way for companies to engage in <strong>Corporate Social Responsibility (CSR)</strong> through <strong>employee volunteering</strong> and <strong>team-building events</strong>. We provide <strong>turnkey opportunities in NYC</strong>, where employees can assemble <strong>gift bags for children battling cancer</strong>. This <strong>hands-on experience</strong> supports <strong>children's health and well-being</strong> while delivering <strong>measurable community impact</strong>. Through <strong>Volunteer Days</strong>, <strong>Volunteer Time Off (VTO)</strong>, and skills-based volunteering, companies can strengthen <strong>philanthropy partnerships</strong> and <strong>nonprofit collaboration</strong>. By partnering with KCCF, corporations contribute to <strong>scalable CSR initiatives</strong> that bring hope and joy to young patients while fostering a stronger workplace culture through <strong>employee engagement programs</strong>.
               </p>
@@ -364,7 +364,7 @@ export default function CrazySocksContent() {
       </section>
 
       {/* Sponsor Form Section */}
-      <section className="py-20 bg-gradient-to-br from-[#732154] via-fandango-600 to-[#732154] dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 relative overflow-hidden">
+      <section className="py-20 bg-violet-600 dark:bg-gray-700 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white"></div>
           <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-white"></div>
@@ -374,7 +374,7 @@ export default function CrazySocksContent() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Sponsor <span className="text-white dark:text-[#732154]">Gift Bag</span> Event
+              Sponsor Gift Bag Event
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
               For hospitalized children battling cancer
@@ -386,7 +386,7 @@ export default function CrazySocksContent() {
               <p className="text-lg text-gray-700 mb-8">
                 Ready to make a difference? Partner with us to sponsor a gift bag event and bring joy to hospitalized children.
               </p>
-              
+
               <FormButton
                 formType="crazy-socks-sponsor"
                 variant="primary"
