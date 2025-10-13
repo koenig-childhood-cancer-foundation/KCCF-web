@@ -1,7 +1,12 @@
+"use client"
+
 import React from 'react';
 import PageHeader from '@/components/PageHeader';
+import { useArticleModal } from '@/contexts/ArticleModalContext';
 
 export default function Media() {
+  const { openModal } = useArticleModal();
+
   return (
     <div className="min-h-screen bg-platinum-50 dark:bg-gray-900">
       {/* Hero Section */}
@@ -248,7 +253,24 @@ export default function Media() {
           <h2 className="text-4xl font-bold text-center mb-12 text-violet-600 dark:text-saffron-400">Recent Press Coverage</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Press Article 1 */}
+            {/* Press Article 1 - People Magazine */}
+            <div 
+              onClick={() => openModal('people-magazine')}
+              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+            >
+              <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">People Magazine</div>
+              <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
+                Teen Cancer Survivor Turns Her Pain Into Purpose
+              </h3>
+              <p className="text-gray-700 dark:text-gray-200 mb-4">
+                Elana Koenig founded the Koenig Childhood Cancer Foundation to help families facing childhood cancer...
+              </p>
+              <button className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold inline-flex items-center">
+                Read Full Article →
+              </button>
+            </div>
+
+            {/* Press Article 2 */}
             <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">ABC News</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
@@ -262,7 +284,7 @@ export default function Media() {
               </a>
             </div>
 
-            {/* Press Article 2 */}
+            {/* Press Article 3 */}
             <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">NBC Today Show</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
@@ -276,7 +298,7 @@ export default function Media() {
               </a>
             </div>
 
-            {/* Press Article 3 */}
+            {/* Press Article 4 */}
             <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">Forbes</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">

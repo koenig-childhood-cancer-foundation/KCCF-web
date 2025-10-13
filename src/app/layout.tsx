@@ -7,6 +7,8 @@ import { DonationModalProvider } from "@/contexts/DonationModalContext";
 import DonationModal from "@/components/DonationModal";
 import { FormModalProvider } from "@/contexts/FormModalContext";
 import FormModal from "@/components/FormModal";
+import { ArticleModalProvider } from "@/contexts/ArticleModalContext";
+import ArticleModal from "@/components/ArticleModal";
 import { SlideshowProvider } from "@/contexts/SlideshowContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
@@ -50,21 +52,24 @@ export default function RootLayout({
           <CookieConsentProvider>
             <DonationModalProvider>
               <FormModalProvider>
-                <SlideshowProvider>
-                <LoadingSpinner />
-                <Navigation />
-                <main className="min-h-screen">
-                  {children}
-                </main>
-                <CookieConsentBanner />
-                <ConsentPreferencesModal />
-                <Footer />
-                <DonationModal />
-                <FormModal />
-                <Suspense fallback={null}>
-                  <SubmissionModal />
-                </Suspense>
-                </SlideshowProvider>
+                <ArticleModalProvider>
+                  <SlideshowProvider>
+                  <LoadingSpinner />
+                  <Navigation />
+                  <main className="min-h-screen">
+                    {children}
+                  </main>
+                  <CookieConsentBanner />
+                  <ConsentPreferencesModal />
+                  <Footer />
+                  <DonationModal />
+                  <FormModal />
+                  <ArticleModal />
+                  <Suspense fallback={null}>
+                    <SubmissionModal />
+                  </Suspense>
+                  </SlideshowProvider>
+                </ArticleModalProvider>
               </FormModalProvider>
             </DonationModalProvider>
           </CookieConsentProvider>
