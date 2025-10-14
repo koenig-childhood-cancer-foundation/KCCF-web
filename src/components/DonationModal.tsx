@@ -40,7 +40,8 @@ export default function DonationModal() {
   // Stripe CardPaymentSection removed; using GiveLively iframe
 
   const modalContent = (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-x-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-x-hidden overflow-y-auto"
+         style={{ WebkitOverflowScrolling: 'touch' }}>
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -48,16 +49,14 @@ export default function DonationModal() {
       />
       
       {/* Modal */}
-      <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden flex">
+      <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden flex"
+           style={{ WebkitOverflowScrolling: 'touch' }}>
         {/* Campaign Card - Left Side */}
          <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-[#732154] to-violet-600 text-white p-8 flex-col justify-between">
           <div>
             <div className="mb-6">
               <Image 
-                src={theme === 'dark' 
-                  ? "/images/cropped-Koenig-Foundation-Logo-01.png"
-                  : "/KCCF logo.png"
-                }
+                src="/images/cropped-Koenig-Foundation-Logo-01.png"
                 alt="Koenig Childhood Cancer Foundation Logo"
                 className="h-12 w-auto mb-4"
                 width={200}
@@ -157,25 +156,48 @@ export default function DonationModal() {
                 </div>
                 
                 {selectedProvider === 'zeffy' ? (
-                <iframe
-                  className="block w-full h-[600px] max-w-full"
-                  src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
-                  title="Zeffy donation form"
-                  frameBorder={0}
-                  scrolling="yes"
-                  allow="payment"
-                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-                />
+                <div className="h-[600px] sm:h-[650px] overflow-auto">
+                  <iframe
+                    className="block w-full h-full max-w-full border-0"
+                    src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
+                    title="Zeffy donation form"
+                    frameBorder={0}
+                    scrolling="yes"
+                    allow="payment"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+                    style={{
+                      WebkitOverflowScrolling: 'touch',
+                      overflow: 'auto',
+                      minHeight: '600px',
+                      height: '100%'
+                    }}
+                  />
+                </div>
               ) : (
-                <iframe
-                  className="block w-full h-[600px] max-w-full"
-                  src="https://secure.givelively.org/donate/koenig-childhood-cancer-foundation?"
-                  title="GiveLively donation form"
-                  frameBorder={0}
-                  scrolling="yes"
-                  allow="payment"
-                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-                />
+                <div className="h-[600px] flex flex-col items-center justify-center p-8">
+                  <div className="text-center mb-6">
+                    <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+                      Donate via GiveLively
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                      Click the button below to be redirected to our secure GiveLively donation page.
+                    </p>
+                  </div>
+                  <a
+                    href="https://secure.givelively.org/donate/koenig-childhood-cancer-foundation"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#732154] text-white hover:bg-[#732154]/90 transition-colors font-medium"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    Donate with GiveLively
+                  </a>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 max-w-md text-center">
+                    You'll be redirected to GiveLively's secure donation platform in a new tab.
+                  </p>
+                </div>
                 )}
               </>
             ) : (

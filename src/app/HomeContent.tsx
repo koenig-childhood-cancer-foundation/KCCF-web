@@ -45,7 +45,7 @@ export default function HomeContent() {
               Life-saving support for children battling cancer
             </h1>
 
-            <p className="text-xl md:text-2xl mb-12 text-gray-700 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal">
+            <p className="text-xl md:text-2xl mb-12 text-black dark:text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal">
               Koenig Childhood Cancer Foundation was started by 11-year-old cancer survivor Elana Koenig in 2020 with $900 in her piggy bank.
             </p>
 
@@ -79,7 +79,7 @@ export default function HomeContent() {
                   <div className={`text-3xl md:text-4xl font-bold ${stat.color.light} ${stat.color.dark} mb-2`}>
                     {stat.value}
                   </div>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">{stat.label}</p>
+                  <p className="text-black dark:text-gray-300 text-sm">{stat.label}</p>
                 </div>
               ))}
             </div>

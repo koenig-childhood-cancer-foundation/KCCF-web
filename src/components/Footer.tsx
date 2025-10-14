@@ -130,7 +130,7 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t border-gray-700">
           <div className="text-center">
             <h4 className="text-lg font-semibold mb-6 text-white">Recognition & Awards</h4>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+            <div className="flex flex-col sm:flex-row items-end justify-center gap-8">
               <div className="flex flex-col items-center">
                 <a 
                   href="https://www.guidestar.org/profile/84-4892279" 
@@ -138,14 +138,15 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:opacity-80 transition-opacity flex flex-col items-center"
                 >
-                  <Image
-                    src="/candid seal of transparency.png"
-                    alt="Candid seal of transparency logo"
-                    width={100}
-                    height={100}
-                    className="mb-2"
-                  />
-                  <p className="text-sm text-gray-300 text-center">Candid Platinum Transparency 2025</p>
+                  <div className="h-[100px] flex items-center justify-center mb-2">
+                    <Image
+                      src="/candid seal of transparency.png"
+                      alt="Candid seal of transparency logo"
+                      width={100}
+                      height={100}
+                    />
+                  </div>
+                  <p className="text-sm text-gray-300 text-center h-10 flex items-center justify-center">Candid Platinum Transparency 2025</p>
                 </a>
               </div>
               <div className="flex flex-col items-center">
@@ -155,15 +156,15 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:opacity-80 transition-opacity flex flex-col items-center"
                 >
-                  <Image
-                    src="https://cdn.greatnonprofits.org/img/2025-top-rated-awards-badge-embed.png?id=997323769"
-                    alt="GreatNonprofits Top-Rated Award 2025"
-                    width={120}
-                    height={100}
-                    className="mb-2"
-                    unoptimized
-                  />
-                  <p className="text-sm text-gray-300 text-center">GreatNonprofits Top-Rated 2025</p>
+                  <div className="h-[100px] flex items-center justify-center mb-2">
+                    <Image
+                      src="/images/2025-top-rated-awards-badge-embed.png"
+                      alt="GreatNonprofits Top-Rated Award 2025"
+                      width={140}
+                      height={100}
+                    />
+                  </div>
+                  <p className="text-sm text-gray-300 text-center h-10 flex items-center justify-center">GreatNonprofits Top-Rated 2025</p>
                 </a>
               </div>
               <div className="flex flex-col items-center">
@@ -173,11 +174,15 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:opacity-80 transition-opacity flex flex-col items-center"
                 >
-                  <div className="w-[100px] h-[100px] bg-blue-600 rounded-lg flex flex-col items-center justify-center mb-2 text-white">
-                    <div className="text-2xl font-bold">★★★</div>
-                    <div className="text-xs font-semibold">78%</div>
+                  <div className="h-[100px] flex items-center justify-center mb-2">
+                    <Image
+                      src="/images/4star-ratingbadge-2025.png"
+                      alt="Charity Navigator 4-Star Rating Badge 2025"
+                      width={100}
+                      height={100}
+                    />
                   </div>
-                  <p className="text-sm text-gray-300 text-center">Charity Navigator 3-Star Rating</p>
+                  <p className="text-sm text-gray-300 text-center h-10 flex items-center justify-center">Charity Navigator 4-Star Rating</p>
                 </a>
               </div>
             </div>
