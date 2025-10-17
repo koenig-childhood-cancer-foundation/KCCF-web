@@ -7,7 +7,13 @@ import { useDonationModal } from '@/contexts/DonationModalContext'
 import { useTheme } from '@/contexts/ThemeContext'
 import { useCookieConsent } from '@/contexts/CookieConsentContext'
 
-type DonationProvider = 'zeffy' | 'givelively'
+type DonationProvider = 'zeffy' | 'givelively' | 'paypal'
+
+// PayPal donation link - Update this with your organization's PayPal donation URL
+// Example formats:
+// - PayPal Donate Button: https://www.paypal.com/donate/?hosted_button_id=YOUR_BUTTON_ID
+// - PayPal.me: https://www.paypal.me/yourusername
+const PAYPAL_DONATE_URL = 'https://www.paypal.com/donate/?hosted_button_id=YOUR_BUTTON_ID'
  
 
 // All previous multi-step and amount form logic removed in favor of Zeffy embed
@@ -131,7 +137,7 @@ export default function DonationModal() {
                 {/* Provider Selection */}
                 <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700/50 border-b border-gray-200 dark:border-gray-700">
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Choose your preferred donation platform:</p>
-                  <div className="flex space-x-2">
+                  <div className="flex flex-wrap gap-2">
                      <button
                        onClick={() => setSelectedProvider('zeffy')}
                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer ${
@@ -151,6 +157,16 @@ export default function DonationModal() {
                        }`}
                      >
                        GiveLively
+                     </button>
+                     <button
+                       onClick={() => setSelectedProvider('paypal')}
+                       className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer ${
+                         selectedProvider === 'paypal'
+                           ? 'bg-[#732154] text-white hover:bg-[#732154]/90'
+                           : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500'
+                       }`}
+                     >
+                       PayPal
                      </button>
                   </div>
                 </div>
@@ -173,7 +189,7 @@ export default function DonationModal() {
                     }}
                   />
                 </div>
-              ) : (
+              ) : selectedProvider === 'givelively' ? (
                 <div className="h-[600px] flex flex-col items-center justify-center p-8">
                   <div className="text-center mb-6">
                     <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
@@ -196,6 +212,36 @@ export default function DonationModal() {
                   </a>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 max-w-md text-center">
                     You'll be redirected to GiveLively's secure donation platform in a new tab.
+                  </p>
+                </div>
+              ) : (
+                <div className="h-[600px] flex flex-col items-center justify-center p-8">
+                  <div className="text-center mb-6">
+                    <div className="mb-4">
+                      <svg className="w-16 h-16 mx-auto text-[#0070ba]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.555.48l-1.12 7.106h-.001l-.275 1.74a.56.56 0 0 0 .555.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.76-4.852a.932.932 0 0 1 .922-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/>
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+                      Donate via PayPal
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                      Click the button below to donate securely through PayPal.
+                    </p>
+                  </div>
+                  <a
+                    href={PAYPAL_DONATE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#0070ba] text-white hover:bg-[#003087] transition-colors font-medium"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.555.48l-1.12 7.106h-.001l-.275 1.74a.56.56 0 0 0 .555.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.76-4.852a.932.932 0 0 1 .922-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/>
+                    </svg>
+                    Donate with PayPal
+                  </a>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 max-w-md text-center">
+                    You'll be redirected to PayPal's secure donation platform in a new tab.
                   </p>
                 </div>
                 )}
