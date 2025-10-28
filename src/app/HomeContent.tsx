@@ -159,15 +159,21 @@ export default function HomeContent() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Family Financial Assistance */}
             <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-              <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-2xl">💰</span>
+              <div className="rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
+                <Image
+                  src="/images/family-assistance-impact-program.jpeg"
+                  alt="Financial Assistance Impact Program Image"
+                  width={500}
+                  height={600}
+                  className="rounded-2xl"
+                />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Family Financial Assistance</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Family Assistance</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                Direct financial support for families to cover medical bills, housing, transportation, and other essential expenses during treatment.
+                We can help with emergency medical expenses during your child's cancer treatment, such as medical bills, transportation, lodging, food, and more.
               </p>
               <Link href="/aid" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors">
-                Apply for Aid
+                Apply for Help
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -176,32 +182,44 @@ export default function HomeContent() {
 
             {/* Crazy Socks Day */}
             <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-              <div className="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-2xl">🧦</span>
+              <div className="rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
+                <Image
+                  src="/images/crazy-socks-impact-program.jpg"
+                  alt="Crazy Socks Program Image"
+                  width={500}
+                  height={600}
+                  className="rounded-2xl"
+                />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Crazy Socks Day</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Crazy Socks</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                Our signature fundraising event where schools and organizations wear crazy socks to raise awareness and funds for childhood cancer families.
+                Use your company's Corporate Social Responsibility (CSR) program to sponsor and host gift bag events for hospitalized children - bring smiles to their faces.
               </p>
               <Link href="/crazy-socks" className="inline-flex items-center text-saffron-600 dark:text-saffron-400 hover:text-saffron-700 dark:hover:text-saffron-300 font-semibold transition-colors">
-                Learn About Crazy Socks Day
+                Sponsor Event
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
             </div>
 
-            {/* Emotional Support */}
+            {/* KCCF Camp */}
             <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-              <div className="w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-2xl">💝</span>
+              <div className="rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
+                <Image
+                  src="/images/camp-impact-program.jpg"
+                  alt="Camp Impact Program Image"
+                  width={500}
+                  height={600}
+                  className="rounded-2xl"
+                />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Emotional Support</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">KCCF Camp</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                Connecting families with support groups, counseling services, and other families who understand their journey.
+                Join our international summer camp in an exotic country, Azerbaijan for children diagnosed with cancer.
               </p>
-              <Link href="/contact" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors">
-                Get Support
+              <Link href="/camp" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors">
+                Join Camp
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
