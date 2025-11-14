@@ -122,10 +122,10 @@ export default function PageHeader({
       {/* Content */}
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white drop-shadow-lg">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-violet-600 dark:text-saffron-400 drop-shadow-lg">
             {title}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+          <p className="text-xl md:text-2xl text-black dark:text-gray-200 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
             {subtitle}
           </p>
           

@@ -58,7 +58,7 @@ export default function CrazySocksContent() {
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
       <PageHeader
         title="Crazy Socks Gift Bags"
-        subtitle="Use your company's Corporate Social Responsibility (CSR) program to sponsor and host gift bag events for hospitalized children – bring smiles to their faces."
+        subtitle="Empower your Corporate Social Responsibility program to sponsor and host gift-bag–making events for hospitalized children, bringing smiles to their faces."
       />
 
       {/* About Section */}
@@ -66,8 +66,14 @@ export default function CrazySocksContent() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-block bg-orange-500 px-4 py-2 rounded-full mb-6">
-                <span className="text-white font-semibold text-sm">Our Signature Project</span>
+              <div className="mb-6">
+                <FormButton
+                  formType="crazy-socks-sponsor"
+                  variant="primary"
+                  size="md"
+                >
+                  Sponsor Gift Bag Event
+                </FormButton>
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
@@ -246,7 +252,7 @@ export default function CrazySocksContent() {
             <div className="bg-gradient-to-r from-violet-600/10 to-fandango-600/10 dark:from-violet-600/20 dark:to-violet-600/20 rounded-2xl p-8 max-w-4xl mx-auto">
               <h3 className="text-2xl font-bold mb-4 text-violet-600 dark:text-saffron-400">Corporate Social Responsibility Through Gift Bag Volunteering</h3>
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                Our Gift Bag Project offers a powerful way for companies to engage in <strong>Corporate Social Responsibility (CSR)</strong> through <strong>employee volunteering</strong> and <strong>team-building events</strong>. We provide <strong>turnkey opportunities in NYC</strong>, where employees can assemble <strong>gift bags for children battling cancer</strong>. This <strong>hands-on experience</strong> supports <strong>children's health and well-being</strong> while delivering <strong>measurable community impact</strong>. Through <strong>Volunteer Days</strong>, <strong>Volunteer Time Off (VTO)</strong>, and skills-based volunteering, companies can strengthen <strong>philanthropy partnerships</strong> and <strong>nonprofit collaboration</strong>. By partnering with KCCF, corporations contribute to <strong>scalable CSR initiatives</strong> that bring hope and joy to young patients while fostering a stronger workplace culture through <strong>employee engagement programs</strong>.
+                Our Gift Bag Project offers a powerful way for companies to engage in <strong>Corporate Social Responsibility (CSR)</strong> through <strong>employee volunteering</strong> and <strong>team-building events</strong>. We provide <strong>turnkey opportunities</strong>, where employees can assemble <strong>gift bags for children battling cancer</strong>. This <strong>hands-on experience</strong> supports <strong>children's health and well-being</strong> while delivering <strong>measurable community impact</strong>. Through <strong>Volunteer Days</strong>, <strong>Volunteer Time Off (VTO)</strong>, and skills-based volunteering, companies can strengthen <strong>philanthropy partnerships</strong> and <strong>nonprofit collaboration</strong>. By partnering with KCCF, corporations contribute to <strong>scalable CSR initiatives</strong> that bring hope and joy to young patients while fostering a stronger workplace culture.
               </p>
             </div>
           </div>
@@ -330,16 +336,16 @@ export default function CrazySocksContent() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="/images/ElanaOliviaGiftBags-scaled.jpg"
-                    alt="Elana and Olivia Gift Bags"
+                    src="/images/sumitomo-csr.jpg"
+                    alt="Sumitomo Mitsui Bank CSR Event"
                     width={192}
                     height={192}
                     className="rounded-full w-full h-full object-cover relative z-10"
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Elana & Olivia</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">Founder and friend</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Sumitomo Mitsui Bank</h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">CSR Event</p>
             </div>
 
             {/* Meta CS Gift Bag Event */}
@@ -348,16 +354,16 @@ export default function CrazySocksContent() {
                 <div className="relative w-48 h-48 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="/images/MetaCSGiftBagEvent-scaled.jpg"
-                    alt="Meta CS Gift Bag Event"
+                    src="/images/ubs-season-of-service.png"
+                    alt="UBS Season of Service"
                     width={192}
                     height={192}
                     className="rounded-full w-full h-full object-cover relative z-10"
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Meta CS Event</h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">Community service impact</p>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">UBS</h3>
+              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center">Season of Service</p>
             </div>
           </div>
         </div>
