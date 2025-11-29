@@ -41,24 +41,28 @@ export default function ConsentPreferencesModal() {
             <PreferenceRow
               title="Strictly necessary"
               description="Required for basic site functionality. Always on."
+              services={["Google Tag Manager (Cookie Management)", "Monday (Forms)", "Zeffy (Donations)", "GiveLively (Donations)"]}
               checked
               disabled
             />
             <PreferenceRow
               title="Analytics"
               description="Helps us understand usage to improve the site."
+              services={["Google Analytics", "Microsoft Clarity"]}
               checked={draft.analytics}
               onChange={(v) => setDraft(s => ({ ...s, analytics: v }))}
             />
             <PreferenceRow
               title="Functional"
               description="Remembers preferences and enhances functionality."
+              services={[]}
               checked={draft.functional}
               onChange={(v) => setDraft(s => ({ ...s, functional: v }))}
             />
             <PreferenceRow
               title="Marketing"
               description="Used for advertising and measuring campaign performance."
+              services={["Google Ads", "Meta Pixel"]}
               checked={draft.marketing}
               onChange={(v) => setDraft(s => ({ ...s, marketing: v }))}
             />
@@ -83,12 +87,22 @@ export default function ConsentPreferencesModal() {
   )
 }
 
-function PreferenceRow({ title, description, checked, onChange, disabled }: { title: string; description: string; checked?: boolean; onChange?: (v: boolean) => void; disabled?: boolean }) {
+function PreferenceRow({ title, description, services, checked, onChange, disabled }: { title: string; description: string; services?: string[]; checked?: boolean; onChange?: (v: boolean) => void; disabled?: boolean }) {
   return (
     <div className="flex items-start justify-between gap-4">
       <div>
         <div className="text-sm font-medium text-gray-900 dark:text-white">{title}</div>
         <div className="text-sm text-gray-600 dark:text-gray-300">{description}</div>
+        {services && services.length > 0 ? (
+          <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+            <span className="font-medium">Services: </span>
+            {services.join(', ')}
+          </div>
+        ) : services && services.length === 0 && (
+          <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 italic">
+            No services yet
+          </div>
+        )}
       </div>
       <label className={`relative inline-flex items-center ${disabled ? 'opacity-60' : ''}`}>
         <input type="checkbox" className="sr-only peer" checked={!!checked} onChange={e => onChange?.(e.target.checked)} disabled={disabled} />
