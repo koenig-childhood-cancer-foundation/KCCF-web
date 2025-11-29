@@ -98,7 +98,7 @@ function PreferenceRow({ title, description, services, checked, onChange, disabl
             <span className="font-medium">Services: </span>
             {services.join(', ')}
           </div>
-        ) : services && services.length === 0 && (
+        ) : services?.length === 0 && (
           <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 italic">
             No services yet
           </div>
