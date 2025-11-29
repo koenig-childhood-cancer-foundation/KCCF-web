@@ -2,6 +2,106 @@
 
 Thank you for your interest in contributing to the Koenig Childhood Cancer Foundation website! We welcome contributions from the community.
 
+## AI-Assisted Development
+
+We encourage the use of AI tools, particularly **GitHub Copilot**, to enhance the quality and efficiency of contributions to this project.
+
+### GitHub Copilot for Issue-to-PR Workflow
+
+We prefer using GitHub Copilot's issue-to-PR functionality for creating pull requests. This approach helps:
+- Generate consistent, well-structured code changes
+- Ensure comprehensive coverage of the issue requirements
+- Reduce manual coding errors
+- Accelerate the development process
+
+**To use Copilot for creating PRs from issues:**
+1. Navigate to an issue in the repository
+2. Use GitHub Copilot to analyze the issue and generate a proposed solution
+3. Review the generated code changes before submitting
+4. Create a PR with the Copilot-assisted changes
+
+### Copilot-Based Code Reviews
+
+**All code submissions must undergo Copilot-based reviews.** Contributors should:
+1. Request a Copilot code review on their pull request
+2. Address all comments and suggestions provided by Copilot
+3. Re-run the Copilot review after making changes
+4. Repeat this process until no additional comments remain
+5. Only then request human reviewer approval
+
+This iterative review process ensures:
+- Higher code quality
+- Consistent adherence to coding standards
+- Early detection of potential issues
+- Comprehensive documentation of code changes
+
+### Best Practices for Using GitHub Copilot
+
+Follow these best practices when using GitHub Copilot:
+
+1. **Review all suggestions carefully** - Never blindly accept Copilot suggestions; always verify the code is correct and appropriate
+2. **Provide clear context** - Write descriptive comments and function names to help Copilot generate better suggestions
+3. **Use Copilot Chat for explanations** - Ask Copilot to explain complex code or suggest improvements
+4. **Verify security implications** - Review generated code for potential security vulnerabilities
+5. **Test generated code thoroughly** - Always test Copilot-generated code before committing
+6. **Keep suggestions contextual** - Ensure generated code follows the project's existing patterns and conventions
+7. **Use inline suggestions wisely** - Accept partial suggestions when they're helpful, modify or reject when they're not
+8. **Leverage Copilot for documentation** - Use it to generate JSDoc comments, README updates, and code documentation
+
+### Integrating Other AI Providers in VS Code
+
+For experienced developers who want to leverage additional AI capabilities, GitHub Copilot in VS Code supports integration with other AI providers. This enables access to models from **OpenAI**, **Google Gemini**, **Anthropic Claude**, and others.
+
+#### Setting Up Alternative AI Providers
+
+1. **Install GitHub Copilot Chat Extension**
+   - Ensure you have the GitHub Copilot Chat extension installed in VS Code
+   - Sign in with your GitHub account that has Copilot access
+
+2. **Access Model Selection**
+   - Open the Copilot Chat panel in VS Code
+   - Look for the model selector dropdown (typically at the bottom of the chat input)
+   - Available models may include GPT-4, Claude, Gemini, and others depending on your subscription
+
+3. **Using Claude Models**
+   - Select a Claude model from the model picker
+   - Claude excels at detailed code explanations, complex refactoring, and nuanced code reviews
+   - Use for tasks requiring deep reasoning about code architecture
+
+4. **Using OpenAI Models**
+   - GPT-4 and GPT-4o models are available through Copilot
+   - Particularly effective for general coding tasks and broad language support
+   - Good for quick iterations and code completion
+
+5. **Using Google Gemini Models**
+   - Gemini models can be accessed through the Copilot interface
+   - Strong performance on multi-modal tasks and code understanding
+   - Useful for analyzing code alongside documentation or images
+
+#### Best Practices for Multi-Model Usage
+
+- **Match the model to the task** - Different models have different strengths; experiment to find what works best for specific tasks
+- **Maintain consistency** - When working on a single feature, try to use the same model for consistency
+- **Compare outputs** - For critical code changes, consider getting suggestions from multiple models
+- **Document your approach** - If you use a specific model for a particular type of task, note it in PR descriptions for team awareness
+
+#### VS Code Configuration Tips
+
+```json
+// Example VS Code settings for Copilot (settings.json)
+{
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "markdown": true,
+    "typescript": true,
+    "typescriptreact": true
+  }
+}
+```
+
+**Note:** Access to alternative AI providers may require GitHub Copilot Enterprise or specific subscription tiers. Check your GitHub Copilot subscription details for available models.
+
 ## Getting Started
 
 ### Prerequisites
