@@ -152,7 +152,7 @@ thekccf.org/
 - Cookie consent: `src/contexts/CookieConsentContext.tsx`
 - Donation modal: `src/components/DonationModal.tsx`
 - Form modals: `src/components/FormModal.tsx` and `src/contexts/FormModalContext.tsx`
-- **Form documentation:** See "Form Integration" section below for complete inventory of all 9 forms
+- **Form documentation:** See "Form Integration" section below for complete inventory of all 10 forms
 
 ## Images and optimization
 - Static files live in `public/`
@@ -172,14 +172,15 @@ All forms require Marketing cookies to be enabled via the cookie consent banner 
 | # | Form Name | Type | Location(s) | Integration | Form ID |
 |---|-----------|------|-------------|-------------|---------|
 | 1 | Donation Form | Donation | Navigation bar, Home page, Donate page | Zeffy/GiveLively | N/A |
-| 2 | Camp Camper Registration | Application | `/camp` | Monday.com | `camp-camper` |
-| 3 | Camp Counselor Application | Application | `/camp` | Monday.com | `camp-counselor` |
-| 4 | Crazy Socks Sponsorship | Corporate Inquiry | `/crazy-socks` | Monday.com | `crazy-socks-sponsor` |
-| 5 | Newsletter Signup | Email Subscription | Footer (all pages), `/newsletter-signup` | Mailchimp | `newsletter-signup` |
-| 6 | Book Elana Speaking | Booking Request | `/our-story` | Monday.com | `book-elana` |
-| 7 | Volunteer Application | Application | `/volunteer` | Monday.com | `volunteer` |
-| 8 | Contact Form | General Inquiry | `/contact` | Monday.com | `contact` |
-| 9 | Financial Aid Application | Application | `/aid` | Monday.com | `aid-application` |
+| 2 | Peer-to-Peer Fundraisers | Fundraising | `/fundraisers` | Zeffy | N/A |
+| 3 | Camp Camper Registration | Application | `/camp` | Monday.com | `camp-camper` |
+| 4 | Camp Counselor Application | Application | `/camp` | Monday.com | `camp-counselor` |
+| 5 | Crazy Socks Sponsorship | Corporate Inquiry | `/crazy-socks` | Monday.com | `crazy-socks-sponsor` |
+| 6 | Newsletter Signup | Email Subscription | Footer (all pages), `/newsletter-signup` | Mailchimp | `newsletter-signup` |
+| 7 | Book Elana Speaking | Booking Request | `/our-story` | Monday.com | `book-elana` |
+| 8 | Volunteer Application | Application | `/volunteer` | Monday.com | `volunteer` |
+| 9 | Contact Form | General Inquiry | `/contact` | Monday.com | `contact` |
+| 10 | Financial Aid Application | Application | `/aid` | Monday.com | `aid-application` |
 
 ---
 
@@ -222,7 +223,40 @@ All forms require Marketing cookies to be enabled via the cookie consent banner 
 
 ---
 
-### 2. Camp Camper Registration Form
+### 2. Peer-to-Peer Fundraisers (Zeffy)
+**Type:** Fundraising platform  
+**Purpose:** Enable supporters to create and manage peer-to-peer fundraising campaigns  
+**Location(s):**
+- Fundraisers page (`/fundraisers`) - Full-page embedded platform
+
+**Technical Details:**
+- **Component:** `src/app/fundraisers/page.tsx`
+- **Integration:** Embedded iframe from Zeffy platform
+- **URLs:**
+  - Main Platform: https://www.zeffy.com/en-US/peer-to-peer/peer-to-peer-fundraisers
+  - Leaderboard: https://www.zeffy.com/embed/leaderboard/peer-to-peer-fundraisers
+- **Features:**
+  - Create individual fundraising campaigns
+  - Track fundraising progress
+  - Leaderboard showing top fundraisers
+  - Share campaigns on social media
+
+**How to Test:**
+1. Navigate to `/fundraisers`
+2. Ensure Marketing cookies are enabled
+3. Verify main fundraising platform loads in iframe
+4. Scroll to see the leaderboard section
+5. Test creating or viewing an existing fundraising campaign
+6. Verify social sharing functionality
+
+**External Verification:**
+- Check Zeffy dashboard for fundraising campaigns
+- Individual campaign contributions tracked in Zeffy
+- No server-side processing on KCCF website
+
+---
+
+### 3. Camp Camper Registration Form
 **Type:** Application/Registration  
 **Purpose:** Register children with cancer for KCCF summer camp programs  
 **Location(s):**
@@ -251,7 +285,7 @@ All forms require Marketing cookies to be enabled via the cookie consent banner 
 
 ---
 
-### 3. Camp Counselor Application Form
+### 4. Camp Counselor Application Form
 **Type:** Application/Registration  
 **Purpose:** Apply to be a volunteer camp counselor  
 **Location(s):**
@@ -280,7 +314,7 @@ All forms require Marketing cookies to be enabled via the cookie consent banner 
 
 ---
 
-### 4. Crazy Socks Gift Bag Sponsorship Form
+### 5. Crazy Socks Gift Bag Sponsorship Form
 **Type:** Corporate sponsorship inquiry  
 **Purpose:** Allow companies to sponsor gift bag events for hospitalized children  
 **Location(s):**
@@ -309,7 +343,7 @@ All forms require Marketing cookies to be enabled via the cookie consent banner 
 
 ---
 
-### 5. Newsletter Signup Form
+### 6. Newsletter Signup Form
 **Type:** Email list subscription  
 **Purpose:** Subscribe to KCCF newsletter for updates and news  
 **Location(s):**
@@ -341,7 +375,7 @@ All forms require Marketing cookies to be enabled via the cookie consent banner 
 
 ---
 
-### 6. Book Elana Speaking Engagement Form
+### 7. Book Elana Speaking Engagement Form
 **Type:** Booking/Contact request  
 **Purpose:** Request Elana Koenig for speaking engagements at schools and events  
 **Location(s):**
@@ -371,7 +405,7 @@ All forms require Marketing cookies to be enabled via the cookie consent banner 
 
 ---
 
-### 7. Volunteer Application Form
+### 8. Volunteer Application Form
 **Type:** Application/Registration  
 **Purpose:** Apply to volunteer with KCCF programs and events  
 **Location(s):**
@@ -401,7 +435,7 @@ All forms require Marketing cookies to be enabled via the cookie consent banner 
 
 ---
 
-### 8. Contact Form
+### 9. Contact Form
 **Type:** General inquiry  
 **Purpose:** Send general messages, questions, or partnership inquiries to KCCF  
 **Location(s):**
@@ -430,7 +464,7 @@ All forms require Marketing cookies to be enabled via the cookie consent banner 
 
 ---
 
-### 9. Financial Aid Application Form
+### 10. Financial Aid Application Form
 **Type:** Application for assistance  
 **Purpose:** Apply for financial assistance during a child's cancer treatment  
 **Location(s):**
@@ -531,7 +565,7 @@ To add a new Monday.com form to the modal system:
 
 ### Monday.com
 - **Purpose:** Form data collection and workflow management
-- **Forms:** 7 of 9 forms use Monday.com
+- **Forms:** 7 of 10 forms use Monday.com
 - **Access:** Requires Monday.com account with KCCF workspace access
 - **Verification:** Check Monday.com boards for form submissions
 
@@ -542,10 +576,10 @@ To add a new Monday.com form to the modal system:
 - **Verification:** Check Mailchimp audience dashboard
 
 ### Zeffy
-- **Purpose:** Donation processing (primary)
-- **Forms:** Donation form (embedded)
-- **Features:** 0% platform fees, embedded iframe
-- **Verification:** Check Zeffy dashboard for donation records
+- **Purpose:** Donation processing (primary) and peer-to-peer fundraising
+- **Forms:** Donation form (embedded), Peer-to-peer fundraising platform
+- **Features:** 0% platform fees, embedded iframe, peer-to-peer campaign creation, leaderboard
+- **Verification:** Check Zeffy dashboard for donation records and fundraising campaigns
 
 ### GiveLively
 - **Purpose:** Donation processing (alternative)
@@ -566,11 +600,12 @@ To add a new Monday.com form to the modal system:
 6. **External Verification**: Check the appropriate external service (Monday.com, Mailchimp, Zeffy, or GiveLively)
 
 ### Key Testing Notes
-- **All 9 forms are production-ready** and actively used
+- **All 10 forms are production-ready** and actively used
 - **No custom HTML forms** exist on the site - all forms use external services
 - **Cookie consent is mandatory** for all forms to display
-- **Modal forms (8 of 9)** open in responsive overlays with consistent UX
+- **Modal forms (8 of 10)** open in responsive overlays with consistent UX
 - **Donation form is unique** as it offers two provider options (Zeffy embedded, GiveLively redirect)
+- **Peer-to-peer fundraisers** page provides full-page embedded Zeffy platform with leaderboard
 - **File uploads** are handled within Monday.com forms (notably aid application)
 - **No server-side form processing** on KCCF website - all handled by external services
 
