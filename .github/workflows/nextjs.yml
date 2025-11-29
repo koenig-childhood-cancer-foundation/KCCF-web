@@ -9,7 +9,6 @@ name: CI/CD
 on:
   # Run CI checks on pull requests to any branch
   pull_request:
-    branches: ["*"]
 
   # Run CI checks and deploy on pushes to main
   push:
