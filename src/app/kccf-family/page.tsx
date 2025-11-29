@@ -33,9 +33,9 @@ export default function KCCFFamily() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-block bg-orange-500 px-4 py-2 rounded-full mb-6">
+              <Link href="/our-story" className="inline-block bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-full mb-6 transition-colors duration-300">
                 <span className="text-white font-semibold text-sm">Our Founder</span>
-              </div>
+              </Link>
 
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
                 Elana Koenig
