@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useDonationModal } from '@/contexts/DonationModalContext'
-import { useTheme } from '@/contexts/ThemeContext'
 import { useCookieConsent } from '@/contexts/CookieConsentContext'
 
 type DonationProvider = 'zeffy' | 'givelively'
@@ -14,7 +14,6 @@ type DonationProvider = 'zeffy' | 'givelively'
 
 export default function DonationModal() {
   const { isOpen, closeModal, campaign } = useDonationModal()
-  const { theme } = useTheme()
   const { consent, openPreferences } = useCookieConsent()
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
 
@@ -67,8 +66,8 @@ export default function DonationModal() {
             <div className="campaign-image-holder mb-6">
               <Image 
                 className="w-full h-64 object-cover rounded-xl shadow-lg"
-                src="/images/MetaLeadershipMakingfitBags-scaled.jpg"
-                alt="Crazy Socks Gift Bags Campaign"
+                src="/images/ElanaOliviaGiftBags-scaled.jpg"
+                alt="Elana and Olivia preparing gift bags"
                 width="516"
                 height="289"
               />
@@ -87,19 +86,33 @@ export default function DonationModal() {
           </div>
           
           <div className="mt-8 pt-6 border-t border-white/20">
-            <div className="flex items-center space-x-4 text-sm text-white/80">
-              <div className="flex items-center">
-                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Secure & Trusted</span>
+            <div className="flex items-center justify-between text-sm text-white/80">
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Secure & Trusted</span>
+                </div>
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Tax Deductible</span>
+                </div>
               </div>
-              <div className="flex items-center">
-                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </div>
+            <div className="mt-4">
+              <Link 
+                href="/donate"
+                onClick={closeModal}
+                className="inline-flex items-center text-sm text-white/90 hover:text-white underline underline-offset-2 transition-colors"
+              >
+                Other ways to donate
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-                <span>Tax Deductible</span>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -161,10 +174,9 @@ export default function DonationModal() {
                     className="block w-full h-full max-w-full border-0"
                     src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
                     title="Zeffy donation form"
-                    frameBorder={0}
                     scrolling="yes"
                     allow="payment"
-                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
                     style={{
                       WebkitOverflowScrolling: 'touch',
                       overflow: 'auto',
@@ -174,29 +186,21 @@ export default function DonationModal() {
                   />
                 </div>
               ) : (
-                <div className="h-[600px] flex flex-col items-center justify-center p-8">
-                  <div className="text-center mb-6">
-                    <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
-                      Donate via GiveLively
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                      Click the button below to be redirected to our secure GiveLively donation page.
-                    </p>
-                  </div>
-                  <a
-                    href="https://secure.givelively.org/donate/koenig-childhood-cancer-foundation"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#732154] text-white hover:bg-[#732154]/90 transition-colors font-medium"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    Donate with GiveLively
-                  </a>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 max-w-md text-center">
-                    You'll be redirected to GiveLively's secure donation platform in a new tab.
-                  </p>
+                <div className="h-[600px] sm:h-[650px] overflow-auto">
+                  <iframe
+                    className="block w-full h-full max-w-full border-0"
+                    src="https://secure.givelively.org/donate/koenig-childhood-cancer-foundation?ref=sd_widget"
+                    title="GiveLively donation form"
+                    scrolling="yes"
+                    allow="payment"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                    style={{
+                      WebkitOverflowScrolling: 'touch',
+                      overflow: 'auto',
+                      minHeight: '600px',
+                      height: '100%'
+                    }}
+                  />
                 </div>
                 )}
               </>
