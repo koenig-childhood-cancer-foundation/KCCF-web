@@ -69,8 +69,8 @@ When contributing to this project:
 
 This project integrates with:
 - **Zeffy** - Donation processing (iframe embed)
-- **Monday.com** - Form handling (iframe embed)
-- **Mailchimp** - Newsletter subscriptions (iframe embed)
+- **Monday.com** - Form handling for applications (iframe embed)
+- **Mailchimp** - Newsletter subscriptions (iframe embed via list-manage.com)
 
 These services are embedded via iframes and do not require API keys stored in the repository.
 

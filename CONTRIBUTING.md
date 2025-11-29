@@ -65,7 +65,7 @@ git commit -m "Docs: update README with CI/CD information"
 ## Pull Request Process
 
 ### Before Submitting
-- [ ] Ensure all CI checks pass locally (`npm run lint && npm run build`)
+- [ ] Ensure all CI checks pass locally (`npm run lint && npx tsc --noEmit && npm run build`)
 - [ ] Test your changes thoroughly
 - [ ] Update documentation if needed
 - [ ] Keep changes focused and atomic

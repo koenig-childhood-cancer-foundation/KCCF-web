@@ -60,7 +60,7 @@ The main workflow runs on every push and pull request:
 
 **On Pull Requests:**
 - Lint checks (ESLint)
-- TypeScript type checking
+- TypeScript compilation check (`tsc --noEmit`)
 - Production build verification
 
 **On Push to Main:**
@@ -155,6 +155,8 @@ KCCF-web/
 ├── package.json                 # Project dependencies and scripts
 ├── tsconfig.json                # TypeScript configuration
 ├── eslint.config.mjs            # ESLint configuration
+├── CONTRIBUTING.md              # Contribution guidelines
+├── SECURITY.md                  # Security policy
 └── README.md                    # This file
 ```
 
@@ -187,22 +189,45 @@ KCCF-web/
 - Cookie consent is required for donation form display
 - Campaign-specific donation forms can be configured in the modal
 
+### Newsletter system
+The newsletter signup uses **Mailchimp** (not Zeffy). The integration is implemented as follows:
+
+**Implementation:**
+- Newsletter form is embedded via iframe from Mailchimp's list-manage.com service
+- Configuration is in `src/contexts/FormModalContext.tsx` under the `newsletter-signup` form type
+- The embed URL pattern is: `https://thekccf.us17.list-manage.com/subscribe?u=<user_id>&id=<list_id>`
+- The newsletter button is located in the Footer component (`src/components/Footer.tsx`)
+
+**How to verify the service being used:**
+1. Open `src/contexts/FormModalContext.tsx`
+2. Find the `newsletter-signup` configuration in `FORM_CONFIGS`
+3. The `src` field shows the embed URL - `list-manage.com` indicates Mailchimp
+4. Alternatively, open browser DevTools while viewing the newsletter modal and inspect the iframe source
+
+**Third-party services summary:**
+| Service | Purpose | URL Pattern |
+|---------|---------|-------------|
+| Zeffy | Donations | `zeffy.com` |
+| Mailchimp | Newsletter subscriptions | `list-manage.com` |
+| Monday.com | All other forms (contact, volunteer, camp, etc.) | `forms.monday.com` |
+
 ### Form modal system
-- All Monday.com forms are integrated via a unified modal system
+- Most forms are Monday.com forms integrated via a unified modal system
 - Form configurations are managed in `src/contexts/FormModalContext.tsx`
-- Forms include: camp registration, volunteer applications, contact forms, newsletter signup, aid applications, and corporate sponsorship
+- Forms include: camp registration, volunteer applications, contact forms, aid applications, and corporate sponsorship
+- Newsletter signup is the exception - it uses Mailchimp instead of Monday.com
 - Modal system provides consistent UX across all forms
 - Cookie consent is required for form display
 - Forms open in responsive modals (85% screen height) with proper scrolling
 
 ### Adding new forms
-To add a new Monday.com form to the modal system:
+To add a new form to the modal system:
 
 1. **Add form type** to `FormType` union in `src/contexts/FormModalContext.tsx`
 2. **Add form configuration** to `FORM_CONFIGS` object with:
    - `title`: Modal header title
    - `subtitle`: Optional description
-   - `src`: Monday.com embed URL
+   - `src`: Form embed URL (Monday.com, Mailchimp, or other iframe-compatible service)
    - `height`: Recommended iframe height
 3. **Use FormButton** component on any page:
    ```tsx
@@ -212,14 +237,14 @@ To add a new Monday.com form to the modal system:
    ```
 
 ### Form types available
-- `camp-camper`: Camp registration for children
-- `camp-counselor`: Camp counselor applications
-- `crazy-socks-sponsor`: Corporate gift bag sponsorship
-- `newsletter-signup`: Newsletter subscription
-- `book-elana`: Elana speaking engagements
-- `volunteer`: Volunteer applications
-- `contact`: General contact form
-- `aid-application`: Financial assistance applications
+- `camp-camper`: Camp registration for children (Monday.com)
+- `camp-counselor`: Camp counselor applications (Monday.com)
+- `crazy-socks-sponsor`: Corporate gift bag sponsorship (Monday.com)
+- `newsletter-signup`: Newsletter subscription (**Mailchimp**)
+- `book-elana`: Elana speaking engagements (Monday.com)
+- `volunteer`: Volunteer applications (Monday.com)
+- `contact`: General contact form (Monday.com)
+- `aid-application`: Financial assistance applications (Monday.com)
 
 ## SEO optimization
 The site is optimized for corporate partnerships and CSR programs:
