@@ -37,11 +37,16 @@ NEXT_PUBLIC_SITE_ENV=development
 
 # Optional: Override base path for deployment testing
 NEXT_PUBLIC_BASE_PATH=
+
+# Optional: Google Tag Manager ID (e.g., GTM-XXXXXXX)
+# GTM only loads when user consents to analytics cookies
+NEXT_PUBLIC_GTM_ID=
 ```
 Notes:
 - The site uses Zeffy for donations which doesn't require API keys
 - Cookie consent and theme preferences are managed client-side
 - All form integrations use Monday.com embedded iframes (no API keys needed)
+- Google Tag Manager respects user cookie consent preferences
 
 ## Project Scripts
 | Command | Description |
@@ -141,6 +146,7 @@ KCCF-web/
 │   │   ├── FormButton.tsx       # Form modal trigger buttons
 │   │   ├── CookieConsentBanner.tsx # Cookie consent banner
 │   │   ├── ConsentPreferencesModal.tsx # Cookie preferences modal
+│   │   ├── GoogleTagManager.tsx # Google Tag Manager integration
 │   │   ├── ThemeToggle.tsx      # Dark/light mode toggle
 │   │   └── ...                  # Other UI components
 │   ├── contexts/                # React contexts for state management
@@ -210,6 +216,7 @@ The newsletter signup uses **Mailchimp** (not Zeffy). The integration is impleme
 | Zeffy | Donations | `zeffy.com` |
 | Mailchimp | Newsletter subscriptions | `list-manage.com` |
 | Monday.com | All other forms (contact, volunteer, camp, etc.) | `forms.monday.com` |
+| Google Tag Manager | Analytics and tracking | `googletagmanager.com` |
 
 ### Form modal system
 - Most forms are Monday.com forms integrated via a unified modal system

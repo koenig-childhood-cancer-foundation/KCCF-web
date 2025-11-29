@@ -15,6 +15,7 @@ import CookieConsentBanner from "@/components/CookieConsentBanner";
 import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
 import ConsentPreferencesModal from "@/components/ConsentPreferencesModal";
 import SubmissionModal from "@/components/SubmissionModal";
+import GoogleTagManager from "@/components/GoogleTagManager";
 import { Suspense } from "react";
 
 const openSans = Open_Sans({
@@ -50,6 +51,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <CookieConsentProvider>
+            <GoogleTagManager />
             <DonationModalProvider>
               <FormModalProvider>
                 <ArticleModalProvider>
