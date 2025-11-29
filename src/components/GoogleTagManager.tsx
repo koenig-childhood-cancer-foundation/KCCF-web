@@ -33,14 +33,8 @@ export default function GoogleTagManager() {
           `,
         }}
       />
-      <noscript>
-        <iframe
-          src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-          height="0"
-          width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
-        />
-      </noscript>
+      {/* The <noscript> fallback for GTM is intentionally omitted from this client component.
+          For proper support, add the <noscript> iframe to a server-side layout (e.g., layout.tsx). */}
     </>
   )
 }
