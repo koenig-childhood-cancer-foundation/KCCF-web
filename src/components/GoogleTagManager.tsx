@@ -32,8 +32,8 @@ export default function GoogleTagManager() {
           `,
         }}
       />
-      {/* The <noscript> fallback for GTM is intentionally omitted from this client component.
-          For proper support, add the <noscript> iframe to a server-side layout (e.g., layout.tsx). */}
+      {/* The <noscript> fallback for GTM is intentionally omitted to respect GDPR.
+          Users with JavaScript disabled cannot interact with the consent banner anyway. */}
     </>
   )
 }
