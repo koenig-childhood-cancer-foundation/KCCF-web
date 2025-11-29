@@ -359,9 +359,9 @@ export default function KCCFFamily() {
             <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">990 Forms</h3>
               <div className="space-y-4">
-                <a href="#" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">2023</a>
-                <a href="#" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">2022</a>
-                <a href="#" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">2021</a>
+                <a href="/documents/990-2024-kccf.pdf" target="_blank" rel="noopener noreferrer" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">2024</a>
+                <a href="/documents/990-2023-kccf.pdf" target="_blank" rel="noopener noreferrer" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">2023</a>
+                <a href="/documents/990-2022-kccf.pdf" target="_blank" rel="noopener noreferrer" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">2022</a>
               </div>
             </div>
 
@@ -369,8 +369,8 @@ export default function KCCFFamily() {
             <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Other Forms</h3>
               <div className="space-y-4">
-                <a href="#" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">IRS Determination</a>
-                <a href="#" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">W9</a>
+                <a href="/documents/irs-determination.pdf" target="_blank" rel="noopener noreferrer" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">IRS Determination</a>
+                <a href="/documents/w9-kccf.pdf" target="_blank" rel="noopener noreferrer" className="block text-[#732154] dark:text-saffron-400 hover:text-[#732154]/80 dark:hover:text-saffron-300 font-semibold transition-colors">W9</a>
               </div>
             </div>
           </div>
