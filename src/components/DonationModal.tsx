@@ -67,7 +67,7 @@ export default function DonationModal() {
               <Image 
                 className="w-full h-64 object-cover rounded-xl shadow-lg"
                 src="/images/ElanaOliviaGiftBags-scaled.jpg"
-                alt="Elana and Charlotte - childhood cancer survivors"
+                alt="Elana and Olivia preparing gift bags"
                 width="516"
                 height="289"
               />
@@ -104,14 +104,14 @@ export default function DonationModal() {
             </div>
             <div className="mt-4">
               <Link 
-                href="/donate/" 
+                href="/donate"
                 onClick={closeModal}
                 className="inline-flex items-center text-sm text-white/90 hover:text-white underline underline-offset-2 transition-colors"
               >
-                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                Other ways to donate
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-                Other ways to donate
               </Link>
             </div>
           </div>
@@ -174,10 +174,9 @@ export default function DonationModal() {
                     className="block w-full h-full max-w-full border-0"
                     src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
                     title="Zeffy donation form"
-                    frameBorder={0}
                     scrolling="yes"
                     allow="payment"
-                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
                     style={{
                       WebkitOverflowScrolling: 'touch',
                       overflow: 'auto',
@@ -192,10 +191,9 @@ export default function DonationModal() {
                     className="block w-full h-full max-w-full border-0"
                     src="https://secure.givelively.org/donate/koenig-childhood-cancer-foundation?ref=sd_widget"
                     title="GiveLively donation form"
-                    frameBorder={0}
                     scrolling="yes"
                     allow="payment"
-                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
                     style={{
                       WebkitOverflowScrolling: 'touch',
                       overflow: 'auto',

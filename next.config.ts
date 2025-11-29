@@ -11,13 +11,6 @@ const nextConfig: NextConfig = {
   images: {
     // Disable Image Optimization (no server on GitHub Pages)
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'github.com',
-        pathname: '/user-attachments/**',
-      },
-    ],
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
