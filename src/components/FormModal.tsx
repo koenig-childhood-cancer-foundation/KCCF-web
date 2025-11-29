@@ -3,12 +3,10 @@
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useFormModal, FORM_CONFIGS } from '@/contexts/FormModalContext'
-import { useCookieConsent } from '@/contexts/CookieConsentContext'
 import Spinner from '@/components/Spinner'
 
 export default function FormModal() {
   const { isOpen, formType, closeModal } = useFormModal()
-  const { consent, openPreferences } = useCookieConsent()
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
   // Reset iframeLoaded every time modal opens (isOpen changes to true)
@@ -77,39 +75,24 @@ export default function FormModal() {
 
         {/* Form Content */}
         <div className="flex-1 min-h-0 flex flex-col relative">
-          {consent.marketing ? (
-            <>
-              {!iframeLoaded && (
-                <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-gray-800/80">
-                  <Spinner text="Loading form..." />
-                </div>
-              )}
-              <iframe
-                className={`flex-1 w-full ${!iframeLoaded ? 'hidden' : ''}`}
-                src={config.src}
-                title={config.title}
-                frameBorder={0}
-                scrolling="auto"
-                allow="payment"
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-                onLoad={() => setIframeLoaded(true)}
-              />
-            </>
-          ) : (
-            <div className="h-[600px] flex flex-col items-center justify-center text-center p-8">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Marketing cookies required</h3>
-              <p className="text-gray-600 dark:text-gray-400 max-w-md mb-6">
-                To display our embedded form, please enable Marketing cookies in your preferences.
-              </p>
-              <button
-                type="button"
-                onClick={openPreferences}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-violet-600 hover:bg-violet-700 text-white font-semibold transition-colors hover:cursor-pointer"
-              >
-                Manage cookie preferences
-              </button>
-            </div>
-          )}
+          {/* Monday.com forms are loaded as strictly necessary services */}
+          <>
+            {!iframeLoaded && (
+              <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-gray-800/80">
+                <Spinner text="Loading form..." />
+              </div>
+            )}
+            <iframe
+              className={`flex-1 w-full ${!iframeLoaded ? 'hidden' : ''}`}
+              src={config.src}
+              title={config.title}
+              frameBorder={0}
+              scrolling="auto"
+              allow="payment"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+              onLoad={() => setIframeLoaded(true)}
+            />
+          </>
         </div>
       </div>
     </div>

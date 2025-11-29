@@ -62,8 +62,6 @@ jobs:
         run: npx tsc --noEmit
       - name: Build
         run: npm run build
-        env:
-          NEXT_PUBLIC_GTM_ID: GTM-P2SBKM7K
       - name: Upload artifact
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3

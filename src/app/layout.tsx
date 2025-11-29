@@ -49,6 +49,15 @@ export default function RootLayout({
         className={`${openSans.variable} antialiased text-gray-900 dark:text-gray-100 transition-colors duration-200 overflow-x-hidden`}
         suppressHydrationWarning
       >
+        {/* Google Tag Manager (noscript) - rendered in server component for proper SSR */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-P2SBKM7K"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <ThemeProvider>
           <CookieConsentProvider>
             <GoogleTagManager />
