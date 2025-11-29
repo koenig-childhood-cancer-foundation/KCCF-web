@@ -19,7 +19,7 @@ export default function Privacy() {
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 md:p-12">
             {/* Last Updated */}
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">
-              Last Updated: January 2025
+              Last Updated: November 2025
             </p>
 
             {/* Introduction */}
