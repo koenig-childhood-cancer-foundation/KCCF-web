@@ -102,9 +102,16 @@ export default function Privacy() {
                 </div>
                 
                 <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Preference Cookies</h4>
+                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Functional Cookies</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    These cookies enable the website to remember information that changes the way the website behaves or looks, like your preferred language or theme settings.
+                    These cookies enable enhanced functionality and personalization, such as remembering your preferences, language, or theme settings. If you do not allow these cookies, some or all of these services may not function properly.
+                  </p>
+                </div>
+
+                <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Marketing Cookies</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    These cookies are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user and thereby more valuable for publishers and third-party advertisers.
                   </p>
                 </div>
               </div>
