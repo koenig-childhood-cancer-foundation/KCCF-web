@@ -9,31 +9,29 @@ import { useCookieConsent } from '@/contexts/CookieConsentContext'
 
 type DonationProvider = 'zeffy' | 'givelively'
 
+// Helper function to clean up GiveLively widget and script
+function cleanupGiveLivelyWidget(scriptElement?: HTMLScriptElement) {
+  const widget = document.querySelector('.gl-simple-donation-widget')
+  if (widget) {
+    widget.remove()
+  }
+  if (scriptElement?.parentNode) {
+    scriptElement.parentNode.removeChild(scriptElement)
+  }
+}
+
 // GiveLively widget component that loads the donation form via script
 function GiveLivelyWidget() {
   useEffect(() => {
-    // Clean up any existing widget
-    const existingWidget = document.querySelector('.gl-simple-donation-widget')
-    if (existingWidget) {
-      existingWidget.remove()
-    }
+    // Clean up any existing widget before loading
+    cleanupGiveLivelyWidget()
     
     // Create and load the GiveLively script
     const gl = document.createElement('script')
     gl.src = 'https://secure.givelively.org/widgets/simple_donation/koenig-childhood-cancer-foundation.js?show_suggested_amount_buttons=true&show_in_honor_of=true&address_required=false&suggested_donation_amounts[]=25&suggested_donation_amounts[]=50&suggested_donation_amounts[]=100&suggested_donation_amounts[]=250'
     document.head.appendChild(gl)
     
-    return () => {
-      // Cleanup on unmount
-      const widget = document.querySelector('.gl-simple-donation-widget')
-      if (widget) {
-        widget.remove()
-      }
-      // Remove the script
-      if (gl.parentNode) {
-        gl.parentNode.removeChild(gl)
-      }
-    }
+    return () => cleanupGiveLivelyWidget(gl)
   }, [])
   
   return (
