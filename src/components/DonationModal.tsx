@@ -201,7 +201,7 @@ export default function DonationModal() {
                 <div className="h-[600px] sm:h-[650px] overflow-auto">
                   <iframe
                     className="block w-full h-full max-w-full border-0"
-                    src="https://secure.givelively.org/donate/koenig-childhood-cancer-foundation?ref=sd_widget"
+                    src="https://secure.givelively.org/donate/koenig-childhood-cancer-foundation/donate-to-save-lives?ref=sd_widget"
                     title="GiveLively donation form"
                     scrolling="yes"
                     allow="payment"
