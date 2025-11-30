@@ -23,6 +23,32 @@ function GiveLivelyWidget() {
     document.head.appendChild(gl)
     
     return () => {
+      // Clean up GiveLively modal element
+      try {
+        const glModal = document.getElementById('gl-widget-modal')
+        if (glModal && glModal.parentNode) {
+          glModal.parentNode.removeChild(glModal)
+        }
+      } catch (e) {
+        // Already removed
+      }
+      
+      // Clean up any other GiveLively elements
+      try {
+        const glElements = document.querySelectorAll('.gl-modal, .gl-simple-donation-widget')
+        glElements.forEach(element => {
+          if (element && element.parentNode && element !== containerRef.current) {
+            try {
+              element.parentNode.removeChild(element)
+            } catch (err) {
+              // Already removed
+            }
+          }
+        })
+      } catch (e) {
+        // Already cleaned
+      }
+      
       // Clean up script
       if (scriptRef.current && scriptRef.current.parentNode) {
         try {
