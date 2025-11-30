@@ -114,15 +114,15 @@ export default function Donate() {
               </div>
             </div>
 
-            {/* Stock Donation */}
+            {/* DAF Donation */}
             <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
-              <div className="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                <span className="text-2xl">📈</span>
+              <div className="w-14 h-14 bg-purple-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                <span className="text-2xl">📋</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Stock Donation</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Donate appreciated securities for tax benefits.</p>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">DAF Donation</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">Give through your Donor Advised Fund.</p>
               <div className="flex justify-center">
-                <DonationButton campaign="Stock Donation" variant="primary" size="md">Learn More</DonationButton>
+                <DonationButton campaign="DAF Donation" variant="primary" size="md">Learn More</DonationButton>
               </div>
             </div>
 
@@ -138,15 +138,15 @@ export default function Donate() {
               </div>
             </div>
 
-            {/* DAF Donation */}
+            {/* Stock Donation */}
             <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
-              <div className="w-14 h-14 bg-purple-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                <span className="text-2xl">📋</span>
+              <div className="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                <span className="text-2xl">📈</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">DAF Donation</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Give through your Donor Advised Fund.</p>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Stock Donation</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">Donate appreciated securities for tax benefits.</p>
               <div className="flex justify-center">
-                <DonationButton campaign="DAF Donation" variant="primary" size="md">Learn More</DonationButton>
+                <DonationButton campaign="Stock Donation" variant="primary" size="md">Learn More</DonationButton>
               </div>
             </div>
 
