@@ -47,7 +47,7 @@ export default function Fundraisers() {
                 title='Donation form powered by Zeffy'
                 className="w-full border-0"
                 style={{ minHeight: '400px', height: 'auto' }}
-                src='https://www.zeffy.com/embed/leaderboard/peer-to-peer-fundraisers'
+                src='https://www.zeffy.com/en-US/embed/leaderboard/peer-to-peer-fundraisers'
               />
             </div>
           </div>
