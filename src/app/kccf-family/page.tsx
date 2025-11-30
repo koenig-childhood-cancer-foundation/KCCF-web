@@ -33,12 +33,8 @@ export default function KCCFFamily() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-block bg-orange-500 px-4 py-2 rounded-full mb-6">
-                <span className="text-white font-semibold text-sm">Our Founder</span>
-              </div>
-
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
-                Elana Koenig
+                Meet Our Founder, Elana Koenig
               </h2>
 
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
