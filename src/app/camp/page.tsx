@@ -10,7 +10,51 @@ export default function Camp() {
       <PageHeader
         title="Camp"
         subtitle="Join us for an unforgettable camp experience designed for children with cancer and their families."
-      />
+      >
+        {/* Join Our Camp Section - displayed in hero area */}
+        <div className="mt-8">
+          <h2 className="text-3xl font-bold text-center text-violet-700 dark:text-saffron-600 mb-8 drop-shadow-md">Join Our Camp</h2>
+
+          {/* Camp Registration Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center flex-1 max-w-sm flex flex-col">
+              <div className="w-16 h-16 bg-violet-100 dark:bg-violet-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span className="text-2xl">🏕️</span>
+              </div>
+              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">Join as a Camper</h3>
+              <p className="text-violet-600 dark:text-white mb-6 text-sm flex-grow">
+                Register your child for our upcoming camp session.
+              </p>
+              <FormButton
+                formType="camp-camper"
+                variant="violet"
+                size="md"
+                fullWidth={true}
+              >
+                Register Now
+              </FormButton>
+            </div>
+
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center flex-1 max-w-sm flex flex-col">
+              <div className="w-16 h-16 bg-saffron-100 dark:bg-saffron-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span className="text-2xl">🤝</span>
+              </div>
+              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">Join as a Counselor</h3>
+              <p className="text-violet-600 dark:text-white mb-6 text-sm flex-grow">
+                Help create magical moments for children facing cancer.
+              </p>
+              <FormButton
+                formType="camp-counselor"
+                variant="violet"
+                size="md"
+                fullWidth={true}
+              >
+                Apply Now
+              </FormButton>
+            </div>
+          </div>
+        </div>
+      </PageHeader>
 
       {/* About Camp Section */}
       <section className="py-16">
@@ -57,52 +101,6 @@ export default function Camp() {
               <p className="text-violet-600 dark:text-white">
                 Arts & crafts, outdoor adventures, games, and special events for all ages.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Form Selection */}
-      <section className="py-16 bg-platinum-50 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-violet-700 dark:text-saffron-600 mb-12">Join Our Camp</h2>
-
-          {/* Camp Registration Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center flex-1 max-w-sm flex flex-col">
-              <div className="w-16 h-16 bg-violet-100 dark:bg-violet-900 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl">🏕️</span>
-              </div>
-              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">Join as a Camper</h3>
-              <p className="text-violet-600 dark:text-white mb-6 text-sm flex-grow">
-                Register your child for our upcoming camp session.
-              </p>
-              <FormButton
-                formType="camp-camper"
-                variant="violet"
-                size="md"
-                fullWidth={true}
-              >
-                Register Now
-              </FormButton>
-            </div>
-
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center flex-1 max-w-sm flex flex-col">
-              <div className="w-16 h-16 bg-saffron-100 dark:bg-saffron-900 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl">🤝</span>
-              </div>
-              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">Join as a Counselor</h3>
-              <p className="text-violet-600 dark:text-white mb-6 text-sm flex-grow">
-                Help create magical moments for children facing cancer.
-              </p>
-              <FormButton
-                formType="camp-counselor"
-                variant="violet"
-                size="md"
-                fullWidth={true}
-              >
-                Apply Now
-              </FormButton>
             </div>
           </div>
         </div>
