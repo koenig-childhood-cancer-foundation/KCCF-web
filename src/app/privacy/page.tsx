@@ -9,7 +9,7 @@ export default function Privacy() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
       <PageHeader
-        title="Privacy Policy"
+        title="Privacy & Cookie Policy"
         subtitle="Your privacy matters to us. Learn how we collect, use, and protect your personal information."
       />
 
@@ -19,7 +19,7 @@ export default function Privacy() {
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 md:p-12">
             {/* Last Updated */}
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">
-              Last Updated: January 2025
+              Last Updated: November 2025
             </p>
 
             {/* Introduction */}
@@ -84,23 +84,32 @@ export default function Privacy() {
                 Our website uses cookies and similar tracking technologies to enhance your browsing experience, analyze website traffic, and understand where our visitors come from.
               </p>
               
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">Types of Cookies We Use</h3>
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">Third-Party Services</h3>
               
               <div className="space-y-4 mb-6">
                 <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Essential Cookies</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    These cookies are necessary for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies.
+                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Strictly Necessary Services (Always Active)</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
+                    These services are essential for the website to function properly and cannot be disabled:
                   </p>
+                  <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-sm space-y-1 ml-2">
+                    <li><strong>Google Tag Manager (GTM)</strong> - Manages the loading of other scripts and services</li>
+                    <li><strong>Zeffy</strong> - Powers our donation forms and payment processing</li>
+                    <li><strong>Monday.com Forms</strong> - Enables our contact, volunteer, and application forms</li>
+                  </ul>
                 </div>
                 
                 <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Analytics Cookies</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. We use Google Analytics to analyze website traffic and improve our services.
+                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Analytics Services (Require Consent)</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
+                    These services help us understand how visitors use our website. They are only activated with your consent:
                   </p>
+                  <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-sm space-y-1 ml-2">
+                    <li><strong>Google Analytics</strong> - Collects anonymous statistics about website usage</li>
+                    <li><strong>Microsoft Clarity</strong> - Provides heatmaps and session recordings to improve usability</li>
+                  </ul>
                 </div>
-                
+
                 <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Functional Cookies</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">

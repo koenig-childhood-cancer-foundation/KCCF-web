@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages SPA redirect handler
+    // This script handles trailing slash redirects for GitHub Pages
+    (function() {
+      var path = window.location.pathname;
+      
+      // If the path ends with a trailing slash and is not the root
+      if (path !== '/' && path.endsWith('/')) {
+        // Remove the trailing slash and redirect
+        var newPath = path.slice(0, -1);
+        window.location.replace(window.location.origin + newPath + window.location.search + window.location.hash);
+      } else {
+        // For actual 404s, redirect to the root with a 404 query parameter
+        // The Next.js app will handle showing the 404 page
+        var redirect = window.location.origin + '/?p=' + encodeURIComponent(path);
+        window.location.replace(redirect);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
