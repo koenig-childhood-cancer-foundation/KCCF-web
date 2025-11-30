@@ -162,6 +162,7 @@ KCCF-web/
 ├── tsconfig.json                # TypeScript configuration
 ├── eslint.config.mjs            # ESLint configuration
 ├── CONTRIBUTING.md              # Contribution guidelines
+├── EXTERNAL_SERVICES.md         # Guide for all external services (forms, donations, analytics)
 ├── SECURITY.md                  # Security policy
 └── README.md                    # This file
 ```

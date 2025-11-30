@@ -34,7 +34,15 @@ export default function Navigation() {
       dropdown: [
         { name: 'Our Story', href: '/our-story' },
         { name: 'KCCF Family', href: '/kccf-family' },
+      ]
+    },
+    { 
+      name: 'PROGRAMS',
+      href: '/aid',
+      dropdown: [
+        { name: 'Family Assistance', href: '/aid' },
         { name: 'Crazy Socks', href: '/crazy-socks' },
+        { name: 'Camp', href: '/camp' },
       ]
     },
     { 
@@ -51,11 +59,10 @@ export default function Navigation() {
     },
     { name: 'MEDIA', href: '/media' },
     { name: 'FUNDRAISERS', href: '/fundraisers' },
-    { name: 'CAMP', href: '/camp' },
   ]
 
   const handleMouseEnter = (itemName: string) => {
-    if (itemName === 'ABOUT' || itemName === 'CONTACT') {
+    if (itemName === 'ABOUT' || itemName === 'PROGRAMS' || itemName === 'CONTACT') {
       // Clear any existing timeout
       if (dropdownTimeout) {
         clearTimeout(dropdownTimeout)
