@@ -1,7 +1,20 @@
+'use client'
+
+import { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 export default function NotFound() {
+  useEffect(() => {
+    // GitHub Pages trailing slash redirect
+    const path = window.location.pathname
+    // If path ends with trailing slash (except root), redirect to version without trailing slash
+    if (path !== '/' && path.endsWith('/')) {
+      const pathWithoutSlash = path.slice(0, -1)
+      window.location.replace(window.location.origin + pathWithoutSlash + window.location.search + window.location.hash)
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Hero Section */}

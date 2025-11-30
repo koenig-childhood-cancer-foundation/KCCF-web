@@ -27,26 +27,26 @@ export const IMPACT_STATS = {
     },
     {
       value: "2,700+",
-      label: "Hospital visits/ celebrations",
+      label: "Hospital visits / celebrations",
       color: {
-        light: "text-black",
-        dark: "dark:text-white"
+        light: "text-violet-600",
+        dark: "dark:text-saffron-400"
       }
     },
     {
       value: "85,000+",
       label: "Care Packages",
       color: {
-        light: "text-black",
-        dark: "dark:text-white"
+        light: "text-violet-600",
+        dark: "dark:text-saffron-400"
       }
     },
     {
       value: "80+",
       label: "Summer Camp Children",
       color: {
-        light: "text-orange-600",
-        dark: "dark:text-orange-400"
+        light: "text-violet-600",
+        dark: "dark:text-saffron-400"
       }
     }
   ] as ImpactStat[],

@@ -15,8 +15,16 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Koenig Childhood Cancer Foundation</h3>
             <div className="space-y-2 text-gray-300">
-              <p>1175 York Ave., Suite 15E</p>
-              <p>New York, NY 10065</p>
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=1175+York+Ave+Suite+15E+New+York+NY+10065" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block hover:text-white transition-colors"
+                aria-label="View our location on Google Maps"
+              >
+                <p>1175 York Ave., Suite 15E</p>
+                <p>New York, NY 10065</p>
+              </a>
               <p>Phone: <a href="tel:+19177656272" className="hover:text-white transition-colors">+1 (917) 765-6272</a></p>
               <p>Email: <a href="mailto:join@thekccf.org" className="hover:text-white transition-colors">join@thekccf.org</a></p>
             </div>
@@ -194,7 +202,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-8 pt-8 text-center text-sm border-t border-gray-700 text-gray-300">
-          <p>©2025 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN: 84-489-2279</p>
+          <p>©2025 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN: 84-4892279</p>
           <p className="mt-2">
             Koenig Childhood Cancer Foundation is committed to equal employment and volunteer opportunity without regard to age, ancestry, disability, national or ethnic origin, race, religious belief, sex, sexual orientation, gender identity, marital or veteran status.
           </p>
