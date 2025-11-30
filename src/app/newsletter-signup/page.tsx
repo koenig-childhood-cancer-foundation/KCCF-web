@@ -1,10 +1,12 @@
 "use client"
 
-import React from 'react';
+import React, { useState } from 'react';
 import PageHeader from '@/components/PageHeader';
-import FormButton from '@/components/FormButton';
+import Spinner from '@/components/Spinner';
 
 export default function NewsletterSignup() {
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+
   return (
     <div className="min-h-screen bg-platinum-50">
       <PageHeader
@@ -12,27 +14,34 @@ export default function NewsletterSignup() {
         subtitle="Join our newsletter to receive updates about our programs, events, and the families we help."
       />
 
-
-
       {/* Newsletter Signup Form */}
       <section className="py-16 bg-violet-500">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-xl p-8 md:p-12 text-center">
-            <h2 className="text-2xl font-bold text-violet-700 mb-6">Join Our Newsletter</h2>
-            <p className="text-violet-600 mb-8">
-              Stay updated with our latest programs, events, and the impact we're making together.
+          <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
+            <h2 className="text-2xl font-bold text-violet-700 mb-6 text-center">Join Our Newsletter</h2>
+            <p className="text-violet-600 mb-8 text-center">
+              Stay updated with our latest programs, events, and the impact we&apos;re making together.
             </p>
 
-            <FormButton
-              formType="newsletter-signup"
-              variant="violet"
-              size="lg"
-              className="min-w-[200px]"
-            >
-              Sign Up for Newsletter
-            </FormButton>
+            {/* Embedded Newsletter Form */}
+            <div className="relative min-h-[650px]">
+              {!iframeLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-white">
+                  <Spinner text="Loading form..." />
+                </div>
+              )}
+              <iframe
+                className={`w-full border-0 ${!iframeLoaded ? 'invisible' : ''}`}
+                src="https://thekccf.us17.list-manage.com/subscribe?u=041a777be61cc7e1bc20e3517&id=8696f27783"
+                title="Newsletter Signup Form"
+                height="650"
+                scrolling="auto"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+                onLoad={() => setIframeLoaded(true)}
+              />
+            </div>
 
-            <div className="mt-8">
+            <div className="mt-8 text-center">
               <p className="text-sm text-violet-600">
                 We respect your privacy. You can unsubscribe at any time by clicking the link in our emails.
               </p>
