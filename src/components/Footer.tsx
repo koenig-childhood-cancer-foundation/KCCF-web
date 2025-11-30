@@ -15,8 +15,16 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Koenig Childhood Cancer Foundation</h3>
             <div className="space-y-2 text-gray-300">
-              <p>1175 York Ave., Suite 15E</p>
-              <p>New York, NY 10065</p>
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=1175+York+Ave+Suite+15E+New+York+NY+10065" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block hover:text-white transition-colors"
+                aria-label="View our location on Google Maps"
+              >
+                <p>1175 York Ave., Suite 15E</p>
+                <p>New York, NY 10065</p>
+              </a>
               <p>Phone: <a href="tel:+19177656272" className="hover:text-white transition-colors">+1 (917) 765-6272</a></p>
               <p>Email: <a href="mailto:join@thekccf.org" className="hover:text-white transition-colors">join@thekccf.org</a></p>
             </div>
