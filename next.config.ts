@@ -5,7 +5,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const nextConfig: NextConfig = {
   // Generate a fully static site suitable for GitHub Pages
   output: 'export',
-  trailingSlash: true,
+  trailingSlash: false,
   basePath: basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
   images: {
