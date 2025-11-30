@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,34 +8,59 @@ import { useDonationModal } from '@/contexts/DonationModalContext'
 
 type DonationProvider = 'zeffy' | 'givelively'
 
-// Helper function to clean up GiveLively widget and script
-function cleanupGiveLivelyWidget(scriptElement?: HTMLScriptElement) {
-  const widget = document.querySelector('.gl-simple-donation-widget')
-  if (widget) {
-    widget.remove()
-  }
-  if (scriptElement?.parentNode) {
-    scriptElement.parentNode.removeChild(scriptElement)
-  }
-}
-
 // GiveLively widget component that loads the donation form via script
 function GiveLivelyWidget() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [isLoading, setIsLoading] = useState(true)
+
   useEffect(() => {
-    // Clean up any existing widget before loading
-    cleanupGiveLivelyWidget()
+    const container = containerRef.current
+    if (!container) return
+
+    // Clean up any existing GiveLively widgets first
+    const existingWidgets = document.querySelectorAll('.gl-simple-donation-widget')
+    existingWidgets.forEach(widget => widget.remove())
+
+    // Create and inject the GiveLively script into the container
+    const script = document.createElement('script')
+    script.src = 'https://secure.givelively.org/widgets/simple_donation/koenig-childhood-cancer-foundation.js?show_suggested_amount_buttons=true&show_in_honor_of=true&address_required=false&has_required_custom_question=null&suggested_donation_amounts[]=25&suggested_donation_amounts[]=50&suggested_donation_amounts[]=100&suggested_donation_amounts[]=250'
+    script.async = true
+    script.onload = () => {
+      setIsLoading(false)
+    }
+    script.onerror = () => {
+      setIsLoading(false)
+    }
     
-    // Create and load the GiveLively script
-    const gl = document.createElement('script')
-    gl.src = 'https://secure.givelively.org/widgets/simple_donation/koenig-childhood-cancer-foundation.js?show_suggested_amount_buttons=true&show_in_honor_of=true&address_required=false&suggested_donation_amounts[]=25&suggested_donation_amounts[]=50&suggested_donation_amounts[]=100&suggested_donation_amounts[]=250'
-    document.head.appendChild(gl)
-    
-    return () => cleanupGiveLivelyWidget(gl)
+    // Append script to container so widget renders here
+    container.appendChild(script)
+
+    return () => {
+      // Clean up on unmount
+      if (script.parentNode) {
+        script.parentNode.removeChild(script)
+      }
+      // Remove any GiveLively widgets that were created
+      const widgets = document.querySelectorAll('.gl-simple-donation-widget')
+      widgets.forEach(widget => widget.remove())
+    }
   }, [])
-  
+
   return (
-    <div id="give-lively-widget" className="gl-simple-donation-widget h-[600px] sm:h-[650px] overflow-auto p-4">
-      {/* The GiveLively script will inject the widget here */}
+    <div 
+      ref={containerRef}
+      id="give-lively-widget" 
+      className="h-[600px] sm:h-[650px] overflow-auto p-4"
+      style={{ minHeight: '272px' }}
+    >
+      {isLoading && (
+        <div className="flex items-center justify-center h-full">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#732154] mx-auto mb-4"></div>
+            <p className="text-gray-600 dark:text-gray-400">Loading donation form...</p>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
