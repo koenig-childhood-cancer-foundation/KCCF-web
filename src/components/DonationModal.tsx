@@ -8,6 +8,9 @@ import { useDonationModal } from '@/contexts/DonationModalContext'
 
 type DonationProvider = 'zeffy' | 'givelively'
 
+// GiveLively widget configuration
+const GIVELIVELY_WIDGET_URL = 'https://secure.givelively.org/widgets/simple_donation/koenig-childhood-cancer-foundation.js?show_suggested_amount_buttons=true&show_in_honor_of=true&address_required=false&has_required_custom_question=null&suggested_donation_amounts[]=25&suggested_donation_amounts[]=50&suggested_donation_amounts[]=100&suggested_donation_amounts[]=250'
+
 // GiveLively widget component that loads the donation form via script
 function GiveLivelyWidget() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -23,7 +26,7 @@ function GiveLivelyWidget() {
 
     // Create and inject the GiveLively script into the container
     const script = document.createElement('script')
-    script.src = 'https://secure.givelively.org/widgets/simple_donation/koenig-childhood-cancer-foundation.js?show_suggested_amount_buttons=true&show_in_honor_of=true&address_required=false&has_required_custom_question=null&suggested_donation_amounts[]=25&suggested_donation_amounts[]=50&suggested_donation_amounts[]=100&suggested_donation_amounts[]=250'
+    script.src = GIVELIVELY_WIDGET_URL
     script.async = true
     script.onload = () => {
       setIsLoading(false)
@@ -37,9 +40,7 @@ function GiveLivelyWidget() {
 
     return () => {
       // Clean up on unmount
-      if (script.parentNode) {
-        script.parentNode.removeChild(script)
-      }
+      script.remove()
       // Remove any GiveLively widgets that were created
       const widgets = document.querySelectorAll('.gl-simple-donation-widget')
       widgets.forEach(widget => widget.remove())
@@ -50,8 +51,7 @@ function GiveLivelyWidget() {
     <div 
       ref={containerRef}
       id="give-lively-widget" 
-      className="h-[600px] sm:h-[650px] overflow-auto p-4"
-      style={{ minHeight: '272px' }}
+      className="h-[600px] sm:h-[650px] min-h-[272px] overflow-auto p-4"
     >
       {isLoading && (
         <div className="flex items-center justify-center h-full">
