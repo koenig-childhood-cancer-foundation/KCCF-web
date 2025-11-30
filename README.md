@@ -163,6 +163,7 @@ KCCF-web/
 ├── eslint.config.mjs            # ESLint configuration
 ├── CONTRIBUTING.md              # Contribution guidelines
 ├── EXTERNAL_SERVICES.md         # Guide for all external services (forms, donations, analytics)
+├── EXTERNAL_VALIDATION_CHECKLIST.md # Post-deployment verification checklist
 ├── SECURITY.md                  # Security policy
 └── README.md                    # This file
 ```
