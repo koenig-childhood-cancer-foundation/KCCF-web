@@ -8,9 +8,10 @@ export default function NotFound() {
   useEffect(() => {
     // GitHub Pages trailing slash redirect
     const path = window.location.pathname
-    // If path doesn't end with trailing slash and is not root, redirect to version with trailing slash
-    if (path !== '/' && !path.endsWith('/')) {
-      window.location.replace(window.location.origin + path + '/' + window.location.search + window.location.hash)
+    // If path ends with trailing slash (except root), redirect to version without trailing slash
+    if (path !== '/' && path.endsWith('/')) {
+      const pathWithoutSlash = path.slice(0, -1)
+      window.location.replace(window.location.origin + pathWithoutSlash + window.location.search + window.location.hash)
     }
   }, [])
 
