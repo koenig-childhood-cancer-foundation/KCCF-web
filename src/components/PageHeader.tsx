@@ -11,9 +11,9 @@ interface PageHeaderProps {
   backgroundImages?: string[];
 }
 
-export default function PageHeader({ 
-  title, 
-  subtitle, 
+export default function PageHeader({
+  title,
+  subtitle,
   backgroundImages = [
     "/images/MetaLeadershipMakingfitBags-scaled.jpg",
     "/images/bankofamerica-scaled.jpeg",
@@ -40,7 +40,7 @@ export default function PageHeader({
     }
     return rotated;
   });
-  
+
   const { currentIndex: sharedIndex, setCurrentIndex: setSharedIndex } = useSlideshow();
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(sharedIndex % backgroundImages.length);
 
@@ -92,15 +92,14 @@ export default function PageHeader({
   }, [shuffledImages.length, pathname, setSharedIndex]);
 
   return (
-    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-24">
+    <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden pt-24">
       {/* Background Images Slideshow */}
       <div className="absolute inset-0">
         {shuffledImages.map((image, index) => (
           <div
             key={index}
-                         className={`absolute inset-0 transition-opacity duration-2000 ease-in-out ${
-               index === currentImageIndex ? 'opacity-70' : 'opacity-0'
-             }`}
+            className={`absolute inset-0 transition-opacity duration-2000 ease-in-out ${index === currentImageIndex ? 'opacity-70' : 'opacity-0'
+              }`}
           >
             <Image
               src={image}
@@ -115,10 +114,10 @@ export default function PageHeader({
           </div>
         ))}
       </div>
-      
-                           {/* Additional Background Pattern */}
-        <div className="absolute inset-0 bg-white/30 dark:bg-gray-900/70"></div>
-      
+
+      {/* Additional Background Pattern */}
+      <div className="absolute inset-0 bg-white/30 dark:bg-gray-900/70"></div>
+
       {/* Content */}
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -128,15 +127,15 @@ export default function PageHeader({
           <p className="text-xl md:text-2xl text-black dark:text-gray-200 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
             {subtitle}
           </p>
-          
+
           {/* Decorative line */}
           <div className="mt-8 flex justify-center">
             <div className="w-24 h-1 bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600 dark:from-gray-500 dark:via-gray-400 dark:to-gray-300 rounded-full"></div>
           </div>
         </div>
       </div>
-      
-      
+
+
     </section>
   );
 }
