@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import Spinner from '@/components/Spinner'
 
 export default function LoadingSpinner() {
   const [isLoading, setIsLoading] = useState(false)
@@ -35,15 +36,7 @@ export default function LoadingSpinner() {
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-white dark:bg-gray-900 transition-all duration-300 ease-in-out">
-      <div className="text-center">
-        {/* Simple spinner */}
-        <div className="w-12 h-12 border-3 border-gray-200 dark:border-gray-700 border-t-[#732154] rounded-full animate-spin mx-auto mb-4"></div>
-        
-        {/* Loading text */}
-        <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">
-          {isInitialLoad ? 'Loading...' : 'Loading...'}
-        </p>
-      </div>
+      <Spinner />
     </div>
   )
 }
