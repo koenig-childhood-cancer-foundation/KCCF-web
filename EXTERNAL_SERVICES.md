@@ -31,7 +31,7 @@ This document provides a comprehensive overview of all external third-party serv
 |---------|----------|---------|-----|
 | **Monday.com** | Forms | Data collection forms (camp, volunteer, contact, etc.) | forms.monday.com |
 | **Mailchimp** | Forms | Newsletter subscriptions | list-manage.com |
-| **Zeffy** | Donations | Primary donation platform & P2P fundraising | zeffy.com |
+| **Zeffy** | Donations | Primary donation platform & peer-to-peer (P2P) fundraising | zeffy.com |
 | **GiveLively** | Donations | Alternative donation widget | givelively.org |
 | **Google Tag Manager** | Analytics | Tag management & consent orchestration | googletagmanager.com |
 | **Google Analytics** | Analytics | Website traffic & behavior analytics | analytics.google.com |
@@ -60,7 +60,7 @@ Monday.com powers 7 embedded forms for data collection across the site.
 
 - **Platform URL**: https://monday.com
 - **Integration Type**: Embedded iframe forms
-- **GTM ID**: `GTM-P2SBKM7K` (forms load via GTM)
+- **GTM ID**: `GTM-P2SBKM7K` (used for analytics tracking, not for loading forms)
 
 #### Forms in Use
 
@@ -97,7 +97,7 @@ Mailchimp handles newsletter subscriptions.
 
 - **Platform URL**: https://mailchimp.com
 - **Integration Type**: Embedded subscription form
-- **Embed URL**: `thekccf.us17.list-manage.com/subscribe?u=041a777be61cc7e1bc20e3517&id=8696f27783`
+- **Embed URL**: `https://thekccf.us17.list-manage.com/subscribe?u=041a777be61cc7e1bc20e3517&id=8696f27783`
 
 #### Configuration
 
@@ -132,9 +132,9 @@ Zeffy is the primary donation platform, handling one-time donations, recurring d
 
 | Component | Location | Embed URL |
 |-----------|----------|-----------|
-| Donation Modal (Primary) | `DonationModal.tsx` | `zeffy.com/embed/donation-form/donate-to-make-a-difference-18649` |
-| Fundraisers Page | `/fundraisers` | `zeffy.com/en-US/peer-to-peer/peer-to-peer-fundraisers` |
-| Leaderboard Widget | `/fundraisers` | `zeffy.com/embed/leaderboard/peer-to-peer-fundraisers` |
+| Donation Modal (Primary) | `DonationModal.tsx` | `https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649` |
+| Fundraisers Page | `/fundraisers` | `https://www.zeffy.com/en-US/peer-to-peer/peer-to-peer-fundraisers` |
+| Leaderboard Widget | `/fundraisers` | `https://www.zeffy.com/embed/leaderboard/peer-to-peer-fundraisers` |
 
 #### Configuration
 
@@ -158,13 +158,13 @@ Zeffy is the primary donation platform, handling one-time donations, recurring d
 
 ### GiveLively
 
-GiveLively provides an alternative donation option, supporting PayPal, Venmo, and DAFs.
+GiveLively provides an alternative donation option, supporting PayPal, Venmo, and Donor-Advised Funds (DAFs).
 
 #### Service Details
 
 - **Platform URL**: https://www.givelively.org
 - **Integration Type**: JavaScript widget
-- **Widget URL**: `secure.givelively.org/widgets/simple_donation/koenig-childhood-cancer-foundation.js`
+- **Widget URL**: `https://secure.givelively.org/widgets/simple_donation/koenig-childhood-cancer-foundation.js`
 
 #### Configuration
 
@@ -298,7 +298,7 @@ Microsoft Clarity provides heatmaps and session recordings to understand user be
 - Sensitive data can be masked in recordings
 
 #### Support
-- Documentation: https://docs.microsoft.com/en-us/clarity/
+- Documentation: https://learn.microsoft.com/en-us/clarity/
 - FAQ: https://clarity.microsoft.com/faq
 
 ---
@@ -410,7 +410,7 @@ The site uses a custom cookie consent system to manage user preferences for anal
 | GiveLively | https://www.givelively.org/support |
 | Google Tag Manager | https://support.google.com/tagmanager/ |
 | Google Analytics | https://support.google.com/analytics/ |
-| Microsoft Clarity | https://docs.microsoft.com/en-us/clarity/ |
+| Microsoft Clarity | https://learn.microsoft.com/en-us/clarity/ |
 
 ---
 
