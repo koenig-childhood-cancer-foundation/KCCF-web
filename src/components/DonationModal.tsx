@@ -1,20 +1,62 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useDonationModal } from '@/contexts/DonationModalContext'
-import { useCookieConsent } from '@/contexts/CookieConsentContext'
 
 type DonationProvider = 'zeffy' | 'givelively'
- 
 
-// All previous multi-step and amount form logic removed in favor of Zeffy embed
+// GiveLively widget component that loads the donation form via script
+function GiveLivelyWidget() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const scriptRef = useRef<HTMLScriptElement | null>(null)
+  
+  useEffect(() => {
+    if (!containerRef.current) return
+    
+    // Create and load the GiveLively script
+    const gl = document.createElement('script')
+    gl.src = 'https://secure.givelively.org/widgets/simple_donation/koenig-childhood-cancer-foundation.js?show_suggested_amount_buttons=true&show_in_honor_of=true&address_required=false&suggested_donation_amounts[]=25&suggested_donation_amounts[]=50&suggested_donation_amounts[]=100&suggested_donation_amounts[]=250'
+    scriptRef.current = gl
+    document.head.appendChild(gl)
+    
+    return () => {
+      // Clean up script
+      if (scriptRef.current && scriptRef.current.parentNode) {
+        try {
+          scriptRef.current.parentNode.removeChild(scriptRef.current)
+        } catch (e) {
+          // Already removed
+        }
+      }
+      
+      // Clean up widget content - let React handle the container removal
+      if (containerRef.current) {
+        try {
+          // Clear inner HTML to prevent React from trying to remove GiveLively's DOM
+          containerRef.current.innerHTML = ''
+        } catch (e) {
+          // Already cleaned
+        }
+      }
+    }
+  }, [])
+  
+  return (
+    <div 
+      ref={containerRef}
+      id="give-lively-widget" 
+      className="gl-simple-donation-widget h-[600px] sm:h-[650px] overflow-auto p-4 bg-white"
+    >
+      {/* The GiveLively script will inject the widget here */}
+    </div>
+  )
+}
 
 export default function DonationModal() {
   const { isOpen, closeModal, campaign } = useDonationModal()
-  const { consent, openPreferences } = useCookieConsent()
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
 
   // Close modal on escape key
@@ -139,97 +181,65 @@ export default function DonationModal() {
           </div>
 
           <div className="flex-1">
-            {consent.marketing ? (
-              <>
-                {/* Provider Selection */}
-                <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700/50 border-b border-gray-200 dark:border-gray-700">
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Choose your preferred donation platform:</p>
-                  <div className="flex space-x-4">
-                     <div className="flex flex-col">
-                       <button
-                         onClick={() => setSelectedProvider('zeffy')}
-                         className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer ${
-                           selectedProvider === 'zeffy'
-                             ? 'bg-[#732154] text-white hover:bg-[#732154]/90'
-                             : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500'
-                         }`}
-                       >
-                         Zeffy
-                       </button>
-                       <ul className="mt-2 text-xs text-gray-500 dark:text-gray-400 list-disc list-inside">
-                         <li>No fees</li>
-                         <li>Accepts international donations</li>
-                       </ul>
-                     </div>
-                     <div className="flex flex-col">
-                       <button
-                         onClick={() => setSelectedProvider('givelively')}
-                         className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer ${
-                           selectedProvider === 'givelively'
-                             ? 'bg-[#732154] text-white hover:bg-[#732154]/90'
-                             : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500'
-                         }`}
-                       >
-                         GiveLively
-                       </button>
-                       <ul className="mt-2 text-xs text-gray-500 dark:text-gray-400 list-disc list-inside">
-                         <li>Standard processing fees</li>
-                         <li>Accepts PayPal / Venmo / DAFs</li>
-                       </ul>
-                     </div>
-                  </div>
-                </div>
-                
-                {selectedProvider === 'zeffy' ? (
-                <div className="h-[600px] sm:h-[650px] overflow-auto">
-                  <iframe
-                    className="block w-full h-full max-w-full border-0"
-                    src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
-                    title="Zeffy donation form"
-                    scrolling="yes"
-                    allow="payment"
-                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                    style={{
-                      WebkitOverflowScrolling: 'touch',
-                      overflow: 'auto',
-                      minHeight: '600px',
-                      height: '100%'
-                    }}
-                  />
-                </div>
-              ) : (
-                <div className="h-[600px] sm:h-[650px] overflow-auto">
-                  <iframe
-                    className="block w-full h-full max-w-full border-0"
-                    src="https://secure.givelively.org/donate/koenig-childhood-cancer-foundation?ref=sd_widget"
-                    title="GiveLively donation form"
-                    scrolling="yes"
-                    allow="payment"
-                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                    style={{
-                      WebkitOverflowScrolling: 'touch',
-                      overflow: 'auto',
-                      minHeight: '600px',
-                      height: '100%'
-                    }}
-                  />
-                </div>
-                )}
-              </>
-            ) : (
-              <div className="h-[600px] flex flex-col items-center justify-center text-center p-8">
-                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Marketing cookies required</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 max-w-md">
-                  To display our embedded donation form, please enable Marketing cookies in your preferences.
-                </p>
-                <button
-                  type="button"
-                  onClick={openPreferences}
-                  className="mt-6 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-[#732154] text-white hover:bg-[#732154]/90 hover:cursor-pointer"
-                >
-                  Manage cookie preferences
-                </button>
+            {/* Zeffy/GiveLively donation forms are loaded as strictly necessary services */}
+            {/* Provider Selection */}
+            <div className="px-6 py-4 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+              <p className="text-sm text-gray-900 dark:text-white mb-3">Choose your preferred donation platform:</p>
+              <div className="flex space-x-4">
+                 <div className="flex flex-col">
+                   <button
+                     onClick={() => setSelectedProvider('zeffy')}
+                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
+                       selectedProvider === 'zeffy'
+                         ? 'bg-[#732154] text-white hover:bg-[#732154]/90 border-[#732154]'
+                         : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#732154]'
+                     }`}
+                   >
+                     Zeffy
+                   </button>
+                   <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc list-inside">
+                     <li>No fees</li>
+                     <li>Accepts international donations</li>
+                   </ul>
+                 </div>
+                 <div className="flex flex-col">
+                   <button
+                     onClick={() => setSelectedProvider('givelively')}
+                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
+                       selectedProvider === 'givelively'
+                         ? 'bg-[#732154] text-white hover:bg-[#732154]/90 border-[#732154]'
+                         : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#732154]'
+                     }`}
+                   >
+                     GiveLively
+                   </button>
+                   <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc list-inside">
+                     <li>Standard processing fees</li>
+                     <li>Accepts PayPal / Venmo / DAFs</li>
+                   </ul>
+                 </div>
               </div>
+            </div>
+            
+            {selectedProvider === 'zeffy' ? (
+              <div className="h-[600px] sm:h-[650px] overflow-auto">
+                <iframe
+                  className="block w-full h-full max-w-full border-0"
+                  src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
+                  title="Zeffy donation form"
+                  scrolling="yes"
+                  allow="payment"
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                  style={{
+                    WebkitOverflowScrolling: 'touch',
+                    overflow: 'auto',
+                    minHeight: '600px',
+                    height: '100%'
+                  }}
+                />
+              </div>
+            ) : (
+              <GiveLivelyWidget />
             )}
           </div>
         </div>
