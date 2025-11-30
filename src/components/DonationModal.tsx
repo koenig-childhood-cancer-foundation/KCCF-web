@@ -134,8 +134,8 @@ export default function DonationModal() {
             <div className="campaign-image-holder mb-6">
               <Image 
                 className="w-full h-64 object-cover rounded-xl shadow-lg"
-                src="/images/ElanaOliviaGiftBags-scaled.jpg"
-                alt="Elana and Olivia preparing gift bags"
+                src="/images/elana-charlotte.jpg"
+                alt="Elana and Charlotte with gift bag"
                 width="516"
                 height="289"
               />
