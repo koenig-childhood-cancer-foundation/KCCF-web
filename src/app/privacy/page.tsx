@@ -273,7 +273,7 @@ export default function Privacy() {
             {/* EIN Information */}
             <div className="text-center pt-8 border-t border-gray-200 dark:border-gray-600">
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                Koenig Childhood Cancer Foundation is a 501(c)(3) tax-exempt organization. EIN: 84-489-2279
+                Koenig Childhood Cancer Foundation is a 501(c)(3) tax-exempt organization. EIN: 84-4892279
               </p>
             </div>
           </div>

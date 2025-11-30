@@ -202,7 +202,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-8 pt-8 text-center text-sm border-t border-gray-700 text-gray-300">
-          <p>©2025 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN: 84-489-2279</p>
+          <p>©2025 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN: 84-4892279</p>
           <p className="mt-2">
             Koenig Childhood Cancer Foundation is committed to equal employment and volunteer opportunity without regard to age, ancestry, disability, national or ethnic origin, race, religious belief, sex, sexual orientation, gender identity, marital or veteran status.
           </p>
