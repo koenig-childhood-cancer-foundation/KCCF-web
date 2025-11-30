@@ -27,8 +27,8 @@ export default function HomeContent() {
           />
         </div>
 
-        {/* Background Pattern Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-platinum-50/40 via-white/40 to-platinum-100/40 dark:from-gray-900/70 dark:via-gray-800/70 dark:to-gray-900/70"></div>
+        {/* Background Pattern Overlay - reduced opacity for more vibrant image */}
+        <div className="absolute inset-0 bg-gradient-to-br from-platinum-50/20 via-white/15 to-platinum-100/20 dark:from-gray-900/60 dark:via-gray-800/60 dark:to-gray-900/60"></div>
 
         {/* Decorative Elements */}
         <div className="absolute inset-0 opacity-10">
@@ -38,18 +38,18 @@ export default function HomeContent() {
           <div className="absolute bottom-20 right-20 w-28 h-28 rounded-full bg-orange-500"></div>
         </div>
 
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
+        <div className="container mx-auto px-4 text-center lg:text-left relative z-10">
+          <div className="max-w-4xl mx-auto lg:mx-0 lg:ml-8 backdrop-blur-[2px] bg-white/30 dark:bg-gray-900/30 rounded-3xl p-8 lg:p-12">
 
-            <h1 className="text-6xl md:text-7xl font-bold mb-8 text-violet-600 dark:text-saffron-400">
-              Life-saving support for children battling cancer
+            <h1 className="text-5xl md:text-6xl font-bold mb-8 text-violet-600 dark:text-saffron-400 drop-shadow-sm">
+              Life-saving financial and emotional support for children battling cancer.
             </h1>
 
-            <p className="text-xl md:text-2xl mb-12 text-black dark:text-gray-200 max-w-3xl mx-auto leading-relaxed font-normal">
+            <p className="text-xl md:text-2xl mb-12 text-gray-900 dark:text-gray-200 max-w-3xl mx-auto lg:mx-0 leading-relaxed font-medium drop-shadow-sm">
               Koenig Childhood Cancer Foundation was started by 11-year-old cancer survivor Elana Koenig in 2020 with $900 in her piggy bank.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
               <Link href="/aid" className="group bg-violet-500 hover:bg-violet-600 text-white py-4 px-10 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center">
                 <span>Apply for Aid</span>
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,13 +73,13 @@ export default function HomeContent() {
             </div>
 
             {/* Impact Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto lg:mx-0">
               {IMPACT_STATS.HOME.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className={`text-3xl md:text-4xl font-bold ${stat.color.light} ${stat.color.dark} mb-2`}>
+                <div key={index} className="text-center lg:text-left">
+                  <div className={`text-3xl md:text-4xl font-bold ${stat.color.light} ${stat.color.dark} mb-2 drop-shadow-sm`}>
                     {stat.value}
                   </div>
-                  <p className="text-black dark:text-gray-300 text-sm">{stat.label}</p>
+                  <p className="text-gray-900 dark:text-gray-300 text-sm font-medium drop-shadow-sm">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -99,12 +99,8 @@ export default function HomeContent() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <div className="inline-block bg-orange-600 px-4 py-2 rounded-full mb-6">
-                <span className="text-white font-semibold text-sm">Our Founder</span>
-              </div>
-
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
-                Meet Elana Koenig
+                Meet Our Founder, Elana Koenig
               </h2>
 
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">

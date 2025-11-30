@@ -40,13 +40,13 @@ export default function ConsentPreferencesModal() {
           <div className="p-4 space-y-4">
             <PreferenceRow
               title="Strictly necessary"
-              description="Required for basic site functionality. Always on."
+              description="Required for basic site functionality including forms (Zeffy, Monday) and Google Tag Manager. Always on."
               checked
               disabled
             />
             <PreferenceRow
               title="Analytics"
-              description="Helps us understand usage to improve the site."
+              description="Helps us understand usage to improve the site (Google Analytics, Microsoft Clarity)."
               checked={draft.analytics}
               onChange={(v) => setDraft(s => ({ ...s, analytics: v }))}
             />

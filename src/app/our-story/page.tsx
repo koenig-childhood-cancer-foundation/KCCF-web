@@ -1,7 +1,6 @@
 "use client"
 
 import Image from 'next/image';
-import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 import CallToAction from '@/components/CallToAction';
@@ -95,9 +94,14 @@ export default function OurStory() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-block bg-orange-500 px-4 py-2 rounded-full mb-6">
-                <span className="text-white font-semibold text-sm">From Patient to Founder</span>
-              </div>
+              <FormButton
+                formType="book-elana"
+                variant="orange"
+                size="sm"
+                className="rounded-full mb-6"
+              >
+                From Patient to Founder
+              </FormButton>
 
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-saffron-400">
                 Elana's Story

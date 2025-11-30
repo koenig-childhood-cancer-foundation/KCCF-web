@@ -16,10 +16,13 @@ export default function Camp() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-violet-700 dark:text-saffron-600 mb-6">KCCF Camp Experience</h2>
+            <h2 className="text-3xl font-bold text-violet-700 dark:text-saffron-600 mb-6">KCCF International Healing Camp</h2>
+            <p className="text-lg text-violet-600 dark:text-white max-w-3xl mx-auto mb-4">
+              Cancer is a lifelong journey. The KCCF International Camp brings together children diagnosed with cancer and their siblings from around the world, helps heal their emotional wounds, and inspires them to feel joyful and included as part of society.
+            </p>
             <p className="text-lg text-violet-600 dark:text-white max-w-3xl mx-auto">
               Our camp provides a safe, supportive environment where children with cancer can have fun,
-              make friends, and create lasting memories. Whether you're a camper or want to join as a counselor,
+              make friends, and create lasting memories. Whether you&apos;re a camper or want to join as a counselor,
               we welcome you to be part of this special experience.
             </p>
           </div>
@@ -66,12 +69,12 @@ export default function Camp() {
 
           {/* Camp Registration Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center flex-1 max-w-sm">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center flex-1 max-w-sm flex flex-col">
               <div className="w-16 h-16 bg-violet-100 dark:bg-violet-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🏕️</span>
               </div>
               <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">Join as a Camper</h3>
-              <p className="text-violet-600 dark:text-white mb-6 text-sm">
+              <p className="text-violet-600 dark:text-white mb-6 text-sm flex-grow">
                 Register your child for our upcoming camp session.
               </p>
               <FormButton
@@ -84,12 +87,12 @@ export default function Camp() {
               </FormButton>
             </div>
 
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center flex-1 max-w-sm">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center flex-1 max-w-sm flex flex-col">
               <div className="w-16 h-16 bg-saffron-100 dark:bg-saffron-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🤝</span>
               </div>
               <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">Join as a Counselor</h3>
-              <p className="text-violet-600 dark:text-white mb-6 text-sm">
+              <p className="text-violet-600 dark:text-white mb-6 text-sm flex-grow">
                 Help create magical moments for children facing cancer.
               </p>
               <FormButton
