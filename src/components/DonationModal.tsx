@@ -82,7 +82,7 @@ function GiveLivelyWidget() {
 }
 
 export default function DonationModal() {
-  const { isOpen, closeModal, campaign } = useDonationModal()
+  const { isOpen, closeModal } = useDonationModal()
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
 
   // Close modal on escape key
@@ -143,7 +143,7 @@ export default function DonationModal() {
             
             <div className="campaign-body">
               <h2 className="text-2xl font-bold mb-4">
-                {campaign || "Help hospitalized children with cancer"}
+                KCCF FAMILIES DEPEND ON YOU
               </h2>
               <p className="text-white/90 leading-relaxed">
                 Your donation helps provide support and resources to hospitalized children battling cancer. 
@@ -170,18 +170,6 @@ export default function DonationModal() {
                 </div>
               </div>
             </div>
-            <div className="mt-4">
-              <Link 
-                href="/donate"
-                onClick={closeModal}
-                className="inline-flex items-center text-base font-bold text-white/90 hover:text-white underline underline-offset-2 transition-colors"
-              >
-                Other ways to donate
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
-            </div>
           </div>
         </div>
         
@@ -190,10 +178,7 @@ export default function DonationModal() {
           <div className="bg-white dark:bg-gray-800">
             <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Donate to save lives</h2>
-                {campaign && (
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Campaign: {campaign}</p>
-                )}
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">KCCF FAMILIES DEPEND ON YOU</h2>
               </div>
               <button
                 onClick={closeModal}
@@ -267,6 +252,20 @@ export default function DonationModal() {
             ) : (
               <GiveLivelyWidget />
             )}
+            
+            {/* Other Ways to Donate - moved here for better visibility */}
+            <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-600">
+              <Link 
+                href="/donate"
+                onClick={closeModal}
+                className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-[#732154] text-white rounded-lg font-bold text-lg hover:bg-[#5a1a42] transition-colors shadow-md hover:shadow-lg"
+              >
+                OTHER WAYS TO DONATE
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
