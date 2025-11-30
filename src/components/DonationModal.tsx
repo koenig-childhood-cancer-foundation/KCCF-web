@@ -1,12 +1,59 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useDonationModal } from '@/contexts/DonationModalContext'
 
 type DonationProvider = 'zeffy' | 'givelively'
+
+// GiveLively widget component that loads the donation form via script
+function GiveLivelyWidget() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const scriptRef = useRef<HTMLScriptElement | null>(null)
+  
+  useEffect(() => {
+    if (!containerRef.current) return
+    
+    // Create and load the GiveLively script
+    const gl = document.createElement('script')
+    gl.src = 'https://secure.givelively.org/widgets/simple_donation/koenig-childhood-cancer-foundation.js?show_suggested_amount_buttons=true&show_in_honor_of=true&address_required=false&suggested_donation_amounts[]=25&suggested_donation_amounts[]=50&suggested_donation_amounts[]=100&suggested_donation_amounts[]=250'
+    scriptRef.current = gl
+    document.head.appendChild(gl)
+    
+    return () => {
+      // Clean up script
+      if (scriptRef.current && scriptRef.current.parentNode) {
+        try {
+          scriptRef.current.parentNode.removeChild(scriptRef.current)
+        } catch (e) {
+          // Already removed
+        }
+      }
+      
+      // Clean up widget content - let React handle the container removal
+      if (containerRef.current) {
+        try {
+          // Clear inner HTML to prevent React from trying to remove GiveLively's DOM
+          containerRef.current.innerHTML = ''
+        } catch (e) {
+          // Already cleaned
+        }
+      }
+    }
+  }, [])
+  
+  return (
+    <div 
+      ref={containerRef}
+      id="give-lively-widget" 
+      className="gl-simple-donation-widget h-[600px] sm:h-[650px] overflow-auto p-4"
+    >
+      {/* The GiveLively script will inject the widget here */}
+    </div>
+  )
+}
 
 export default function DonationModal() {
   const { isOpen, closeModal, campaign } = useDonationModal()
@@ -192,22 +239,7 @@ export default function DonationModal() {
                 />
               </div>
             ) : (
-              <div className="h-[600px] sm:h-[650px] overflow-auto">
-                <iframe
-                  className="block w-full h-full max-w-full border-0"
-                  src="https://secure.givelively.org/donate/koenig-childhood-cancer-foundation"
-                  title="GiveLively donation form"
-                  scrolling="yes"
-                  allow="payment"
-                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                  style={{
-                    WebkitOverflowScrolling: 'touch',
-                    overflow: 'auto',
-                    minHeight: '600px',
-                    height: '100%'
-                  }}
-                />
-              </div>
+              <GiveLivelyWidget />
             )}
           </div>
         </div>
