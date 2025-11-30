@@ -100,7 +100,7 @@ export default function HomeContent() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
-                Meet our founder, Elana Koenig
+                Meet Our Founder, Elana Koenig
               </h2>
 
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
