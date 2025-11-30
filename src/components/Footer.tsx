@@ -100,7 +100,7 @@ export default function Footer() {
               <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
               <li><Link href="/aid" className="text-gray-300 hover:text-white transition-colors">Apply For Aid</Link></li>
               <li><Link href="/volunteer" className="text-gray-300 hover:text-white transition-colors">Volunteer</Link></li>
-              <li><Link href="/camp" className="text-gray-300 hover:text-white transition-colors">Camp</Link></li>
+              <li><Link href="/camp" className="text-gray-300 hover:text-white transition-colors">KCCF Camp</Link></li>
             </ul>
           </div>
 
