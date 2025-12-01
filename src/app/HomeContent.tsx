@@ -13,44 +13,37 @@ export default function HomeContent() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-0">
-        {/* Background Banner Image */}
+      <section className="relative min-h-screen flex items-center justify-center pt-32 md:pt-40 overflow-hidden">
+        {/* Full vibrant image */}
         <div className="absolute inset-0">
           <Image
             src="/images/banner.webp"
             alt="KCCF Banner Background"
             fill
             sizes="100vw"
-            className="object-cover object-[90%_center]"
+            className="object-cover object-center"
             priority
             fetchPriority="high"
           />
         </div>
 
-        {/* Background Pattern Overlay - reduced opacity for more vibrant image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-platinum-50/20 via-white/15 to-platinum-100/20 dark:from-gray-900/60 dark:via-gray-800/60 dark:to-gray-900/60"></div>
+        <div className="absolute inset-0 bg-black/20 dark:bg-black/30 pointer-events-none"></div>
 
-        {/* Decorative Elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-violet-600"></div>
-          <div className="absolute top-40 right-32 w-24 h-24 rounded-full bg-saffron-500"></div>
-          <div className="absolute bottom-32 left-1/3 w-20 h-20 rounded-full bg-violet-500"></div>
-          <div className="absolute bottom-20 right-20 w-28 h-28 rounded-full bg-orange-500"></div>
-        </div>
-
-        <div className="container mx-auto px-4 text-center lg:text-left relative z-10">
-          <div className="max-w-4xl mx-auto lg:mx-0 lg:ml-8 backdrop-blur-[2px] bg-white/30 dark:bg-gray-900/30 rounded-3xl p-8 lg:p-12">
-
-            <h1 className="text-5xl md:text-6xl font-bold mb-8 text-violet-600 dark:text-saffron-400 drop-shadow-sm">
+        <div className="relative z-10 text-center lg:text-left container mx-auto px-4">
+          <div className="max-w-4xl mx-auto lg:ml-8 p-0 -mt-8 md:-mt-12">
+            <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
               Life-saving financial and emotional support for children battling cancer.
             </h1>
 
-            <p className="text-xl md:text-2xl mb-12 text-gray-900 dark:text-gray-200 max-w-3xl mx-auto lg:mx-0 leading-relaxed font-medium drop-shadow-sm">
+            <p className="text-xl md:text-2xl mb-12 text-white max-w-3xl mx-auto lg:mx-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] font-medium">
               Koenig Childhood Cancer Foundation was started by 11-year-old cancer survivor Elana Koenig in 2020 with $900 in her piggy bank.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
-              <Link href="/aid" className="group bg-violet-500 hover:bg-violet-600 text-white py-4 px-10 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center">
+              <Link
+                href="/aid"
+                className="group bg-violet-600 hover:bg-violet-700 text-white py-4 px-10 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center"
+              >
                 <span>Apply for Aid</span>
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -61,7 +54,7 @@ export default function HomeContent() {
                 campaign="Donate to save lives"
                 variant="primary"
                 size="lg"
-                className="group bg-orange-600 hover:bg-orange-700 text-white py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="group bg-orange-600 hover:bg-orange-700 text-white py-4 px-10 rounded-full shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
                 icon={
                   <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -73,24 +66,19 @@ export default function HomeContent() {
             </div>
 
             {/* Impact Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto lg:mx-0">
+            <div className="mt-12 md:mt-26 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto lg:mx-0">
               {IMPACT_STATS.HOME.map((stat, index) => (
-                <div key={index} className="text-center lg:text-left">
-                  <div className={`text-3xl md:text-4xl font-bold ${stat.color.light} ${stat.color.dark} mb-2 drop-shadow-sm`}>
+                <div key={index} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.5)]">
                     {stat.value}
                   </div>
-                  <p className="text-gray-900 dark:text-gray-300 text-sm font-medium drop-shadow-sm">{stat.label}</p>
+                  <p className="text-white/90 text-sm font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,0.4)]">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
         </div>
       </section>
 
@@ -345,10 +333,10 @@ export default function HomeContent() {
                 quote: "Neuroblastoma fighter - grateful for KCCF's love and support."
               }
             ].map((warrior, index) => (
-              <div key={index} className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div key={index} className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-4 shadow-lg">
                 <div className="relative mb-4">
                   <div className="relative w-full aspect-square max-w-48 mx-auto">
-                    <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-violet-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-violet-400 rounded-full opacity-20"></div>
                     <Image
                       src={warrior.image}
                       alt={warrior.name}

@@ -80,6 +80,21 @@ export default function Navigation() {
     setDropdownTimeout(timeout)
   }
 
+  const handleKeyDown = (e: React.KeyboardEvent, itemName: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      if (itemName === 'ABOUT' || itemName === 'PROGRAMS' || itemName === 'CONTACT') {
+        if (activeDropdown === itemName) {
+          setActiveDropdown(null)
+        } else {
+          setActiveDropdown(itemName)
+        }
+      }
+    } else if (e.key === 'Escape') {
+      setActiveDropdown(null)
+    }
+  }
+
   const toggleMobileItem = (itemName: string) => {
     setMobileExpandedItems(prev => 
       prev.includes(itemName) 
@@ -100,14 +115,20 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center h-24">
               <Image
-                src={theme === 'dark' 
-                  ? "/images/cropped-Koenig-Foundation-Logo-01.png"
-                  : "/KCCF logo.png"
+                src={!isScrolled 
+                  ? "/kccf_logo_light.png"   // White logo for hero image
+                  : theme === 'dark'
+                    ? "/kccf_logo_light.png"  // White logo for dark nav background
+                    : "/kccf_logo_dark.png"  // Full color logo for light nav background
                 }
                 alt="Koenig Childhood Cancer Foundation"
                 width={180}
                 height={56}
-                className="h-24 w-auto md:h-28"
+                className={`h-20 md:h-24 w-auto transition-all duration-300 ${
+                  !isScrolled
+                    ? "drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]"
+                    : "drop-shadow-none"
+                }`}
                 priority
                 draggable={false}
               />
@@ -125,19 +146,33 @@ export default function Navigation() {
               >
                 <Link
                   href={item.href}
-                  className={`group relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 ${
+                  aria-haspopup={item.dropdown ? "true" : undefined}
+                  aria-expanded={item.dropdown && activeDropdown === item.name ? "true" : undefined}
+                  onFocus={() => {
+                    if (item.dropdown && (item.name === 'ABOUT' || item.name === 'PROGRAMS' || item.name === 'CONTACT')) {
+                      handleMouseEnter(item.name)
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (item.dropdown && (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ')) {
+                      e.preventDefault()
+                      handleKeyDown(e, item.name)
+                    }
+                  }}
+                  className={`group relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:rounded-lg ${
                     isScrolled 
-                      ? 'text-violet-600 dark:text-white' 
-                      : 'text-black dark:text-white'
+                      ? 'text-violet-600 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800' 
+                      : 'text-white drop-shadow-[0_0_4px_rgba(0,0,0,0.6)] hover:bg-white/10'
                   }`}
                 >
                   {item.name}
                   {item.dropdown && (
                     <svg 
-                      className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" 
+                      className={`ml-1 h-4 w-4 transition-transform duration-200 ${activeDropdown === item.name ? 'rotate-180' : ''} group-hover:rotate-180`}
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
+                      aria-hidden="true"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
@@ -147,6 +182,7 @@ export default function Navigation() {
                 {/* Dropdown Menu */}
                 {item.dropdown && activeDropdown === item.name && (
                   <div 
+                    role="menu"
                     className="absolute top-full left-0 mt-1 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
                     onMouseEnter={() => {
                       // Clear timeout when entering dropdown
@@ -156,12 +192,18 @@ export default function Navigation() {
                       }
                     }}
                     onMouseLeave={handleMouseLeave}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Escape') {
+                        setActiveDropdown(null)
+                      }
+                    }}
                   >
                     {item.dropdown.map((dropdownItem) => (
                       <Link
                         key={dropdownItem.name}
                         href={dropdownItem.href}
-                        className="block px-4 py-3 text-sm transition-colors duration-150 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700"
+                        role="menuitem"
+                        className="block px-4 py-3 text-sm transition-colors duration-150 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-inset focus:bg-gray-50 dark:focus:bg-gray-700"
                       >
                         {dropdownItem.name}
                       </Link>
@@ -172,31 +214,34 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Right side - Donate button and theme toggle */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {/* Right side - Donate button and Theme Toggle (Desktop Only) */}
+          <div className="hidden lg:flex items-center space-x-16">
             <button
               onClick={() => openModal(50, 'Donate to save lives')}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer ${
+              className={`px-6 py-2 rounded-full text-sm font-semibold leading-none transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:rounded-full ${
                 isScrolled 
                   ? 'bg-orange-600 hover:bg-orange-700 text-white' 
-                  : 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg'
+                  : 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
               }`}
             >
               DONATE
             </button>
-            <ThemeToggle />
+            <ThemeToggle className={
+              !isScrolled 
+                ? "p-2 rounded-full border border-white/30 bg-white/20 hover:bg-white/30 shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:rounded-full drop-shadow-[0_0_4px_rgba(0,0,0,0.6)] [&_svg]:text-white" 
+                : "p-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-800/80 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:rounded-full [&_svg]:text-gray-700 dark:[&_svg]:text-gray-300"
+            } />
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center space-x-3">
-            <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               className={`p-2 rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-800 ${
                 isScrolled 
                   ? 'text-violet-600 dark:text-white' 
-                  : 'text-black dark:text-white'
+                  : 'text-white drop-shadow-[0_0_4px_rgba(0,0,0,0.6)]'
               }`}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -302,6 +347,14 @@ export default function Navigation() {
                 >
                   DONATE
                 </button>
+              </div>
+
+              {/* Theme Toggle (Mobile) */}
+              <div className="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700">
+                <div className="flex items-center justify-between px-4 py-3">
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Theme</span>
+                  <ThemeToggle className="p-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-800/80 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 [&_svg]:text-gray-700 dark:[&_svg]:text-gray-300" />
+                </div>
               </div>
             </div>
           </div>
