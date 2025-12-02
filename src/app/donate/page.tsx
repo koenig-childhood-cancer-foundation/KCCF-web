@@ -46,7 +46,7 @@ export default function Donate() {
               <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🏠</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Financial Emergency Assistance</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Emergency Financial Assistance</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 Cover rent, utilities, and essentials when parents must miss work to care for their child.
               </p>
