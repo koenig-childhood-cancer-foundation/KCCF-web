@@ -9,6 +9,7 @@ interface PageHeaderProps {
   title: string;
   subtitle: string;
   backgroundImages?: string[];
+  children?: React.ReactNode;
 }
 
 export default function PageHeader({
@@ -27,7 +28,8 @@ export default function PageHeader({
     "/images/IMG_2841-scaled.jpg",
     "/images/IMG_1850-scaled.jpg",
     "/images/IMG_0875-scaled.jpeg"
-  ]
+  ],
+  children
 }: PageHeaderProps) {
   // Use a deterministic order to avoid hydration mismatches
   const [shuffledImages] = useState(() => {
@@ -132,6 +134,13 @@ export default function PageHeader({
           <div className="mt-8 flex justify-center">
             <div className="w-24 h-1 bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600 dark:from-gray-500 dark:via-gray-400 dark:to-gray-300 rounded-full"></div>
           </div>
+
+          {/* Optional children content */}
+          {children && (
+            <div className="mt-12">
+              {children}
+            </div>
+          )}
         </div>
       </div>
 
