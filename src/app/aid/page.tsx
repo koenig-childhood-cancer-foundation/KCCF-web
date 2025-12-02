@@ -7,7 +7,7 @@ export default function Aid() {
   return (
     <div className="min-h-screen">
       <PageHeader 
-        title="Apply For Aid"
+        title="Family Assistance"
         subtitle="We can help with emergency medical expenses during your child's cancer treatment, such as medical bills, transportation, lodging, food, and more."
       />
 
