@@ -87,15 +87,15 @@ export default function DonationModal() {
 
   // Close modal on escape key and prevent body scroll
   useEffect(() => {
-    if (!isOpen) return
-
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeModal()
     }
     
-    document.addEventListener('keydown', handleEscape)
-    // Prevent body scroll when modal is open
-    document.body.style.overflow = 'hidden'
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape)
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden'
+    }
     
     return () => {
       document.removeEventListener('keydown', handleEscape)
