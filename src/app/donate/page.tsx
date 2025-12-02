@@ -58,7 +58,7 @@ export default function Donate() {
               <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl" aria-hidden="true">🏠</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Keep Families Housed</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Financial Emergency Assistance</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 Cover rent, utilities, and essentials when parents must miss work to care for their child.
               </p>
@@ -68,7 +68,7 @@ export default function Donate() {
               <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl" aria-hidden="true">🚗</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Fund Critical Travel</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Bring Joy To Hospitals</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 Provide rides and gas to life-saving appointments when treatment centers are far from home.
               </p>
@@ -78,7 +78,7 @@ export default function Donate() {
               <div className="w-16 h-16 bg-fandango-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl" aria-hidden="true">🎁</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Bring Joy in Hospitals</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">International Summer Camp</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 Sponsor Crazy Socks Gift Bags that brighten long hospital days for brave kids.
               </p>
