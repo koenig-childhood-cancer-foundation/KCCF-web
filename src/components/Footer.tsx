@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white transition-colors duration-200 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
           {/* Contact Info */}
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Koenig Childhood Cancer Foundation</h3>
@@ -93,26 +93,31 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="md:col-span-2">
             <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><Link href="/donate" className="text-gray-300 hover:text-white transition-colors">Donate</Link></li>
-              <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
-              <li><Link href="/aid" className="text-gray-300 hover:text-white transition-colors">Apply For Aid</Link></li>
-              <li><Link href="/volunteer" className="text-gray-300 hover:text-white transition-colors">Volunteer</Link></li>
-              <li><Link href="/camp" className="text-gray-300 hover:text-white transition-colors">Camp</Link></li>
-            </ul>
-          </div>
-
-          {/* More Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">More</h4>
-            <ul className="space-y-2">
-              <li><Link href="/crazy-socks" className="text-gray-300 hover:text-white transition-colors">Sponsor Gift Bag Event</Link></li>
-              <li><Link href="/our-story/#bookelanaformsection" className="text-gray-300 hover:text-white transition-colors">Book Elana, Founder</Link></li>
-              <li><Link href="/our-story" className="text-gray-300 hover:text-white transition-colors">KCCF Story</Link></li>
-              <li><Link href="/kccf-family" className="text-gray-300 hover:text-white transition-colors">KCCF Family</Link></li>
-            </ul>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* Get Involved */}
+              <div>
+                <h5 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">Get Involved</h5>
+                <ul className="space-y-2">
+                  <li><Link href="/donate" className="text-gray-300 hover:text-white transition-colors">Donate</Link></li>
+                  <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
+                  <li><Link href="/aid" className="text-gray-300 hover:text-white transition-colors">Apply For Aid</Link></li>
+                  <li><Link href="/volunteer" className="text-gray-300 hover:text-white transition-colors">Volunteer</Link></li>
+                  <li><Link href="/camp" className="text-gray-300 hover:text-white transition-colors">Camp</Link></li>
+                </ul>
+              </div>
+              {/* About & Events */}
+              <div>
+                <h5 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">About & Events</h5>
+                <ul className="space-y-2">
+                  <li><Link href="/crazy-socks" className="text-gray-300 hover:text-white transition-colors">Sponsor Gift Bag Event</Link></li>
+                  <li><Link href="/our-story/#bookelanaformsection" className="text-gray-300 hover:text-white transition-colors">Book Elana, Founder</Link></li>
+                  <li><Link href="/our-story" className="text-gray-300 hover:text-white transition-colors">KCCF Story</Link></li>
+                  <li><Link href="/kccf-family" className="text-gray-300 hover:text-white transition-colors">KCCF Family</Link></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* Newsletter Signup */}

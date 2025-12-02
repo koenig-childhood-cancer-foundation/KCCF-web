@@ -2,18 +2,22 @@
 
 import { useTheme } from '@/contexts/ThemeContext'
 
-export default function ThemeToggle() {
+interface ThemeToggleProps {
+  className?: string
+}
+
+export default function ThemeToggle({ className }: ThemeToggleProps = {}) {
   const { theme, toggleTheme, mounted } = useTheme()
 
   // Prevent hydration mismatch by not rendering until mounted
   if (!mounted) {
     return (
       <button
-        className="p-2 rounded-md text-violet-600 dark:text-white hover:text-fandango-500 hover:cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+        className={className || "p-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-800/80 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:rounded-full"}
         aria-label="Loading theme toggle"
       >
         <svg
-          className="w-5 h-5"
+          className="w-5 h-5 text-gray-700 dark:text-gray-300"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -33,13 +37,13 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-md text-violet-600 dark:text-white hover:text-fandango-500 hover:cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+      className={className || "p-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-800/80 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:rounded-full"}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
       {theme === 'light' ? (
         // Moon icon for dark mode
         <svg
-          className="w-5 h-5"
+          className="w-5 h-5 text-gray-700"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -55,7 +59,7 @@ export default function ThemeToggle() {
       ) : (
         // Sun icon for light mode
         <svg
-          className="w-5 h-5"
+          className="w-5 h-5 text-gray-700"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
