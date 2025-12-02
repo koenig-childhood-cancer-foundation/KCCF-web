@@ -72,8 +72,8 @@ export default function OurStory() {
                 <div className="relative w-64 h-64 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-violet-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
-                    src="/images/cropped-NUP_206704_00566.jpg"
-                    alt="Elana today"
+                    src="/images/elana-today.jpg"
+                    alt="Elana Koenig today"
                     width={256}
                     height={256}
                     className="rounded-full w-full h-full object-cover relative z-10"
@@ -133,8 +133,8 @@ export default function OurStory() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
               <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
                 <Image
-                  src="/images/NUP_206704_00566-scaled.jpg"
-                  alt="Elana during her cancer treatment"
+                  src="/images/elana-today.jpg"
+                  alt="Elana Koenig, founder of KCCF"
                   width={500}
                   height={600}
                   className="rounded-2xl w-full h-auto"
