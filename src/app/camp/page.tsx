@@ -8,8 +8,8 @@ export default function Camp() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <PageHeader
-        title="Camp"
-        subtitle="Join us for an unforgettable camp experience designed for children with cancer and their families."
+        title="KCCF Camp"
+        subtitle="A healing place for children battling cancer and their siblings from all over the world."
       />
 
       {/* About Camp Section */}
