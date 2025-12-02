@@ -15,24 +15,26 @@ export default function HomeContent() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-32 md:pt-40 overflow-hidden">
         {/* Full vibrant image */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 overflow-hidden">
           <Image
             src="/images/banner.webp"
             alt="KCCF Banner Background"
             fill
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-[80%]"
             priority
             fetchPriority="high"
           />
         </div>
+               {/* Change for hero overlay tones*/}
+          <div className="absolute inset-0 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+        {/* Stronger dark gradient on mobile for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/30 md:from-black/40 md:via-black/30 md:to-transparent pointer-events-none"></div>
 
-        <div className="absolute inset-0 bg-black/20 dark:bg-black/30 pointer-events-none"></div>
-
-        <div className="relative z-10 text-center lg:text-left container mx-auto px-4">
+        <div className="relative z-10 text-center lg:text-left container mx-auto px-2">
           <div className="max-w-4xl mx-auto lg:ml-8 p-0 -mt-8 md:-mt-12">
             <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
-              Life-saving financial and emotional support for children battling cancer.
+              Life-saving financial and emotional support for <br className="hidden lg:block" />children battling cancer.
             </h1>
 
             <p className="text-xl md:text-2xl mb-12 text-white max-w-3xl mx-auto lg:mx-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] font-medium">
