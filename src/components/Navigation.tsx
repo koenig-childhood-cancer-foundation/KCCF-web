@@ -26,6 +26,18 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMenuOpen])
+
   const navItems = [
     { name: 'HOME', href: '/' },
     { 
@@ -269,10 +281,10 @@ export default function Navigation() {
         />
         
         {/* Slide-out menu */}
-        <div className={`absolute top-0 right-0 h-full w-72 max-w-[80vw] transform transition-all duration-300 ease-out bg-white dark:bg-gray-900 shadow-2xl ${
+        <div className={`absolute top-0 right-0 h-full w-72 max-w-[80vw] transform transition-all duration-300 ease-out bg-white dark:bg-gray-900 shadow-2xl overflow-hidden ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full overflow-y-auto">
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
               <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Menu</h2>
@@ -288,7 +300,7 @@ export default function Navigation() {
             </div>
             
             {/* Navigation Items */}
-            <div className="flex-1 p-4 space-y-2">
+            <div className="flex-1 p-4 space-y-2 overflow-y-auto">
               {navItems.map((item) => (
                 <div key={item.name}>
                   {item.dropdown ? (
