@@ -85,7 +85,7 @@ export default function DonationModal() {
   const { isOpen, closeModal, campaign } = useDonationModal()
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
 
-  // Close modal on escape key
+  // Close modal on escape key and prevent body scroll
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeModal()
@@ -93,10 +93,13 @@ export default function DonationModal() {
     
     if (isOpen) {
       document.addEventListener('keydown', handleEscape)
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden'
     }
     
     return () => {
       document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'unset'
     }
   }, [isOpen, closeModal])
 
@@ -186,7 +189,8 @@ export default function DonationModal() {
         </div>
         
         {/* Donation Form - Right Side replaced entirely by Zeffy */}
-        <div className="lg:w-1/2 w-full flex flex-col">
+        <div className="lg:w-1/2 w-full flex flex-col overflow-y-auto"
+             style={{ WebkitOverflowScrolling: 'touch' }}>
           <div className="bg-white dark:bg-gray-800">
             <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
               <div>
