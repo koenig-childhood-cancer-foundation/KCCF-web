@@ -42,31 +42,32 @@ export default function HomeContent() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
-              
-              <DonationButton
-                amount={50}
-                campaign="Donate to save lives"
-                variant="primary"
-                size="lg"
-                className="group bg-orange-600 hover:bg-orange-700 text-white py-4 px-10 rounded-full shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
-                icon={
-                  <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                }
-              >
-                Donate Now
-              </DonationButton>
-              <Link
-                href="/aid"
-                className="group bg-violet-600 hover:bg-violet-700 text-white py-4 px-10 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center"
-              >
-                <span>Family Assistance</span>
-                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            {/* Donation button comes first on mobile */}
+            <DonationButton
+              amount={50}
+              campaign="Donate to save lives"
+              variant="primary"
+              size="lg"
+              className="order-1 sm:order-2 group bg-orange-600 hover:bg-orange-700 text-white py-4 px-10 rounded-full shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              icon={
+                <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
-              </Link>
-            </div>
+              }
+            >
+              Donate Now
+            </DonationButton>
+
+            <Link
+              href="/aid"
+              className="order-2 sm:order-1 group bg-violet-600 hover:bg-violet-700 text-white py-4 px-10 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center"
+            >
+              <span>Family Assistance</span>
+              <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+          </div>
 
             {/* Impact Stats */}
             <div className="mt-12 md:mt-26 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto lg:mx-0">
