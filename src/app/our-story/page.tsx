@@ -159,7 +159,6 @@ export default function OurStory() {
                 />
               </div>
             </div>
-
           </div>
         </div>
       </section>
