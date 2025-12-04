@@ -3,8 +3,6 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import { DonationModalProvider } from "@/contexts/DonationModalContext";
-import DonationModal from "@/components/DonationModal";
 import { FormModalProvider } from "@/contexts/FormModalContext";
 import FormModal from "@/components/FormModal";
 import { ArticleModalProvider } from "@/contexts/ArticleModalContext";
@@ -64,7 +62,6 @@ export default function RootLayout({
           <CookieConsentProvider>
             <GoogleTagManager />
             <SearchModalProvider>
-            <DonationModalProvider>
               <FormModalProvider>
                 <ArticleModalProvider>
                   <SlideshowProvider>
@@ -76,7 +73,6 @@ export default function RootLayout({
                   <CookieConsentBanner />
                   <ConsentPreferencesModal />
                   <Footer />
-                  <DonationModal />
                   <FormModal />
                   <ArticleModal />
                   <SearchModal />
@@ -86,7 +82,6 @@ export default function RootLayout({
                   </SlideshowProvider>
                 </ArticleModalProvider>
               </FormModalProvider>
-            </DonationModalProvider>
             </SearchModalProvider>
           </CookieConsentProvider>
         </ThemeProvider>
