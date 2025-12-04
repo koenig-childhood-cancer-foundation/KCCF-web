@@ -105,7 +105,7 @@ export default function NotFound() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
-                Apply for Aid
+                Family Assistance
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Get support for your family during difficult times
