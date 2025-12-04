@@ -150,7 +150,6 @@ export default function OurStory() {
             <div className="relative">
               {/* CROOKED FRAME REMOVED HERE */}
               
-              {/* GOOD STRAIGHT FRAME - KEEP */}
               <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
                 <Image
                   src="/images/NUP_206704_00566-scaled.jpg"
