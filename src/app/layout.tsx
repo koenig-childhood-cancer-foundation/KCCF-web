@@ -17,6 +17,8 @@ import ConsentPreferencesModal from "@/components/ConsentPreferencesModal";
 import SubmissionModal from "@/components/SubmissionModal";
 import GoogleTagManager from "@/components/GoogleTagManager";
 import { Suspense } from "react";
+import { SearchModalProvider } from "@/contexts/SearchModalContext";
+import SearchModal from "@/components/SearchModal";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -61,6 +63,7 @@ export default function RootLayout({
         <ThemeProvider>
           <CookieConsentProvider>
             <GoogleTagManager />
+            <SearchModalProvider>
             <DonationModalProvider>
               <FormModalProvider>
                 <ArticleModalProvider>
@@ -76,6 +79,7 @@ export default function RootLayout({
                   <DonationModal />
                   <FormModal />
                   <ArticleModal />
+                  <SearchModal />
                   <Suspense fallback={null}>
                     <SubmissionModal />
                   </Suspense>
@@ -83,6 +87,7 @@ export default function RootLayout({
                 </ArticleModalProvider>
               </FormModalProvider>
             </DonationModalProvider>
+            </SearchModalProvider>
           </CookieConsentProvider>
         </ThemeProvider>
       </body>
