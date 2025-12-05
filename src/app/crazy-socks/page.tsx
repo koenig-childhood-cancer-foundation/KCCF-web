@@ -116,6 +116,7 @@ export default function CrazySocks() {
 
             <div className="relative">
               {/* CROOKED FRAME REMOVED HERE */}
+          
               <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
                 <Image
                   src="/images/crazy-socks.jpg"
