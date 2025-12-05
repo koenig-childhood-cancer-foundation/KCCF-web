@@ -70,7 +70,6 @@ export default function Navigation() {
         { name: 'Volunteer', href: '/volunteer' },
         { name: 'Sponsor Crazy Socks', href: '/crazy-socks/#sponsorform' },
         { name: 'Book Elana to Speak', href: '/our-story/#bookelanaformsection' },
-        { name: 'Newsletter Signup', href: '/newsletter-signup' },
       ]
     },
     { name: 'MEDIA', href: '/media' },
