@@ -255,3 +255,87 @@ body {
     --color-text-muted: #ffffff;
   }
 }
+
+/* ==========================================================================
+   Button Component Styles
+   ========================================================================== */
+
+/*
+ * Standardized button hover effects:
+ * - Translate upward slightly (rise)
+ * - Increase shadow depth
+ * - Adjust background color (lighten for darker, darken for lighter)
+ */
+
+/* Violet Button - For dark colored primary buttons */
+.btn-violet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 300ms ease;
+  background-color: var(--color-violet-600);
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-violet:hover {
+  background-color: #7a2d5f; /* Lightened violet for hover */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.dark .btn-violet {
+  background-color: var(--color-violet-500);
+}
+
+.dark .btn-violet:hover {
+  background-color: #7a2d5f; /* Lightened violet for hover in dark mode */
+}
+
+/* Orange Button - For call-to-action buttons */
+.btn-orange {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 300ms ease;
+  background-color: var(--color-orange-600);
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-orange:hover {
+  background-color: #c2410c; /* Darkened orange for hover (lighter base) */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Transparent/Outline Button - For secondary actions */
+.btn-transparent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 300ms ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-violet-500);
+  color: var(--color-violet-600);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-transparent:hover {
+  background-color: rgba(106, 39, 82, 0.15); /* Subtle violet background on hover */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.dark .btn-transparent {
+  border-color: var(--color-violet-400);
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark .btn-transparent:hover {
+  background-color: rgba(106, 39, 82, 0.3); /* More visible violet background in dark mode */
+}

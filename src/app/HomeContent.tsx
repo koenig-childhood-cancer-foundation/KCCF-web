@@ -101,10 +101,10 @@ export default function HomeContent() {
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Link href="/our-story" className="bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white py-3 px-8 rounded-full transition duration-300 font-semibold text-center">
+                <Link href="/our-story" className="btn-violet py-3 px-8 rounded-full text-center">
                   Read Her Story
                 </Link>
-                <Link href="/our-story/#bookelanaformsection" className="border-2 border-violet-500 text-violet-600 dark:text-white hover:bg-violet-500/10 dark:hover:bg-violet-500/10 py-3 px-8 rounded-full transition-all duration-300 font-semibold text-center hover:shadow-lg hover:-translate-y-0.5">
+                <Link href="/our-story/#bookelanaformsection" className="btn-transparent py-3 px-8 rounded-full text-center">
                   Book Elana to Speak
                 </Link>
               </div>
