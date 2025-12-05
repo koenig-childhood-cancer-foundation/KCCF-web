@@ -51,6 +51,7 @@
 :root {
   /* KCCF Brand Colors */
   --color-kccf-purple: #6A2752;
+  --color-kccf-purple-hover: #7a2d5f;
   --color-kccf-cyan: #0693e3;
   --color-kccf-amber: #fcb900;
   --color-kccf-orange: #ff6900;
@@ -280,7 +281,7 @@ body {
 }
 
 .btn-violet:hover {
-  background-color: #7a2d5f; /* Lightened violet for hover */
+  background-color: var(--color-kccf-purple-hover);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
 }
@@ -290,7 +291,7 @@ body {
 }
 
 .dark .btn-violet:hover {
-  background-color: #7a2d5f; /* Lightened violet for hover in dark mode */
+  background-color: var(--color-kccf-purple-hover);
 }
 
 /* Orange Button - For call-to-action buttons */
@@ -306,7 +307,7 @@ body {
 }
 
 .btn-orange:hover {
-  background-color: #c2410c; /* Darkened orange for hover (lighter base) */
+  background-color: var(--color-orange-700);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
 }
@@ -325,7 +326,7 @@ body {
 }
 
 .btn-transparent:hover {
-  background-color: rgba(106, 39, 82, 0.15); /* Subtle violet background on hover */
+  background-color: color-mix(in srgb, var(--color-kccf-purple) 15%, transparent);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
 }
@@ -337,5 +338,5 @@ body {
 }
 
 .dark .btn-transparent:hover {
-  background-color: rgba(106, 39, 82, 0.3); /* More visible violet background in dark mode */
+  background-color: color-mix(in srgb, var(--color-kccf-purple) 30%, transparent);
 }
