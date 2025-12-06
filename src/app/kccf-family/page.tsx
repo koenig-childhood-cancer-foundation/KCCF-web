@@ -23,10 +23,28 @@ export const metadata: Metadata = {
 export default function KCCFFamily() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
-      <PageHeader
-        title="KCCF Family"
-        subtitle="Meet the incredible team and community that makes our mission possible."
-      />
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_kccf_family.jpg"
+            alt="KCCF Family"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="KCCF Family"
+          subtitle="Meet the incredible team that drives our mission."
+        />
+      </div>
 
       {/* Elana Section */}
       <section className="py-20 bg-white dark:bg-gray-800">

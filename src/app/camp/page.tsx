@@ -1,5 +1,6 @@
 "use client"
 
+import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 
@@ -7,10 +8,28 @@ export default function Camp() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <PageHeader
-        title="Camp"
-        subtitle="Join us for an unforgettable camp experience designed for children with cancer and their families."
-      />
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_camp.jpg"
+            alt="Camp"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="Camp"
+          subtitle="A healing place for children battling cancer and their siblings from all over the world."
+        />
+      </div>
 
       {/* About Camp Section */}
       <section className="py-16">
