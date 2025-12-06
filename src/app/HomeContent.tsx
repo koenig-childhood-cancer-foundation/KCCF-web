@@ -44,7 +44,7 @@ export default function HomeContent() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
               <Link
                 href="/aid"
-                className="group bg-violet-600 hover:bg-violet-700 text-white py-4 px-10 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center"
+                className="group btn-violet py-4 px-10 text-lg font-semibold"
               >
                 <span>Family Assistance</span>
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,10 +103,10 @@ export default function HomeContent() {
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Link href="/our-story" className="btn-violet py-3 px-8 rounded-full text-center">
+                <Link href="/our-story" className="btn-violet py-3 px-8 text-base font-semibold">
                   Read Her Story
                 </Link>
-                <Link href="/our-story/#bookelanaformsection" className="btn-transparent py-3 px-8 rounded-full text-center">
+                <Link href="/our-story/#bookelanaformsection" className="btn-transparent py-3 px-8 text-base font-semibold">
                   Book Elana to Speak
                 </Link>
               </div>
@@ -285,7 +285,7 @@ export default function HomeContent() {
           </div>
 
           <div className="text-center">
-            <Link href="/media" className="inline-flex items-center bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white py-3 px-6 md:px-8 rounded-full transition duration-300 font-semibold text-base md:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <Link href="/media" className="btn-violet py-3 px-6 md:px-8 text-base md:text-lg">
               <span>View All Media Coverage</span>
               <svg className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

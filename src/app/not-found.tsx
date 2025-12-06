@@ -58,7 +58,7 @@ export default function NotFound() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <Link 
               href="/" 
-              className="group bg-violet-500 hover:bg-violet-600 text-white py-4 px-8 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center"
+              className="group btn-violet py-4 px-8 font-semibold text-lg"
             >
               <span>Go Home</span>
               <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,7 +67,7 @@ export default function NotFound() {
             </Link>
             <Link 
               href="/contact" 
-              className="group bg-orange-500 hover:bg-orange-600 text-white py-4 px-8 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center"
+              className="group btn-orange py-4 px-8 font-semibold"
             >
               <span>Contact Us</span>
               <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
