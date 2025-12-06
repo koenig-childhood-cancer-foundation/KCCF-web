@@ -193,21 +193,21 @@ export default function KCCFFamily() {
               <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Mike Blumenfeld, MBA</h3>
             </div>
 
-            {/* Clarke Mayor */}
+            {/* Clarke Moyer */}
             <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="relative mb-6">
                 <div className="relative w-40 h-40 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
                     src="/images/cropped-Clarke-Moyer-Bio-Picture-2MP.jpg"
-                    alt="Clarke Mayor"
+                    alt="Clarke Moyer"
                     width={160}
                     height={160}
                     className="rounded-full w-full h-full object-cover relative z-10"
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Clarke Mayor, MBA-ITM</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Clarke Moyer, MBA-ITM</h3>
             </div>
 
             {/* Jim Kowalski */}
