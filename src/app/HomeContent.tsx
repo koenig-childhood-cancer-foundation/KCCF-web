@@ -26,9 +26,9 @@ export default function HomeContent() {
             fetchPriority="high"
           />
         </div>
-               {/* Change for hero overlay tones*/}
+               {/* Change this section for hero overlay tones */}
           <div className="absolute inset-0 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
-        {/* Stronger dark gradient on mobile for readability */}
+        {/* Dark gradient added for mobile readability*/}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/30 md:from-black/40 md:via-black/30 md:to-transparent pointer-events-none"></div>
 
         <div className="relative z-10 text-center lg:text-left container mx-auto px-2">
@@ -46,7 +46,7 @@ export default function HomeContent() {
                 href="/aid"
                 className="group bg-violet-600 hover:bg-violet-700 text-white py-4 px-10 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center"
               >
-                <span>Apply for Aid</span>
+                <span>Family Assistance</span>
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

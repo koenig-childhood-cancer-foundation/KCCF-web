@@ -1,15 +1,34 @@
 "use client"
 
+import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 
 export default function Contact() {
   return (
-    <div className="min-h-screen">
-      <PageHeader
-        title="Contact Us"
-        subtitle="Get in touch with us. We're here to help and answer any questions you may have."
-      />
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_contact_us.jpg"
+            alt="Contact Us"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="Contact Us"
+          subtitle="Get in touch with us. We're here to help and answer any questions you may have."
+        />
+      </div>
 
       {/* Contact Information */}
       <section className="py-16">
@@ -108,7 +127,7 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-violet-700 mb-3">How can I apply for financial assistance?</h3>
               <p className="text-violet-600">
                 Families can apply for financial assistance through our Family Assistance program. Visit our
-                <a href="/aid" className="text-orange-500 hover:text-orange-600 font-semibold"> Apply For Aid</a> page for more information and to start your application.
+                <a href="/aid" className="text-orange-500 hover:text-orange-600 font-semibold"> Family Assistance</a> page for more information and to start your application.
               </p>
             </div>
 

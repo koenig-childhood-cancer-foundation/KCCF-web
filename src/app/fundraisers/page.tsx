@@ -1,14 +1,36 @@
 "use client"
 
+import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 
 export default function Fundraisers() {
   return (
-    <div className="min-h-screen">
-      <PageHeader
-        title="Fundraisers"
-        subtitle="Support our mission through peer-to-peer fundraising campaigns. Start your own fundraiser or contribute to existing ones."
-      />
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_fundraisers.jpg"
+            alt="Fundraisers"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          {/* Gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+
+        {/* Warm overlay matching hero section */}
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="Fundraisers"
+          subtitle="Support our mission through peer-to-peer fundraising campaigns. Start your own fundraiser or contribute to existing ones."
+        />
+      </div>
 
       {/* Zeffy Iframe - Dynamic Height */}
       <div className="flex-1 w-full">

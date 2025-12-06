@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 import { useArticleModal } from '@/contexts/ArticleModalContext';
 
@@ -9,11 +10,28 @@ export default function Media() {
 
   return (
     <div className="min-h-screen bg-platinum-50 dark:bg-gray-900">
-      {/* Hero Section */}
-      <PageHeader
-        title="Media & Press"
-        subtitle="Stay updated with the latest news, press releases, and media coverage of the Koenig Childhood Cancer Foundation"
-      />
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_media.jpg"
+            alt="Media & Press"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="Media & Press"
+          subtitle="Stay updated with the latest news, press releases, and media coverage."
+        />
+      </div>
 
       {/* Video Gallery Section */}
       <section className="py-16 bg-white dark:bg-gray-800">

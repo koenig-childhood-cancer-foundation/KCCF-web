@@ -102,7 +102,7 @@ export default function Footer() {
                 <ul className="space-y-2">
                   <li><Link href="/donate" className="text-gray-300 hover:text-white transition-colors">Donate</Link></li>
                   <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
-                  <li><Link href="/aid" className="text-gray-300 hover:text-white transition-colors">Apply For Aid</Link></li>
+                  <li><Link href="/aid" className="text-gray-300 hover:text-white transition-colors">Family Assistance</Link></li>
                   <li><Link href="/volunteer" className="text-gray-300 hover:text-white transition-colors">Volunteer</Link></li>
                   <li><Link href="/camp" className="text-gray-300 hover:text-white transition-colors">Camp</Link></li>
                 </ul>

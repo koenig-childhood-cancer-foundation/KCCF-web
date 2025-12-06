@@ -8,10 +8,28 @@ import CallToAction from '@/components/CallToAction';
 export default function OurStory() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
-      <PageHeader
-        title="Our Story"
-        subtitle="From a young cancer survivor's dream to a foundation that has helped hundreds of families across the nation."
-      />
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_our_story.jpg"
+            alt="Our Story"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="Our Story"
+          subtitle="From a young cancer survivor's dream to a foundation that has helped hundreds of families across the nation."
+        />
+      </div>
 
       {/* Elana's Journey Section */}
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
