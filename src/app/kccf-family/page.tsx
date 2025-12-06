@@ -68,7 +68,7 @@ export default function KCCFFamily() {
               </div>
 
               <div className="mt-10">
-                <Link href="/our-story" className="bg-[#732154] hover:bg-[#732154]/90 dark:bg-[#732154] dark:hover:bg-[#732154]/90 text-white py-3 px-8 rounded-full transition duration-300 font-semibold text-center inline-block">
+                <Link href="/our-story" className="btn-violet py-3 px-8 font-semibold">
                   Read Elana's Story
                 </Link>
               </div>
