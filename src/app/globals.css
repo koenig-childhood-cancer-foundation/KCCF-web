@@ -57,6 +57,7 @@
   --color-kccf-orange: #ff6900;
   --color-kccf-green: #00d084;
   --color-kccf-pink: #f78da7;
+  --color-violet-950: #521e3f;
 }
 
 /* ==========================================================================
@@ -75,11 +76,13 @@
   --color-violet-200: #e9d5ff;
   --color-violet-300: #d8b4fe;
   --color-violet-400: #c084fc;
+  --color-violet-450: var(--color-kccf-purple-hover);
   --color-violet-500: var(--color-kccf-purple);
   --color-violet-600: var(--color-kccf-purple);
   --color-violet-700: var(--color-kccf-purple);
   --color-violet-800: var(--color-kccf-purple);
   --color-violet-900: var(--color-kccf-purple);
+  --color-violet-950: #521e3f;
   
   /* Orange color scale */
   --color-orange-50: #fff7ed;
@@ -273,7 +276,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  border-radius: calc(infinity * 1px);
   transition: all 300ms ease;
   background-color: var(--color-violet-600);
   color: white;
@@ -283,7 +286,7 @@ body {
 .btn-violet:hover {
   background-color: var(--color-kccf-purple-hover);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  transform: translateY(-4px);
+  transform: translateY(calc(var(--spacing) * -1));
 }
 
 .dark .btn-violet {
@@ -299,7 +302,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  border-radius: calc(infinity * 1px);
   transition: all 300ms ease;
   background-color: var(--color-orange-600);
   color: white;
@@ -309,7 +312,7 @@ body {
 .btn-orange:hover {
   background-color: var(--color-orange-700);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  transform: translateY(-4px);
+  transform: translateY(calc(var(--spacing) * -1));
 }
 
 /* Transparent/Outline Button - For secondary actions */
@@ -317,7 +320,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  border-radius: calc(infinity * 1px);
   transition: all 300ms ease;
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid var(--color-violet-500);
@@ -326,9 +329,9 @@ body {
 }
 
 .btn-transparent:hover {
-  background-color: color-mix(in srgb, var(--color-kccf-purple) 15%, transparent);
+  background-color: color-mix(in srgb, var(--color-kccf-purple-hover) 5%, transparent);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  transform: translateY(-4px);
+  transform: translateY(calc(var(--spacing) * -1));
 }
 
 .dark .btn-transparent {
