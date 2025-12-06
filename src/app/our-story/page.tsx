@@ -82,7 +82,7 @@ export default function OurStory() {
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">Elana today</h3>
               <p className="text-gray-600 dark:text-gray-200 text-center">
-                A thriving young leader, singer, and founder helping hundreds of families through their cancer journeys.
+                A thriving young leader, singer, and founder helping thousands of families through their cancer journeys.
               </p>
             </div>
           </div>
