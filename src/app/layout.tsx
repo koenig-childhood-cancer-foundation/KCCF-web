@@ -3,8 +3,6 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import { DonationModalProvider } from "@/contexts/DonationModalContext";
-import DonationModal from "@/components/DonationModal";
 import { FormModalProvider } from "@/contexts/FormModalContext";
 import FormModal from "@/components/FormModal";
 import { ArticleModalProvider } from "@/contexts/ArticleModalContext";
@@ -61,28 +59,25 @@ export default function RootLayout({
         <ThemeProvider>
           <CookieConsentProvider>
             <GoogleTagManager />
-            <DonationModalProvider>
-              <FormModalProvider>
-                <ArticleModalProvider>
-                  <SlideshowProvider>
-                  <LoadingSpinner />
-                  <Navigation />
-                  <main className="min-h-screen">
-                    {children}
-                  </main>
-                  <CookieConsentBanner />
-                  <ConsentPreferencesModal />
-                  <Footer />
-                  <DonationModal />
-                  <FormModal />
-                  <ArticleModal />
-                  <Suspense fallback={null}>
-                    <SubmissionModal />
-                  </Suspense>
-                  </SlideshowProvider>
-                </ArticleModalProvider>
-              </FormModalProvider>
-            </DonationModalProvider>
+            <FormModalProvider>
+              <ArticleModalProvider>
+                <SlideshowProvider>
+                <LoadingSpinner />
+                <Navigation />
+                <main className="min-h-screen">
+                  {children}
+                </main>
+                <CookieConsentBanner />
+                <ConsentPreferencesModal />
+                <Footer />
+                <FormModal />
+                <ArticleModal />
+                <Suspense fallback={null}>
+                  <SubmissionModal />
+                </Suspense>
+                </SlideshowProvider>
+              </ArticleModalProvider>
+            </FormModalProvider>
           </CookieConsentProvider>
         </ThemeProvider>
       </body>

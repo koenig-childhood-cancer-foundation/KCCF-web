@@ -23,10 +23,28 @@ export const metadata: Metadata = {
 export default function KCCFFamily() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
-      <PageHeader
-        title="KCCF Family"
-        subtitle="Meet the incredible team and community that makes our mission possible."
-      />
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_kccf_family.jpg"
+            alt="KCCF Family"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="KCCF Family"
+          subtitle="Meet the incredible team that drives our mission."
+        />
+      </div>
 
       {/* Elana Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
@@ -57,7 +75,6 @@ export default function KCCFFamily() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
               <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
                 <Image
                   src="/images/cropped-IMG_1521-scaled-1.jpg"
@@ -175,21 +192,21 @@ export default function KCCFFamily() {
               <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Mike Blumenfeld, MBA</h3>
             </div>
 
-            {/* Clarke Mayor */}
+            {/* Clarke Moyer */}
             <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="relative mb-6">
                 <div className="relative w-40 h-40 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <Image
                     src="/images/cropped-Clarke-Moyer-Bio-Picture-2MP.jpg"
-                    alt="Clarke Mayor"
+                    alt="Clarke Moyer"
                     width={160}
                     height={160}
                     className="rounded-full w-full h-full object-cover relative z-10"
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Clarke Mayor, MBA-ITM</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">Clarke Moyer, MBA-ITM</h3>
             </div>
 
             {/* Jim Kowalski */}

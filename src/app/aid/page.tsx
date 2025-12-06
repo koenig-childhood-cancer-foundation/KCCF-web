@@ -1,15 +1,35 @@
 "use client"
 
+import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 
 export default function Aid() {
   return (
-    <div className="min-h-screen">
-      <PageHeader 
-        title="Apply For Aid"
-        subtitle="We can help with emergency medical expenses during your child's cancer treatment, such as medical bills, transportation, lodging, food, and more."
-      />
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_family_assistance.jpg"
+            alt="Family Assistance"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader 
+          title="Family Assistance"
+          subtitle="We can assist with emergency medical expenses during your child's cancer treatment,
+          such as medical bills, transportation, lodging, food, and more."
+        />
+      </div>
 
       {/* About Our Aid Program */}
       <section className="py-16">
@@ -165,7 +185,7 @@ export default function Aid() {
                           </svg>
               }
             >
-              Apply for Aid
+              Family Assistance
             </FormButton>
             
           </div>
