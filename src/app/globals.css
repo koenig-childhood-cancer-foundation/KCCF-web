@@ -343,3 +343,27 @@ body {
 .dark .btn-transparent:hover {
   background-color: color-mix(in srgb, var(--color-kccf-purple) 30%, transparent);
 }
+
+/* Button Icons that grow on hover  */
+.btn-icon-grow {
+  transition: transform 150ms ease-in-out; /* matches Tailwind's default transition duration */
+  transform-origin: center;
+  transform: none;
+}
+
+.group:hover .btn-icon-grow,
+.group:focus-within .btn-icon-grow {
+  transform: scale(1.10);
+}
+
+/* Button Icons that slide on hover  */
+.btn-icon-slide {
+  transition: transform 150ms ease-in-out; /* matches Tailwind's default transition duration */
+  transform-origin: center;
+  transform: none;
+}
+
+.group:hover .btn-icon-slide,
+.group:focus-within .btn-icon-slide {
+  transform: translateX(calc(var(--spacing) * 1));;
+}
