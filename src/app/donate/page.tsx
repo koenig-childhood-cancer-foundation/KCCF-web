@@ -46,9 +46,9 @@ export default function Donate() {
               <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🏠</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Emergency Financial Assistance</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Emergency Aid</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Cover rent, utilities, and essentials when parents must miss work to care for their child.
+                Support families in crisis with urgent financial relief.
               </p>
             </div>
 
@@ -56,9 +56,9 @@ export default function Donate() {
               <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🚗</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Bring Joy To Hospitals</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Hospital Joy</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Provide rides and gas to life-saving appointments when treatment centers are far from home.
+                Help to deliver gifts bags to hospitalized children.
               </p>
             </div>
 
@@ -66,9 +66,9 @@ export default function Donate() {
               <div className="w-16 h-16 bg-fandango-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🎁</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">International Summer Camp</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Healing Camp</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Sponsor Crazy Socks Gift Bags that brighten long hospital days for brave kids.
+                Send a child with cancer to a life-changing summer camp.
               </p>
             </div>
           </div>
