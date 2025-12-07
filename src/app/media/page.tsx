@@ -283,7 +283,7 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-4">
                 Elana Koenig founded the Koenig Childhood Cancer Foundation to help families facing childhood cancer...
               </p>
-              <button className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold inline-flex items-center">
+              <button className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold inline-flex items-center">
                 Read Full Article →
               </button>
             </div>
