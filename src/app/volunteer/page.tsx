@@ -44,28 +44,6 @@ export default function Volunteer() {
               </p>
 
               <div className="bg-saffron-50 rounded-lg p-6 my-8">
-                <h3 className="text-xl font-bold text-violet-700 mb-4">Volunteer Requirements</h3>
-                <ul className="space-y-2 text-violet-600">
-                  <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
-                    <strong>Ages:</strong> 18+
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
-                    <strong>Under 18?</strong> Parental consent is required for teen volunteers. Youth roles may have limitations.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
-                    A minimum one-year commitment is requested for all volunteer roles.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
-                    Optional Background Check (A Social Security Number will be required)
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-saffron-50 rounded-lg p-6 my-8">
                 <h3 className="text-xl font-bold text-violet-700 mb-4">Volunteer Benefits</h3>
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
