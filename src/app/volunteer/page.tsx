@@ -26,7 +26,7 @@ export default function Volunteer() {
         {/* PageHeader */}
         <PageHeader
           title="Volunteer"
-          subtitle="Join our team of dedicated volunteers to help make a difference."
+          subtitle="Join us to change a life. May be even your own."
         />
       </div>
 
