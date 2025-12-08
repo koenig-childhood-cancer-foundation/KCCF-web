@@ -26,7 +26,7 @@ export default function Volunteer() {
         {/* PageHeader */}
         <PageHeader
           title="Volunteer"
-          subtitle="Join our team of dedicated volunteers to help make a difference."
+          subtitle="Join us to change a life. May be even your own."
         />
       </div>
 
@@ -34,43 +34,68 @@ export default function Volunteer() {
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-violet-700 mb-8 text-center">Make a Difference</h2>
+            <h2 className="text-3xl font-bold text-violet-700 mb-8 text-center">Give Hope</h2>
 
             <div className="prose prose-lg max-w-none text-violet-700">
               <p className="text-xl leading-relaxed mb-8">
-                Our volunteers are the heart of KCCF. They bring compassion, energy, and dedication to every
-                program and event, helping us reach more families and create more impact.
-              </p>
-
-              <p className="mb-6">
-                Whether you have a few hours a month or want to make a more significant commitment,
-                there are many ways to get involved and help children battling cancer and their families.
+                Koenig Childhood Cancer Foundation (KCCF) is a 100% volunteer-run organization. 
+                Volunteers are at the heart of everything we do — your time, energy, and commitment 
+                directly impact children battling cancer and their families.
               </p>
 
               <div className="bg-saffron-50 rounded-lg p-6 my-8">
-                <h3 className="text-xl font-bold text-violet-700 mb-4">Why Volunteer?</h3>
+                <h3 className="text-xl font-bold text-violet-700 mb-4">Volunteer Requirements</h3>
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Make a direct impact on children's lives
+                    <strong>Ages:</strong> 18+
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Join a supportive community of like-minded individuals
+                    <strong>Under 18?</strong> Parental consent is required for teen volunteers. Youth roles may have limitations.
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Gain valuable experience and skills
+                    A minimum one-year commitment is requested for all volunteer roles.
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Flexible scheduling to fit your availability
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
-                    Be part of a meaningful cause
+                    Optional Background Check (A Social Security Number will be required)
                   </li>
                 </ul>
+              </div>
+
+              <div className="bg-saffron-50 rounded-lg p-6 my-8">
+                <h3 className="text-xl font-bold text-violet-700 mb-4">Volunteer Benefits</h3>
+                <ul className="space-y-2 text-violet-600">
+                  <li className="flex items-start">
+                    <span className="text-saffron-500 mr-2">•</span>
+                    Make a direct impact on the lives of families facing pediatric cancer.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-saffron-500 mr-2">•</span>
+                    Join a supportive community of passionate, mission-driven individuals.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-saffron-500 mr-2">•</span>
+                    Gain valuable skills and experience.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-saffron-500 mr-2">•</span>
+                    Recognition opportunities for outstanding dedication and service.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="text-center mt-8">
+                <FormButton
+                  formType="volunteer"
+                  variant="violet"
+                  size="lg"
+                  className="min-w-[200px]"
+                >
+                  Apply for Volunteering
+                </FormButton>
               </div>
             </div>
           </div>
