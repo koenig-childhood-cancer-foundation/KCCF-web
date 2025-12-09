@@ -70,7 +70,7 @@ export default function Donate() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Hospital Joy</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Help to deliver gifts bags to hospitalized children.
+                Help to deliver gift bags to hospitalized children.
               </p>
             </div>
 
