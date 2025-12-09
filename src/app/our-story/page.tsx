@@ -27,7 +27,7 @@ export default function OurStory() {
         {/* PageHeader */}
         <PageHeader
           title="Our Story"
-          subtitle="From a young cancer survivor's dream to a foundation that has helped hundreds of families across the nation."
+          subtitle="From a young cancer survivor's dream to a foundation that has helped thousands of families across the nation."
         />
       </div>
 
