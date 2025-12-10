@@ -14,7 +14,7 @@ interface DonationButtonProps {
 
 export default function DonationButton({
   amount = 50,
-  campaign = '',
+  campaign: _campaign = '',
   variant = 'primary',
   size = 'md',
   className = '',
