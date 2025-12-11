@@ -362,15 +362,19 @@ When adding new features, ensure they work across:
 3. **Sync Your Fork (If You Already Have Access):**
    - If you have repository access but accidentally created a fork, you can:
    ```bash
-   # Add main repository as remote
-   git remote add upstream https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git
+   # Add main repository as remote (or update if it exists)
+   git remote add upstream https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git || \
+   git remote set-url upstream https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git
    
    # Create a new branch in the main repository
    git fetch upstream
    git checkout -b feature/your-feature upstream/main
    
    # Cherry-pick your changes from the fork
+   # First, find your commit SHA using: git log --oneline
+   # Then cherry-pick one or more commits:
    git cherry-pick <commit-sha>
+   # For multiple commits: git cherry-pick <sha1> <sha2> <sha3>
    
    # Push to main repository
    git push upstream feature/your-feature
