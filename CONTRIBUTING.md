@@ -14,11 +14,15 @@ We prefer using GitHub Copilot's issue-to-PR functionality for creating pull req
 - Reduce manual coding errors
 - Accelerate the development process
 
+**⚠️ Important:** To use GitHub Copilot's AI features on pull requests (including `@copilot` mentions and code reviews), you must have **write access** to this repository. If you're working from a forked repository, Copilot features will be unavailable due to GitHub's cross-repository security restrictions. See the [Fork vs Branch workflow section](#fork-vs-branch-understanding-the-workflow) below for details.
+
 **To use Copilot for creating PRs from issues:**
 1. Navigate to an issue in the repository.
 2. Assign Copilot to the issue by selecting `copilot` from the "Assignees" dropdown in the issue sidebar. This is the primary way to invoke Copilot from the GitHub UI.
 3. Copilot will automatically analyze the issue and generate a proposed pull request with code changes.
 4. Review the generated code changes in the PR before requesting human review.
+
+**Note:** Copilot's issue-to-PR workflow automatically creates branches in the main repository, so it will work correctly if you have repository access. If you don't have access and want to use Copilot, request collaborator access from the maintainers.
 
 For more details, see [GitHub's documentation on using Copilot to work on issues](https://docs.github.com/en/copilot/how-tos/use-copilot-for-common-tasks/use-copilot-to-create-or-update-issues).
 
@@ -113,22 +117,125 @@ GitHub Copilot supports multiple AI models through its model selector feature. A
 - npm 10+
 - Git
 
-### Setup
+### Fork vs Branch: Understanding the Workflow
+
+**⚠️ Important: GitHub Copilot Cross-Repository Limitation**
+
+When using GitHub Copilot to work on issues in this repository, you may encounter the following error on pull requests created from forked repositories:
+
+> ⚠️ **Copilot isn't available for cross-repository pull requests**
+
+This is a **security feature** implemented by GitHub, not a bug. Here's what you need to know:
+
+#### Why Does This Happen?
+
+GitHub restricts Copilot's AI features (including `@copilot` mentions, Copilot code reviews, and Copilot autofix) on pull requests that originate from **forked repositories** (cross-repository PRs) for the following security reasons:
+- **Prevents data leakage** between unrelated repositories
+- **Protects against privilege escalation** and unauthorized access
+- **Enforces repository boundaries** for open-source contributions
+- **Prevents accidental code exposure** in projects where you may not have full write access
+
+#### Two Contribution Workflows
+
+##### Option 1: Branch-Based Workflow (Recommended for Copilot Users)
+
+**Best for:** Contributors who need GitHub Copilot AI assistance on pull requests
+
+**Requirements:** You need **write/push access** to the repository (you must be added as a collaborator)
+
+**Process:**
+1. Request repository access by opening an issue or contacting the maintainers
+2. Once granted access, clone the repository directly (not a fork):
+   ```bash
+   git clone https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git
+   cd KCCF-web
+   ```
+3. Create a feature branch in the main repository:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+4. Make your changes and push to the main repository
+5. Create a pull request from your branch to `main`
+
+**✅ Benefits:**
+- Full GitHub Copilot functionality available (including `@copilot` mentions and code reviews)
+- Simpler CI/CD integration
+- Maintainers can directly push to your branch if needed
+- No cross-repository restrictions
+
+##### Option 2: Fork-Based Workflow (External Contributors)
+
+**Best for:** External contributors without repository access, or contributors not using Copilot features
+
+**Process:**
 1. Fork the repository on GitHub
 2. Clone your fork locally:
    ```bash
    git clone https://github.com/YOUR-USERNAME/KCCF-web.git
    cd KCCF-web
    ```
-3. Install dependencies:
+3. Create a feature branch in your fork
+4. Make your changes and push to your fork
+5. Create a pull request from your fork to the main repository
+
+**⚠️ Limitations:**
+- GitHub Copilot features (`@copilot` mentions, code reviews) **will not work** on the pull request
+- You can still use Copilot in your local IDE (VS Code, JetBrains, etc.)
+- Only you can push to your branch (unless you enable "Allow edits from maintainers")
+
+**Workarounds for Fork-Based Contributors:**
+1. **Use Copilot locally:** GitHub Copilot works normally in your IDE (VS Code, JetBrains, etc.) even when working on a fork. Accept Copilot's suggestions locally, then push to your fork.
+2. **Manual code review:** Request review from human reviewers instead of using `@copilot review`
+3. **Switch to branch-based workflow:** If you need Copilot features on the PR, request repository access from maintainers
+
+#### Which Workflow Should I Use?
+
+| Situation | Recommended Workflow |
+|-----------|---------------------|
+| Regular contributor / Team member | **Branch-based** (request access) |
+| Need GitHub Copilot on PRs | **Branch-based** (request access) |
+| First-time or occasional contributor | **Fork-based** (no access needed) |
+| Quick fixes or small changes | **Fork-based** (no access needed) |
+| Working on sensitive/experimental features | **Branch-based** (with proper branch protection) |
+
+### Setup
+
+#### For Branch-Based Workflow (After Getting Repository Access)
+1. Clone the repository directly:
+   ```bash
+   git clone https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git
+   cd KCCF-web
+   ```
+2. Install dependencies:
    ```bash
    npm install
    ```
-4. Start the development server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+#### For Fork-Based Workflow (External Contributors)
+1. Fork the repository on GitHub
+2. Clone your fork locally:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/KCCF-web.git
+   cd KCCF-web
+   ```
+3. Add the upstream repository as a remote:
+   ```bash
+   git remote add upstream https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git
+   ```
+4. Install dependencies:
+   ```bash
+   npm install
+   ```
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Development Workflow
 
@@ -226,6 +333,58 @@ When adding new features, ensure they work across:
 - Different screen sizes (responsive design)
 - Light and dark modes
 - With and without cookies enabled
+
+## Troubleshooting
+
+### GitHub Copilot "Cross-Repository Pull Requests" Error
+
+**Problem:** When you try to use `@copilot` on a pull request, you see:
+> ⚠️ **Copilot isn't available for cross-repository pull requests**
+
+**Cause:** You created a pull request from a forked repository. GitHub restricts Copilot AI features on cross-repository PRs for security reasons.
+
+**Solutions:**
+
+1. **Request Repository Access (Recommended for Regular Contributors):**
+   - Open an issue requesting collaborator access
+   - Once granted, close your fork-based PR
+   - Clone the main repository (not your fork)
+   - Create a new branch in the main repository
+   - Reapply your changes and create a new PR
+   - GitHub Copilot will now work on your PR
+
+2. **Continue with Fork (For One-Time Contributors):**
+   - Use GitHub Copilot in your local IDE (VS Code, JetBrains, etc.) - this still works
+   - Accept Copilot's suggestions locally and push to your fork
+   - Request review from human reviewers instead of `@copilot`
+   - Note: `@copilot review` and other PR-based Copilot features will remain unavailable
+
+3. **Sync Your Fork (If You Already Have Access):**
+   - If you have repository access but accidentally created a fork, you can:
+   ```bash
+   # Add main repository as remote
+   git remote add upstream https://github.com/koenig-childhood-cancer-foundation/KCCF-web.git
+   
+   # Create a new branch in the main repository
+   git fetch upstream
+   git checkout -b feature/your-feature upstream/main
+   
+   # Cherry-pick your changes from the fork
+   git cherry-pick <commit-sha>
+   
+   # Push to main repository
+   git push upstream feature/your-feature
+   ```
+
+### Other Common Issues
+
+| Issue | Solution |
+|-------|----------|
+| Build fails locally | Run `npm install` to ensure dependencies are up to date |
+| ESLint errors | Run `npm run lint` to see all issues; fix before committing |
+| TypeScript errors | Run `npx tsc --noEmit` to check for type errors |
+| Port 3000 in use | Stop other services or use `PORT=3001 npm run dev` |
+| Changes not reflecting | Clear `.next` cache and restart dev server |
 
 ## Questions?
 
