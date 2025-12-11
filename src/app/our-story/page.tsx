@@ -118,7 +118,7 @@ export default function OurStory() {
                 size="sm"
                 className="rounded-full mb-6"
               >
-                From Patient to Founder
+                Book Elana to Event
               </FormButton>
 
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-saffron-400">
