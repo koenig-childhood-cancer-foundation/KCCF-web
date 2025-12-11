@@ -211,7 +211,7 @@ export default function OurStory() {
                 Book Elana Koenig
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Elana shares her inspiring story at schools, organizations, and events to raise awareness about childhood cancer and the importance of supporting affected families.
+                Invite Elana Koenig to your graduation, gala, corporate event, or media platform to share her powerful story of turning pain into purpose—bringing hope, resilience, and impact to every audience.
               </p>
             </div>
 
