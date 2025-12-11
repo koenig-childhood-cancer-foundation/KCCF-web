@@ -94,14 +94,8 @@ export default function OurStory() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <FormButton
-                formType="book-elana"
-                variant="orange"
-                size="sm"
-                className="rounded-full mb-6"
-              >
-                From Patient to Founder
-              </FormButton>
+
+              {/* Removed the FormButton for Issue #266 */}
 
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-saffron-400">
                 Elana's Story
