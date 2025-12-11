@@ -58,29 +58,23 @@ Notes:
 
 ## CI/CD Pipeline
 
-This repository uses GitHub Actions for continuous integration and deployment:
+This repository uses GitHub Actions for automated continuous integration and deployment. For comprehensive details about the CI/CD pipeline, deployment process, troubleshooting, and best practices, see **[CI_CD_DEPLOYMENT.md](CI_CD_DEPLOYMENT.md)**.
 
-### CI/CD Workflow (`.github/workflows/nextjs.yml`)
-The main workflow runs on every push and pull request:
+### Quick Overview
 
-**On Pull Requests:**
-- Lint checks (ESLint)
-- TypeScript compilation check (`tsc --noEmit`)
-- Production build verification
+**CI/CD Workflow** (`.github/workflows/nextjs.yml`):
+- **Pull Requests**: Lint → Type Check → Build (no deployment)
+- **Main Branch**: Lint → Type Check → Build → Deploy to GitHub Pages
+- **Manual**: Can be triggered via workflow_dispatch
 
-**On Push to Main:**
-- All CI checks above
-- Automatic deployment to GitHub Pages
-
-### Security Scanning (`.github/workflows/codeql.yml`)
-CodeQL Advanced security scanning runs:
-- On every push to main
-- On every pull request to main
+**Security Scanning** (`.github/workflows/codeql.yml`):
+- Runs on all PRs and pushes to main
 - Weekly scheduled scans (Mondays at 1:28 AM UTC)
+- Analyzes JavaScript/TypeScript and GitHub Actions workflows
 
-**Languages analyzed:**
-- JavaScript/TypeScript
-- GitHub Actions workflows
+**Deployment Time**: ~2-3 minutes from push to live on `https://thekccf.org`
+
+For detailed information including troubleshooting, monitoring, rollback procedures, and security considerations, refer to the **[CI/CD & Deployment Guide](CI_CD_DEPLOYMENT.md)**.
 
 ## Deployment
 
@@ -161,6 +155,7 @@ KCCF-web/
 ├── package.json                 # Project dependencies and scripts
 ├── tsconfig.json                # TypeScript configuration
 ├── eslint.config.mjs            # ESLint configuration
+├── CI_CD_DEPLOYMENT.md          # Comprehensive CI/CD and deployment guide
 ├── CONTRIBUTING.md              # Contribution guidelines
 ├── EXTERNAL_SERVICES.md         # Guide for all external services (forms, donations, analytics)
 ├── EXTERNAL_VALIDATION_CHECKLIST.md # Post-deployment verification checklist

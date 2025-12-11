@@ -106,6 +106,15 @@ GitHub Copilot supports multiple AI models through its model selector feature. A
 
 **Note:** Access to alternative AI providers may require specific subscription tiers. GitHub Copilot Individual provides access to core models, while GitHub Copilot Business and Enterprise may offer additional model options. Check your GitHub Copilot subscription details and the [GitHub Copilot documentation](https://docs.github.com/copilot) for currently available models.
 
+## Documentation
+
+Before contributing, familiarize yourself with the project documentation:
+
+- **[README.md](README.md)** - Project overview and quick start guide
+- **[CI_CD_DEPLOYMENT.md](CI_CD_DEPLOYMENT.md)** - CI/CD pipeline, deployment process, and troubleshooting
+- **[EXTERNAL_SERVICES.md](EXTERNAL_SERVICES.md)** - Third-party service integrations
+- **[SECURITY.md](SECURITY.md)** - Security policy and vulnerability reporting
+
 ## Getting Started
 
 ### Prerequisites
@@ -186,6 +195,23 @@ git commit -m "Docs: update README with CI/CD information"
    - Screenshots for UI changes
 4. Wait for CI checks to pass
 5. Request review from maintainers
+
+### Understanding CI Checks
+
+When you submit a Pull Request, GitHub Actions automatically runs the following checks:
+
+**CI Job** (must pass):
+1. **Lint** - ESLint code quality checks
+2. **Type Check** - TypeScript type validation
+3. **Build** - Production build verification
+
+**CodeQL Security Scan** (must pass):
+- Scans JavaScript/TypeScript for security vulnerabilities
+- Scans GitHub Actions workflow files
+
+**Deployment**: Only runs on `main` branch after merge (not on PRs).
+
+If any check fails, review the logs in the GitHub Actions tab of your PR. For detailed troubleshooting, see [CI_CD_DEPLOYMENT.md](CI_CD_DEPLOYMENT.md#monitoring--troubleshooting).
 
 ### After Review
 - Address any feedback from reviewers

@@ -2,6 +2,22 @@
 
 This document provides a comprehensive overview of all external third-party services integrated with the KCCF website. Configuration for these services is managed in their respective external platforms, not in this repository.
 
+**Last Updated**: December 2025  
+**Site URL**: https://thekccf.org
+
+---
+
+## Recent Updates
+
+**December 2025**:
+- ✅ Transitioned from staging (staging.thekccf.org) to production (thekccf.org)
+- ✅ All services verified and operational on production domain
+- ✅ Email configurations reviewed across all platforms
+- ✅ Analytics tracking updated to production domain
+
+**For post-deployment verification**, see [EXTERNAL_VALIDATION_CHECKLIST.md](EXTERNAL_VALIDATION_CHECKLIST.md).  
+**For CI/CD and deployment details**, see [CI_CD_DEPLOYMENT.md](CI_CD_DEPLOYMENT.md).
+
 ---
 
 ## Table of Contents
