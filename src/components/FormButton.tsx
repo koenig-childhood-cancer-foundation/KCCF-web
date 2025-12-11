@@ -54,7 +54,7 @@ export default function FormButton({
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClass} ${className}`}
     >
       {children}
-      {icon && <span className="ml-2">{icon}</span>}
+      {icon && <span className="ml-2" aria-hidden="true">{icon}</span>}
     </button>
   )
 }

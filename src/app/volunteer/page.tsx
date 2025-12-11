@@ -1,26 +1,48 @@
 "use client"
 
+import Image from 'next/image';
+import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
+import { useFormModal } from '@/contexts/FormModalContext';
 
 export default function Volunteer() {
+  const { openModal } = useFormModal()
+
   return (
-    <div className="min-h-screen">
-      <PageHeader
-        title="Volunteer"
-        subtitle="Join our team of dedicated volunteers and help make a difference in the lives of children battling cancer."
-      />
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_volunteer.jpg"
+            alt="Volunteer"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="Volunteer"
+          subtitle="Join us to change a life. May be even your own."
+        />
+      </div>
 
       {/* About Volunteering */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-violet-700 mb-8 text-center">Make a Difference</h2>
+            <h2 className="text-3xl font-bold text-violet-700 mb-8 text-center">Give Hope</h2>
 
             <div className="prose prose-lg max-w-none text-violet-700">
               <p className="text-xl leading-relaxed mb-8">
-                Our volunteers are the heart of KCCF. They bring compassion, energy, and dedication to every
-                program and event, helping us reach more families and create more impact.
+                Koenig Childhood Cancer Foundation (KCCF) is a 100% volunteer-run organization. Volunteers are at the heart of everything we do — your time, energy, and commitment directly impact children battling cancer and their families.
               </p>
 
               <p className="mb-6">
@@ -29,29 +51,58 @@ export default function Volunteer() {
               </p>
 
               <div className="bg-saffron-50 rounded-lg p-6 my-8">
-                <h3 className="text-xl font-bold text-violet-700 mb-4">Why Volunteer?</h3>
+                <h3 className="text-xl font-bold text-violet-700 mb-4">Volunteer Requirements</h3>
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Make a direct impact on children's lives
+                    <strong>Ages:</strong> 18+
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Join a supportive community of like-minded individuals
+                    <strong>Under 18?</strong> Parental consent is required for teen volunteers. Youth roles may have limitations.
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Gain valuable experience and skills
+                    A minimum one-year commitment is requested for all volunteer roles.
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Flexible scheduling to fit your availability
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
-                    Be part of a meaningful cause
+                    Optional Background Check (A Social Security Number will be required)
                   </li>
                 </ul>
+              </div>
+
+              <div className="bg-saffron-50 rounded-lg p-6 my-8">
+                <h3 className="text-xl font-bold text-violet-700 mb-4">Volunteer Benefits</h3>
+                <ul className="space-y-2 text-violet-600">
+                  <li className="flex items-start">
+                    <span className="text-saffron-500 mr-2">•</span>
+                    Make a direct impact on the lives of families facing pediatric cancer.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-saffron-500 mr-2">•</span>
+                    Join a supportive community of passionate, mission-driven individuals.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-saffron-500 mr-2">•</span>
+                    Gain valuable skills and experience.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-saffron-500 mr-2">•</span>
+                    Recognition opportunities for outstanding dedication and service.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="text-center mt-8">
+                <FormButton
+                  formType="volunteer"
+                  variant="violet"
+                  size="lg"
+                  className="min-w-[200px]"
+                >
+                  Apply for Volunteering
+                </FormButton>
               </div>
             </div>
           </div>
@@ -163,85 +214,49 @@ export default function Volunteer() {
         </div>
       </section>
 
-      {/* Volunteer Requirements */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-violet-700 mb-12">Volunteer Requirements</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-xl font-bold text-violet-700 mb-4">General Requirements</h3>
-              <ul className="space-y-3 text-violet-600">
-                <li className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
-                  Must be 18 years or older (or accompanied by a parent/guardian)
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
-                  Complete volunteer orientation and training
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
-                  Pass background check (for hospital visits)
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
-                  Commit to minimum time requirements
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
-                  Follow KCCF policies and procedures
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-xl font-bold text-violet-700 mb-4">Time Commitments</h3>
-              <ul className="space-y-3 text-violet-600">
-                <li className="flex items-start">
-                  <span className="text-saffron-500 mr-2">•</span>
-                  <strong>Flexible:</strong> 2-4 hours per month
-                </li>
-                <li className="flex items-start">
-                  <span className="text-saffron-500 mr-2">•</span>
-                  <strong>Regular:</strong> 4-8 hours per month
-                </li>
-                <li className="flex items-start">
-                  <span className="text-saffron-500 mr-2">•</span>
-                  <strong>Dedicated:</strong> 8+ hours per month
-                </li>
-                <li className="flex items-start">
-                  <span className="text-saffron-500 mr-2">•</span>
-                  <strong>Special Events:</strong> One-time commitments
-                </li>
-                <li className="flex items-start">
-                  <span className="text-saffron-500 mr-2">•</span>
-                  <strong>Virtual:</strong> Remote opportunities available
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Volunteer Application Form */}
       <section className="py-16 bg-violet-500 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Become a Volunteer</h2>
 
-          <div className="bg-white rounded-lg shadow-lg p-8 text-violet-900 text-center">
-            <p className="text-lg text-violet-700 mb-8">
-              Ready to make a difference? Complete this form to start your volunteer journey with KCCF.
-            </p>
-            
-            <FormButton
-              formType="volunteer"
-              variant="violet"
-              size="lg"
-              className="min-w-[200px]"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Individual Volunteering Card */}
+            <div 
+              onClick={() => openModal('volunteer')}
+              className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 flex flex-col cursor-pointer group"
             >
-              Volunteer Application
-            </FormButton>
+              <h3 className="text-2xl font-bold text-violet-700 mb-4 text-center">Individual ⭐</h3>
+              <p className="text-violet-600 mb-6 flex-grow">
+                Individual volunteering includes opportunities to contribute your skills and/or participate in events that support our mission.
+              </p>
+              <div className="text-center mt-auto">
+                <span className="inline-flex items-center text-violet-600 group-hover:text-violet-700 font-semibold transition-colors">
+                  Click to Apply
+                  <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            {/* Group Volunteering Card */}
+            <Link 
+              href="/crazy-socks"
+              className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 flex flex-col cursor-pointer group"
+            >
+              <h3 className="text-2xl font-bold text-violet-700 mb-4 text-center">Group 🤝</h3>
+              <p className="text-violet-600 mb-6 flex-grow">
+                Group volunteering usually involves corporate sponsorship of care bag supplies and assembling packages, writing notes for children in the hospital. Check with your company's Corporate Social Responsibility team.
+              </p>
+              <div className="text-center mt-auto">
+                <span className="inline-flex items-center text-violet-600 group-hover:text-violet-700 font-semibold transition-colors">
+                  Click to learn
+                  <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

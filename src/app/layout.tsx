@@ -3,8 +3,6 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import { DonationModalProvider } from "@/contexts/DonationModalContext";
-import DonationModal from "@/components/DonationModal";
 import { FormModalProvider } from "@/contexts/FormModalContext";
 import FormModal from "@/components/FormModal";
 import { ArticleModalProvider } from "@/contexts/ArticleModalContext";
@@ -17,6 +15,8 @@ import ConsentPreferencesModal from "@/components/ConsentPreferencesModal";
 import SubmissionModal from "@/components/SubmissionModal";
 import GoogleTagManager from "@/components/GoogleTagManager";
 import { Suspense } from "react";
+import { SearchModalProvider } from "@/contexts/SearchModalContext";
+import SearchModal from "@/components/SearchModal";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -61,7 +61,7 @@ export default function RootLayout({
         <ThemeProvider>
           <CookieConsentProvider>
             <GoogleTagManager />
-            <DonationModalProvider>
+            <SearchModalProvider>
               <FormModalProvider>
                 <ArticleModalProvider>
                   <SlideshowProvider>
@@ -73,16 +73,16 @@ export default function RootLayout({
                   <CookieConsentBanner />
                   <ConsentPreferencesModal />
                   <Footer />
-                  <DonationModal />
                   <FormModal />
                   <ArticleModal />
+                  <SearchModal />
                   <Suspense fallback={null}>
                     <SubmissionModal />
                   </Suspense>
                   </SlideshowProvider>
                 </ArticleModalProvider>
               </FormModalProvider>
-            </DonationModalProvider>
+            </SearchModalProvider>
           </CookieConsentProvider>
         </ThemeProvider>
       </body>

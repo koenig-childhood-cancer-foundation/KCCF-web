@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 import { useArticleModal } from '@/contexts/ArticleModalContext';
 
@@ -9,11 +10,28 @@ export default function Media() {
 
   return (
     <div className="min-h-screen bg-platinum-50 dark:bg-gray-900">
-      {/* Hero Section */}
-      <PageHeader
-        title="Media & Press"
-        subtitle="Stay updated with the latest news, press releases, and media coverage of the Koenig Childhood Cancer Foundation"
-      />
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_media.jpg"
+            alt="Media & Press"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="Media & Press"
+          subtitle="Stay updated with the latest news, press releases, and media coverage."
+        />
+      </div>
 
       {/* Video Gallery Section */}
       <section className="py-16 bg-white dark:bg-gray-800">
@@ -22,7 +40,7 @@ export default function Media() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Video 1 - Charles Esten & Kelly Clarkson */}
-            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="aspect-video mb-4">
                 <iframe
                   className="w-full h-full rounded-lg"
@@ -47,7 +65,7 @@ export default function Media() {
             </div>
 
             {/* Video 2 - Elana Sings National Anthem */}
-            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="aspect-video mb-4">
                 <iframe
                   className="w-full h-full rounded-lg"
@@ -72,7 +90,7 @@ export default function Media() {
             </div>
 
             {/* Video 3 - WNBC Mark Ukraine */}
-            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="aspect-video mb-4">
                 <iframe
                   className="w-full h-full rounded-lg"
@@ -97,7 +115,7 @@ export default function Media() {
             </div>
 
             {/* Video 4 - Nasdaq Honors Elana */}
-            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="aspect-video mb-4">
                 <iframe
                   className="w-full h-full rounded-lg"
@@ -122,7 +140,7 @@ export default function Media() {
             </div>
 
             {/* Video 5 - WNBC Gifts */}
-            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="aspect-video mb-4">
                 <iframe
                   className="w-full h-full rounded-lg"
@@ -147,7 +165,7 @@ export default function Media() {
             </div>
 
             {/* Video 6 - ABC7 Father's Day */}
-            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="aspect-video mb-4">
                 <iframe
                   className="w-full h-full rounded-lg"
@@ -171,7 +189,7 @@ export default function Media() {
             </div>
 
             {/* Video 7 - ABC7 Valentine's Day */}
-            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="aspect-video mb-4">
                 <iframe
                   className="w-full h-full rounded-lg"
@@ -195,7 +213,7 @@ export default function Media() {
             </div>
 
             {/* Video 8 - NBC Valentine's Gifts */}
-            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="aspect-video mb-4">
                 <iframe
                   className="w-full h-full rounded-lg"
@@ -220,7 +238,7 @@ export default function Media() {
             </div>
 
             {/* Video 9 - World Net Summit */}
-            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="aspect-video mb-4">
                 <iframe
                   className="w-full h-full rounded-lg"
@@ -256,7 +274,7 @@ export default function Media() {
             {/* Press Article 1 - People Magazine */}
             <div 
               onClick={() => openModal('people-magazine')}
-              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2"
             >
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">People Magazine</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
@@ -265,13 +283,13 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-4">
                 Elana Koenig founded the Koenig Childhood Cancer Foundation to help families facing childhood cancer...
               </p>
-              <button className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold inline-flex items-center">
+              <button className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold inline-flex items-center">
                 Read Full Article →
               </button>
             </div>
 
             {/* Press Article 2 */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">ABC News</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
                 11-Year-Old Cancer Survivor Creates Foundation to Help Other Children
@@ -285,7 +303,7 @@ export default function Media() {
             </div>
 
             {/* Press Article 3 */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">NBC Today Show</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
                 Crazy Socks Day: How One Girl's Idea is Changing Lives
@@ -299,7 +317,7 @@ export default function Media() {
             </div>
 
             {/* Press Article 4 */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">Forbes</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
                 Young Philanthropist of the Year: Elana Koenig
