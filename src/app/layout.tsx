@@ -15,6 +15,8 @@ import ConsentPreferencesModal from "@/components/ConsentPreferencesModal";
 import SubmissionModal from "@/components/SubmissionModal";
 import GoogleTagManager from "@/components/GoogleTagManager";
 import { Suspense } from "react";
+import { SearchModalProvider } from "@/contexts/SearchModalContext";
+import SearchModal from "@/components/SearchModal";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -59,25 +61,28 @@ export default function RootLayout({
         <ThemeProvider>
           <CookieConsentProvider>
             <GoogleTagManager />
-            <FormModalProvider>
-              <ArticleModalProvider>
-                <SlideshowProvider>
-                <LoadingSpinner />
-                <Navigation />
-                <main className="min-h-screen">
-                  {children}
-                </main>
-                <CookieConsentBanner />
-                <ConsentPreferencesModal />
-                <Footer />
-                <FormModal />
-                <ArticleModal />
-                <Suspense fallback={null}>
-                  <SubmissionModal />
-                </Suspense>
-                </SlideshowProvider>
-              </ArticleModalProvider>
-            </FormModalProvider>
+            <SearchModalProvider>
+              <FormModalProvider>
+                <ArticleModalProvider>
+                  <SlideshowProvider>
+                  <LoadingSpinner />
+                  <Navigation />
+                  <main className="min-h-screen">
+                    {children}
+                  </main>
+                  <CookieConsentBanner />
+                  <ConsentPreferencesModal />
+                  <Footer />
+                  <FormModal />
+                  <ArticleModal />
+                  <SearchModal />
+                  <Suspense fallback={null}>
+                    <SubmissionModal />
+                  </Suspense>
+                  </SlideshowProvider>
+                </ArticleModalProvider>
+              </FormModalProvider>
+            </SearchModalProvider>
           </CookieConsentProvider>
         </ThemeProvider>
       </body>

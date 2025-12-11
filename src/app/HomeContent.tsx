@@ -5,11 +5,9 @@ import Link from 'next/link';
 import DonationButton from '@/components/DonationButton';
 import PartnersCarousel from '@/components/PartnersCarousel';
 import CallToAction from '@/components/CallToAction';
-import { useTheme } from '@/contexts/ThemeContext';
 import { IMPACT_STATS } from '@/constants/impactStats';
 
 export default function HomeContent() {
-  const { theme } = useTheme()
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
       {/* Hero Section */}
