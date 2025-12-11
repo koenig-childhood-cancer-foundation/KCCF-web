@@ -15,13 +15,13 @@ export default function Aid() {
             src="/images/header_image_family_assistance.jpg"
             alt="Family Assistance"
             fill
-            className="object-cover"
+            className="object-cover brightness-110"
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
         </div>
-        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+        <div className="absolute inset-0 top-24 bg-amber-400/8 dark:bg-amber-400/12 pointer-events-none"></div>
 
         {/* PageHeader */}
         <PageHeader 
