@@ -122,13 +122,13 @@ export default function NewsletterSignup() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="btn-violet px-6 py-3 rounded-lg! font-semibold"
+              className="btn-violet px-6 py-3 rounded-lg font-semibold"
             >
               Contact Us
             </a>
             <a
               href="mailto:join@thekccf.org"
-              className="btn-violet px-6 py-3 rounded-lg! font-semibold"
+              className="btn-violet px-6 py-3 rounded-lg font-semibold"
             >
               Email Us
             </a>
