@@ -27,7 +27,7 @@ export default function OurStory() {
         {/* PageHeader */}
         <PageHeader
           title="Our Story"
-          subtitle="From a young cancer survivor's dream to a foundation that has helped thousands of families across the nation."
+          subtitle="From a child cancer survivor's dream to a foundation that has helped thousands of families globally."
         />
       </div>
 
@@ -38,9 +38,6 @@ export default function OurStory() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Elana's Journey
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              From a brave young girl fighting cancer to a powerful advocate helping others in their battles.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
