@@ -25,6 +25,41 @@ export default function Navigation() {
   const pathname = usePathname()
   const isHomePage = pathname === '/'
 
+  // Helper function to render dropdown items consistently
+  const renderDropdownItem = (
+    dropdownItem: DropdownItem,
+    itemClasses: string,
+    onClickCallback: () => void
+  ) => {
+    if ('formType' in dropdownItem) {
+      return (
+        <button
+          key={dropdownItem.name}
+          onClick={() => {
+            openModal(dropdownItem.formType)
+            onClickCallback()
+          }}
+          role="menuitem"
+          className={`${itemClasses} w-full text-left`}
+        >
+          {dropdownItem.name}
+        </button>
+      )
+    }
+    
+    return (
+      <Link
+        key={dropdownItem.name}
+        href={dropdownItem.href}
+        role="menuitem"
+        className={itemClasses}
+        onClick={onClickCallback}
+      >
+        {dropdownItem.name}
+      </Link>
+    )
+  }
+
   useEffect(() => {
     if (!isHomePage) {
       setIsScrolled(true)
@@ -224,33 +259,7 @@ export default function Navigation() {
                   >
                     {item.dropdown.map((dropdownItem) => {
                       const itemClasses = "block px-4 py-3 text-sm transition-colors duration-150 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-inset focus:bg-gray-50 dark:focus:bg-gray-700"
-                      
-                      if ('formType' in dropdownItem) {
-                        return (
-                          <button
-                            key={dropdownItem.name}
-                            onClick={() => {
-                              openModal(dropdownItem.formType)
-                              setActiveDropdown(null)
-                            }}
-                            role="menuitem"
-                            className={`${itemClasses} w-full text-left`}
-                          >
-                            {dropdownItem.name}
-                          </button>
-                        )
-                      }
-                      
-                      return (
-                        <Link
-                          key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          role="menuitem"
-                          className={itemClasses}
-                        >
-                          {dropdownItem.name}
-                        </Link>
-                      )
+                      return renderDropdownItem(dropdownItem, itemClasses, () => setActiveDropdown(null))
                     })}
                   </div>
                 )}
@@ -383,32 +392,7 @@ export default function Navigation() {
                         <div className="ml-4 mt-2 space-y-2">
                           {item.dropdown.map((dropdownItem) => {
                             const itemClasses = "block px-4 py-3 text-sm rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 touch-manipulation"
-                            
-                            if ('formType' in dropdownItem) {
-                              return (
-                                <button
-                                  key={dropdownItem.name}
-                                  onClick={() => {
-                                    openModal(dropdownItem.formType)
-                                    setIsMenuOpen(false)
-                                  }}
-                                  className={`${itemClasses} w-full text-left`}
-                                >
-                                  {dropdownItem.name}
-                                </button>
-                              )
-                            }
-                            
-                            return (
-                              <Link
-                                key={dropdownItem.name}
-                                href={dropdownItem.href}
-                                className={itemClasses}
-                                onClick={() => setIsMenuOpen(false)}
-                              >
-                                {dropdownItem.name}
-                              </Link>
-                            )
+                            return renderDropdownItem(dropdownItem, itemClasses, () => setIsMenuOpen(false))
                           })}
                         </div>
                       )}
