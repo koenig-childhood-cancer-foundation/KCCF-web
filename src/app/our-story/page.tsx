@@ -94,9 +94,6 @@ export default function OurStory() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-
-              {/* Removed the FormButton for Issue #266 */}
-
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-saffron-400">
                 Elana's Story
               </h2>
