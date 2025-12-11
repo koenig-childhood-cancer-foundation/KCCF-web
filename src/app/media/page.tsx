@@ -272,9 +272,9 @@ export default function Media() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Press Article 1 - People Magazine */}
-            <div 
+            <button 
               onClick={() => openModal('people-magazine')}
-              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 text-left w-full"
             >
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">People Magazine</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
@@ -283,15 +283,15 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-4">
                 Elana Koenig founded the Koenig Childhood Cancer Foundation to help families facing childhood cancer...
               </p>
-              <button className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold inline-flex items-center">
+              <span className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold inline-flex items-center">
                 Read Full Article →
-              </button>
-            </div>
+              </span>
+            </button>
 
             {/* Press Article 2 */}
-            <div 
+            <button 
               onClick={() => openModal('abc-news')}
-              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 text-left w-full"
             >
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">ABC News</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
@@ -300,15 +300,15 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-4">
                 Elana Koenig's inspiring journey from cancer patient to foundation founder is making waves across the nation...
               </p>
-              <button className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold inline-flex items-center">
+              <span className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold inline-flex items-center">
                 Read Full Article →
-              </button>
-            </div>
+              </span>
+            </button>
 
             {/* Press Article 3 */}
-            <div 
+            <button 
               onClick={() => openModal('nbc-today-show')}
-              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 text-left w-full"
             >
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">NBC Today Show</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
@@ -317,15 +317,15 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-4">
                 The annual Crazy Socks Day event has raised over $2 million for families battling childhood cancer...
               </p>
-              <button className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold inline-flex items-center">
+              <span className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold inline-flex items-center">
                 Read Full Article →
-              </button>
-            </div>
+              </span>
+            </button>
 
             {/* Press Article 4 */}
-            <div 
+            <button 
               onClick={() => openModal('forbes')}
-              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 text-left w-full"
             >
               <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">Forbes</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
@@ -334,10 +334,10 @@ export default function Media() {
               <p className="text-gray-700 dark:text-gray-200 mb-4">
                 At just 14 years old, Elana Koenig has already made an indelible mark on the world of philanthropy...
               </p>
-              <button className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold inline-flex items-center">
+              <span className="text-fandango-600 hover:text-fandango-700 dark:text-fandango-400 dark:hover:text-fandango-300 font-semibold inline-flex items-center">
                 Read Full Article →
-              </button>
-            </div>
+              </span>
+            </button>
           </div>
         </div>
       </section>
