@@ -39,7 +39,7 @@ export default function OurStory() {
               Elana's Journey
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              From a brave young girl fighting cancer to a powerful advocate helping others in their battles.
+              From a child cancer survivor's dream to a foundation that has helped thousands of families globally.
             </p>
           </div>
 
