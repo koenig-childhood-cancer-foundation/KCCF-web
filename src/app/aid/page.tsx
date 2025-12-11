@@ -91,10 +91,6 @@ export default function Aid() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Application MUST be completely filled out by the family (Page 1) and the Social Worker (Page 2) for it to be reviewed
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-saffron-500 mr-2">•</span>
                     We only pay creditors directly
                   </li>
                 </ul>
