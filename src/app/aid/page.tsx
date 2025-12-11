@@ -41,11 +41,10 @@ export default function Aid() {
               {/* Storytelling Section */}
               <div className="bg-violet-50 rounded-lg p-6 mb-8 border-l-4 border-violet-400">
                 <p className="italic text-lg leading-relaxed mb-4">
-                  "When I was going through cancer treatment we understand all too well how important it is to be with your critically ill child. For most of us, that means jobs, bills, and life outside the hospital come second. Unfortunately, we still have to find a way to pay those bills. That is why we provide financial help for kids with cancer through our Family Assistance program."
+                  "When I was going through cancer treatment, I understood all too well how important it is to be with your critically ill child. For most of us, that means jobs, bills, and life outside the hospital come second. Unfortunately, we still have to find a way to pay those bills. That is why we provide financial help for kids with cancer through our Family Assistance program."
                 </p>
                 <p className="text-right text-violet-600 font-semibold">
-                  — Elana, survivor<br />
-                  Emanuel, 20xx-202xx
+                  — Elana, survivor
                 </p>
               </div>
 
@@ -88,11 +87,11 @@ export default function Aid() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Receive treatment at any credential Hospitals in the United States or our international partner hospitals
+                    Receive treatment at any credentialed hospitals in the United States or our international partner hospitals
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Application MUST be completely filled out by the family (Page 1) and the Social Worker (Page 2) for it to be reviewed
+                    Application MUST be complete, filled out by the family (Page 1) and the Social Worker (Page 2) for it to be reviewed
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
@@ -127,7 +126,7 @@ export default function Aid() {
               </div>
               <h3 className="text-xl font-bold text-violet-700 mb-4">Email Confirmation</h3>
               <p className="text-violet-600">
-                Once complete, family will receive an email confirming completion of part 1, and the social worker listed on the application will automatically receive part 2 via email.
+                Once complete, the family will receive an email confirming completion of part 1, and the social worker listed on the application will automatically receive part 2 via email.
               </p>
             </div>
 
@@ -137,7 +136,7 @@ export default function Aid() {
               </div>
               <h3 className="text-xl font-bold text-violet-700 mb-4">Social Worker Completes Part 2</h3>
               <p className="text-violet-600">
-                Once part 1 is completed by the family and part 2 is completed by the social worker, both parties will receive a confirmation about completion.
+                Once part 1 is completed by the family and part 2 is completed by the social worker, both parties will receive confirmation of completion.
               </p>
             </div>
 
@@ -147,7 +146,7 @@ export default function Aid() {
               </div>
               <h3 className="text-xl font-bold text-violet-700 mb-4">Board Review</h3>
               <p className="text-violet-600">
-                The board will review the complete application for decision.
+                The board will review the complete application for a decision.
               </p>
             </div>
           </div>
