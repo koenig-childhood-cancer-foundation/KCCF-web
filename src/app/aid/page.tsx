@@ -25,7 +25,7 @@ export default function Aid() {
 
         {/* PageHeader */}
         <PageHeader 
-          title="Family Assistance"
+          title="Emergency Family Fund"
           subtitle="We can assist with emergency medical expenses during your child's cancer treatment,
           such as medical bills, transportation, lodging, food, and more."
         />
@@ -38,15 +38,19 @@ export default function Aid() {
             <h2 className="text-3xl font-bold text-violet-700 mb-8 text-center">Family Assistance Program</h2>
             
             <div className="prose prose-lg max-w-none text-violet-700">
-              <p className="text-xl leading-relaxed mb-8">
-                When a child is diagnosed with cancer, families face not only emotional challenges but also 
-                significant financial burdens. Our Family Assistance Program is here to help.
-              </p>
+              {/* Storytelling Section */}
+              <div className="bg-violet-50 rounded-lg p-6 mb-8 border-l-4 border-violet-400">
+                <p className="italic text-lg leading-relaxed mb-4">
+                  "When I was going through cancer treatment we understand all too well how important it is to be with your critically ill child. For most of us, that means jobs, bills, and life outside the hospital come second. Unfortunately, we still have to find a way to pay those bills. That is why we provide financial help for kids with cancer through our Family Assistance program."
+                </p>
+                <p className="text-right text-violet-600 font-semibold">
+                  — Elana, survivor<br />
+                  Emanuel, 20xx-202xx
+                </p>
+              </div>
 
               <p className="mb-6">
-                We understand that medical bills, transportation costs, lodging, and other expenses can 
-                quickly become overwhelming. Our goal is to provide financial relief so families can focus 
-                on what matters most - their child's recovery.
+                This program gives qualified families money for expenses that are attributable to their child's cancer diagnosis. The goal of the program is to lessen the financial burden so families can focus on helping their children get well. We often help families with the following expenses and bills:
               </p>
 
               <div className="bg-orange-50 rounded-lg p-6 my-8">
@@ -54,52 +58,45 @@ export default function Aid() {
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
-                    Medical bills and treatment costs
+                    Medical treatment or medications that insurance won't cover
                   </li>
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
-                    Transportation to and from treatment
+                    Travel costs for treatments
                   </li>
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
-                    Lodging near treatment centers
+                    Mortgage payments/rent
                   </li>
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
-                    Food and basic necessities
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-orange-500 mr-2">•</span>
-                    Childcare for siblings
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-orange-500 mr-2">•</span>
-                    Other essential expenses
+                    And more
                   </li>
                 </ul>
               </div>
 
               <div className="bg-saffron-50 rounded-lg p-6 my-8">
-                <h3 className="text-xl font-bold text-violet-700 mb-4">Eligibility</h3>
-                <p className="text-violet-600 mb-4">
-                  To be eligible for assistance, families must:
-                </p>
+                <h3 className="text-xl font-bold text-violet-700 mb-4">Criteria to Receive Assistance</h3>
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Have a child under 18 diagnosed with cancer
+                    Have a child diagnosed with cancer under the age of 21
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Demonstrate financial need
+                    Need assistance with expenses directly attributable to your child's diagnosis
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Be receiving treatment at an accredited medical facility
+                    Receive treatment at any credential Hospitals in the United States or our international partner hospitals
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Complete the application process
+                    Application MUST be completely filled out by the family (Page 1) and the Social Worker (Page 2) for it to be reviewed
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-saffron-500 mr-2">•</span>
+                    We only pay creditors directly
                   </li>
                 </ul>
               </div>
@@ -118,9 +115,9 @@ export default function Aid() {
               <div className="w-16 h-16 bg-orange-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">1</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4">Apply</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4">Family Completes Part 1</h3>
               <p className="text-violet-600">
-                Complete the online application form with your family's information and needs.
+                Qualified families fill out their part of the application.
               </p>
             </div>
 
@@ -128,9 +125,9 @@ export default function Aid() {
               <div className="w-16 h-16 bg-saffron-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">2</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4">Review</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4">Email Confirmation</h3>
               <p className="text-violet-600">
-                Our team reviews your application and may request additional documentation.
+                Once complete, family will receive an email confirming completion of part 1, and the social worker listed on the application will automatically receive part 2 via email.
               </p>
             </div>
 
@@ -138,9 +135,9 @@ export default function Aid() {
               <div className="w-16 h-16 bg-fandango-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">3</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4">Approval</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4">Social Worker Completes Part 2</h3>
               <p className="text-violet-600">
-                Once approved, we work with you to determine the best way to provide assistance.
+                Once part 1 is completed by the family and part 2 is completed by the social worker, both parties will receive a confirmation about completion.
               </p>
             </div>
 
@@ -148,11 +145,18 @@ export default function Aid() {
               <div className="w-16 h-16 bg-violet-400 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">4</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 mb-4">Support</h3>
+              <h3 className="text-xl font-bold text-violet-700 mb-4">Board Review</h3>
               <p className="text-violet-600">
-                We provide ongoing support and may offer additional assistance as needed.
+                The board will review the complete application for decision.
               </p>
             </div>
+          </div>
+
+          {/* Important Notice */}
+          <div className="mt-12 bg-red-50 border-l-4 border-red-500 rounded-lg p-6 max-w-4xl mx-auto">
+            <p className="text-lg font-bold text-red-700 text-center">
+              *APPLICATIONS WILL NOT BE CONSIDERED UNTIL BOTH PARTS ARE COMPLETE*
+            </p>
           </div>
         </div>
       </section>
@@ -160,7 +164,7 @@ export default function Aid() {
       {/* Application Form */}
       <section className="py-16 bg-violet-500 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Apply for Financial Assistance</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Apply for Family Assistance</h2>
           
           <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 text-center">
             <div className="w-16 h-16 bg-violet-600 rounded-2xl mx-auto mb-6 flex items-center justify-center">
@@ -171,7 +175,7 @@ export default function Aid() {
 
             <h3 className="text-2xl font-bold text-violet-700 mb-4">Start Your Application</h3>
             <p className="text-lg text-violet-600 mb-8 max-w-2xl mx-auto">
-              Complete our comprehensive application form to apply for financial assistance during your child's cancer treatment. All information will be kept confidential.
+              Complete our comprehensive application form to apply for family assistance during your child's cancer treatment. All information will be kept confidential.
             </p>
             
             <FormButton

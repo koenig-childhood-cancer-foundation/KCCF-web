@@ -6,6 +6,12 @@ import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import ThemeToggle from './ThemeToggle'
 import { useTheme } from '@/contexts/ThemeContext'
+import { useSearchModal } from '@/contexts/SearchModalContext'
+import { useFormModal, FormType } from '@/contexts/FormModalContext'
+
+type DropdownItem = 
+  | { name: string; href: string }
+  | { name: string; formType: FormType }
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -14,8 +20,46 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
   const { theme } = useTheme()
+  const { openModal: openSearchModal } = useSearchModal()
+  const { openModal } = useFormModal()
   const pathname = usePathname()
   const isHomePage = pathname === '/'
+
+  // Helper function to render dropdown items consistently
+  const renderDropdownItem = (
+    dropdownItem: DropdownItem,
+    itemClasses: string,
+    onClickCallback: () => void
+  ) => {
+    if ('formType' in dropdownItem) {
+      return (
+        <button
+          type="button"
+          key={dropdownItem.name}
+          onClick={() => {
+            openModal(dropdownItem.formType)
+            onClickCallback()
+          }}
+          role="menuitem"
+          className={`${itemClasses} w-full text-left`}
+        >
+          {dropdownItem.name}
+        </button>
+      )
+    }
+    
+    return (
+      <Link
+        key={dropdownItem.name}
+        href={dropdownItem.href}
+        role="menuitem"
+        className={itemClasses}
+        onClick={onClickCallback}
+      >
+        {dropdownItem.name}
+      </Link>
+    )
+  }
 
   useEffect(() => {
     if (!isHomePage) {
@@ -43,7 +87,7 @@ export default function Navigation() {
     }
   }, [isMenuOpen])
 
-  const navItems = [
+  const navItems: Array<{ name: string; href: string; dropdown?: DropdownItem[] }> = [
     { name: 'HOME', href: '/' },
     { 
       name: 'ABOUT', 
@@ -68,8 +112,8 @@ export default function Navigation() {
       dropdown: [
         { name: 'Contact Us', href: '/contact' },
         { name: 'Volunteer', href: '/volunteer' },
-        { name: 'Sponsor Crazy Socks', href: '/crazy-socks/#sponsorform' },
-        { name: 'Book Elana to Speak', href: '/our-story/#bookelanaformsection' },
+        { name: 'Sponsor Gift Bag Event', formType: 'crazy-socks-sponsor' },
+        { name: 'Book Elana for Event', formType: 'book-elana' },
         { name: 'Newsletter Signup', href: '/newsletter-signup' },
       ]
     },
@@ -214,24 +258,31 @@ export default function Navigation() {
                       }
                     }}
                   >
-                    {item.dropdown.map((dropdownItem) => (
-                      <Link
-                        key={dropdownItem.name}
-                        href={dropdownItem.href}
-                        role="menuitem"
-                        className="block px-4 py-3 text-sm transition-colors duration-150 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-inset focus:bg-gray-50 dark:focus:bg-gray-700"
-                      >
-                        {dropdownItem.name}
-                      </Link>
-                    ))}
+                    {item.dropdown.map((dropdownItem) => {
+                      const itemClasses = "block px-4 py-3 text-sm transition-colors duration-150 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-inset focus:bg-gray-50 dark:focus:bg-gray-700"
+                      return renderDropdownItem(dropdownItem, itemClasses, () => setActiveDropdown(null))
+                    })}
                   </div>
                 )}
               </div>
             ))}
           </div>
 
-          {/* Right side - Donate button and Theme Toggle (Desktop Only) */}
-          <div className="hidden lg:flex items-center space-x-16">
+          {/* Right side - Search, Donate button and Theme Toggle (Desktop Only) */}
+          <div className="hidden lg:flex items-center gap-4">
+            <button
+              onClick={openSearchModal}
+              aria-label="Search"
+              className={`p-2 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 ${
+                isScrolled 
+                  ? 'text-violet-600 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800' 
+                  : 'text-white drop-shadow-[0_0_4px_rgba(0,0,0,0.6)] hover:bg-white/10'
+              }`}
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
             <Link
               href="/donate"
               className={`px-6 py-2 rounded-full text-sm font-semibold leading-none transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:rounded-full ${
@@ -251,6 +302,19 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center space-x-3">
+            <button
+              onClick={openSearchModal}
+              aria-label="Search"
+              className={`p-2 rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-800 ${
+                isScrolled 
+                  ? 'text-violet-600 dark:text-white' 
+                  : 'text-white drop-shadow-[0_0_4px_rgba(0,0,0,0.6)]'
+              }`}
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -327,16 +391,10 @@ export default function Navigation() {
                       </button>
                       {mobileExpandedItems.includes(item.name) && (
                         <div className="ml-4 mt-2 space-y-2">
-                          {item.dropdown.map((dropdownItem) => (
-                            <Link
-                              key={dropdownItem.name}
-                              href={dropdownItem.href}
-                              className="block px-4 py-3 text-sm rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 touch-manipulation"
-                              onClick={() => setIsMenuOpen(false)}
-                            >
-                              {dropdownItem.name}
-                            </Link>
-                          ))}
+                          {item.dropdown.map((dropdownItem) => {
+                            const itemClasses = "block px-4 py-3 text-sm rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 touch-manipulation"
+                            return renderDropdownItem(dropdownItem, itemClasses, () => setIsMenuOpen(false))
+                          })}
                         </div>
                       )}
                     </div>

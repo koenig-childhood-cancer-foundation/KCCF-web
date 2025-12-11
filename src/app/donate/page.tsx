@@ -218,8 +218,8 @@ export default function Donate() {
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
                 Yes. Monthly donations can be changed or canceled at any time. Just contact us at{' '}
-                <a href="mailto:info@thekccf.org" className="text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
-                  info@thekccf.org
+                <a href="mailto:join@thekccf.org" className="text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  join@thekccf.org
                 </a>{' '}
                 for help.
               </p>

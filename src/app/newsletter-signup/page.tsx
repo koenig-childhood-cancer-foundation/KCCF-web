@@ -127,7 +127,7 @@ export default function NewsletterSignup() {
               Contact Us
             </a>
             <a
-              href="mailto:info@thekccf.org"
+              href="mailto:join@thekccf.org"
               className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
             >
               Email Us
