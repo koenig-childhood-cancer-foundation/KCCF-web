@@ -476,7 +476,7 @@ This document identifies technical improvements by comparing KCCF-web with the F
      with:
        path: |
          .next/cache
-       key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+       key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
        restore-keys: |
          ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
    ```
@@ -738,9 +738,15 @@ This document identifies technical improvements by comparing KCCF-web with the F
 
 2. **Track First Load JS** in build output
 
-3. **Set Budget Thresholds:**
-   - Target: < 500KB
-   - Maximum: < 1MB
+3. **Measure Current Bundle Size:**
+   - Run the build process and record the size of the main bundle(s) (e.g., using `@next/bundle-analyzer` or similar tools).
+
+4. **Set Budget Thresholds Based on Baseline:**
+   - Target: Set an initial target slightly below the current measured size to encourage optimization.
+   - Maximum: Set a hard limit (e.g., 20% above current size) to prevent uncontrolled growth.
+   - Example (to be updated after measurement):  
+     - Target: < 500KB  
+     - Maximum: < 1MB
 
 **Reference:** FFC template performance documentation
 
@@ -806,23 +812,23 @@ This document identifies technical improvements by comparing KCCF-web with the F
 ### Implementation Roadmap
 
 **Quarter 1 (Months 1-3):**
-- ✅ Complete Phase 1: Testing Infrastructure
-- ✅ Start Phase 2: Code Quality Tools
-- ✅ Implement critical Phase 5 items (security)
+- [ ] Complete Phase 1: Testing Infrastructure
+- [ ] Start Phase 2: Code Quality Tools
+- [ ] Implement critical Phase 5 items (security)
 
 **Quarter 2 (Months 4-6):**
-- ✅ Complete Phase 2: Code Quality
-- ✅ Complete Phase 3: CI/CD Enhancements
-- ✅ Complete Phase 5: Branch Protection
+- [ ] Complete Phase 2: Code Quality
+- [ ] Complete Phase 3: CI/CD Enhancements
+- [ ] Complete Phase 5: Branch Protection
 
 **Quarter 3 (Months 7-9):**
-- ✅ Complete Phase 4: Documentation
-- ✅ Start Phase 6: Performance Monitoring
+- [ ] Complete Phase 4: Documentation
+- [ ] Start Phase 6: Performance Monitoring
 
 **Quarter 4 (Months 10-12):**
-- ✅ Complete Phase 6: Performance
-- ✅ Review and refine all improvements
-- ✅ Update documentation
+- [ ] Complete Phase 6: Performance
+- [ ] Review and refine all improvements
+- [ ] Update documentation
 
 ---
 
