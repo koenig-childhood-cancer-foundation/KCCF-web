@@ -255,3 +255,56 @@ body {
     --color-text-muted: #ffffff;
   }
 }
+
+/* ==========================================================================
+   GiveLively Widget Styling Fixes
+   ========================================================================== */
+
+/* Fix alignment issues in GiveLively widget */
+.gl-simple-donation-widget * {
+  box-sizing: border-box !important;
+}
+
+/* Ensure all form elements are full width and properly aligned */
+.gl-simple-donation-widget input,
+.gl-simple-donation-widget select,
+.gl-simple-donation-widget textarea,
+.gl-simple-donation-widget button,
+.gl-simple-donation-widget .gl-field,
+.gl-simple-donation-widget .gl-form-group,
+.gl-simple-donation-widget .gl-tribute-button,
+.gl-simple-donation-widget [class*="field"],
+.gl-simple-donation-widget [class*="button"],
+.gl-simple-donation-widget [class*="input"],
+.gl-simple-donation-widget [class*="tribute"],
+.gl-simple-donation-widget [class*="honor"],
+.gl-simple-donation-widget [class*="dedication"] {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Remove any asymmetric margins that cause misalignment */
+.gl-simple-donation-widget .gl-tribute-section,
+.gl-simple-donation-widget .gl-in-honor-of-section,
+.gl-simple-donation-widget [class*="tribute"],
+.gl-simple-donation-widget [class*="honor"],
+.gl-simple-donation-widget [class*="dedication"] {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Ensure buttons have consistent styling */
+.gl-simple-donation-widget button {
+  display: block !important;
+  text-align: center !important;
+}
+
+/* Fix any container width issues */
+.gl-simple-donation-widget > div,
+.gl-simple-donation-widget .gl-container,
+.gl-simple-donation-widget .gl-widget-container {
+  width: 100% !important;
+  max-width: 100% !important;
+}
