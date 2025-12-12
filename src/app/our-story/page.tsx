@@ -27,7 +27,7 @@ export default function OurStory() {
         {/* PageHeader */}
         <PageHeader
           title="Our Story"
-          subtitle="From a young cancer survivor's dream to a foundation that has helped thousands of families across the nation."
+          subtitle="From a child cancer survivor's dream to a foundation that has helped thousands of families globally."
         />
       </div>
 
@@ -38,17 +38,14 @@ export default function OurStory() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Elana's Journey
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              From a brave young girl fighting cancer to a powerful advocate helping others in their battles.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* During Treatment */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg cursor-default">
               <div className="relative mb-6">
                 <div className="relative w-64 h-64 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-ElanaNoHairUpsetDuringTreatment-scaled.jpg"
                     alt="Elana during treatment"
@@ -65,10 +62,10 @@ export default function OurStory() {
             </div>
 
             {/* After Beating Cancer */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg cursor-default">
               <div className="relative mb-6">
                 <div className="relative w-64 h-64 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-Elana-and-Trophy.png"
                     alt="Elana kicked cancer's butt"
@@ -85,10 +82,10 @@ export default function OurStory() {
             </div>
 
             {/* Elana Today */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg cursor-default">
               <div className="relative mb-6">
                 <div className="relative w-64 h-64 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-violet-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-violet-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-NUP_206704_00566.jpg"
                     alt="Elana today"
@@ -112,15 +109,6 @@ export default function OurStory() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <FormButton
-                formType="book-elana"
-                variant="orange"
-                size="sm"
-                className="rounded-full mb-6"
-              >
-                From Patient to Founder
-              </FormButton>
-
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-saffron-400">
                 Elana's Story
               </h2>
