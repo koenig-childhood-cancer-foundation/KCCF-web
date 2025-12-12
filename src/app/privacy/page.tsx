@@ -150,7 +150,7 @@ export default function Privacy() {
               <button
                 type="button"
                 onClick={openPreferences}
-                className="bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors cursor-pointer"
+                className="btn-violet animated py-2 px-6 rounded-lg cursor-pointer"
               >
                 Manage Cookie Preferences
               </button>

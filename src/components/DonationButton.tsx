@@ -26,7 +26,7 @@ export default function DonationButton({
   const variantClasses = {
     primary: 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1',
     secondary: 'bg-fandango-600 hover:bg-fandango-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1',
-    outline: 'border-2 border-[#732154] text-[#732154] hover:bg-[#732154] hover:text-white transform hover:-translate-y-1',
+    outline: 'border-2 border-[#732154] text-[#732154] hover:bg-[#732154] shadow-lg hover:shadow-xl hover:text-white transform hover:-translate-y-1',
     ghost: 'text-[#732154] hover:bg-[#732154]/10 transform hover:-translate-y-1'
   }
 

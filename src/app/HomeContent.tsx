@@ -42,10 +42,10 @@ export default function HomeContent() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
               <Link
                 href="/aid"
-                className="group bg-violet-600 hover:bg-violet-700 text-white py-4 px-10 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center"
+                className="group btn-violet animated py-4 px-10 text-lg"
               >
                 <span>Family Assistance</span>
-                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="ml-2 w-5 h-5 btn-icon-slide" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
@@ -56,7 +56,7 @@ export default function HomeContent() {
                 size="lg"
                 className="group bg-orange-600 hover:bg-orange-700 text-white py-4 px-10 rounded-full shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
                 icon={
-                  <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 btn-icon-grow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                 }
@@ -101,10 +101,10 @@ export default function HomeContent() {
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Link href="/our-story" className="bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white py-3 px-8 rounded-full transition duration-300 font-semibold text-center">
+                <Link href="/our-story" className="btn-violet animated py-3 px-8 text-base">
                   Read Her Story
                 </Link>
-                <Link href="/our-story/#bookelanaformsection" className="border-2 border-violet-500 text-violet-600 dark:text-white hover:bg-violet-500/10 dark:hover:bg-violet-500/10 py-3 px-8 rounded-full transition-all duration-300 font-semibold text-center hover:shadow-lg hover:-translate-y-0.5">
+                <Link href="/our-story/#bookelanaformsection" className="btn-transparent animated py-3 px-8 text-base">
                   Book Elana to Speak
                 </Link>
               </div>
@@ -283,9 +283,9 @@ export default function HomeContent() {
           </div>
 
           <div className="text-center">
-            <Link href="/media" className="inline-flex items-center bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white py-3 px-6 md:px-8 rounded-full transition duration-300 font-semibold text-base md:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <Link href="/media" className="btn-violet animated group py-3 px-6 md:px-8 text-base md:text-lg">
               <span>View All Media Coverage</span>
-              <svg className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="ml-2 w-4 h-4 md:w-5 md:h-5 btn-icon-slide" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>

@@ -148,7 +148,7 @@ export default function DonationCard() {
                 widget.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }
             }}
-            className="w-full bg-violet-600 dark:bg-violet-700 hover:bg-violet-700 dark:hover:bg-violet-800 text-white py-3 rounded-lg text-lg font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+            className="w-full btn-violet py-3 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
           >
             {frequency === 'monthly' ? 'Donate Monthly' : 'Donate Now'}
           </button>

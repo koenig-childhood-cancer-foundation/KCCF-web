@@ -90,8 +90,7 @@ export default function SubmissionModal({ onClose }: SubmissionModalProps) {
               setIsVisible(false)
               onClose?.()
             }}
-            className="px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 text-white shadow-lg cursor-pointer"
-            style={{ backgroundColor: '#732154' }}
+            className="px-8 py-3 btn-violet animated rounded-lg cursor-pointer"
           >
             {isSuccess ? 'Continue' : 'Try Again'}
           </button>

@@ -74,7 +74,7 @@ export default function ConsentPreferencesModal() {
              </div>
              <div className="flex gap-2">
                <button type="button" onClick={closePreferences} className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:cursor-pointer text-gray-900 dark:text-white">Cancel</button>
-               <button type="button" onClick={onSave} className="px-4 py-2 rounded-lg bg-[#732154] text-white hover:bg-[#732154]/90 hover:cursor-pointer">Save preferences</button>
+               <button type="button" onClick={onSave} className="px-4 py-2 btn-violet font-normal rounded-lg hover:cursor-pointer">Save preferences</button>
              </div>
            </div>
         </div>
