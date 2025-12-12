@@ -265,7 +265,8 @@ body {
 .gl-simple-donation-widget select,
 .gl-simple-donation-widget textarea,
 .gl-simple-donation-widget button,
-.gl-simple-donation-widget div,
+.gl-simple-donation-widget .gl-field,
+.gl-simple-donation-widget .gl-form-group,
 .gl-simple-donation-widget form {
   box-sizing: border-box !important;
 }
@@ -273,17 +274,18 @@ body {
 /* Ensure form controls are full width and properly aligned */
 .gl-simple-donation-widget input,
 .gl-simple-donation-widget select,
-.gl-simple-donation-widget textarea,
-.gl-simple-donation-widget button {
+.gl-simple-donation-widget textarea {
   width: 100% !important;
 }
 
-/* Target known GiveLively classes for tribute/dedication sections */
+/* Target known GiveLively classes for tribute/dedication sections and buttons */
 .gl-simple-donation-widget .gl-field,
 .gl-simple-donation-widget .gl-form-group,
 .gl-simple-donation-widget .gl-tribute-button,
 .gl-simple-donation-widget .gl-tribute-section,
-.gl-simple-donation-widget .gl-in-honor-of-section {
+.gl-simple-donation-widget .gl-in-honor-of-section,
+.gl-simple-donation-widget button[type="submit"],
+.gl-simple-donation-widget button[type="button"] {
   width: 100% !important;
 }
 
@@ -297,8 +299,9 @@ body {
   padding-right: 0 !important;
 }
 
-/* Ensure buttons remain accessible while centered */
-.gl-simple-donation-widget button {
+/* Ensure primary buttons remain accessible while centered */
+.gl-simple-donation-widget button[type="submit"],
+.gl-simple-donation-widget .gl-tribute-button {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
