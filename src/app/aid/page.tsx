@@ -122,7 +122,7 @@ export default function Aid() {
               </div>
               <h3 className="text-xl font-bold text-violet-700 mb-4">Email Confirmation</h3>
               <p className="text-violet-600">
-                Once complete, family will receive an email confirming completion of part 1, and the social worker listed on the application will automatically receive part 2 via email.
+                Once complete, the family will receive an email confirming completion of part 1, and the social worker listed on the application will automatically receive part 2 via email.
               </p>
             </div>
 
@@ -132,7 +132,7 @@ export default function Aid() {
               </div>
               <h3 className="text-xl font-bold text-violet-700 mb-4">Social Worker Completes Part 2</h3>
               <p className="text-violet-600">
-                Once part 1 is completed by the family and part 2 is completed by the social worker, both parties will receive a confirmation about completion.
+                Once part 1 is completed by the family and part 2 is completed by the social worker, both parties will receive confirmation of completion.
               </p>
             </div>
 
@@ -142,7 +142,7 @@ export default function Aid() {
               </div>
               <h3 className="text-xl font-bold text-violet-700 mb-4">Board Review</h3>
               <p className="text-violet-600">
-                The board will review the complete application for decision.
+                The board will review the complete application for a decision.
               </p>
             </div>
           </div>
