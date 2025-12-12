@@ -11,7 +11,7 @@ Production-ready Next.js static site for the Koenig Childhood Cancer Foundation 
 - **Hosting**: GitHub Pages (static site)
 - **Donations**: Zeffy integration (embedded iframe)
 - **Forms**: Monday.com integration via modal system
-- **Features**: Dark mode, cookie consent, responsive design, form modals, SEO optimization
+- **Features**: Dark mode, cookie consent, site search, responsive design, form modals, SEO optimization
 
 ---
 
@@ -58,29 +58,23 @@ Notes:
 
 ## CI/CD Pipeline
 
-This repository uses GitHub Actions for continuous integration and deployment:
+This repository uses GitHub Actions for automated continuous integration and deployment. For comprehensive details about the CI/CD pipeline, deployment process, troubleshooting, and best practices, see **[CI_CD_DEPLOYMENT.md](CI_CD_DEPLOYMENT.md)**.
 
-### CI/CD Workflow (`.github/workflows/nextjs.yml`)
-The main workflow runs on every push and pull request:
+### Quick Overview
 
-**On Pull Requests:**
-- Lint checks (ESLint)
-- TypeScript compilation check (`tsc --noEmit`)
-- Production build verification
+**CI/CD Workflow** (`.github/workflows/nextjs.yml`):
+- **Pull Requests**: Lint → Type Check → Build (no deployment)
+- **Main Branch**: Lint → Type Check → Build → Deploy to GitHub Pages
+- **Manual**: Can be triggered via workflow_dispatch
 
-**On Push to Main:**
-- All CI checks above
-- Automatic deployment to GitHub Pages
-
-### Security Scanning (`.github/workflows/codeql.yml`)
-CodeQL Advanced security scanning runs:
-- On every push to main
-- On every pull request to main
+**Security Scanning** (`.github/workflows/codeql.yml`):
+- Runs on all PRs and pushes to main
 - Weekly scheduled scans (Mondays at 1:28 AM UTC)
+- Analyzes JavaScript/TypeScript and GitHub Actions workflows
 
-**Languages analyzed:**
-- JavaScript/TypeScript
-- GitHub Actions workflows
+**Deployment Time**: ~2-3 minutes from push to live on `https://thekccf.org`
+
+For detailed information including troubleshooting, monitoring, rollback procedures, and security considerations, refer to the **[CI/CD & Deployment Guide](CI_CD_DEPLOYMENT.md)**.
 
 ## Deployment
 
@@ -139,11 +133,13 @@ KCCF-web/
 │   │   ├── sitemap.ts           # SEO sitemap.xml
 │   │   └── not-found.tsx        # 404 page
 │   ├── components/              # Reusable UI components
-│   │   ├── Navigation.tsx       # Site navigation
+│   │   ├── Navigation.tsx       # Site navigation with search
 │   │   ├── Footer.tsx           # Site footer
-│   │   ├── DonationModal.tsx    # Zeffy donation form modal
+│   │   ├── SearchModal.tsx      # Site-wide search modal
 │   │   ├── FormModal.tsx        # Monday.com form modal system
 │   │   ├── FormButton.tsx       # Form modal trigger buttons
+│   │   ├── DonationButton.tsx   # Donation button component
+│   │   ├── DonationCard.tsx     # Donation card component
 │   │   ├── CookieConsentBanner.tsx # Cookie consent banner
 │   │   ├── ConsentPreferencesModal.tsx # Cookie preferences modal
 │   │   ├── GoogleTagManager.tsx # Google Tag Manager integration
@@ -152,17 +148,21 @@ KCCF-web/
 │   ├── contexts/                # React contexts for state management
 │   │   ├── ThemeContext.tsx     # Dark/light theme management
 │   │   ├── CookieConsentContext.tsx # Cookie consent state
-│   │   ├── DonationModalContext.tsx # Donation modal state
+│   │   ├── SearchModalContext.tsx # Search modal state
 │   │   ├── FormModalContext.tsx # Form modal state and configurations
 │   │   └── SlideshowContext.tsx # Image slideshow state
+│   ├── data/                    # Data files
+│   │   └── searchData.ts        # Search index data
 │   └── constants/               # Constant values and configurations
 ├── Dockerfile                   # Docker build configuration
 ├── next.config.ts               # Next.js configuration (static export)
 ├── package.json                 # Project dependencies and scripts
 ├── tsconfig.json                # TypeScript configuration
 ├── eslint.config.mjs            # ESLint configuration
+├── CI_CD_DEPLOYMENT.md          # Comprehensive CI/CD and deployment guide
 ├── CONTRIBUTING.md              # Contribution guidelines
 ├── EXTERNAL_SERVICES.md         # Guide for all external services (forms, donations, analytics)
+├── EXTERNAL_VALIDATION_CHECKLIST.md # Post-deployment verification checklist
 ├── SECURITY.md                  # Security policy
 └── README.md                    # This file
 ```
@@ -177,9 +177,10 @@ KCCF-web/
 | Global styles | `src/app/globals.css` |
 | Navigation | `src/components/Navigation.tsx` |
 | Footer | `src/components/Footer.tsx` |
+| Search functionality | `src/components/SearchModal.tsx` and `src/data/searchData.ts` |
 | Theme customization | `src/contexts/ThemeContext.tsx` |
 | Cookie consent | `src/contexts/CookieConsentContext.tsx` |
-| Donation modal | `src/components/DonationModal.tsx` |
+| Donation buttons | `src/components/DonationButton.tsx` and `src/components/DonationCard.tsx` |
 | Form modals | `src/components/FormModal.tsx` and `src/contexts/FormModalContext.tsx` |
 
 ## Images and Static Assets
@@ -187,14 +188,46 @@ KCCF-web/
 - Images are served unoptimized (required for static export to GitHub Pages)
 - Image configuration is in `next.config.ts`
 
+## Site Search
+
+The site includes a client-side search feature for easy content discovery:
+
+### Search Implementation
+- **Search Modal**: `src/components/SearchModal.tsx` - Modal component with search interface
+- **Search Context**: `src/contexts/SearchModalContext.tsx` - State management for search modal
+- **Search Data**: `src/data/searchData.ts` - Searchable content index
+- **Trigger**: Search icon in navigation bar (magnifying glass icon)
+
+### Search Features
+- **Keyboard shortcut**: `Cmd/Ctrl + K` to open search
+- **Real-time filtering**: Results update as you type
+- **Category organization**: Results grouped by category (Pages, Programs, About, Get Involved)
+- **Keyword matching**: Searches title, description, and keywords
+- **Keyboard navigation**: Arrow keys to navigate results, Enter to select
+- **Responsive design**: Works on desktop and mobile devices
+
+### Updating Search Content
+
+To add new pages or update search results, edit `src/data/searchData.ts`:
+
+```typescript
+{
+  title: 'Page Title',
+  description: 'Brief description for search results',
+  href: '/page-url',
+  keywords: ['keyword1', 'keyword2', 'search', 'terms'],
+  category: 'Pages' // or 'Programs', 'About', 'Get Involved'
+}
+```
+
 ## Form integration
 
 ### Donation system
 - The site uses Zeffy for donations via embedded iframe
 - No API keys or server-side processing required
-- Donation modal is controlled by `src/components/DonationModal.tsx`
-- Cookie consent is required for donation form display
-- Campaign-specific donation forms can be configured in the modal
+- Donation buttons are provided by `src/components/DonationButton.tsx` and `src/components/DonationCard.tsx`
+- Donations are processed on the `/donate` page
+- Campaign-specific donation forms can be configured
 
 ### Newsletter system
 The newsletter signup uses **Mailchimp** (not Zeffy). The integration is implemented as follows:

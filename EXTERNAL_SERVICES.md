@@ -2,6 +2,26 @@
 
 This document provides a comprehensive overview of all external third-party services integrated with the KCCF website. Configuration for these services is managed in their respective external platforms, not in this repository.
 
+**Last Updated**: December 2025  
+**Site URL**: https://thekccf.org
+
+---
+
+## Recent Updates
+
+**December 2025**:
+- ✅ Transitioned from staging (staging.thekccf.org) to production (thekccf.org)
+- ✅ All services verified and operational on production domain
+- ✅ Email configurations reviewed across all platforms
+- ✅ Analytics tracking updated to production domain
+- ✅ Added site-wide search functionality (client-side, no external service)
+- ✅ Updated donation system components (DonationButton, DonationCard)
+- ✅ Enhanced CodeQL workflow with 30-minute timeout
+- ✅ Improved page content and wording across multiple pages
+
+**For post-deployment verification**, see [EXTERNAL_VALIDATION_CHECKLIST.md](EXTERNAL_VALIDATION_CHECKLIST.md).  
+**For CI/CD and deployment details**, see [CI_CD_DEPLOYMENT.md](CI_CD_DEPLOYMENT.md).
+
 ---
 
 ## Table of Contents
@@ -43,7 +63,9 @@ This document provides a comprehensive overview of all external third-party serv
 |------|---------------------|
 | `src/contexts/FormModalContext.tsx` | Monday.com, Mailchimp form configurations |
 | `src/components/FormModal.tsx` | Form display modal |
-| `src/components/DonationModal.tsx` | Zeffy, GiveLively donation forms |
+| `src/components/DonationButton.tsx` | Zeffy donation buttons |
+| `src/components/DonationCard.tsx` | Zeffy donation cards |
+| `src/app/donate/page.tsx` | Zeffy, GiveLively donation forms |
 | `src/app/fundraisers/page.tsx` | Zeffy peer-to-peer fundraising |
 | `src/components/GoogleTagManager.tsx` | GTM integration |
 | `src/contexts/CookieConsentContext.tsx` | Consent management for analytics |
