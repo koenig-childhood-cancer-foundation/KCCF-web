@@ -260,30 +260,41 @@ body {
    GiveLively Widget Styling Fixes
    ========================================================================== */
 
-/* Fix alignment issues in GiveLively widget */
-.gl-simple-donation-widget * {
-  box-sizing: border-box !important;
-}
-
-/* Ensure all form elements are full width and properly aligned */
+/* Fix alignment issues in GiveLively widget - target specific elements */
+.gl-simple-donation-widget > *,
 .gl-simple-donation-widget input,
 .gl-simple-donation-widget select,
 .gl-simple-donation-widget textarea,
 .gl-simple-donation-widget button,
-.gl-simple-donation-widget .gl-field,
-.gl-simple-donation-widget .gl-form-group,
-.gl-simple-donation-widget .gl-tribute-button,
-.gl-simple-donation-widget [class*="field"],
-.gl-simple-donation-widget [class*="button"],
-.gl-simple-donation-widget [class*="input"],
-.gl-simple-donation-widget [class*="tribute"],
-.gl-simple-donation-widget [class*="honor"],
-.gl-simple-donation-widget [class*="dedication"] {
-  max-width: 100% !important;
+.gl-simple-donation-widget div {
+  box-sizing: border-box !important;
+}
+
+/* Ensure form controls are full width and properly aligned */
+.gl-simple-donation-widget input,
+.gl-simple-donation-widget select,
+.gl-simple-donation-widget textarea {
   width: 100% !important;
 }
 
-/* Remove any asymmetric margins that cause misalignment */
+/* Ensure buttons and form groups span full width */
+.gl-simple-donation-widget button,
+.gl-simple-donation-widget .gl-field,
+.gl-simple-donation-widget .gl-form-group,
+.gl-simple-donation-widget .gl-tribute-button {
+  width: 100% !important;
+}
+
+/* Target tribute/honor/dedication sections with specific class patterns */
+.gl-simple-donation-widget [class*="field"],
+.gl-simple-donation-widget [class*="button"],
+.gl-simple-donation-widget [class*="tribute"],
+.gl-simple-donation-widget [class*="honor"],
+.gl-simple-donation-widget [class*="dedication"] {
+  width: 100% !important;
+}
+
+/* Remove asymmetric margins and padding that cause misalignment */
 .gl-simple-donation-widget .gl-tribute-section,
 .gl-simple-donation-widget .gl-in-honor-of-section,
 .gl-simple-donation-widget [class*="tribute"],
@@ -295,16 +306,17 @@ body {
   padding-right: 0 !important;
 }
 
-/* Ensure buttons have consistent styling */
+/* Ensure buttons remain accessible while centered */
 .gl-simple-donation-widget button {
-  display: block !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   text-align: center !important;
 }
 
-/* Fix any container width issues */
+/* Fix container width to prevent overflow */
 .gl-simple-donation-widget > div,
 .gl-simple-donation-widget .gl-container,
 .gl-simple-donation-widget .gl-widget-container {
   width: 100% !important;
-  max-width: 100% !important;
 }
