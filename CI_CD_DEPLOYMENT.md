@@ -223,6 +223,12 @@ on:
 1. **JavaScript/TypeScript** - All `.js`, `.jsx`, `.ts`, `.tsx` files
 2. **GitHub Actions** - All workflow YAML files
 
+#### Job Configuration
+
+- **Runner**: `ubuntu-latest` (or `macos-latest` for Swift)
+- **Timeout**: 30 minutes per job
+- **Permissions**: `security-events: write`, `packages: read`, `actions: read`, `contents: read`
+
 #### Security Queries
 
 - Default security queries for each language
