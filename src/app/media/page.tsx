@@ -289,46 +289,42 @@ export default function Media() {
             </div>
 
             {/* Press Article 2 */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">ABC News</div>
+            <a 
+              href="https://www.cbsnews.com/newyork/news/14-year-old-cancer-survivor-giving-gift-bags-to-children-spending-the-holidays-in-the-hospital/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 block"
+            >
+              <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">CBS News</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
-                11-Year-Old Cancer Survivor Creates Foundation to Help Other Children
+                14-Year-Old Cancer Survivor Giving Gift Bags to Children Spending the Holidays in the Hospital
               </h3>
               <p className="text-gray-700 dark:text-gray-200 mb-4">
                 Elana Koenig's inspiring journey from cancer patient to foundation founder is making waves across the nation...
               </p>
-              <a href="#" className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold">
+              <span className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold">
                 Read Full Article →
-              </a>
-            </div>
+              </span>
+            </a>
 
             {/* Press Article 3 */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">NBC Today Show</div>
+            <a 
+              href="https://www.stern.nyu.edu/portal-partners/alumni/alumni-news-profiles/news/rena-koenig-mba-17-shares-how-she-used-tools-business-start-foundation-with-her-13-year-old-cancer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 block"
+            >
+              <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">Stern NYU</div>
               <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
-                Crazy Socks Day: How One Girl's Idea is Changing Lives
+                Rena Koenig MBA '17 Shares How She Used Tools from Business to Start Foundation with Her 13-Year-Old Cancer Survivor Daughter
               </h3>
               <p className="text-gray-700 dark:text-gray-200 mb-4">
                 The annual Crazy Socks Day event has raised over $2 million for families battling childhood cancer...
               </p>
-              <a href="#" className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold">
+              <span className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold">
                 Read Full Article →
-              </a>
-            </div>
-
-            {/* Press Article 4 */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-saffron-600 dark:text-saffron-400 text-sm font-semibold mb-2">Forbes</div>
-              <h3 className="text-xl font-bold mb-3 text-violet-600 dark:text-saffron-400">
-                Young Philanthropist of the Year: Elana Koenig
-              </h3>
-              <p className="text-gray-700 dark:text-gray-200 mb-4">
-                At just 14 years old, Elana Koenig has already made an indelible mark on the world of philanthropy...
-              </p>
-              <a href="#" className="text-violet-600 hover:text-violet-700 dark:text-saffron-600 dark:hover:text-white font-semibold">
-                Read Full Article →
-              </a>
-            </div>
+              </span>
+            </a>
           </div>
         </div>
       </section>
