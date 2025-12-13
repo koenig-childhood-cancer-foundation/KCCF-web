@@ -56,9 +56,6 @@ export default function OurStory() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">Elana during treatment</h3>
-              <p className="text-gray-600 dark:text-gray-200 text-center">
-                A brave 7-year-old facing the toughest battle of her life with courage and determination.
-              </p>
             </div>
 
             {/* After Beating Cancer */}
@@ -76,9 +73,6 @@ export default function OurStory() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">Elana kicked cancer's butt</h3>
-              <p className="text-gray-600 dark:text-gray-200 text-center">
-                Victory achieved! After 15 months of treatment, Elana emerged stronger and more determined than ever.
-              </p>
             </div>
 
             {/* Elana Today */}
@@ -96,9 +90,6 @@ export default function OurStory() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">Elana today</h3>
-              <p className="text-gray-600 dark:text-gray-200 text-center">
-                A thriving young leader, singer, and founder helping thousands of families through their cancer journeys.
-              </p>
             </div>
           </div>
         </div>
