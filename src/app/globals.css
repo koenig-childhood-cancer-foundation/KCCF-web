@@ -255,3 +255,60 @@ body {
     --color-text-muted: #ffffff;
   }
 }
+
+/* ==========================================================================
+   GiveLively Widget Styling Fixes
+   ========================================================================== */
+
+/* Fix alignment issues in GiveLively widget - ensure consistent box-sizing */
+.gl-simple-donation-widget input,
+.gl-simple-donation-widget select,
+.gl-simple-donation-widget textarea,
+.gl-simple-donation-widget button,
+.gl-simple-donation-widget .gl-field,
+.gl-simple-donation-widget .gl-form-group,
+.gl-simple-donation-widget form {
+  box-sizing: border-box !important;
+}
+
+/* Ensure form controls are full width and properly aligned */
+.gl-simple-donation-widget input,
+.gl-simple-donation-widget select,
+.gl-simple-donation-widget textarea {
+  width: 100% !important;
+}
+
+/* Target known GiveLively classes for tribute/dedication sections and buttons */
+.gl-simple-donation-widget .gl-field,
+.gl-simple-donation-widget .gl-form-group,
+.gl-simple-donation-widget .gl-tribute-button,
+.gl-simple-donation-widget .gl-tribute-section,
+.gl-simple-donation-widget .gl-in-honor-of-section,
+.gl-simple-donation-widget button[type="submit"],
+.gl-simple-donation-widget button[type="button"] {
+  width: 100% !important;
+}
+
+/* Remove asymmetric margins and padding that cause misalignment */
+.gl-simple-donation-widget .gl-tribute-section,
+.gl-simple-donation-widget .gl-in-honor-of-section,
+.gl-simple-donation-widget .gl-tribute-button {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Ensure primary buttons remain accessible while centered */
+.gl-simple-donation-widget button[type="submit"],
+.gl-simple-donation-widget .gl-tribute-button {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Fix container width to prevent overflow */
+.gl-simple-donation-widget .gl-container,
+.gl-simple-donation-widget .gl-widget-container {
+  width: 100% !important;
+}
