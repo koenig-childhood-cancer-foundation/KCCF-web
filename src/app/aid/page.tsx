@@ -25,7 +25,7 @@ export default function Aid() {
 
         {/* PageHeader */}
         <PageHeader 
-          title="Emergency Family Fund"
+          title="Family Assistance"
           subtitle="We can assist with emergency medical expenses during your child's cancer treatment,
           such as medical bills, transportation, lodging, food, and more."
         />
@@ -35,22 +35,22 @@ export default function Aid() {
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-violet-700 mb-8 text-center">Family Assistance Program</h2>
+            <h2 className="text-3xl font-bold text-violet-700 mb-8 text-center">Family Assistance</h2>
             
             <div className="prose prose-lg max-w-none text-violet-700">
               {/* Storytelling Section */}
               <div className="bg-violet-50 rounded-lg p-6 mb-8 border-l-4 border-violet-400">
                 <p className="italic text-lg leading-relaxed mb-4">
-                  "When I was going through cancer treatment we understand all too well how important it is to be with your critically ill child. For most of us, that means jobs, bills, and life outside the hospital come second. Unfortunately, we still have to find a way to pay those bills. That is why we provide financial help for kids with cancer through our Family Assistance program."
+                  "When I was going through cancer treatment, all I wanted was to have my parents by my side and they wanted the same. They put their lives on hold to be with me. For most families, that means stepping away from jobs, bills, and daily responsibilities. But the bills still come. That’s why we offer financial assistance to families of children with cancer so they can focus on what matters most: healing."
                 </p>
                 <p className="text-right text-violet-600 font-semibold">
-                  — Elana, survivor<br />
-                  Emanuel, 20xx-202xx
+                  —  Elana, founder & child cancer survivor<br />
+                 {/* —  Emanuel, 20xx-202xx */}
                 </p>
               </div>
 
               <p className="mb-6">
-                This program gives qualified families money for expenses that are attributable to their child's cancer diagnosis. The goal of the program is to lessen the financial burden so families can focus on helping their children get well. We often help families with the following expenses and bills:
+            We provide financial assistance to eligible families to help cover expenses related to their child’s cancer diagnosis.
               </p>
 
               <div className="bg-orange-50 rounded-lg p-6 my-8">
@@ -58,15 +58,15 @@ export default function Aid() {
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
-                    Medical treatment or medications that insurance won't cover
+                    Medical treatments or medications not covered by insurance
                   </li>
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
-                    Travel costs for treatments
+                    Travel costs for care
                   </li>
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
-                    Mortgage payments/rent
+                    Rent or mortgage payments
                   </li>
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
@@ -80,23 +80,23 @@ export default function Aid() {
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Have a child diagnosed with cancer under the age of 21
+                    Child must be under the age of 21 and diagnosed with cancer
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Need assistance with expenses directly attributable to your child's diagnosis
+                    Assistance must be needed for expenses directly related to the child’s diagnosis
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Receive treatment at any credential Hospitals in the United States or our international partner hospitals
+                    Child must be receiving treatment at a credentialed hospital
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Application MUST be completely filled out by the family (Page 1) and the Social Worker (Page 2) for it to be reviewed
+                    The application must be fully completed by both the family and the social worker
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    We only pay creditors directly
+                    Funds are paid directly to creditors or service providers
                   </li>
                 </ul>
               </div>

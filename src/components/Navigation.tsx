@@ -102,8 +102,8 @@ export default function Navigation() {
       href: '/aid',
       dropdown: [
         { name: 'Family Assistance', href: '/aid' },
-        { name: 'Crazy Socks', href: '/crazy-socks' },
-        { name: 'Camp', href: '/camp' },
+        { name: 'Crazy Socks Gift Bags', href: '/crazy-socks' },
+        { name: 'KCCF Camp', href: '/camp' },
       ]
     },
     { 
