@@ -58,7 +58,7 @@ export default function NotFound() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <Link 
               href="/" 
-              className="group bg-violet-500 hover:bg-violet-600 text-white py-4 px-8 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center"
+              className="btn-primary btn-primary-violet group text-white py-4 px-8 rounded-full font-semibold text-lg inline-flex items-center justify-center"
             >
               <span>Go Home</span>
               <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,7 +67,7 @@ export default function NotFound() {
             </Link>
             <Link 
               href="/contact" 
-              className="group bg-orange-500 hover:bg-orange-600 text-white py-4 px-8 rounded-full transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center"
+              className="btn-primary btn-primary-orange group text-white py-4 px-8 rounded-full font-semibold text-lg inline-flex items-center justify-center"
             >
               <span>Contact Us</span>
               <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,7 +80,7 @@ export default function NotFound() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <Link 
               href="/our-story" 
-              className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200/50 dark:border-gray-700/50"
+              className="card-interactive group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-200/50 dark:border-gray-700/50"
             >
               <div className="text-violet-600 dark:text-violet-400 mb-3">
                 <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,7 +97,7 @@ export default function NotFound() {
 
             <Link 
               href="/aid" 
-              className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200/50 dark:border-gray-700/50"
+              className="card-interactive group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-200/50 dark:border-gray-700/50"
             >
               <div className="text-orange-500 dark:text-orange-400 mb-3">
                 <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ export default function NotFound() {
 
             <Link 
               href="/donate" 
-              className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200/50 dark:border-gray-700/50"
+              className="card-interactive group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-200/50 dark:border-gray-700/50"
             >
               <div className="text-green-600 dark:text-green-400 mb-3">
                 <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">

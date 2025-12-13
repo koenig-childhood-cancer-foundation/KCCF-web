@@ -27,13 +27,13 @@ export default function FormButton({
   const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer'
 
   const variantClasses = {
-    primary: 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-orange-500',
-    secondary: 'bg-fandango-600 hover:bg-fandango-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-fandango-500',
-    violet: 'bg-violet-600 hover:bg-violet-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-violet-500',
-    fandango: 'bg-fandango-600 hover:bg-fandango-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-fandango-500',
-    orange: 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-orange-500',
-    saffron: 'bg-saffron-600 hover:bg-saffron-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-saffron-500',
-    outline: 'border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white transform hover:-translate-y-1 focus:ring-violet-500',
+    primary: 'btn-primary btn-primary-orange text-white focus:ring-orange-500',
+    secondary: 'btn-primary bg-fandango-600 hover:bg-fandango-700 text-white focus:ring-fandango-500',
+    violet: 'btn-primary btn-primary-violet text-white focus:ring-violet-500',
+    fandango: 'btn-primary bg-fandango-600 hover:bg-fandango-700 text-white focus:ring-fandango-500',
+    orange: 'btn-primary btn-primary-orange text-white focus:ring-orange-500',
+    saffron: 'btn-primary bg-saffron-600 hover:bg-saffron-700 text-white focus:ring-saffron-500',
+    outline: 'btn-primary btn-outline-violet focus:ring-violet-500',
     ghost: 'text-violet-600 hover:bg-violet-50 dark:hover:bg-violet-900/20 transform hover:-translate-y-1 focus:ring-violet-500'
   }
 

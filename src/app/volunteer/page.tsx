@@ -223,7 +223,7 @@ export default function Volunteer() {
             {/* Individual Volunteering Card */}
             <div 
               onClick={() => openModal('volunteer')}
-              className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 flex flex-col cursor-pointer group"
+              className="card-interactive bg-white rounded-lg p-8 flex flex-col group"
             >
               <h3 className="text-2xl font-bold text-violet-700 mb-4 text-center">Individual ⭐</h3>
               <p className="text-violet-600 mb-6 flex-grow">
@@ -242,7 +242,7 @@ export default function Volunteer() {
             {/* Group Volunteering Card */}
             <Link 
               href="/crazy-socks"
-              className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 flex flex-col cursor-pointer group"
+              className="card-interactive bg-white rounded-lg p-8 flex flex-col group"
             >
               <h3 className="text-2xl font-bold text-violet-700 mb-4 text-center">Group 🤝</h3>
               <p className="text-violet-600 mb-6 flex-grow">

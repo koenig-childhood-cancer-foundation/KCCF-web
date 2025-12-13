@@ -43,7 +43,7 @@ export default function Camp() {
 
           {/* Camp Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-saffron-100 dark:bg-saffron-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🏕️</span>
               </div>
@@ -53,7 +53,7 @@ export default function Camp() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-fandango-100 dark:bg-fandango-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🤝</span>
               </div>
@@ -63,7 +63,7 @@ export default function Camp() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🎉</span>
               </div>

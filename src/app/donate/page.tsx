@@ -54,7 +54,7 @@ export default function Donate() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="group bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-white dark:bg-gray-700 rounded-2xl p-8">
               <div className="w-16 h-16 bg-violet-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl" aria-hidden="true">🏠</span>
               </div>
@@ -64,7 +64,7 @@ export default function Donate() {
               </p>
             </div>
 
-            <div className="group bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-white dark:bg-gray-700 rounded-2xl p-8">
               <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl" aria-hidden="true">🚗</span>
               </div>
@@ -74,7 +74,7 @@ export default function Donate() {
               </p>
             </div>
 
-            <div className="group bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-white dark:bg-gray-700 rounded-2xl p-8">
               <div className="w-16 h-16 bg-fandango-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl" aria-hidden="true">🎁</span>
               </div>
@@ -101,7 +101,7 @@ export default function Donate() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* One-Time Gift */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
+            <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
               <div className="w-14 h-14 bg-violet-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">💝</span>
               </div>
@@ -114,7 +114,7 @@ export default function Donate() {
             </div>
 
             {/* Monthly Gift */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
+            <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
               <div className="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">🔄</span>
               </div>
@@ -127,7 +127,7 @@ export default function Donate() {
             </div>
 
             {/* DAF Donation */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
+            <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
               <div className="w-14 h-14 bg-purple-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">📋</span>
               </div>
@@ -139,7 +139,7 @@ export default function Donate() {
             </div>
 
             {/* Corporate Matching */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
+            <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
               <div className="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">🏢</span>
               </div>
@@ -151,7 +151,7 @@ export default function Donate() {
             </div>
 
             {/* Stock Donation */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
+            <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
               <div className="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">📈</span>
               </div>
@@ -163,7 +163,7 @@ export default function Donate() {
             </div>
 
             {/* Planned or Estate Gift */}
-            <div className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 text-center">
+            <div className="card-interactive bg-gradient-to-br from-platinum-50 to-platinum-100 dark:bg-gray-700 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
               <div className="w-14 h-14 bg-fandango-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">🎗️</span>
               </div>

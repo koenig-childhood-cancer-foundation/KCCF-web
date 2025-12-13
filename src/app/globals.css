@@ -10,6 +10,11 @@
    Custom Scrollbar Styles
    ========================================================================== */
 
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(107, 114, 128, 0.3) transparent;
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
@@ -27,21 +32,16 @@
   background: rgba(107, 114, 128, 0.5);
 }
 
+.dark .custom-scrollbar {
+  scrollbar-color: rgba(156, 163, 175, 0.3) transparent;
+}
+
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(156, 163, 175, 0.3);
 }
 
 .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(156, 163, 175, 0.5);
-}
-
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(107, 114, 128, 0.3) transparent;
-}
-
-.dark .custom-scrollbar {
-  scrollbar-color: rgba(156, 163, 175, 0.3) transparent;
 }
 
 /* ==========================================================================
@@ -68,7 +68,7 @@
   --font-sans: var(--font-family-sans);
   --font-mono: var(--font-family-mono);
   
-  /* Map violet colors to our custom purple */
+  /* Violet color scale mapped to KCCF purple */
   --color-violet-50: #faf5ff;
   --color-violet-100: #f3e8ff;
   --color-violet-200: #e9d5ff;
@@ -92,7 +92,7 @@
   --color-orange-800: #9a3412;
   --color-orange-900: #7c2d12;
   
-  /* Saffron (Yellow/Amber) color scale */
+  /* Saffron color scale */
   --color-saffron-50: #fffbeb;
   --color-saffron-100: #fef3c7;
   --color-saffron-200: #fde68a;
@@ -104,7 +104,7 @@
   --color-saffron-800: #92400e;
   --color-saffron-900: #78350f;
   
-  /* Fandango (Pink/Magenta) color scale */
+  /* Fandango color scale */
   --color-fandango-50: #fdf4ff;
   --color-fandango-100: #fae8ff;
   --color-fandango-200: #f5d0fe;
@@ -116,7 +116,7 @@
   --color-fandango-800: #86198f;
   --color-fandango-900: #701a75;
   
-  /* Platinum (Gray) color scale */
+  /* Platinum color scale */
   --color-platinum-50: #f9fafb;
   --color-platinum-100: #f3f4f6;
   --color-platinum-200: #e5e7eb;
@@ -132,6 +132,7 @@
 /* ==========================================================================
    Custom Animations
    ========================================================================== */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -176,7 +177,6 @@
   }
 }
 
-/* Page transition animations */
 .page-enter {
   animation: fadeInUp 0.3s ease-out forwards;
 }
@@ -209,7 +209,7 @@ body {
   font-family: var(--font-family-sans);
   font-size: var(--font-size-base);
   line-height: 1.6;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
+  transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -220,9 +220,9 @@ body {
    ========================================================================== */
 
 :focus-visible {
-  outline: 2px solid var(--color-primary-500);
+  outline: 2px solid var(--color-kccf-purple);
   outline-offset: 2px;
-  border-radius: var(--radius-sm);
+  border-radius: 0.125rem;
 }
 
 /* ==========================================================================
@@ -254,4 +254,32 @@ body {
     --color-border: #ffffff;
     --color-text-muted: #ffffff;
   }
+}
+
+/* ==========================================================================
+   Standardized Component Classes
+   ========================================================================== */
+
+.card-interactive {
+  @apply shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer;
+}
+
+.card-static {
+  @apply shadow-lg;
+}
+
+.btn-primary {
+  @apply shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300;
+}
+
+.btn-primary-violet {
+  @apply bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white;
+}
+
+.btn-primary-orange {
+  @apply bg-orange-600 hover:bg-orange-700 text-white;
+}
+
+.btn-outline-violet {
+  @apply border-2 border-violet-500 text-violet-600 dark:text-white hover:bg-violet-500/10 dark:hover:bg-violet-500/10;
 }

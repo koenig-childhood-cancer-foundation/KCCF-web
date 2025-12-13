@@ -286,10 +286,10 @@ export default function CrazySocks() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Meta Leadership */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/MetaLeadershipMakingfitBags-scaled.jpg"
                     alt="Meta Leadership"
@@ -304,10 +304,10 @@ export default function CrazySocks() {
             </div>
 
             {/* Bank of America */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/bankofamerica-scaled.jpeg"
                     alt="Bank of America"
@@ -322,10 +322,10 @@ export default function CrazySocks() {
             </div>
 
             {/* Aflac Global Investments */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
                   <Image
                     src="/images/AlfacGiftMakingEvent-scaled.jpeg"
                     alt="Aflac Global Investments"
@@ -340,10 +340,10 @@ export default function CrazySocks() {
             </div>
 
             {/* Forvis Mazars Group */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/giftbagevent2-scaled.jpeg"
                     alt="Forvis Mazars Group"
@@ -358,10 +358,10 @@ export default function CrazySocks() {
             </div>
 
             {/* Elana and Olivia */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/sumitomo-csr.jpg"
                     alt="Sumitomo Mitsui Bank CSR Event"
@@ -376,10 +376,10 @@ export default function CrazySocks() {
             </div>
 
             {/* Meta CS Gift Bag Event */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
                   <Image
                     src="/images/ubs-season-of-service.png"
                     alt="UBS Season of Service"

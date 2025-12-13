@@ -103,10 +103,10 @@ export default function KCCFFamily() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Rena Koenig */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/Untitled-drawing-1.jpg"
                     alt="Rena Koenig"
@@ -123,10 +123,10 @@ export default function KCCFFamily() {
             </div>
 
             {/* Scott Koenig */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/Untitled-drawing-33.png"
                     alt="Scott Koenig"
@@ -143,10 +143,10 @@ export default function KCCFFamily() {
             </div>
 
             {/* Bradley Bailyn */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-Bradley-Bailyn-1.png"
                     alt="Bradley Bailyn"
@@ -176,10 +176,10 @@ export default function KCCFFamily() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Mike Blumenfeld */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-40 h-40 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/Mike-Blumenfeld-Director-copy.png"
                     alt="Mike Blumenfeld"
@@ -193,10 +193,10 @@ export default function KCCFFamily() {
             </div>
 
             {/* Clarke Moyer */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-40 h-40 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-Clarke-Moyer-Bio-Picture-2MP.jpg"
                     alt="Clarke Moyer"
@@ -210,10 +210,10 @@ export default function KCCFFamily() {
             </div>
 
             {/* Jim Kowalski */}
-            <div className="group bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-40 h-40 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-JKowalski.png"
                     alt="Jim Kowalski"
@@ -243,10 +243,10 @@ export default function KCCFFamily() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Dr. Wexler */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/Dr.-Wexler-Honorary-Director-copy.png"
                     alt="Dr. Wexler"
@@ -265,10 +265,10 @@ export default function KCCFFamily() {
             </div>
 
             {/* Dr. Morris */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/Carol-Morris-2-copy-2_FINAL.png"
                     alt="Dr. Morris"
@@ -287,10 +287,10 @@ export default function KCCFFamily() {
             </div>
 
             {/* Dr. Prince */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-DrPrinceElana-scaled.jpg"
                     alt="Dr. Prince"
@@ -309,10 +309,10 @@ export default function KCCFFamily() {
             </div>
 
             {/* Dr. Charas */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/Dr.-Tomas-copy.png"
                     alt="Dr. Charas"
@@ -331,10 +331,10 @@ export default function KCCFFamily() {
             </div>
 
             {/* Dr. Kearney */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/kearney_170721_02_3x2-copy.png"
                     alt="Dr. Kearney"
