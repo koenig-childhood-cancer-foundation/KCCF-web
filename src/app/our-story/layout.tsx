@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: "Our Story - Elana Koenig's Journey | Koenig Childhood Cancer Foundation",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 export default function OurStoryLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return children;
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import { useState, useEffect, useRef, useCallback, useMemo, type KeyboardEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { useSearchModal } from '@/contexts/SearchModalContext'
 import { searchData } from '@/data/searchData'
@@ -70,7 +70,7 @@ export default function SearchModal() {
     router.push(href)
   }, [closeModal, router])
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault()
       setSelectedIndex(prev => Math.min(prev + 1, searchResults.length - 1))

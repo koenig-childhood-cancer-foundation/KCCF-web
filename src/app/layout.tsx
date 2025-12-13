@@ -14,7 +14,7 @@ import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
 import ConsentPreferencesModal from "@/components/ConsentPreferencesModal";
 import SubmissionModal from "@/components/SubmissionModal";
 import GoogleTagManager from "@/components/GoogleTagManager";
-import { Suspense } from "react";
+import { Suspense, type ReactNode } from "react";
 import { SearchModalProvider } from "@/contexts/SearchModalContext";
 import SearchModal from "@/components/SearchModal";
 
@@ -27,7 +27,7 @@ const openSans = Open_Sans({
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">

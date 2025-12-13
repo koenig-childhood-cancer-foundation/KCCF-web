@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type KeyboardEvent } from 'react'
 import { usePathname } from 'next/navigation'
 import ThemeToggle from './ThemeToggle'
 import { useTheme } from '@/contexts/ThemeContext'
@@ -140,7 +140,7 @@ export default function Navigation() {
     setDropdownTimeout(timeout)
   }
 
-  const handleKeyDown = (e: React.KeyboardEvent, itemName: string) => {
+  const handleKeyDown = (e: KeyboardEvent, itemName: string) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
       if (itemName === 'ABOUT' || itemName === 'PROGRAMS' || itemName === 'CONTACT') {

@@ -1,5 +1,6 @@
 "use client"
 
+import { type ReactNode } from 'react'
 import Link from 'next/link'
 
 interface DonationButtonProps {
@@ -8,8 +9,8 @@ interface DonationButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   className?: string
-  children?: React.ReactNode
-  icon?: React.ReactNode
+  children?: ReactNode
+  icon?: ReactNode
 }
 
 export default function DonationButton({

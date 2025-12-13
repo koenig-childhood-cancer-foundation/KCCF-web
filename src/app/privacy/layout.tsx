@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: "Privacy Policy - GDPR & California Privacy | KCCF",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 export default function PrivacyLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return children;
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: "Media Coverage - Koenig Childhood Cancer Foundation in the News",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 export default function MediaLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return children;
 }
