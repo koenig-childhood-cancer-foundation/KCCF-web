@@ -255,3 +255,23 @@ body {
     --color-text-muted: #ffffff;
   }
 }
+
+/* ==========================================================================
+   Monday.com Form Iframe Fixes
+   ========================================================================== */
+
+/* Ensure Monday.com form iframes are responsive on all devices */
+iframe[sandbox*="allow-forms"] {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-specific adjustments for form modals */
+@media (max-width: 768px) {
+  /* Ensure form iframe takes full width on mobile */
+  iframe[sandbox*="allow-forms"] {
+    min-width: 100%;
+  }
+}
