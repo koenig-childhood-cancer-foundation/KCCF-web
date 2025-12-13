@@ -78,7 +78,7 @@ export default function CrazySocks() {
         {/* PageHeader */}
         <PageHeader
           title="Crazy Socks Gift Bags"
-          subtitle="Empower your Corporate Social Responsibility program to sponsor and host gift-bag–making events for hospitalized children."
+          subtitle="Sponsor and host a gift bag–making event for hospitalized children."
         />
       </div>
 
@@ -271,17 +271,9 @@ export default function CrazySocks() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Corporate Partners
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-              We bring the fun event to you! Leading companies partner with us to make a difference.
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              We bring the fun event to you! Leading companies partner with us through employee volunteering, team-building events, and corporate social responsibility programs to make a meaningful difference in the lives of children battling cancer.
             </p>
-
-            {/* SEO-Optimized Corporate Volunteering Paragraph */}
-            <div className="bg-gradient-to-r from-violet-600/10 to-fandango-600/10 dark:from-violet-600/20 dark:to-violet-600/20 rounded-2xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4 text-violet-600 dark:text-saffron-400">Corporate Social Responsibility Through Gift Bag Volunteering</h3>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                Our Gift Bag Project offers a powerful way for companies to engage in <strong>Corporate Social Responsibility (CSR)</strong> through <strong>employee volunteering</strong> and <strong>team-building events</strong>. We provide <strong>turnkey opportunities</strong>, where employees can assemble <strong>gift bags for children battling cancer</strong>. This <strong>hands-on experience</strong> supports <strong>children's health and well-being</strong> while delivering <strong>measurable community impact</strong>. Through <strong>Volunteer Days</strong>, <strong>Volunteer Time Off (VTO)</strong>, and skills-based volunteering, companies can strengthen <strong>philanthropy partnerships</strong> and <strong>nonprofit collaboration</strong>. By partnering with KCCF, corporations contribute to <strong>scalable CSR initiatives</strong> that bring hope and joy to young patients while fostering a stronger workplace culture.
-              </p>
-            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
