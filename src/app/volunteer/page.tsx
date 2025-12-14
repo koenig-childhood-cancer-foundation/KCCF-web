@@ -23,11 +23,7 @@ export default function Volunteer() {
                 program and event, helping us reach more families and create more impact.
               </p>
 
-              <p className="mb-6">
-                Whether you have a few hours a month or want to make a more significant commitment,
-                there are many ways to get involved and help children battling cancer and their families.
-              </p>
-
+              
               <div className="bg-saffron-50 rounded-lg p-6 my-8">
                 <h3 className="text-xl font-bold text-violet-700 mb-4">Why Volunteer?</h3>
                 <ul className="space-y-2 text-violet-600">
