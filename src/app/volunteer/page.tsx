@@ -45,7 +45,6 @@ export default function Volunteer() {
                 Koenig Childhood Cancer Foundation (KCCF) is a 100% volunteer-run organization. Volunteers are at the heart of everything we do — your time, energy, and commitment directly impact children battling cancer and their families.
               </p>
 
-              
               <div className="bg-saffron-50 rounded-lg p-6 my-8">
                 <h3 className="text-xl font-bold text-violet-700 mb-4">Volunteer Requirements</h3>
                 <ul className="space-y-2 text-violet-600">
