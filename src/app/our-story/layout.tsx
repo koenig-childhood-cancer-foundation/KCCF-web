@@ -1,9 +1,15 @@
 import type { Metadata } from 'next';
+import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: "Our Story - Elana Koenig's Journey | Koenig Childhood Cancer Foundation",
   description: "Discover the inspiring story of Elana Koenig, an 11-year-old cancer survivor who founded KCCF to help families battling childhood cancer. Learn about our mission and impact.",
-  keywords: ["Elana Koenig", "our story", "founder", "cancer survivor", "childhood cancer", "KCCF history", "mission"],
+  keywords: [
+    "Elana Koenig", "our story", "founder", "cancer survivor", "childhood cancer", "KCCF history", "mission",
+    "teen motivational speaker", "cancer survivor story", "youth changemaker", "inspiring GenZ", "hope and healing",
+    "from pain to purpose", "nonprofit founder", "CSR impact", "keynote speaker", "teen leader", "female speaker",
+    "graduation speaker", "impact story", "book a speaker", "media spotlight"
+  ],
   openGraph: {
     title: "Our Story - Elana Koenig's Journey | Koenig Childhood Cancer Foundation",
     description: "Discover the inspiring story of Elana Koenig, an 11-year-old cancer survivor who founded KCCF to help families battling childhood cancer. Learn about our mission and impact.",
@@ -19,7 +25,7 @@ export const metadata: Metadata = {
 export default function OurStoryLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return children;
 }

@@ -1,6 +1,7 @@
 "use client"
 
-import { useDonationModal } from '@/contexts/DonationModalContext'
+import { type ReactNode } from 'react'
+import Link from 'next/link'
 
 interface DonationButtonProps {
   amount?: number
@@ -8,21 +9,19 @@ interface DonationButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   className?: string
-  children?: React.ReactNode
-  icon?: React.ReactNode
+  children?: ReactNode
+  icon?: ReactNode
 }
 
 export default function DonationButton({
   amount = 50,
-  campaign = '',
+  campaign: _campaign = '',
   variant = 'primary',
   size = 'md',
   className = '',
   children,
   icon
 }: DonationButtonProps) {
-  const { openModal } = useDonationModal()
-
   const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#732154] cursor-pointer'
 
   const variantClasses = {
@@ -38,18 +37,13 @@ export default function DonationButton({
     lg: 'px-8 py-4 text-lg rounded-full'
   }
 
-  const handleClick = () => {
-    openModal(amount, campaign)
-  }
-
   return (
-    <button
-      onClick={handleClick}
+    <Link
+      href="/donate"
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
     >
       {children || `Donate $${amount}`}
-      {icon && <span className="ml-2">{icon}</span>}
-    </button>
+      {icon && <span className="ml-2" aria-hidden="true">{icon}</span>}
+    </Link>
   )
 }
-

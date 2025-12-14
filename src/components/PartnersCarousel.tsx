@@ -18,7 +18,7 @@ export default function PartnersCarousel() {
         {partners.map((partner, index) => (
           <div
             key={index}
-            className="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
+            className="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-lg border border-gray-100 dark:border-gray-700"
           >
             <div className="flex items-center justify-center h-16 mb-2">
               <Image
@@ -26,7 +26,7 @@ export default function PartnersCarousel() {
                 alt={partner.name}
                 width={120}
                 height={60}
-                className="max-h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                className="max-h-12 w-auto object-contain filter grayscale"
                 loading="lazy"
               />
             </div>
