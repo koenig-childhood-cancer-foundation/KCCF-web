@@ -40,7 +40,7 @@ export default function SearchModal() {
 
   // Handle escape key and click outside
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: globalThis.KeyboardEvent) => {
       if (e.key === 'Escape') {
         closeModal()
       }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: "Fundraisers - Support Our Mission | Koenig Childhood Cancer Foundation",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 export default function FundraisersLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return children;
 }

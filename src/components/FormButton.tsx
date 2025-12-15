@@ -1,5 +1,6 @@
 "use client"
 
+import { type ReactNode } from 'react'
 import { useFormModal, FormType } from '@/contexts/FormModalContext'
 
 interface FormButtonProps {
@@ -7,8 +8,8 @@ interface FormButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'violet' | 'fandango' | 'orange' | 'saffron'
   size?: 'sm' | 'md' | 'lg'
   className?: string
-  children: React.ReactNode
-  icon?: React.ReactNode
+  children: ReactNode
+  icon?: ReactNode
   fullWidth?: boolean
 }
 

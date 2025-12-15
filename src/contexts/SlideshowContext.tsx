@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useContext, useState } from 'react'
+import { type ReactNode, createContext, useContext, useState } from 'react'
 
 interface SlideshowContextType {
   currentIndex: number
@@ -9,7 +9,7 @@ interface SlideshowContextType {
 
 const SlideshowContext = createContext<SlideshowContextType | undefined>(undefined)
 
-export function SlideshowProvider({ children }: { children: React.ReactNode }) {
+export function SlideshowProvider({ children }: { children: ReactNode }) {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
 
   return (
