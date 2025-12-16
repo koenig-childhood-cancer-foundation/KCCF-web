@@ -1,5 +1,6 @@
 "use client"
 
+import { type ReactNode } from 'react'
 import { useFormModal, FormType } from '@/contexts/FormModalContext'
 
 interface FormButtonProps {
@@ -7,8 +8,8 @@ interface FormButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'violet' | 'fandango' | 'orange' | 'saffron'
   size?: 'sm' | 'md' | 'lg'
   className?: string
-  children: React.ReactNode
-  icon?: React.ReactNode
+  children: ReactNode
+  icon?: ReactNode
   fullWidth?: boolean
 }
 
@@ -26,20 +27,20 @@ export default function FormButton({
   const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer'
 
   const variantClasses = {
-    primary: 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-orange-500',
-    secondary: 'bg-fandango-600 hover:bg-fandango-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-fandango-500',
-    violet: 'bg-violet-600 hover:bg-violet-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-violet-500',
-    fandango: 'bg-fandango-600 hover:bg-fandango-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-fandango-500',
-    orange: 'bg-orange-600 hover:bg-orange-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-orange-500',
-    saffron: 'bg-saffron-600 hover:bg-saffron-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-saffron-500',
-    outline: 'border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white transform hover:-translate-y-1 focus:ring-violet-500',
+    primary: 'btn-primary btn-primary-orange text-white focus:ring-orange-500',
+    secondary: 'btn-primary bg-fandango-600 hover:bg-fandango-700 text-white focus:ring-fandango-500',
+    violet: 'btn-primary btn-primary-violet text-white focus:ring-violet-500',
+    fandango: 'btn-primary bg-fandango-600 hover:bg-fandango-700 text-white focus:ring-fandango-500',
+    orange: 'btn-primary btn-primary-orange text-white focus:ring-orange-500',
+    saffron: 'btn-primary bg-saffron-600 hover:bg-saffron-700 text-white focus:ring-saffron-500',
+    outline: 'btn-primary btn-outline-violet focus:ring-violet-500',
     ghost: 'text-violet-600 hover:bg-violet-50 dark:hover:bg-violet-900/20 transform hover:-translate-y-1 focus:ring-violet-500'
   }
 
   const sizeClasses = {
-    sm: 'px-4 py-2 text-sm rounded-lg',
-    md: 'px-6 py-3 text-base rounded-lg',
-    lg: 'px-8 py-4 text-lg rounded-lg'
+    sm: 'px-4 py-2 text-sm rounded-full',
+    md: 'px-6 py-3 text-base rounded-full',
+    lg: 'px-8 py-4 text-lg rounded-full'
   }
 
   const widthClass = fullWidth ? 'w-full' : ''
@@ -54,7 +55,7 @@ export default function FormButton({
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClass} ${className}`}
     >
       {children}
-      {icon && <span className="ml-2">{icon}</span>}
+      {icon && <span className="btn-icon" aria-hidden="true">{icon}</span>}
     </button>
   )
 }

@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 import Spinner from '@/components/Spinner';
 
@@ -8,11 +9,29 @@ export default function NewsletterSignup() {
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
   return (
-    <div className="min-h-screen bg-platinum-50">
-      <PageHeader
-        title="Stay Connected"
-        subtitle="Join our newsletter to receive updates about our programs, events, and the families we help."
-      />
+    <div className="min-h-screen bg-platinum-50 dark:bg-gray-900">
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/Placeholder.png"
+            alt="Stay Connected"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="Stay Connected"
+          subtitle="Join our newsletter to receive updates about our programs, events, and the families we help."
+        />
+      </div>
 
       {/* Newsletter Signup Form */}
       <section className="py-16 bg-violet-500">
@@ -108,7 +127,7 @@ export default function NewsletterSignup() {
               Contact Us
             </a>
             <a
-              href="mailto:info@thekccf.org"
+              href="mailto:join@thekccf.org"
               className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
             >
               Email Us
