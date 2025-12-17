@@ -115,7 +115,7 @@ export default function Donate() {
                 <span className="text-2xl" aria-hidden="true">🏢</span>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Corporate Matching</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Please check if your corporation / company matches employee donation</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">Please check if your corporation / company matches employee donations.</p>
               <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
                 To learn more about it you can reach out to us at{' '}
                 <a href="mailto:join@thekccf.org" className="text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
