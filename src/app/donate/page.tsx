@@ -115,7 +115,17 @@ export default function Donate() {
                 <span className="text-2xl" aria-hidden="true">🏢</span>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Corporate Matching</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Multiply your impact through your employer.</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">Please check if your corporation / company matches employee donation</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                To learn more about it you can reach out to us at{' '}
+                <a href="mailto:join@thekccf.org" className="text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  join@thekccf.org
+                </a>
+                {' '}or{' '}
+                <a href="tel:+19177656272" className="text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  1 (917) 765-6272
+                </a>
+              </p>
               <div className="flex justify-center">
                 <DonationButton campaign="Corporate Matching" variant="primary" size="md">Get Started</DonationButton>
               </div>
@@ -126,8 +136,18 @@ export default function Donate() {
               <div className="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl" aria-hidden="true">📈</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Stock Donation</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">Donate appreciated securities for tax benefits.</p>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Stock Donations and Donor Advised Funds</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">Making a gift to Koenig Childhood Cancer Foundation directly through your Donor Advised Fund (DAF) or by donating appreciated stock is a meaningful and tax-efficient way to support children and families facing illness and crisis. These giving options ensure your generosity has an immediate and lasting impact.</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                To learn more about it you can reach out to us at{' '}
+                <a href="mailto:join@thekccf.org" className="text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  join@thekccf.org
+                </a>
+                {' '}or{' '}
+                <a href="tel:+19177656272" className="text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  1 (917) 765-6272
+                </a>
+              </p>
               <div className="flex justify-center">
                 <DonationButton campaign="Stock Donation" variant="primary" size="md">Learn More</DonationButton>
               </div>
@@ -140,6 +160,16 @@ export default function Donate() {
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Planned or Estate Gift</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">Leave a lasting legacy for children with cancer.</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                To learn more about it you can reach out to us at{' '}
+                <a href="mailto:join@thekccf.org" className="text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  join@thekccf.org
+                </a>
+                {' '}or{' '}
+                <a href="tel:+19177656272" className="text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 font-semibold">
+                  1 (917) 765-6272
+                </a>
+              </p>
               <div className="flex justify-center">
                 <DonationButton campaign="Planned Gift" variant="primary" size="md">Learn More</DonationButton>
               </div>
