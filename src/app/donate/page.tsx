@@ -45,7 +45,7 @@ export default function Donate() {
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-saffron-400">
               Why Your Gift Matters
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -100,8 +100,8 @@ export default function Donate() {
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              Ways to <span className="text-violet-600 dark:text-saffron-400">Give</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-saffron-400">
+              Ways to Give
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Choose the option that works best for you. Every gift makes a real difference.
