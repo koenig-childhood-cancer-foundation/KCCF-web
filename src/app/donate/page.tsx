@@ -81,7 +81,7 @@ export default function Donate() {
       {/* 2 — Bring Joy Bags to Hospitals */}
       <div className="group bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
         <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-          <span className="text-2xl">🚗</span>
+          <span className="text-2xl">🎁</span>
         </div>
         <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Bring Joy Bags to Hospitals</h3>
         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
