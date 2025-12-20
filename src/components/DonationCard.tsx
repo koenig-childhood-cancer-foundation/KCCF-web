@@ -20,7 +20,7 @@ export default function DonationCard() {
       {/* PLATFORM SELECTION */}
       <div className="mb-4">
         <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 text-center">
-          Choose how you&apos;d like to give:
+          Choose your preferred way to give:
         </p>
         <div className="flex gap-2">
           <button
@@ -53,9 +53,9 @@ export default function DonationCard() {
         {/* Platform info */}
         <p className="mt-2 text-xs text-center text-gray-600 dark:text-gray-400 min-h-[2.5rem] flex items-center justify-center">
           {platform === 'zeffy' ? (
-            <>No platform or processing fees. <span className="font-bold text-violet-600 dark:text-violet-400">100% of your gift supports KCCF.</span></>
+            <>No platform or processing fees. 100% of your gift goes to KCCF.</>
           ) : (
-            <>Standard payment processing fees apply. <span className="font-bold text-violet-600 dark:text-violet-400">Supports PayPal, Venmo, and bank transfers.</span></>
+            <>Standard processing fees may apply. Supports PayPal, Venmo, and bank transfers.</>
           )}
         </p>
       </div>
