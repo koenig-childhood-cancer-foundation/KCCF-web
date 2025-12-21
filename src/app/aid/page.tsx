@@ -34,52 +34,43 @@ export default function Aid() {
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
-                    Medical bills and treatment costs
+                    Medical treatments or prescriptions not covered by insurance
                   </li>
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
-                    Transportation to and from treatment
+                    Travel expenses for care
                   </li>
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
-                    Lodging near treatment centers
+                    Rent or mortgage during treatment
                   </li>
                   <li className="flex items-start">
                     <span className="text-orange-500 mr-2">•</span>
-                    Food and basic necessities
+                    And more
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-orange-500 mr-2">•</span>
-                    Childcare for siblings
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-orange-500 mr-2">•</span>
-                    Other essential expenses
-                  </li>
+                  
                 </ul>
               </div>
 
               <div className="bg-saffron-50 rounded-lg p-6 my-8">
-                <h3 className="text-xl font-bold text-violet-700 mb-4">Eligibility</h3>
-                <p className="text-violet-600 mb-4">
-                  To be eligible for assistance, families must:
-                </p>
+                <h3 className="text-xl font-bold text-violet-700 mb-4">Eligibility Criteria</h3>
+                
                 <ul className="space-y-2 text-violet-600">
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Have a child under 18 diagnosed with cancer
+                    Child must be under 21 and diagnosed with cancer
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Demonstrate financial need
+                    Request for aid must relate to the child’s diagnosis
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Be receiving treatment at an accredited medical facility
+                    Child must be receiving treatment at an accredited hospital
                   </li>
                   <li className="flex items-start">
                     <span className="text-saffron-500 mr-2">•</span>
-                    Complete the application process
+                    Funds are paid directly to service providers
                   </li>
                 </ul>
               </div>
