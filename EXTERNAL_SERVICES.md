@@ -2,6 +2,26 @@
 
 This document provides a comprehensive overview of all external third-party services integrated with the KCCF website. Configuration for these services is managed in their respective external platforms, not in this repository.
 
+**Last Updated**: December 2025  
+**Site URL**: https://thekccf.org
+
+---
+
+## Recent Updates
+
+**December 2025**:
+- ✅ Transitioned from staging (staging.thekccf.org) to production (thekccf.org)
+- ✅ All services verified and operational on production domain
+- ✅ Email configurations reviewed across all platforms
+- ✅ Analytics tracking updated to production domain
+- ✅ Added site-wide search functionality (client-side, no external service)
+- ✅ Updated donation system components (DonationButton, DonationCard)
+- ✅ Enhanced CodeQL workflow with 30-minute timeout
+- ✅ Improved page content and wording across multiple pages
+
+**For post-deployment verification**, see [EXTERNAL_VALIDATION_CHECKLIST.md](EXTERNAL_VALIDATION_CHECKLIST.md).  
+**For CI/CD and deployment details**, see [CI_CD_DEPLOYMENT.md](CI_CD_DEPLOYMENT.md).
+
 ---
 
 ## Table of Contents
@@ -43,7 +63,9 @@ This document provides a comprehensive overview of all external third-party serv
 |------|---------------------|
 | `src/contexts/FormModalContext.tsx` | Monday.com, Mailchimp form configurations |
 | `src/components/FormModal.tsx` | Form display modal |
-| `src/components/DonationModal.tsx` | Zeffy, GiveLively donation forms |
+| `src/components/DonationButton.tsx` | Zeffy donation buttons |
+| `src/components/DonationCard.tsx` | Zeffy donation cards |
+| `src/app/donate/page.tsx` | Zeffy, GiveLively donation forms |
 | `src/app/fundraisers/page.tsx` | Zeffy peer-to-peer fundraising |
 | `src/components/GoogleTagManager.tsx` | GTM integration |
 | `src/contexts/CookieConsentContext.tsx` | Consent management for analytics |
@@ -80,8 +102,8 @@ Monday.com powers 7 embedded forms for data collection across the site.
 2. **Forms Location**: Navigate to workspace containing KCCF forms
 3. **Email Settings**: 
    - Go to **Admin** → **Account Settings** → **Email & Notifications**
-   - Verify `info@thekccf.org` as sender email
-   - Update automations for each form to use `info@thekccf.org`
+   - Verify `join@thekccf.org` as sender email
+   - Update automations for each form to use `join@thekccf.org`
 
 #### Support
 - Documentation: https://support.monday.com/hc/en-us/articles/360007186319
@@ -105,7 +127,7 @@ Mailchimp handles newsletter subscriptions.
 2. **Audience Settings**: Navigate to your KCCF audience
 3. **Sender Email**: 
    - Go to **Audience** → **Settings** → **Audience name and defaults**
-   - Update **Default From email address** to `info@thekccf.org`
+   - Update **Default From email address** to `join@thekccf.org`
 4. **Domain Authentication**:
    - Go to **Account** → **Settings** → **Domains**
    - Verify `thekccf.org` domain
@@ -141,7 +163,7 @@ Zeffy is the primary donation platform, handling one-time donations, recurring d
 1. **Access**: Log in at https://www.zeffy.com
 2. **Organization Settings**: 
    - Go to **Settings** → **Organization Profile**
-   - Update contact email to `info@thekccf.org`
+   - Update contact email to `join@thekccf.org`
 3. **Email Notifications**:
    - Go to **Settings** → **Notifications**
    - Update sender email for donation receipts
@@ -171,7 +193,7 @@ GiveLively provides an alternative donation option, supporting PayPal, Venmo, an
 1. **Access**: Log in at https://www.givelively.org
 2. **Organization Profile**:
    - Go to **Settings** → **Organization Profile**
-   - Update primary contact email to `info@thekccf.org`
+   - Update primary contact email to `join@thekccf.org`
 3. **Notification Settings**:
    - Update donation confirmation sender email
    - Update tax receipt settings
@@ -305,7 +327,7 @@ Microsoft Clarity provides heatmaps and session recordings to understand user be
 
 ## Email Configuration
 
-All outbound emails from KCCF services should use `info@thekccf.org` for consistent branding.
+All outbound emails from KCCF services should use `join@thekccf.org` for consistent branding.
 
 ### Platforms to Update
 
@@ -330,15 +352,15 @@ Configure DKIM through each platform's domain verification settings.
 
 #### DMARC
 ```
-_dmarc.thekccf.org TXT "v=DMARC1; p=none; rua=mailto:info@thekccf.org"
+_dmarc.thekccf.org TXT "v=DMARC1; p=none; rua=mailto:join@thekccf.org"
 ```
 
 ### Testing Email Configuration
 
 After updating settings, test each platform:
-- [ ] Monday.com form submissions send from `info@thekccf.org`
-- [ ] Mailchimp newsletters send from `info@thekccf.org`
-- [ ] Zeffy donation receipts send from `info@thekccf.org`
+- [ ] Monday.com form submissions send from `join@thekccf.org`
+- [ ] Mailchimp newsletters send from `join@thekccf.org`
+- [ ] Zeffy donation receipts send from `join@thekccf.org`
 - [ ] GiveLively confirmations send correctly
 
 ---
@@ -395,7 +417,7 @@ The site uses a custom cookie consent system to manage user preferences for anal
 
 ### Emails Going to Spam
 
-1. **Verify sender**: Ensure `info@thekccf.org` is verified in each platform
+1. **Verify sender**: Ensure `join@thekccf.org` is verified in each platform
 2. **Check DNS**: Verify SPF, DKIM, DMARC records
 3. **Test delivery**: Use mail-tester.com to check email reputation
 4. **Review content**: Avoid spam trigger words
@@ -430,11 +452,11 @@ The site uses a custom cookie consent system to manage user preferences for anal
 
 All outbound emails should use:
 ```
-info@thekccf.org
+join@thekccf.org
 ```
 
 ### Website Issues
 
 For issues related to service integration in the website:
 - Create an issue: https://github.com/koenig-childhood-cancer-foundation/KCCF-web/issues
-- Contact: info@thekccf.org
+- Contact: join@thekccf.org

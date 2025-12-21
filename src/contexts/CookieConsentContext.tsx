@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { type ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
 export type ConsentCategory = 'necessary' | 'analytics' | 'marketing' | 'functional'
 
@@ -35,7 +35,7 @@ const STORAGE_KEY = 'cookieConsent.v1'
 
 const CookieConsentContext = createContext<CookieConsentContextValue | undefined>(undefined)
 
-export function CookieConsentProvider({ children }: { children: React.ReactNode }) {
+export function CookieConsentProvider({ children }: { children: ReactNode }) {
   const [consent, setConsent] = useState<ConsentState>(DEFAULT_CONSENT)
   const [isPreferencesOpen, setIsPreferencesOpen] = useState(false)
 

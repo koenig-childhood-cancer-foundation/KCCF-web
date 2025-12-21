@@ -8,10 +8,28 @@ import CallToAction from '@/components/CallToAction';
 export default function OurStory() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
-      <PageHeader
-        title="Our Story"
-        subtitle="From a young cancer survivor's dream to a foundation that has helped hundreds of families across the nation."
-      />
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_our_story.jpg"
+            alt="Our Story"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="Our Story"
+          subtitle="From a child cancer survivor's dream to a foundation that has helped thousands of families globally."
+        />
+      </div>
 
       {/* Elana's Journey Section */}
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
@@ -20,17 +38,14 @@ export default function OurStory() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Elana's Journey
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              From a brave young girl fighting cancer to a powerful advocate helping others in their battles.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* During Treatment */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg cursor-default">
               <div className="relative mb-6">
                 <div className="relative w-64 h-64 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-fandango-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-ElanaNoHairUpsetDuringTreatment-scaled.jpg"
                     alt="Elana during treatment"
@@ -41,16 +56,13 @@ export default function OurStory() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">Elana during treatment</h3>
-              <p className="text-gray-600 dark:text-gray-200 text-center">
-                A brave 7-year-old facing the toughest battle of her life with courage and determination.
-              </p>
             </div>
 
             {/* After Beating Cancer */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg cursor-default">
               <div className="relative mb-6">
                 <div className="relative w-64 h-64 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-Elana-and-Trophy.png"
                     alt="Elana kicked cancer's butt"
@@ -61,16 +73,13 @@ export default function OurStory() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">Elana kicked cancer's butt</h3>
-              <p className="text-gray-600 dark:text-gray-200 text-center">
-                Victory achieved! After 15 months of treatment, Elana emerged stronger and more determined than ever.
-              </p>
             </div>
 
             {/* Elana Today */}
-            <div className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg cursor-default">
               <div className="relative mb-6">
                 <div className="relative w-64 h-64 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-violet-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-violet-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-NUP_206704_00566.jpg"
                     alt="Elana today"
@@ -81,9 +90,6 @@ export default function OurStory() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">Elana today</h3>
-              <p className="text-gray-600 dark:text-gray-200 text-center">
-                A thriving young leader, singer, and founder helping hundreds of families through their cancer journeys.
-              </p>
             </div>
           </div>
         </div>
@@ -94,15 +100,6 @@ export default function OurStory() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <FormButton
-                formType="book-elana"
-                variant="orange"
-                size="sm"
-                className="rounded-full mb-6"
-              >
-                From Patient to Founder
-              </FormButton>
-
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-saffron-400">
                 Elana's Story
               </h2>
@@ -130,8 +127,7 @@ export default function OurStory() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
-              <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
+              <div className="relative bg-gradient-to-br from-violet-500/40 to-violet-500/50 dark:from-violet-500/60 dark:to-violet-500/70 p-8 rounded-3xl shadow-2xl">
                 <Image
                   src="/images/NUP_206704_00566-scaled.jpg"
                   alt="Elana during her cancer treatment"
@@ -193,20 +189,21 @@ export default function OurStory() {
                 Book Elana Koenig
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Elana shares her inspiring story at schools, organizations, and events to raise awareness about childhood cancer and the importance of supporting affected families.
+                Invite Elana Koenig to your graduation, gala, corporate event, or media platform to share her powerful story of turning pain into purpose, bringing hope, resilience, and impact to every audience.
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg text-center">
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                Invite Elana to share her powerful story of hope, resilience, and the importance of supporting families facing childhood cancer.
-              </p>
-
+            <div className="text-center">
               <FormButton
                 formType="book-elana"
                 variant="violet"
                 size="lg"
                 className="min-w-[200px]"
+                icon={
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                  </svg>
+                }
               >
                 Book Elana for Event
               </FormButton>

@@ -1,5 +1,6 @@
 "use client"
 
+import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 
@@ -7,29 +8,42 @@ export default function Camp() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <PageHeader
-        title="Camp"
-        subtitle="Join us for an unforgettable camp experience designed for children with cancer and their families."
-      />
+      {/* Hero Section with Background */}
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 top-24">
+          <Image
+            src="/images/header_image_camp.jpg"
+            alt="Camp"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+
+        {/* PageHeader */}
+        <PageHeader
+          title="Camp"
+          subtitle="A healing place for children battling cancer and their siblings from all over the world."
+        />
+      </div>
 
       {/* About Camp Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-violet-700 dark:text-saffron-600 mb-6">KCCF International Healing Camp</h2>
-            <p className="text-lg text-violet-600 dark:text-white max-w-3xl mx-auto mb-4">
-              Cancer is a lifelong journey. The KCCF International Camp brings together children diagnosed with cancer and their siblings from around the world, helps heal their emotional wounds, and inspires them to feel joyful and included as part of society.
-            </p>
             <p className="text-lg text-violet-600 dark:text-white max-w-3xl mx-auto">
-              Our camp provides a safe, supportive environment where children with cancer can have fun,
-              make friends, and create lasting memories. Whether you&apos;re a camper or want to join as a counselor,
-              we welcome you to be part of this special experience.
+              Cancer is a lifelong journey. The KCCF International Camp brings together children diagnosed with cancer and their siblings from around the world, helps heal their emotional wounds, and inspires them to feel joyful and included as part of society.
             </p>
           </div>
 
           {/* Camp Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-saffron-100 dark:bg-saffron-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🏕️</span>
               </div>
@@ -39,7 +53,7 @@ export default function Camp() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-fandango-100 dark:bg-fandango-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🤝</span>
               </div>
@@ -49,7 +63,7 @@ export default function Camp() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+            <div className="card-static bg-white dark:bg-gray-800 rounded-lg p-6 text-center">
               <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🎉</span>
               </div>
@@ -119,23 +133,19 @@ export default function Camp() {
               <ul className="space-y-3 text-violet-600 dark:text-white">
                 <li className="flex items-start">
                   <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
+                  No cost to families
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
                   Medical staff available 24/7
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
-                  All activities adapted for various abilities
+                  Activities adapted for all abilities
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
-                  Nutritious meals and snacks provided
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
-                  Transportation available if needed
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
-                  No cost to families
+                  All dietary options available
                 </li>
               </ul>
             </div>
@@ -158,10 +168,6 @@ export default function Camp() {
                 <li className="flex items-start">
                   <span className="text-saffron-500 dark:text-saffron-400 mr-2">•</span>
                   Make a difference in children's lives
-                </li>
-                <li className="flex items-start">
-                  <span className="text-saffron-500 dark:text-saffron-400 mr-2">•</span>
-                  Join a supportive community
                 </li>
               </ul>
             </div>

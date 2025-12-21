@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/thank-you/'],
+      disallow: ['/api/', '/thank-you/', '/newsletter-signup/'],
     },
     sitemap: 'https://thekccf.org/sitemap.xml',
   }
