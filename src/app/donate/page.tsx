@@ -1,18 +1,10 @@
 "use client"
 
-import { useEffect } from 'react'
 import Image from 'next/image'
 import DonationCard from '@/components/DonationCard'
 import DonationButton from '@/components/DonationButton'
-import { useDonationModal } from '@/contexts/DonationModalContext'
 
 export default function Donate() {
-  const { openModal } = useDonationModal()
-
-  // Automatically open the donation modal when the page loads
-  useEffect(() => {
-    openModal()
-  }, [openModal])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
