@@ -38,7 +38,7 @@ export const IMPACT_STATS = {
       label: "Gift Bags Delivered"
     },
     {
-      value: "200,000+",
+      value: "315,000+",
       label: "Items Distributed"
     },
     {
