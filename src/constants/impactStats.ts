@@ -18,7 +18,7 @@ export const IMPACT_STATS = {
       label: "Families Supported Financially"
     },
     {
-      value: "3,500+",
+      value: "4,500+",
       label: "Hospital visits / celebrations"
     },
     {
