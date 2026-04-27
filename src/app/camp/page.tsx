@@ -1,43 +1,48 @@
-"use client"
+'use client';
 
 import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 
 export default function Camp() {
-
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section with Background */}
-      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+      <div className="relative min-h-[66vh] xl:min-h-[80vh] flex items-center justify-center overflow-hidden pt-0">
         {/* Background Image */}
         <div className="absolute inset-0 top-24">
           <Image
-            src="/images/header_image_camp.jpg"
+            src="/images/header_image_camp.png"
             alt="Camp"
             fill
-            className="object-cover"
+            className="object-cover object-[28%_center] md:object-[28%_center] lg:object-[10%_25%] xl:object-[center_20%] 2xl:object-[center_20%]"
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         </div>
-        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
 
         {/* PageHeader */}
-        <PageHeader
-          title="Camp"
-          subtitle="A healing place for children battling cancer and their siblings from all over the world."
-        />
+        <div className="mx-auto sm:ml-6 lg:ml-10 xl:ml-8 pt-26 sm:pt-44 md:pt-44 lg:pt-34 xl:pt-30 2xl:pt-33 3xl:pt-48">
+          <PageHeader
+            title="Camp"
+            headerStyle="pb-12"
+            subtitle="A healing place for children battling cancer and their siblings from all over the world."
+          />
+        </div>
       </div>
 
       {/* About Camp Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-violet-700 dark:text-saffron-600 mb-6">KCCF International Healing Camp</h2>
+            <h2 className="text-3xl font-bold text-violet-700 dark:text-saffron-600 mb-6">
+              KCCF International Healing Camp
+            </h2>
             <p className="text-lg text-violet-600 dark:text-white max-w-3xl mx-auto">
-              Cancer is a lifelong journey. The KCCF International Camp brings together children diagnosed with cancer and their siblings from around the world, helps heal their emotional wounds, and inspires them to feel joyful and included as part of society.
+              Cancer is a lifelong journey. The KCCF International Camp brings
+              together children diagnosed with cancer and their siblings from
+              around the world, helps heal their emotional wounds, and inspires
+              them to feel joyful and included as part of society.
             </p>
           </div>
 
@@ -47,9 +52,12 @@ export default function Camp() {
               <div className="w-16 h-16 bg-saffron-100 dark:bg-saffron-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🏕️</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">Safe Environment</h3>
+              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">
+                Safe Environment
+              </h3>
               <p className="text-violet-600 dark:text-white">
-                Medical staff on-site, accessible facilities, and activities designed for all abilities.
+                Medical staff on-site, accessible facilities, and activities
+                designed for all abilities.
               </p>
             </div>
 
@@ -57,9 +65,12 @@ export default function Camp() {
               <div className="w-16 h-16 bg-fandango-100 dark:bg-fandango-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🤝</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">Community Support</h3>
+              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">
+                Community Support
+              </h3>
               <p className="text-violet-600 dark:text-white">
-                Connect with other families who understand the journey and build lasting friendships.
+                Connect with other families who understand the journey and build
+                lasting friendships.
               </p>
             </div>
 
@@ -67,9 +78,12 @@ export default function Camp() {
               <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🎉</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">Fun Activities</h3>
+              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">
+                Fun Activities
+              </h3>
               <p className="text-violet-600 dark:text-white">
-                Arts & crafts, outdoor adventures, games, and special events for all ages.
+                Arts & crafts, outdoor adventures, games, and special events for
+                all ages.
               </p>
             </div>
           </div>
@@ -79,7 +93,9 @@ export default function Camp() {
       {/* Form Selection */}
       <section className="py-16 bg-platinum-50 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-violet-700 dark:text-saffron-600 mb-12">Join Our Camp</h2>
+          <h2 className="text-3xl font-bold text-center text-violet-700 dark:text-saffron-600 mb-12">
+            Join Our Camp
+          </h2>
 
           {/* Camp Registration Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -87,7 +103,9 @@ export default function Camp() {
               <div className="w-16 h-16 bg-violet-100 dark:bg-violet-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🏕️</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">Join as a Camper</h3>
+              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">
+                Join as a Camper
+              </h3>
               <p className="text-violet-600 dark:text-white mb-6 text-sm flex-grow">
                 Register your child for our upcoming camp session.
               </p>
@@ -105,7 +123,9 @@ export default function Camp() {
               <div className="w-16 h-16 bg-saffron-100 dark:bg-saffron-900 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🤝</span>
               </div>
-              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">Join as a Counselor</h3>
+              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">
+                Join as a Counselor
+              </h3>
               <p className="text-violet-600 dark:text-white mb-6 text-sm flex-grow">
                 Help create magical moments for children facing cancer.
               </p>
@@ -125,48 +145,70 @@ export default function Camp() {
       {/* Camp Information */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-violet-700 dark:text-saffron-600 mb-12">Camp Details</h2>
+          <h2 className="text-3xl font-bold text-center text-violet-700 dark:text-saffron-600 mb-12">
+            Camp Details
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-4">For Campers</h3>
+              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-4">
+                For Campers
+              </h3>
               <ul className="space-y-3 text-violet-600 dark:text-white">
                 <li className="flex items-start">
-                  <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
+                  <span className="text-orange-500 dark:text-orange-400 mr-2">
+                    •
+                  </span>
                   No cost to families
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
+                  <span className="text-orange-500 dark:text-orange-400 mr-2">
+                    •
+                  </span>
                   Medical staff available 24/7
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
+                  <span className="text-orange-500 dark:text-orange-400 mr-2">
+                    •
+                  </span>
                   Activities adapted for all abilities
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
+                  <span className="text-orange-500 dark:text-orange-400 mr-2">
+                    •
+                  </span>
                   All dietary options available
                 </li>
               </ul>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-4">For Counselors</h3>
+              <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-4">
+                For Counselors
+              </h3>
               <ul className="space-y-3 text-violet-600 dark:text-white">
                 <li className="flex items-start">
-                  <span className="text-saffron-500 dark:text-saffron-400 mr-2">•</span>
+                  <span className="text-saffron-500 dark:text-saffron-400 mr-2">
+                    •
+                  </span>
                   Training and orientation provided
                 </li>
                 <li className="flex items-start">
-                  <span className="text-saffron-500 dark:text-saffron-400 mr-2">•</span>
+                  <span className="text-saffron-500 dark:text-saffron-400 mr-2">
+                    •
+                  </span>
                   Room and board during camp
                 </li>
                 <li className="flex items-start">
-                  <span className="text-saffron-500 dark:text-saffron-400 mr-2">•</span>
+                  <span className="text-saffron-500 dark:text-saffron-400 mr-2">
+                    •
+                  </span>
                   Valuable experience and references
                 </li>
                 <li className="flex items-start">
-                  <span className="text-saffron-500 dark:text-saffron-400 mr-2">•</span>
+                  <span className="text-saffron-500 dark:text-saffron-400 mr-2">
+                    •
+                  </span>
                   Make a difference in children's lives
                 </li>
               </ul>
@@ -175,5 +217,5 @@ export default function Camp() {
         </div>
       </section>
     </div>
-  )
+  );
 }
