@@ -55,7 +55,6 @@ export default function Volunteer() {
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         </div>
 
         <div className="mx-auto lg:ml-20 xl:ml-0">

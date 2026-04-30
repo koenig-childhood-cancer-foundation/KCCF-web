@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
@@ -9,26 +9,26 @@ export default function OurStory() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
       {/* Hero Section with Background */}
-      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
+      <div className="relative min-h-[66vh] xl:min-h-[80vh] 2xl:min-h-[85vh] 3xl:h-[90vh] flex justify-center text-center lg:text-left overflow-hidden pt-0">
         {/* Background Image */}
         <div className="absolute inset-0 top-24">
           <Image
             src="/images/header_image_our_story.jpg"
             alt="Our Story"
             fill
-            className="object-cover"
+            className="object-cover object-[38%_center] sm:object-[33%_center] md:object-[20%_center] lg:object-[10%_25%] xl:object-[center_20%] 2xl:object-[center_20%]"
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         </div>
-        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
-
-        {/* PageHeader */}
-        <PageHeader
-          title="Our Story"
-          subtitle="From a child cancer survivor's dream to a foundation that has helped thousands of families globally."
-        />
+        <div className="mx-auto lg:ml-10 xl:ml-0 pt-80 sm:pt-88 md:pt-84 lg:pt-76 xl:pt-76 2xl:pt-98 3xl:pt-108">
+          {/* PageHeader */}
+          <PageHeader
+            title="Our Story"
+            headerStyle=" pb-12 xl:pl-24 2xl:pl-20"
+            subtitle="From a child cancer survivor's dream to a foundation that has helped thousands of families globally."
+          />
+        </div>
       </div>
 
       {/* Elana's Journey Section */}
@@ -55,7 +55,9 @@ export default function OurStory() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">Elana during treatment</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+                Elana during treatment
+              </h3>
             </div>
 
             {/* After Beating Cancer */}
@@ -72,7 +74,9 @@ export default function OurStory() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">Elana kicked cancer's butt</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+                Elana kicked cancer's butt
+              </h3>
             </div>
 
             {/* Elana Today */}
@@ -89,7 +93,9 @@ export default function OurStory() {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">Elana today</h3>
+              <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white text-center">
+                Elana today
+              </h3>
             </div>
           </div>
         </div>
@@ -106,16 +112,29 @@ export default function OurStory() {
 
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p className="text-xl font-semibold text-violet-600 dark:text-saffron-400">
-                  My name is Elana Koenig, and I am a cancer survivor, singer, and founder of Koenig Childhood Cancer Foundation.
+                  My name is Elana Koenig, and I am a cancer survivor, singer,
+                  and founder of Koenig Childhood Cancer Foundation.
                 </p>
                 <p>
-                  I was only 7 when I was diagnosed with an aggressive rare childhood cancer called Ewing's Sarcoma. I remember seeing my mother and father heartbroken, trying to hide it. I didn't yet understand the difficult journey that lay ahead.
+                  I was only 7 when I was diagnosed with an aggressive rare
+                  childhood cancer called Ewing's Sarcoma. I remember seeing my
+                  mother and father heartbroken, trying to hide it. I didn't yet
+                  understand the difficult journey that lay ahead.
                 </p>
                 <p>
-                  Over the next one and a half years, I experienced firsthand the physical and emotional toll of spending 15 grueling months in the hospital, enduring 9 cycles of chemotherapy, and undergoing 15 surgeries. My parents put their own lives on hold to stand by my side every step of the way.
+                  Over the next one and a half years, I experienced firsthand
+                  the physical and emotional toll of spending 15 grueling months
+                  in the hospital, enduring 9 cycles of chemotherapy, and
+                  undergoing 15 surgeries. My parents put their own lives on
+                  hold to stand by my side every step of the way.
                 </p>
                 <p>
-                  On the day of my final chemotherapy treatment, as I prepared to leave the hospital, I realized that while my own battle had ended, the fight countless children and families were facing was far from over. That motivated me to start KCCF in 2020 with $900 in my piggy bank to help other children battling cancer.
+                  On the day of my final chemotherapy treatment, as I prepared
+                  to leave the hospital, I realized that while my own battle had
+                  ended, the fight countless children and families were facing
+                  was far from over. That motivated me to start KCCF in 2020
+                  with $900 in my piggy bank to help other children battling
+                  cancer.
                 </p>
                 <p className="text-violet-600 dark:text-saffron-400 font-semibold text-xl">
                   "No child should fight cancer alone."
@@ -150,9 +169,12 @@ export default function OurStory() {
               <div className="w-16 h-16 bg-fandango-100 dark:bg-fandango-900 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">🎯</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Mission</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                Mission
+              </h3>
               <p className="text-gray-600 dark:text-gray-200 leading-relaxed">
-                To provide life-saving financial and emotional support to children bravely fighting cancer, every step of the way.
+                To provide life-saving financial and emotional support to
+                children bravely fighting cancer, every step of the way.
               </p>
             </div>
 
@@ -161,9 +183,12 @@ export default function OurStory() {
               <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">👁️</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Vision</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                Vision
+              </h3>
               <p className="text-gray-600 dark:text-gray-200 leading-relaxed">
-                To ensure every child confronting cancer is surrounded by compassion and unwavering support throughout their journey.
+                To ensure every child confronting cancer is surrounded by
+                compassion and unwavering support throughout their journey.
               </p>
             </div>
           </div>
@@ -174,7 +199,14 @@ export default function OurStory() {
               Why we do what we do!
             </h3>
             <p className="text-lg text-gray-600 dark:text-gray-200 leading-relaxed text-center max-w-4xl mx-auto">
-              Every day, 275 children are diagnosed with cancer worldwide, roughly equivalent to the load of 7 school buses. The average age for these patients at diagnosis is 6. They often spend about half of their lives in the hospital. To embrace hope at specialized cancer centers, families frequently confront challenges of travel, lodging, living expenses and treatment costs. KCCF plays a vital role in alleviating the financial strain caused by this heartbreaking circumstance.
+              Every day, 275 children are diagnosed with cancer worldwide,
+              roughly equivalent to the load of 7 school buses. The average age
+              for these patients at diagnosis is 6. They often spend about half
+              of their lives in the hospital. To embrace hope at specialized
+              cancer centers, families frequently confront challenges of travel,
+              lodging, living expenses and treatment costs. KCCF plays a vital
+              role in alleviating the financial strain caused by this
+              heartbreaking circumstance.
             </p>
           </div>
         </div>
@@ -189,7 +221,10 @@ export default function OurStory() {
                 Book Elana Koenig
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Invite Elana Koenig to your graduation, gala, corporate event, or media platform to share her powerful story of turning pain into purpose, bringing hope, resilience, and impact to every audience.
+                Invite Elana Koenig to your graduation, gala, corporate event,
+                or media platform to share her powerful story of turning pain
+                into purpose, bringing hope, resilience, and impact to every
+                audience.
               </p>
             </div>
 
@@ -200,8 +235,18 @@ export default function OurStory() {
                 size="lg"
                 className="min-w-[200px]"
                 icon={
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                    />
                   </svg>
                 }
               >
