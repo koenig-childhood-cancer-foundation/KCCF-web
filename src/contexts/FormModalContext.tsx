@@ -27,7 +27,7 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
     height: '1550px'
   },
   'camp-counselor': {
-    title: 'Thank you for your interest in becoming a camp counselor!',
+    title: 'Thank you for your interest in becoming a camp volunteer!',
     subtitle: 'The form may take a few seconds to load.',
     src: 'https://forms.monday.com/forms/embed/87920448930e50b7a0554e414662d32b?r=use1',
     height: '1900px'
