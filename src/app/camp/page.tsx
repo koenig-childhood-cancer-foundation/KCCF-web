@@ -124,7 +124,7 @@ export default function Camp() {
                 <span className="text-2xl">🤝</span>
               </div>
               <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-3">
-                Join as a Counselor
+                Join as a Volunteer
               </h3>
               <p className="text-violet-600 dark:text-white mb-6 text-sm flex-grow">
                 Help create magical moments for children facing cancer.
