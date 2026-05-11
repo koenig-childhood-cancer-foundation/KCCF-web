@@ -265,12 +265,10 @@ export default function Footer() {
 
         {/* Awards Section */}
         <div className="mt-8 pt-8 border-t border-gray-700 grid grid-cols-1 md:grid-cols-10 gap-8 items-start">
-
           {/* Newsletter Signup */}
           <div className="sm:flex sm:flex-col sm:items-center md:col-span-full lg:col-span-4 xl:col-span-4 md:mx-auto md:justify-center md:align-center md:text-center md:max-w-md">
             <h3 className="sm:w-[80%] md:w-full xl:w-[75%] text-xl font-bold mb-6 text-white text-center">
-              Stay updated with our latest programs, events, 
-              and the impact we're making together.
+              Stay connected to our programs, events, and impact!
             </h3>
             <FormButton
               formType="newsletter-signup"
