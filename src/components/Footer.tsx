@@ -10,9 +10,9 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white transition-colors duration-200 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-6 xl:grid-cols-8 gap-8 items-start">
           {/* Contact Info */}
-          <div className="md:col-span-2 xl:col-span-1">
+          <div className="md:col-span-2 xl:col-span-2">
             <h3 className="text-xl font-bold mb-4 text-white">
               Koenig Childhood Cancer Foundation
             </h3>
@@ -118,59 +118,11 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-4 xl:col-span-3 xl:ml-12">
+          <div className="sm:col-span-full md:col-span-4 xl:col-span-6 xl:ml-12">
             <h4 className="text-lg font-semibold mb-4 text-white">
               Quick Links
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {/* Get Involved */}
-              <div>
-                <h5 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
-                  Get Involved
-                </h5>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      href="/donate"
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      Donate
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/contact"
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      Contact
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/aid"
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      Family Aid
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/volunteer"
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      Volunteer
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/camp"
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      Camp
-                    </Link>
-                  </li>
-                </ul>
-              </div>
               {/* About & Events */}
               <div>
                 <h5 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
@@ -219,36 +171,6 @@ export default function Footer() {
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="/documents/990-2022-kccf.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      2022 - 990
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/documents/990-2023-kccf.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      2023 - 990
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/documents/990-2024-kccf.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      2024 - 990
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="/documents/irs-determination.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -267,36 +189,100 @@ export default function Footer() {
                       W9
                     </a>
                   </li>
+                  <li>
+                    <a
+                      href="/documents/990-2024-kccf.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      2024 - 990
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/documents/990-2023-kccf.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      2023 - 990
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              {/* Get Involved */}
+              <div>
+                <h5 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
+                  Get Involved
+                </h5>
+                <ul className="space-y-2">
+                  <li>
+                    <Link
+                      href="/donate"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Donate
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/aid"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Family Aid
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/volunteer"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Volunteer
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/camp"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Camp
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Awards Section */}
+        <div className="mt-8 pt-8 border-t border-gray-700 grid grid-cols-1 md:grid-cols-10 gap-8 items-start">
 
           {/* Newsletter Signup */}
-          <div className="md:col-span-full xl:col-span-2 md:mx-auto md:justify-center md:align-center md:text-center md:max-w-md">
-            <h4 className="text-lg font-semibold mb-4 text-white">
-              Get the Latest Nonprofit News in Our Newsletter
-            </h4>
-            <p className="text-gray-300 mb-6 text-sm">
-              Stay updated with our latest programs, events, and the impact
-              we're making together.
-            </p>
-
+          <div className="sm:flex sm:flex-col sm:items-center md:col-span-full lg:col-span-4 xl:col-span-4 md:mx-auto md:justify-center md:align-center md:text-center md:max-w-md">
+            <h3 className="sm:w-[80%] md:w-full xl:w-[75%] text-xl font-bold mb-6 text-white text-center">
+              Stay updated with our latest programs, events, 
+              and the impact we're making together.
+            </h3>
             <FormButton
               formType="newsletter-signup"
               variant="primary"
               size="md"
               fullWidth={true}
-              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30"
+              className="sm:w-[60%] md:w-full xl:w-[75%] bg-white/20 hover:bg-white/30 sm:text-lg backdrop-blur-sm text-white border border-white/30"
             >
               Subscribe to Newsletter
             </FormButton>
           </div>
-        </div>
-
-        {/* Awards Section */}
-        <div className="mt-8 pt-8 border-t border-gray-700">
-          <div className="text-center">
+          <div className="pt-8 lg:pt-0 text-center md:col-span-full lg:col-span-6 md:w-full xl:col-span-6 md:justify-center md:align-center md:text-center border-t lg:border-t-0 border-gray-700">
             <h4 className="text-lg font-semibold mb-4 md:mb-6 text-white">
               Recognition & Awards
             </h4>
