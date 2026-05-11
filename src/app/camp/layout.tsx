@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: "Corporate Team-Building Camp Volunteering - Children's Cancer Support | KCCF",
-  description: "Corporate volunteering opportunities at our therapeutic camp for children with cancer. Employee engagement through camp counselor programs and team-building volunteer experiences in a meaningful cause.",
-  keywords: ["corporate team-building", "camp volunteering", "employee engagement programs", "corporate social responsibility", "CSR", "therapeutic camp", "camp counselor volunteering", "team-building volunteer events", "corporate volunteer opportunities", "camp", "summer camp", "children with cancer", "camp counselor", "camper registration", "cancer support", "family camp"],
+  title: "KCCF Camp - International Summer Camp for Children with Cancer & Siblings | KCCF",
+  description: "An international summer camp experience in Azerbaijan for children diagnosed with cancer and their siblings. KCCF Healing Camp fosters confidence, joy, and emotional healing — giving kids the chance to simply be kids again.",
+  keywords: ["KCCF camp", "KCCF Healing Camp", "summer camp Azerbaijan", "children with cancer", "siblings of cancer patients", "pediatric cancer camp", "cancer support", "healing camp", "camp counselor volunteering", "corporate volunteering", "CSR", "therapeutic camp", "employee engagement", "international camp", "Azerbaijan"],
   openGraph: {
-    title: "Corporate Team-Building Camp Volunteering - Children's Cancer Support | KCCF",
-    description: "Corporate volunteering opportunities at our therapeutic camp for children with cancer. Employee engagement through camp counselor programs and team-building volunteer experiences in a meaningful cause.",
+    title: "KCCF Camp - International Summer Camp for Children with Cancer & Siblings | KCCF",
+    description: "An international summer camp experience in Azerbaijan for children diagnosed with cancer and their siblings. KCCF Healing Camp fosters confidence, joy, and emotional healing — giving kids the chance to simply be kids again.",
     type: "website",
     url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/camp` : "https://thekccf.org/camp",
   },
