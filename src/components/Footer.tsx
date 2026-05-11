@@ -138,12 +138,13 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/our-story/#bookelanaformsection"
-                      className="text-gray-300 hover:text-white transition-colors"
+                    <button
+                      type="button"
+                      onClick={() => openModal('book-elana')}
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
                     >
                       Book Elana, Founder
-                    </Link>
+                    </button>
                   </li>
                   <li>
                     <Link
