@@ -2,17 +2,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCookieConsent } from '@/contexts/CookieConsentContext';
+import { useFormModal } from '@/contexts/FormModalContext';
 import FormButton from '@/components/FormButton';
 
 export default function Footer() {
   const { openPreferences } = useCookieConsent();
+  const { openModal } = useFormModal();
 
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white transition-colors duration-200 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-6 xl:grid-cols-8 gap-8 items-start">
+        {/* Row 1: Contact Info, Quick Links, Newsletter Signup */}
+        <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-12 xl:grid-cols-10 gap-8 items-start">
           {/* Contact Info */}
-          <div className="md:col-span-2 xl:col-span-2">
+          <div className="sm:col-span-2 md:col-span-2 lg:col-span-3 xl:col-span-2 sm:order-2 lg:order-1">
             <h3 className="text-xl font-bold mb-4 text-white">
               Koenig Childhood Cancer Foundation
             </h3>
@@ -72,7 +75,7 @@ export default function Footer() {
                   href="https://x.com/TheKccf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors"
                   aria-label="Follow us on X (Twitter)"
                 >
                   <svg
@@ -118,7 +121,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="sm:col-span-full md:col-span-4 xl:col-span-6 xl:ml-12">
+          <div className="sm:col-span-full md:col-span-5 lg:col-span-9 xl:col-span-5 sm:order-1 lg:order-2">
             <h4 className="text-lg font-semibold mb-4 text-white">
               Quick Links
             </h4>
@@ -132,7 +135,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/crazy-socks"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Sponsor Gift Bag Event
                     </Link>
@@ -149,7 +152,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/our-story"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       KCCF Story
                     </Link>
@@ -157,7 +160,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/kccf-family"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       KCCF Family
                     </Link>
@@ -175,7 +178,7 @@ export default function Footer() {
                       href="/documents/irs-determination.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       IRS Determination
                     </a>
@@ -185,7 +188,7 @@ export default function Footer() {
                       href="/documents/w9-kccf.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       W9
                     </a>
@@ -195,7 +198,7 @@ export default function Footer() {
                       href="/documents/990-2024-kccf.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       2024 - 990
                     </a>
@@ -205,7 +208,7 @@ export default function Footer() {
                       href="/documents/990-2023-kccf.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       2023 - 990
                     </a>
@@ -221,7 +224,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/donate"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Donate
                     </Link>
@@ -229,7 +232,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/contact"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Contact
                     </Link>
@@ -237,7 +240,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/aid"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Family Aid
                     </Link>
@@ -245,7 +248,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/volunteer"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Volunteer
                     </Link>
@@ -253,7 +256,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/camp"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Camp
                     </Link>
@@ -262,13 +265,10 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Awards Section */}
-        <div className="mt-8 pt-8 border-t border-gray-700 grid grid-cols-1 md:grid-cols-10 gap-8 items-start">
           {/* Newsletter Signup */}
-          <div className="sm:flex sm:flex-col sm:items-center md:col-span-full lg:col-span-4 xl:col-span-4 md:mx-auto md:justify-center md:align-center md:text-center md:max-w-md">
-            <h3 className="sm:w-[80%] md:w-full xl:w-[75%] text-xl font-bold mb-6 text-white text-center">
+          <div className="sm:col-span-3 md:col-span-3 lg:col-span-full xl:col-span-3 sm:order-3 flex flex-col items-center max-sm:max-w-xs max-sm:mx-auto lg:w-2/5 lg:mx-auto xl:w-full xl:mx-0 xl:self-center">
+            <h3 className="text-xl font-bold mb-6 sm:mb-7 xl:mb-8 text-white text-center">
               Stay connected to our programs, events, and impact!
             </h3>
             <FormButton
@@ -276,79 +276,81 @@ export default function Footer() {
               variant="primary"
               size="md"
               fullWidth={true}
-              className="sm:w-[60%] md:w-full xl:w-[75%] bg-white/20 hover:bg-white/30 sm:text-lg backdrop-blur-sm text-white border border-white/30"
+              className="w-full sm:w-[80%] xl:w-full bg-white/20 hover:bg-white/30 sm:text-lg backdrop-blur-sm text-white border border-white/30"
             >
               Subscribe to Newsletter
             </FormButton>
           </div>
-          <div className="pt-8 lg:pt-0 text-center md:col-span-full lg:col-span-6 md:w-full xl:col-span-6 md:justify-center md:align-center md:text-center border-t lg:border-t-0 border-gray-700">
-            <h4 className="text-lg font-semibold mb-4 md:mb-6 text-white">
-              Recognition & Awards
-            </h4>
-            <div className="flex flex-col sm:flex-row items-end justify-center gap-4 sm:gap-6 md:gap-8">
-              <div className="flex flex-col items-center w-full sm:w-auto max-w-[200px] mx-auto sm:mx-0">
-                <a
-                  href="https://www.guidestar.org/profile/84-4892279"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity flex flex-col items-center"
-                >
-                  <div className="h-[80px] sm:h-[100px] flex items-center justify-center mb-2">
-                    <Image
-                      src="/candid seal of transparency.png"
-                      alt="Candid seal of transparency logo"
-                      width={80}
-                      height={80}
-                      className="sm:w-[100px] sm:h-[100px]"
-                    />
-                  </div>
-                  <p className="text-xs sm:text-sm text-gray-300 text-center h-8 sm:h-10 flex items-center justify-center px-2">
-                    Candid Platinum Transparency 2025
-                  </p>
-                </a>
-              </div>
-              <div className="flex flex-col items-center w-full sm:w-auto max-w-[200px] mx-auto sm:mx-0">
-                <a
-                  href="https://greatnonprofits.org/org/koenig-childhood-cancer-foundation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity flex flex-col items-center"
-                >
-                  <div className="h-[80px] sm:h-[100px] flex items-center justify-center mb-2">
-                    <Image
-                      src="/images/2025-top-rated-awards-badge-embed.png"
-                      alt="GreatNonprofits Top-Rated Award 2025"
-                      width={110}
-                      height={80}
-                      className="sm:w-[140px] sm:h-[100px]"
-                    />
-                  </div>
-                  <p className="text-xs sm:text-sm text-gray-300 text-center h-8 sm:h-10 flex items-center justify-center px-2">
-                    GreatNonprofits Top-Rated 2025
-                  </p>
-                </a>
-              </div>
-              <div className="flex flex-col items-center w-full sm:w-auto max-w-[200px] mx-auto sm:mx-0">
-                <a
-                  href="https://www.charitynavigator.org/ein/844892279"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity flex flex-col items-center"
-                >
-                  <div className="h-[80px] sm:h-[100px] flex items-center justify-center mb-2">
-                    <Image
-                      src="/images/4star-ratingbadge-2025.png"
-                      alt="Charity Navigator 4-Star Rating Badge 2025"
-                      width={80}
-                      height={80}
-                      className="sm:w-[100px] sm:h-[100px]"
-                    />
-                  </div>
-                  <p className="text-xs sm:text-sm text-gray-300 text-center h-8 sm:h-10 flex items-center justify-center px-2">
-                    Charity Navigator 4-Star Rating
-                  </p>
-                </a>
-              </div>
+        </div>
+
+        {/* Awards Section - Full Width */}
+        <div className="mt-8 pt-8 border-t border-gray-700 text-center">
+          <h4 className="text-lg font-semibold mb-4 md:mb-6 text-white">
+            Recognition & Awards
+          </h4>
+          <div className="flex flex-col sm:flex-row items-end justify-center gap-4 sm:gap-6 md:gap-8">
+            <div className="flex flex-col items-center w-full sm:w-auto max-w-50 mx-auto sm:mx-0">
+              <a
+                href="https://www.guidestar.org/profile/84-4892279"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity flex flex-col items-center"
+              >
+                <div className="h-20 sm:h-25 flex items-center justify-center mb-2">
+                  <Image
+                    src="/candid seal of transparency.png"
+                    alt="Candid seal of transparency logo"
+                    width={80}
+                    height={80}
+                    className="sm:w-25 sm:h-25"
+                  />
+                </div>
+                <p className="text-xs sm:text-sm text-gray-300 text-center h-8 sm:h-10 flex items-center justify-center px-2">
+                  Candid Platinum Transparency 2025
+                </p>
+              </a>
+            </div>
+            <div className="flex flex-col items-center w-full sm:w-auto max-w-50 mx-auto sm:mx-0">
+              <a
+                href="https://greatnonprofits.org/org/koenig-childhood-cancer-foundation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity flex flex-col items-center"
+              >
+                <div className="h-20 sm:h-25 flex items-center justify-center mb-2">
+                  <Image
+                    src="/images/2025-top-rated-awards-badge-embed.png"
+                    alt="GreatNonprofits Top-Rated Award 2025"
+                    width={110}
+                    height={80}
+                    className="sm:w-35 sm:h-25"
+                  />
+                </div>
+                <p className="text-xs sm:text-sm text-gray-300 text-center h-8 sm:h-10 flex items-center justify-center px-2">
+                  GreatNonprofits Top-Rated 2025
+                </p>
+              </a>
+            </div>
+            <div className="flex flex-col items-center w-full sm:w-auto max-w-50 mx-auto sm:mx-0">
+              <a
+                href="https://www.charitynavigator.org/ein/844892279"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity flex flex-col items-center"
+              >
+                <div className="h-20 sm:h-25 flex items-center justify-center mb-2">
+                  <Image
+                    src="/images/4star-ratingbadge-2025.png"
+                    alt="Charity Navigator 4-Star Rating Badge 2025"
+                    width={80}
+                    height={80}
+                    className="sm:w-25 sm:h-25"
+                  />
+                </div>
+                <p className="text-xs sm:text-sm text-gray-300 text-center h-8 sm:h-10 flex items-center justify-center px-2">
+                  Charity Navigator 4-Star Rating
+                </p>
+              </a>
             </div>
           </div>
         </div>
