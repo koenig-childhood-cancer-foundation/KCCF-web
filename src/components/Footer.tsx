@@ -165,6 +165,14 @@ export default function Footer() {
                       KCCF Family
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/fundraisers"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Fundraisers
+                    </Link>
+                  </li>
                 </ul>
               </div>
               {/* Accountability */}
