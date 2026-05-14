@@ -203,6 +203,16 @@ export default function Footer() {
                   </li>
                   <li>
                     <a
+                      href="/documents/990-2025-kccf.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      2025 - 990
+                    </a>
+                  </li>
+                  <li>
+                    <a
                       href="/documents/990-2024-kccf.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
