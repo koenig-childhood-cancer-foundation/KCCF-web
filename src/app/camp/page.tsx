@@ -146,70 +146,70 @@ export default function Camp() {
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-violet-700 dark:text-saffron-600 mb-12">
-            Camp Details
+            What We Provide to
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-4">
-                For Campers
+                Campers
               </h3>
               <ul className="space-y-3 text-violet-600 dark:text-white">
                 <li className="flex items-start">
                   <span className="text-orange-500 dark:text-orange-400 mr-2">
                     •
                   </span>
-                  No cost to families
+                  100% cost-free for families battling cancer
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange-500 dark:text-orange-400 mr-2">
                     •
                   </span>
-                  Medical staff available 24/7
+                  24/7 on-site medical and safety staff
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange-500 dark:text-orange-400 mr-2">
                     •
                   </span>
-                  Activities adapted for all abilities
+                  All dietary requirements are accommodated
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange-500 dark:text-orange-400 mr-2">
                     •
                   </span>
-                  All dietary options available
+                  All activities are adapted for all abilities
                 </li>
               </ul>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-bold text-violet-700 dark:text-saffron-600 mb-4">
-                For Counselors
+                Volunteers
               </h3>
               <ul className="space-y-3 text-violet-600 dark:text-white">
                 <li className="flex items-start">
                   <span className="text-saffron-500 dark:text-saffron-400 mr-2">
                     •
                   </span>
-                  Training and orientation provided
+                  In-camp lodging, meals, and transportation
                 </li>
                 <li className="flex items-start">
                   <span className="text-saffron-500 dark:text-saffron-400 mr-2">
                     •
                   </span>
-                  Room and board during camp
+                  Comprehensive training and orientation
                 </li>
                 <li className="flex items-start">
                   <span className="text-saffron-500 dark:text-saffron-400 mr-2">
                     •
                   </span>
-                  Valuable experience and references
+                  Opportunity to join an international team
                 </li>
                 <li className="flex items-start">
                   <span className="text-saffron-500 dark:text-saffron-400 mr-2">
                     •
                   </span>
-                  Make a difference in children's lives
+                  Opportunity to make a direct mission impact
                 </li>
               </ul>
             </div>
