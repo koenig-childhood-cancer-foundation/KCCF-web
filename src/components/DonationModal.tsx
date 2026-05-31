@@ -1,11 +1,15 @@
 "use client"
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useMemo } from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useDonationModal } from '@/contexts/DonationModalContext'
+import { useCookieConsent } from '@/contexts/CookieConsentContext'
+import { getStoredGclid } from '@/lib/gclid'
 import Spinner from '@/components/Spinner'
+
+const ZEFFY_FORM_URL = 'https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649'
 
 type DonationProvider = 'zeffy' | 'givelively'
 
@@ -79,9 +83,24 @@ function GiveLivelyWidget() {
 
 export default function DonationModal() {
   const { isOpen, closeModal, campaign } = useDonationModal()
+  const { consent } = useCookieConsent()
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
   const [iframeLoaded, setIframeLoaded] = useState(false)
   const [isProviderSectionOpen, setIsProviderSectionOpen] = useState(true)
+
+  // Build the Zeffy form URL, carrying the Google Ads gclid (when present and
+  // marketing consent is granted) so the donation can be tied back to the ad
+  // click. Zeffy round-trips UTM params into the donation record + webhook
+  // payload, so the gclid rides along in utm_content; the Zap/automation reads
+  // utm_content back out and sends it to Google Ads offline conversion import.
+  // Recomputed when the modal opens so a gclid captured after first render is
+  // still picked up. Verify with a $1 test donation before relying on it.
+  const zeffyFormUrl = useMemo(() => {
+    if (!isOpen || !consent.marketing) return ZEFFY_FORM_URL
+    const gclid = getStoredGclid()
+    if (!gclid) return ZEFFY_FORM_URL
+    return `${ZEFFY_FORM_URL}?utm_content=${encodeURIComponent(gclid)}`
+  }, [isOpen, consent.marketing])
 
   // Reset iframeLoaded when modal opens or provider changes
   useEffect(() => {
@@ -295,7 +314,7 @@ export default function DonationModal() {
                 )}
                 <iframe
                   className={`block w-full h-full max-w-full border-0 ${!iframeLoaded ? 'opacity-0' : 'opacity-100'}`}
-                  src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
+                  src={zeffyFormUrl}
                   title="Zeffy donation form"
                   scrolling="yes"
                   allow="payment"

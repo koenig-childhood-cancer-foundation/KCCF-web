@@ -14,6 +14,7 @@ import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
 import ConsentPreferencesModal from "@/components/ConsentPreferencesModal";
 import SubmissionModal from "@/components/SubmissionModal";
 import GoogleTagManager from "@/components/GoogleTagManager";
+import GclidCapture from "@/components/GclidCapture";
 import { Suspense, type ReactNode } from "react";
 import { SearchModalProvider } from "@/contexts/SearchModalContext";
 import SearchModal from "@/components/SearchModal";
@@ -63,6 +64,7 @@ export default function RootLayout({
         <ThemeProvider>
           <CookieConsentProvider>
             <GoogleTagManager />
+            <GclidCapture />
             <SearchModalProvider>
               <DonationModalProvider>
                 <FormModalProvider>
