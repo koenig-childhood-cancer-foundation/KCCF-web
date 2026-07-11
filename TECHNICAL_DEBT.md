@@ -39,7 +39,7 @@ KCCF-web is **actively maintained on content and product**, but its **infrastruc
 
 - **Infrastructure adoption vs. plan:** ~0%
 - **Automated tests in KCCF-web:** 0 (verified)
-- **CI jobs in KCCF-web:** build/deploy + CodeQL only (no format, lint-as-gate is present, no tests, no audit, no perf)
+- **CI in KCCF-web:** a `ci` job (lint + explicit `tsc --noEmit` type-check + build) with a separate `deploy` job gated on it, plus CodeQL — but no format check, no tests, no npm audit, no performance checks
 - **Config/quality files adopted:** 0 of ~10
 
 ---
@@ -62,7 +62,7 @@ Legend: ✅ done · 🟡 partial · ❌ not started
 | 3.1 | Husky pre-commit hooks | ✅ `.husky/`, `prepare` script | ❌ | ❌ |
 | 3.2 | Commitlint | ✅ `commitlint.config.js` | ❌ | ❌ |
 | | **CI/CD** | | | |
-| 4.1 | Split CI vs. deploy workflows | ✅ `ci.yml` + `deploy.yml` | 🟡 single `nextjs.yml` (build+deploy combined) | ❌ |
+| 4.1 | Split CI vs. deploy workflows | ✅ `ci.yml` + `deploy.yml` | 🟡 single `nextjs.yml`, but already 2 jobs (`ci` + `deploy` gated on it) | 🟡 |
 | 4.2 | Format check in CI | ✅ `npm run format:check` step | ❌ | ❌ |
 | 4.3 | Lint gate in CI | ✅ | ✅ (lint runs in `nextjs.yml`) | ✅ |
 | 4.4 | Unit tests in CI | ✅ `npm test` (CI=true) | ❌ | ❌ |
@@ -84,7 +84,7 @@ Legend: ✅ done · 🟡 partial · ❌ not started
 | 6.5 | Config-drift check | ✅ `drift-check.yml`, `check:drift` | ❌ | ❌ |
 | 6.6 | Phantom-revert guard | ✅ `phantom-revert-guard.yml` | ❌ | ❌ |
 
-**Score:** KCCF-web meets **2 of 27** tracked infrastructure capabilities (CodeQL, lint-in-CI).
+**Score:** KCCF-web meets **2 of 27** tracked infrastructure capabilities (CodeQL, lint-in-CI), with **4.1 partially met** (CI/deploy already split into two jobs).
 
 ---
 
@@ -95,7 +95,7 @@ Legend: ✅ done · 🟡 partial · ❌ not started
 **`package.json` devDependencies:** `@eslint/eslintrc`, `@tailwindcss/postcss`, `@types/*`, `eslint`, `eslint-config-next`, `tailwindcss`, `typescript`. No test, formatting, hook, or commit-lint tooling.
 
 **`.github/workflows/` (2 files):**
-- `nextjs.yml` — lint → type-check (via build) → build → deploy to GitHub Pages (single combined workflow)
+- `nextjs.yml` — one workflow file, two jobs: a `ci` job (lint → `npx tsc --noEmit` → build) and a `deploy` job (GitHub Pages, `needs: ci`, main only)
 - `codeql.yml` — CodeQL security scanning
 
 **Quality/config files present:** none of `.prettierrc*`, `.editorconfig`, `.nvmrc`, `jest.config.js`, `playwright.config.ts`, `commitlint.config.js`, `.husky/`, `dependabot.yml`, `lighthouserc.json`, `.linkinatorrc.json`.
@@ -171,10 +171,10 @@ Snapshot of the reference template as of July 2026 — this is the moving target
 
 ## Phase 4: CI/CD Pipeline Restructure
 
-**Priority:** 🔴 High · **Impact:** Real quality gate before deploy; today only lint + build gate deploys.
+**Priority:** 🔴 High · **Impact:** Real quality gate before deploy; today only lint + type-check + build gate deploys.
 
-### 4.1 Split CI and Deploy Workflows
-- **Current:** Single `nextjs.yml` combines build + deploy.
+### 4.1 Split CI and Deploy Workflows — 🟡 partially done
+- **Current:** `nextjs.yml` already separates a `ci` job (lint, type-check, build) from a `deploy` job (`needs: ci`, main-only). Remaining gap vs. the template: splitting into distinct workflow *files*.
 - **Target:** `ci.yml` (checks, runs on all PRs, no deploy) + `deploy.yml` (deploy on `main` after CI passes).
 - **Reference:** FFC `ci.yml`, `deploy.yml`.
 
