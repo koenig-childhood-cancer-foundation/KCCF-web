@@ -1,47 +1,48 @@
 # Copilot Instructions: KCCF-web
 
-Free For Charity nonprofit website. Next.js static site on GitHub Pages.
+Free For Charity nonprofit website. Next.js 15 (App Router) + React 19 static site on GitHub Pages (custom domain **thekccf.org**).
+
+> These instructions describe the repo **as it is today**. Some FFC-template items (Prettier, Playwright E2E, jest-axe, a full test/format CI gate) are the intended target but **not yet adopted here** — they are marked *Planned*. See `AGENTS.md` and `TECHNICAL_DEBT.md` / issue #412.
 
 ## Workflow
 
-Issue -> branch -> PR -> merge queue. No direct commits to main.
+Issue -> branch -> PR -> merge. No direct commits to `main`. Squash merges are disabled (merge commit only); resolve review conversations before merge.
 
-## Pre-Push Checks (in order)
+## Pre-Push Checks (commands that exist today, in order)
 
-1. `npm run format`
-2. `npm run lint`
-3. `npm test`
-4. `npm run build`
-5. `npm run test:e2e`
+1. `npm run lint`
+2. `npm test`
+3. `npm run build`
+
+*Planned (not yet in `package.json`):* `npm run format` (Prettier), `npm run test:e2e` (Playwright).
 
 ## Architecture
 
-- **Framework:** Next.js App Router, TypeScript, Tailwind CSS v4
-- **Output:** Static export (`output: 'export'` in next.config.ts)
-- **Pages:** `src/app/` (App Router conventions)
+- **Framework:** Next.js 15 App Router, React 19, TypeScript (strict), Tailwind CSS v4
+- **Output:** Static export (`output: 'export'` in `next.config.ts`, images `unoptimized`)
+- **Pages:** `src/app/` (App Router; per-route `layout.tsx` for metadata)
 - **Components:** `src/components/`
-- **Content:** `src/data/` (.ts modules and JSON data files)
-- **Utilities:** `src/lib/`
+- **State:** `src/contexts/` (Theme, CookieConsent, FormModal, SearchModal, Slideshow)
+- **Content/data:** `src/data/` (.ts modules), `src/constants/`
+- **Tests:** `__tests__/` (Jest + React Testing Library)
+- No `src/lib/` directory exists.
 
 ## Conventions
 
-- Route folders: **kebab-case only** (`about-us/`, not `aboutUs/`)
-- Asset paths: use `assetPath()` from `src/lib/assetPath.ts` for all images
-- `NEXT_PUBLIC_BASE_PATH` controls basePath for GitHub Pages subpath
+- Route folders: **kebab-case only** (`our-story/`, not `ourStory/`)
+- Assets: reference images root-relative (e.g. `/images/foo.webp`) via `next/image`; there is **no** `assetPath()` helper. `next.config.ts` handles `basePath`/`assetPrefix`.
+- `NEXT_PUBLIC_BASE_PATH` controls `basePath` (empty for the custom domain)
 - Conventional Commits: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `test:`, `chore:`
 
-## CI Enforcement
+## CI Enforcement (actual)
 
-- Prettier `format:check`
-- ESLint (no errors)
-- Jest (all tests pass)
-- `npm run build` (static export succeeds)
-- Playwright E2E
-- CodeQL (static analysis, separate workflow)
+`.github/workflows/nextjs.yml` — `ci` job: ESLint (`npm run lint`) -> type-check (`npx tsc --noEmit`) -> `npm run build`; `deploy` job on `main`. `codeql.yml` runs CodeQL separately.
+
+*Planned / desired (not yet enforced):* Prettier `format:check`, `npm test` (unit), Playwright E2E.
 
 ## Known Constraints
 
 - Static export: no API routes, no middleware, no ISR
-- `<img>` with `assetPath()` is correct; `next/image` has static export limitations
+- `next/image` **works here** with `unoptimized: true` and is used throughout (do not assume static export forbids it)
 - Google Fonts may fail on restricted networks (graceful fallback to system fonts)
 - Never expose secrets in code; use `${{ secrets.* }}` in workflows

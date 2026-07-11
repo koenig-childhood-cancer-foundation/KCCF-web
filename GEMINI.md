@@ -4,22 +4,22 @@ Hey Gemini! Welcome to KCCF-web.
 
 **Project:** KCCF-web -- a Free For Charity nonprofit website
 
-Free For Charity provides free, professionally built websites for 501(c)(3) nonprofit organizations. This repo is one of ~25 charity sites in the FFC family.
+Free For Charity provides free, professionally built websites for 501(c)(3) nonprofit organizations. This repo is one of the charity sites in the FFC family.
 
-See **AGENTS.md** for the complete project reference. This file gives you the practical shortcuts you need to be productive fast.
+See **AGENTS.md** for the complete project reference (including the "Current vs. desired state" note). This file gives you the practical shortcuts. Describe and use the repo **as it is today**.
 
 ---
 
 ## Quick Context
 
-| What      | Detail                                                    |
-| --------- | --------------------------------------------------------- |
-| Framework | Next.js with App Router (see package.json)                |
-| Language  | TypeScript (strict)                                       |
-| Styling   | Tailwind CSS v4 (CSS-based config, no config file)        |
-| Output    | Static export (`output: 'export'`)                        |
-| Hosting   | GitHub Pages (custom domain + subpath)                    |
-| Tests     | Jest + Testing Library, Playwright (E2E), jest-axe (a11y) |
+| What      | Detail                                                           |
+| --------- | ---------------------------------------------------------------- |
+| Framework | Next.js 15 (App Router), React 19                                |
+| Language  | TypeScript (strict)                                              |
+| Styling   | Tailwind CSS v4 (CSS-based config, no config file)               |
+| Output    | Static export (`output: 'export'`, images `unoptimized`)        |
+| Hosting   | GitHub Pages, custom domain **thekccf.org**                     |
+| Tests     | Jest + React Testing Library. **Planned:** Playwright (E2E), jest-axe (a11y) — issue #412 |
 
 The site is **fully static**. No server-side rendering, no API routes, no middleware. Every page must be renderable at build time.
 
@@ -27,14 +27,15 @@ The site is **fully static**. No server-side rendering, no API routes, no middle
 
 ## Commands You Will Use
 
+Only these exist in `package.json` today. `format` and `test:e2e` are **planned**, not present — do not run them.
+
 ```bash
-npm install          # Install dependencies (~17s)
-npm run dev          # Start local dev server (~1s startup)
-npm run format       # Auto-fix formatting with Prettier
+npm install          # Install dependencies (~20-35s)
+npm run dev          # Start local dev server (Turbopack)
 npm run lint         # Run ESLint checks
-npm test             # Run Jest unit tests
-npm run build        # Build static export (~30s)
-npm run test:e2e     # Run Playwright E2E tests
+npm test             # Run Jest unit/component tests
+npm run build        # Build static export to out/ (~30-60s)
+npm run preview      # Serve the built out/ locally
 ```
 
 **Important:** `npm run build` can take 30+ seconds. Do not interrupt it.
@@ -45,14 +46,16 @@ npm run test:e2e     # Run Playwright E2E tests
 
 ```
 src/
-  app/            --> Pages and routes (App Router)
+  app/            --> Pages and routes (App Router), kebab-case folders
   components/     --> Reusable UI components
-  data/           --> Content modules (.ts) and JSON data files
-  lib/            --> Utilities (including assetPath helper)
-public/           --> Static assets (Images/, Svgs/, fonts)
+  contexts/       --> React contexts (Theme, CookieConsent, FormModal, SearchModal, Slideshow)
+  data/           --> Data modules (.ts), e.g. searchData.ts
+  constants/      --> Constant values, e.g. impactStats.ts
+__tests__/        --> Jest + React Testing Library tests
+public/           --> Static assets: images/, videos/, documents/, favicons, logos, CNAME
 ```
 
-**Route folders use kebab-case.** This is required for SEO. Use `about-us/`, not `aboutUs/`.
+There is **no** `src/lib/` and **no `assetPath()` helper** here. **Route folders use kebab-case** (SEO): use `our-story/`, not `ourStory/`.
 
 ---
 
@@ -60,7 +63,7 @@ public/           --> Static assets (Images/, Svgs/, fonts)
 
 ### Adding a New Page
 
-1. Create a new folder in `src/app/` using kebab-case:
+1. Create a kebab-case folder in `src/app/`:
    ```
    src/app/volunteer-signup/page.tsx
    ```
@@ -74,51 +77,40 @@ public/           --> Static assets (Images/, Svgs/, fonts)
      )
    }
    ```
-3. Add any images to `public/Images/` and reference them with `assetPath()`:
+3. Put images in `public/images/` and reference them root-relative via `next/image`:
    ```tsx
-   import { assetPath } from '@/lib/assetPath'
-   ;<img src={assetPath('/Images/volunteers.jpg')} alt="Volunteers" />
+   import Image from 'next/image'
+   ;<Image src="/images/volunteers.jpg" alt="Volunteers" width={800} height={600} />
    ```
-4. Run the pre-commit checklist: `npm run format && npm run lint && npm test && npm run build`
+   `next.config.ts` handles `basePath`/`assetPrefix` automatically — never hardcode a base path or domain.
+4. Run the pre-commit checklist: `npm run lint && npm test && npm run build`
 
 ### Updating Site Content
 
-Most text content lives in `src/data/` as `.ts` modules or `.json` files in subdirectories. To update:
-
-1. Find the relevant file in `src/data/`
-2. Edit the text values (keep the data structure intact)
-3. Run `npm run build` to verify nothing breaks
+Page copy lives in the route's `page.tsx` (and `src/app/HomeContent.tsx` for the home page); shared data lives in `src/data/`. Edit the values, keep the structure intact, then run `npm run build` to verify.
 
 ### Fixing Lint Errors
 
-1. Run `npm run lint` to see the errors
-2. Most common fixes:
-   - Missing `alt` attributes on images
-   - Unused imports (remove them)
-   - `any` types (add proper TypeScript types)
-3. Run `npm run format` after fixing to clean up formatting
-4. Re-run `npm run lint` to confirm all errors are resolved
+1. Run `npm run lint` to see errors.
+2. Common fixes: missing `alt` attributes, unused imports, `any` types.
+3. Re-run `npm run lint` to confirm.
 
 ### Creating a Pull Request
 
 1. Create a branch: `git checkout -b fix/descriptive-name`
-2. Make your changes and commit using Conventional Commits: `git commit -m "fix: resolve broken link on about page"`
-3. Push and open a PR that references the issue: `Fixes #42`
-4. All CI checks must pass before merging
+2. Commit with Conventional Commits: `git commit -m "fix: resolve broken link on about page"`
+3. Push and open a PR referencing the issue: `Fixes #42`
+4. CI (lint → type-check → build) must pass; resolve review conversations before merge.
 
 ---
 
-## Asset Path Helper
+## Assets & Paths
 
-The site deploys to `https://freeforcharity.github.io/KCCF-web/` (and your custom domain if configured). The `assetPath()` function from `src/lib/assetPath.ts` handles this automatically.
+The site deploys to GitHub Pages on the custom domain **thekccf.org**. `basePath` comes from `NEXT_PUBLIC_BASE_PATH` in `next.config.ts` (empty for the custom domain).
 
-```tsx
-// Always use assetPath() for images and static assets
-import { assetPath } from '@/lib/assetPath'
-;<img src={assetPath('/Images/logo.png')} alt="Logo" />
-```
-
-Never hardcode absolute paths to assets. They will break on one of the two deployment targets.
+- Reference assets with **root-relative paths** (e.g. `/images/logo.png`) via `next/image`. Next applies the base path automatically.
+- `next/image` **works here** with `unoptimized: true` and is used throughout — do not assume static export forbids it.
+- Never hardcode absolute domain paths to assets.
 
 ---
 
@@ -126,33 +118,25 @@ Never hardcode absolute paths to assets. They will break on one of the two deplo
 
 ### Build fails with "Page ... is missing a component export"
 
-Every `page.tsx` file must have a `default` export. Check that you are using `export default function` (not just `export function`).
+Every `page.tsx` must have a `default` export. Use `export default function`.
 
 ### Build fails with "Dynamic server usage"
 
-You are using a server-only feature (cookies, headers, searchParams on server components) in a static export. Static sites cannot use these. Refactor to use client components with `'use client'` if you need browser APIs, or remove the server-only code.
-
-### ESLint warns about `<img>` tags
-
-This is expected. For static exports, `<img>` with `assetPath()` is the correct approach. The `next/image` component does not work with `output: 'export'` in all cases.
+You are using a server-only feature (cookies, headers, dynamic `searchParams`) in a static export. Refactor to a client component with `'use client'` for browser APIs, or remove the server-only code.
 
 ### Google Fonts not loading
 
-Google Fonts require network access. On restricted networks, the site falls back to system fonts. This is by design and not a bug.
-
-### Tests fail after content changes
-
-If you changed text in `src/data/`, some snapshot tests or text-matching tests may need updating. Check the test failure output and update expected values to match your changes.
+Google Fonts require network access; on restricted networks the site falls back to system fonts. By design.
 
 ### `npm run build` hangs or times out
 
-The build genuinely takes 30+ seconds. Do not kill it. If it exceeds 2 minutes, check for infinite loops in your code or recursive component rendering.
+The build genuinely takes 30+ seconds. Do not kill it. If it exceeds ~2 minutes, check for infinite loops or recursive rendering.
 
 ---
 
 ## Security Reminders
 
-- Never put API tokens or secrets in code or comments
-- Use `${{ secrets.SECRET_NAME }}` in GitHub Actions workflows
-- Use `.env` files for local secrets (excluded from git)
-- See AGENTS.md for the full security policy
+- Never put API tokens or secrets in code or comments.
+- Use `${{ secrets.SECRET_NAME }}` in GitHub Actions workflows.
+- Use `.env.local` for local secrets (git-ignored).
+- See AGENTS.md for the full security policy.
