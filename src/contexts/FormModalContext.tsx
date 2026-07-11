@@ -21,13 +21,13 @@ interface FormConfig {
 
 export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   'camp-camper': {
-    title: 'Thank you for registering your child for camp!',
+    title: 'Thank you for your interest in the KCCF Summer Camp 2026.',
     subtitle: 'The form may take a few seconds to load.',
-    src: 'https://forms.monday.com/forms/embed/41086441b740b6e179cbde8b574bd794?r=use1',
+    src: 'https://forms.monday.com/forms/embed/6d7260392d585e6fd7cb1b13795638ab?r=use1',
     height: '1550px'
   },
   'camp-counselor': {
-    title: 'Thank you for your interest in becoming a camp counselor!',
+    title: 'Thank you for your interest in becoming a camp volunteer!',
     subtitle: 'The form may take a few seconds to load.',
     src: 'https://forms.monday.com/forms/embed/87920448930e50b7a0554e414662d32b?r=use1',
     height: '1900px'

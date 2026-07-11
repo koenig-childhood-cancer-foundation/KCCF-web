@@ -29,7 +29,7 @@ export const searchData: SearchItem[] = [
     category: 'About'
   },
   {
-    title: 'Family Assistance',
+    title: 'Family Aid',
     description: 'Financial and emotional support for families fighting childhood cancer',
     href: '/aid',
     keywords: ['aid', 'assistance', 'financial', 'help', 'support', 'apply', 'families'],

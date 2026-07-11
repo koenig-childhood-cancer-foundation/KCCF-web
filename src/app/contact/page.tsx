@@ -126,8 +126,8 @@ export default function Contact() {
             <div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-lg font-semibold text-violet-700 mb-3">How can I apply for financial assistance?</h3>
               <p className="text-violet-600">
-                Families can apply for financial assistance through our Family Assistance program. Visit our
-                <a href="/aid" className="text-orange-500 hover:text-orange-600 font-semibold"> Family Assistance</a> page for more information and to start your application.
+                Families can apply for financial assistance through our Family Aid program. Visit our
+                <a href="/aid" className="text-orange-500 hover:text-orange-600 font-semibold"> Family Aid</a> page for more information and to start your application.
               </p>
             </div>
 

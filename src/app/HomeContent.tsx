@@ -45,7 +45,7 @@ export default function HomeContent() {
                 href="/aid"
                 className="btn-primary btn-primary-violet group text-white py-4 px-10 rounded-full text-lg font-semibold inline-flex items-center justify-center"
               >
-                <span>Family Assistance</span>
+                <span>Family Aid</span>
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -157,7 +157,7 @@ export default function HomeContent() {
                   className="rounded-2xl"
                 />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Family Assistance</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Family Aid</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
                 We can help with emergency medical expenses during your child's cancer treatment, such as medical bills, transportation, lodging, food, and more.
               </p>

@@ -57,7 +57,7 @@ export default function PageHeader({
               priority
             />
           )}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg">{title}</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-[0_0_8px_rgba(0,0,0,1)]">{title}</h1>
           {subtitle && (
             <p className="mt-4 text-white/90 text-lg md:text-xl font-semibold leading-relaxed drop-shadow-[0_0_8px_rgba(0,0,0,1)] max-w-[42ch] break-words">
               {subtitle.includes('<br/>') ? subtitle.split('<br/>').map((line, index) => (

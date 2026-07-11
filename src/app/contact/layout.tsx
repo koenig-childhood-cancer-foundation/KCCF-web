@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: "Contact Us - Corporate Partnerships & Family Support | KCCF",
-  description: "Contact KCCF for corporate partnerships, CSR programs, employee volunteering opportunities, or family support. We help companies create meaningful community impact through childhood cancer support.",
-  keywords: ["contact", "corporate partnerships", "CSR programs", "employee volunteering opportunities", "corporate social responsibility", "workplace giving", "nonprofit collaboration", "childhood cancer", "support", "help", "KCCF", "Elana Koenig", "cancer foundation"],
+  title: "Contact Us | KCCF",
+  description: "Contact KCCF for partnerships, CSR programs, volunteering, applying for financial support, and beyond.",
+  keywords: ["contact", "KCCF", "corporate partnerships", "CSR programs", "employee volunteering", "corporate social responsibility", "workplace giving", "nonprofit", "childhood cancer", "New York", "NYC", "support"],
   openGraph: {
-    title: "Contact Us - Corporate Partnerships & Family Support | KCCF",
-    description: "Contact KCCF for corporate partnerships, CSR programs, employee volunteering opportunities, or family support. We help companies create meaningful community impact through childhood cancer support.",
+    title: "Contact Us | KCCF",
+    description: "Contact KCCF for partnerships, CSR programs, volunteering, applying for financial support, and beyond.",
     type: "website",
     url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/contact` : "https://thekccf.org/contact",
   },

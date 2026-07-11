@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: "Corporate Gift Bag Volunteering - Crazy Socks for Hospitalized Children | KCCF",
-  description: "Corporate Social Responsibility (CSR) volunteering opportunities in NYC. Employee engagement through gift bag assembly for children battling cancer. Turnkey team-building volunteer events with measurable community impact.",
-  keywords: ["corporate social responsibility", "CSR", "employee volunteering", "corporate volunteering opportunities", "volunteer days", "volunteer time off", "VTO", "workplace giving programs", "employee engagement programs", "team-building volunteer events", "turnkey volunteering opportunities", "volunteering in NYC", "giving back", "volunteering for children battling cancer", "employee giving back", "scalable CSR partnerships", "measurable community impact", "community impact", "philanthropy partnerships", "nonprofit collaboration", "children's health wellbeing", "cancer support programs", "social impact volunteering", "hands-on volunteering", "fun corporate volunteering", "gift bags hospitalized children", "crazy socks day", "fundraising", "childhood cancer", "awareness", "KCCF"],
+  title: "Crazy Socks - Corporate Volunteering & Care Package Assembly Events for Children with Cancer",
+  description: "Sponsor and host a Corporate Social Responsibility (CSR) event. Engage your team through gift bag assembly for children battling cancer — a turnkey, measurable, and meaningful employee volunteer event. We bring the event to you.",
+  keywords: ["Corporate social responsibility", "CSR", "employee volunteering", "corporate volunteering NYC", "volunteer days", "VTO", "workplace giving", "employee engagement", "team-building", "childhood cancer", "crazy socks", "gift bags", "care packages", "hospitalized children", "KCCF"],
   openGraph: {
-    title: "Corporate Gift Bag Volunteering - Crazy Socks for Hospitalized Children | KCCF",
-    description: "Corporate Social Responsibility (CSR) volunteering opportunities in NYC. Employee engagement through gift bag assembly for children battling cancer. Turnkey team-building volunteer events with measurable community impact.",
+    title: "Crazy Socks - Corporate Volunteering & Care Package Assembly Events for Children with Cancer",
+    description: "Sponsor and host a Corporate Social Responsibility (CSR) event. Engage your team through gift bag assembly for children battling cancer — a turnkey, measurable, and meaningful employee volunteer event. We bring the event to you.",
     type: "website",
     url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/crazy-socks` : "https://thekccf.org/crazy-socks",
   },
