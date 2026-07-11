@@ -4,12 +4,14 @@
 
 **Scope:** Infrastructure only — testing, code formatting, git hooks, CI/CD structure, security & supply-chain controls, and performance/monitoring. Content, copy, and design work is tracked separately and is **not** part of this document.
 
-**Last Updated:** July 2026 (refreshed against the current FFC template)
+**Last Updated:** July 2026 (refreshed against the current FFC template; testing status updated after #411 landed the Jest harness)
 **Status:** Active Tracking
 **Repository:** koenig-childhood-cancer-foundation/KCCF-web
 **Reference Repository:** [FreeForCharity/FFC_Single_Page_Template](https://github.com/FreeForCharity/FFC_Single_Page_Template)
 
 > **Verification note (July 2026):** KCCF-web status below was verified directly against the working tree, not assumed. Checks run: file/directory search for `*.test.*`/`*.spec.*` and `__tests__`/`tests`/`e2e`/`cypress` dirs; test-framework config search (jest/vitest/playwright/cypress); `package.json` scripts + devDependencies; `package-lock.json` framework presence; and a grep for test steps across `.github/workflows/`. **Result: zero automated tests of any kind exist in this repository.** The only trace of `@playwright/test` in the lockfile is an *optional peer dependency declared by Next.js itself* (`node_modules/next`) — it is not installed as a direct dependency, has no config, no test files, and is never invoked.
+>
+> **Update (post-#411):** The Jest + React Testing Library harness and a baseline of **27 tests (6 suites)** subsequently landed in #411, so the "zero tests" finding above reflects the *pre-#411 audit* state. The Testing rows and the Verified-State section below have been updated to current reality; the remaining testing work (CI wiring, jest-axe, Playwright E2E) is tracked in #412.
 
 ---
 
@@ -33,14 +35,14 @@
 
 ## Executive Summary
 
-KCCF-web is **actively maintained on content and product**, but its **infrastructure/engineering-maturity is essentially at the pre-audit baseline**. Since the original December 2025 comparison, **none** of the identified infrastructure items have been adopted, while the FFC template itself has advanced further — adding a security & governance layer (OpenSSF Scorecard, security-audit, security.txt lifecycle, drift/uptime/revert-guard workflows) and accessibility testing (jest-axe, axe-core) that the original document did not track.
+KCCF-web is **actively maintained on content and product**, but its **infrastructure/engineering-maturity is essentially at the pre-audit baseline**. Since the original December 2025 comparison, the **only** adopted item is the testing baseline (Jest harness + 27 tests, landed in #411); the rest of the plan is unstarted, while the FFC template itself has advanced further — adding a security & governance layer (OpenSSF Scorecard, security-audit, security.txt lifecycle, drift/uptime/revert-guard workflows) and accessibility testing (jest-axe, axe-core) that the original document did not track.
 
 **Net effect: the gap has widened, not narrowed.**
 
-- **Infrastructure adoption vs. plan:** ~0%
-- **Automated tests in KCCF-web:** 0 (verified)
-- **CI in KCCF-web:** a `ci` job (lint + explicit `tsc --noEmit` type-check + build) with a separate `deploy` job gated on it, plus CodeQL — but no format check, no tests, no npm audit, no performance checks
-- **Config/quality files adopted:** 0 of ~10
+- **Infrastructure adoption vs. plan:** low — the testing baseline (Phase 1.1) has landed; everything else is unstarted
+- **Automated tests in KCCF-web:** 27 tests across 6 suites (Jest + React Testing Library, added in #411) — not yet wired into CI (see #412)
+- **CI in KCCF-web:** a `ci` job (lint + explicit `tsc --noEmit` type-check + build) with a separate `deploy` job gated on it, plus CodeQL — still no format check, no test run, no npm audit, no performance checks
+- **Config/quality files adopted:** 2 of ~10 (`jest.config.js`, `jest.setup.ts`)
 
 ---
 
@@ -51,7 +53,7 @@ Legend: ✅ done · 🟡 partial · ❌ not started
 | # | Capability | FFC Template (current) | KCCF-web (verified) | Status |
 |---|---|---|---|---|
 | | **Testing** | | | |
-| 1.1 | Unit / component tests (Jest + Testing Library) | ✅ `jest.config.js`, `jest.setup.js`, `__tests__/` | ❌ none | ❌ |
+| 1.1 | Unit / component tests (Jest + Testing Library) | ✅ `jest.config.js`, `jest.setup.js`, `__tests__/` | ✅ `jest.config.js`, `jest.setup.ts`, `__tests__/` — 27 tests / 6 suites (#411) | ✅ |
 | 1.2 | Accessibility tests (jest-axe / axe-core) | ✅ `jest-axe`, `@axe-core/react`, `@axe-core/playwright` | ❌ none | ❌ |
 | 1.3 | E2E tests (Playwright) | ✅ `playwright.config.ts`, `tests/` | ❌ none (`@playwright/test` is only a Next.js peer dep) | ❌ |
 | | **Formatting & Style** | | | |
@@ -84,23 +86,23 @@ Legend: ✅ done · 🟡 partial · ❌ not started
 | 6.5 | Config-drift check | ✅ `drift-check.yml`, `check:drift` | ❌ | ❌ |
 | 6.6 | Phantom-revert guard | ✅ `phantom-revert-guard.yml` | ❌ | ❌ |
 
-**Score:** KCCF-web meets **2 of 27** tracked infrastructure capabilities (CodeQL, lint-in-CI), with **4.1 partially met** (CI/deploy already split into two jobs).
+**Score:** KCCF-web meets **3 of 27** tracked infrastructure capabilities (CodeQL, lint-in-CI, unit/component tests), with **4.1 partially met** (CI/deploy already split into two jobs). Note: the unit tests exist but are **not yet run in CI** (row 4.4, tracked in #412).
 
 ---
 
 ## Verified Current State — KCCF-web
 
-**`package.json` scripts (6):** `dev`, `build`, `export`, `preview`, `start`, `lint` — no `test`, no `format`.
+**`package.json` scripts (9):** `dev`, `build`, `export`, `preview`, `start`, `lint`, `test`, `test:watch`, `test:coverage` (test scripts added in #411) — still no `format`.
 
-**`package.json` devDependencies:** `@eslint/eslintrc`, `@tailwindcss/postcss`, `@types/*`, `eslint`, `eslint-config-next`, `tailwindcss`, `typescript`. No test, formatting, hook, or commit-lint tooling.
+**`package.json` devDependencies:** the original toolchain (`@eslint/eslintrc`, `@tailwindcss/postcss`, `@types/*`, `eslint`, `eslint-config-next`, `tailwindcss`, `typescript`) plus the test toolchain added in #411 (`jest`, `jest-environment-jsdom`, `@testing-library/{react,jest-dom,user-event}`, `@types/jest`). Still no formatting, hook, or commit-lint tooling.
 
 **`.github/workflows/` (2 files):**
 - `nextjs.yml` — one workflow file, two jobs: a `ci` job (lint → `npx tsc --noEmit` → build) and a `deploy` job (GitHub Pages, `needs: ci`, main only)
 - `codeql.yml` — CodeQL security scanning
 
-**Quality/config files present:** none of `.prettierrc*`, `.editorconfig`, `.nvmrc`, `jest.config.js`, `playwright.config.ts`, `commitlint.config.js`, `.husky/`, `dependabot.yml`, `lighthouserc.json`, `.linkinatorrc.json`.
+**Quality/config files present:** `jest.config.js` + `jest.setup.ts` (added in #411). Still missing: `.prettierrc*`, `.editorconfig`, `.nvmrc`, `playwright.config.ts`, `commitlint.config.js`, `.husky/`, `dependabot.yml`, `lighthouserc.json`, `.linkinatorrc.json`.
 
-**Tests:** none (verified across files, dirs, configs, deps, scripts, and CI).
+**Tests:** 27 tests across 6 suites in `__tests__/` (cookie consent, form-config integrity, site search, theme, form modal) — Jest + React Testing Library, added in #411. Not yet executed in CI (tracked in #412).
 
 ---
 
@@ -122,19 +124,18 @@ Snapshot of the reference template as of July 2026 — this is the moving target
 
 **Priority:** 🔴 High · **Impact:** Catches regressions before deploy; this is the single largest gap.
 
-### 1.1 Unit / Component Testing (Jest + React Testing Library)
-- **Current:** No unit tests exist (verified).
-- **Target:** Jest + `@testing-library/react` with a baseline suite on `Navigation`, `Footer`, `CookieConsentBanner`, `FormModal`.
-- **Steps:** add `jest`, `jest-environment-jsdom`, `@testing-library/{react,jest-dom,user-event}`; add `jest.config.js` + `jest.setup.js`; add `test`, `test:watch`, `test:coverage` scripts; create `__tests__/`.
+### 1.1 Unit / Component Testing (Jest + React Testing Library) — ✅ **Done (#411)**
+- **Landed:** Jest + `@testing-library/react` + jsdom harness (`jest.config.js`, `jest.setup.ts`) with `test`/`test:watch`/`test:coverage` scripts and a baseline of **27 tests across 6 suites** in `__tests__/` (cookie consent, form-config integrity, site search + `SearchModal`, theme, form modal).
+- **Remaining:** expand render coverage to `Navigation`, `Footer`, `CookieConsentBanner`, `FormModal`, and run the suite in CI (row 4.4) — tracked in #412.
 - **Reference:** FFC `jest.config.js`, `jest.setup.js`, `__tests__/`.
 
 ### 1.2 Accessibility Testing (NEW vs. Dec-2025 doc)
-- **Current:** None.
+- **Current:** None (tracked in #412).
 - **Target:** `jest-axe` assertions in component tests and `@axe-core/playwright` in E2E — enforces WCAG basics automatically.
 - **Reference:** FFC `jest-axe`, `@axe-core/react`, `@axe-core/playwright`.
 
 ### 1.3 E2E Testing (Playwright)
-- **Current:** None. (`@playwright/test` in the lockfile is a Next.js optional peer dep, not a configured suite.)
+- **Current:** None; no `playwright.config.ts` or `tests/` yet (tracked in #412). (`@playwright/test` in the lockfile is a Next.js optional peer dep, not a configured suite.)
 - **Target:** `playwright.config.ts` + `tests/` covering nav, donation modal, form modals, dark-mode toggle, and GitHub Pages base-path image loading; scripts `test:e2e`, `test:e2e:ui`, `test:e2e:headed`.
 - **Reference:** FFC `playwright.config.ts`, `tests/`.
 
@@ -185,7 +186,8 @@ Snapshot of the reference template as of July 2026 — this is the moving target
 - **Current:** Lint already runs as a gate in `nextjs.yml`. Carry it into the new `ci.yml` unchanged when splitting workflows (Phase 4.1).
 
 ### 4.4 Add Unit Tests to CI
-- **Target:** `npm test` with `CI=true` (depends on Phase 1.1).
+- **Current:** The unit/component suite exists (Phase 1.1, #411) but is **not run in CI** — `nextjs.yml`'s `ci` job stops at build.
+- **Target:** add `npm test` with `CI=true` to the `ci` job so the suite gates merges. Tracked in #412.
 
 ### 4.5 Add E2E Tests to CI
 - **Target:** `npx playwright install --with-deps chromium` → `npm run test:e2e` (depends on Phase 1.3).
@@ -251,7 +253,7 @@ Highest value per unit of effort, low-risk first:
 
 1. **Quick wins (hours):** `.nvmrc`, `.prettierrc.json` + `format`/`format:check`, `dependabot.yml`. Zero behavioral risk.
 2. **CI gate (½–1 day):** split `nextjs.yml` → `ci.yml` + `deploy.yml`; add `format:check` + `npm audit` steps.
-3. **Testing baseline (2–3 days):** Jest + Testing Library + jest-axe; 3–4 component tests; wire `npm test` into CI.
+3. **Testing baseline:** 🟡 harness + 27 tests landed (#411); remaining — jest-axe, more component tests, and wiring `npm test` into CI (#412).
 4. **E2E + perf (2–3 days):** Playwright smoke suite; Lighthouse CI; linkinator.
 5. **Security/governance layer (1–2 days):** Scorecard, security.txt + expiry monitor, vulnerability-disclosure page, Husky + commitlint.
 6. **Monitoring niceties:** uptime, drift-check, phantom-revert-guard.
