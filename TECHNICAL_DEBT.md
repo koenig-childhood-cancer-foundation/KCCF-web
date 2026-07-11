@@ -50,18 +50,18 @@ Legend: ✅ done · 🟡 partial · ❌ not started
 
 | # | Capability | FFC Template (current) | KCCF-web (verified) | Status |
 |---|---|---|---|---|
-| **Testing** |
+| | **Testing** | | | |
 | 1.1 | Unit / component tests (Jest + Testing Library) | ✅ `jest.config.js`, `jest.setup.js`, `__tests__/` | ❌ none | ❌ |
 | 1.2 | Accessibility tests (jest-axe / axe-core) | ✅ `jest-axe`, `@axe-core/react`, `@axe-core/playwright` | ❌ none | ❌ |
 | 1.3 | E2E tests (Playwright) | ✅ `playwright.config.ts`, `tests/` | ❌ none (`@playwright/test` is only a Next.js peer dep) | ❌ |
-| **Formatting & Style** |
+| | **Formatting & Style** | | | |
 | 2.1 | Prettier | ✅ `.prettierrc.json`, `.prettierignore`, `format` + `format:check` | ❌ none | ❌ |
 | 2.2 | EditorConfig | ✅ `.editorconfig` | ❌ | ❌ |
 | 2.3 | Node version pin | ✅ `.nvmrc` | ❌ | ❌ |
-| **Hooks & Commits** |
+| | **Hooks & Commits** | | | |
 | 3.1 | Husky pre-commit hooks | ✅ `.husky/`, `prepare` script | ❌ | ❌ |
 | 3.2 | Commitlint | ✅ `commitlint.config.js` | ❌ | ❌ |
-| **CI/CD** |
+| | **CI/CD** | | | |
 | 4.1 | Split CI vs. deploy workflows | ✅ `ci.yml` + `deploy.yml` | 🟡 single `nextjs.yml` (build+deploy combined) | ❌ |
 | 4.2 | Format check in CI | ✅ `npm run format:check` step | ❌ | ❌ |
 | 4.3 | Lint gate in CI | ✅ | ✅ (lint runs in `nextjs.yml`) | ✅ |
@@ -69,14 +69,14 @@ Legend: ✅ done · 🟡 partial · ❌ not started
 | 4.5 | E2E tests in CI | ✅ Playwright install + `test:e2e` | ❌ | ❌ |
 | 4.6 | Bundle-size check | ✅ `check:bundle` | ❌ | ❌ |
 | 4.7 | Build artifact upload on failure | ✅ | ❌ | ❌ |
-| **Security & Supply Chain** |
+| | **Security & Supply Chain** | | | |
 | 5.1 | CodeQL scanning | ✅ | ✅ `codeql.yml` | ✅ |
 | 5.2 | Dependabot | ✅ `dependabot.yml` | ❌ | ❌ |
 | 5.3 | npm audit in CI | ✅ `security-audit.yml` / `audit:high` | ❌ | ❌ |
 | 5.4 | OpenSSF Scorecard | ✅ `scorecard.yml` | ❌ | ❌ |
 | 5.5 | security.txt + expiry monitor | ✅ `security-txt-expiry.yml` | ❌ | ❌ |
 | 5.6 | Vulnerability disclosure policy page | ✅ `/vulnerability-disclosure-policy` | ❌ | ❌ |
-| **Performance & Monitoring** |
+| | **Performance & Monitoring** | | | |
 | 6.1 | Lighthouse CI | ✅ `lighthouse.yml`, `lighthouserc.json` | ❌ | ❌ |
 | 6.2 | Bundle analyzer | ✅ `analyze` script + `@next/bundle-analyzer` | ❌ | ❌ |
 | 6.3 | Link checking (linkinator) | ✅ `.linkinatorrc.json`, `check-links` | ❌ | ❌ |
@@ -84,7 +84,7 @@ Legend: ✅ done · 🟡 partial · ❌ not started
 | 6.5 | Config-drift check | ✅ `drift-check.yml`, `check:drift` | ❌ | ❌ |
 | 6.6 | Phantom-revert guard | ✅ `phantom-revert-guard.yml` | ❌ | ❌ |
 
-**Score:** KCCF-web meets **2 of 25** tracked infrastructure capabilities (CodeQL, lint-in-CI).
+**Score:** KCCF-web meets **2 of 27** tracked infrastructure capabilities (CodeQL, lint-in-CI).
 
 ---
 
@@ -180,6 +180,9 @@ Snapshot of the reference template as of July 2026 — this is the moving target
 
 ### 4.2 Add Format Check to CI
 - **Target:** `npm run format:check` step (depends on Phase 2.1).
+
+### 4.3 Lint Gate in CI — ✅ **Already satisfied**
+- **Current:** Lint already runs as a gate in `nextjs.yml`. Carry it into the new `ci.yml` unchanged when splitting workflows (Phase 4.1).
 
 ### 4.4 Add Unit Tests to CI
 - **Target:** `npm test` with `CI=true` (depends on Phase 1.1).
