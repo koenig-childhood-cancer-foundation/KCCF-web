@@ -1,6 +1,7 @@
 "use client"
 
 import { type ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { gtmConsentUpdate } from '@/lib/gtm'
 
 export type ConsentCategory = 'necessary' | 'analytics' | 'marketing' | 'functional'
 
@@ -40,17 +41,21 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
   const [isPreferencesOpen, setIsPreferencesOpen] = useState(false)
 
   useEffect(() => {
+    let resolved: ConsentState = DEFAULT_CONSENT
     try {
       const raw = localStorage.getItem(STORAGE_KEY)
       if (raw) {
         const stored: StoredConsent = JSON.parse(raw)
         if (stored?.version === CONSENT_VERSION && stored?.state) {
-          setConsent({ ...DEFAULT_CONSENT, ...stored.state, necessary: true })
+          resolved = { ...DEFAULT_CONSENT, ...stored.state, necessary: true }
+          setConsent(resolved)
         }
       }
     } catch {
       // ignore
     }
+    // Reflect the resolved (stored or default-denied) choice into Consent Mode.
+    gtmConsentUpdate(resolved)
   }, [])
 
   const persist = useCallback((state: ConsentState) => {
@@ -69,7 +74,10 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
   const updateConsent = useCallback((updates: Partial<ConsentState>, options?: { persist?: boolean }) => {
     setConsent(prev => {
       const next = { ...prev, ...updates, necessary: true }
-      if (options?.persist) persist(next)
+      if (options?.persist) {
+        persist(next)
+        gtmConsentUpdate(next)
+      }
       return next
     })
   }, [persist])
@@ -78,12 +86,14 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
     const next: ConsentState = { necessary: true, analytics: true, marketing: true, functional: true }
     setConsent(next)
     persist(next)
+    gtmConsentUpdate(next)
   }, [persist])
 
   const rejectAll = useCallback(() => {
     const next: ConsentState = { necessary: true, analytics: false, marketing: false, functional: false }
     setConsent(next)
     persist(next)
+    gtmConsentUpdate(next)
   }, [persist])
 
   const value = useMemo<CookieConsentContextValue>(() => ({

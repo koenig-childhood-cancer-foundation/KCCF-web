@@ -2,12 +2,17 @@
 
 This document provides a comprehensive overview of all external third-party services integrated with the KCCF website. Configuration for these services is managed in their respective external platforms, not in this repository.
 
-**Last Updated**: December 2025  
+**Last Updated**: July 2026  
 **Site URL**: https://thekccf.org
 
 ---
 
 ## Recent Updates
+
+**July 2026**:
+- ✅ Wired the cookie-consent banner to **Google Consent Mode v2** (previously consent state gated nothing) — see [Cookie Consent Integration](#cookie-consent-integration)
+- ✅ Added **Google Ads** conversion tracking using a `donate_intent` signal as an interim (stopgap) conversion — see [Google Ads Conversion Tracking](#google-ads-conversion-tracking)
+- ✅ Added `src/lib/gtm.ts` as the single `dataLayer` helper (custom events + consent updates)
 
 **December 2025**:
 - ✅ Transitioned from staging (staging.thekccf.org) to production (thekccf.org)
@@ -37,6 +42,7 @@ This document provides a comprehensive overview of all external third-party serv
    - [Google Tag Manager](#google-tag-manager)
    - [Google Analytics](#google-analytics)
    - [Microsoft Clarity](#microsoft-clarity)
+   - [Google Ads Conversion Tracking](#google-ads-conversion-tracking)
 5. [Email Configuration](#email-configuration)
 6. [Cookie Consent Integration](#cookie-consent-integration)
 7. [Troubleshooting](#troubleshooting)
@@ -56,6 +62,7 @@ This document provides a comprehensive overview of all external third-party serv
 | **Google Tag Manager** | Analytics | Tag management & consent orchestration | googletagmanager.com |
 | **Google Analytics** | Analytics | Website traffic & behavior analytics | analytics.google.com |
 | **Microsoft Clarity** | Analytics | Heatmaps & session recordings | clarity.microsoft.com |
+| **Google Ads** | Marketing | Conversion tracking (`donate_intent` stopgap) | ads.google.com |
 
 ### Repository Files
 
@@ -67,8 +74,10 @@ This document provides a comprehensive overview of all external third-party serv
 | `src/components/DonationCard.tsx` | Zeffy donation cards |
 | `src/app/donate/page.tsx` | Zeffy, GiveLively donation forms |
 | `src/app/fundraisers/page.tsx` | Zeffy peer-to-peer fundraising |
-| `src/components/GoogleTagManager.tsx` | GTM integration |
-| `src/contexts/CookieConsentContext.tsx` | Consent management for analytics |
+| `src/components/GoogleTagManager.tsx` | GTM integration + Consent Mode v2 defaults |
+| `src/contexts/CookieConsentContext.tsx` | Consent management → GTM Consent Mode bridge |
+| `src/contexts/DonationModalContext.tsx` | Fires the `donate_intent` conversion event |
+| `src/lib/gtm.ts` | `dataLayer` helper (custom events + consent updates) |
 
 ---
 
@@ -219,10 +228,11 @@ Google Tag Manager (GTM) serves as the central hub for managing all analytics ta
 #### How It Works
 
 1. GTM loads automatically on page load (functional/necessary service)
-2. GTM manages consent mode for analytics services
-3. Tags fire based on user consent preferences:
-   - **Analytics consent** → Google Analytics, Microsoft Clarity
-   - **Marketing consent** → Marketing pixels, retargeting
+2. **Consent Mode v2 defaults are set before `gtm.js` loads** (all denied) in `GoogleTagManager.tsx`, then updated from the user's saved preferences by `CookieConsentContext` → see [Cookie Consent Integration](#cookie-consent-integration)
+3. Tags fire based on the resulting Consent Mode signals:
+   - **Analytics consent** (`analytics_storage`) → Google Analytics, Microsoft Clarity
+   - **Marketing consent** (`ad_storage`, `ad_user_data`, `ad_personalization`) → Google Ads conversion tracking
+4. The app pushes a `donate_intent` custom event to the `dataLayer` when any donation form opens (via `src/lib/gtm.ts`), which GTM uses to fire the Google Ads conversion tag
 
 #### Configuration
 
@@ -325,6 +335,48 @@ Microsoft Clarity provides heatmaps and session recordings to understand user be
 
 ---
 
+### Google Ads Conversion Tracking
+
+Google Ads (nonprofit / Ad Grants account) tracks conversions to keep the grant healthy. Because donations complete inside a cross-origin Zeffy iframe we cannot observe, the site currently reports an **interim "donate intent" signal** instead of a completed donation.
+
+> **⚠️ Stopgap:** `donate_intent` fires when a donation form is *opened*, not when a donation *completes*. It is a meaningful-action proxy (Ad Grants discourages generic-pageview conversions). Replace it with real donation-complete tracking when Zeffy integration allows — see [Troubleshooting](#analytics-not-tracking) and repo notes.
+
+#### Service Details
+
+- **Platform URL**: https://ads.google.com
+- **Google Ads / Conversion ID**: `AW-573316396` ("Koenig Childhood Cancer Foundation")
+- **Consent Required**: Yes (marketing category → `ad_storage`)
+- **Integration**: Managed in the GTM container; fired by a `donate_intent` `dataLayer` event
+
+#### How It Works
+
+1. Any "Donate" button (nav, footer, home, cards, `/donate`) opens the donation modal via `DonationModalContext.openModal`.
+2. `openModal` calls `gtmEvent('donate_intent', { campaign })` from `src/lib/gtm.ts`, pushing `{ event: 'donate_intent', campaign }` to the `dataLayer`.
+3. In GTM, a **Google Ads Conversion Tracking** tag fires on the `donate_intent` Custom Event trigger; a **Conversion Linker** tag runs on all pages.
+4. The conversion tag requires `ad_storage` consent — under Consent Mode it only writes cookies after marketing consent, and models conversions otherwise.
+
+#### Configuration (Google Ads + GTM consoles)
+
+1. **Google Ads** → Goals → Conversions → **New conversion action** → Website → *set up manually*:
+   - Category: **Submit lead form** or **Other** (not *Purchase* — this is intent, not a sale). Count: **One**. Do not assign a misleading value.
+   - Save, then copy the **Conversion ID** (`573316396`) and **Conversion label**.
+2. **GTM** (`GTM-P2SBKM7K`) → add and publish:
+   - **Google Ads Conversion Linker** tag → trigger: All Pages.
+   - **Google Ads Conversion Tracking** tag (Conversion ID + Label) → trigger: **Custom Event = `donate_intent`**; Consent Settings: require `ad_storage`.
+3. **(Optional)** Link Google Ads ↔ GA4 (GA4 Admin → Product Links → Google Ads) for audience/data sharing.
+
+#### Verification
+
+- **GTM Preview / Tag Assistant**: click Donate → the `donate_intent` event fires the conversion tag (blocked/modeled before marketing consent, fires after accepting).
+- **Google Ads**: the conversion action moves to "Recording conversions" (status can lag ~24h).
+
+#### Support
+- Conversion tracking: https://support.google.com/google-ads/answer/1722022
+- Consent Mode: https://support.google.com/google-ads/answer/10000067
+- Ad Grants conversion policy: https://support.google.com/grants/answer/117827
+
+---
+
 ## Email Configuration
 
 All outbound emails from KCCF services should use `join@thekccf.org` for consistent branding.
@@ -375,21 +427,32 @@ The site uses a custom cookie consent system to manage user preferences for anal
 |----------|-------------|-------------------|
 | **Necessary** | Always enabled, required for site function | Forms (Monday.com, Mailchimp), Donations |
 | **Analytics** | User behavior tracking | Google Analytics, Microsoft Clarity |
-| **Marketing** | Advertising and retargeting | Marketing pixels |
+| **Marketing** | Advertising and retargeting | Google Ads conversion tracking |
 | **Functional** | Enhanced features | N/A |
 
 ### Implementation Files
 
-- `src/contexts/CookieConsentContext.tsx` - Consent state management
+- `src/contexts/CookieConsentContext.tsx` - Consent state management + Consent Mode bridge
 - `src/components/CookieConsentBanner.tsx` - Initial consent prompt
 - `src/components/ConsentPreferencesModal.tsx` - Detailed preferences
+- `src/components/GoogleTagManager.tsx` - Consent Mode v2 defaults (set before `gtm.js`)
+- `src/lib/gtm.ts` - `gtmConsentUpdate()` helper that maps consent → Consent Mode signals
+
+### Google Consent Mode v2
+
+Consent state is bridged to GTM using Google Consent Mode v2 (not just tracked locally):
+
+1. **Defaults** are set to `denied` for all signals **before** `gtm.js` loads (`GoogleTagManager.tsx`), so nothing fires until the user's saved choice is applied.
+2. On load and on every accept/reject/save, `CookieConsentContext` calls `gtmConsentUpdate(state)` (`src/lib/gtm.ts`), which issues a `gtag('consent', 'update', …)` mapping:
+   - `analytics` → `analytics_storage`
+   - `marketing` → `ad_storage`, `ad_user_data`, `ad_personalization`
 
 ### How Consent Affects Services
 
 1. **Forms & Donations**: Load immediately (necessary services)
-2. **GTM**: Loads immediately but passes consent signals to tags
-3. **Analytics Tags**: Only fire when analytics consent is granted
-4. **Marketing Tags**: Only fire when marketing consent is granted
+2. **GTM**: Loads immediately; consent defaults denied, then updated from saved preferences
+3. **Analytics Tags** (GA4, Clarity): Only fire when `analytics_storage` is granted
+4. **Marketing Tags** (Google Ads): Only fire when `ad_storage` is granted
 
 ---
 
@@ -414,6 +477,14 @@ The site uses a custom cookie consent system to manage user preferences for anal
 2. **GTM container**: Verify container ID `GTM-P2SBKM7K` is correct
 3. **Tag configuration**: Check tags are properly configured in GTM
 4. **Browser extensions**: Ad blockers may block analytics
+
+### Google Ads Conversions Not Recording
+
+1. **Marketing consent**: User must accept marketing cookies (`ad_storage`) for cookie-based conversions
+2. **GTM tags published**: Confirm the Conversion Linker + Conversion Tracking tags are published (not just in Preview)
+3. **Trigger**: Verify the `donate_intent` Custom Event fires when a donation form opens (Tag Assistant)
+4. **Conversion ID/label**: Confirm they match the Google Ads conversion action
+5. **Reminder**: `donate_intent` = form *opened*, not donation *completed* (interim stopgap)
 
 ### Emails Going to Spam
 
@@ -443,6 +514,8 @@ The site uses a custom cookie consent system to manage user preferences for anal
 | Service | ID/Key |
 |---------|--------|
 | GTM Container | `GTM-P2SBKM7K` |
+| Google Ads Conversion ID | `AW-573316396` |
+| Google Ads conversion event | `donate_intent` (dataLayer custom event) |
 | Mailchimp User ID | `041a777be61cc7e1bc20e3517` |
 | Mailchimp List ID | `8696f27783` |
 | Zeffy Donation Form | `donate-to-make-a-difference-18649` |
