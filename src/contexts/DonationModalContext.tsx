@@ -1,6 +1,7 @@
 "use client"
 
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react'
+import { gtmEvent } from '@/lib/gtm'
 
 interface DonationModalContextType {
   isOpen: boolean
@@ -20,6 +21,9 @@ export function DonationModalProvider({ children }: { children: ReactNode }) {
     setIsOpen(true)
     // Prevent body scroll when modal is open
     document.body.style.overflow = 'hidden'
+    // Donate-intent conversion signal (stopgap until Zeffy completion is tracked).
+    // Every Donate entry point flows through here, so this is the single choke point.
+    gtmEvent('donate_intent', { campaign: campaignName || '(none)' })
   }, [])
 
   const closeModal = useCallback(() => {
