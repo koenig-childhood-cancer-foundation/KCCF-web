@@ -29,7 +29,7 @@ export default function Media() {
         {/* PageHeader */}
         <PageHeader
           title="Media & Press"
-          subtitle="Stay updated with the latest news, press releases, and media coverage."
+          subtitle="KCCF and Elana on Media below!"
         />
       </div>
 
