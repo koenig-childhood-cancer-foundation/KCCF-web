@@ -38,7 +38,7 @@ export default function Privacy() {
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 md:p-12">
             {/* Last Updated */}
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">
-              Last Updated: November 2025
+              Last Updated: May 2026
             </p>
 
             {/* Introduction */}
@@ -139,7 +139,7 @@ export default function Privacy() {
                 <div className="bg-platinum-50 dark:bg-gray-700 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Marketing Cookies</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    These cookies are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user and thereby more valuable for publishers and third-party advertisers.
+                    These cookies are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user and thereby more valuable for publishers and third-party advertisers. If you accept marketing cookies and arrive from a Google ad, we store the ad&apos;s click ID (gclid) and pass it through our donation platform (Zeffy) to measure donations as Google Ads conversions, helping us spend our advertising budget responsibly.
                   </p>
                 </div>
               </div>
