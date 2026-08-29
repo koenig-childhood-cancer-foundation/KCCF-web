@@ -86,8 +86,8 @@ export default function Donate() {
               </div>
               <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Support Families Financially</h3>
               <p className="text-violet-600 dark:text-white leading-relaxed">
-                <strong>$50</strong> – A warm meal for a family<br/>
-                <strong>$150</strong> – One night of safe lodging<br/>
+                <strong>$50</strong> – Warm meal for a family<br/>
+                <strong>$150</strong> – One night of lodging near hospital<br/>
                 <strong>$1,000</strong> – Average co-pay for a child
               </p>
             </div>
@@ -99,9 +99,9 @@ export default function Donate() {
               </div>
               <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Bring Joy Bags to Hospitals</h3>
               <p className="text-violet-600 dark:text-white leading-relaxed">
-                <strong>$25</strong> – A gift bag for one child<br/>
-                <strong>$100</strong> – Gift bags for a child and caregiver<br/>
-                <strong>$5,000</strong> – Gift bags for an entire hospital floor
+                <strong>$25</strong> –  Gift bag for one child<br/>
+                <strong>$100</strong> – Gift bags for child and caregiver<br/>
+                <strong>$5,000</strong> – Gift bags for one hospital floor
               </p>
             </div>
 
