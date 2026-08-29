@@ -16,10 +16,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-12 xl:grid-cols-10 gap-8 items-start">
           {/* Contact Info */}
           <div className="sm:col-span-2 md:col-span-2 lg:col-span-3 xl:col-span-2 sm:order-2 lg:order-1">
-            <h3 className="text-xl font-bold mb-4 text-white">
-              Koenig Childhood Cancer Foundation
-            </h3>
-            <div className="space-y-2 text-gray-300">
+            <div className="space-y-3 text-gray-300">
+              <h4 className="font-medium text-white mb-2 text-sm">
+                Koenig Childhood Cancer Foundation
+              </h4>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=1175+York+Ave+Suite+15E+New+York+NY+10065"
                 target="_blank"
@@ -122,8 +122,8 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="sm:col-span-full md:col-span-5 lg:col-span-9 xl:col-span-5 sm:order-1 lg:order-2">
-            <h4 className="text-lg font-semibold mb-4 text-white">
-              Quick Links
+            <h4 className="text-lg font-semibold mb-4 text-white text-center">
+              Quick References
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {/* About & Events */}
@@ -292,9 +292,8 @@ export default function Footer() {
             <FormButton
               formType="newsletter-signup"
               variant="primary"
-              size="md"
-              fullWidth={true}
-              className="w-full sm:w-[80%] xl:w-full bg-white/20 hover:bg-white/30 sm:text-lg backdrop-blur-sm text-white border border-white/30"
+              size="sm"
+              className="w-auto max-w-[240px] px-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30"
             >
               Subscribe to Newsletter
             </FormButton>
