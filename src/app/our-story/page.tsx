@@ -123,8 +123,8 @@ export default function OurStory() {
                 </p>
                 <p>
                   Over the next one and a half years, I experienced firsthand
-                  the physical and emotional toll of spending 18 grueling months
-                  in treatment, enduring 9 cycles of chemotherapy, and
+                  the physical and emotional toll of spending 15 grueling months
+                  in the hospital, enduring 9 cycles of chemotherapy, and
                   undergoing 15 surgeries. My parents put their own lives on
                   hold to stand by my side every step of the way.
                 </p>

@@ -86,9 +86,9 @@ export default function Donate() {
               </div>
               <h3 className="text-xl font-bold mb-4 text-violet-700 dark:text-saffron-600">Support Families Financially</h3>
               <p className="text-violet-600 dark:text-white leading-relaxed">
-                <strong>$50</strong> – A dinner for a family<br/>
-                <strong>$360</strong> – 3 nights of lodging for a family<br/>
-                <strong>$1,000</strong> – Medication for one chemo cycle that insurance doesn&apos;t cover
+                <strong>$50</strong> – A warm meal for a family<br/>
+                <strong>$150</strong> – One night of safe lodging<br/>
+                <strong>$1,000</strong> – Average co-pay for a child
               </p>
             </div>
 
