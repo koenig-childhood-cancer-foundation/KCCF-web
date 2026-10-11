@@ -14,7 +14,7 @@ export const IMPACT_STATS = {
   // Home page impact statistics
   HOME: [
     {
-      value: "4,200+",
+      value: "4,800+",
       label: "Families Supported Financially"
     },
     {
@@ -22,11 +22,11 @@ export const IMPACT_STATS = {
       label: "Hospital visits / celebrations"
     },
     {
-      value: "105,000+",
+      value: "135,000+",
       label: "Care Packages"
     },
     {
-      value: "80+",
+      value: "120",
       label: "Summer Camp Children"
     }
   ] as ImpactStat[],
@@ -34,7 +34,7 @@ export const IMPACT_STATS = {
   // Crazy Socks page impact statistics
   CRAZY_SOCKS: [
     {
-      value: "105,000+",
+      value: "135,000+",
       label: "Gift Bags Delivered"
     },
     {
@@ -49,9 +49,9 @@ export const IMPACT_STATS = {
 
   // Other statistics used across the site
   GENERAL: {
-    CHILDREN_DIAGNOSED_DAILY: "275",
+    CHILDREN_DIAGNOSED_DAILY: "1,100",
     AVERAGE_AGE_AT_DIAGNOSIS: "6",
     HOLIDAY_CARE_PACKAGES: "500+",
-    SCHOOL_BUSES_EQUIVALENT: "7"
+    SCHOOL_BUSES_EQUIVALENT: "27"
   } as const
 } as const;

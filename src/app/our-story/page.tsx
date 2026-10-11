@@ -123,8 +123,8 @@ export default function OurStory() {
                 </p>
                 <p>
                   Over the next one and a half years, I experienced firsthand
-                  the physical and emotional toll of spending 15 grueling months
-                  in the hospital, enduring 9 cycles of chemotherapy, and
+                  the physical and emotional toll of spending 18 grueling months
+                  in treatment, enduring 9 cycles of chemotherapy, and
                   undergoing 15 surgeries. My parents put their own lives on
                   hold to stand by my side every step of the way.
                 </p>
@@ -199,8 +199,8 @@ export default function OurStory() {
               Why we do what we do!
             </h3>
             <p className="text-lg text-gray-600 dark:text-gray-200 leading-relaxed text-center max-w-4xl mx-auto">
-              Every day, 275 children are diagnosed with cancer worldwide,
-              roughly equivalent to the load of 7 school buses. The average age
+              Every day, about 1,100 children are diagnosed with cancer
+              worldwide, enough to fill 27 school buses. The average age
               for these patients at diagnosis is 6. They often spend about half
               of their lives in the hospital. To embrace hope at specialized
               cancer centers, families frequently confront challenges of travel,
