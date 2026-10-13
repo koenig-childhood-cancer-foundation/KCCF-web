@@ -218,6 +218,49 @@ export default function HomeContent() {
         </div>
       </section>
 
+      {/* Daniz's Story */}
+      <section className="py-20 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="relative bg-gradient-to-br from-violet-500/40 to-violet-500/50 dark:from-violet-500/60 dark:to-violet-500/70 p-6 rounded-3xl shadow-2xl">
+                <Image
+                  src="/images/daniz-elana.jpg"
+                  alt="Elana with Daniz in the hospital in 2022 and at KCCF Camp 2026"
+                  width={880}
+                  height={688}
+                  className="rounded-2xl w-full h-auto"
+                />
+              </div>
+              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">
+                Elana &amp; Daniz in the hospital in 2022 &amp; at KCCF Camp 2026
+              </p>
+            </div>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
+                &ldquo;My child is alive because of KCCF&rdquo;
+              </h2>
+              <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+                &ldquo;When Daniz was diagnosed with cancer, there was no hope for her in Azerbaijan. Then I was connected to Elana, whose charity covered all our medical expenses and travel to New York and embraced us like family. If it weren&apos;t for them, Daniz might not be with us today.&rdquo;
+              </p>
+              <p className="mt-6 text-violet-600 dark:text-saffron-400 font-semibold">
+                &mdash; Vusala, Daniz&apos;s mom
+              </p>
+              <div className="mt-10">
+                <DonationButton
+                  campaign="Donate to save lives"
+                  variant="primary"
+                  size="lg"
+                  className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full"
+                >
+                  Help a Family Like Daniz&apos;s
+                </DonationButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Top Media Coverage Section */}
       <section className="py-16 md:py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
