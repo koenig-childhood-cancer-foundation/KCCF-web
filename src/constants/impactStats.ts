@@ -18,8 +18,8 @@ export const IMPACT_STATS = {
       label: "Families Supported Financially"
     },
     {
-      value: "20,000+",
-      label: "Social Media Followers"
+      value: "7,000+",
+      label: "Volunteers Worldwide"
     },
     {
       value: "135,000+",
