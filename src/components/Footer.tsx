@@ -358,8 +358,8 @@ export default function Footer() {
               >
                 <div className="h-20 sm:h-25 flex items-center justify-center mb-2">
                   <Image
-                    src="/images/4star-ratingbadge-2025.png"
-                    alt="Charity Navigator 4-Star Rating Badge 2025"
+                    src="/images/4star-ratingbadge-2026.svg"
+                    alt="Charity Navigator 4-Star Rating Badge 2026"
                     width={80}
                     height={80}
                     className="sm:w-25 sm:h-25"
