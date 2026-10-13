@@ -10,11 +10,17 @@ export default function CallToAction() {
       </div>
 
       <div className="container mx-auto px-4 text-center relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-          Join Our <span className="text-white">Mission</span>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          No child should fight cancer alone.
         </h2>
+        <p className="text-3xl md:text-4xl font-extrabold text-[#ffb37a] max-w-3xl mx-auto leading-tight">
+          90&cent; of every dollar goes directly to programs
+        </p>
+        <p className="text-sm text-white/80 mt-2 mb-6">
+          Per KCCF&apos;s 2025 Financial Review.
+        </p>
         <p className="text-xl mb-12 text-white/90 max-w-3xl mx-auto leading-relaxed">
-          Together, we can make a difference in the lives of children battling cancer and their families. Every donation, every volunteer hour, and every act of support brings hope to those who need it most.
+          Every donation, every volunteer hour, and every gift bag brings hope to a family facing childhood cancer.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">

@@ -88,7 +88,7 @@ export default function HomeContent() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
+              <h2 className="text-4xl md:text-5xl xl:text-[2rem] 2xl:text-[2.5rem] xl:whitespace-nowrap font-bold mb-8 text-violet-600 dark:text-white">
                 Meet Our Founder, Elana Koenig
               </h2>
 
@@ -141,7 +141,7 @@ export default function HomeContent() {
               Our Impact Programs
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We provide comprehensive support to families facing childhood cancer through multiple programs designed to address their unique needs.
+              Three ways we help children and families facing cancer.
             </p>
           </div>
 
@@ -237,7 +237,7 @@ export default function HomeContent() {
               </p>
             </div>
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-violet-600 dark:text-white">
+              <h2 className="text-4xl md:text-5xl xl:text-[2rem] 2xl:text-[2.5rem] xl:whitespace-nowrap font-bold mb-8 text-violet-600 dark:text-white">
                 &ldquo;My child is alive because of KCCF&rdquo;
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
