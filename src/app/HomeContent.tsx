@@ -238,7 +238,7 @@ export default function HomeContent() {
                   allowFullScreen
                 ></iframe>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-violet-600 dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana on The Kelly Clarkson Show as the youngest Rad Human</h3>
+              <h3 className="text-lg md:text-xl font-bold text-violet-600 dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana, 3× on The Kelly Clarkson Show as its youngest Rad Human</h3>
             </div>
 
             {/* Mets Game */}
