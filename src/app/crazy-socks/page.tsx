@@ -117,11 +117,11 @@ export default function CrazySocks() {
                 <p className="text-xl 2xl:text-[1.7rem] font-semibold text-[#732154] dark:text-saffron-400">
                   To date, more than{' '}
                   <span className="font-bold text-orange-600">
-                    {IMPACT_STATS.CRAZY_SOCKS[0].value.toLowerCase()}
+                    {IMPACT_STATS.CRAZY_SOCKS[0].value.replace(/\+$/, '')}
                   </span>{' '}
                   gift bags, containing over{' '}
                   <span className="font-bold text-orange-600">
-                    {IMPACT_STATS.CRAZY_SOCKS[1].value.toLowerCase()}
+                    {IMPACT_STATS.CRAZY_SOCKS[1].value.replace(/\+$/, '')}
                   </span>{' '}
                   items, have been delivered to hospitalized children across the
                   United States and around the world.

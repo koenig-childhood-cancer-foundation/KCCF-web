@@ -34,7 +34,7 @@ export const IMPACT_STATS = {
   // Crazy Socks page impact statistics
   CRAZY_SOCKS: [
     {
-      value: "105,000+",
+      value: "135,000+",
       label: "Gift Bags Delivered"
     },
     {
