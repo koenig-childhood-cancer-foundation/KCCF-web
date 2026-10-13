@@ -376,7 +376,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 text-center text-sm border-t border-gray-700 text-gray-300">
           <p>
-            ©2025 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN:
+            ©2026 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN:
             84-4892279
           </p>
           <p className="mt-2">

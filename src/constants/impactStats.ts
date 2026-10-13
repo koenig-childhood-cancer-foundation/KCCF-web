@@ -18,8 +18,8 @@ export const IMPACT_STATS = {
       label: "Families Supported Financially"
     },
     {
-      value: "4,500+",
-      label: "Hospital visits / celebrations"
+      value: "7,000+",
+      label: "Volunteers Worldwide"
     },
     {
       value: "135,000+",
@@ -34,7 +34,7 @@ export const IMPACT_STATS = {
   // Crazy Socks page impact statistics
   CRAZY_SOCKS: [
     {
-      value: "105,000+",
+      value: "135,000+",
       label: "Gift Bags Delivered"
     },
     {

@@ -36,13 +36,14 @@ export default function Camp() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-violet-700 dark:text-saffron-600 mb-6">
-              KCCF International Healing Camp
+              KCCF International Camp
             </h2>
             <p className="text-lg text-violet-600 dark:text-white max-w-3xl mx-auto">
-              Cancer is a lifelong journey. The KCCF International Camp brings
-              together children diagnosed with cancer and their siblings from
+              Cancer is a lifelong journey. The KCCF International Camp in
+              Azerbaijan brings together children diagnosed with cancer and their siblings from
               around the world, helps heal their emotional wounds, and inspires
-              them to feel joyful and included as part of society.
+              them to feel joyful and included as part of society. To date, 120
+              campers have joined us.
             </p>
           </div>
 
