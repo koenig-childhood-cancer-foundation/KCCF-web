@@ -243,7 +243,7 @@ export default function Volunteer() {
                 International Camp Support
               </h3>
               <p className="mb-4 text-lg dark:text-white">
-                Support the KCCF International Healing Camp in Azerbaijan,
+                Support the KCCF International Camp in Azerbaijan,
                 connecting pediatric cancer survivors and their siblings.
               </p>
               <ul className="text-md space-y-1 dark:text-white mb-4">

@@ -36,7 +36,7 @@ export default function Camp() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-violet-700 dark:text-saffron-600 mb-6">
-              KCCF International Healing Camp
+              KCCF International Camp
             </h2>
             <p className="text-lg text-violet-600 dark:text-white max-w-3xl mx-auto">
               Cancer is a lifelong journey. The KCCF International Camp in
