@@ -170,9 +170,13 @@ export default function CrazySocks() {
       {/* How It Works */}
       <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
         <div className="container text-center mx-auto px-4 sm:px-8 lg:px-6 2xl:px-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-10 text-violet-600 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-violet-600 dark:text-white">
             How It Works <br className="sm:hidden" /> In 3 Steps
           </h2>
+          <p className="text-lg md:text-xl text-violet-600 dark:text-white max-w-3xl mx-auto mb-10">
+            An hour-long event we bring to you, with a keynote by Elana. Your
+            sponsorship covers the supplies.
+          </p>
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg px-4 2xl:px-10 py-10 sm:pb-13 flex-1 flex flex-col items-center">
             <ol className="text-xl md:text-2xl text-left space-y-3 text-black dark:text-white list-none list-outside lg:grid lg:grid-cols-3 lg:gap-x-10 xl:gap-x-16 2xl:gap-x-24 lg:gap-y-10 lg:space-y-0">
               <li className="font-semibold mb-8 md:mb-10 text-center text-violet-600 dark:text-saffron-400">
@@ -240,7 +244,7 @@ export default function CrazySocks() {
               </li>
             </ol>
             <a
-              href="/documents/1_24_26_KCCF.Brochure_ER.pdf"
+              href="/documents/KCCF-Brochure.pdf"
               download="KCCF-Crazy-Socks-Brochure"
             >
               <button className="cursor-pointer text-md sm:text-lg md:text-2xl btn-primary btn-primary-violet group text-white py-3 md:py-4 px-6 rounded-full font-semibold inline-flex items-center justify-center">
