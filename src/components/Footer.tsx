@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useCookieConsent } from '@/contexts/CookieConsentContext';
 import { useFormModal } from '@/contexts/FormModalContext';
 import FormButton from '@/components/FormButton';
+import DonationButton from '@/components/DonationButton';
 
 export default function Footer() {
   const { openPreferences } = useCookieConsent();
@@ -284,16 +285,28 @@ export default function Footer() {
 
           {/* Newsletter Signup */}
           <div className="sm:col-span-3 md:col-span-3 lg:col-span-full xl:col-span-3 sm:order-3 flex flex-col items-center max-sm:max-w-xs max-sm:mx-auto lg:w-2/5 lg:mx-auto xl:w-full xl:mx-0 xl:self-center">
-            <h3 className="text-xl font-bold mb-6 sm:mb-7 xl:mb-8 text-white text-center">
-              See the families your support helps
+            <DonationButton
+              campaign="Donate to save lives"
+              size="lg"
+              className="mb-8 px-12 group"
+              icon={
+                <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              }
+            >
+              Donate Now
+            </DonationButton>
+            <h3 className="text-xl font-bold mb-4 text-white text-center">
+              A Little Love in Your Inbox
             </h3>
             <FormButton
               formType="newsletter-signup"
-              variant="primary"
+              variant="violet"
               size="md"
-              className="px-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30"
+              className="px-8"
             >
-              Subscribe
+              Subscribe to Newsletter
             </FormButton>
           </div>
         </div>
