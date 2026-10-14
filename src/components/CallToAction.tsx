@@ -3,18 +3,15 @@ import Link from 'next/link';
 export default function CallToAction() {
   return (
     <section className="py-20 bg-violet-600 dark:bg-gray-800 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white"></div>
-        <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-white"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-white"></div>
-      </div>
-
       <div className="container mx-auto px-4 text-center relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-          Join Our <span className="text-white">Mission</span>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          No child should fight cancer alone.
         </h2>
-        <p className="text-xl mb-12 text-white/90 max-w-3xl mx-auto leading-relaxed">
-          Together, we can make a difference in the lives of children battling cancer and their families. Every donation, every volunteer hour, and every act of support brings hope to those who need it most.
+        <p className="text-2xl md:text-3xl font-extrabold text-[#ffb37a] mx-auto leading-tight">
+          90&cent; of every dollar goes directly to programs
+        </p>
+        <p className="text-sm text-white/80 mt-2 mb-10">
+          Per KCCF&apos;s 2025 Financial Review.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
