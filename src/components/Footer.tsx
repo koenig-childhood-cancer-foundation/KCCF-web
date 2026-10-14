@@ -31,7 +31,6 @@ export default function Footer() {
                 <p>New York, NY 10065</p>
               </a>
               <p>
-                Phone:{' '}
                 <a
                   href="tel:+19177656272"
                   className="hover:text-white transition-colors"
@@ -40,7 +39,6 @@ export default function Footer() {
                 </a>
               </p>
               <p>
-                Email:{' '}
                 <a
                   href="mailto:join@thekccf.org"
                   className="hover:text-white transition-colors"
@@ -287,16 +285,15 @@ export default function Footer() {
           {/* Newsletter Signup */}
           <div className="sm:col-span-3 md:col-span-3 lg:col-span-full xl:col-span-3 sm:order-3 flex flex-col items-center max-sm:max-w-xs max-sm:mx-auto lg:w-2/5 lg:mx-auto xl:w-full xl:mx-0 xl:self-center">
             <h3 className="text-xl font-bold mb-6 sm:mb-7 xl:mb-8 text-white text-center">
-              Get our newsletter
+              See the families your support helps
             </h3>
             <FormButton
               formType="newsletter-signup"
               variant="primary"
               size="md"
-              fullWidth={true}
-              className="w-full sm:w-[80%] xl:w-full bg-white/20 hover:bg-white/30 sm:text-lg backdrop-blur-sm text-white border border-white/30"
+              className="px-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30"
             >
-              Subscribe to Newsletter
+              Subscribe
             </FormButton>
           </div>
         </div>
