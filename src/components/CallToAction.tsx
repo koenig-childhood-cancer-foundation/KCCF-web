@@ -3,12 +3,6 @@ import Link from 'next/link';
 export default function CallToAction() {
   return (
     <section className="py-20 bg-violet-600 dark:bg-gray-800 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white"></div>
-        <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-white"></div>
-        <div className="hidden md:block absolute bottom-12 left-[18%] w-16 h-16 rounded-full bg-white"></div>
-      </div>
-
       <div className="container mx-auto px-4 text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
           No child should fight cancer alone.
