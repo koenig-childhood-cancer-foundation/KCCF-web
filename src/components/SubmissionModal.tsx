@@ -59,13 +59,13 @@ export default function SubmissionModal({ onClose }: SubmissionModalProps) {
         {/* Icon */}
         <div className="text-center mb-6">
           {isSuccess ? (
-            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#732154' }}>
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#772D5E' }}>
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
           ) : (
-            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#732154' }}>
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#772D5E' }}>
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
@@ -75,7 +75,7 @@ export default function SubmissionModal({ onClose }: SubmissionModalProps) {
 
         {/* Content */}
         <div className="text-center">
-          <h3 className="text-2xl font-bold mb-3" style={{ color: '#732154' }}>
+          <h3 className="text-2xl font-bold mb-3" style={{ color: '#772D5E' }}>
             {isSuccess ? 'Success!' : 'Something went wrong'}
           </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
@@ -91,7 +91,7 @@ export default function SubmissionModal({ onClose }: SubmissionModalProps) {
               onClose?.()
             }}
             className="px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 text-white shadow-lg cursor-pointer"
-            style={{ backgroundColor: '#732154' }}
+            style={{ backgroundColor: '#772D5E' }}
           >
             {isSuccess ? 'Continue' : 'Try Again'}
           </button>
