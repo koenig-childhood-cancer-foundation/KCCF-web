@@ -203,7 +203,7 @@ export default function Volunteer() {
               <ul className="text-md space-y-1 dark:text-white mb-4">
                 <li>• Connect KCCF with your corporate CSR representative.</li>
                 <li>• Host a localized Crazy Socks gift bag event.</li>
-                <li>• Assemble care packages for pediatric cancer patients.</li>
+                <li>• Assemble gift bags for pediatric cancer patients.</li>
               </ul>
               <Link
                 className="text-lg btn-violet rounded-full px-4 py-2 font-semibold text-violet-700 mt-auto text-center flex items-center justify-center group w-fit mx-auto"

@@ -94,7 +94,10 @@ export default function HomeContent() {
 
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
-                  Elana Koenig is a childhood cancer survivor, singer, influencer, and founder of Koenig Childhood Cancer Foundation. She started KCCF in 2020, at age 11, with $900 from her piggy bank. At seven, Elana witnessed firsthand the financial and emotional struggles of families like her own, which motivated her to start the charity and help others facing the same experience.
+                  Elana Koenig was diagnosed with cancer at age 7 and treated at Memorial Sloan Kettering Cancer Center. Over 18 months of treatment, she went through 9 cycles of chemotherapy and 15 surgeries, and spent 6 months in a full-body cast. She saw firsthand the financial and emotional struggles that families like hers face.
+                </p>
+                <p>
+                  In 2020, at age 11, Elana founded Koenig Childhood Cancer Foundation (KCCF) with the $900 in her piggy bank. Today she is a teen cancer survivor, singer, influencer, and student at Cornell University, and she has appeared three times on The Kelly Clarkson Show as its youngest Rad Human.
                 </p>
                 <p className="text-violet-600 dark:text-saffron-400 font-semibold">
                   "Every child deserves a fighting chance, and every family deserves support during their darkest hours."
@@ -205,7 +208,7 @@ export default function HomeContent() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">KCCF Camp</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
-                Join our international summer camp in an exotic country, Azerbaijan for children diagnosed with cancer.
+                Join our international summer camp in Azerbaijan for children diagnosed with cancer.
               </p>
               <Link href="/camp" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto">
                 Join Camp

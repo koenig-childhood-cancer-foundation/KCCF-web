@@ -23,7 +23,7 @@ export const IMPACT_STATS = {
     },
     {
       value: "135,000+",
-      label: "Care Packages"
+      label: "Gift Bags"
     },
     {
       value: "120",
