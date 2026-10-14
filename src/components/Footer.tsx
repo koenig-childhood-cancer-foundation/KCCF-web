@@ -125,7 +125,7 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-white">
               Quick Links
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
               {/* About & Events */}
               <div>
                 <h5 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
@@ -201,34 +201,36 @@ export default function Footer() {
                       W9
                     </a>
                   </li>
-                  <li>
+                  <li className="text-gray-300">
+                    990s:{' '}
                     <a
                       href="/documents/990-2025-kccf.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      aria-label="Form 990 for 2025"
+                      className="text-gray-300 hover:text-white transition-colors"
                     >
-                      2025 - 990
+                      2025
                     </a>
-                  </li>
-                  <li>
+                    {' · '}
                     <a
                       href="/documents/990-2024-kccf.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      aria-label="Form 990 for 2024"
+                      className="text-gray-300 hover:text-white transition-colors"
                     >
-                      2024 - 990
+                      2024
                     </a>
-                  </li>
-                  <li>
+                    {' · '}
                     <a
                       href="/documents/990-2023-kccf.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      aria-label="Form 990 for 2023"
+                      className="text-gray-300 hover:text-white transition-colors"
                     >
-                      2023 - 990
+                      2023
                     </a>
                   </li>
                 </ul>
@@ -306,15 +308,15 @@ export default function Footer() {
           <h4 className="text-lg font-semibold mb-4 md:mb-6 text-white">
             Recognition & Awards
           </h4>
-          <div className="flex flex-col sm:flex-row items-end justify-center gap-4 sm:gap-6 md:gap-8">
-            <div className="flex flex-col items-center w-full sm:w-auto max-w-50 mx-auto sm:mx-0">
+          <div className="flex flex-row flex-wrap items-center justify-center gap-6 md:gap-10">
+            <div className="flex flex-col items-center">
               <a
                 href="https://www.guidestar.org/profile/84-4892279"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity flex flex-col items-center"
               >
-                <div className="h-20 sm:h-25 flex items-center justify-center mb-2">
+                <div className="h-20 sm:h-25 flex items-center justify-center">
                   <Image
                     src="/candid seal of transparency.png"
                     alt="Candid seal of transparency logo"
@@ -323,19 +325,16 @@ export default function Footer() {
                     className="sm:w-25 sm:h-25"
                   />
                 </div>
-                <p className="text-xs sm:text-sm text-gray-300 text-center h-8 sm:h-10 flex items-center justify-center px-2">
-                  Candid Platinum Transparency 2025
-                </p>
               </a>
             </div>
-            <div className="flex flex-col items-center w-full sm:w-auto max-w-50 mx-auto sm:mx-0">
+            <div className="flex flex-col items-center">
               <a
                 href="https://greatnonprofits.org/org/koenig-childhood-cancer-foundation"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity flex flex-col items-center"
               >
-                <div className="h-20 sm:h-25 flex items-center justify-center mb-2">
+                <div className="h-20 sm:h-25 flex items-center justify-center">
                   <Image
                     src="/images/2025-top-rated-awards-badge-embed.png"
                     alt="GreatNonprofits Top-Rated Award 2025"
@@ -344,19 +343,16 @@ export default function Footer() {
                     className="sm:w-35 sm:h-25"
                   />
                 </div>
-                <p className="text-xs sm:text-sm text-gray-300 text-center h-8 sm:h-10 flex items-center justify-center px-2">
-                  GreatNonprofits Top-Rated 2025
-                </p>
               </a>
             </div>
-            <div className="flex flex-col items-center w-full sm:w-auto max-w-50 mx-auto sm:mx-0">
+            <div className="flex flex-col items-center">
               <a
                 href="https://www.charitynavigator.org/ein/844892279"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity flex flex-col items-center"
               >
-                <div className="h-20 sm:h-25 flex items-center justify-center mb-2">
+                <div className="h-20 sm:h-25 flex items-center justify-center">
                   <Image
                     src="/images/4star-ratingbadge-2026.svg"
                     alt="Charity Navigator 4-Star Rating Badge 2026"
@@ -365,9 +361,6 @@ export default function Footer() {
                     className="sm:w-25 sm:h-25"
                   />
                 </div>
-                <p className="text-xs sm:text-sm text-gray-300 text-center h-8 sm:h-10 flex items-center justify-center px-2">
-                  Charity Navigator 4-Star Rating
-                </p>
               </a>
             </div>
           </div>
@@ -379,7 +372,7 @@ export default function Footer() {
             ©2026 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN:
             84-4892279
           </p>
-          <p className="mt-2">
+          <p className="mt-2 text-xs text-gray-400 max-w-4xl mx-auto">
             Koenig Childhood Cancer Foundation is committed to equal employment
             and volunteer opportunity without regard to age, ancestry,
             disability, national or ethnic origin, race, religious belief, sex,

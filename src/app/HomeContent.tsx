@@ -30,7 +30,7 @@ export default function HomeContent() {
         {/* Dark gradient added for mobile readability*/}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/30 md:from-black/40 md:via-black/30 md:to-transparent pointer-events-none"></div>
 
-        <div className="relative z-10 text-center lg:text-left container mx-auto px-2 lg:mx-0 lg:max-w-none lg:px-12">
+        <div className="relative z-10 text-center lg:text-left container mx-auto px-2 lg:mx-0 lg:max-w-none lg:pl-20 lg:pr-12">
           <div className="max-w-4xl mx-auto lg:ml-0 p-0 -mt-8 md:-mt-12">
             <h1 className="text-5xl md:text-6xl lg:text-5xl font-bold mb-8 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
               Helping Children Beat Cancer!
@@ -40,7 +40,7 @@ export default function HomeContent() {
               Life-saving financial and emotional support to children battling cancer and their families.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16 lg:mt-[72px] lg:mb-0">
               <DonationButton
                 amount={50}
                 campaign="Donate to save lives"
@@ -67,7 +67,7 @@ export default function HomeContent() {
             </div>
 
             {/* Impact Stats */}
-            <div className="mt-12 md:mt-26 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto lg:mx-0">
+            <div className="mt-12 md:mt-26 lg:mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto lg:mx-0">
               {IMPACT_STATS.HOME.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-3xl md:text-4xl font-bold text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.5)]">
