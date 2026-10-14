@@ -57,7 +57,7 @@ export default function HomeContent() {
               </DonationButton>
               <Link
                 href="/aid"
-                className="btn-primary btn-primary-violet group text-white py-4 px-10 rounded-full text-lg font-semibold inline-flex items-center justify-center"
+                className="btn-primary group bg-white/10 hover:bg-white/20 border-2 border-white text-white py-4 px-10 rounded-full text-lg font-semibold inline-flex items-center justify-center"
               >
                 <span>Family Aid</span>
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
