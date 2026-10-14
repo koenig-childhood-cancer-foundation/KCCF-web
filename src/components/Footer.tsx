@@ -122,9 +122,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="sm:col-span-full md:col-span-5 lg:col-span-9 xl:col-span-5 sm:order-1 lg:order-2">
-            <h4 className="text-lg font-semibold mb-4 text-white">
-              Quick Links
-            </h4>
+            <h4 className="sr-only">Quick Links</h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
               {/* About & Events */}
               <div>
@@ -289,7 +287,7 @@ export default function Footer() {
           {/* Newsletter Signup */}
           <div className="sm:col-span-3 md:col-span-3 lg:col-span-full xl:col-span-3 sm:order-3 flex flex-col items-center max-sm:max-w-xs max-sm:mx-auto lg:w-2/5 lg:mx-auto xl:w-full xl:mx-0 xl:self-center">
             <h3 className="text-xl font-bold mb-6 sm:mb-7 xl:mb-8 text-white text-center">
-              Stay connected to our programs, events, and impact!
+              Get our newsletter
             </h3>
             <FormButton
               formType="newsletter-signup"
@@ -305,9 +303,7 @@ export default function Footer() {
 
         {/* Awards Section - Full Width */}
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-          <h4 className="text-lg font-semibold mb-4 md:mb-6 text-white">
-            Recognition & Awards
-          </h4>
+          <h4 className="sr-only">Recognition & Awards</h4>
           <div className="flex flex-row flex-wrap items-center justify-center gap-6 md:gap-10">
             <div className="flex flex-col items-center">
               <a
@@ -316,13 +312,13 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity flex flex-col items-center"
               >
-                <div className="h-20 sm:h-25 flex items-center justify-center">
+                <div className="h-20 flex items-center justify-center">
                   <Image
                     src="/candid seal of transparency.png"
                     alt="Candid seal of transparency logo"
                     width={80}
                     height={80}
-                    className="sm:w-25 sm:h-25"
+                    className="h-20 w-auto"
                   />
                 </div>
               </a>
@@ -334,13 +330,13 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity flex flex-col items-center"
               >
-                <div className="h-20 sm:h-25 flex items-center justify-center">
+                <div className="h-20 flex items-center justify-center">
                   <Image
                     src="/images/2025-top-rated-awards-badge-embed.png"
                     alt="GreatNonprofits Top-Rated Award 2025"
                     width={110}
                     height={80}
-                    className="sm:w-35 sm:h-25"
+                    className="h-20 w-auto"
                   />
                 </div>
               </a>
@@ -352,13 +348,13 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity flex flex-col items-center"
               >
-                <div className="h-20 sm:h-25 flex items-center justify-center">
+                <div className="h-20 flex items-center justify-center">
                   <Image
                     src="/images/4star-ratingbadge-2026.svg"
                     alt="Charity Navigator 4-Star Rating Badge 2026"
                     width={80}
                     height={80}
-                    className="sm:w-25 sm:h-25"
+                    className="h-20 w-auto"
                   />
                 </div>
               </a>
