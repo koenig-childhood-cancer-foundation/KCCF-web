@@ -30,26 +30,17 @@ export default function HomeContent() {
         {/* Dark gradient added for mobile readability*/}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/30 md:from-black/40 md:via-black/30 md:to-transparent pointer-events-none"></div>
 
-        <div className="relative z-10 text-center lg:text-left container mx-auto px-2">
-          <div className="max-w-4xl mx-auto lg:ml-8 p-0 -mt-8 md:-mt-12">
-            <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
-              Life-saving financial and emotional support for <br className="hidden lg:block" />children battling cancer.
+        <div className="relative z-10 text-center lg:text-left container mx-auto px-2 lg:mx-0 lg:max-w-none lg:px-12">
+          <div className="max-w-4xl mx-auto lg:ml-0 p-0 -mt-8 md:-mt-12">
+            <h1 className="text-5xl md:text-6xl lg:text-5xl font-bold mb-8 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
+              Helping Children Beat Cancer!
             </h1>
 
             <p className="text-xl md:text-2xl mb-12 text-white max-w-3xl mx-auto lg:mx-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] font-medium">
-              Koenig Childhood Cancer Foundation was started by 11-year-old cancer survivor Elana Koenig in 2020 with $900 in her piggy bank.
+              Life-saving financial and emotional support to children battling cancer and their families.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
-              <Link
-                href="/aid"
-                className="btn-primary btn-primary-violet group text-white py-4 px-10 rounded-full text-lg font-semibold inline-flex items-center justify-center"
-              >
-                <span>Family Aid</span>
-                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
               <DonationButton
                 amount={50}
                 campaign="Donate to save lives"
@@ -64,6 +55,15 @@ export default function HomeContent() {
               >
                 Donate Now
               </DonationButton>
+              <Link
+                href="/aid"
+                className="btn-primary btn-primary-violet group text-white py-4 px-10 rounded-full text-lg font-semibold inline-flex items-center justify-center"
+              >
+                <span>Family Aid</span>
+                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
             </div>
 
             {/* Impact Stats */}
@@ -94,7 +94,7 @@ export default function HomeContent() {
 
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
-                  Elana Koenig is a childhood cancer survivor, singer, influencer, and founder of Koenig Childhood Cancer Foundation. At seven, Elana witnessed firsthand the financial and emotional struggles of families like her own, which motivated her to start the charity and help others facing the same experience.
+                  Elana Koenig is a childhood cancer survivor, singer, influencer, and founder of Koenig Childhood Cancer Foundation. She started KCCF in 2020, at age 11, with $900 from her piggy bank. At seven, Elana witnessed firsthand the financial and emotional struggles of families like her own, which motivated her to start the charity and help others facing the same experience.
                 </p>
                 <p className="text-violet-600 dark:text-saffron-400 font-semibold">
                   "Every child deserves a fighting chance, and every family deserves support during their darkest hours."
