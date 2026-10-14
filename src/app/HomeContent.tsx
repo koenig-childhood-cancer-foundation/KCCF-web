@@ -30,7 +30,7 @@ export default function HomeContent() {
         {/* Dark gradient added for mobile readability*/}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/30 md:from-black/40 md:via-black/30 md:to-transparent pointer-events-none"></div>
 
-        <div className="relative z-10 text-center lg:text-left container mx-auto px-2 lg:mx-0 lg:max-w-none lg:px-12">
+        <div className="relative z-10 text-center lg:text-left container mx-auto px-2 lg:mx-0 lg:max-w-none lg:pl-20 lg:pr-12">
           <div className="max-w-4xl mx-auto lg:ml-0 p-0 -mt-8 md:-mt-12">
             <h1 className="text-5xl md:text-6xl lg:text-5xl font-bold mb-8 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
               Helping Children Beat Cancer!
@@ -40,7 +40,7 @@ export default function HomeContent() {
               Life-saving financial and emotional support to children battling cancer and their families.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16 lg:mt-[72px] lg:mb-0">
               <DonationButton
                 amount={50}
                 campaign="Donate to save lives"
@@ -67,7 +67,7 @@ export default function HomeContent() {
             </div>
 
             {/* Impact Stats */}
-            <div className="mt-12 md:mt-26 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto lg:mx-0">
+            <div className="mt-12 md:mt-26 lg:mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto lg:mx-0">
               {IMPACT_STATS.HOME.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-3xl md:text-4xl font-bold text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.5)]">
@@ -261,6 +261,68 @@ export default function HomeContent() {
         </div>
       </section>
 
+      {/* Brave Warriors Section */}
+      <section className="py-20 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              Our Brave Warriors
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Meet some of the incredible children and families whose lives have been touched by KCCF's support.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            {[
+              {
+                name: "Derek",
+                image: "/images/cropped-Derek_5704-scaled.jpeg",
+                quote: "KCCF helped my family stay in our home during my treatment."
+              },
+              {
+                name: "Khadija",
+                image: "/images/cropped-Khadija-Base-1.jpg",
+                quote: "The foundation gave us hope when we needed it most."
+              },
+              {
+                name: "Zariyah",
+                image: "/images/cropped-Zariyah_4132-1-scaled.jpg",
+                quote: "Thank you for helping my family during my cancer journey."
+              },
+              {
+                name: "Mark",
+                image: "/images/cropped-cropped-Mark_2022-06-13-12.21.08.jpg",
+                quote: "Ependymoma warrior - KCCF's support made all the difference."
+              },
+              {
+                name: "Mishka",
+                image: "/images/cropped-Mishka-Belarus.jpg",
+                quote: "Neuroblastoma fighter - grateful for KCCF's love and support."
+              }
+            ].map((warrior, index) => (
+              <div key={index} className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-4 shadow-lg">
+                <div className="relative mb-4">
+                  <div className="relative w-full aspect-square max-w-48 mx-auto">
+                    <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-violet-400 rounded-full opacity-20"></div>
+                    <Image
+                      src={warrior.image}
+                      alt={warrior.name}
+                      fill
+                      sizes="192px"
+                      className="rounded-full object-cover relative z-10"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white text-center">{warrior.name}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-200 text-center italic leading-tight">"{warrior.quote}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Top Media Coverage Section */}
       <section className="py-16 md:py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
@@ -337,68 +399,6 @@ export default function HomeContent() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Brave Warriors Section */}
-      <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-              Our Brave Warriors
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Meet some of the incredible children and families whose lives have been touched by KCCF's support.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-            {[
-              {
-                name: "Derek",
-                image: "/images/cropped-Derek_5704-scaled.jpeg",
-                quote: "KCCF helped my family stay in our home during my treatment."
-              },
-              {
-                name: "Khadija",
-                image: "/images/cropped-Khadija-Base-1.jpg",
-                quote: "The foundation gave us hope when we needed it most."
-              },
-              {
-                name: "Zariyah",
-                image: "/images/cropped-Zariyah_4132-1-scaled.jpg",
-                quote: "Thank you for helping my family during my cancer journey."
-              },
-              {
-                name: "Mark",
-                image: "/images/cropped-cropped-Mark_2022-06-13-12.21.08.jpg",
-                quote: "Ependymoma warrior - KCCF's support made all the difference."
-              },
-              {
-                name: "Mishka",
-                image: "/images/cropped-Mishka-Belarus.jpg",
-                quote: "Neuroblastoma fighter - grateful for KCCF's love and support."
-              }
-            ].map((warrior, index) => (
-              <div key={index} className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-4 shadow-lg">
-                <div className="relative mb-4">
-                  <div className="relative w-full aspect-square max-w-48 mx-auto">
-                    <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-violet-400 rounded-full opacity-20"></div>
-                    <Image
-                      src={warrior.image}
-                      alt={warrior.name}
-                      fill
-                      sizes="192px"
-                      className="rounded-full object-cover relative z-10"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white text-center">{warrior.name}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-200 text-center italic leading-tight">"{warrior.quote}"</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
