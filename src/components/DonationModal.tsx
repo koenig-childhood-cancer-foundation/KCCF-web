@@ -132,7 +132,7 @@ export default function DonationModal() {
       {/* Modal */}
       <div className="relative rounded-2xl max-w-5xl w-full h-[90vh] sm:h-[85vh] lg:h-[75vh] min-[1800px]:h-[65vh] min-h-[600px] flex items-stretch gap-4 my-auto">
         {/* Campaign Card - Left Side */}
-         <div className="hidden lg:flex lg:w-1/2 h-full bg-gradient-to-br from-[#732154] to-violet-600 text-white flex-col justify-between rounded-2xl overflow-hidden">
+         <div className="hidden lg:flex lg:w-1/2 h-full bg-gradient-to-br from-[#772D5E] to-violet-600 text-white flex-col justify-between rounded-2xl overflow-hidden">
           <div className="flex-1 min-h-0 flex flex-col">
             <div className="campaign-image-holder overflow-hidden flex-shrink-0 h-72">
               <Image 
@@ -251,8 +251,8 @@ export default function DonationModal() {
                       onClick={() => setSelectedProvider('zeffy')}
                       className={`w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-sm font-medium transition-all duration-200 active:scale-95 sm:hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
                         selectedProvider === 'zeffy'
-                          ? 'bg-[#732154] text-white hover:bg-[#732154]/90 border-[#732154]'
-                          : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#732154]'
+                          ? 'bg-[#772D5E] text-white hover:bg-[#772D5E]/90 border-[#772D5E]'
+                          : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#772D5E]'
                       }`}
                     >
                       Zeffy
@@ -267,8 +267,8 @@ export default function DonationModal() {
                       onClick={() => setSelectedProvider('givelively')}
                       className={`w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-sm font-medium transition-all duration-200 active:scale-95 sm:hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
                         selectedProvider === 'givelively'
-                          ? 'bg-[#732154] text-white hover:bg-[#732154]/90 border-[#732154]'
-                          : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#732154]'
+                          ? 'bg-[#772D5E] text-white hover:bg-[#772D5E]/90 border-[#772D5E]'
+                          : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#772D5E]'
                       }`}
                     >
                       GiveLively

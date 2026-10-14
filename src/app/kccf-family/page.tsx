@@ -75,7 +75,7 @@ export default function KCCFFamily() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="xl:mx-16">
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
-                <p className="text-xl lg:text-2xl xl:text-[1.6rem] 2xl:text-4xl font-semibold text-[#732154] dark:text-saffron-400">
+                <p className="text-xl lg:text-2xl xl:text-[1.6rem] 2xl:text-4xl font-semibold text-[#772D5E] dark:text-saffron-400">
                   Cancer Survivor, Singer, Influencer
                 </p>
                 <p className="space-y-6 text-lg xl:text-[1.4rem] 2xl:text-[1.8rem] text-gray-700 dark:text-gray-200 leading-relaxed">
@@ -113,7 +113,7 @@ export default function KCCFFamily() {
             </div>
 
             <div className="relative">
-              <div className="relative bg-gradient-to-br from-[#732154]/20 to-[#732154]/30 dark:from-[#732154]/40 dark:to-[#732154]/50 p-8 rounded-3xl shadow-2xl">
+              <div className="relative bg-gradient-to-br from-[#772D5E]/20 to-[#772D5E]/30 dark:from-[#772D5E]/40 dark:to-[#772D5E]/50 p-8 rounded-3xl shadow-2xl">
                 <Image
                   src="/images/cropped-IMG_1521-scaled-1.jpg"
                   alt="Elana Koenig, Founder"
@@ -141,7 +141,7 @@ export default function KCCFFamily() {
             <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#772D5E] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/Untitled-drawing-1.jpg"
                     alt="Rena Koenig"
@@ -191,7 +191,7 @@ export default function KCCFFamily() {
             <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#772D5E] rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-Bradley-Bailyn-1.png"
                     alt="Bradley Bailyn"
@@ -220,7 +220,7 @@ export default function KCCFFamily() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              <span className="text-[#732154] dark:text-saffron-400">
+              <span className="text-[#772D5E] dark:text-saffron-400">
                 Advisers
               </span>
             </h2>
@@ -231,7 +231,7 @@ export default function KCCFFamily() {
             <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-40 h-40 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#772D5E] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/Mike-Blumenfeld-Director-copy.png"
                     alt="Mike Blumenfeld"
@@ -285,7 +285,7 @@ export default function KCCFFamily() {
             <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-40 h-40 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#772D5E] rounded-full opacity-20"></div>
                   <Image
                     src="/images/Oliwia-Caes.JPEG"
                     alt="Oliwia Caes"
@@ -329,7 +329,7 @@ export default function KCCFFamily() {
             <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#772D5E] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/Dr.-Wexler-Honorary-Director-copy.png"
                     alt="Dr. Wexler"
@@ -342,7 +342,7 @@ export default function KCCFFamily() {
               <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
                 Dr. Wexler
               </h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">
+              <p className="text-[#772D5E] dark:text-saffron-400 font-semibold text-center mb-3">
                 Saved Elana's Life
               </p>
               <p className="text-gray-600 dark:text-gray-200 text-center">
@@ -369,7 +369,7 @@ export default function KCCFFamily() {
               <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
                 Dr. Morris
               </h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">
+              <p className="text-[#772D5E] dark:text-saffron-400 font-semibold text-center mb-3">
                 Removed Elana's Tumor
               </p>
               <p className="text-gray-600 dark:text-gray-200 text-center">
@@ -383,7 +383,7 @@ export default function KCCFFamily() {
             <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#732154] rounded-full opacity-20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#772D5E] rounded-full opacity-20"></div>
                   <Image
                     src="/images/cropped-DrPrinceElana-scaled.jpg"
                     alt="Dr. Prince"
@@ -396,7 +396,7 @@ export default function KCCFFamily() {
               <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
                 Dr. Prince
               </h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">
+              <p className="text-[#772D5E] dark:text-saffron-400 font-semibold text-center mb-3">
                 Elana's Second Surgeon
               </p>
               <p className="text-gray-600 dark:text-gray-200 text-center">
@@ -410,7 +410,7 @@ export default function KCCFFamily() {
             <div className="card-static bg-white dark:bg-gray-800 rounded-2xl p-8">
               <div className="relative mb-6">
                 <div className="relative w-48 h-48 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#732154] to-fandango-400 rounded-full opacity-20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#772D5E] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
                     src="/images/Dr.-Tomas-copy.png"
                     alt="Dr. Charas"
@@ -423,7 +423,7 @@ export default function KCCFFamily() {
               <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
                 Dr. Charas
               </h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">
+              <p className="text-[#772D5E] dark:text-saffron-400 font-semibold text-center mb-3">
                 Volunteer Shani's dad
               </p>
               <p className="text-gray-600 dark:text-gray-200 text-center">
@@ -450,7 +450,7 @@ export default function KCCFFamily() {
               <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white text-center">
                 Dr. Kearney
               </h3>
-              <p className="text-[#732154] dark:text-saffron-400 font-semibold text-center mb-3">
+              <p className="text-[#772D5E] dark:text-saffron-400 font-semibold text-center mb-3">
                 Elana's Therapist
               </p>
               <p className="text-gray-600 dark:text-gray-200 text-center">

@@ -88,8 +88,8 @@ export default function DonationCard() {
                 onClick={() => setSelectedProvider('zeffy')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
                   selectedProvider === 'zeffy'
-                    ? 'bg-[#732154] text-white hover:bg-[#732154]/90 border-[#732154]'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#732154]'
+                    ? 'bg-[#772D5E] text-white hover:bg-[#772D5E]/90 border-[#772D5E]'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#772D5E]'
                 }`}
               >
                 Zeffy
@@ -104,8 +104,8 @@ export default function DonationCard() {
                 onClick={() => setSelectedProvider('givelively')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
                   selectedProvider === 'givelively'
-                    ? 'bg-[#732154] text-white hover:bg-[#732154]/90 border-[#732154]'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#732154]'
+                    ? 'bg-[#772D5E] text-white hover:bg-[#772D5E]/90 border-[#772D5E]'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#772D5E]'
                 }`}
               >
                 GiveLively

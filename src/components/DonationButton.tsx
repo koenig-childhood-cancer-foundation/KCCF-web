@@ -24,13 +24,13 @@ export default function DonationButton({
 }: DonationButtonProps) {
   const { openModal } = useDonationModal()
 
-  const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#732154] cursor-pointer'
+  const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#772D5E] cursor-pointer'
 
   const variantClasses = {
     primary: 'btn-primary btn-primary-orange text-white',
     secondary: 'btn-primary bg-fandango-600 hover:bg-fandango-700 text-white',
-    outline: 'btn-primary border-2 border-[#732154] text-[#732154] hover:bg-[#732154] hover:text-white',
-    ghost: 'text-[#732154] hover:bg-[#732154]/10 transform hover:-translate-y-1'
+    outline: 'btn-primary border-2 border-[#772D5E] text-[#772D5E] hover:bg-[#772D5E] hover:text-white',
+    ghost: 'text-[#772D5E] hover:bg-[#772D5E]/10 transform hover:-translate-y-1'
   }
 
   const sizeClasses = {

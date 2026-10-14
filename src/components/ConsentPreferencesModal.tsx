@@ -74,7 +74,7 @@ export default function ConsentPreferencesModal() {
              </div>
              <div className="flex gap-2">
                <button type="button" onClick={closePreferences} className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:cursor-pointer text-gray-900 dark:text-white">Cancel</button>
-               <button type="button" onClick={onSave} className="px-4 py-2 rounded-lg bg-[#732154] text-white hover:bg-[#732154]/90 hover:cursor-pointer">Save preferences</button>
+               <button type="button" onClick={onSave} className="px-4 py-2 rounded-lg bg-[#772D5E] text-white hover:bg-[#772D5E]/90 hover:cursor-pointer">Save preferences</button>
              </div>
            </div>
         </div>
@@ -92,7 +92,7 @@ function PreferenceRow({ title, description, checked, onChange, disabled }: { ti
       </div>
       <label className={`relative inline-flex items-center ${disabled ? 'opacity-60' : ''}`}>
         <input type="checkbox" className="sr-only peer" checked={!!checked} onChange={e => onChange?.(e.target.checked)} disabled={disabled} />
-        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-[#732154] transition-colors"></div>
+        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-[#772D5E] transition-colors"></div>
         <div className="absolute left-0.5 top-0.5 h-5 w-5 bg-white rounded-full transition-transform peer-checked:translate-x-5" />
       </label>
     </div>
