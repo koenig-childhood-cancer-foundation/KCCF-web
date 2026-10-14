@@ -365,6 +365,12 @@ export default function Footer() {
             ©2026 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN:
             84-4892279
           </p>
+          <p className="mt-2 text-xs text-gray-400 max-w-4xl mx-auto">
+            Koenig Childhood Cancer Foundation is committed to equal employment
+            and volunteer opportunity without regard to age, ancestry,
+            disability, national or ethnic origin, race, religious belief, sex,
+            sexual orientation, gender identity, marital or veteran status.
+          </p>
           <div className="mt-3 flex items-center justify-center gap-4">
             <Link href="/privacy" className="hover:underline">
               Privacy
