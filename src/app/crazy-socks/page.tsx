@@ -18,7 +18,7 @@ export default function CrazySocks() {
   ];
 
   const howItWorksSteps = [
-    { title: 'You Sponsor', text: 'Your sponsorship covers the supplies. We deliver them and set up.' },
+    { title: 'You Sponsor', text: 'Your sponsorship covers the supplies. We bring them and set up.' },
     { title: 'Elana Inspires', text: 'Our teen founder and survivor shares the why.' },
     { title: 'Your Team Packs', text: 'Write notes of hope and fill the bags.' },
     { title: 'A Child Opens Your Gift', text: 'We deliver the bags to children in the hospital and send your team photos.' },
@@ -187,8 +187,8 @@ export default function CrazySocks() {
                   The moment she got home, she would pull them off and throw
                   them away, hoping to leave behind the needles, pain, and fear.
                   She was determined to change that experience for other
-                  children fighting cancer. This is how our signature Crazy
-                  Socks Gift Bags movement started.
+                  children fighting cancer. This is how the Crazy Socks Gift
+                  Bags movement started.
                 </p>
               </div>
             </div>
@@ -228,7 +228,7 @@ export default function CrazySocks() {
                   </li>
                 )}
                 <li className="flex-1 bg-white dark:bg-gray-700 border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-5 py-7 text-center">
-                  <div className="w-16 h-16 rounded-full bg-[#DAB87E] text-white text-3xl font-bold flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-full bg-[#8A6A2E] text-white text-3xl font-bold flex items-center justify-center mx-auto mb-4">
                     {index + 1}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
@@ -244,14 +244,11 @@ export default function CrazySocks() {
         </div>
       </section>
 
-      {/* Teams in Action */}
+      {/* Moments from Our Events */}
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="text-center mb-16 px-4">
-          <p className="text-xs md:text-sm font-bold tracking-[0.22em] uppercase text-[#8A6A2E] dark:text-saffron-400 mb-3">
-            In action
-          </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-            Teams in Action
+            Moments from Our Events
           </h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
         </div>
@@ -351,11 +348,8 @@ export default function CrazySocks() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Be the reason a child smiles today.
           </h2>
-          <p className="text-2xl md:text-3xl font-extrabold text-[#ffb37a] mx-auto leading-tight">
+          <p className="text-2xl md:text-3xl font-extrabold text-[#ffb37a] mx-auto leading-tight mb-10">
             Bring Crazy Socks to your team.
-          </p>
-          <p className="text-white/80 mt-3 mb-10">
-            Sponsor an event at your company, or start a fundraiser with your colleagues.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <FormButton
