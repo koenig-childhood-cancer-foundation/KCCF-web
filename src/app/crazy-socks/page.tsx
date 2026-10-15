@@ -44,65 +44,94 @@ export default function CrazySocks() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
       {/* Hero Section with Background */}
-      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden">
+      <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden bg-[#3a2e33]">
+        {/* Blurred copy fills the left side once the photo shifts right on large screens */}
+        <div className="hidden lg:block absolute inset-0 top-24 overflow-hidden" aria-hidden="true">
+          <Image
+            src="/images/header_image_crazy_socks.jpg"
+            alt=""
+            fill
+            className="object-cover object-left blur-2xl scale-110"
+            sizes="100vw"
+          />
+        </div>
+
         {/* Background Image */}
-        <div className="absolute inset-0 top-24">
+        <div className="absolute inset-0 top-24 lg:left-[15%]">
           <Image
             src="/images/header_image_crazy_socks.jpg"
             alt="Crazy Socks Gift Bags"
             fill
-            className="object-cover object-[45%_center] sm:object-[70%_center] lg:object-[90%_center] xl:object-[center_10%] "
+            className="object-cover object-[45%_center] sm:object-[70%_center] lg:object-[center_20%]"
             sizes="100vw"
             priority
           />
+          {/* Soft seam where the photo meets the blurred fill */}
+          <div className="hidden lg:block absolute inset-y-0 left-0 w-[35%] bg-gradient-to-r from-[#282024]/30 via-[#282024]/15 to-transparent" aria-hidden="true" />
+          {/* Light overlay so the words stay readable, matching the home page */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/10 lg:bg-gradient-to-r lg:from-black/5 lg:via-black/5 lg:to-transparent pointer-events-none" aria-hidden="true" />
         </div>
 
         {/* PageHeader */}
         <PageHeader
-          title="Crazy Socks Gift Bag Events"
-          subtitle="An hour-long team event we bring to your company, with a keynote by Elana. Your team packs gift bags for children in the hospital."
-          headerStyle="pt-72 xl:pt-84 pb-12 xl:pl-28 2xl:pl-32"
+          title="Crazy Socks<br/>Gift Bag Events"
+          subtitle="Your team packs gift bags for children in the hospital, with a keynote by Elana."
+          headerStyle="pt-72 xl:pt-84 pb-12 xl:pl-14 2xl:pl-20"
           gridStyle="gap-0 lg:grid-cols-1"
           button={
-            <FormButton
-              formType="crazy-socks-sponsor"
-              variant="orange"
-              size="md"
-              className="text-lg 2xl:text-[1.3rem] mt-12"
-              icon={
-                <svg
-                  className="w-6 h-6 lg:w-6 lg:h-6 2xl:w-6.5 2xl:h-6.5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
-                  />
-                </svg>
-              }
-            >
-              Sponsor Gift Bag Event
-            </FormButton>
+            <div className="mt-12 flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+              <FormButton
+                formType="crazy-socks-sponsor"
+                variant="orange"
+                size="md"
+                className="text-lg 2xl:text-[1.3rem]"
+                icon={
+                  <svg
+                    className="w-6 h-6 lg:w-6 lg:h-6 2xl:w-6.5 2xl:h-6.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+                    />
+                  </svg>
+                }
+              >
+                Host an Event
+              </FormButton>
+              <a
+                href="/documents/KCCF-Brochure.pdf"
+                download="KCCF-Brochure"
+                className="btn-primary inline-flex items-center justify-center rounded-full border-2 border-white bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 text-lg 2xl:text-[1.3rem]"
+              >
+                Download the Brochure
+              </a>
+            </div>
           }
         />
       </div>
 
-      {/* Companies that have hosted */}
-      <section className="py-6 bg-white dark:bg-gray-900 border-b border-[#ECDBE6] dark:border-gray-700">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#8A6A2E] dark:text-saffron-400 mb-3">
-            Companies that have hosted Crazy Socks events
-          </p>
-          <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-lg font-semibold text-gray-800 dark:text-gray-100">
-            {['Meta', 'Bank of America', 'Aflac', 'Forvis Mazars', 'Sumitomo Mitsui Bank', 'UBS'].map((name) => (
-              <li key={name}>{name}</li>
-            ))}
-          </ul>
-        </div>
+      {/* Crazy Socks numbers */}
+      <section className="py-8 bg-white dark:bg-gray-900 border-b border-[#ECDBE6] dark:border-gray-700">
+        <ul className="container mx-auto px-4 flex flex-wrap justify-center gap-x-12 gap-y-4">
+          {[
+            { value: IMPACT_STATS.CRAZY_SOCKS[0].value, label: 'gift bags delivered' },
+            { value: IMPACT_STATS.CRAZY_SOCKS[1].value, label: 'items inside the bags' },
+          ].map((stat) => (
+            <li key={stat.label} className="border-l-4 border-[#DAB87E] pl-4 py-1">
+              <div className="text-3xl md:text-[2.6rem] font-bold leading-tight text-violet-600 dark:text-white">
+                {stat.value}
+              </div>
+              <div className="text-sm md:text-base font-semibold text-[#8A6A2E] dark:text-saffron-400">
+                {stat.label}
+              </div>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* How It Works */}

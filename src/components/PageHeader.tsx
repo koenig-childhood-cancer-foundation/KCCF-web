@@ -4,7 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 
 interface PageHeaderProps {
-  /** Main title text */
+  /** Main title text. Include `<br/>` to insert line breaks. */
   title: string
   /** Subtitle text. Include `<br/>` to insert line breaks; these will be rendered as actual line breaks. */
   subtitle?: string
@@ -24,7 +24,7 @@ interface PageHeaderProps {
  * Page header component.
  *
  * @param {Object} props - Component props
- * @param {string} props.title - Main title text
+ * @param {string} props.title - Main title text. Include `<br/>` to insert line breaks
  * @param {string} [props.subtitle] - Subtitle text. Include `<br/>` to insert line breaks
  * @param {string} [props.image] - Optional header image src
  * @param {React.ReactNode} [props.childrenRight] - Optional right-side content
@@ -57,7 +57,14 @@ export default function PageHeader({
               priority
             />
           )}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-[0_0_8px_rgba(0,0,0,1)]">{title}</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-[0_0_8px_rgba(0,0,0,1)]">
+            {title.includes('<br/>') ? title.split('<br/>').map((line, index, lines) => (
+              <React.Fragment key={index}>
+                {line}
+                {index < lines.length - 1 && <br />}
+              </React.Fragment>
+            )) : title}
+          </h1>
           {subtitle && (
             <p className="mt-4 text-white/90 text-lg md:text-xl font-semibold leading-relaxed drop-shadow-[0_0_8px_rgba(0,0,0,1)] max-w-[42ch] break-words">
               {subtitle.includes('<br/>') ? subtitle.split('<br/>').map((line, index) => (
