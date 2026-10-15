@@ -14,10 +14,6 @@ export default function CrazySocks() {
     '/images/IMG_6861-scaled.jpeg',
     '/images/IMG_6703-scaled.jpeg',
     '/images/IMG_5046-scaled.jpg',
-    '/images/IMG_2841-scaled.jpg',
-    '/images/IMG_1850-scaled.jpg',
-    '/images/IMG_0875-scaled.jpeg',
-    '/images/hss-crazy-socks.jpg',
   ];
 
   useEffect(() => {
@@ -333,39 +329,38 @@ export default function CrazySocks() {
         </div>
       </section>
 
-      {/* Image Gallery Section */}
-      <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
-        <div className="relative">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-              Your Impact
-            </h2>
-            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8 max-w-6xl mx-auto px-2 sm:px-8">
-            {collageImages.map((image, index) => (
-              <button
-                //TODO: Make these clickable to open the full-sized image in a modal
-                key={index}
-                type="button"
-                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl hover:scale-110 transform transition-all duration-300 opacity-0"
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                  animation: 'fadeInUp 0.6s ease-out forwards',
-                }}
-              >
-                <div className="aspect-square relative">
-                  <Image
-                    src={image}
-                    alt={`Crazy Socks Collage ${index + 1}`}
-                    fill
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16.66vw"
-                    className="object-cover"
-                  />
-                </div>
-              </button>
-            ))}
-          </div>
+      {/* Teams in Action */}
+      <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
+        <div className="text-center mb-16 px-4">
+          <p className="text-xs md:text-sm font-bold tracking-[0.22em] uppercase text-[#8A6A2E] dark:text-saffron-400 mb-3">
+            In action
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+            Teams in Action
+          </h2>
+          <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 max-w-6xl mx-auto px-4 sm:px-8">
+          {collageImages.map((image, index) => (
+            <div
+              key={image}
+              className="bg-white p-2 sm:p-2.5 pb-6 sm:pb-8 rounded-md border border-[#DAB87E] shadow-lg opacity-0"
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                animation: 'fadeInUp 0.6s ease-out forwards',
+              }}
+            >
+              <div className="aspect-square relative">
+                <Image
+                  src={image}
+                  alt={`Crazy Socks event photo ${index + 1}`}
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

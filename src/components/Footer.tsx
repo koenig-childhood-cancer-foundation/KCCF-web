@@ -11,7 +11,7 @@ export default function Footer() {
   const { openModal } = useFormModal();
 
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-white transition-colors duration-200 overflow-x-hidden">
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white border-t-[3px] border-[#DAB87E] transition-colors duration-200 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Row 1: Contact Info, Quick Links, Newsletter Signup */}
         <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-12 xl:grid-cols-10 gap-8 items-start">
