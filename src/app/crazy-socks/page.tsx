@@ -164,16 +164,17 @@ export default function CrazySocks() {
         />
       </div>
 
-      {/* About Section */}
+      {/* Story */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4 xl:px-28 2xl:px-32">
-          <div className="grid lg:grid-cols-2 gap-14 2xl:gap-26 items-center">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              Why Crazy Socks Gift Bags?
+            </h2>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
+          </div>
+          <div className="grid lg:grid-cols-2 gap-14 2xl:gap-26 items-center max-w-6xl mx-auto">
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-[2.5rem] font-bold mb-8 text-violet-600 dark:text-white">
-                Why Crazy Socks Gift Bags?
-              </h2>
-              <div className="w-14 h-1 bg-[#DAB87E] rounded-full -mt-4 mb-8" aria-hidden="true" />
-
               <div className="space-y-6 text-lg xl:text-[1.15rem] 2xl:text-2xl text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
                   Crazy Socks Gift Bag is KCCF's signature project, inspired by
@@ -193,13 +194,13 @@ export default function CrazySocks() {
             </div>
 
             <div className="relative">
-              <div className="relative bg-white dark:bg-gray-800 p-1.5 rounded-3xl border-2 border-[#DAB87E] shadow-lg">
+              <div className="relative bg-white p-2.5 rounded-md border border-[#DAB87E] shadow-lg max-w-md mx-auto">
                 <Image
                   src="/images/crazy-socks.jpg"
-                  alt="Crazy Socks Gift Bags"
+                  alt="Elana with a child holding a Crazy Socks gift bag"
                   width={500}
                   height={600}
-                  className="rounded-2xl w-full h-auto"
+                  className="w-full h-auto"
                 />
               </div>
             </div>
