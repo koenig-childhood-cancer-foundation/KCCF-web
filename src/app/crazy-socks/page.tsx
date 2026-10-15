@@ -16,51 +16,6 @@ export default function CrazySocks() {
     '/images/IMG_5046-scaled.jpg',
   ];
 
-  const companyQuotes = [
-    {
-      name: 'Meta Leadership',
-      image: '/images/MetaLeadershipMakingfitBags-scaled.jpg',
-      quote:
-        'Elana’s story moved us all to tears. Our leadership team traveled from all over the country to connect through this special mission.',
-      role: 'Participant',
-    },
-    {
-      name: 'Bank of America',
-      image: '/images/bankofamerica-scaled.jpeg',
-      quote:
-        'We love the Crazy Socks project. My daughter was so inspired that she donated her hair to the cause! We look forward to a long-term partnership.',
-      role: 'Organizer',
-    },
-    {
-      name: 'Aflac Global Investments',
-      image: '/images/AlfacGiftMakingEvent-scaled.jpeg',
-      quote:
-        'I am going through cancer treatment myself at the moment. I am so glad we can give our Aflac ducks to children along with these gifts.',
-      role: 'Organizer',
-    },
-    {
-      name: 'Forvis Mazars Group',
-      image: '/images/giftbagevent2-scaled.jpeg',
-      quote:
-        'This project is truly growing with purpose! So many people signed up that we decided to host two separate events. We are so proud to help with this cause.',
-      role: 'CEO',
-    },
-    {
-      name: 'Sumitomo Mitsui Bank',
-      image: '/images/sumitomo-csr.jpg',
-      quote:
-        'I have never seen so many employees sign up for a single event! They were all so excited to learn from Elana’s experience and join the cause.',
-      role: 'Organizer',
-    },
-    {
-      name: 'UBS',
-      image: '/images/ubs-season-of-service.png',
-      quote:
-        'KCCF brought a care package to my daughter; it was the brightest moment during her cancer treatment. We wanted to make an impact through KCCF.',
-      role: 'Leader',
-    },
-  ];
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -409,50 +364,184 @@ export default function CrazySocks() {
         </div>
       </section>
 
-      {/* What Companies Say */}
+      {/* Corporate Partners */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-xs md:text-sm font-bold tracking-[0.22em] uppercase text-[#8A6A2E] dark:text-saffron-400 mb-3">
-              Trusted by
-            </p>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-              What Companies Say
+              Corporate Partners
             </h2>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Meta, Bank of America, Aflac, Forvis Mazars, Sumitomo Mitsui Bank
-              and UBS have hosted Crazy Socks events.
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl lg:max-w-[100vw] mx-auto">
+              Companies partner with us through employee volunteering,
+              team-building events, and CSR programs.{' '}
+              <br className="hidden lg:inline" /> Together, we make a difference
+              in the lives of children battling cancer.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {companyQuotes.map((company) => (
-              <div
-                key={company.name}
-                className="relative bg-[#FFFDF7] dark:bg-gray-700 border border-[#ECDBE6] dark:border-gray-600 rounded-2xl shadow-md p-3 pb-6"
-              >
-                <div
-                  className="absolute -top-2.5 left-1/2 -translate-x-1/2 -rotate-3 w-20 h-5 bg-[#DAB87E]/55 rounded-sm"
-                  aria-hidden="true"
-                />
-                <div className="aspect-square relative rounded-xl overflow-hidden mb-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Meta Leadership */}
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
+              <div className="relative mb-6">
+                <div className="relative w-48 h-48 mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#772D5E] to-fandango-400 rounded-full opacity-20"></div>
                   <Image
-                    src={company.image}
-                    alt={company.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
+                    src="/images/MetaLeadershipMakingfitBags-scaled.jpg"
+                    alt="Meta Leadership"
+                    width={192}
+                    height={192}
+                    className="rounded-full w-full h-full object-cover relative z-10"
                   />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
-                  {company.name}
-                </h3>
-                <p className="text-gray-700 dark:text-gray-200 text-center px-2">
-                  <span className="italic">&quot;{company.quote}&quot;</span> — {company.role}
-                </p>
               </div>
-            ))}
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Meta Leadership
+              </h3>
+              <p className="text-gray-700 dark:text-gray-200 text-center">
+                <span className="italic">
+                  "Elana’s story moved us all to tears. Our leadership team
+                  traveled from all over the country to connect through this
+                  special mission."
+                </span>{' '}
+                — Participant
+              </p>
+            </div>
+
+            {/* Bank of America */}
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
+              <div className="relative mb-6">
+                <div className="relative w-48 h-48 mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
+                  <Image
+                    src="/images/bankofamerica-scaled.jpeg"
+                    alt="Bank of America"
+                    width={192}
+                    height={192}
+                    className="rounded-full w-full h-full object-cover relative z-10"
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Bank of America
+              </h3>
+              <p className="text-gray-700 dark:text-gray-200 text-center">
+                <span className="italic">
+                  "We love the Crazy Socks project. My daughter was so inspired
+                  that she donated her hair to the cause! We look forward to a
+                  long-term partnership."
+                </span>{' '}
+                — Organizer
+              </p>
+            </div>
+
+            {/* Aflac Global Investments */}
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
+              <div className="relative mb-6">
+                <div className="relative w-48 h-48 mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#772D5E] rounded-full opacity-20"></div>
+                  <Image
+                    src="/images/AlfacGiftMakingEvent-scaled.jpeg"
+                    alt="Aflac Global Investments"
+                    width={192}
+                    height={192}
+                    className="rounded-full w-full h-full object-cover relative z-10"
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Aflac Global Investments
+              </h3>
+              <p className="text-gray-700 dark:text-gray-200 text-center">
+                <span className="italic">
+                  "I am going through cancer treatment myself at the moment. I
+                  am so glad we can give our Aflac ducks to children along with
+                  these gifts."
+                </span>{' '}
+                — Organizer
+              </p>
+            </div>
+
+            {/* Forvis Mazars Group */}
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
+              <div className="relative mb-6">
+                <div className="relative w-48 h-48 mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#772D5E] to-fandango-400 rounded-full opacity-20"></div>
+                  <Image
+                    src="/images/giftbagevent2-scaled.jpeg"
+                    alt="Forvis Mazars Group"
+                    width={192}
+                    height={192}
+                    className="rounded-full w-full h-full object-cover relative z-10"
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Forvis Mazars Group
+              </h3>
+              <p className="text-gray-700 dark:text-gray-200 text-center">
+                <span className="italic">
+                  "This project is truly growing with purpose! So many people
+                  signed up that we decided to host two separate events. We are
+                  so proud to help with this cause."
+                </span>{' '}
+                — CEO
+              </p>
+            </div>
+
+            {/* Elana and Olivia */}
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
+              <div className="relative mb-6">
+                <div className="relative w-48 h-48 mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-saffron-400 to-orange-400 rounded-full opacity-20"></div>
+                  <Image
+                    src="/images/sumitomo-csr.jpg"
+                    alt="Sumitomo Mitsui Bank CSR Event"
+                    width={192}
+                    height={192}
+                    className="rounded-full w-full h-full object-cover relative z-10"
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                Sumitomo Mitsui Bank
+              </h3>
+              <p className="text-gray-700 dark:text-gray-200 text-center">
+                <span className="italic">
+                  "I have never seen so many employees sign up for a single
+                  event! They were all so excited to learn from Elana’s
+                  experience and join the cause."
+                </span>{' '}
+                — Organizer
+              </p>
+            </div>
+
+            {/* Meta CS Gift Bag Event */}
+            <div className="card-static bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 px-7">
+              <div className="relative mb-6">
+                <div className="relative w-48 h-48 mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-fandango-400 to-[#772D5E] rounded-full opacity-20"></div>
+                  <Image
+                    src="/images/ubs-season-of-service.png"
+                    alt="UBS Season of Service"
+                    width={192}
+                    height={192}
+                    className="rounded-full w-full h-full object-cover relative z-10"
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white text-center">
+                UBS
+              </h3>
+              <p className="text-gray-700 dark:text-gray-200 text-center">
+                <span className="italic">
+                  "KCCF brought a care package to my daughter; it was the
+                  brightest moment during her cancer treatment. We wanted to
+                  make an impact through KCCF."
+                </span>{' '}
+                — Leader
+              </p>
+            </div>
           </div>
         </div>
       </section>
