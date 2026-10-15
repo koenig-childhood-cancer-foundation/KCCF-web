@@ -203,6 +203,9 @@ export default function CrazySocks() {
                   className="w-full h-auto"
                 />
               </div>
+              <p className="mt-5 max-w-md mx-auto text-center text-base md:text-lg italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
+                At 11, Elana started KCCF with $900 from her piggy bank.
+              </p>
             </div>
           </div>
         </div>
@@ -334,8 +337,9 @@ export default function CrazySocks() {
             {[
               { value: IMPACT_STATS.CRAZY_SOCKS[0].value, label: 'gift bags delivered' },
               { value: IMPACT_STATS.CRAZY_SOCKS[1].value, label: 'items inside the bags' },
+              { value: IMPACT_STATS.HOME[1].value, label: 'volunteers' },
             ].map((stat) => (
-              <li key={stat.label} className="border-l-4 border-[#DAB87E] pl-4 py-1 text-left">
+              <li key={stat.label} className="w-48 sm:w-auto border-l-4 border-[#DAB87E] pl-4 py-1 text-left">
                 <div className="text-4xl md:text-5xl font-bold leading-tight text-white">
                   {stat.value}
                 </div>
