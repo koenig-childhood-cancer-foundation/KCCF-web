@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
@@ -462,48 +463,45 @@ export default function CrazySocks() {
         </div>
       </section>
 
-      {/* Sponsor Form Section */}
-      <section className="py-20 bg-[#F7EFF4] dark:bg-gray-700 border-t-4 border-[#DAB87E] relative overflow-hidden">
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-violet-600 dark:text-white">
-              Sponsor Gift Bag Event
-            </h2>
-            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mt-6" aria-hidden="true" />
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg border-2 border-[#DAB87E] p-8 md:p-12 text-gray-900 text-center">
-              <p className="text-lg 2xl:text-2xl text-gray-700 mb-8">
-                Ready to make a difference? Partner with us to sponsor a gift
-                bag event and bring joy to hospitalized children.
-              </p>
-
-              <FormButton
-                formType="crazy-socks-sponsor"
-                variant="orange"
-                size="lg"
-                className="min-w-[250px] lg:text-lg 2xl:text-xl"
-                icon={
-                  <svg
-                    className="w-5 h-5 2xl:w-6 2xl:h-6 2xl:ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
-                    />
-                  </svg>
-                }
-              >
-                Sponsor Gift Bag Event
-              </FormButton>
-            </div>
+      {/* Closing call to action, matching the home page band */}
+      <section className="py-20 bg-violet-600 dark:bg-gray-800">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Bring Crazy Socks to your team.
+          </h2>
+          <p className="text-xl md:text-2xl font-extrabold text-[#ffb37a] max-w-3xl mx-auto leading-tight mb-10">
+            Host an event at your company, or start a fundraiser with your colleagues.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <FormButton
+              formType="crazy-socks-sponsor"
+              variant="orange"
+              size="lg"
+              className="py-4 px-10 text-lg"
+              icon={
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+                  />
+                </svg>
+              }
+            >
+              Host an Event
+            </FormButton>
+            <Link
+              href="/fundraisers"
+              className="btn-primary bg-white/10 hover:bg-white/20 text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white"
+            >
+              Start a Fundraiser
+            </Link>
           </div>
         </div>
       </section>
