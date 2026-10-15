@@ -18,10 +18,10 @@ export default function CrazySocks() {
   ];
 
   const howItWorksSteps = [
-    { title: 'We Bring Everything', text: 'We deliver the supplies and set up.' },
+    { title: 'You Sponsor', text: 'Your sponsorship covers the supplies. We deliver them and set up.' },
     { title: 'Elana Inspires', text: 'Our teen founder and survivor shares the why.' },
     { title: 'Your Team Packs', text: 'Write notes of hope and fill the bags.' },
-    { title: 'Children Receive', text: 'We deliver the bags to children in the hospital.' },
+    { title: 'A Child Opens Your Gift', text: 'We deliver the bags to children in the hospital and send your team photos.' },
   ];
 
   const companyQuotes = [
@@ -150,7 +150,7 @@ export default function CrazySocks() {
                   </svg>
                 }
               >
-                Host an Event
+                Sponsor an Event
               </FormButton>
               <a
                 href="/documents/KCCF-Brochure.pdf"
@@ -164,16 +164,17 @@ export default function CrazySocks() {
         />
       </div>
 
-      {/* About Section */}
+      {/* Story */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4 xl:px-28 2xl:px-32">
-          <div className="grid lg:grid-cols-2 gap-14 2xl:gap-26 items-center">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              Why Crazy Socks Gift Bags?
+            </h2>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
+          </div>
+          <div className="grid lg:grid-cols-2 gap-14 2xl:gap-26 items-center max-w-6xl mx-auto">
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-[2.5rem] font-bold mb-8 text-violet-600 dark:text-white">
-                Why Crazy Socks Gift Bags?
-              </h2>
-              <div className="w-14 h-1 bg-[#DAB87E] rounded-full -mt-4 mb-8" aria-hidden="true" />
-
               <div className="space-y-6 text-lg xl:text-[1.15rem] 2xl:text-2xl text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
                   Crazy Socks Gift Bag is KCCF's signature project, inspired by
@@ -190,39 +191,16 @@ export default function CrazySocks() {
                   Socks Gift Bags movement started.
                 </p>
               </div>
-              <div className="mt-10 flex-1 flex flex-col items-start sm:items-start">
-                <FormButton
-                  formType="crazy-socks-sponsor"
-                  variant="outline"
-                  size="lg"
-                  className="text-lg pr-4 2xl:text-[1.35rem] 2xl:px-6 2xl:py-3 2xl:pr-5"
-                  icon={
-                    // <!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE -->
-                    <svg
-                      className="w-6 h-6 ml-1 2xl:w-7 2xl:h-7 mt-0.5 lg:mt-0 xl:mt-0.5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 256 256"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m48-88a8 8 0 0 1-8 8h-32v32a8 8 0 0 1-16 0v-32H88a8 8 0 0 1 0-16h32V88a8 8 0 0 1 16 0v32h32a8 8 0 0 1 8 8"
-                      />
-                    </svg>
-                  }
-                >
-                  Learn More
-                </FormButton>
-              </div>
             </div>
 
             <div className="relative">
-              <div className="relative bg-white dark:bg-gray-800 p-1.5 rounded-3xl border-2 border-[#DAB87E] shadow-lg">
+              <div className="relative bg-white p-2.5 rounded-md border border-[#DAB87E] shadow-lg max-w-md mx-auto">
                 <Image
                   src="/images/crazy-socks.jpg"
-                  alt="Crazy Socks Gift Bags"
+                  alt="Elana with a child holding a Crazy Socks gift bag"
                   width={500}
                   height={600}
-                  className="rounded-2xl w-full h-auto"
+                  className="w-full h-auto"
                 />
               </div>
             </div>
@@ -236,10 +214,7 @@ export default function CrazySocks() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-violet-600 dark:text-white">
             How It Works
           </h2>
-          <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
-            Your sponsorship covers the supplies.
-          </p>
+          <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-12" aria-hidden="true" />
           <ol className="flex flex-col lg:flex-row items-stretch max-w-6xl mx-auto list-none">
             {howItWorksSteps.map((step, index) => (
               <Fragment key={step.title}>
@@ -304,19 +279,17 @@ export default function CrazySocks() {
         </div>
       </section>
 
-      {/* Corporate Partners */}
+      {/* Teams Like Yours (company quotes) */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-              Corporate Partners
+              Teams Like Yours
             </h2>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl lg:max-w-[100vw] mx-auto">
-              Companies partner with us through employee volunteering,
-              team-building events, and CSR programs.{' '}
-              <br className="hidden lg:inline" /> Together, we make a difference
-              in the lives of children battling cancer.
+              Meta, Bank of America, Aflac, Forvis Mazars, Sumitomo Mitsui Bank
+              and UBS have hosted Crazy Socks events.
             </p>
           </div>
 
@@ -376,10 +349,13 @@ export default function CrazySocks() {
             ))}
           </ul>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Bring Crazy Socks to your team.
+            Be the reason a child smiles today.
           </h2>
-          <p className="text-xl md:text-2xl font-extrabold text-[#ffb37a] max-w-3xl mx-auto leading-tight mb-10">
-            Host an event at your company, or start a fundraiser with your colleagues.
+          <p className="text-2xl md:text-3xl font-extrabold text-[#ffb37a] mx-auto leading-tight">
+            Bring Crazy Socks to your team.
+          </p>
+          <p className="text-white/80 mt-3 mb-10">
+            Sponsor an event at your company, or start a fundraiser with your colleagues.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <FormButton
@@ -403,7 +379,7 @@ export default function CrazySocks() {
                 </svg>
               }
             >
-              Host an Event
+              Sponsor an Event
             </FormButton>
             <Link
               href="/fundraisers"
