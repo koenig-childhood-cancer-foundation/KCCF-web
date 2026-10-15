@@ -157,23 +157,70 @@ export default function CrazySocks() {
         />
       </div>
 
-      {/* Crazy Socks numbers */}
-      <section className="py-8 bg-white dark:bg-gray-900 border-b border-[#ECDBE6] dark:border-gray-700">
-        <ul className="container mx-auto px-4 flex flex-wrap justify-center gap-x-12 gap-y-4">
-          {[
-            { value: IMPACT_STATS.CRAZY_SOCKS[0].value, label: 'gift bags delivered' },
-            { value: IMPACT_STATS.CRAZY_SOCKS[1].value, label: 'items inside the bags' },
-          ].map((stat) => (
-            <li key={stat.label} className="border-l-4 border-[#DAB87E] pl-4 py-1">
-              <div className="text-3xl md:text-[2.6rem] font-bold leading-tight text-violet-600 dark:text-white">
-                {stat.value}
+      {/* About Section */}
+      <section className="py-20 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-4 xl:px-28 2xl:px-32">
+          <div className="grid lg:grid-cols-2 gap-14 2xl:gap-26 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl lg:text-[2.5rem] font-bold mb-8 text-violet-600 dark:text-white">
+                Why Crazy Socks Gift Bags?
+              </h2>
+              <div className="w-14 h-1 bg-[#DAB87E] rounded-full -mt-4 mb-8" aria-hidden="true" />
+
+              <div className="space-y-6 text-lg xl:text-[1.15rem] 2xl:text-2xl text-gray-700 dark:text-gray-200 leading-relaxed">
+                <p>
+                  Crazy Socks Gift Bag is KCCF's signature project, inspired by
+                  founder Elana's personal journey with cancer at the age of 7.
+                  While battling Ewing's sarcoma, a rare and aggressive bone
+                  cancer, Elana was struck by how the dull hospital socks
+                  mirrored the monotony and sadness of her days.
+                </p>
+                <p>
+                  The moment she got home, she would pull them off and throw
+                  them away, hoping to leave behind the needles, pain, and fear.
+                  She was determined to change that experience for other
+                  children fighting cancer. This is how our signature Crazy
+                  Socks Gift Bags movement started.
+                </p>
               </div>
-              <div className="text-sm md:text-base font-semibold text-[#8A6A2E] dark:text-saffron-400">
-                {stat.label}
+              <div className="mt-10 flex-1 flex flex-col items-start sm:items-start">
+                <FormButton
+                  formType="crazy-socks-sponsor"
+                  variant="outline"
+                  size="lg"
+                  className="text-lg pr-4 2xl:text-[1.35rem] 2xl:px-6 2xl:py-3 2xl:pr-5"
+                  icon={
+                    // <!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE -->
+                    <svg
+                      className="w-6 h-6 ml-1 2xl:w-7 2xl:h-7 mt-0.5 lg:mt-0 xl:mt-0.5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m48-88a8 8 0 0 1-8 8h-32v32a8 8 0 0 1-16 0v-32H88a8 8 0 0 1 0-16h32V88a8 8 0 0 1 16 0v32h32a8 8 0 0 1 8 8"
+                      />
+                    </svg>
+                  }
+                >
+                  Learn More
+                </FormButton>
               </div>
-            </li>
-          ))}
-        </ul>
+            </div>
+
+            <div className="relative">
+              <div className="relative bg-white dark:bg-gray-800 p-1.5 rounded-3xl border-2 border-[#DAB87E] shadow-lg">
+                <Image
+                  src="/images/crazy-socks.jpg"
+                  alt="Crazy Socks Gift Bags"
+                  width={500}
+                  height={600}
+                  className="rounded-2xl w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* How It Works */}
@@ -184,8 +231,7 @@ export default function CrazySocks() {
           </h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
-            An hour-long event we bring to you, with a keynote by Elana. Your
-            sponsorship covers the supplies.
+            Your sponsorship covers the supplies.
           </p>
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg px-4 2xl:px-10 py-10 sm:pb-13 flex-1 flex flex-col items-center">
             <ol className="text-xl md:text-2xl text-left space-y-3 text-black dark:text-white list-none list-outside lg:grid lg:grid-cols-3 lg:gap-x-10 xl:gap-x-16 2xl:gap-x-24 lg:gap-y-10 lg:space-y-0">
@@ -253,124 +299,6 @@ export default function CrazySocks() {
                 </span>
               </li>
             </ol>
-            <a
-              href="/documents/KCCF-Brochure.pdf"
-              download="KCCF-Crazy-Socks-Brochure"
-            >
-              <button className="cursor-pointer text-md sm:text-lg md:text-2xl btn-primary btn-outline-violet group py-3 md:py-4 px-6 rounded-full font-semibold inline-flex items-center justify-center">
-                Download Our Brochure
-                <svg
-                  className="w-6 h-6 md:w-8 md:h-8 ml-2 mx-0 inline-block mt-0.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 256 256"
-                >
-                  {/* <!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE --> */}
-                  <path
-                    fill="currentColor"
-                    d="m213.66 82.34l-56-56A8 8 0 0 0 152 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a8 8 0 0 0-2.34-5.66M160 51.31L188.69 80H160ZM200 216H56V40h88v48a8 8 0 0 0 8 8h48zm-42.34-61.66a8 8 0 0 1 0 11.32l-24 24a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L120 164.69V120a8 8 0 0 1 16 0v44.69l10.34-10.35a8 8 0 0 1 11.32 0"
-                  />
-                </svg>
-              </button>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Crazy Socks numbers */}
-      <section className="py-8 bg-[#F7EFF4] dark:bg-gray-800">
-        <div className="container mx-auto px-4">
-          <ul className="flex flex-wrap justify-center gap-4">
-            {[
-              { value: IMPACT_STATS.CRAZY_SOCKS[0].value, label: 'gift bags delivered' },
-              { value: IMPACT_STATS.CRAZY_SOCKS[1].value, label: 'items inside the bags' },
-              { value: '1 hour', label: 'team event we bring to you' },
-              { value: 'Keynote', label: 'by founder Elana Koenig' },
-            ].map((stat) => (
-              <li
-                key={stat.label}
-                className="bg-white dark:bg-gray-700 rounded-xl border-l-4 border-[#DAB87E] shadow-sm px-6 py-4 min-w-[200px]"
-              >
-                <div className="text-3xl font-bold text-violet-600 dark:text-white">{stat.value}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-300">{stat.label}</div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-4 xl:px-28 2xl:px-32">
-          <div className="grid lg:grid-cols-2 gap-14 2xl:gap-26 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl lg:text-[2.5rem] font-bold mb-8 text-violet-600 dark:text-white">
-                Why Crazy Socks Gift Bags?
-              </h2>
-              <div className="w-14 h-1 bg-[#DAB87E] rounded-full -mt-4 mb-8" aria-hidden="true" />
-
-              <div className="space-y-6 text-lg xl:text-[1.15rem] 2xl:text-2xl text-gray-700 dark:text-gray-200 leading-relaxed">
-                <p>
-                  Crazy Socks Gift Bag is KCCF's signature project, inspired by
-                  founder Elana's personal journey with cancer at the age of 7.
-                  While battling Ewing's sarcoma, a rare and aggressive bone
-                  cancer, Elana was struck by how the dull hospital socks
-                  mirrored the monotony and sadness of her days.
-                </p>
-                <p>
-                  The moment she got home, she would pull them off and throw
-                  them away, hoping to leave behind the needles, pain, and fear.
-                  She was determined to change that experience for other
-                  children fighting cancer.
-                </p>
-                <p className="text-xl 2xl:text-[1.7rem] font-semibold text-gray-900 dark:text-white">
-                  To date, more than{' '}
-                  <span className="font-bold text-orange-600">
-                    {IMPACT_STATS.CRAZY_SOCKS[0].value.replace(/\+$/, '')}
-                  </span>{' '}
-                  gift bags, containing over{' '}
-                  <span className="font-bold text-orange-600">
-                    {IMPACT_STATS.CRAZY_SOCKS[1].value.replace(/\+$/, '')}
-                  </span>{' '}
-                  items, have been delivered to hospitalized children across the
-                  United States and around the world.
-                </p>
-              </div>
-              <div className="mt-10 flex-1 flex flex-col items-start sm:items-start">
-                <FormButton
-                  formType="crazy-socks-sponsor"
-                  variant="outline"
-                  size="lg"
-                  className="text-lg pr-4 2xl:text-[1.35rem] 2xl:px-6 2xl:py-3 2xl:pr-5"
-                  icon={
-                    // <!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE -->
-                    <svg
-                      className="w-6 h-6 ml-1 2xl:w-7 2xl:h-7 mt-0.5 lg:mt-0 xl:mt-0.5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 256 256"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m48-88a8 8 0 0 1-8 8h-32v32a8 8 0 0 1-16 0v-32H88a8 8 0 0 1 0-16h32V88a8 8 0 0 1 16 0v32h32a8 8 0 0 1 8 8"
-                      />
-                    </svg>
-                  }
-                >
-                  Learn More
-                </FormButton>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="relative bg-white dark:bg-gray-800 p-1.5 rounded-3xl border-2 border-[#DAB87E] shadow-lg">
-                <Image
-                  src="/images/crazy-socks.jpg"
-                  alt="Crazy Socks Gift Bags"
-                  width={500}
-                  height={600}
-                  className="rounded-2xl w-full h-auto"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -466,6 +394,21 @@ export default function CrazySocks() {
       {/* Closing call to action, matching the home page band */}
       <section className="py-20 bg-violet-600 dark:bg-gray-800">
         <div className="container mx-auto px-4 text-center">
+          <ul className="flex flex-wrap justify-center gap-x-14 gap-y-5 mb-12">
+            {[
+              { value: IMPACT_STATS.CRAZY_SOCKS[0].value, label: 'gift bags delivered' },
+              { value: IMPACT_STATS.CRAZY_SOCKS[1].value, label: 'items inside the bags' },
+            ].map((stat) => (
+              <li key={stat.label} className="border-l-4 border-[#DAB87E] pl-4 py-1 text-left">
+                <div className="text-4xl md:text-5xl font-bold leading-tight text-white">
+                  {stat.value}
+                </div>
+                <div className="text-sm md:text-base font-semibold text-[#DAB87E]">
+                  {stat.label}
+                </div>
+              </li>
+            ))}
+          </ul>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Bring Crazy Socks to your team.
           </h2>
