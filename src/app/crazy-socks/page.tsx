@@ -18,7 +18,7 @@ export default function CrazySocks() {
   ];
 
   const howItWorksSteps = [
-    { title: 'We Bring Everything', text: 'We deliver the supplies and set up.' },
+    { title: 'You Sponsor', text: 'Your sponsorship covers the supplies. We deliver them and set up.' },
     { title: 'Elana Inspires', text: 'Our teen founder and survivor shares the why.' },
     { title: 'Your Team Packs', text: 'Write notes of hope and fill the bags.' },
     { title: 'A Child Opens Your Gift', text: 'We deliver the bags to children in the hospital and send your team photos.' },
@@ -150,7 +150,7 @@ export default function CrazySocks() {
                   </svg>
                 }
               >
-                Host an Event
+                Sponsor an Event
               </FormButton>
               <a
                 href="/documents/KCCF-Brochure.pdf"
@@ -354,7 +354,7 @@ export default function CrazySocks() {
             Bring Crazy Socks to your team.
           </p>
           <p className="text-white/80 mt-3 mb-10">
-            Host an event at your company, or start a fundraiser with your colleagues.
+            Sponsor an event at your company, or start a fundraiser with your colleagues.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <FormButton
@@ -378,7 +378,7 @@ export default function CrazySocks() {
                 </svg>
               }
             >
-              Host an Event
+              Sponsor an Event
             </FormButton>
             <Link
               href="/fundraisers"
