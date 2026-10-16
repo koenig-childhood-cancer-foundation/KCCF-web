@@ -1,12 +1,10 @@
 "use client"
 
-import { Suspense, useEffect, type ReactNode } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import DonationCard from '@/components/DonationCard'
 import DonationButton from '@/components/DonationButton'
-import { useDonationModal } from '@/contexts/DonationModalContext'
 
 // Gift amounts come from KCCF Current Facts – MASTER (Cost per child).
 const giftImpacts: {
@@ -88,64 +86,48 @@ const faqQuestionClass =
   'flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden px-6 py-5 text-lg font-semibold text-[#2B2330] dark:text-white'
 const faqAnswerClass = 'px-6 pb-6 -mt-1 text-gray-600 dark:text-gray-300'
 
-// Separate component that uses useSearchParams - must be wrapped in Suspense
-function DonateModalTrigger() {
-  const { openModal } = useDonationModal()
-  const searchParams = useSearchParams()
-
-  // Automatically open the donation modal when the page loads
-  // Skip if nomodal=1 query param is present (used when navigating from "Other ways to donate")
-  useEffect(() => {
-    const noModal = searchParams.get('nomodal')
-    if (noModal !== '1') {
-      openModal()
-    }
-  }, [openModal, searchParams])
-
-  return null
-}
-
 export default function Donate() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      {/* Suspense boundary for useSearchParams */}
-      <Suspense fallback={null}>
-        <DonateModalTrigger />
-      </Suspense>
-
-      {/* Hero Section with Background */}
-      <div className="relative min-h-[86vh] flex items-center justify-center overflow-hidden pt-24">
-        {/* Background Image */}
-        <div className="absolute inset-0 top-24">
+      {/* Hero: wide photo with nothing written on it, then headline and the donation card */}
+      <section className="pt-24 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-800">
+        <div className="relative h-64 sm:h-80 lg:h-[30rem]">
           <Image
             src="/images/elana-charlotte.jpg"
-            alt="Donate to save lives"
+            alt="Elana Koenig smiling with a young child in a yellow KCCF shirt"
             fill
-            className="object-cover"
+            className="object-cover object-[25%_30%] lg:object-[center_32%]"
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-        </div>
-        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
-
-        {/* Moved the title to the bottom left for exception to rule (readability) per rena request*/}
-        <div className="absolute bottom-8 left-4 md:left-8 lg:left-12 z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg">
-            Help save lives
-          </h1>
         </div>
 
-        {/* DonationCard on the right */}
-        <div className="relative w-full max-w-screen-2xl mx-auto px-4 py-8 md:py-12">
-          <div className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-md">
-              <DonationCard />
-            </div>
+        <div className="container mx-auto px-4 lg:px-8 pb-16 grid lg:grid-cols-[1fr_27rem] gap-8 lg:gap-12 items-start">
+          <div className="pt-8 lg:pt-10">
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+              <span className="text-[#2B2330] dark:text-white">Help Children</span>
+              <br />
+              <span className="text-violet-600 dark:text-saffron-400">Beat Cancer.</span>
+            </h1>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mb-5" aria-hidden="true" />
+            <ul className="space-y-1 text-lg text-[#2B2330] dark:text-gray-200 mb-4">
+              {giftImpacts[0].amounts.map((line) => (
+                <li key={line.amount}>
+                  <strong className="text-violet-600 dark:text-saffron-400">{line.amount}</strong> {line.text}
+                </li>
+              ))}
+            </ul>
+            <p className="text-sm font-bold uppercase tracking-[0.08em] leading-loose text-[#8A6A2E] dark:text-[#DAB87E]">
+              Charity Navigator 4-star &middot; Candid Platinum Seal of Transparency
+            </p>
+          </div>
+
+          <div className="lg:-mt-48 relative">
+            <DonationCard />
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Why Your Gift Matters */}
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
