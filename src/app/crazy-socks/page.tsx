@@ -340,9 +340,6 @@ export default function CrazySocks() {
                     {company.quote}
                   </p>
                 </div>
-                <p className="mt-5 border-t border-[#E8E0D8] dark:border-gray-600 pt-3 text-center text-xs font-bold tracking-[0.16em] uppercase text-gray-900 dark:text-gray-100">
-                  {company.role}
-                </p>
               </div>
             ))}
           </div>
