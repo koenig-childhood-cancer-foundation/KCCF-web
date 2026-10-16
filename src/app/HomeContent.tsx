@@ -140,7 +140,7 @@ export default function HomeContent() {
       </section>
 
       {/* Programs Section */}
-      <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
+      <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
@@ -323,7 +323,7 @@ export default function HomeContent() {
                     />
                   </div>
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white text-center">{warrior.name}</h3>
+                <h3 className="text-lg font-bold mb-2 text-violet-600 dark:text-white text-center">{warrior.name}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-200 text-center italic leading-tight">"{warrior.quote}"</p>
               </div>
             ))}
@@ -413,7 +413,7 @@ export default function HomeContent() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
+      <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-saffron-600">
