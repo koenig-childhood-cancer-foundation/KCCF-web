@@ -6,14 +6,17 @@ import { Fragment, useEffect, useRef } from 'react';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 import { IMPACT_STATS } from '@/constants/impactStats';
+import { useFormModal } from '@/contexts/FormModalContext';
 
 export default function CrazySocks() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const { openModal } = useFormModal();
 
   const howItWorksSteps = [
     {
       title: 'You Sponsor',
-      text: 'Fill out a short form. Your sponsorship covers the supplies. We bring everything to you and set up.',
+      text: 'Your sponsorship covers the supplies. We bring everything to you and set up.',
+      inquire: true,
       image: '/images/bankofamerica-scaled.jpeg',
       alt: 'Gift bag supplies set out on a table before an event',
     },
@@ -265,6 +268,18 @@ export default function CrazySocks() {
                   </h3>
                   <p className="text-gray-700 dark:text-gray-200 leading-relaxed px-4">
                     {step.text}
+                    {step.inquire && (
+                      <>
+                        {' '}
+                        <button
+                          type="button"
+                          onClick={() => openModal('crazy-socks-sponsor')}
+                          className="font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 decoration-[#DAB87E] hover:text-violet-700 dark:hover:text-saffron-300 cursor-pointer"
+                        >
+                          Inquire Here &rarr;
+                        </button>
+                      </>
+                    )}
                   </p>
                   <div className="flex-1 min-h-[30px]" />
                   <div className="mx-[18px] mb-[18px] bg-white p-[7px] rounded-[14px] border border-[#DAB87E] shadow-lg">
@@ -282,36 +297,11 @@ export default function CrazySocks() {
               </Fragment>
             ))}
           </ol>
-          <div className="mt-12 flex justify-center">
-            <FormButton
-              formType="crazy-socks-sponsor"
-              variant="orange"
-              size="lg"
-              className="py-4 px-10 text-lg"
-              icon={
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
-                  />
-                </svg>
-              }
-            >
-              Sponsor an Event
-            </FormButton>
-          </div>
         </div>
       </section>
 
       {/* Trusted by Leading Companies (company quotes) */}
-      <section className="py-20 bg-white dark:bg-gray-800">
+      <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
@@ -328,7 +318,7 @@ export default function CrazySocks() {
             {featuredCompanies.map((company) => (
               <div
                 key={company.name}
-                className="bg-[#FAF6F2] dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 p-6 flex flex-col"
+                className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md p-6 flex flex-col"
               >
                 <h3 className="text-xl font-bold mb-4 text-center text-gray-900 dark:text-white">
                   {company.name}
