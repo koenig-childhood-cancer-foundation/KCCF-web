@@ -11,14 +11,24 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white border-t-[3px] border-[#DAB87E] transition-colors duration-200 overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+        {/* Logo */}
+        <div className="flex justify-center pb-6 mb-6 border-b border-gray-700">
+          <Link href="/" aria-label="Koenig Childhood Cancer Foundation home">
+            <Image
+              src="/kccf_logo_light.png"
+              alt="Koenig Childhood Cancer Foundation"
+              width={1536}
+              height={830}
+              className="h-24 w-auto"
+            />
+          </Link>
+        </div>
+
         {/* Row 1: Contact Info, Quick Links, Newsletter Signup */}
-        <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-12 xl:grid-cols-10 gap-8 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-12 xl:grid-cols-10 gap-6 items-start">
           {/* Contact Info */}
           <div className="sm:col-span-2 md:col-span-2 lg:col-span-3 xl:col-span-2 sm:order-2 lg:order-1">
-            <h3 className="text-xl font-bold mb-4 text-white">
-              Koenig Childhood Cancer Foundation
-            </h3>
             <div className="space-y-2 text-gray-300">
               <a
                 href="https://www.google.com/maps/search/?api=1&query=1175+York+Ave+Suite+15E+New+York+NY+10065"
@@ -49,7 +59,7 @@ export default function Footer() {
             </div>
 
             {/* Social Media Links */}
-            <div className="mt-6">
+            <div className="mt-4">
               <h4 className="text-lg font-semibold mb-3 text-white">
                 Follow Us
               </h4>
@@ -112,6 +122,21 @@ export default function Footer() {
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@kccfofficial"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                  aria-label="Follow us on TikTok"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.09v12.4a2.59 2.59 0 1 1-1.81-2.47V9.79a5.68 5.68 0 1 0 4.9 5.61V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.28 4.28 0 0 1-3.26-1.48z" />
                   </svg>
                 </a>
               </div>
@@ -291,7 +316,7 @@ export default function Footer() {
         </div>
 
         {/* Awards Section - Full Width */}
-        <div className="mt-8 pt-8 border-t border-gray-700 text-center">
+        <div className="mt-6 pt-5 border-t border-gray-700 text-center">
           <h4 className="sr-only">Recognition & Awards</h4>
           <div className="flex flex-row flex-wrap items-center justify-center gap-6 md:gap-10">
             <div className="flex flex-col items-center">
@@ -301,13 +326,13 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity flex flex-col items-center"
               >
-                <div className="h-20 flex items-center justify-center">
+                <div className="h-14 flex items-center justify-center">
                   <Image
                     src="/candid seal of transparency.png"
                     alt="Candid seal of transparency logo"
                     width={80}
                     height={80}
-                    className="h-20 w-auto"
+                    className="h-14 w-auto"
                   />
                 </div>
               </a>
@@ -319,13 +344,13 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity flex flex-col items-center"
               >
-                <div className="h-20 flex items-center justify-center">
+                <div className="h-14 flex items-center justify-center">
                   <Image
                     src="/images/2025-top-rated-awards-badge-embed.png"
                     alt="GreatNonprofits Top-Rated Award 2025"
                     width={110}
                     height={80}
-                    className="h-20 w-auto"
+                    className="h-14 w-auto"
                   />
                 </div>
               </a>
@@ -337,13 +362,13 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity flex flex-col items-center"
               >
-                <div className="h-20 flex items-center justify-center">
+                <div className="h-14 flex items-center justify-center">
                   <Image
                     src="/images/4star-ratingbadge-2026.svg"
                     alt="Charity Navigator 4-Star Rating Badge 2026"
                     width={80}
                     height={80}
-                    className="h-20 w-auto"
+                    className="h-14 w-auto"
                   />
                 </div>
               </a>
@@ -352,7 +377,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 text-center text-sm border-t border-gray-700 text-gray-300">
+        <div className="mt-5 pt-5 text-center text-sm border-t border-gray-700 text-gray-300">
           <p>
             ©2026 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN:
             84-4892279
