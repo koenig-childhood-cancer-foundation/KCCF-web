@@ -190,11 +190,25 @@ export default function CrazySocks() {
                   children fighting cancer. This is how the Crazy Socks Gift
                   Bags movement started.
                 </p>
+                <p>At 11, Elana started KCCF with $900 from her piggy bank.</p>
+              </div>
+              <div className="flex items-center gap-3.5 mt-7" aria-hidden="true">
+                <span className="h-0.5 w-16 bg-[#DAB87E]" />
+                <svg width="28" height="26" viewBox="0 0 24 22" className="shrink-0">
+                  <path
+                    d="M12 21s-7-4.4-9.3-8.6C1.1 9.4 2.8 5.5 6.5 5.5c2.2 0 3.6 1.3 4.5 2.6.9-1.3 2.3-2.6 4.5-2.6 3.7 0 5.4 3.9 3.8 6.9C19 16.6 12 21 12 21z"
+                    fill="none"
+                    stroke="#DAB87E"
+                    strokeWidth="2.2"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span className="h-0.5 w-16 bg-[#DAB87E]" />
               </div>
             </div>
 
             <div className="relative">
-              <div className="relative bg-white p-2.5 rounded-md border border-[#DAB87E] shadow-lg max-w-md mx-auto">
+              <div className="relative bg-white p-2.5 rounded-md border border-[#DAB87E] shadow-lg max-w-[360px] mx-auto">
                 <Image
                   src="/images/crazy-socks.jpg"
                   alt="Elana with a child holding a Crazy Socks gift bag"
@@ -203,8 +217,8 @@ export default function CrazySocks() {
                   className="w-full h-auto"
                 />
               </div>
-              <p className="mt-5 max-w-md mx-auto text-center text-base md:text-lg italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
-                At 11, Elana started KCCF with $900 from her piggy bank.
+              <p className="mt-5 max-w-[360px] mx-auto text-center text-base md:text-lg italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
+                Elana gives a gift bag to a child in treatment.
               </p>
             </div>
           </div>

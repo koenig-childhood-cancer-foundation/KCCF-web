@@ -143,6 +143,7 @@ export default function HomeContent() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Our Impact Programs
             </h2>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Three ways we help children and families facing cancer.
             </p>
@@ -150,14 +151,13 @@ export default function HomeContent() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Family Financial Assistance */}
-            <div className="card-interactive group bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 flex flex-col">
-              <div className="rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
+            <div className="card-interactive group bg-white dark:bg-gray-800 p-8 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-700 dark:border-t-violet-400 flex flex-col">
+              <div className="flex items-center justify-center mb-6 overflow-hidden">
                 <Image
                   src="/images/family-assistance-impact-program.jpeg"
                   alt="Financial Assistance Impact Program Image"
                   width={500}
                   height={600}
-                  className="rounded-2xl"
                 />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Family Aid</h3>
@@ -173,14 +173,13 @@ export default function HomeContent() {
             </div>
 
             {/* Crazy Socks Day */}
-            <div className="card-interactive group bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 flex flex-col">
-              <div className="rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
+            <div className="card-interactive group bg-white dark:bg-gray-800 p-8 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-700 dark:border-t-violet-400 flex flex-col">
+              <div className="flex items-center justify-center mb-6 overflow-hidden">
                 <Image
                   src="/images/crazy-socks-impact-program.jpg"
                   alt="Crazy Socks Program Image"
                   width={500}
                   height={600}
-                  className="rounded-2xl"
                 />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Crazy Socks</h3>
@@ -196,14 +195,13 @@ export default function HomeContent() {
             </div>
 
             {/* KCCF Camp */}
-            <div className="card-interactive group bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 flex flex-col">
-              <div className="rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
+            <div className="card-interactive group bg-white dark:bg-gray-800 p-8 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-700 dark:border-t-violet-400 flex flex-col">
+              <div className="flex items-center justify-center mb-6 overflow-hidden">
                 <Image
                   src="/images/camp-impact-program.jpg"
                   alt="Camp Impact Program Image"
                   width={500}
                   height={600}
-                  className="rounded-2xl"
                 />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">KCCF Camp</h3>
