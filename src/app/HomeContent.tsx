@@ -242,7 +242,7 @@ export default function HomeContent() {
                   className="w-full h-auto"
                 />
               </div>
-              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">
+              <p className="mt-4 text-center text-base md:text-lg italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
                 Elana &amp; Daniz in the hospital in 2022 &amp; at KCCF Camp 2026
               </p>
             </div>
