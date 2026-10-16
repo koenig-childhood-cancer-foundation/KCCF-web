@@ -136,7 +136,7 @@ export default function CrazySocks() {
         {/* PageHeader */}
         <PageHeader
           title="Crazy Socks<br/>Gift Bag Events"
-          subtitle="Your team packs gift bags for children in the hospital, with a keynote by Elana."
+          subtitle="Elana shares her story, and your team packs gift bags for children in the hospital."
           headerStyle="pt-72 xl:pt-84 pb-12 xl:pl-14 2xl:pl-20"
           gridStyle="gap-0 lg:grid-cols-1"
           button={
@@ -282,6 +282,31 @@ export default function CrazySocks() {
               </Fragment>
             ))}
           </ol>
+          <div className="mt-12 flex justify-center">
+            <FormButton
+              formType="crazy-socks-sponsor"
+              variant="orange"
+              size="lg"
+              className="py-4 px-10 text-lg"
+              icon={
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+                  />
+                </svg>
+              }
+            >
+              Sponsor an Event
+            </FormButton>
+          </div>
         </div>
       </section>
 
@@ -303,14 +328,14 @@ export default function CrazySocks() {
             {featuredCompanies.map((company) => (
               <div
                 key={company.name}
-                className="bg-[#FAF6F2] dark:bg-gray-700 border-t-4 border-violet-600 dark:border-saffron-400 p-6 flex flex-col"
+                className="bg-[#FAF6F2] dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 p-6 flex flex-col"
               >
                 <h3 className="text-xl font-bold mb-4 text-center text-gray-900 dark:text-white">
                   {company.name}
                 </h3>
                 <div className="flex-1 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center sm:items-start lg:items-center xl:items-start gap-5">
-                  <div className="shrink-0 w-[150px] h-[150px] bg-white p-1.5 border border-[#DAB87E] shadow-md">
-                    <div className="relative w-full h-full">
+                  <div className="shrink-0 w-[150px] h-[150px] bg-white p-1.5 rounded-[14px] border border-[#DAB87E] shadow-md">
+                    <div className="relative w-full h-full rounded-lg overflow-hidden">
                       <Image
                         src={company.image}
                         alt={company.name}

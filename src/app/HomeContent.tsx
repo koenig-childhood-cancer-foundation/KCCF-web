@@ -154,8 +154,8 @@ export default function HomeContent() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Family Financial Assistance */}
-            <div className="card-interactive group bg-white dark:bg-gray-800 p-8 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-700 dark:border-t-violet-400 flex flex-col">
-              <div className="flex items-center justify-center mb-6 overflow-hidden">
+            <div className="card-interactive group bg-white dark:bg-gray-800 p-8 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-700 dark:border-t-violet-400 flex flex-col">
+              <div className="flex items-center justify-center mb-6 overflow-hidden rounded-xl">
                 <Image
                   src="/images/family-assistance-impact-program.jpeg"
                   alt="Financial Assistance Impact Program Image"
@@ -176,8 +176,8 @@ export default function HomeContent() {
             </div>
 
             {/* Crazy Socks Day */}
-            <div className="card-interactive group bg-white dark:bg-gray-800 p-8 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-700 dark:border-t-violet-400 flex flex-col">
-              <div className="flex items-center justify-center mb-6 overflow-hidden">
+            <div className="card-interactive group bg-white dark:bg-gray-800 p-8 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-700 dark:border-t-violet-400 flex flex-col">
+              <div className="flex items-center justify-center mb-6 overflow-hidden rounded-xl">
                 <Image
                   src="/images/crazy-socks-impact-program.jpg"
                   alt="Crazy Socks Program Image"
@@ -190,7 +190,7 @@ export default function HomeContent() {
                 Use your company's Corporate Social Responsibility (CSR) program to sponsor gift bag events for hospitalized children - bring smiles to their faces.
               </p>
               <Link href="/crazy-socks" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto">
-                Sponsor Event
+                Sponsor an Event
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -198,8 +198,8 @@ export default function HomeContent() {
             </div>
 
             {/* KCCF Camp */}
-            <div className="card-interactive group bg-white dark:bg-gray-800 p-8 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-700 dark:border-t-violet-400 flex flex-col">
-              <div className="flex items-center justify-center mb-6 overflow-hidden">
+            <div className="card-interactive group bg-white dark:bg-gray-800 p-8 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-700 dark:border-t-violet-400 flex flex-col">
+              <div className="flex items-center justify-center mb-6 overflow-hidden rounded-xl">
                 <Image
                   src="/images/camp-impact-program.jpg"
                   alt="Camp Impact Program Image"
@@ -309,7 +309,7 @@ export default function HomeContent() {
                 quote: "Neuroblastoma fighter - grateful for KCCF's love and support."
               }
             ].map((warrior, index) => (
-              <div key={index} className="bg-white dark:bg-gray-700 border-t-4 border-violet-600 dark:border-violet-400 p-4 shadow-md">
+              <div key={index} className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-violet-400 p-4 shadow-md">
                 <div className="relative mb-4">
                   <div className="relative w-full aspect-square max-w-48 mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-violet-400 rounded-full opacity-20"></div>
@@ -341,8 +341,8 @@ export default function HomeContent() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
             {/* Kelly Clarkson Show */}
-            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
-              <div className="aspect-video mb-3 md:mb-4">
+            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
+              <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <iframe
                   className="w-full h-full group-hover:scale-105 transition-transform duration-300"
                   src="https://www.youtube.com/embed/clbbmsPRyS8?rel=0&start=380"
@@ -356,8 +356,8 @@ export default function HomeContent() {
             </div>
 
             {/* Mets Game */}
-            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
-              <div className="aspect-video mb-3 md:mb-4">
+            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
+              <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <iframe
                   className="w-full h-full group-hover:scale-105 transition-transform duration-300"
                   src="https://www.youtube.com/embed/dZmB8dH9X70"
@@ -371,8 +371,8 @@ export default function HomeContent() {
             </div>
 
             {/* People Magazine */}
-            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
-              <div className="aspect-video mb-3 md:mb-4">
+            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
+              <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <iframe
                   className="w-full h-full group-hover:scale-105 transition-transform duration-300"
                   src="https://www.youtube.com/embed/Bgisln8H59w?rel=0"
@@ -386,8 +386,8 @@ export default function HomeContent() {
             </div>
 
             {/* Nasdaq */}
-            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
-              <div className="aspect-video mb-3 md:mb-4">
+            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
+              <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <iframe
                   className="w-full h-full group-hover:scale-105 transition-transform duration-300"
                   src="https://www.youtube.com/embed/tiamL9EdPC0"
