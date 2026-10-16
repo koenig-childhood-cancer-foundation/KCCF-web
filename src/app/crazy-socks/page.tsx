@@ -274,7 +274,7 @@ export default function CrazySocks() {
                         <button
                           type="button"
                           onClick={() => openModal('crazy-socks-sponsor')}
-                          className="font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 decoration-[#DAB87E] hover:text-violet-700 cursor-pointer"
+                          className="font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 decoration-[#DAB87E] hover:text-violet-700 dark:hover:text-saffron-300 cursor-pointer"
                         >
                           Inquire Here &rarr;
                         </button>
