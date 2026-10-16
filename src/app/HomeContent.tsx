@@ -86,11 +86,14 @@ export default function HomeContent() {
       {/* Founder Story Section */}
       <section className="py-20 bg-white dark:bg-gray-800 relative">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              Meet Our Founder, Elana Koenig
+            </h2>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
+          </div>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <h2 className="text-4xl md:text-5xl xl:text-[2rem] 2xl:text-[2.5rem] xl:whitespace-nowrap font-bold mb-8 text-violet-600 dark:text-white">
-                Meet Our Founder, Elana Koenig
-              </h2>
 
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
@@ -121,13 +124,13 @@ export default function HomeContent() {
 
             <div className="order-1 lg:order-2">
               <div className="relative">
-                <div className="relative bg-gradient-to-br from-violet-500/40 to-violet-500/50 dark:from-violet-500/60 dark:to-violet-500/70 p-8 rounded-3xl shadow-2xl">
+                <div className="relative bg-white p-2.5 rounded-md border border-[#DAB87E] shadow-lg max-w-md mx-auto">
                   <Image
                     src="/images/NUP_206704_00566-scaled.jpg"
                     alt="Elana Koenig"
                     width={500}
                     height={600}
-                    className="rounded-2xl w-full h-auto"
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
@@ -184,7 +187,7 @@ export default function HomeContent() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Crazy Socks</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
-                Use your company's Corporate Social Responsibility (CSR) program to sponsor and host gift bag events for hospitalized children - bring smiles to their faces.
+                Use your company's Corporate Social Responsibility (CSR) program to sponsor gift bag events for hospitalized children - bring smiles to their faces.
               </p>
               <Link href="/crazy-socks" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto">
                 Sponsor Event
@@ -222,15 +225,21 @@ export default function HomeContent() {
       {/* Daniz's Story */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+              &ldquo;My child is alive because of KCCF&rdquo;
+            </h2>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
+          </div>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="relative bg-gradient-to-br from-violet-500/40 to-violet-500/50 dark:from-violet-500/60 dark:to-violet-500/70 p-6 rounded-3xl shadow-2xl">
+              <div className="relative bg-white p-2.5 rounded-md border border-[#DAB87E] shadow-lg max-w-xl mx-auto">
                 <Image
                   src="/images/daniz-elana.jpg"
                   alt="Elana with Daniz in the hospital in 2022 and at KCCF Camp 2026"
                   width={880}
                   height={688}
-                  className="rounded-2xl w-full h-auto"
+                  className="w-full h-auto"
                 />
               </div>
               <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">
@@ -238,9 +247,6 @@ export default function HomeContent() {
               </p>
             </div>
             <div>
-              <h2 className="text-4xl md:text-5xl xl:text-[2rem] 2xl:text-[2.5rem] xl:whitespace-nowrap font-bold mb-8 text-violet-600 dark:text-white">
-                &ldquo;My child is alive because of KCCF&rdquo;
-              </h2>
               <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
                 &ldquo;When Daniz was diagnosed with cancer, there was no hope for her in Azerbaijan. Then I was connected to Elana, whose charity covered all our medical expenses and travel to New York and embraced us like family. If it weren&apos;t for them, Daniz might not be with us today.&rdquo;
               </p>
@@ -263,12 +269,13 @@ export default function HomeContent() {
       </section>
 
       {/* Brave Warriors Section */}
-      <section className="py-20 bg-white dark:bg-gray-800">
+      <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
               Our Brave Warriors
             </h2>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Meet some of the incredible children and families whose lives have been touched by KCCF's support.
             </p>
@@ -302,7 +309,7 @@ export default function HomeContent() {
                 quote: "Neuroblastoma fighter - grateful for KCCF's love and support."
               }
             ].map((warrior, index) => (
-              <div key={index} className="bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-4 shadow-lg">
+              <div key={index} className="bg-white dark:bg-gray-700 border-t-4 border-violet-600 dark:border-violet-400 p-4 shadow-md">
                 <div className="relative mb-4">
                   <div className="relative w-full aspect-square max-w-48 mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-violet-400 rounded-full opacity-20"></div>
@@ -329,14 +336,15 @@ export default function HomeContent() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-violet-600 dark:text-saffron-400">Top Media Coverage</h2>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
             {/* Kelly Clarkson Show */}
-            <div className="card-interactive group bg-platinum-50 dark:bg-gray-700 rounded-lg p-4 md:p-6 border border-gray-100 dark:border-gray-600">
+            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4">
                 <iframe
-                  className="w-full h-full rounded-lg group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full group-hover:scale-105 transition-transform duration-300"
                   src="https://www.youtube.com/embed/clbbmsPRyS8?rel=0&start=380"
                   title="Charles Esten Invites 15-Year-Old Cancer Survivor To Sing At Nashville Benefit Concert"
                   loading="lazy"
@@ -348,10 +356,10 @@ export default function HomeContent() {
             </div>
 
             {/* Mets Game */}
-            <div className="card-interactive group bg-platinum-50 dark:bg-gray-700 rounded-lg p-4 md:p-6 border border-gray-100 dark:border-gray-600">
+            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4">
                 <iframe
-                  className="w-full h-full rounded-lg group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full group-hover:scale-105 transition-transform duration-300"
                   src="https://www.youtube.com/embed/dZmB8dH9X70"
                   title="Elana, Teen Cancer Survivor, Sings National Anthem at Mets Game!"
                   loading="lazy"
@@ -363,10 +371,10 @@ export default function HomeContent() {
             </div>
 
             {/* People Magazine */}
-            <div className="card-interactive group bg-platinum-50 dark:bg-gray-700 rounded-lg p-4 md:p-6 border border-gray-100 dark:border-gray-600">
+            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4">
                 <iframe
-                  className="w-full h-full rounded-lg group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full group-hover:scale-105 transition-transform duration-300"
                   src="https://www.youtube.com/embed/Bgisln8H59w?rel=0"
                   title="WNBC Mark Ukraine"
                   loading="lazy"
@@ -378,10 +386,10 @@ export default function HomeContent() {
             </div>
 
             {/* Nasdaq */}
-            <div className="card-interactive group bg-platinum-50 dark:bg-gray-700 rounded-lg p-4 md:p-6 border border-gray-100 dark:border-gray-600">
+            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4">
                 <iframe
-                  className="w-full h-full rounded-lg group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full group-hover:scale-105 transition-transform duration-300"
                   src="https://www.youtube.com/embed/tiamL9EdPC0"
                   title="Nasdaq Honors Elana – Teen Cancer Survivor and Founder of KCCF!"
                   loading="lazy"
@@ -411,6 +419,7 @@ export default function HomeContent() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-saffron-600">
               Our Partners
             </h2>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               We're grateful for the support of these incredible organizations who help us make a difference.
             </p>

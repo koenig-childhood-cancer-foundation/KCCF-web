@@ -5,7 +5,7 @@ import { useFormModal, FormType } from '@/contexts/FormModalContext'
 
 interface FormButtonProps {
   formType: FormType
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'violet' | 'fandango' | 'orange' | 'saffron'
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'violet' | 'fandango' | 'orange' | 'saffron' | 'outlineGold'
   size?: 'sm' | 'md' | 'lg'
   className?: string
   children: ReactNode
@@ -34,6 +34,7 @@ export default function FormButton({
     orange: 'btn-primary btn-primary-orange text-white focus:ring-orange-500',
     saffron: 'btn-primary bg-saffron-600 hover:bg-saffron-700 text-white focus:ring-saffron-500',
     outline: 'btn-primary btn-outline-violet focus:ring-violet-500',
+    outlineGold: 'border-2 border-[#DAB87E] text-[#DAB87E] bg-transparent hover:bg-[#DAB87E] hover:text-[#2B2330] focus:ring-[#DAB87E]',
     ghost: 'text-violet-600 hover:bg-violet-50 dark:hover:bg-violet-900/20 transform hover:-translate-y-1 focus:ring-violet-500'
   }
 
