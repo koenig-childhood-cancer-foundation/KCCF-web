@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, type ReactNode } from 'react'
 
 type DonationProvider = 'zeffy' | 'givelively'
 
@@ -67,16 +67,16 @@ function GiveLivelyWidgetCard() {
   )
 }
 
-export default function DonationCard() {
+export default function DonationCard({ title }: { title?: ReactNode }) {
   // Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal, Venmo and DAF gifts
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
   const switchLinkClass =
     'font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 decoration-[#DAB87E] hover:text-violet-700 dark:hover:text-saffron-300 cursor-pointer'
 
   return (
-    <div className="w-full flex flex-col h-[40rem] bg-white dark:bg-gray-800 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-xl">
+    <div className="w-full flex flex-col h-[44rem] bg-white dark:bg-gray-800 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-xl">
       <div className="flex-shrink-0 px-6 py-4 border-b border-gray-200 dark:border-gray-700 text-center">
-        <h2 className="text-xl font-bold text-[#2B2330] dark:text-white">Donate to KCCF</h2>
+        {title ?? <h2 className="text-xl font-bold text-[#2B2330] dark:text-white">Donate to KCCF</h2>}
       </div>
 
       <div className="relative flex-1 min-h-0">

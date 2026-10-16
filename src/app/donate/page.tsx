@@ -90,27 +90,21 @@ export default function Donate() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      {/* Hero: wide photo with nothing written on it, then headline and the donation card */}
+      {/* Hero: tall photo with nothing written on it; the donation card (with the headline) sits on it */}
       <section className="pt-24 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-800">
-        <div className="relative h-64 sm:h-80 lg:h-[30rem]">
+        <div className="relative h-72 sm:h-96 lg:h-[38rem]">
           <Image
             src="/images/elana-charlotte.jpg"
             alt="Elana Koenig smiling with a young child in a yellow KCCF shirt"
             fill
-            className="object-cover object-[25%_30%] lg:object-[center_32%]"
+            className="object-cover object-[25%_30%] lg:object-[center_30%]"
             sizes="100vw"
             priority
           />
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 pb-16 grid lg:grid-cols-[1fr_27rem] gap-8 lg:gap-12 items-start">
-          <div className="pt-8 lg:pt-10">
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-              <span className="text-[#2B2330] dark:text-white">Help Children</span>
-              <br />
-              <span className="text-violet-600 dark:text-saffron-400">Beat Cancer.</span>
-            </h1>
-            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mb-5" aria-hidden="true" />
+          <div className="lg:pt-10 order-last lg:order-none">
             <ul className="space-y-1 text-lg text-[#2B2330] dark:text-gray-200 mb-4">
               {giftImpacts[0].amounts.map((line) => (
                 <li key={line.amount}>
@@ -123,8 +117,16 @@ export default function Donate() {
             </p>
           </div>
 
-          <div className="lg:-mt-48 relative">
-            <DonationCard />
+          <div className="-mt-12 lg:-mt-[34rem] relative">
+            <DonationCard
+              title={
+                <h1 className="text-3xl font-extrabold leading-tight">
+                  <span className="text-[#2B2330] dark:text-white">Help Children</span>
+                  <br />
+                  <span className="text-violet-600 dark:text-saffron-400">Beat Cancer.</span>
+                </h1>
+              }
+            />
           </div>
         </div>
       </section>
