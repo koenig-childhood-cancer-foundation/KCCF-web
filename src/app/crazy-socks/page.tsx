@@ -293,17 +293,16 @@ export default function CrazySocks() {
         </div>
       </section>
 
-      {/* Teams Like Yours (company quotes) */}
+      {/* Trusted by Leading Companies (company quotes) */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-              Teams Like Yours
+              Trusted by Leading Companies
             </h2>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl lg:max-w-[100vw] mx-auto">
-              Meta, Bank of America, Aflac, Forvis Mazars, Sumitomo Mitsui Bank
-              and UBS have hosted Crazy Socks events.
+            <p className="text-sm md:text-base font-bold uppercase tracking-[0.14em] leading-loose text-[#8A6A2E] dark:text-[#DAB87E] max-w-4xl mx-auto">
+              Meta &middot; Bank of America &middot; Aflac &middot; Forvis Mazars &middot; Sumitomo Mitsui Bank &middot; UBS
             </p>
           </div>
 
