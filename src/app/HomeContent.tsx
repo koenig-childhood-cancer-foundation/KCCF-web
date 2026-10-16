@@ -352,7 +352,7 @@ export default function HomeContent() {
                   allowFullScreen
                 ></iframe>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-violet-600 dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana, 3× on The Kelly Clarkson Show as its youngest Rad Human</h3>
+              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana, 3× on The Kelly Clarkson Show as its youngest Rad Human</h3>
             </div>
 
             {/* Mets Game */}
@@ -367,7 +367,7 @@ export default function HomeContent() {
                   allowFullScreen
                 ></iframe>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-violet-600 dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana singing the national anthem at a Mets game</h3>
+              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana singing the national anthem at a Mets game</h3>
             </div>
 
             {/* People Magazine */}
@@ -382,7 +382,7 @@ export default function HomeContent() {
                   allowFullScreen
                 ></iframe>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-violet-600 dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana and KCCF's story featured in People</h3>
+              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana and KCCF's story featured in People</h3>
             </div>
 
             {/* Nasdaq */}
@@ -397,7 +397,7 @@ export default function HomeContent() {
                   allowFullScreen
                 ></iframe>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-violet-600 dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana and KCCF honored by Nasdaq at the closing bell</h3>
+              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana and KCCF honored by Nasdaq at the closing bell</h3>
             </div>
           </div>
 
