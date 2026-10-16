@@ -240,14 +240,6 @@ export default function Footer() {
                 <ul className="space-y-2">
                   <li>
                     <Link
-                      href="/donate"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
-                    >
-                      Donate
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/contact"
                       className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >

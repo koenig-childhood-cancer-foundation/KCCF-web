@@ -18,7 +18,7 @@ export default function PartnersCarousel() {
         {partners.map((partner, index) => (
           <div
             key={index}
-            className="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-lg border border-gray-100 dark:border-gray-700"
+            className="bg-white dark:bg-gray-800 p-4 shadow-lg border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-700 dark:border-t-violet-400"
           >
             <div className="flex items-center justify-center h-16 mb-2">
               <Image
