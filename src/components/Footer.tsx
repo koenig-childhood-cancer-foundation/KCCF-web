@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="bg-gray-900 dark:bg-gray-950 text-white border-t-[3px] border-[#DAB87E] transition-colors duration-200 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
         {/* Logo */}
-        <div className="flex justify-center pb-6 mb-6 border-b border-gray-700">
+        <div className="flex justify-center pb-6 mb-6">
           <Link href="/" aria-label="Koenig Childhood Cancer Foundation home">
             <Image
               src="/kccf_logo_light.png"
@@ -316,9 +316,9 @@ export default function Footer() {
         </div>
 
         {/* Awards Section - Full Width */}
-        <div className="mt-6 pt-5 border-t border-gray-700 text-center">
+        <div className="mt-6 pt-5 text-center">
           <h4 className="sr-only">Recognition & Awards</h4>
-          <div className="flex flex-row flex-wrap items-center justify-center gap-6 md:gap-10">
+          <div className="w-fit max-w-full mx-auto px-6 pb-6 border-b-2 border-[#DAB87E] flex flex-row flex-wrap items-center justify-center gap-6 md:gap-10">
             <div className="flex flex-col items-center">
               <a
                 href="https://www.guidestar.org/profile/84-4892279"
@@ -377,7 +377,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-5 pt-5 text-center text-sm border-t border-gray-700 text-gray-300">
+        <div className="mt-5 pt-1 text-center text-sm text-gray-300">
           <p>
             ©2026 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN:
             84-4892279

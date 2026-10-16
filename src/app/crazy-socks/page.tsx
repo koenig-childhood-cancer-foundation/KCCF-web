@@ -10,24 +10,31 @@ import { IMPACT_STATS } from '@/constants/impactStats';
 export default function CrazySocks() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const collageImages = [
-    '/images/yellow-shirt.jpg',
-    '/images/IMG_6861-scaled.jpeg',
-    '/images/IMG_6703-scaled.jpeg',
-    '/images/IMG_5046-scaled.jpg',
-  ];
-
   const howItWorksSteps = [
-    { title: 'You Sponsor', text: 'Your sponsorship covers the supplies. We bring them and set up.' },
-    { title: 'Elana Inspires', text: 'Our teen founder and survivor shares the why.' },
-    { title: 'Your Team Packs', text: 'Write notes of hope and fill the bags.' },
-    { title: 'A Child Opens Your Gift', text: 'We deliver the bags to children in the hospital and send your team photos.' },
+    {
+      title: 'You Sponsor',
+      text: 'Fill out a short form. Your sponsorship covers the supplies. We bring everything to you and set up.',
+      image: '/images/bankofamerica-scaled.jpeg',
+      alt: 'Gift bag supplies set out on a table before an event',
+    },
+    {
+      title: 'Your Team Packs',
+      text: 'Elana shares her story. Your team writes notes of hope and fills the bags.',
+      image: '/images/MetaLeadershipMakingfitBags-scaled.jpg',
+      alt: 'A company team packing gift bags in their office',
+    },
+    {
+      title: 'A Child Opens Your Gift',
+      text: 'We deliver the bags to children in the hospital and send your team photos.',
+      image: '/images/IMG_6703-scaled.jpeg',
+      alt: 'A child in the hospital holding a gift bag',
+    },
   ];
 
   const companyQuotes = [
     {
       name: 'Meta Leadership',
-      image: '/images/MetaLeadershipMakingfitBags-scaled.jpg',
+      image: '/images/MetaCSGiftBagEvent-scaled.jpg',
       quote:
         'Elana’s story moved us all to tears. Our leadership team traveled from all over the country to connect through this special mission.',
       role: 'Participant',
@@ -231,70 +238,50 @@ export default function CrazySocks() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-gradient-to-br from-platinum-50 to-platinum-100 dark:from-gray-800 dark:to-gray-700">
+      <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container text-center mx-auto px-4 sm:px-8 lg:px-6 2xl:px-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-violet-600 dark:text-white">
             How It Works
           </h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-12" aria-hidden="true" />
-          <ol className="flex flex-col lg:flex-row items-stretch max-w-6xl mx-auto list-none">
+          <ol className="flex flex-col lg:flex-row items-stretch max-w-sm lg:max-w-5xl mx-auto list-none">
             {howItWorksSteps.map((step, index) => (
               <Fragment key={step.title}>
                 {index > 0 && (
                   <li
-                    className="flex items-center justify-center text-[#DAB87E] text-3xl font-bold py-2 lg:py-0 lg:px-2"
+                    className="flex items-center justify-center text-[#8A6A2E] dark:text-[#DAB87E] text-[2.6rem] font-bold py-2 lg:py-0 lg:px-4"
                     aria-hidden="true"
                   >
                     <span className="lg:hidden">&darr;</span>
                     <span className="hidden lg:inline">&rarr;</span>
                   </li>
                 )}
-                <li className="flex-1 bg-white dark:bg-gray-700 border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-5 py-7 text-center">
+                <li className="flex-1 flex flex-col bg-[#FAF6F2] dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md pt-8 text-center">
                   <div className="w-16 h-16 rounded-full bg-[#8A6A2E] text-white text-3xl font-bold flex items-center justify-center mx-auto mb-4">
                     {index + 1}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 px-4">
                     {step.title}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
+                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed px-4">
                     {step.text}
                   </p>
+                  <div className="flex-1 min-h-[30px]" />
+                  <div className="mx-[18px] mb-[18px] bg-white p-[7px] rounded-[14px] border border-[#DAB87E] shadow-lg">
+                    <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                      <Image
+                        src={step.image}
+                        alt={step.alt}
+                        fill
+                        sizes="(max-width: 1024px) 90vw, 300px"
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
                 </li>
               </Fragment>
             ))}
           </ol>
-        </div>
-      </section>
-
-      {/* Moments of Joy */}
-      <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
-        <div className="text-center mb-16 px-4">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-            Moments of Joy
-          </h2>
-          <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
-        </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 max-w-6xl mx-auto px-4 sm:px-8">
-          {collageImages.map((image, index) => (
-            <div
-              key={image}
-              className="bg-white p-2 sm:p-2.5 pb-6 sm:pb-8 rounded-md border border-[#DAB87E] shadow-lg opacity-0"
-              style={{
-                animationDelay: `${index * 0.1}s`,
-                animation: 'fadeInUp 0.6s ease-out forwards',
-              }}
-            >
-              <div className="aspect-square relative">
-                <Image
-                  src={image}
-                  alt={`Crazy Socks event photo ${index + 1}`}
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
