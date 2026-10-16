@@ -261,11 +261,11 @@ export default function CrazySocks() {
         </div>
       </section>
 
-      {/* Moments from Our Events */}
+      {/* Moments of Joy */}
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="text-center mb-16 px-4">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-            Moments from Our Events
+            Moments of Joy
           </h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
         </div>
