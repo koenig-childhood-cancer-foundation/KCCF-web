@@ -69,6 +69,11 @@ export default function CrazySocks() {
     },
   ];
 
+  // The three quotes shown on the page; the full list stays above for reuse.
+  const featuredCompanies = companyQuotes.filter((company) =>
+    ['Meta Leadership', 'Forvis Mazars Group', 'Sumitomo Mitsui Bank'].includes(company.name),
+  );
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -304,37 +309,35 @@ export default function CrazySocks() {
             <p className="text-sm md:text-base font-bold uppercase tracking-[0.14em] leading-loose text-[#8A6A2E] dark:text-[#DAB87E] max-w-4xl mx-auto">
               Meta &middot; Bank of America &middot; Aflac &middot; Forvis Mazars &middot; Sumitomo Mitsui Bank &middot; UBS
             </p>
+            <p className="mt-7 italic text-gray-600 dark:text-gray-300">In their words:</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-7 max-w-6xl mx-auto">
-            {companyQuotes.map((company) => (
+          <div className="grid lg:grid-cols-3 gap-7 max-w-xl lg:max-w-6xl mx-auto">
+            {featuredCompanies.map((company) => (
               <div
                 key={company.name}
-                className="bg-[#FAF6F2] dark:bg-gray-700 border-t-4 border-violet-600 dark:border-saffron-400 p-5 sm:p-7 flex flex-col sm:flex-row gap-6"
+                className="bg-[#FAF6F2] dark:bg-gray-700 border-t-4 border-violet-600 dark:border-saffron-400 p-6 flex flex-col"
               >
-                <div className="shrink-0 w-full sm:w-[170px] aspect-square bg-white p-1.5 border border-[#DAB87E] shadow-md">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={company.image}
-                      alt={company.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 170px"
-                      className="object-cover"
-                    />
+                <h3 className="text-xl font-bold mb-4 text-center text-gray-900 dark:text-white">
+                  {company.name}
+                </h3>
+                <div className="flex-1 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center sm:items-start lg:items-center xl:items-start gap-5">
+                  <div className="shrink-0 w-[150px] h-[150px] bg-white p-1.5 border border-[#DAB87E] shadow-md">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={company.image}
+                        alt={company.name}
+                        fill
+                        sizes="150px"
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="flex-1 flex flex-col">
-                  <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
-                    {company.name}
-                  </h3>
-                  <p className="text-gray-800 dark:text-gray-200 leading-relaxed mb-4">
+                  <p className="text-gray-800 dark:text-gray-200 leading-relaxed text-center">
                     <span className="text-[#DAB87E] text-4xl font-serif leading-[0] relative top-[0.3em] mr-1" aria-hidden="true">
                       &ldquo;
                     </span>
                     {company.quote}
-                  </p>
-                  <p className="mt-auto border-t border-[#E8E0D8] dark:border-gray-600 pt-3 text-xs font-bold tracking-[0.16em] uppercase text-gray-900 dark:text-gray-100">
-                    {company.role}
                   </p>
                 </div>
               </div>
