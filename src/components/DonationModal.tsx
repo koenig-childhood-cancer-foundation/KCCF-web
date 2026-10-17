@@ -133,11 +133,11 @@ export default function DonationModal() {
       {/* Modal */}
       <div className="relative rounded-2xl max-w-5xl w-full h-[90vh] sm:h-[85vh] lg:h-[75vh] min-[1800px]:h-[65vh] min-h-[600px] flex items-stretch gap-4 my-auto">
         {/* Campaign Card - Left Side */}
-         <div className="hidden lg:flex lg:w-1/2 h-full bg-gradient-to-br from-[#772D5E] to-violet-600 text-white flex-col justify-between rounded-2xl overflow-hidden">
+         <div className="hidden lg:flex lg:w-1/2 h-full bg-violet-600 dark:bg-violet-800 text-white flex-col justify-between rounded-[28px] overflow-hidden shadow-xl">
           <div className="flex-1 min-h-0 flex flex-col">
-            <div className="campaign-image-holder overflow-hidden flex-shrink-0 h-48 [@media(min-height:880px)]:h-72">
+            <div className="campaign-image-holder overflow-hidden flex-shrink-0 h-56 [@media(min-height:880px)]:h-72">
               <Image 
-                className="w-full h-48 [@media(min-height:880px)]:h-72 object-cover scale-[1.3] origin-left"
+                className="w-full h-56 [@media(min-height:880px)]:h-72 object-cover scale-[1.3] origin-left"
                 style={{ objectPosition: 'left 20%' }}
                 src="/images/elana-charlotte.jpg"
                 alt="Elana and Charlotte"
@@ -146,33 +146,27 @@ export default function DonationModal() {
               />
             </div>
             
-            <div className="campaign-body p-4 xl:p-6 min-[1800px]:p-8 pt-4 xl:pt-5 min-[1800px]:pt-6 flex-1 min-h-0">
-              <Image
-                src="/kccf_logo_light.png"
-                alt="KCCF Logo"
-                width={120}
-                height={40}
-                className="mb-3 xl:mb-4"
-              />
+            <div className="campaign-body p-4 xl:p-6 min-[1800px]:p-8 pt-4 xl:pt-5 min-[1800px]:pt-6 flex-1 min-h-0 text-center">
               <h2 
-                className="font-bold mb-2 xl:mb-3 min-[1800px]:mb-4 text-xl xl:text-2xl"
+                className="font-bold mb-2 xl:mb-3 min-[1800px]:mb-4 text-xl xl:text-2xl text-white"
               >
                 No child should fight cancer alone.
               </h2>
+              <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-3 xl:mb-4" aria-hidden="true" />
               <p 
                 className="text-white/90 leading-relaxed text-sm xl:text-base"
               >
                 KCCF provides life-saving financial and emotional support to children battling cancer and their families.
               </p>
               {/* Gift levels from KCCF Current Facts – MASTER */}
-              <p className="mt-2 xl:mt-4 text-sm xl:text-base">
+              <p className="mt-2 xl:mt-4 text-sm xl:text-base text-white/90">
                 <strong className="text-[#DAB87E]">$50</strong> = a dinner for a family &middot; <strong className="text-[#DAB87E]">$360</strong> = 3 nights of lodging
               </p>
             </div>
           </div>
           
-          <div className="mx-4 xl:mx-6 min-[1800px]:mx-8 mb-4 xl:mb-6 min-[1800px]:mb-8 pt-4 xl:pt-5 min-[1800px]:pt-6 border-t border-white/20 flex-shrink-0 text-center">
-            <div className="flex items-center justify-center text-white/80 text-sm xl:text-base">
+          <div className="px-4 xl:px-6 py-4 xl:py-5 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-white flex-shrink-0 text-center h-28 flex flex-col justify-center">
+            <div className="flex items-center justify-center text-white text-sm xl:text-base">
               <div className="flex items-center space-x-4 xl:space-x-6">
                 <div className="flex items-center">
                   <svg className="w-4 h-4 xl:w-5 xl:h-5 mr-1.5 xl:mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -204,7 +198,7 @@ export default function DonationModal() {
         </div>
         
         {/* Donation Form - Right Side replaced entirely by Zeffy */}
-        <div className="lg:w-1/2 w-full h-full flex flex-col bg-white dark:bg-gray-800 rounded-2xl overflow-hidden">
+        <div className="lg:w-1/2 w-full h-full flex flex-col bg-white dark:bg-gray-800 rounded-[28px] overflow-hidden shadow-xl">
           <div className="flex-shrink-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
             {/* Top row: title + close button */}
             <div className="flex items-center p-2 sm:p-3 lg:p-4">
@@ -259,7 +253,7 @@ export default function DonationModal() {
           </div>
 
           {/* Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal, Venmo and DAF gifts */}
-          <div className="flex-shrink-0 px-5 py-4 bg-violet-600 dark:bg-violet-800 text-center">
+          <div className="flex-shrink-0 h-28 flex flex-col justify-center items-center px-5 py-4 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-center">
             {selectedProvider === 'zeffy' ? (
               <>
                 <span className="block text-base font-semibold text-white">Prefer PayPal, Venmo or a donor-advised fund?</span>
