@@ -167,7 +167,7 @@ export default function Footer() {
                       onClick={() => openModal('book-elana')}
                       className="text-gray-300 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
                     >
-                      Book Elana, Founder
+                      Book Elana to Speak
                     </button>
                   </li>
                   <li>

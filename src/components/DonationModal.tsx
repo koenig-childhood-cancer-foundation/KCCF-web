@@ -78,10 +78,11 @@ function GiveLivelyWidget() {
 }
 
 export default function DonationModal() {
-  const { isOpen, closeModal, campaign } = useDonationModal()
+  const { isOpen, closeModal } = useDonationModal()
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
   const [iframeLoaded, setIframeLoaded] = useState(false)
-  const [isProviderSectionOpen, setIsProviderSectionOpen] = useState(true)
+  const switchLinkClass =
+    'inline-flex items-center gap-1 mt-2 px-6 py-2.5 rounded-full bg-white text-violet-700 font-bold shadow-md hover:bg-[#FBF5EA] transition-colors cursor-pointer'
 
   // Reset iframeLoaded when modal opens or provider changes
   useEffect(() => {
@@ -132,11 +133,11 @@ export default function DonationModal() {
       {/* Modal */}
       <div className="relative rounded-2xl max-w-5xl w-full h-[90vh] sm:h-[85vh] lg:h-[75vh] min-[1800px]:h-[65vh] min-h-[600px] flex items-stretch gap-4 my-auto">
         {/* Campaign Card - Left Side */}
-         <div className="hidden lg:flex lg:w-1/2 h-full bg-gradient-to-br from-[#772D5E] to-violet-600 text-white flex-col justify-between rounded-2xl overflow-hidden">
+         <div className="hidden lg:flex lg:w-1/2 h-full bg-violet-600 dark:bg-violet-800 text-white flex-col justify-between rounded-[28px] overflow-hidden shadow-xl">
           <div className="flex-1 min-h-0 flex flex-col">
-            <div className="campaign-image-holder overflow-hidden flex-shrink-0 h-72">
+            <div className="campaign-image-holder overflow-hidden flex-shrink-0 h-56 [@media(min-height:880px)]:h-72">
               <Image 
-                className="w-full h-72 object-cover scale-[1.3] origin-left"
+                className="w-full h-56 [@media(min-height:880px)]:h-72 object-cover scale-[1.3] origin-left"
                 style={{ objectPosition: 'left 20%' }}
                 src="/images/elana-charlotte.jpg"
                 alt="Elana and Charlotte"
@@ -145,35 +146,33 @@ export default function DonationModal() {
               />
             </div>
             
-            <div className="campaign-body p-4 xl:p-6 min-[1800px]:p-8 pt-4 xl:pt-5 min-[1800px]:pt-6 flex-1 min-h-0">
-              <Image
-                src="/kccf_logo_light.png"
-                alt="KCCF Logo"
-                width={120}
-                height={40}
-                className="mb-3 xl:mb-4"
-              />
+            <div className="campaign-body p-4 xl:p-6 min-[1800px]:p-8 pt-4 xl:pt-5 min-[1800px]:pt-6 flex-1 min-h-0 text-center">
               <h2 
-                className="font-bold mb-2 xl:mb-3 min-[1800px]:mb-4 text-xl xl:text-2xl"
+                className="font-bold mb-2 xl:mb-3 min-[1800px]:mb-4 text-xl xl:text-2xl text-white"
               >
-                {campaign || "Your Donation Saves Lives!"}
+                No child should fight cancer alone.
               </h2>
+              <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-3 xl:mb-4" aria-hidden="true" />
               <p 
                 className="text-white/90 leading-relaxed text-sm xl:text-base"
               >
-                KCCF supports children fighting cancer by paying for medical bills, lodging, and food. Whether large or small, every donation makes a real difference for a family in need.
+                KCCF provides life-saving financial and emotional support to children battling cancer and their families.
+              </p>
+              {/* Gift levels from KCCF Current Facts – MASTER */}
+              <p className="mt-2 xl:mt-4 text-sm xl:text-base text-white/90">
+                <strong className="text-[#DAB87E]">$50</strong> = a dinner for a family &middot; <strong className="text-[#DAB87E]">$360</strong> = 3 nights of lodging
               </p>
             </div>
           </div>
           
-          <div className="mx-4 xl:mx-6 min-[1800px]:mx-8 mb-4 xl:mb-6 min-[1800px]:mb-8 pt-4 xl:pt-5 min-[1800px]:pt-6 border-t border-white/20 flex-shrink-0 text-center">
-            <div className="flex items-center justify-center text-white/80 text-sm xl:text-base">
+          <div className="px-4 xl:px-6 py-4 xl:py-5 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-white flex-shrink-0 text-center h-28 flex flex-col justify-center">
+            <div className="flex items-center justify-center text-white text-sm xl:text-base">
               <div className="flex items-center space-x-4 xl:space-x-6">
                 <div className="flex items-center">
                   <svg className="w-4 h-4 xl:w-5 xl:h-5 mr-1.5 xl:mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Secure & Trusted</span>
+                  <span>Charity Navigator 4-Star</span>
                 </div>
                 <div className="flex items-center">
                   <svg className="w-4 h-4 xl:w-5 xl:h-5 mr-1.5 xl:mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -185,11 +184,11 @@ export default function DonationModal() {
             </div>
             <div className="mt-2 xl:mt-3 min-[1800px]:mt-4">
               <Link 
-                href="/donate?nomodal=1"
+                href="/donate?nomodal=1#ways-to-give"
                 onClick={closeModal}
                 className="inline-flex items-center text-white/90 hover:text-white underline underline-offset-2 transition-colors font-semibold text-sm xl:text-base"
               >
-                Other ways to donate
+                Other ways to give: stock, DAF, crypto, check
                 <svg className="w-4 h-4 xl:w-5 xl:h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -199,30 +198,13 @@ export default function DonationModal() {
         </div>
         
         {/* Donation Form - Right Side replaced entirely by Zeffy */}
-        <div className="lg:w-1/2 w-full h-full flex flex-col bg-white dark:bg-gray-800 rounded-2xl overflow-hidden">
-          {/* Header with collapsible platform selector */}
+        <div className="lg:w-1/2 w-full h-full flex flex-col bg-white dark:bg-gray-800 rounded-[28px] overflow-hidden shadow-xl">
           <div className="flex-shrink-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-            {/* Top row: Platform toggle + campaign + close button */}
+            {/* Top row: title + close button */}
             <div className="flex items-center p-2 sm:p-3 lg:p-4">
-              <button
-                onClick={() => setIsProviderSectionOpen(!isProviderSectionOpen)}
-                className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all cursor-pointer w-[100px] sm:w-[120px]"
-              >
-                <span className="text-gray-500 dark:text-gray-400 font-medium text-xs sm:text-sm">
-                  {selectedProvider === 'zeffy' ? 'Zeffy' : 'GiveLively'}
-                </span>
-                <svg 
-                  className={`w-3 h-3 sm:w-4 sm:h-4 text-gray-500 dark:text-gray-400 transition-transform duration-200 ${isProviderSectionOpen ? 'rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              {/* Spacer to keep close button on the right */}
-              <div className="flex-1" />
+              <h2 className="flex-1 pl-2 sm:pl-3 text-lg sm:text-xl font-bold text-[#2B2330] dark:text-white">
+                Help Children <span className="text-violet-600 dark:text-saffron-400">Beat Cancer.</span>
+              </h2>
               
               <button
                 onClick={closeModal}
@@ -235,52 +217,6 @@ export default function DonationModal() {
               </button>
             </div>
             
-            {/* Collapsible platform options */}
-            <div 
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                isProviderSectionOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
-              }`}
-            >
-              <div>
-                <p className="text-center text-sm text-gray-600 dark:text-gray-300 mb-3">
-                  Choose your preferred donation platform:
-                </p>
-                <div className="flex justify-center gap-3 sm:gap-4">
-                  <div className="flex flex-col items-center flex-1 max-w-[150px] sm:max-w-[180px]">
-                    <button
-                      onClick={() => setSelectedProvider('zeffy')}
-                      className={`w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-sm font-medium transition-all duration-200 active:scale-95 sm:hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
-                        selectedProvider === 'zeffy'
-                          ? 'bg-[#772D5E] text-white hover:bg-[#772D5E]/90 border-[#772D5E]'
-                          : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#772D5E]'
-                      }`}
-                    >
-                      Zeffy
-                    </button>
-                    <ul className="mt-1.5 sm:mt-2 text-xs text-gray-600 dark:text-gray-300 list-disc list-inside leading-relaxed">
-                      <li>No fees</li>
-                      <li>International</li>
-                    </ul>
-                  </div>
-                  <div className="flex flex-col items-center flex-1 max-w-[150px] sm:max-w-[180px]">
-                    <button
-                      onClick={() => setSelectedProvider('givelively')}
-                      className={`w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-sm font-medium transition-all duration-200 active:scale-95 sm:hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
-                        selectedProvider === 'givelively'
-                          ? 'bg-[#772D5E] text-white hover:bg-[#772D5E]/90 border-[#772D5E]'
-                          : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#772D5E]'
-                      }`}
-                    >
-                      GiveLively
-                    </button>
-                    <ul className="mt-1.5 sm:mt-2 text-xs text-gray-600 dark:text-gray-300 list-disc list-inside leading-relaxed">
-                      <li>Standard fees</li>
-                      <li>Paypal / Venmo / DAF</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="flex-1 min-h-0 flex flex-col overflow-hidden">
@@ -313,6 +249,22 @@ export default function DonationModal() {
               <div className="flex-1 min-h-[200px] overflow-auto">
                 <GiveLivelyWidget />
               </div>
+            )}
+          </div>
+
+          {/* Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal, Venmo and DAF gifts */}
+          <div className="flex-shrink-0 h-28 flex flex-col justify-center items-center px-5 py-4 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-center">
+            {selectedProvider === 'zeffy' ? (
+              <>
+                <span className="block text-base font-semibold text-white">Prefer PayPal, Venmo or a donor-advised fund?</span>
+                <button type="button" onClick={() => setSelectedProvider('givelively')} className={switchLinkClass}>
+                  Give through GiveLively &rarr;
+                </button>
+              </>
+            ) : (
+              <button type="button" onClick={() => setSelectedProvider('zeffy')} className={switchLinkClass}>
+                &larr; Back to card or bank transfer (no fees)
+              </button>
             )}
           </div>
         </div>

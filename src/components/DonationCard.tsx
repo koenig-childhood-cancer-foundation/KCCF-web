@@ -68,60 +68,31 @@ function GiveLivelyWidgetCard() {
 }
 
 export default function DonationCard() {
+  // Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal, Venmo and DAF gifts
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
+  const switchLinkClass =
+    'inline-flex items-center gap-1 mt-2 px-6 py-2.5 rounded-full bg-white text-violet-700 font-bold shadow-md hover:bg-[#FBF5EA] transition-colors cursor-pointer'
 
   return (
     <div className="w-full flex flex-col min-h-0 h-[calc(66vh-8rem)] md:h-[calc(85vh-6rem)] bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
       <div className="flex-shrink-0">
         <div className="flex items-center justify-center p-6 border-b border-gray-200 dark:border-gray-700">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Donate to save lives ❤️</h2>
+          <h1 className="text-2xl font-bold text-center leading-tight text-[#2B2330] dark:text-white">
+            Help Children <span className="text-violet-600 dark:text-saffron-400">Beat Cancer.</span>
+          </h1>
         </div>
       </div>
 
-      <div className="flex-1 min-h-0 flex flex-col overflow-hidden">
-        {/* Provider Selection */}
-        <div className="px-6 py-4 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex-shrink-0">
-          <p className="text-sm text-gray-900 dark:text-white mb-3 text-center">Choose your preferred donation platform:</p>
-          <div className="flex justify-center space-x-4">
-            <div className="flex flex-col">
-              <button
-                onClick={() => setSelectedProvider('zeffy')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
-                  selectedProvider === 'zeffy'
-                    ? 'bg-[#772D5E] text-white hover:bg-[#772D5E]/90 border-[#772D5E]'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#772D5E]'
-                }`}
-              >
-                Zeffy
-              </button>
-              <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc list-inside">
-                <li>No fees</li>
-                <li>Accepts international donations</li>
-              </ul>
-            </div>
-            <div className="flex flex-col">
-              <button
-                onClick={() => setSelectedProvider('givelively')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-md cursor-pointer border-2 ${
-                  selectedProvider === 'givelively'
-                    ? 'bg-[#772D5E] text-white hover:bg-[#772D5E]/90 border-[#772D5E]'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 border-[#772D5E]'
-                }`}
-              >
-                GiveLively
-              </button>
-              <ul className="mt-2 text-xs text-gray-700 dark:text-gray-300 list-disc list-inside">
-                <li>Standard processing fees</li>
-                <li>Accepts PayPal / Venmo / DAFs</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
+      <div className="relative flex-1 min-h-0">
         {selectedProvider === 'zeffy' ? (
-          <div className="flex-1 min-h-0 overflow-auto">
+          <>
+            {/* Shown behind the form until Zeffy finishes loading */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-gray-500 dark:text-gray-400" aria-hidden="true">
+              <div className="w-8 h-8 rounded-full border-4 border-[#DAB87E] border-t-violet-600 animate-spin" />
+              <p className="text-sm">Loading the secure donation form&hellip;</p>
+            </div>
             <iframe
-              className="block w-full h-full max-w-full border-0"
+              className="relative block w-full h-full max-w-full border-0"
               src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
               title="Zeffy donation form"
               scrolling="yes"
@@ -130,15 +101,26 @@ export default function DonationCard() {
               style={{
                 WebkitOverflowScrolling: 'touch',
                 overflow: 'auto',
-                minHeight: '300px',
-                height: '100%'
               }}
             />
-          </div>
+          </>
         ) : (
-          <div className="flex-1 min-h-0">
-            <GiveLivelyWidgetCard />
-          </div>
+          <GiveLivelyWidgetCard />
+        )}
+      </div>
+
+      <div className="flex-shrink-0 px-5 py-4 bg-violet-600 dark:bg-violet-800 text-center">
+        {selectedProvider === 'zeffy' ? (
+          <>
+            <span className="block text-base font-semibold text-white">Prefer PayPal, Venmo or a donor-advised fund?</span>
+            <button type="button" onClick={() => setSelectedProvider('givelively')} className={switchLinkClass}>
+              Give through GiveLively &rarr;
+            </button>
+          </>
+        ) : (
+          <button type="button" onClick={() => setSelectedProvider('zeffy')} className={switchLinkClass}>
+            &larr; Back to card or bank transfer (no fees)
+          </button>
         )}
       </div>
     </div>
