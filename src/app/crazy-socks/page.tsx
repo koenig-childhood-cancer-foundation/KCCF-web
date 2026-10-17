@@ -179,8 +179,29 @@ export default function CrazySocks() {
         />
       </div>
 
+      {/* Impact numbers, each in its own gold oval */}
+      <section className="py-12 bg-white dark:bg-gray-800 border-b border-[#F1E7D6] dark:border-gray-700">
+        <ul className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 max-w-5xl mx-auto px-4 list-none">
+          {[
+            { value: IMPACT_STATS.CRAZY_SOCKS[0].value, label: 'gift bags delivered' },
+            { value: IMPACT_STATS.CRAZY_SOCKS[1].value, label: 'items inside the bags' },
+            { value: IMPACT_STATS.CRAZY_SOCKS[3].value, label: 'volunteer hours' },
+          ].map((stat) => (
+            <li
+              key={stat.label}
+              className="w-full max-w-72 sm:w-auto sm:max-w-none rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-10 py-4 sm:py-5 text-center"
+            >
+              <div className="text-3xl md:text-[2.75rem] font-extrabold leading-none text-violet-600 dark:text-saffron-400">
+                {stat.value}
+              </div>
+              <div className="mt-1.5 text-sm md:text-base font-bold text-[#8A6A2E] dark:text-[#DAB87E]">{stat.label}</div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       {/* Story */}
-      <section className="py-20 bg-white dark:bg-gray-800">
+      <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4 xl:px-28 2xl:px-32">
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
@@ -188,7 +209,7 @@ export default function CrazySocks() {
             </h2>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
           </div>
-          <div className="grid lg:grid-cols-2 gap-14 2xl:gap-26 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-[1.6fr_1fr] gap-12 2xl:gap-20 items-center max-w-6xl mx-auto">
             <div>
               <div className="space-y-6 text-lg xl:text-[1.15rem] 2xl:text-2xl text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
@@ -220,10 +241,13 @@ export default function CrazySocks() {
                 </svg>
                 <span className="h-0.5 w-16 bg-[#DAB87E]" />
               </div>
+              <p className="mt-4 text-base md:text-lg italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
+                Elana gives a gift bag to a child in treatment.
+              </p>
             </div>
 
             <div className="relative">
-              <div className="relative bg-white p-2.5 rounded-md border border-[#DAB87E] shadow-lg max-w-[360px] mx-auto">
+              <div className="relative bg-white p-2.5 rounded-md border border-[#DAB87E] shadow-lg max-w-[360px] mx-auto lg:mr-0">
                 <Image
                   src="/images/crazy-socks.jpg"
                   alt="Elana with a child holding a Crazy Socks gift bag"
@@ -232,9 +256,6 @@ export default function CrazySocks() {
                   className="w-full h-auto"
                 />
               </div>
-              <p className="mt-5 max-w-[360px] mx-auto text-center text-base md:text-lg italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
-                Elana gives a gift bag to a child in treatment.
-              </p>
             </div>
           </div>
         </div>
@@ -351,22 +372,6 @@ export default function CrazySocks() {
       {/* Closing call to action, matching the home page band */}
       <section className="py-20 bg-violet-600 dark:bg-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <ul className="flex flex-wrap justify-center gap-x-14 gap-y-5 mb-12">
-            {[
-              { value: IMPACT_STATS.CRAZY_SOCKS[0].value, label: 'gift bags delivered' },
-              { value: IMPACT_STATS.CRAZY_SOCKS[1].value, label: 'items inside the bags' },
-              { value: IMPACT_STATS.HOME[1].value, label: 'volunteers' },
-            ].map((stat) => (
-              <li key={stat.label} className="w-48 sm:w-auto border-l-4 border-[#DAB87E] pl-4 py-1 text-left">
-                <div className="text-4xl md:text-5xl font-bold leading-tight text-white">
-                  {stat.value}
-                </div>
-                <div className="text-sm md:text-base font-semibold text-[#DAB87E]">
-                  {stat.label}
-                </div>
-              </li>
-            ))}
-          </ul>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Be the reason a child smiles today.
           </h2>
