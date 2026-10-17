@@ -78,7 +78,7 @@ function GiveLivelyWidget() {
 }
 
 export default function DonationModal() {
-  const { isOpen, closeModal, campaign } = useDonationModal()
+  const { isOpen, closeModal } = useDonationModal()
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
   const [iframeLoaded, setIframeLoaded] = useState(false)
   const switchLinkClass =
@@ -135,9 +135,9 @@ export default function DonationModal() {
         {/* Campaign Card - Left Side */}
          <div className="hidden lg:flex lg:w-1/2 h-full bg-gradient-to-br from-[#772D5E] to-violet-600 text-white flex-col justify-between rounded-2xl overflow-hidden">
           <div className="flex-1 min-h-0 flex flex-col">
-            <div className="campaign-image-holder overflow-hidden flex-shrink-0 h-72">
+            <div className="campaign-image-holder overflow-hidden flex-shrink-0 h-48 [@media(min-height:880px)]:h-72">
               <Image 
-                className="w-full h-72 object-cover scale-[1.3] origin-left"
+                className="w-full h-48 [@media(min-height:880px)]:h-72 object-cover scale-[1.3] origin-left"
                 style={{ objectPosition: 'left 20%' }}
                 src="/images/elana-charlotte.jpg"
                 alt="Elana and Charlotte"
@@ -157,12 +157,16 @@ export default function DonationModal() {
               <h2 
                 className="font-bold mb-2 xl:mb-3 min-[1800px]:mb-4 text-xl xl:text-2xl"
               >
-                {campaign || "Your Donation Saves Lives!"}
+                No child should fight cancer alone.
               </h2>
               <p 
                 className="text-white/90 leading-relaxed text-sm xl:text-base"
               >
-                KCCF supports children fighting cancer by paying for medical bills, lodging, and food. Whether large or small, every donation makes a real difference for a family in need.
+                KCCF provides life-saving financial and emotional support to children battling cancer and their families.
+              </p>
+              {/* Gift levels from KCCF Current Facts – MASTER */}
+              <p className="mt-2 xl:mt-4 text-sm xl:text-base">
+                <strong className="text-[#DAB87E]">$50</strong> = a dinner for a family &middot; <strong className="text-[#DAB87E]">$360</strong> = 3 nights of lodging
               </p>
             </div>
           </div>
@@ -174,7 +178,7 @@ export default function DonationModal() {
                   <svg className="w-4 h-4 xl:w-5 xl:h-5 mr-1.5 xl:mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Secure & Trusted</span>
+                  <span>Charity Navigator 4-Star</span>
                 </div>
                 <div className="flex items-center">
                   <svg className="w-4 h-4 xl:w-5 xl:h-5 mr-1.5 xl:mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -190,7 +194,7 @@ export default function DonationModal() {
                 onClick={closeModal}
                 className="inline-flex items-center text-white/90 hover:text-white underline underline-offset-2 transition-colors font-semibold text-sm xl:text-base"
               >
-                Other ways to donate
+                Other ways to give: stock, DAF, crypto, check
                 <svg className="w-4 h-4 xl:w-5 xl:h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
