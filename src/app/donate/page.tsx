@@ -103,18 +103,8 @@ export default function Donate() {
           />
         </div>
 
-        <div className="container mx-auto px-4 lg:px-8 pb-16 grid lg:grid-cols-[1fr_27rem] gap-8 lg:gap-12 items-start">
-          <div className="lg:pt-10 order-last lg:order-none">
-            <ul className="space-y-1 text-lg text-[#2B2330] dark:text-gray-200">
-              {giftImpacts[0].amounts.map((line) => (
-                <li key={line.amount}>
-                  <strong className="text-violet-600 dark:text-saffron-400">{line.amount}</strong> {line.text}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="-mt-12 lg:-mt-[34rem] relative">
+        <div className="container mx-auto px-4 lg:px-8 pb-16 flex justify-center lg:justify-end">
+          <div className="w-full max-w-[27rem] -mt-12 lg:-mt-[34rem] relative">
             <DonationCard
               title={
                 <h1 className="text-3xl font-extrabold leading-tight">
