@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import FormButton from '@/components/FormButton';
 import CallToAction from '@/components/CallToAction';
+import { useFormModal } from '@/contexts/FormModalContext';
 
 // Elana's story and the team, combined from the Our Story and KCCF Family pages.
 // Facts and titles follow KCCF Current Facts – MASTER.
@@ -104,6 +104,7 @@ function PersonCard({ person, size = 'w-40 h-40' }: { person: Person; size?: str
 }
 
 export default function AboutUs() {
+  const { openModal } = useFormModal();
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
       {/* Hero: home-page style (full photo, warm tint, soft shade behind the words) */}
@@ -113,7 +114,7 @@ export default function AboutUs() {
             src="/images/header_image_our_story.jpg"
             alt="Elana Koenig"
             fill
-            className="object-cover object-[38%_center] lg:object-[center_20%]"
+            className="object-cover object-[38%_15%] lg:object-[center_20%]"
             sizes="100vw"
             priority
           />
@@ -123,23 +124,33 @@ export default function AboutUs() {
         <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 lg:pl-24 pb-14 text-center lg:text-left">
           <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">About Us</h1>
           <p className="mt-5 text-xl md:text-2xl font-semibold text-white max-w-xl mx-auto lg:mx-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]">
-            From a child cancer survivor&apos;s dream to a foundation that has helped thousands of families globally.
+            A child cancer survivor&apos;s dream, now helping thousands of families.
           </p>
+          <button
+            type="button"
+            onClick={() => openModal('book-elana')}
+            className="btn-primary mt-8 bg-white/10 hover:bg-white/20 border-2 border-white text-white py-3.5 px-8 rounded-full text-lg font-semibold inline-flex items-center justify-center"
+          >
+            Book Elana as a Keynote Speaker
+          </button>
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <SectionTitle title="Our Mission" />
-          <p className="text-2xl md:text-3xl font-semibold leading-snug text-[#2B2330] dark:text-white">
-            KCCF provides life-saving financial and emotional support to children battling cancer and their families.
-          </p>
-          <p className="mt-8 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
-            Every day, about 1,100 children are diagnosed with cancer worldwide, enough to fill 28 school buses. To reach
-            specialized cancer centers, families face the costs of travel, lodging, living expenses and treatment. KCCF
-            helps lift that financial strain so families can focus on their child.
-          </p>
+      {/* Elana's journey in three photos */}
+      <section className="py-14 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-3 gap-4 sm:gap-10 max-w-4xl mx-auto">
+            {journey.map((step) => (
+              <figure key={step.caption} className="text-center">
+                <div className="relative aspect-square rounded-full p-1 bg-white border border-[#DAB87E] shadow-md">
+                  <Image src={step.src} alt={step.caption} fill sizes="(max-width: 640px) 30vw, 220px" className="rounded-full object-cover" />
+                </div>
+                <figcaption className="mt-3 text-sm sm:text-lg italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
+                  {step.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -182,32 +193,21 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="mt-16 grid grid-cols-3 gap-4 sm:gap-10 max-w-4xl mx-auto">
-            {journey.map((step) => (
-              <figure key={step.caption} className="text-center">
-                <div className="relative aspect-square rounded-full p-1 bg-white border border-[#DAB87E] shadow-md">
-                  <Image src={step.src} alt={step.caption} fill sizes="(max-width: 640px) 30vw, 220px" className="rounded-full object-cover" />
-                </div>
-                <figcaption className="mt-3 text-sm sm:text-lg italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
-                  {step.caption}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Book Elana as a keynote speaker */}
-      <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <SectionTitle title="Book Elana as a Keynote Speaker" />
-          <p className="text-xl text-gray-700 dark:text-gray-200 mb-10">
-            Invite Elana Koenig to your graduation, gala, corporate event, or media platform to share her powerful story
-            of turning pain into purpose, bringing hope, resilience, and impact to every audience.
+      {/* Mission */}
+      <section className="py-20 bg-white dark:bg-gray-900">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <SectionTitle title="Our Mission" />
+          <p className="text-2xl md:text-3xl font-semibold leading-snug text-[#2B2330] dark:text-white">
+            KCCF provides life-saving financial and emotional support to children battling cancer and their families.
           </p>
-          <FormButton formType="book-elana" variant="orange" size="lg" className="py-4 px-10 text-lg">
-            Book Elana for Your Event
-          </FormButton>
+          <p className="mt-8 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+            Every day, about 1,100 children are diagnosed with cancer worldwide, enough to fill 28 school buses. To reach
+            specialized cancer centers, families face the costs of travel, lodging, living expenses and treatment. KCCF
+            helps lift that financial strain so families can focus on their child.
+          </p>
         </div>
       </section>
 
