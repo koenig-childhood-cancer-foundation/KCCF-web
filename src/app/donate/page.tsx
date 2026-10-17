@@ -105,16 +105,13 @@ export default function Donate() {
 
         <div className="container mx-auto px-4 lg:px-8 pb-16 grid lg:grid-cols-[1fr_27rem] gap-8 lg:gap-12 items-start">
           <div className="lg:pt-10 order-last lg:order-none">
-            <ul className="space-y-1 text-lg text-[#2B2330] dark:text-gray-200 mb-4">
+            <ul className="space-y-1 text-lg text-[#2B2330] dark:text-gray-200">
               {giftImpacts[0].amounts.map((line) => (
                 <li key={line.amount}>
                   <strong className="text-violet-600 dark:text-saffron-400">{line.amount}</strong> {line.text}
                 </li>
               ))}
             </ul>
-            <p className="text-sm font-bold uppercase tracking-[0.08em] leading-loose text-[#8A6A2E] dark:text-[#DAB87E]">
-              Charity Navigator 4-star &middot; Candid Platinum Seal of Transparency
-            </p>
           </div>
 
           <div className="-mt-12 lg:-mt-[34rem] relative">
