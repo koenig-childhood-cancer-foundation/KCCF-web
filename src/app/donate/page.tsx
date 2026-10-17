@@ -1,12 +1,10 @@
 "use client"
 
-import { Suspense, useEffect, type ReactNode } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import DonationCard from '@/components/DonationCard'
 import DonationButton from '@/components/DonationButton'
-import { useDonationModal } from '@/contexts/DonationModalContext'
 
 // Gift amounts come from KCCF Current Facts – MASTER (Cost per child).
 const giftImpacts: {
@@ -88,32 +86,10 @@ const faqQuestionClass =
   'flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden px-6 py-5 text-lg font-semibold text-[#2B2330] dark:text-white'
 const faqAnswerClass = 'px-6 pb-6 -mt-1 text-gray-600 dark:text-gray-300'
 
-// Separate component that uses useSearchParams - must be wrapped in Suspense
-function DonateModalTrigger() {
-  const { openModal } = useDonationModal()
-  const searchParams = useSearchParams()
-
-  // Automatically open the donation modal when the page loads
-  // Skip if nomodal=1 query param is present (used when navigating from "Other ways to donate")
-  useEffect(() => {
-    const noModal = searchParams.get('nomodal')
-    if (noModal !== '1') {
-      openModal()
-    }
-  }, [openModal, searchParams])
-
-  return null
-}
-
 export default function Donate() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      {/* Suspense boundary for useSearchParams */}
-      <Suspense fallback={null}>
-        <DonateModalTrigger />
-      </Suspense>
-
       {/* Hero: on computers the card sits on the photo; on phones and tablets the photo comes first and the card below it, so faces stay visible */}
       <div className="relative lg:min-h-[86vh] flex flex-col lg:flex-row lg:items-center justify-center overflow-hidden pt-24">
         {/* Background Image */}
