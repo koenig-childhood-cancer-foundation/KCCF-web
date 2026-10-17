@@ -30,7 +30,7 @@ const benefits = [
 ];
 
 const fundraiserSteps = [
-  { title: 'Start Your Page', text: 'Create your own fundraising page in a few minutes. It is free.' },
+  { title: 'Start Your Peer-to-Peer Fundraiser', text: 'Create your own fundraising page in a few minutes. It is free.' },
   { title: 'Share It', text: 'Send it to family, friends, your team, school or company.' },
   { title: 'Help a Child', text: 'Every gift goes to children battling cancer and their families.' },
 ];
