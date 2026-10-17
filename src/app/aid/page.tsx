@@ -43,11 +43,13 @@ export default function Aid() {
             src="/images/header_image_family_assistance.png"
             alt="Family Aid"
             fill
-            className="object-cover 2xl:object-[center_0%]"
+            className="object-cover object-[65%_center] md:object-[right_30%]"
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+          {/* Home-page-style hero: warm tint plus a soft shade behind the words, family side left clear */}
+          <div className="absolute inset-0 bg-amber-400/12 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/15 to-black/60 md:bg-gradient-to-r md:from-black/60 md:via-black/30 md:to-transparent pointer-events-none"></div>
         </div>
 
         {/* PageHeader */}
