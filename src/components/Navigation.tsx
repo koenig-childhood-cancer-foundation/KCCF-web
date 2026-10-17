@@ -116,7 +116,7 @@ export default function Navigation() {
         { name: 'Contact Us', href: '/contact' },
         { name: 'Volunteer', href: '/volunteer' },
         { name: 'Sponsor Gift Bag Event', formType: 'crazy-socks-sponsor' },
-        { name: 'Book Elana for Event', formType: 'book-elana' },
+        { name: 'Book Elana to Speak', formType: 'book-elana' },
         { name: 'Newsletter Signup', href: '/newsletter-signup' },
       ]
     },
