@@ -133,7 +133,7 @@ export default function DonationModal() {
       {/* Modal */}
       <div className="relative rounded-2xl max-w-5xl w-full h-[90vh] sm:h-[85vh] lg:h-[75vh] min-[1800px]:h-[65vh] min-h-[600px] flex items-stretch gap-4 my-auto">
         {/* Campaign Card - Left Side */}
-         <div className="hidden lg:flex lg:w-1/2 h-full bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-800 text-[#2B2330] dark:text-white flex-col justify-between rounded-[28px] overflow-hidden shadow-xl">
+         <div className="hidden lg:flex lg:w-1/2 h-full bg-violet-600 dark:bg-violet-800 text-white flex-col justify-between rounded-[28px] overflow-hidden shadow-xl">
           <div className="flex-1 min-h-0 flex flex-col">
             <div className="campaign-image-holder overflow-hidden flex-shrink-0 h-56 [@media(min-height:880px)]:h-72">
               <Image 
@@ -148,19 +148,19 @@ export default function DonationModal() {
             
             <div className="campaign-body p-4 xl:p-6 min-[1800px]:p-8 pt-4 xl:pt-5 min-[1800px]:pt-6 flex-1 min-h-0 text-center">
               <h2 
-                className="font-bold mb-2 xl:mb-3 min-[1800px]:mb-4 text-xl xl:text-2xl text-violet-600 dark:text-saffron-400"
+                className="font-bold mb-2 xl:mb-3 min-[1800px]:mb-4 text-xl xl:text-2xl text-white"
               >
                 No child should fight cancer alone.
               </h2>
               <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-3 xl:mb-4" aria-hidden="true" />
               <p 
-                className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm xl:text-base"
+                className="text-white/90 leading-relaxed text-sm xl:text-base"
               >
                 KCCF provides life-saving financial and emotional support to children battling cancer and their families.
               </p>
               {/* Gift levels from KCCF Current Facts – MASTER */}
-              <p className="mt-2 xl:mt-4 text-sm xl:text-base text-gray-700 dark:text-gray-200">
-                <strong className="text-violet-600 dark:text-saffron-400">$50</strong> = a dinner for a family &middot; <strong className="text-violet-600 dark:text-saffron-400">$360</strong> = 3 nights of lodging
+              <p className="mt-2 xl:mt-4 text-sm xl:text-base text-white/90">
+                <strong className="text-[#DAB87E]">$50</strong> = a dinner for a family &middot; <strong className="text-[#DAB87E]">$360</strong> = 3 nights of lodging
               </p>
             </div>
           </div>
