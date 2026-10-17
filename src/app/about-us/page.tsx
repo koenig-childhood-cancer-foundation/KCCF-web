@@ -10,7 +10,7 @@ import { useFormModal } from '@/contexts/FormModalContext';
 const journey = [
   { src: '/images/cropped-ElanaNoHairUpsetDuringTreatment-scaled.jpg', caption: 'Elana during treatment' },
   { src: '/images/cropped-Elana-and-Trophy.png', caption: "Elana kicked cancer's butt" },
-  { src: '/images/cropped-NUP_206704_00566.jpg', caption: 'Elana today' },
+  { src: '/images/cropped-IMG_1521-scaled-1.jpg', caption: 'Elana now' },
 ];
 
 type Person = { name: string; title?: string; photo: string; bio: string[] };
@@ -158,39 +158,28 @@ export default function AboutUs() {
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4 xl:px-28">
           <SectionTitle title="Elana's Story" />
-          <div className="grid lg:grid-cols-[1.6fr_1fr] gap-12 items-center max-w-6xl mx-auto">
-            <div className="space-y-5 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
-              <p className="text-xl font-semibold text-violet-600 dark:text-saffron-400">
-                My name is Elana Koenig, and I am a cancer survivor, singer, and founder of Koenig Childhood Cancer Foundation.
-              </p>
-              <p>
-                I was only 7 when I was diagnosed with an aggressive rare childhood cancer called Ewing&apos;s Sarcoma. I
-                remember seeing my mother and father heartbroken, trying to hide it. I didn&apos;t yet understand the
-                difficult journey that lay ahead.
-              </p>
-              <p>
-                Over the next 18 months, I experienced firsthand the physical and emotional toll of cancer treatment,
-                enduring 9 cycles of chemotherapy, undergoing 15 surgeries, and spending 6 months in a full-body cast. My
-                parents put their own lives on hold to stand by my side every step of the way.
-              </p>
-              <p>
-                On the day of my final chemotherapy treatment, as I prepared to leave the hospital, I realized that while
-                my own battle had ended, the fight countless children and families were facing was far from over. That
-                motivated me to start KCCF in 2020 with $900 in my piggy bank to help other children battling cancer.
-              </p>
-              <p className="pt-2 italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
-                &ldquo;No child should fight cancer alone.&rdquo; &mdash; Elana Koenig, Founder
-              </p>
-            </div>
-            <div className="bg-white p-2.5 rounded-[14px] border border-[#DAB87E] shadow-lg max-w-[380px] mx-auto lg:mr-0">
-              <Image
-                src="/images/cropped-IMG_1521-scaled-1.jpg"
-                alt="Elana Koenig"
-                width={500}
-                height={600}
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
+          <div className="max-w-3xl mx-auto space-y-5 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+            <p className="text-xl font-semibold text-violet-600 dark:text-saffron-400">
+              My name is Elana Koenig, and I am a cancer survivor, singer, and founder of Koenig Childhood Cancer Foundation.
+            </p>
+            <p>
+              I was only 7 when I was diagnosed with an aggressive rare childhood cancer called Ewing&apos;s Sarcoma. I
+              remember seeing my mother and father heartbroken, trying to hide it. I didn&apos;t yet understand the
+              difficult journey that lay ahead.
+            </p>
+            <p>
+              Over the next 18 months, I experienced firsthand the physical and emotional toll of cancer treatment,
+              enduring 9 cycles of chemotherapy, undergoing 15 surgeries, and spending 6 months in a full-body cast. My
+              parents put their own lives on hold to stand by my side every step of the way.
+            </p>
+            <p>
+              On the day of my final chemotherapy treatment, as I prepared to leave the hospital, I realized that while
+              my own battle had ended, the fight countless children and families were facing was far from over. That
+              motivated me to start KCCF in 2020 with $900 in my piggy bank to help other children battling cancer.
+            </p>
+            <p className="pt-2 italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
+              &ldquo;No child should fight cancer alone.&rdquo; &mdash; Elana Koenig, Founder
+            </p>
           </div>
 
         </div>
