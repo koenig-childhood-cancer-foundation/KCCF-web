@@ -44,6 +44,11 @@ export const IMPACT_STATS = {
     {
       value: "Worldwide",
       label: "Global Reach"
+    },
+    {
+      // Provided by Rena Koenig, Oct 2026 (to be added to KCCF Current Facts – MASTER)
+      value: "35,000+",
+      label: "Volunteer Hours"
     }
   ] as ImpactStat[],
 
