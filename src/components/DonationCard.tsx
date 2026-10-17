@@ -67,7 +67,7 @@ function GiveLivelyWidgetCard() {
   )
 }
 
-export default function DonationCard({ title }: { title?: ReactNode }) {
+export default function DonationCard() {
   // Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal, Venmo and DAF gifts
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
   const switchLinkClass =
@@ -119,7 +119,6 @@ export default function DonationCard({ title }: { title?: ReactNode }) {
           </button>
         )}
       </div>
-
     </div>
   )
 }
