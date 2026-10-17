@@ -30,7 +30,7 @@ const benefits = [
 ];
 
 const fundraiserSteps = [
-  { title: 'Start Your Peer-to-Peer Fundraiser', text: 'Create your own fundraising page in a few minutes. It is free.' },
+  { title: 'Start Your Page', text: 'Create your own fundraising page in a few minutes. It is free.' },
   { title: 'Share It', text: 'Send it to family, friends, your team, school or company.' },
   { title: 'Help a Child', text: 'Every gift goes to children battling cancer and their families.' },
 ];
@@ -200,7 +200,7 @@ export default function GetInvolved() {
       {/* Fundraisers */}
       <section id="fundraisers" className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700 scroll-mt-24">
         <div className="container mx-auto px-4">
-          <SectionTitle title="Start a Fundraiser" subtitle="Turn a birthday, a game, a run or a school event into help for a child with cancer." />
+          <SectionTitle title="Start a Peer-to-Peer Fundraiser" subtitle="Turn a birthday, a game, a run or a school event into help for a child with cancer." />
           <ol className="grid md:grid-cols-3 gap-7 max-w-5xl mx-auto list-none">
             {fundraiserSteps.map((step, index) => (
               <li
