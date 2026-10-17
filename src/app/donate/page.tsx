@@ -1,12 +1,10 @@
 "use client"
 
-import { Suspense, useEffect, type ReactNode } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import DonationCard from '@/components/DonationCard'
 import DonationButton from '@/components/DonationButton'
-import { useDonationModal } from '@/contexts/DonationModalContext'
 
 // Gift amounts come from KCCF Current Facts – MASTER (Cost per child).
 const giftImpacts: {
@@ -88,50 +86,28 @@ const faqQuestionClass =
   'flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden px-6 py-5 text-lg font-semibold text-[#2B2330] dark:text-white'
 const faqAnswerClass = 'px-6 pb-6 -mt-1 text-gray-600 dark:text-gray-300'
 
-// Separate component that uses useSearchParams - must be wrapped in Suspense
-function DonateModalTrigger() {
-  const { openModal } = useDonationModal()
-  const searchParams = useSearchParams()
-
-  // Automatically open the donation modal when the page loads
-  // Skip if nomodal=1 query param is present (used when navigating from "Other ways to donate")
-  useEffect(() => {
-    const noModal = searchParams.get('nomodal')
-    if (noModal !== '1') {
-      openModal()
-    }
-  }, [openModal, searchParams])
-
-  return null
-}
-
 export default function Donate() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      {/* Suspense boundary for useSearchParams */}
-      <Suspense fallback={null}>
-        <DonateModalTrigger />
-      </Suspense>
-
-      {/* Hero Section with Background */}
-      <div className="relative min-h-[86vh] flex items-center justify-center overflow-hidden pt-24">
+      {/* Hero: on computers the card sits on the photo; on phones and tablets the photo comes first and the card below it, so faces stay visible */}
+      <div className="relative lg:min-h-[86vh] flex flex-col lg:flex-row lg:items-center justify-center overflow-hidden pt-24">
         {/* Background Image */}
-        <div className="absolute inset-0 top-24">
+        <div className="relative h-72 sm:h-96 lg:absolute lg:inset-0 lg:top-24 lg:h-auto">
           <Image
             src="/images/elana-charlotte.jpg"
-            alt="Donate to save lives"
+            alt="Elana Koenig smiling with a young child in a yellow KCCF shirt"
             fill
-            className="object-cover"
+            className="object-cover object-[22%_30%] sm:object-[30%_30%] lg:object-center"
             sizes="100vw"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         </div>
-        <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
+        <div className="hidden lg:block absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
 
         {/* DonationCard on the right */}
-        <div className="relative w-full max-w-screen-2xl mx-auto px-4 py-8 md:py-12">
+        <div className="relative w-full max-w-screen-2xl mx-auto px-4 -mt-12 pb-10 lg:mt-0 lg:py-12">
           <div className="flex justify-center lg:justify-end">
             <div className="w-full max-w-md">
               <DonationCard />
