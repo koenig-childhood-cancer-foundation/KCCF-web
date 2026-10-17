@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import FormButton from '@/components/FormButton';
 import CallToAction from '@/components/CallToAction';
 import { useFormModal } from '@/contexts/FormModalContext';
 import { IMPACT_STATS } from '@/constants/impactStats';
@@ -109,6 +108,14 @@ export default function GetInvolved() {
             sizes="100vw"
             priority
           />
+          {/* Soft blur on the left half only (behind the words); the right side stays sharp */}
+          <div
+            className="hidden md:block absolute inset-0 backdrop-blur-[6px] pointer-events-none"
+            style={{
+              maskImage: 'linear-gradient(to right, black 0%, black 30%, transparent 55%)',
+              WebkitMaskImage: 'linear-gradient(to right, black 0%, black 30%, transparent 55%)',
+            }}
+          />
           <div className="absolute inset-0 bg-amber-400/12 pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60 md:bg-gradient-to-r md:from-black/60 md:via-black/30 md:to-transparent pointer-events-none" />
         </div>
@@ -186,11 +193,6 @@ export default function GetInvolved() {
               <h3 className="text-xl font-bold mb-4 text-center text-[#2B2330] dark:text-white">What You Gain</h3>
               <GoldList items={benefits} />
             </div>
-          </div>
-          <div className="mt-12 text-center">
-            <FormButton formType="volunteer" variant="orange" size="lg" className="py-4 px-10 text-lg">
-              Apply to Volunteer
-            </FormButton>
           </div>
         </div>
       </section>
