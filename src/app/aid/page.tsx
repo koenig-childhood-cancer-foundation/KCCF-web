@@ -165,7 +165,23 @@ export default function Aid() {
             <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
               &ldquo;When Daniz was diagnosed with cancer, there was no hope for her in Azerbaijan. Then I was connected to Elana, whose charity covered all our medical expenses and travel to New York and embraced us like family. If it weren&apos;t for them, Daniz might not be with us today.&rdquo;
             </p>
-            <p className="mt-5 italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">&mdash; Vusala, Daniz&apos;s mom</p>
+            <p className="mt-6 text-violet-600 dark:text-saffron-400 font-semibold">&mdash; Vusala, Daniz&apos;s mom</p>
+            <div className="flex items-center gap-3.5 mt-7" aria-hidden="true">
+              <span className="h-0.5 w-16 bg-[#DAB87E]" />
+              <svg width="28" height="26" viewBox="0 0 24 22" className="shrink-0">
+                <path
+                  d="M12 21s-7-4.4-9.3-8.6C1.1 9.4 2.8 5.5 6.5 5.5c2.2 0 3.6 1.3 4.5 2.6.9-1.3 2.3-2.6 4.5-2.6 3.7 0 5.4 3.9 3.8 6.9C19 16.6 12 21 12 21z"
+                  fill="none"
+                  stroke="#DAB87E"
+                  strokeWidth="2.2"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="h-0.5 w-16 bg-[#DAB87E]" />
+            </div>
+            <p className="mt-4 text-base md:text-lg italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
+              Elana &amp; Daniz in the hospital in 2022 &amp; at KCCF Camp 2026
+            </p>
           </div>
         </div>
       </section>
