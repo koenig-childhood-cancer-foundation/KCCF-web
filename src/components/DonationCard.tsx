@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect, type ReactNode } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 type DonationProvider = 'zeffy' | 'givelively'
 
@@ -74,9 +74,13 @@ export default function DonationCard() {
     'font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 decoration-[#DAB87E] hover:text-violet-700 dark:hover:text-saffron-300 cursor-pointer'
 
   return (
-    <div className="w-full flex flex-col h-[44rem] bg-white dark:bg-gray-800 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-xl">
-      <div className="flex-shrink-0 px-6 py-4 border-b border-gray-200 dark:border-gray-700 text-center">
-        {title ?? <h2 className="text-xl font-bold text-[#2B2330] dark:text-white">Donate to KCCF</h2>}
+    <div className="w-full flex flex-col min-h-0 h-[calc(66vh-8rem)] md:h-[calc(85vh-6rem)] bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
+      <div className="flex-shrink-0">
+        <div className="flex items-center justify-center p-6 border-b border-gray-200 dark:border-gray-700">
+          <h1 className="text-2xl font-bold text-center leading-tight text-[#2B2330] dark:text-white">
+            Help Children <span className="text-violet-600 dark:text-saffron-400">Beat Cancer.</span>
+          </h1>
+        </div>
       </div>
 
       <div className="relative flex-1 min-h-0">
