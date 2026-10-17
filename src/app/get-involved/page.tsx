@@ -108,16 +108,20 @@ export default function GetInvolved() {
             sizes="100vw"
             priority
           />
-          {/* Soft blur on the left half only (behind the words); the right side stays sharp */}
+          {/* Soft blur only in the lower-left corner (behind the words); faces at the top stay sharp */}
           <div
             className="hidden md:block absolute inset-0 backdrop-blur-[6px] pointer-events-none"
             style={{
-              maskImage: 'linear-gradient(to right, black 0%, black 30%, transparent 55%)',
-              WebkitMaskImage: 'linear-gradient(to right, black 0%, black 30%, transparent 55%)',
+              maskImage: 'radial-gradient(ellipse 55% 60% at 0% 100%, black 35%, transparent 100%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 55% 60% at 0% 100%, black 35%, transparent 100%)',
             }}
           />
           <div className="absolute inset-0 bg-amber-400/12 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60 md:bg-gradient-to-r md:from-black/60 md:via-black/30 md:to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60 md:hidden pointer-events-none" />
+          <div
+            className="hidden md:block absolute inset-0 pointer-events-none"
+            style={{ background: 'radial-gradient(ellipse 60% 70% at 0% 100%, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)' }}
+          />
         </div>
         <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 lg:pl-24 pb-14 text-center lg:text-left">
           <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">Get Involved</h1>
