@@ -132,8 +132,8 @@ export default function Donate() {
 
         {/* DonationCard on the right */}
         <div className="relative w-full max-w-screen-2xl mx-auto px-4 py-8 md:py-12">
-          <div className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-md">
+          <div className="flex justify-center md:justify-end">
+            <div className="w-full max-w-sm">
               <DonationCard />
             </div>
           </div>

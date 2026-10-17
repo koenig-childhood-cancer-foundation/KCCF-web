@@ -71,7 +71,7 @@ export default function DonationCard() {
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
 
   return (
-    <div className="w-full flex flex-col min-h-0 h-[calc(66vh-8rem)] md:h-[calc(85vh-6rem)] bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
+    <div className="w-full flex flex-col min-h-0 h-[calc(60vh-8rem)] md:h-[calc(75vh-6rem)] bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
       <div className="flex-shrink-0">
         <div className="flex items-center justify-center p-6 border-b border-gray-200 dark:border-gray-700">
           <h1 className="text-2xl font-bold text-center leading-tight text-[#2B2330] dark:text-white">
