@@ -106,9 +106,9 @@ function PersonCard({ person, size = 'w-40 h-40' }: { person: Person; size?: str
 export default function AboutUs() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
-      {/* Hero: clean photo, words underneath */}
-      <section className="pt-24 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-800">
-        <div className="relative h-72 sm:h-96 lg:h-[34rem]">
+      {/* Hero: home-page style (full photo, warm tint, soft shade behind the words) */}
+      <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-end overflow-hidden pt-24">
+        <div className="absolute inset-0 top-24">
           <Image
             src="/images/header_image_our_story.jpg"
             alt="Elana Koenig"
@@ -117,11 +117,12 @@ export default function AboutUs() {
             sizes="100vw"
             priority
           />
+          <div className="absolute inset-0 bg-amber-400/12 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60 md:bg-gradient-to-r md:from-black/60 md:via-black/30 md:to-transparent pointer-events-none" />
         </div>
-        <div className="container mx-auto px-4 py-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-violet-600 dark:text-white mb-4">About Us</h1>
-          <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-5" aria-hidden="true" />
-          <p className="text-xl text-[#2B2330] dark:text-gray-200 max-w-3xl mx-auto">
+        <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 lg:pl-24 pb-14 text-center lg:text-left">
+          <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">About Us</h1>
+          <p className="mt-5 text-xl md:text-2xl font-semibold text-white max-w-xl mx-auto lg:mx-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]">
             From a child cancer survivor&apos;s dream to a foundation that has helped thousands of families globally.
           </p>
         </div>

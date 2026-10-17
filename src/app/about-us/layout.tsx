@@ -14,8 +14,9 @@ export const metadata: Metadata = {
     type: "website",
     url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/about-us` : "https://thekccf.org/about-us",
   },
+  // Not indexed until the menu points here and the old Our Story / KCCF Family pages are retired
   robots: {
-    index: true,
+    index: false,
     follow: true,
   },
 };
