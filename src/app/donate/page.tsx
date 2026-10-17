@@ -98,7 +98,7 @@ export default function Donate() {
             src="/images/elana-charlotte.jpg"
             alt="Elana Koenig smiling with a young child in a yellow KCCF shirt"
             fill
-            className="object-cover"
+            className="object-cover object-[22%_30%] sm:object-[30%_30%] lg:object-center"
             sizes="100vw"
             priority
           />
