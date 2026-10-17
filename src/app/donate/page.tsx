@@ -130,13 +130,6 @@ export default function Donate() {
         </div>
         <div className="absolute inset-0 top-24 bg-amber-400/12 dark:bg-amber-400/18 pointer-events-none"></div>
 
-        {/* Moved the title to the bottom left for exception to rule (readability) per rena request*/}
-        <div className="absolute bottom-8 left-4 md:left-8 lg:left-12 z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg">
-            Help save lives
-          </h1>
-        </div>
-
         {/* DonationCard on the right */}
         <div className="relative w-full max-w-screen-2xl mx-auto px-4 py-8 md:py-12">
           <div className="flex justify-center lg:justify-end">
