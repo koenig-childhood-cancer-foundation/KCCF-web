@@ -79,7 +79,7 @@ export default function NotFound() {
           {/* Quick Links */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <Link 
-              href="/our-story" 
+              href="/about-us" 
               className="card-interactive group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-200/50 dark:border-gray-700/50"
             >
               <div className="text-violet-600 dark:text-violet-400 mb-3">
@@ -88,7 +88,7 @@ export default function NotFound() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                Our Story
+                About Us
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Learn about our mission and the families we serve

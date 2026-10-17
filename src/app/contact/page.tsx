@@ -152,7 +152,7 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-violet-700 mb-3">How can I book Elana for an event?</h3>
               <p className="text-violet-600">
                 Elana is available for speaking engagements, singing performances, and media opportunities.
-                Visit our <a href="/our-story/#bookelanaformsection" className="text-orange-500 hover:text-orange-600 font-semibold">Our Story</a> page to submit a booking request.
+                Visit our <a href="/about-us" className="text-orange-500 hover:text-orange-600 font-semibold">About Us</a> page and choose &ldquo;Book Elana to Speak&rdquo; to send a booking request.
               </p>
             </div>
           </div>

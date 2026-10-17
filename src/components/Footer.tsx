@@ -172,18 +172,10 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/our-story"
+                      href="/about-us"
                       className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
-                      KCCF Story
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/kccf-family"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
-                    >
-                      KCCF Family
+                      About Us
                     </Link>
                   </li>
                   <li>

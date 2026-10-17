@@ -92,14 +92,7 @@ export default function Navigation() {
 
   const navItems: Array<{ name: string; href: string; dropdown?: DropdownItem[] }> = [
     { name: 'HOME', href: '/' },
-    { 
-      name: 'ABOUT', 
-      href: '/our-story',
-      dropdown: [
-        { name: 'Our Story', href: '/our-story' },
-        { name: 'KCCF Family', href: '/kccf-family' },
-      ]
-    },
+    { name: 'ABOUT US', href: '/about-us' },
     { 
       name: 'PROGRAMS',
       href: '/aid',
