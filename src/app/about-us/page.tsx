@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import FormButton from '@/components/FormButton';
 import { useFormModal } from '@/contexts/FormModalContext';
 
@@ -247,12 +246,6 @@ export default function AboutUs() {
           <FormButton formType="book-elana" variant="orange" size="lg" className="py-4 px-10 text-lg">
             Book Elana to Speak
           </FormButton>
-          <p className="mt-8 text-white/90">
-            Or support our mission:{' '}
-            <Link href="/donate" className="font-semibold text-[#DAB87E] underline underline-offset-4 hover:text-white">
-              Donate Now &rarr;
-            </Link>
-          </p>
         </div>
       </section>
     </div>
