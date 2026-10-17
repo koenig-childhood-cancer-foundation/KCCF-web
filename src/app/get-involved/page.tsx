@@ -110,10 +110,10 @@ export default function GetInvolved() {
           />
           {/* Soft blur only in the lower-left corner (behind the words); faces at the top stay sharp */}
           <div
-            className="hidden md:block absolute inset-0 backdrop-blur-[6px] pointer-events-none"
+            className="hidden md:block absolute inset-0 backdrop-blur-[3px] pointer-events-none"
             style={{
-              maskImage: 'radial-gradient(ellipse 55% 60% at 0% 100%, black 35%, transparent 100%)',
-              WebkitMaskImage: 'radial-gradient(ellipse 55% 60% at 0% 100%, black 35%, transparent 100%)',
+              maskImage: 'radial-gradient(ellipse 45% 40% at 0% 100%, black 30%, transparent 100%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 45% 40% at 0% 100%, black 30%, transparent 100%)',
             }}
           />
           <div className="absolute inset-0 bg-amber-400/12 pointer-events-none" />
