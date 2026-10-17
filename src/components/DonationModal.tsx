@@ -133,7 +133,7 @@ export default function DonationModal() {
       {/* Modal */}
       <div className="relative rounded-2xl max-w-5xl w-full h-[90vh] sm:h-[85vh] lg:h-[75vh] min-[1800px]:h-[65vh] min-h-[600px] flex items-stretch gap-4 my-auto">
         {/* Campaign Card - Left Side */}
-         <div className="hidden lg:flex lg:w-1/2 h-full bg-white dark:bg-gray-800 text-[#2B2330] dark:text-white flex-col justify-between rounded-2xl overflow-hidden">
+         <div className="hidden lg:flex lg:w-1/2 h-full bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-800 text-[#2B2330] dark:text-white flex-col justify-between rounded-2xl overflow-hidden">
           <div className="flex-1 min-h-0 flex flex-col">
             <div className="campaign-image-holder overflow-hidden flex-shrink-0 h-56 [@media(min-height:880px)]:h-72">
               <Image 
@@ -152,6 +152,7 @@ export default function DonationModal() {
               >
                 No child should fight cancer alone.
               </h2>
+              <div className="w-14 h-1 bg-[#DAB87E] rounded-full mb-3 xl:mb-4" aria-hidden="true" />
               <p 
                 className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm xl:text-base"
               >
@@ -164,7 +165,7 @@ export default function DonationModal() {
             </div>
           </div>
           
-          <div className="px-4 xl:px-6 py-4 xl:py-5 bg-violet-600 dark:bg-violet-800 text-white flex-shrink-0 text-center">
+          <div className="px-4 xl:px-6 py-4 xl:py-5 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-white flex-shrink-0 text-center">
             <div className="flex items-center justify-center text-white text-sm xl:text-base">
               <div className="flex items-center space-x-4 xl:space-x-6">
                 <div className="flex items-center">
@@ -252,7 +253,7 @@ export default function DonationModal() {
           </div>
 
           {/* Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal, Venmo and DAF gifts */}
-          <div className="flex-shrink-0 px-5 py-4 bg-violet-600 dark:bg-violet-800 text-center">
+          <div className="flex-shrink-0 px-5 py-4 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-center">
             {selectedProvider === 'zeffy' ? (
               <>
                 <span className="block text-base font-semibold text-white">Prefer PayPal, Venmo or a donor-advised fund?</span>
