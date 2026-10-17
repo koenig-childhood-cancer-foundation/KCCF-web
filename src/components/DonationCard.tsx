@@ -71,7 +71,7 @@ export default function DonationCard() {
   // Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal, Venmo and DAF gifts
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
   const switchLinkClass =
-    'font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 decoration-[#DAB87E] hover:text-violet-700 dark:hover:text-saffron-300 cursor-pointer'
+    'inline-flex items-center gap-1 mt-2 px-6 py-2.5 rounded-full bg-white text-violet-700 font-bold shadow-md hover:bg-[#FBF5EA] transition-colors cursor-pointer'
 
   return (
     <div className="w-full flex flex-col min-h-0 h-[calc(66vh-8rem)] md:h-[calc(85vh-6rem)] bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
@@ -109,10 +109,10 @@ export default function DonationCard() {
         )}
       </div>
 
-      <div className="flex-shrink-0 px-5 py-3 bg-[#FAF6F2] dark:bg-gray-700 text-center text-sm text-gray-600 dark:text-gray-300">
+      <div className="flex-shrink-0 px-5 py-4 bg-violet-600 dark:bg-violet-800 text-center">
         {selectedProvider === 'zeffy' ? (
           <>
-            Prefer PayPal, Venmo or a donor-advised fund?{' '}
+            <span className="block text-base font-semibold text-white">Prefer PayPal, Venmo or a donor-advised fund?</span>
             <button type="button" onClick={() => setSelectedProvider('givelively')} className={switchLinkClass}>
               Give through GiveLively &rarr;
             </button>
