@@ -120,11 +120,6 @@ export default function DonationCard({ title }: { title?: ReactNode }) {
         )}
       </div>
 
-      <p className="flex-shrink-0 px-4 py-3 border-t border-[#F1E7D6] dark:border-gray-700 text-center text-xs font-bold uppercase tracking-[0.06em] leading-relaxed text-[#8A6A2E] dark:text-[#DAB87E]">
-        KCCF is a 501(c)(3) nonprofit &middot; EIN 84-4892279
-        <br />
-        90&cent; of every dollar goes to programs (2025)
-      </p>
     </div>
   )
 }
