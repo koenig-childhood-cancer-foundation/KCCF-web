@@ -65,7 +65,7 @@ export default function Camp() {
         </div>
         <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 lg:pl-24 pb-14 text-center lg:text-left">
           <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">KCCF Camp</h1>
-          <p className="mt-5 text-xl md:text-2xl font-semibold text-white max-w-2xl mx-auto lg:mx-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]">
+          <p className="mt-5 text-xl md:text-2xl font-semibold text-white max-w-2xl mx-auto lg:mx-0 text-balance drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]">
             Emotional healing for children with cancer and their siblings.
           </p>
         </div>
@@ -123,7 +123,7 @@ export default function Camp() {
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <SectionTitle title="A Place for Emotional Healing" />
-          <p className="max-w-3xl mx-auto text-center text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+          <p className="max-w-3xl mx-auto text-center text-lg text-gray-700 dark:text-gray-200 leading-relaxed text-balance">
             Children with cancer and their siblings from around the world come together to heal, play and feel included.
           </p>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-6xl mx-auto">
@@ -159,7 +159,7 @@ export default function Camp() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Join Us at Camp</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
-          <p className="text-xl text-white/90 mb-10">
+          <p className="text-xl text-white/90 mb-10 text-balance">
             Camp is free for families. Registration is not open yet. Email us to hear when it opens, or to volunteer.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
