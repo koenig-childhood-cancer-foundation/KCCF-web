@@ -96,7 +96,7 @@ export default function HomeContent() {
       </section>
 
       {/* Founder Story Section: plum background with Elana's signature */}
-      <section className="py-20 bg-violet-600 dark:bg-gray-800 relative">
+      <section className="mt-10 py-20 bg-violet-600 dark:bg-gray-800 border-t-[3px] border-[#DAB87E] relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
