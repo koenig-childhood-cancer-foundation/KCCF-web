@@ -221,7 +221,7 @@ export default function GetInvolved() {
             </div>
           </div>
 
-          <div className="mt-16 max-w-3xl mx-auto">
+          <div className="mt-16 max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold text-center text-violet-600 dark:text-white">Top Fundraisers</h3>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mt-4 mb-6" aria-hidden="true" />
             {/* One frame only: Zeffy draws its own card; the matching lavender hides the space below a short list */}
