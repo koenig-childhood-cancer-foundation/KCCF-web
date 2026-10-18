@@ -86,7 +86,7 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
 
 function PersonCard({ person, size = 'w-40 h-40' }: { person: Person; size?: string }) {
   return (
-    <div className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-6 py-8 text-center flex flex-col">
+    <div className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-8 py-9 text-center flex flex-col">
       <div className={`relative ${size} mx-auto mb-5 rounded-full p-1 bg-white border border-[#DAB87E] shadow-md`}>
         <Image src={person.photo} alt={person.name} fill sizes="160px" className="rounded-full object-cover" />
       </div>
@@ -228,29 +228,19 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Nasdaq photo */}
-      <section className="pt-16 pb-4 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
-        <figure className="max-w-6xl mx-auto px-4">
-          <div className="relative aspect-[2.68/1] rounded-[22px] overflow-hidden border-t-4 border-violet-600 shadow-md">
-            <Image src="/images/header_image_kccf_family.png" alt="KCCF family and friends at the Nasdaq podium" fill sizes="(max-width: 1200px) 100vw, 1150px" className="object-cover" />
-          </div>
-          <figcaption className="mt-3 text-center italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">Our KCCF family at Nasdaq, which honored Elana and KCCF.</figcaption>
-        </figure>
-      </section>
-
       {/* Team */}
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <SectionTitle title="Board of Directors" />
-          <div className="grid md:grid-cols-3 gap-7 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
             {board.map((person) => (
               <PersonCard key={person.name} person={person} />
             ))}
           </div>
 
-          <div className="mt-20">
+          <div className="mt-24">
             <SectionTitle title="Advisers" />
-            <div className="grid md:grid-cols-3 gap-7 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
               {advisers.map((person) => (
                 <PersonCard key={person.name} person={person} />
               ))}
