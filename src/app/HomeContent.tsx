@@ -305,27 +305,27 @@ export default function HomeContent() {
               {
                 name: "Derek",
                 image: "/images/cropped-Derek_5704-scaled.jpeg",
-                quote: "KCCF helped my family stay in our home during my treatment."
+                quote: "Derek's family kept their home during treatment."
               },
               {
                 name: "Khadija",
                 image: "/images/cropped-Khadija-Base-1.jpg",
-                quote: "The foundation gave us hope when we needed it most."
+                quote: "Khadija's family found hope when they needed it most."
               },
               {
                 name: "Zariyah",
                 image: "/images/cropped-Zariyah_4132-1-scaled.jpg",
-                quote: "Thank you for helping my family during my cancer journey."
+                quote: "Zariyah's family had support at every step."
               },
               {
                 name: "Mark",
                 image: "/images/cropped-cropped-Mark_2022-06-13-12.21.08.jpg",
-                quote: "Ependymoma warrior - KCCF's support made all the difference."
+                quote: "Mark's family had KCCF by their side."
               },
               {
                 name: "Mishka",
                 image: "/images/cropped-Mishka-Belarus.jpg",
-                quote: "Neuroblastoma fighter - grateful for KCCF's love and support."
+                quote: "Mishka's family felt the love of the KCCF community."
               }
             ].map((warrior, index) => (
               <div key={index} className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-violet-400 p-4 shadow-md">
@@ -343,7 +343,7 @@ export default function HomeContent() {
                   </div>
                 </div>
                 <h3 className="text-lg font-bold mb-2 text-violet-600 dark:text-white text-center">{warrior.name}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-200 text-center italic leading-tight">"{warrior.quote}"</p>
+                <p className="text-sm text-gray-600 dark:text-gray-200 text-center leading-tight">{warrior.quote}</p>
               </div>
             ))}
           </div>
