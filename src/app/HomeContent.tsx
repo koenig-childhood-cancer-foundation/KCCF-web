@@ -24,7 +24,7 @@ export default function HomeContent() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-32 md:pt-40 overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center justify-center pt-40 md:pt-52 pb-10 overflow-hidden">
         {/* Full vibrant image */}
         <div className="absolute inset-0 overflow-hidden">
           <Image
@@ -96,10 +96,10 @@ export default function HomeContent() {
       </section>
 
       {/* Founder Story Section */}
-      <section className="py-20 bg-white dark:bg-gray-800 relative">
+      <section className="mt-10 py-20 bg-violet-600 dark:bg-gray-800 border-y-[3px] border-[#DAB87E] relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Meet Our Founder, Elana Koenig
             </h2>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
@@ -107,20 +107,20 @@ export default function HomeContent() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
 
-              <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+              <div className="space-y-6 text-lg text-white/90 leading-relaxed">
                 <p>
                   Elana Koenig was diagnosed with cancer at age 7 and treated at Memorial Sloan Kettering Cancer Center. Over 18 months of treatment, she went through 9 cycles of chemotherapy and 15 surgeries, and spent 6 months in a full-body cast. She saw firsthand the financial and emotional struggles that families like hers face.
                 </p>
                 <p>
                   In 2020, at age 11, Elana founded Koenig Childhood Cancer Foundation (KCCF) with the $900 in her piggy bank. Today she is a teen cancer survivor, singer, influencer, and student at Cornell University, and she has appeared three times on The Kelly Clarkson Show as its youngest Rad Human.
                 </p>
-                <p className="text-violet-600 dark:text-saffron-400 font-semibold">
+                <p className="text-[#F1DDB0] font-semibold">
                   "Every child deserves a fighting chance, and every family deserves support during their darkest hours."
                 </p>
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Link href="/about-us" className="btn-primary btn-primary-violet py-3 px-8 rounded-full font-semibold text-center">
+                <Link href="/about-us" className="py-3 px-8 rounded-full font-semibold text-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors">
                   Read Her Story
                 </Link>
                 <FormButton 
