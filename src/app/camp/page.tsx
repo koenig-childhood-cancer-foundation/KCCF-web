@@ -55,18 +55,20 @@ export default function Camp() {
             src="/images/header_image_camp.png"
             alt="Campers holding the KCCF banner with the flags of Azerbaijan and the United States"
             fill
-            className="object-cover object-[center_30%] scale-[1.06] origin-bottom"
+            className="object-cover object-[center_30%]"
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-black/15 pointer-events-none" />
-          <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-black/80 via-black/45 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black/70 via-black/35 to-transparent pointer-events-none" />
+          {/* Extra shade only behind the words, so the rest of the photo stays light */}
+          <div className="absolute left-0 bottom-0 w-full lg:w-[60%] h-[40%] bg-gradient-to-r from-black/45 via-black/25 to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60 md:hidden pointer-events-none" />
         </div>
         <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 lg:pl-24 pb-14 text-center lg:text-left">
           <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">KCCF Camp</h1>
-          <p className="mt-5 text-xl md:text-2xl font-semibold text-white max-w-2xl mx-auto lg:mx-0 text-balance drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]">
-            Emotional healing for children with cancer and their siblings.
+          <p className="mt-5 text-xl md:text-2xl font-semibold text-white max-w-3xl mx-auto lg:mx-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]">
+            Emotional healing for children with cancer
+            <br className="hidden sm:inline" /> and their siblings.
           </p>
         </div>
       </section>
