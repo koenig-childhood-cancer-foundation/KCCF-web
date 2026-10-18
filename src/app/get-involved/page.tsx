@@ -156,7 +156,7 @@ export default function GetInvolved() {
       {/* Fundraisers */}
       <section id="fundraisers" className="py-20 bg-white dark:bg-gray-900 scroll-mt-24">
         <div className="container mx-auto px-4">
-          <SectionTitle title="Start a Peer-to-Peer Fundraiser" subtitle="Turn a birthday, a game, a run or a school event into help for a child with cancer." />
+          <SectionTitle title="Start a Peer-to-Peer Fundraiser" subtitle="Turn a birthday, a bar or bat mitzvah, a game, a run or a school event into help for a child with cancer." />
           <ol className="grid md:grid-cols-3 gap-7 max-w-5xl mx-auto list-none">
             {fundraiserSteps.map((step, index) => (
               <li
