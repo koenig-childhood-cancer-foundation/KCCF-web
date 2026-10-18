@@ -37,9 +37,9 @@ export default function GetInvolved() {
     {
       title: 'Start a Fundraiser',
       text: 'Raise funds with your team, school or friends.',
-      photo: '/images/fundraiser-bake-sale.jpg',
-      alt: 'Teens in yellow KCCF shirts running a bake sale',
-      position: 'center 15%',
+      photo: '/images/fundraiser-table.jpg',
+      alt: 'KCCF supporters at a fundraising table with gift bags',
+      position: 'center 30%',
       action: { label: 'Start Here', href: '#fundraisers' },
     },
     {
