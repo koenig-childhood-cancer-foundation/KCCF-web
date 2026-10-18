@@ -195,10 +195,10 @@ export default function GetInvolved() {
           </ol>
 
           {/* Zeffy's campaign page opens in a new tab; embedded, it showed as a page inside the page with its own scroll bar */}
-          <div className="mt-14 max-w-3xl mx-auto rounded-[40px] border-2 border-[#DAB87E] bg-violet-600 dark:bg-gray-800 px-6 py-12 md:px-14 text-center shadow-xl">
-            <h3 className="text-3xl md:text-4xl font-bold text-white">Ready to Start?</h3>
+          <div className="mt-14 max-w-3xl mx-auto rounded-[40px] border-2 border-[#DAB87E] bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-800 px-6 py-12 md:px-14 text-center shadow-md">
+            <h3 className="text-3xl md:text-4xl font-bold text-violet-600 dark:text-white">Ready to Start?</h3>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mt-5 mb-6" aria-hidden="true" />
-            <p className="text-lg text-white/90 max-w-xl mx-auto">
+            <p className="text-lg text-gray-700 dark:text-gray-200 max-w-xl mx-auto">
               Set up your fundraising page on Zeffy, our giving platform. It takes a few minutes and it is free.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-5 justify-center">
@@ -214,7 +214,7 @@ export default function GetInvolved() {
                 href={ZEFFY_CAMPAIGN}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors"
+                className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white dark:border-white dark:text-white transition-colors"
               >
                 Give to a Fundraiser
               </a>
