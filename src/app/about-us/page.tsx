@@ -48,7 +48,7 @@ const advisers: Person[] = [
     name: 'Mike Blumenfeld, MBA',
     photo: '/images/Mike-Blumenfeld-Director-copy.png',
     bio: [
-      'A graduate of Wharton and NYU Stern, Mike leverages over 30 years of experience in strategic planning to assist KCCF with organizational growth. Since 1981, he has specialized in helping entrepreneurs build profitable businesses and positive cultures. Mike focuses on practical, results-driven solutions to help small-to-midsized companies thrive.',
+      'A graduate of Wharton and NYU Stern, Mike leverages over 30 years of experience in strategic planning to assist KCCF with organizational growth. He has specialized in helping entrepreneurs build profitable businesses and positive cultures. Mike focuses on practical, results-driven solutions to help small-to-midsized companies thrive.',
     ],
   },
   {
