@@ -1,18 +1,6 @@
-'use client'
+import MovedPage from '@/components/MovedPage'
 
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-
-export default function NewsletterRedirect() {
-  const router = useRouter()
-
-  useEffect(() => {
-    router.replace('/newsletter-signup')
-  }, [router])
-
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <p className="text-gray-600 dark:text-gray-400">Redirecting...</p>
-    </div>
-  )
+// Old newsletter address: opens Home with the newsletter sign-up pop-up showing.
+export default function Newsletter() {
+  return <MovedPage to="/?subscribe=1" name="Home" />
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import DonationButton from '@/components/DonationButton';
@@ -7,8 +8,19 @@ import PartnersCarousel from '@/components/PartnersCarousel';
 import CallToAction from '@/components/CallToAction';
 import FormButton from '@/components/FormButton';
 import { IMPACT_STATS } from '@/constants/impactStats';
+import { useFormModal } from '@/contexts/FormModalContext';
 
 export default function HomeContent() {
+  const { openModal } = useFormModal();
+
+  // Old newsletter links land on /?subscribe=1: show the sign-up pop-up, then tidy the address.
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get('subscribe') === '1') {
+      openModal('newsletter-signup');
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  }, [openModal]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
       {/* Hero Section */}
