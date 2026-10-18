@@ -305,27 +305,27 @@ export default function HomeContent() {
               {
                 name: "Derek",
                 image: "/images/cropped-Derek_5704-scaled.jpeg",
-                quote: "KCCF helped the family stay in their home during treatment."
+                quote: "Derek's family kept their home during treatment."
               },
               {
                 name: "Khadija",
                 image: "/images/cropped-Khadija-Base-1.jpg",
-                quote: "KCCF gave the family hope when they needed it most."
+                quote: "Khadija's family found hope when they needed it most."
               },
               {
                 name: "Zariyah",
                 image: "/images/cropped-Zariyah_4132-1-scaled.jpg",
-                quote: "KCCF helped the family through the cancer journey."
+                quote: "Zariyah's family had support at every step."
               },
               {
                 name: "Mark",
                 image: "/images/cropped-cropped-Mark_2022-06-13-12.21.08.jpg",
-                quote: "KCCF's support made a difference for the family."
+                quote: "Mark's family had KCCF by their side."
               },
               {
                 name: "Mishka",
                 image: "/images/cropped-Mishka-Belarus.jpg",
-                quote: "KCCF sent love and support to the family."
+                quote: "Mishka's family felt the love of the KCCF community."
               }
             ].map((warrior, index) => (
               <div key={index} className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-violet-400 p-4 shadow-md">
