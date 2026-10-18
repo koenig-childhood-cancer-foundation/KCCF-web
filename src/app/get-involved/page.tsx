@@ -38,8 +38,8 @@ export default function GetInvolved() {
     {
       title: 'Start a Fundraiser',
       text: 'Raise funds with your team, school or friends.',
-      photo: '/images/header_image_fundraisers.jpg',
-      alt: 'KCCF supporters at a fundraiser',
+      photo: '/images/yellow-shirt.jpg',
+      alt: 'Teen volunteers in yellow KCCF shirts',
       action: { label: 'Start Here', href: '#fundraisers' },
     },
     {
