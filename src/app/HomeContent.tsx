@@ -292,58 +292,52 @@ export default function HomeContent() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-              Our Brave Warriors
+              Thank You from Our Brave Warriors
             </h2>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Meet some of the incredible children and families whose lives have been touched by KCCF's support.
+              Some of the children KCCF has supported.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 max-w-7xl mx-auto">
             {[
               {
                 name: "Derek",
-                image: "/images/cropped-Derek_5704-scaled.jpeg",
-                quote: "Derek's family kept their home during treatment."
+                image: "/images/cropped-Derek_5704-scaled.jpeg"
               },
               {
                 name: "Khadija",
-                image: "/images/cropped-Khadija-Base-1.jpg",
-                quote: "Khadija's family found hope when they needed it most."
+                image: "/images/cropped-Khadija-Base-1.jpg"
               },
               {
                 name: "Zariyah",
-                image: "/images/cropped-Zariyah_4132-1-scaled.jpg",
-                quote: "Zariyah's family had support at every step."
+                image: "/images/cropped-Zariyah_4132-1-scaled.jpg"
               },
               {
                 name: "Mark",
-                image: "/images/cropped-cropped-Mark_2022-06-13-12.21.08.jpg",
-                quote: "Mark's family had KCCF by their side."
+                image: "/images/cropped-cropped-Mark_2022-06-13-12.21.08.jpg"
               },
               {
                 name: "Mishka",
-                image: "/images/cropped-Mishka-Belarus.jpg",
-                quote: "Mishka's family felt the love of the KCCF community."
+                image: "/images/cropped-Mishka-Belarus.jpg"
               }
             ].map((warrior, index) => (
-              <div key={index} className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-violet-400 p-4 shadow-md">
+              <div key={index} className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-violet-400 p-3 shadow-md">
                 <div className="relative mb-4">
-                  <div className="relative w-full aspect-square max-w-48 mx-auto">
+                  <div className="relative w-full aspect-square max-w-64 mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-violet-400 rounded-full opacity-20"></div>
                     <Image
                       src={warrior.image}
                       alt={warrior.name}
                       fill
-                      sizes="192px"
+                      sizes="256px"
                       className="rounded-full object-cover relative z-10"
                       loading="lazy"
                     />
                   </div>
                 </div>
                 <h3 className="text-lg font-bold mb-2 text-violet-600 dark:text-white text-center">{warrior.name}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-200 text-center leading-tight">{warrior.quote}</p>
               </div>
             ))}
           </div>
