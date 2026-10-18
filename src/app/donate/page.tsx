@@ -36,7 +36,8 @@ const giftImpacts: {
   },
 ]
 
-const waysToGive: { title: string; body: ReactNode; contact: boolean }[] = [
+// Legal name and EIN from KCCF Current Facts – MASTER; brokers, DAF sponsors and Benevity ask for them.
+const waysToGive: { title: string; body: ReactNode; contact: boolean; ein?: boolean }[] = [
   {
     title: 'Check by Mail',
     body: (
@@ -54,16 +55,19 @@ const waysToGive: { title: string; body: ReactNode; contact: boolean }[] = [
     title: 'Corporate Matching',
     body: 'Check if your company offers a matching gift program. KCCF is on Benevity.',
     contact: true,
+    ein: true,
   },
   {
     title: 'Donor Advised Funds (DAF)',
     body: 'You can make a donation through your Donor Advised Fund.',
     contact: true,
+    ein: true,
   },
   {
     title: 'Stock, Crypto & Wire Transfers',
     body: 'We accept gifts of stock, crypto (including Bitcoin) and wire transfers. Email us and we will send you the transfer details.',
     contact: true,
+    ein: true,
   },
 ]
 
@@ -174,6 +178,13 @@ export default function Donate() {
               >
                 <h3 className="text-xl font-bold mb-3 text-[#2B2330] dark:text-white">{way.title}</h3>
                 <p className="text-[#2B2330] dark:text-gray-200 leading-relaxed">{way.body}</p>
+                {way.ein && (
+                  <p className="mt-3 text-sm font-semibold text-[#2B2330] dark:text-gray-200">
+                    Koenig Childhood Cancer Foundation, Inc.
+                    <br />
+                    <span className="whitespace-nowrap">EIN 84-4892279</span>
+                  </p>
+                )}
                 {way.contact && (
                   <p className="mt-4 text-sm text-gray-600 dark:text-gray-300">
                     Questions?{' '}
