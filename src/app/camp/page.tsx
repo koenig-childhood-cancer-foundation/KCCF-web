@@ -32,6 +32,13 @@ const photos = [
   { src: '/images/camp-campfire.jpg', alt: 'Campers sitting around an evening campfire', position: 'center 60%' },
 ];
 
+// Elvira's journey: before camp, at camp, today
+const elviraPhotos = [
+  { src: '/images/camp-elvira-hospital.jpg', alt: 'Rena Koenig visiting Elvira in the hospital, with a KCCF blanket', caption: 'Before camp', position: 'center 60%' },
+  { src: '/images/camp-elana-elvira.jpg', alt: 'Elana Koenig and Elvira at KCCF Camp', caption: 'At camp', position: 'center' },
+  { src: '/images/camp-elvira-tshirt.jpg', alt: 'Elvira in a KCCF T-shirt', caption: 'Still fighting', position: 'center 30%' },
+];
+
 function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <div className="text-center mb-12">
@@ -124,31 +131,35 @@ export default function Camp() {
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <SectionTitle title="Elvira&rsquo;s Story" />
-          <div className="max-w-5xl mx-auto grid md:grid-cols-[2fr_3fr] gap-10 items-center">
-            <figure>
-              <div className="relative aspect-[3/4] rounded-[22px] overflow-hidden shadow-md border-2 border-[#DAB87E]">
-                <Image src="/images/camp-elana-elvira.jpg" alt="Elana Koenig and Elvira at KCCF Camp" fill sizes="(max-width: 768px) 90vw, 400px" className="object-cover" />
-              </div>
-              <figcaption className="mt-3 text-center text-sm italic text-[#8A6A2E] dark:text-[#DAB87E]">Elana and Elvira at KCCF Camp</figcaption>
-            </figure>
-            <div className="space-y-5 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
-              <p className="text-xl font-semibold text-[#2B2330] dark:text-white">
-                Elvira was 15 and in the middle of chemotherapy for leukemia when she came to camp.
-              </p>
-              <p>
-                With her doctor&rsquo;s blessing, she spent a week at the KCCF International Camp in Azerbaijan. She laughed,
-                made memories and simply got to be a teenager. For that week, cancer did not have to be the center of her world.
-              </p>
-              <p>
-                Elvira is still fighting. Camp gave her moments of joy, and a reminder of everything she is fighting to get back to.
-              </p>
-              <Link
-                href="/donate"
-                className="inline-flex items-center justify-center py-3.5 px-8 rounded-full font-semibold text-lg border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white dark:border-saffron-400 dark:text-saffron-400 transition-colors"
-              >
-                Help Children Like Elvira
-              </Link>
-            </div>
+          <ul className="max-w-5xl mx-auto grid grid-cols-3 gap-3 sm:gap-6 list-none">
+            {elviraPhotos.map((photo) => (
+              <li key={photo.src}>
+                <figure>
+                  <div className="relative aspect-[3/4] rounded-[22px] overflow-hidden shadow-md border-2 border-[#DAB87E]">
+                    <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 640px) 30vw, 320px" className="object-cover" style={{ objectPosition: photo.position }} />
+                  </div>
+                  <figcaption className="mt-3 text-center text-base sm:text-xl font-bold text-[#8A6A2E] dark:text-[#DAB87E]">{photo.caption}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-12 max-w-3xl mx-auto text-center space-y-5 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+            <p className="text-xl font-semibold text-[#2B2330] dark:text-white">
+              Elvira was 15 and in the middle of chemotherapy for leukemia when she came to camp.
+            </p>
+            <p>
+              With her doctor&rsquo;s blessing, she spent a week at the KCCF International Camp in Azerbaijan. She laughed,
+              made memories and simply got to be a teenager. For that week, cancer did not have to be the center of her world.
+            </p>
+            <p>
+              Elvira is still fighting. Camp gave her moments of joy, and a reminder of everything she is fighting to get back to.
+            </p>
+            <Link
+              href="/donate"
+              className="inline-flex items-center justify-center py-3.5 px-8 rounded-full font-semibold text-lg border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white dark:border-saffron-400 dark:text-saffron-400 transition-colors"
+            >
+              Help Children Like Elvira
+            </Link>
           </div>
         </div>
       </section>
