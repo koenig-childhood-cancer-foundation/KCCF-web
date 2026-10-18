@@ -203,37 +203,26 @@ export default function GetInvolved() {
         </div>
       </section>
 
-      {/* Volunteer: KCCF brings on individual volunteers as needs come up */}
-      <section id="volunteer" className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700 scroll-mt-24">
-        <div className="container mx-auto px-4 text-center">
-          <SectionTitle title="Volunteer With Us" />
-          <p className="max-w-2xl mx-auto text-xl text-gray-700 dark:text-gray-200 leading-relaxed mb-10">
-            KCCF is a 100% volunteer-run organization. We bring on skilled volunteers as needs come up. Tell us how you&rsquo;d like to help.
-          </p>
-          <button
-            type="button"
-            onClick={() => openModal('volunteer')}
-            className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg cursor-pointer"
-          >
-            Apply Here
-          </button>
-        </div>
-      </section>
-
-
-      {/* Plum ending: the page's main ask */}
-      <section className="py-20 bg-violet-600 dark:bg-gray-800">
+      {/* Plum ending: fundraise or volunteer (also the /volunteer landing spot) */}
+      <section id="volunteer" className="py-20 bg-violet-600 dark:bg-gray-800 scroll-mt-24">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Ready to Make a Difference?</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
-          <p className="text-xl text-white/90 mb-10">Start a fundraiser today, or give in one minute.</p>
+          <p className="text-xl text-white/90 mb-10">
+            Start a fundraiser today, or tell us how you&rsquo;d like to help. KCCF is a 100% volunteer-run
+            organization, and we bring on skilled volunteers as needs come up.
+          </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <a href="#fundraisers" className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center">
               Start a Fundraiser
             </a>
-            <Link href="/donate" className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors">
-              Donate Now
-            </Link>
+            <button
+              type="button"
+              onClick={() => openModal('volunteer')}
+              className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors cursor-pointer"
+            >
+              Apply to Volunteer
+            </button>
           </div>
         </div>
       </section>
