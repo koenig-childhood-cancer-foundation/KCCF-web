@@ -39,6 +39,7 @@ export default function GetInvolved() {
       text: 'Raise funds with your team, school or friends.',
       photo: '/images/fundraiser-bake-sale.jpg',
       alt: 'Teens in yellow KCCF shirts running a bake sale',
+      position: 'center 15%',
       action: { label: 'Start Here', href: '#fundraisers' },
     },
     {
@@ -131,7 +132,7 @@ export default function GetInvolved() {
                 className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md p-4 flex flex-col"
               >
                 <div className="relative aspect-[4/3] rounded-[14px] overflow-hidden">
-                  <Image src={way.photo} alt={way.alt} fill sizes="(max-width: 640px) 90vw, 300px" className="object-cover" />
+                  <Image src={way.photo} alt={way.alt} fill sizes="(max-width: 640px) 90vw, 300px" className="object-cover" style={{ objectPosition: way.position ?? 'center' }} />
                 </div>
                 <div className="px-2 pt-5 pb-2 flex flex-col flex-1 text-center items-center">
                   <h3 className="text-xl font-bold text-[#2B2330] dark:text-white">{way.title}</h3>
