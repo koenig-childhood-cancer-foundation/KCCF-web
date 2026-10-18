@@ -16,6 +16,8 @@ const stats = [
   { value: IMPACT_STATS.CRAZY_SOCKS[3].value, label: 'volunteer hours' },
 ];
 
+const ZEFFY_CAMPAIGN = 'https://www.zeffy.com/en-US/peer-to-peer/peer-to-peer-fundraisers';
+
 const fundraiserSteps = [
   { title: 'Start Your Page', text: 'Create your own fundraising page in a few minutes. It is free.' },
   { title: 'Share It', text: 'Send it to family, friends, your team, school or company.' },
@@ -192,25 +194,42 @@ export default function GetInvolved() {
             ))}
           </ol>
 
-          <div className="mt-14 max-w-5xl mx-auto bg-white rounded-[22px] overflow-hidden border-t-4 border-violet-600 shadow-md">
-            {/* Zeffy forms are loaded as strictly necessary services */}
-            <iframe
-              src="https://www.zeffy.com/en-US/peer-to-peer/peer-to-peer-fundraisers"
-              title="KCCF Peer-to-Peer Fundraisers"
-              className="w-full border-0"
-              style={{ minHeight: '800px' }}
-              loading="lazy"
-              allow="payment"
-            />
+          {/* Zeffy's campaign page opens in a new tab; embedded, it showed as a page inside the page with its own scroll bar */}
+          <div className="mt-14 max-w-3xl mx-auto rounded-[40px] border-2 border-[#DAB87E] bg-violet-600 dark:bg-gray-800 px-6 py-12 md:px-14 text-center shadow-xl">
+            <h3 className="text-3xl md:text-4xl font-bold text-white">Ready to Start?</h3>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mt-5 mb-6" aria-hidden="true" />
+            <p className="text-lg text-white/90 max-w-xl mx-auto">
+              Set up your fundraising page on Zeffy, our giving platform. It takes a few minutes and it is free.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-5 justify-center">
+              <a
+                href={ZEFFY_CAMPAIGN}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center"
+              >
+                Start My Fundraiser
+              </a>
+              <a
+                href={ZEFFY_CAMPAIGN}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors"
+              >
+                Give to a Fundraiser
+              </a>
+            </div>
           </div>
 
-          <div className="mt-14 max-w-5xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-center text-violet-600 dark:text-white mb-6">Top Fundraisers</h3>
-            <div className="bg-white rounded-[22px] overflow-hidden border-t-4 border-violet-600 shadow-md">
+          <div className="mt-16 max-w-3xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold text-center text-violet-600 dark:text-white">Top Fundraisers</h3>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mt-4 mb-6" aria-hidden="true" />
+            {/* One frame only: Zeffy draws its own card; the matching lavender hides the space below a short list */}
+            <div className="rounded-[22px] overflow-hidden bg-[#F7EFFF]">
               <iframe
                 title="KCCF fundraising leaderboard powered by Zeffy"
-                className="w-full border-0"
-                style={{ minHeight: '400px' }}
+                className="w-full border-0 block"
+                style={{ height: '420px' }}
                 loading="lazy"
                 src="https://www.zeffy.com/en-US/embed/leaderboard/peer-to-peer-fundraisers"
               />
