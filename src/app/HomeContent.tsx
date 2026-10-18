@@ -95,8 +95,8 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Founder Story Section */}
-      <section className="py-20 bg-white dark:bg-gray-800 relative">
+      {/* Founder Story Section: warm peach-cream background, gold-framed photo */}
+      <section className="py-20 bg-gradient-to-br from-[#FFF6EC] via-[#FDEEDD] to-[#FBF3E6] dark:from-gray-800 dark:via-gray-800 dark:to-gray-700 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
@@ -107,23 +107,24 @@ export default function HomeContent() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
 
-              <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+              <div className="space-y-6 text-lg text-[#4A3B44] dark:text-gray-200 leading-relaxed">
                 <p>
                   Elana Koenig was diagnosed with cancer at age 7 and treated at Memorial Sloan Kettering Cancer Center. Over 18 months of treatment, she went through 9 cycles of chemotherapy and 15 surgeries, and spent 6 months in a full-body cast. She saw firsthand the financial and emotional struggles that families like hers face.
                 </p>
                 <p>
                   In 2020, at age 11, Elana founded Koenig Childhood Cancer Foundation (KCCF) with the $900 in her piggy bank. Today she is a teen cancer survivor, singer, influencer, and student at Cornell University, and she has appeared three times on The Kelly Clarkson Show as its youngest Rad Human.
                 </p>
-                <p className="text-violet-600 dark:text-saffron-400 font-semibold">
-                  "Every child deserves a fighting chance, and every family deserves support during their darkest hours."
-                </p>
+                <blockquote className="pt-2">
+                  <p className="text-2xl md:text-3xl font-bold leading-snug text-violet-600 dark:text-saffron-400">
+                    &ldquo;Every child deserves a fighting chance, and every family deserves support during their darkest hours.&rdquo;
+                  </p>
+                  <div className="w-14 h-1 bg-[#DAB87E] rounded-full mt-5" aria-hidden="true" />
+                  <footer className="mt-3 italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">Elana Koenig, Founder</footer>
+                </blockquote>
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Link href="/about-us" className="btn-primary btn-primary-violet py-3 px-8 rounded-full font-semibold text-center">
-                  Read Her Story
-                </Link>
-                <FormButton 
+                <FormButton
                   formType="book-elana"
                   variant="orange"
                   size="md"
@@ -131,18 +132,22 @@ export default function HomeContent() {
                 >
                   Book Elana to Speak
                 </FormButton>
+                <Link href="/about-us" className="py-3 px-8 rounded-full font-semibold text-center border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white dark:border-saffron-400 dark:text-saffron-400 transition-colors">
+                  Read Her Story
+                </Link>
               </div>
             </div>
 
             <div className="order-1 lg:order-2">
               <div className="relative">
-                <div className="relative bg-white p-2.5 rounded-md border border-[#DAB87E] shadow-lg max-w-md mx-auto">
+                <div className="absolute -inset-4 md:-inset-6 rounded-[36px] bg-[#DAB87E]/25 rotate-2 max-w-md mx-auto" aria-hidden="true" />
+                <div className="relative bg-white p-3 rounded-[28px] border-2 border-[#DAB87E] shadow-[0_24px_50px_-18px_rgba(138,106,46,0.55)] max-w-md mx-auto">
                   <Image
                     src="/images/NUP_206704_00566-scaled.jpg"
-                    alt="Elana Koenig"
+                    alt="Elana Koenig on The Kelly Clarkson Show"
                     width={500}
                     height={600}
-                    className="w-full h-auto"
+                    className="w-full h-auto rounded-[20px]"
                   />
                 </div>
               </div>
@@ -152,7 +157,7 @@ export default function HomeContent() {
       </section>
 
       {/* Programs Section */}
-      <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
