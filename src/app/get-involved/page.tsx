@@ -224,26 +224,21 @@ export default function GetInvolved() {
         </div>
       </section>
 
-      {/* Plum ending: fundraise or volunteer (also the /volunteer landing spot) */}
+      {/* Plum ending: volunteer (also the /volunteer landing spot); fundraising lives in the cream card above */}
       <section id="volunteer" className="py-20 bg-violet-600 dark:bg-gray-800 scroll-mt-24">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Start a Fundraiser or Volunteer</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Volunteer With Us</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10">
             KCCF is a 100% volunteer-run organization. We bring on skilled volunteers as needs come up.
           </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <a href="#fundraisers" className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center">
-              Start a Fundraiser
-            </a>
-            <button
-              type="button"
-              onClick={() => openModal('volunteer')}
-              className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors cursor-pointer"
-            >
-              Apply to Volunteer
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => openModal('volunteer')}
+            className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center cursor-pointer"
+          >
+            Apply to Volunteer
+          </button>
         </div>
       </section>
     </div>
