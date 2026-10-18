@@ -206,10 +206,9 @@ export default function GetInvolved() {
       {/* Plum ending: fundraise or volunteer (also the /volunteer landing spot) */}
       <section id="volunteer" className="py-20 bg-violet-600 dark:bg-gray-800 scroll-mt-24">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Ready to Make a Difference?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Start a Fundraiser or Volunteer</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
-          <p className="text-xl text-white/90">Start a fundraiser today, or tell us how you&rsquo;d like to help.</p>
-          <p className="mt-2 mb-10 text-base text-[#F1DDB0]">
+          <p className="text-xl text-white/90 mb-10">
             KCCF is a 100% volunteer-run organization. We bring on skilled volunteers as needs come up.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
