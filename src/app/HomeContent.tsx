@@ -292,11 +292,11 @@ export default function HomeContent() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-              Our Brave Warriors
+              Thank You from Our Brave Warriors
             </h2>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Meet some of the children KCCF has supported, and their thank-you notes.
+              Some of the children KCCF has supported.
             </p>
           </div>
 
