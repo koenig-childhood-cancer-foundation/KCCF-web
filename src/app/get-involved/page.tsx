@@ -219,7 +219,7 @@ export default function GetInvolved() {
       {/* Plum ending: the page's main ask */}
       <section className="py-20 bg-violet-600 dark:bg-gray-800">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">No child should fight cancer alone.</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Ready to Make a Difference?</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10">Start a fundraiser today, or give in one minute.</p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
