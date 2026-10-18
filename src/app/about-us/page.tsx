@@ -84,9 +84,9 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
   );
 }
 
-function PersonCard({ person, size = 'w-40 h-40' }: { person: Person; size?: string }) {
+function PersonCard({ person, size = 'w-40 h-40', padding = 'px-8 py-9' }: { person: Person; size?: string; padding?: string }) {
   return (
-    <div className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-8 py-9 text-center flex flex-col">
+    <div className={`bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md ${padding} text-center flex flex-col`}>
       <div className={`relative ${size} mx-auto mb-5 rounded-full p-1 bg-white border border-[#DAB87E] shadow-md`}>
         <Image src={person.photo} alt={person.name} fill sizes="160px" className="rounded-full object-cover" />
       </div>
@@ -257,7 +257,7 @@ export default function AboutUs() {
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
             {honorary.map((person) => (
-              <PersonCard key={person.name} person={person} size="w-32 h-32" />
+              <PersonCard key={person.name} person={person} size="w-32 h-32" padding="px-6 py-8" />
             ))}
           </div>
         </div>
