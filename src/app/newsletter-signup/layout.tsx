@@ -1,19 +1,12 @@
 import type { Metadata } from 'next';
 import { type ReactNode } from 'react';
 
+// The newsletter sign-up is now a pop-up. The page forwards visitors to Home with it open; this tells Google the new address.
 export const metadata: Metadata = {
-  title: "Newsletter Signup | KCCF",
-  description: "Stay updated with the latest news, events, and impact stories from Koenig Childhood Cancer Foundation. Join our newsletter to be part of Elana Koenig's mission to support children battling cancer.",
-  keywords: ["newsletter", "signup", "KCCF updates", "cancer foundation newsletter", "Elana Koenig", "childhood cancer", "news", "events", "subscribe", "children fighting cancer stories", "KCCF"],
-  openGraph: {
-    title: "Newsletter Signup | KCCF",
-    description: "Stay updated with the latest news, events, and impact stories from Koenig Childhood Cancer Foundation. Join our newsletter to be part of Elana Koenig's mission to support children battling cancer.",
-    type: "website",
-    url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/newsletter-signup` : "https://thekccf.org/newsletter-signup",
-  },
-  robots: {
-    index: false,
-    follow: false,
+  title: "Newsletter sign-up has moved | KCCF",
+  description: "Sign up for the KCCF newsletter from any page: use Subscribe to Newsletter in the footer.",
+  alternates: {
+    canonical: "https://thekccf.org/",
   },
 };
 
