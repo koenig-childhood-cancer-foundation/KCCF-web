@@ -61,6 +61,13 @@ export default function GetInvolved() {
       action: { label: 'Learn More', href: '/crazy-socks' },
     },
     {
+      title: 'Book Elana to Speak',
+      text: 'Invite Elana to share her story at your school, company, gala or graduation.',
+      photo: '/images/elana-speaking-stage.jpg',
+      alt: 'Elana Koenig speaking on stage in front of the KCCF banner',
+      action: { label: 'Book Here', onClick: () => openModal('book-elana') },
+    },
+    {
       title: 'Help Build Our Camp',
       text: 'Bring your camp, medical or child-care experience to help plan and run the KCCF International Camp in Azerbaijan.',
       photo: '/images/header_image_camp.png',
@@ -134,15 +141,15 @@ export default function GetInvolved() {
         </ul>
       </section>
 
-      {/* Four ways to help */}
+      {/* Five ways to help */}
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <SectionTitle title="Ways to Get Involved" />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-7 max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-7 max-w-6xl mx-auto">
             {ways.map((way) => (
               <div
                 key={way.title}
-                className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md p-4 flex flex-col"
+                className="w-full sm:w-[calc(50%-14px)] lg:w-[calc(33.333%-19px)] bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md p-4 flex flex-col"
               >
                 <div className="relative aspect-[4/3] rounded-[14px] overflow-hidden">
                   <Image src={way.photo} alt={way.alt} fill sizes="(max-width: 640px) 90vw, 300px" className="object-cover" style={{ objectPosition: way.position ?? 'center' }} />
