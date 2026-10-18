@@ -75,8 +75,8 @@ export default function GetInvolved() {
       <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-end overflow-hidden pt-24">
         <div className="absolute inset-0 top-24">
           <Image
-            src="/images/header_image_volunteer.png"
-            alt="KCCF volunteers"
+            src="/images/get-involved-hero.jpg"
+            alt="A team of KCCF volunteers with Crazy Socks gift bags"
             fill
             className="object-cover object-[45%_center] xl:object-[center_10%] brightness-110 saturate-[1.2] sepia-[0.15]"
             sizes="100vw"
