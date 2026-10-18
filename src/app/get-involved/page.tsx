@@ -46,7 +46,7 @@ export default function GetInvolved() {
     },
     {
       title: 'Be a Crazy Socks Champion',
-      text: 'Bring a Crazy Socks gift bag event to your company, school or community group.',
+      text: 'Bring a Crazy Socks gift bag event to your company, school or community group. Check with your company\u2019s CSR team. Many match or sponsor events.',
       photo: '/images/yellow-shirt.jpg',
       alt: 'Teen volunteers in yellow KCCF shirts',
       action: { label: 'Learn More', href: '/crazy-socks' },
@@ -208,7 +208,7 @@ export default function GetInvolved() {
         <div className="container mx-auto px-4 text-center">
           <SectionTitle title="Volunteer With Us" />
           <p className="max-w-2xl mx-auto text-xl text-gray-700 dark:text-gray-200 leading-relaxed mb-10">
-            We bring on skilled volunteers as needs come up. Tell us how you&rsquo;d like to help.
+            KCCF is a 100% volunteer-run organization. We bring on skilled volunteers as needs come up. Tell us how you&rsquo;d like to help.
           </p>
           <button
             type="button"
