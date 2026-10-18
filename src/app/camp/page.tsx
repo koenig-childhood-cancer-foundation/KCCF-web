@@ -158,7 +158,7 @@ export default function Camp() {
               href="/donate"
               className="inline-flex items-center justify-center py-3.5 px-8 rounded-full font-semibold text-lg border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white dark:border-saffron-400 dark:text-saffron-400 transition-colors"
             >
-              Help Children Like Elvira
+              Help Send Children Like Elvira to Camp
             </Link>
           </div>
         </div>
