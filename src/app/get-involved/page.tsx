@@ -195,10 +195,10 @@ export default function GetInvolved() {
           </ol>
 
           {/* Zeffy's campaign page opens in a new tab; embedded, it showed as a page inside the page with its own scroll bar */}
-          <div className="mt-14 max-w-3xl mx-auto rounded-[40px] border-2 border-[#DAB87E] bg-violet-600 dark:bg-gray-800 px-6 py-12 md:px-14 text-center shadow-xl">
-            <h3 className="text-3xl md:text-4xl font-bold text-white">Ready to Start?</h3>
+          <div className="mt-14 max-w-3xl mx-auto rounded-[40px] border-2 border-[#DAB87E] bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-800 px-6 py-12 md:px-14 text-center shadow-md">
+            <h3 className="text-3xl md:text-4xl font-bold text-violet-600 dark:text-white">Ready to Start?</h3>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mt-5 mb-6" aria-hidden="true" />
-            <p className="text-lg text-white/90 max-w-xl mx-auto">
+            <p className="text-lg text-gray-700 dark:text-gray-200 max-w-xl mx-auto">
               Set up your fundraising page on Zeffy, our giving platform. It takes a few minutes and it is free.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-5 justify-center">
@@ -214,50 +214,31 @@ export default function GetInvolved() {
                 href={ZEFFY_CAMPAIGN}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors"
+                className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white dark:border-white dark:text-white transition-colors"
               >
                 Give to a Fundraiser
               </a>
             </div>
           </div>
 
-          <div className="mt-16 max-w-3xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-center text-violet-600 dark:text-white">Top Fundraisers</h3>
-            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mt-4 mb-6" aria-hidden="true" />
-            {/* One frame only: Zeffy draws its own card; the matching lavender hides the space below a short list */}
-            <div className="rounded-[22px] overflow-hidden bg-[#F7EFFF]">
-              <iframe
-                title="KCCF fundraising leaderboard powered by Zeffy"
-                className="w-full border-0 block"
-                style={{ height: '420px' }}
-                loading="lazy"
-                src="https://www.zeffy.com/en-US/embed/leaderboard/peer-to-peer-fundraisers"
-              />
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Plum ending: fundraise or volunteer (also the /volunteer landing spot) */}
+      {/* Plum ending: volunteer (also the /volunteer landing spot); fundraising lives in the cream card above */}
       <section id="volunteer" className="py-20 bg-violet-600 dark:bg-gray-800 scroll-mt-24">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Start a Fundraiser or Volunteer</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Volunteer With Us</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10">
             KCCF is a 100% volunteer-run organization. We bring on skilled volunteers as needs come up.
           </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <a href="#fundraisers" className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center">
-              Start a Fundraiser
-            </a>
-            <button
-              type="button"
-              onClick={() => openModal('volunteer')}
-              className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors cursor-pointer"
-            >
-              Apply to Volunteer
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => openModal('volunteer')}
+            className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center cursor-pointer"
+          >
+            Apply to Volunteer
+          </button>
         </div>
       </section>
     </div>
