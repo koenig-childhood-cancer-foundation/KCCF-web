@@ -95,8 +95,8 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Founder Story Section: warm peach-cream background, gold-framed photo */}
-      <section className="py-20 bg-gradient-to-br from-[#FFF6EC] via-[#FDEEDD] to-[#FBF3E6] dark:from-gray-800 dark:via-gray-800 dark:to-gray-700 relative overflow-hidden">
+      {/* Founder Story Section */}
+      <section className="py-20 bg-white dark:bg-gray-800 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
@@ -107,7 +107,7 @@ export default function HomeContent() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
 
-              <div className="space-y-6 text-lg text-[#4A3B44] dark:text-gray-200 leading-relaxed">
+              <div className="space-y-6 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
                   Elana Koenig was diagnosed with cancer at age 7 and treated at Memorial Sloan Kettering Cancer Center. Over 18 months of treatment, she went through 9 cycles of chemotherapy and 15 surgeries, and spent 6 months in a full-body cast. She saw firsthand the financial and emotional struggles that families like hers face.
                 </p>
@@ -140,14 +140,13 @@ export default function HomeContent() {
 
             <div className="order-1 lg:order-2">
               <div className="relative">
-                <div className="absolute -inset-4 md:-inset-6 rounded-[36px] bg-[#DAB87E]/25 rotate-2 max-w-md mx-auto" aria-hidden="true" />
-                <div className="relative bg-white p-3 rounded-[28px] border-2 border-[#DAB87E] shadow-[0_24px_50px_-18px_rgba(138,106,46,0.55)] max-w-md mx-auto">
+                <div className="relative bg-white p-2.5 rounded-[22px] border-2 border-[#DAB87E] shadow-md max-w-md mx-auto">
                   <Image
                     src="/images/NUP_206704_00566-scaled.jpg"
                     alt="Elana Koenig on The Kelly Clarkson Show"
                     width={500}
                     height={600}
-                    className="w-full h-auto rounded-[20px]"
+                    className="w-full h-auto rounded-[16px]"
                   />
                 </div>
               </div>
@@ -157,7 +156,7 @@ export default function HomeContent() {
       </section>
 
       {/* Programs Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
