@@ -88,8 +88,8 @@
   --color-orange-300: #fdba74;
   --color-orange-400: #fb923c;
   --color-orange-500: var(--color-kccf-orange);
-  --color-orange-600: var(--color-kccf-orange);
-  --color-orange-700: #c2410c;
+  --color-orange-600: #c2410c; /* deeper orange: white text passes WCAG AA (5.2:1) */
+  --color-orange-700: #9a3412;
   --color-orange-800: #9a3412;
   --color-orange-900: #7c2d12;
   
