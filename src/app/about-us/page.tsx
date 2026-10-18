@@ -136,30 +136,43 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Elana's journey in three photos */}
-      <section className="py-14 bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 gap-4 sm:gap-10 max-w-4xl mx-auto">
-            {journey.map((step) => (
-              <figure key={step.caption} className="text-center">
-                <div className="relative aspect-square rounded-full p-1 bg-white border border-[#DAB87E] shadow-md">
-                  <Image src={step.src} alt={step.caption} fill sizes="(max-width: 640px) 30vw, 220px" className="rounded-full object-cover" />
-                </div>
-                <figcaption className="mt-3 text-sm sm:text-lg italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
-                  {step.caption}
-                </figcaption>
-              </figure>
-            ))}
+      {/* Between the top photo and the story card */}
+      <div className="bg-white dark:bg-gray-900 pt-10 pb-8 px-4 text-center">
+        <p className="text-xl sm:text-3xl font-bold tracking-[0.22em] uppercase bg-gradient-to-r from-[#8A6A2E] via-[#C9A25A] to-[#8A6A2E] bg-clip-text text-transparent dark:from-[#DAB87E] dark:via-[#F1DDB0] dark:to-[#DAB87E]">From Patient to Changemaker</p>
+        <div className="w-24 h-1 bg-[#DAB87E] rounded-full mx-auto mt-4" aria-hidden="true" />
+      </div>
+
+      {/* Elana's story: plum journey band with a gold path */}
+      <section className="bg-white dark:bg-gray-900 px-4 pb-10">
+        <div className="relative max-w-6xl mx-auto py-12 px-4 text-center bg-violet-600 dark:bg-gray-800 rounded-[40px] border-2 border-[#DAB87E] shadow-xl overflow-hidden">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">Elana&rsquo;s Story</h2>
+          <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mt-5 mb-10" aria-hidden="true" />
+          <div className="relative max-w-3xl mx-auto">
+            <div className="absolute left-[16%] right-[16%] top-[calc(50%-1.5rem)] border-t-2 border-dashed border-[#DAB87E]/70" aria-hidden="true" />
+            <div className="relative grid grid-cols-3 gap-4 sm:gap-10">
+              {[
+                { ...journey[0], label: 'Age 7', note: 'Fighting cancer' },
+                { ...journey[1], label: 'Age 8', note: 'Kicked cancer\u2019s butt' },
+                { ...journey[2], label: 'Today', note: 'Helping children beat cancer' },
+              ].map((step) => (
+                <figure key={step.caption}>
+                  <div className="relative aspect-square rounded-full p-1.5 bg-[#DAB87E] shadow-xl">
+                    <Image src={step.src} alt={step.caption} fill sizes="(max-width: 640px) 30vw, 220px" className="rounded-full object-cover p-1.5" />
+                  </div>
+                  <figcaption className="mt-4">
+                    <span className="block text-xl sm:text-3xl font-bold text-[#DAB87E]">{step.label}</span>
+                    {step.note && <span className="block text-sm sm:text-base text-white/85">{step.note}</span>}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Elana's story */}
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4 xl:px-28">
-          <SectionTitle title="Elana's Story" />
-          <div className="max-w-3xl mx-auto space-y-5 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
-            <p className="text-xl font-semibold text-violet-600 dark:text-saffron-400">
+          <div className="space-y-5 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+            <p className="text-xl font-semibold text-[#2B2330] dark:text-white">
               My name is Elana Koenig, and I am a cancer survivor, singer, and founder of Koenig Childhood Cancer Foundation.
             </p>
             <p>
@@ -177,27 +190,68 @@ export default function AboutUs() {
               my own battle had ended, the fight countless children and families were facing was far from over. That
               motivated me to start KCCF in 2020 with $900 in my piggy bank to help other children battling cancer.
             </p>
-            <p className="pt-2 italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
-              &ldquo;No child should fight cancer alone.&rdquo; &mdash; Elana Koenig, Founder
-            </p>
           </div>
-
+          <blockquote className="mt-12 text-center">
+            <p className="text-3xl md:text-4xl font-bold text-violet-600 dark:text-saffron-400 leading-tight">&ldquo;No child should fight cancer alone.&rdquo;</p>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mt-5 mx-auto" aria-hidden="true" />
+            <footer className="mt-4 italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">Elana Koenig, Founder</footer>
+          </blockquote>
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Mission: the statement in a gold-edged card, then the need in two gold ovals */}
       <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="max-w-5xl mx-auto px-4 text-center">
           <SectionTitle title="Our Mission" />
-          <p className="text-2xl md:text-3xl font-semibold leading-snug text-[#2B2330] dark:text-white">
-            KCCF provides life-saving financial and emotional support to children battling cancer and their families.
+          <div className="rounded-[28px] border-2 border-[#DAB87E] bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-800 px-6 py-10 md:px-14 shadow-md">
+            <p className="text-2xl md:text-3xl font-normal leading-snug text-violet-600 dark:text-saffron-400">
+              KCCF provides life-saving financial and emotional support to children battling cancer and their families.
+            </p>
+          </div>
+          {/* Figures from KCCF Current Facts – MASTER (WHO fact sheet, 2026) */}
+          <div className="mt-12 flex flex-col sm:flex-row justify-center gap-5 sm:gap-8">
+            <div className="rounded-full border-2 border-[#DAB87E] px-10 py-5 bg-white dark:bg-gray-800 shadow-sm">
+              <span className="block text-4xl md:text-5xl font-bold text-violet-600 dark:text-saffron-400">1,100</span>
+              <span className="block mt-1 text-sm md:text-base font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">children diagnosed with cancer every day</span>
+            </div>
+            <div className="rounded-full border-2 border-[#DAB87E] px-10 py-5 bg-white dark:bg-gray-800 shadow-sm">
+              <span className="block text-4xl md:text-5xl font-bold text-violet-600 dark:text-saffron-400">28</span>
+              <span className="block mt-1 text-sm md:text-base font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">school buses filled, every day</span>
+            </div>
+          </div>
+          <p className="mt-10 max-w-3xl mx-auto text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+            To reach specialized cancer centers, families face the costs of travel, lodging, living expenses and
+            treatment. KCCF helps lift that financial strain so families can focus on their child.
           </p>
-          <p className="mt-8 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
-            Every day, about 1,100 children are diagnosed with cancer worldwide, enough to fill 28 school buses. To reach
-            specialized cancer centers, families face the costs of travel, lodging, living expenses and treatment. KCCF
-            helps lift that financial strain so families can focus on their child.
-          </p>
+          <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">Worldwide figures: World Health Organization, 2026.</p>
         </div>
+      </section>
+
+      {/* Meet Our Founder (facts from KCCF Current Facts – MASTER, Elana's story) */}
+      <section className="pb-4 pt-16 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="text-center bg-white dark:bg-gray-800 rounded-[22px] border-t-4 border-violet-600 shadow-md px-6 py-10 md:px-12">
+            <p className="text-sm font-bold tracking-[0.2em] uppercase text-[#8A6A2E] dark:text-[#DAB87E]">Meet Our Founder</p>
+            <h3 className="mt-2 text-3xl font-bold text-violet-600 dark:text-saffron-400">Elana Koenig</h3>
+            <p className="mt-1 italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">Teen Cancer Survivor · Singer · Influencer · Founder</p>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto my-5" aria-hidden="true" />
+            <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+              Elana Koenig is a teen cancer survivor, singer, influencer and the founder of Koenig Childhood Cancer
+              Foundation (KCCF). Diagnosed with cancer at age 7, she founded KCCF in 2020, at age 11, with the $900 in
+              her piggy bank. Today she is a student at Cornell University, Class of 2030.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Nasdaq photo */}
+      <section className="pt-16 pb-4 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
+        <figure className="max-w-6xl mx-auto px-4">
+          <div className="relative aspect-[2.68/1] rounded-[22px] overflow-hidden border-t-4 border-violet-600 shadow-md">
+            <Image src="/images/header_image_kccf_family.png" alt="KCCF family and friends at the Nasdaq podium" fill sizes="(max-width: 1200px) 100vw, 1150px" className="object-cover" />
+          </div>
+          <figcaption className="mt-3 text-center italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">Our KCCF family at Nasdaq, which honored Elana and KCCF.</figcaption>
+        </figure>
       </section>
 
       {/* Team */}
