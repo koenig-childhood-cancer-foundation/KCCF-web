@@ -1,16 +1,19 @@
 "use client";
 
 import Script from 'next/script'
+import { useCookieConsent } from '@/contexts/CookieConsentContext'
 
 // Hardcoded GTM ID for the KCCF website
 const GTM_ID = 'GTM-P2SBKM7K'
 
 export default function GoogleTagManager() {
-  // GTM is loaded automatically as it's a functional/necessary service
-  // that enables essential site features like forms (Zeffy, Monday).
-  // Analytics services (Google Analytics, Microsoft Clarity) are configured
-  // within GTM to respect user consent preferences.
+  const { consent } = useCookieConsent()
+
+  // GTM runs Google Analytics and Microsoft Clarity, so it loads only after the
+  // visitor allows analytics cookies, as the Privacy page promises.
+  // Forms (Zeffy, monday.com) are separate iframes and don't need GTM.
   // Note: noscript fallback is rendered in the server layout component (layout.tsx)
+  if (!consent.analytics) return null
 
   return (
     <Script
