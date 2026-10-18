@@ -37,8 +37,8 @@ export default function GetInvolved() {
     {
       title: 'Start a Fundraiser',
       text: 'Raise funds with your team, school or friends.',
-      photo: '/images/IMG_0875-scaled.jpeg',
-      alt: 'KCCF supporters at a fundraising table',
+      photo: '/images/header_image_fundraisers.jpg',
+      alt: 'Young KCCF fundraisers in yellow shirts',
       action: { label: 'Start Here', href: '#fundraisers' },
     },
     {
@@ -58,8 +58,8 @@ export default function GetInvolved() {
     {
       title: 'Volunteer',
       text: 'Give your time and skills, on your own or with a group.',
-      photo: '/images/MetaLeadershipMakingfitBags-scaled.jpg',
-      alt: 'Volunteers packing gift bags',
+      photo: '/images/IMG_6861-scaled.jpeg',
+      alt: 'KCCF volunteers delivering gift bags',
       action: { label: 'Apply Here', onClick: () => openModal('volunteer') },
     },
   ];
