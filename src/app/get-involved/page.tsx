@@ -8,11 +8,12 @@ import { IMPACT_STATS } from '@/constants/impactStats';
 // Volunteer and Fundraisers combined into one page.
 // Numbers follow KCCF Current Facts – MASTER.
 
-// KCCF-wide numbers (not program-specific), from KCCF Current Facts – MASTER
+// Rena's picks. Gift bags and families from KCCF Current Facts – MASTER;
+// volunteer hours is Rena's number (to be added to MASTER).
 const stats = [
-  { value: IMPACT_STATS.HOME[1].value, label: 'volunteers' },
+  { value: IMPACT_STATS.HOME[2].value, label: 'gift bags delivered' },
   { value: IMPACT_STATS.HOME[0].value, label: 'families helped' },
-  { value: '$3M+', label: 'raised since 2020' },
+  { value: IMPACT_STATS.CRAZY_SOCKS[3].value, label: 'volunteer hours' },
 ];
 
 const fundraiserSteps = [
