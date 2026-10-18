@@ -72,7 +72,7 @@ export default function GetInvolved() {
     {
       title: 'Help Build Our Camp',
       text: 'Bring your camp, medical or child-care experience to help plan and run the KCCF International Camp in Azerbaijan.',
-      photo: '/images/header_image_camp.png',
+      photo: '/images/header_image_camp.jpg',
       alt: 'Campers and staff at the KCCF International Camp',
       action: { label: 'Learn More', href: '/camp' },
     },

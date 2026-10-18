@@ -69,7 +69,7 @@ export default function CrazySocks() {
     },
     {
       name: 'UBS',
-      image: '/images/ubs-season-of-service.png',
+      image: '/images/ubs-season-of-service.jpg',
       quote:
         'KCCF brought a care package to my daughter; it was the brightest moment during her cancer treatment. We wanted to make an impact through KCCF.',
       role: 'Leader',

@@ -52,7 +52,7 @@ export default function Camp() {
       <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-end overflow-hidden pt-24">
         <div className="absolute inset-0 top-24">
           <Image
-            src="/images/header_image_camp.png"
+            src="/images/header_image_camp.jpg"
             alt="Campers holding the KCCF banner with the flags of Azerbaijan and the United States"
             fill
             className="object-cover object-[center_30%]"

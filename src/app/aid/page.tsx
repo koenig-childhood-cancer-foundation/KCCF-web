@@ -40,7 +40,7 @@ export default function Aid() {
         {/* Background Image */}
         <div className="absolute inset-0 top-24">
           <Image
-            src="/images/header_image_family_assistance.png"
+            src="/images/header_image_family_assistance.jpg"
             alt="Family Aid"
             fill
             className="object-cover object-[65%_center] md:object-[right_30%]"
