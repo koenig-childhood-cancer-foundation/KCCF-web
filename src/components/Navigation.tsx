@@ -102,19 +102,9 @@ export default function Navigation() {
         { name: 'KCCF Camp', href: '/camp' },
       ]
     },
-    { 
-      name: 'CONTACT', 
-      href: '/contact',
-      dropdown: [
-        { name: 'Contact Us', href: '/contact' },
-        { name: 'Volunteer', href: '/volunteer' },
-        { name: 'Sponsor Gift Bag Event', formType: 'crazy-socks-sponsor' },
-        { name: 'Book Elana to Speak', formType: 'book-elana' },
-        { name: 'Newsletter Signup', href: '/newsletter-signup' },
-      ]
-    },
+    { name: 'GET INVOLVED', href: '/get-involved' },
     { name: 'MEDIA', href: '/media' },
-    { name: 'FUNDRAISERS', href: '/fundraisers' },
+    { name: 'CONTACT', href: '/contact' },
   ]
 
   const handleMouseEnter = (itemName: string) => {

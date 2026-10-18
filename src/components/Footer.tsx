@@ -180,10 +180,10 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/fundraisers"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      href="/get-involved#fundraisers"
+                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
-                      Fundraisers
+                      Start a Fundraiser
                     </Link>
                   </li>
                 </ul>
@@ -272,7 +272,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/volunteer"
+                      href="/get-involved#volunteer"
                       className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Volunteer
