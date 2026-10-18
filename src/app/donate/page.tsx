@@ -56,24 +56,13 @@ const waysToGive: { title: string; body: ReactNode; contact: boolean }[] = [
     contact: true,
   },
   {
-    title: 'Stock Donations',
-    body: (
-      <>
-        You can donate your appreciated stock here:
-        <br />
-        <span className="font-semibold">RBC DTC # 0235</span>
-      </>
-    ),
-    contact: true,
-  },
-  {
     title: 'Donor Advised Funds (DAF)',
     body: 'You can make a donation through your Donor Advised Fund.',
     contact: true,
   },
   {
-    title: 'Crypto & Wire Transfers',
-    body: 'We accept crypto (including Bitcoin) and wire transfers. Email us for details.',
+    title: 'Stock, Crypto & Wire Transfers',
+    body: 'We accept gifts of stock, crypto (including Bitcoin) and wire transfers. Email us and we will send you the transfer details.',
     contact: true,
   },
 ]
@@ -177,11 +166,11 @@ export default function Donate() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-7 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-7 max-w-4xl mx-auto">
             {waysToGive.map((way) => (
               <div
                 key={way.title}
-                className="w-full md:w-[calc(50%-0.875rem)] lg:w-[calc(33.333%-1.17rem)] bg-[#FAF6F2] dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-7 py-8 text-center"
+                className="w-full md:w-[calc(50%-0.875rem)] bg-[#FAF6F2] dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-7 py-8 text-center"
               >
                 <h3 className="text-xl font-bold mb-3 text-[#2B2330] dark:text-white">{way.title}</h3>
                 <p className="text-[#2B2330] dark:text-gray-200 leading-relaxed">{way.body}</p>
