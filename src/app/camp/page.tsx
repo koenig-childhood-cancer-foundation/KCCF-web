@@ -5,6 +5,7 @@ import { IMPACT_STATS } from '@/constants/impactStats';
 
 // Facts from KCCF Current Facts – MASTER: KCCF International Camp (in Azerbaijan),
 // an international summer camp for emotional recovery; 120 children hosted.
+// Free for families: confirmed by Rena (October 2026).
 // Registration is not open yet, so families send an interest email instead of a form.
 
 const CAMP_EMAIL = 'join@thekccf.org';
@@ -14,6 +15,7 @@ const volunteerLink = `mailto:${CAMP_EMAIL}?subject=${encodeURIComponent('KCCF C
 const stats = [
   { value: IMPACT_STATS.HOME[3].value, label: 'children hosted' },
   { value: 'Azerbaijan', label: 'international summer camp' },
+  { value: '100% Free', label: 'for families' },
 ];
 
 const gives = [
@@ -124,7 +126,7 @@ export default function Camp() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Join Us at Camp</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10">
-            Registration is not open yet. Families, email us and we will let you know when it opens. Volunteers with camp,
+            Camp is free for families. Registration is not open yet. Families, email us and we will let you know when it opens. Volunteers with camp,
             medical or child-care experience, we would love to hear from you too.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
