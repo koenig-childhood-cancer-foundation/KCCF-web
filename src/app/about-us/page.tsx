@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import FormButton from '@/components/FormButton';
 import { useFormModal } from '@/contexts/FormModalContext';
 
@@ -197,6 +198,14 @@ export default function AboutUs() {
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mt-5 mx-auto" aria-hidden="true" />
             <footer className="mt-4 italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">Elana Koenig, Founder</footer>
           </blockquote>
+          <div className="mt-10 text-center">
+            <Link
+              href="/media"
+              className="py-3.5 px-8 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white dark:border-saffron-400 dark:text-saffron-400 transition-colors"
+            >
+              See Elana in the News
+            </Link>
+          </div>
         </div>
       </section>
 
