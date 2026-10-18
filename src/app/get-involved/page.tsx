@@ -37,22 +37,22 @@ export default function GetInvolved() {
     {
       title: 'Start a Fundraiser',
       text: 'Raise funds with your team, school or friends.',
-      photo: '/images/yellow-shirt.jpg',
-      alt: 'Teen volunteers in yellow KCCF shirts',
+      photo: '/images/IMG_0875-scaled.jpeg',
+      alt: 'KCCF supporters at a fundraising table',
       action: { label: 'Start Here', href: '#fundraisers' },
     },
     {
       title: 'Be a Crazy Socks Champion',
       text: 'Bring a Crazy Socks gift bag event to your company, school or community group.',
-      photo: '/images/MetaCSGiftBagEvent-scaled.jpg',
-      alt: 'A corporate team at a Crazy Socks gift bag event',
+      photo: '/images/yellow-shirt.jpg',
+      alt: 'Teen volunteers in yellow KCCF shirts',
       action: { label: 'Learn More', href: '/crazy-socks' },
     },
     {
       title: 'Help Build Our Camp',
       text: 'Bring your camp, medical or child-care experience to help plan and run the KCCF International Camp in Azerbaijan.',
-      photo: '/images/camp-impact-program.jpg',
-      alt: 'Children at the KCCF International Camp',
+      photo: '/images/header_image_camp.png',
+      alt: 'Campers and staff at the KCCF International Camp',
       action: { label: 'Learn More', href: '/camp' },
     },
     {
