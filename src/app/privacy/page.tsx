@@ -14,7 +14,7 @@ export default function Privacy() {
         {/* Background Image */}
         <div className="absolute inset-0 top-24">
           <Image
-            src="/images/Placeholder.png"
+            src="/images/Placeholder.jpg"
             alt="Privacy & Cookie Policy"
             fill
             className="object-cover"
