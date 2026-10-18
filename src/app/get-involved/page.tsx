@@ -15,20 +15,6 @@ const stats = [
   { value: IMPACT_STATS.HOME[2].value, label: 'gift bags delivered' },
 ];
 
-const requirements = [
-  'Volunteers must be 18 years or older',
-  'Parental consent is required for minor volunteers',
-  'A minimum one-year commitment is requested for most roles',
-  'A background check may be required',
-];
-
-const benefits = [
-  'Make a direct impact on families facing pediatric cancer',
-  'Join a supportive community of mission-driven volunteers',
-  'Gain valuable skills and experience',
-  'Receive recognition for dedication and service',
-];
-
 const fundraiserSteps = [
   { title: 'Start Your Page', text: 'Create your own fundraising page in a few minutes. It is free.' },
   { title: 'Share It', text: 'Send it to family, friends, your team, school or company.' },
@@ -45,30 +31,10 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
   );
 }
 
-function GoldList({ items }: { items: string[] }) {
-  return (
-    <ul className="space-y-2.5 text-[#2B2330] dark:text-gray-200">
-      {items.map((item) => (
-        <li key={item} className="flex items-start gap-2.5">
-          <span className="mt-2 w-2 h-2 shrink-0 rounded-full bg-[#DAB87E]" aria-hidden="true" />
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 export default function GetInvolved() {
   const { openModal } = useFormModal();
 
   const ways = [
-    {
-      title: 'Volunteer',
-      text: 'Give your time and skills, on your own or with a group.',
-      photo: '/images/MetaLeadershipMakingfitBags-scaled.jpg',
-      alt: 'Volunteers packing gift bags',
-      action: { label: 'Apply Here', onClick: () => openModal('volunteer') },
-    },
     {
       title: 'Start a Fundraiser',
       text: 'Raise funds with your team, school or friends.',
@@ -89,6 +55,13 @@ export default function GetInvolved() {
       photo: '/images/camp-impact-program.jpg',
       alt: 'Children at the KCCF International Camp',
       action: { label: 'Learn More', href: '/camp' },
+    },
+    {
+      title: 'Volunteer',
+      text: 'Give your time and skills, on your own or with a group.',
+      photo: '/images/MetaLeadershipMakingfitBags-scaled.jpg',
+      alt: 'Volunteers packing gift bags',
+      action: { label: 'Apply Here', onClick: () => openModal('volunteer') },
     },
   ];
 
@@ -180,29 +153,8 @@ export default function GetInvolved() {
         </div>
       </section>
 
-      {/* Volunteer */}
-      <section id="volunteer" className="py-20 bg-white dark:bg-gray-900 scroll-mt-24">
-        <div className="container mx-auto px-4">
-          <SectionTitle title="Volunteer With Us" />
-          <p className="max-w-3xl mx-auto text-center text-xl text-gray-700 dark:text-gray-200 leading-relaxed mb-12">
-            We welcome individuals, community groups, and corporate teams. Whether you can give a few hours each month or
-            take on a larger role, your time directly helps children battling cancer and their families.
-          </p>
-          <div className="grid md:grid-cols-2 gap-7 max-w-5xl mx-auto">
-            <div className="bg-[#FAF6F2] dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-8 py-8">
-              <h3 className="text-xl font-bold mb-4 text-center text-[#2B2330] dark:text-white">What We Ask</h3>
-              <GoldList items={requirements} />
-            </div>
-            <div className="bg-[#FAF6F2] dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-8 py-8">
-              <h3 className="text-xl font-bold mb-4 text-center text-[#2B2330] dark:text-white">What You Gain</h3>
-              <GoldList items={benefits} />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Fundraisers */}
-      <section id="fundraisers" className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700 scroll-mt-24">
+      <section id="fundraisers" className="py-20 bg-white dark:bg-gray-900 scroll-mt-24">
         <div className="container mx-auto px-4">
           <SectionTitle title="Start a Peer-to-Peer Fundraiser" subtitle="Turn a birthday, a game, a run or a school event into help for a child with cancer." />
           <ol className="grid md:grid-cols-3 gap-7 max-w-5xl mx-auto list-none">
@@ -246,6 +198,24 @@ export default function GetInvolved() {
           </div>
         </div>
       </section>
+
+      {/* Volunteer: KCCF brings on individual volunteers as needs come up */}
+      <section id="volunteer" className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700 scroll-mt-24">
+        <div className="container mx-auto px-4 text-center">
+          <SectionTitle title="Volunteer With Us" />
+          <p className="max-w-2xl mx-auto text-xl text-gray-700 dark:text-gray-200 leading-relaxed mb-10">
+            We bring on skilled volunteers as needs come up. Tell us how you&rsquo;d like to help.
+          </p>
+          <button
+            type="button"
+            onClick={() => openModal('volunteer')}
+            className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg cursor-pointer"
+          >
+            Apply Here
+          </button>
+        </div>
+      </section>
+
 
       <CallToAction />
     </div>
