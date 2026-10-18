@@ -46,7 +46,7 @@ export const IMPACT_STATS = {
       label: "Global Reach"
     },
     {
-      // Provided by Rena Koenig, Oct 2026 (to be added to KCCF Current Facts – MASTER)
+      // In KCCF Current Facts – MASTER (added Oct 17, 2026)
       value: "35,000+",
       label: "Volunteer Hours"
     }
