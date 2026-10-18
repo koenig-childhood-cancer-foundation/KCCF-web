@@ -5,9 +5,10 @@ export default function CallToAction() {
     <section className="py-20 bg-violet-600 dark:bg-gray-800 relative overflow-hidden">
       <div className="container mx-auto px-4 text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-          No child should fight cancer alone.
+          Help a Child Today
         </h2>
         <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
+        <p className="text-xl text-white/90 mb-6">No child should fight cancer alone.</p>
         <p className="text-2xl md:text-3xl font-extrabold text-[#ffb37a] mx-auto leading-tight">
           90&cent; of every dollar goes directly to programs
         </p>
