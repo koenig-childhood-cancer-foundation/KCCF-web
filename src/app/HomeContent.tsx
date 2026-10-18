@@ -185,7 +185,7 @@ export default function HomeContent() {
                   height={600}
                 />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Crazy Socks</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Crazy Socks Gift Bags</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
                 Use your company's Corporate Social Responsibility (CSR) program to sponsor gift bag events for hospitalized children - bring smiles to their faces.
               </p>
