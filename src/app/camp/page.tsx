@@ -1,11 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { IMPACT_STATS } from '@/constants/impactStats';
 
 // Facts from KCCF Current Facts – MASTER: KCCF International Camp (in Azerbaijan),
 // an international summer camp for emotional recovery; 120 children hosted.
 // Free for families: confirmed by Rena (October 2026).
+// Elvira's story: from KCCF's September 2026 email "Elvira's 16th Birthday Wish" (Rena's request).
 // Registration is not open yet, so families send an interest email instead of a form.
 
 const CAMP_EMAIL = 'join@thekccf.org';
@@ -63,7 +65,7 @@ export default function Camp() {
         <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 lg:pl-24 pb-14 text-center lg:text-left">
           <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">KCCF International Camp</h1>
           <p className="mt-5 text-xl md:text-2xl font-semibold text-white max-w-2xl mx-auto lg:mx-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]">
-            A place for emotional healing for children battling cancer and their siblings from all over the world.
+            Emotional healing for children with cancer and their siblings.
           </p>
         </div>
       </section>
@@ -88,9 +90,7 @@ export default function Camp() {
         <div className="container mx-auto px-4">
           <SectionTitle title="A Place for Emotional Healing" />
           <p className="max-w-3xl mx-auto text-center text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
-            Cancer is a lifelong journey. The KCCF International Camp in Azerbaijan brings together children diagnosed
-            with cancer and their siblings from around the world, helps heal their emotional wounds, and inspires them to
-            feel joyful and included as part of society.
+            Children with cancer and their siblings from around the world come together to heal, play and feel included.
           </p>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-6xl mx-auto">
             {photos.map((photo) => (
@@ -120,14 +120,46 @@ export default function Camp() {
         </div>
       </section>
 
+      {/* A camper's story */}
+      <section className="py-20 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <SectionTitle title="Elvira&rsquo;s Story" />
+          <div className="max-w-5xl mx-auto grid md:grid-cols-[2fr_3fr] gap-10 items-center">
+            <figure>
+              <div className="relative aspect-[3/4] rounded-[22px] overflow-hidden shadow-md border-2 border-[#DAB87E]">
+                <Image src="/images/camp-elana-elvira.jpg" alt="Elana Koenig and Elvira at KCCF Camp" fill sizes="(max-width: 768px) 90vw, 400px" className="object-cover" />
+              </div>
+              <figcaption className="mt-3 text-center text-sm italic text-[#8A6A2E] dark:text-[#DAB87E]">Elana and Elvira at KCCF Camp</figcaption>
+            </figure>
+            <div className="space-y-5 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+              <p className="text-xl font-semibold text-[#2B2330] dark:text-white">
+                Elvira was 15 and in the middle of chemotherapy for leukemia when she came to camp.
+              </p>
+              <p>
+                With her doctor&rsquo;s blessing, she spent a week at the KCCF International Camp in Azerbaijan. She laughed,
+                made memories and simply got to be a teenager. For that week, cancer did not have to be the center of her world.
+              </p>
+              <p>
+                Elvira is still fighting. Camp gave her moments of joy, and a reminder of everything she is fighting to get back to.
+              </p>
+              <Link
+                href="/donate"
+                className="inline-flex items-center justify-center py-3.5 px-8 rounded-full font-semibold text-lg border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white dark:border-saffron-400 dark:text-saffron-400 transition-colors"
+              >
+                Help Children Like Elvira
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Plum ending: families and volunteers in one place (registration is not open yet) */}
       <section id="join" className="py-20 bg-violet-600 dark:bg-gray-800 scroll-mt-24">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Join Us at Camp</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10">
-            Camp is free for families. Registration is not open yet. Families, email us and we will let you know when it opens. Volunteers with camp,
-            medical or child-care experience, we would love to hear from you too.
+            Camp is free for families. Registration is not open yet. Email us to hear when it opens, or to volunteer.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <a href={interestLink} className="btn-primary btn-primary-orange text-white py-4 px-8 rounded-full font-semibold text-lg inline-flex items-center justify-center">
