@@ -79,7 +79,7 @@ export default function GetInvolved() {
             src="/images/get-involved-hero.jpg"
             alt="A team of KCCF volunteers with Crazy Socks gift bags"
             fill
-            className="object-cover object-[45%_center] xl:object-[center_10%] brightness-110 saturate-[1.2] sepia-[0.15]"
+            className="object-cover object-[center_80%] brightness-110 saturate-[1.2] sepia-[0.15]"
             sizes="100vw"
             priority
           />
@@ -92,6 +92,8 @@ export default function GetInvolved() {
             }}
           />
           <div className="absolute inset-0 bg-amber-400/15 pointer-events-none" />
+          {/* Darker band under the table so the words read clearly */}
+          <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black/75 via-black/40 to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60 md:hidden pointer-events-none" />
           <div
             className="hidden md:block absolute inset-0 pointer-events-none"
