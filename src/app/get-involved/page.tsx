@@ -59,8 +59,8 @@ export default function GetInvolved() {
     {
       title: 'Volunteer',
       text: 'Give your time and skills, on your own or with a group.',
-      photo: '/images/volunteers-gift-bags-msk.jpg',
-      alt: 'KCCF volunteers with boxes of gift bags outside a hospital',
+      photo: '/images/volunteer-with-child.jpg',
+      alt: 'A KCCF volunteer with a child',
       action: { label: 'Apply Here', onClick: () => openModal('volunteer') },
     },
   ];
