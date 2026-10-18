@@ -22,6 +22,15 @@ const fundraiserSteps = [
   { title: 'Help a Child', text: 'Every gift goes to children battling cancer and their families.' },
 ];
 
+type Way = {
+  title: string;
+  text: string;
+  photo: string;
+  alt: string;
+  position?: string;
+  action: { label: string; href: string } | { label: string; onClick: () => void };
+};
+
 function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <div className="text-center mb-12">
@@ -35,7 +44,7 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
 export default function GetInvolved() {
   const { openModal } = useFormModal();
 
-  const ways = [
+  const ways: Way[] = [
     {
       title: 'Start a Fundraiser',
       text: 'Raise funds with your team, school or friends.',
