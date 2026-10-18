@@ -101,7 +101,7 @@ export default function Camp() {
             </figure>
             <div className="space-y-5 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
               <p className="text-xl font-semibold text-[#2B2330] dark:text-white">
-                Elvira was 15 and in the middle of chemotherapy for leukemia when she came to camp.
+                Elvira was 15 and in the middle of chemotherapy when she came to camp.
               </p>
               <p>
                 With her doctor&rsquo;s blessing, she spent a week at the KCCF International Camp in Azerbaijan. She laughed,
