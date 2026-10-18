@@ -38,6 +38,19 @@ const giftImpacts: {
 
 const waysToGive: { title: string; body: ReactNode; contact: boolean }[] = [
   {
+    title: 'Check by Mail',
+    body: (
+      <>
+        Payable to Koenig Childhood Cancer Foundation
+        <br />
+        1175 York Ave, Ste. 15E
+        <br />
+        New York, NY 10065
+      </>
+    ),
+    contact: false,
+  },
+  {
     title: 'Corporate Matching',
     body: 'Check if your company offers a matching gift program. KCCF is on Benevity.',
     contact: true,
@@ -62,19 +75,6 @@ const waysToGive: { title: string; body: ReactNode; contact: boolean }[] = [
     title: 'Crypto & Wire Transfers',
     body: 'We accept crypto (including Bitcoin) and wire transfers. Email us for details.',
     contact: true,
-  },
-  {
-    title: 'Check by Mail',
-    body: (
-      <>
-        Payable to Koenig Childhood Cancer Foundation
-        <br />
-        1175 York Ave, Ste. 15E
-        <br />
-        New York, NY 10065
-      </>
-    ),
-    contact: false,
   },
 ]
 
@@ -191,10 +191,13 @@ export default function Donate() {
                     <a href="mailto:join@thekccf.org" className={linkClass}>
                       join@thekccf.org
                     </a>
-                    {' '}or{' '}
-                    <a href="tel:+19177656272" className={linkClass}>
-                      (917) 765&#8209;6272
-                    </a>
+                    {' '}
+                    <span className="whitespace-nowrap">
+                      or{' '}
+                      <a href="tel:+19177656272" className={linkClass}>
+                        (917) 765&#8209;6272
+                      </a>
+                    </span>
                   </p>
                 )}
               </div>

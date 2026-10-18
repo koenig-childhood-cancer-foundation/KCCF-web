@@ -283,7 +283,7 @@ export default function Footer() {
                       href="/camp"
                       className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
-                      Camp
+                      KCCF Camp
                     </Link>
                   </li>
                 </ul>

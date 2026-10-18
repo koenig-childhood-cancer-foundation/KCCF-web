@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useFormModal } from '@/contexts/FormModalContext';
+import { useDonationModal } from '@/contexts/DonationModalContext';
 import type { FormType } from '@/contexts/FormModalContext';
 
 // Giving options follow KCCF Current Facts – MASTER. The page offers the contact form
@@ -10,7 +11,8 @@ import type { FormType } from '@/contexts/FormModalContext';
 
 type Action =
   | { label: string; href: string }
-  | { label: string; form: FormType };
+  | { label: string; form: FormType }
+  | { label: string; donate: true };
 
 // "How can we help?": the main ways to reach KCCF, and where each one goes
 const helps: { title: string; text: string; action: Action }[] = [
@@ -22,12 +24,12 @@ const helps: { title: string; text: string; action: Action }[] = [
   {
     title: 'Make a Donation',
     text: 'Give online, or by stock, crypto, donor-advised fund, wire or check.',
-    action: { label: 'Donate', href: '/donate' },
+    action: { label: 'Donate Now', donate: true },
   },
   {
     title: 'Start a Fundraiser',
     text: 'Turn a birthday, a game, a run or a school event into help for a child.',
-    action: { label: 'Start Here', href: '/get-involved#fundraisers' },
+    action: { label: 'Start a Fundraiser', href: '/get-involved#fundraisers' },
   },
   {
     title: 'Sponsor a Gift Bag Event',
@@ -37,7 +39,7 @@ const helps: { title: string; text: string; action: Action }[] = [
   {
     title: 'Book Elana to Speak',
     text: 'For graduations, galas, corporate events and media.',
-    action: { label: 'Book Elana', form: 'book-elana' },
+    action: { label: 'Book Elana to Speak', form: 'book-elana' },
   },
   {
     title: 'Volunteer',
@@ -58,6 +60,7 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
 
 export default function Contact() {
   const { openModal } = useFormModal();
+  const { openModal: openDonationModal } = useDonationModal();
   const linkClass =
     'mt-auto inline-flex items-center gap-1 font-semibold text-violet-600 dark:text-saffron-400 hover:text-violet-800 dark:hover:text-saffron-300 cursor-pointer';
 
@@ -124,7 +127,11 @@ export default function Contact() {
               >
                 <h3 className="text-xl font-bold text-[#2B2330] dark:text-white">{help.title}</h3>
                 <p className="mt-2 mb-5 text-gray-700 dark:text-gray-200">{help.text}</p>
-                {'form' in help.action ? (
+                {'donate' in help.action ? (
+                  <button type="button" onClick={() => openDonationModal()} className={linkClass}>
+                    {help.action.label} &rarr;
+                  </button>
+                ) : 'form' in help.action ? (
                   <button type="button" onClick={() => openModal((help.action as { form: FormType }).form)} className={linkClass}>
                     {help.action.label} &rarr;
                   </button>
@@ -155,7 +162,7 @@ export default function Contact() {
               onClick={() => openModal('contact')}
               className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center cursor-pointer"
             >
-              Contact Us
+              Send Us a Message
             </button>
           </div>
         </div>

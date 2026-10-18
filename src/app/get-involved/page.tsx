@@ -53,7 +53,7 @@ export default function GetInvolved() {
       photo: '/images/fundraiser-table.jpg',
       alt: 'KCCF supporters at a fundraising table with gift bags',
       position: 'center 30%',
-      action: { label: 'Start Here', href: '#fundraisers' },
+      action: { label: 'Start a Fundraiser', href: '#fundraisers' },
     },
     {
       title: 'Be a Crazy Socks Champion',
@@ -67,7 +67,7 @@ export default function GetInvolved() {
       text: 'Invite Elana to share her story at your school, company, gala or graduation.',
       photo: '/images/elana-speaking-stage.jpg',
       alt: 'Elana Koenig speaking on stage in front of the KCCF banner',
-      action: { label: 'Book Here', onClick: () => openModal('book-elana') },
+      action: { label: 'Book Elana to Speak', onClick: () => openModal('book-elana') },
     },
     {
       title: 'Help Build Our Camp',
@@ -81,7 +81,7 @@ export default function GetInvolved() {
       text: 'Give your time and skills, on your own or with a group.',
       photo: '/images/volunteer-with-child.jpg',
       alt: 'A KCCF volunteer with a child',
-      action: { label: 'Apply Here', onClick: () => openModal('volunteer') },
+      action: { label: 'Apply to Volunteer', onClick: () => openModal('volunteer') },
     },
   ];
 
