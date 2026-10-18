@@ -16,7 +16,7 @@ const seenOn = [
 
 const videos = [
   {
-    title: 'Charles Esten Invites Elana to Sing',
+    title: 'On The Kelly Clarkson Show: Charles Esten Invites Elana to Sing',
     text: 'Charles Esten invites 15-year-old cancer survivor Elana Koenig to sing at a Nashville benefit concert.',
     embed: 'https://www.youtube.com/embed/clbbmsPRyS8?rel=0&start=380',
     link: { label: 'Watch on YouTube', href: 'https://www.youtube.com/watch?v=clbbmsPRyS8' },

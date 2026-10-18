@@ -65,7 +65,7 @@ export default function Footer() {
               </h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://www.facebook.com/theKCCF?modal=admin_todo_tour#"
+                  href="https://www.facebook.com/theKCCF"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-blue-500 transition-colors"
