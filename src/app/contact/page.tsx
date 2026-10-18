@@ -5,15 +5,14 @@ import Link from 'next/link';
 import { useFormModal } from '@/contexts/FormModalContext';
 import type { FormType } from '@/contexts/FormModalContext';
 
-// Contact details and giving options follow KCCF Current Facts – MASTER.
-const EMAIL = 'join@thekccf.org';
-const mail = (subject: string) => `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}`;
+// Giving options follow KCCF Current Facts – MASTER. The page offers the contact form
+// instead of a phone number or email address, to cut down on solicitation.
 
 type Action =
   | { label: string; href: string }
   | { label: string; form: FormType };
 
-// "How can we help?": every way to reach KCCF, and where each one goes
+// "How can we help?": the main ways to reach KCCF, and where each one goes
 const helps: { title: string; text: string; action: Action }[] = [
   {
     title: 'Financial Help for a Family',
@@ -22,7 +21,7 @@ const helps: { title: string; text: string; action: Action }[] = [
   },
   {
     title: 'Make a Donation',
-    text: 'Give online. For stock, crypto, donor-advised funds or wire transfers, email us.',
+    text: 'Give online, or by stock, crypto, donor-advised fund, wire or check.',
     action: { label: 'Donate', href: '/donate' },
   },
   {
@@ -44,21 +43,6 @@ const helps: { title: string; text: string; action: Action }[] = [
     title: 'Volunteer',
     text: 'KCCF is a 100% volunteer-run organization. Tell us about your skills.',
     action: { label: 'Apply to Volunteer', form: 'volunteer' },
-  },
-  {
-    title: 'KCCF Camp',
-    text: 'Registration is not open yet. Email us and we will let you know when it opens.',
-    action: { label: 'Email About Camp', href: mail('KCCF Camp: please tell me when registration opens') },
-  },
-  {
-    title: 'Press & Media',
-    text: 'Interviews, stories and appearances.',
-    action: { label: 'Email Us', href: mail('Press and media inquiry') },
-  },
-  {
-    title: 'Our Newsletter',
-    text: 'News from KCCF in your inbox.',
-    action: { label: 'Subscribe', form: 'newsletter-signup' },
   },
 ];
 
@@ -101,20 +85,18 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact details in gold ovals */}
+      {/* Contact form and mailing address in gold ovals */}
       <section className="py-12 bg-white dark:bg-gray-800 border-b border-[#F1E7D6] dark:border-gray-700">
         <ul className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 md:gap-6 max-w-6xl mx-auto px-4 list-none">
           <li>
-            <a href="tel:+19177656272" className="block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center hover:bg-[#FBF5EA]">
-              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Call</span>
-              <span className="block text-xl md:text-2xl font-extrabold text-violet-600 dark:text-saffron-400">(917) 765-6272</span>
-            </a>
-          </li>
-          <li>
-            <a href={`mailto:${EMAIL}`} className="block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center hover:bg-[#FBF5EA]">
-              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Email</span>
-              <span className="block text-xl md:text-2xl font-extrabold text-violet-600 dark:text-saffron-400">{EMAIL}</span>
-            </a>
+            <button
+              type="button"
+              onClick={() => openModal('contact')}
+              className="block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center hover:bg-[#FBF5EA] cursor-pointer"
+            >
+              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Write to us</span>
+              <span className="block text-xl md:text-2xl font-extrabold text-violet-600 dark:text-saffron-400">Send Us a Message</span>
+            </button>
           </li>
           <li>
             <a
@@ -167,7 +149,7 @@ export default function Contact() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Send Us a Message</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10">Anything else on your mind? Write to us and we will get back to you.</p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+          <div className="flex justify-center">
             <button
               type="button"
               onClick={() => openModal('contact')}
@@ -175,12 +157,6 @@ export default function Contact() {
             >
               Contact Us
             </button>
-            <a
-              href="tel:+19177656272"
-              className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors"
-            >
-              Call (917) 765-6272
-            </a>
           </div>
         </div>
       </section>
