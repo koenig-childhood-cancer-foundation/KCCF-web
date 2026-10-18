@@ -76,23 +76,23 @@ export default function GetInvolved() {
             src="/images/header_image_volunteer.png"
             alt="KCCF volunteers"
             fill
-            className="object-cover object-[45%_center] xl:object-[center_10%]"
+            className="object-cover object-[45%_center] xl:object-[center_10%] brightness-110 saturate-[1.2] sepia-[0.15]"
             sizes="100vw"
             priority
           />
           {/* Soft blur only in the lower-left corner (behind the words); faces at the top stay sharp */}
           <div
-            className="hidden md:block absolute inset-0 backdrop-blur-[3px] pointer-events-none"
+            className="hidden md:block absolute inset-0 backdrop-blur-[2px] pointer-events-none"
             style={{
               maskImage: 'radial-gradient(ellipse 45% 40% at 0% 100%, black 30%, transparent 100%)',
               WebkitMaskImage: 'radial-gradient(ellipse 45% 40% at 0% 100%, black 30%, transparent 100%)',
             }}
           />
-          <div className="absolute inset-0 bg-amber-400/12 pointer-events-none" />
+          <div className="absolute inset-0 bg-amber-400/15 pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60 md:hidden pointer-events-none" />
           <div
             className="hidden md:block absolute inset-0 pointer-events-none"
-            style={{ background: 'radial-gradient(ellipse 60% 70% at 0% 100%, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)' }}
+            style={{ background: 'radial-gradient(ellipse 60% 70% at 0% 100%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.22) 50%, transparent 100%)' }}
           />
         </div>
         <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 lg:pl-24 pb-14 text-center lg:text-left">
