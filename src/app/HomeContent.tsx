@@ -201,12 +201,16 @@ export default function HomeContent() {
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
                 Use your company's Corporate Social Responsibility (CSR) program to sponsor gift bag events for hospitalized children - bring smiles to their faces.
               </p>
-              <Link href="/crazy-socks" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto">
+              <button
+                type="button"
+                onClick={() => openModal('crazy-socks-sponsor')}
+                className="inline-flex items-center self-start text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto cursor-pointer"
+              >
                 Sponsor an Event
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </Link>
+              </button>
             </div>
 
             {/* KCCF Camp */}
