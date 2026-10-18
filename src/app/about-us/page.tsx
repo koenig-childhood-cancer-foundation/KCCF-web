@@ -238,10 +238,10 @@ export default function AboutUs() {
       {/* Plum ending: invite Elana to speak */}
       <section className="py-20 bg-violet-600 dark:bg-gray-800">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Bring Elana&rsquo;s Story to Your Event</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Book Elana to Speak</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10">
-            Graduations, galas, corporate events and media.
+            For graduations, galas, corporate events and media.
           </p>
           <FormButton formType="book-elana" variant="orange" size="lg" className="py-4 px-10 text-lg">
             Book Elana to Speak
