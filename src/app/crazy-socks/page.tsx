@@ -6,17 +6,14 @@ import { Fragment, useEffect, useRef } from 'react';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 import { IMPACT_STATS } from '@/constants/impactStats';
-import { useFormModal } from '@/contexts/FormModalContext';
 
 export default function CrazySocks() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const { openModal } = useFormModal();
 
   const howItWorksSteps = [
     {
       title: 'You Sponsor',
       text: 'Your sponsorship covers the supplies. We bring everything to you and set up.',
-      inquire: true,
       image: '/images/bankofamerica-scaled.jpeg',
       alt: 'Gift bag supplies set out on a table before an event',
     },
@@ -289,18 +286,6 @@ export default function CrazySocks() {
                   </h3>
                   <p className="text-gray-700 dark:text-gray-200 leading-relaxed px-4">
                     {step.text}
-                    {step.inquire && (
-                      <>
-                        {' '}
-                        <button
-                          type="button"
-                          onClick={() => openModal('crazy-socks-sponsor')}
-                          className="font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 decoration-[#DAB87E] hover:text-violet-700 dark:hover:text-saffron-300 cursor-pointer"
-                        >
-                          Inquire Here &rarr;
-                        </button>
-                      </>
-                    )}
                   </p>
                   <div className="flex-1 min-h-[30px]" />
                   <div className="mx-[18px] mb-[18px] bg-white p-[7px] rounded-[14px] border border-[#DAB87E] shadow-lg">
