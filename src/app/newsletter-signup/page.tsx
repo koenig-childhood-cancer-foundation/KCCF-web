@@ -69,48 +69,6 @@ export default function NewsletterSignup() {
         </div>
       </section>
 
-      {/* Newsletter Archive Preview */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-violet-700 mb-12">Recent Newsletter Highlights</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-violet-400 to-fandango-400 flex items-center justify-center">
-                <span className="text-white text-4xl">📊</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-violet-700 mb-2">2024 Impact Report</h3>
-                <p className="text-violet-600 mb-4">See how your support helped hundreds of families this year.</p>
-                <span className="text-sm text-violet-500 font-medium">December 2024</span>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-saffron-400 to-orange-400 flex items-center justify-center">
-                <span className="text-white text-4xl">🎄</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-violet-700 mb-2">Holiday Gift Drive Success</h3>
-                <p className="text-violet-600 mb-4">Over 500 children received special holiday care packages.</p>
-                <span className="text-sm text-violet-500 font-medium">November 2024</span>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-fandango-400 to-violet-400 flex items-center justify-center">
-                <span className="text-white text-4xl">🏕️</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-violet-700 mb-2">Summer Camp Registration</h3>
-                <p className="text-violet-600 mb-4">Applications are now open for our international summer camp program.</p>
-                <span className="text-sm text-violet-500 font-medium">October 2024</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Information */}
       <section className="py-16 bg-platinum-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

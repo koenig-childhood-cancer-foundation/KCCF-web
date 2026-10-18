@@ -36,8 +36,8 @@ export const searchData: SearchItem[] = [
     category: 'Programs'
   },
   {
-    title: 'Camp',
-    description: 'Camp programs for children affected by cancer',
+    title: 'KCCF Camp',
+    description: 'Emotional healing for children with cancer and their siblings, free for families',
     href: '/camp',
     keywords: ['camp', 'summer', 'kids', 'children', 'activities', 'recreation'],
     category: 'Programs'

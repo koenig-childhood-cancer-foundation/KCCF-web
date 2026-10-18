@@ -59,7 +59,7 @@ export default function HomeContent() {
                 href="/aid"
                 className="btn-primary group bg-white/10 hover:bg-white/20 border-2 border-white text-white py-4 px-10 rounded-full text-lg font-semibold inline-flex items-center justify-center"
               >
-                <span>Family Aid</span>
+                <span>Apply for Family Aid</span>
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -168,7 +168,7 @@ export default function HomeContent() {
                 We can help with emergency medical expenses during your child's cancer treatment, such as medical bills, transportation, lodging, food, and more.
               </p>
               <Link href="/aid" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto">
-                Apply for Help
+                Apply for Family Aid
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -209,10 +209,10 @@ export default function HomeContent() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">KCCF Camp</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
-                Join our international summer camp in Azerbaijan for children diagnosed with cancer.
+                An international summer camp in Azerbaijan for children with cancer and their siblings, free for families.
               </p>
               <Link href="/camp" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto">
-                Join Camp
+                Learn More
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -373,19 +373,19 @@ export default function HomeContent() {
               <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana singing the national anthem at a Mets game</h3>
             </div>
 
-            {/* People Magazine */}
+            {/* WNBC: families from Ukraine */}
             <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <iframe
                   className="w-full h-full group-hover:scale-105 transition-transform duration-300"
                   src="https://www.youtube.com/embed/Bgisln8H59w?rel=0"
-                  title="WNBC Mark Ukraine"
+                  title="WNBC: Families from Ukraine supported by KCCF"
                   loading="lazy"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana and KCCF's story featured in People</h3>
+              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">WNBC: Families from Ukraine supported by KCCF</h3>
             </div>
 
             {/* Nasdaq */}
