@@ -3,11 +3,11 @@ import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: "KCCF Camp - International Summer Camp for Children with Cancer & Siblings | KCCF",
-  description: "An international summer camp experience in Azerbaijan for children diagnosed with cancer and their siblings. KCCF International Camp fosters confidence, joy, and emotional healing — giving kids the chance to simply be kids again.",
+  description: "An international summer camp in Azerbaijan for emotional healing for children diagnosed with cancer and their siblings. KCCF International Camp fosters confidence, joy, and emotional healing — giving kids the chance to simply be kids again.",
   keywords: ["KCCF camp", "KCCF International Camp", "summer camp Azerbaijan", "children with cancer", "siblings of cancer patients", "pediatric cancer camp", "cancer support", "healing camp", "camp counselor volunteering", "corporate volunteering", "CSR", "therapeutic camp", "employee engagement", "international camp", "Azerbaijan"],
   openGraph: {
     title: "KCCF Camp - International Summer Camp for Children with Cancer & Siblings | KCCF",
-    description: "An international summer camp experience in Azerbaijan for children diagnosed with cancer and their siblings. KCCF International Camp fosters confidence, joy, and emotional healing — giving kids the chance to simply be kids again.",
+    description: "An international summer camp in Azerbaijan for emotional healing for children diagnosed with cancer and their siblings. KCCF International Camp fosters confidence, joy, and emotional healing — giving kids the chance to simply be kids again.",
     type: "website",
     url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/camp` : "https://thekccf.org/camp",
   },
