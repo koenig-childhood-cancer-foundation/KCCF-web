@@ -138,7 +138,7 @@ export default function AboutUs() {
 
       {/* Between the top photo and the story card */}
       <div className="bg-white dark:bg-gray-900 pt-10 pb-8 px-4 text-center">
-        <p className="text-xl sm:text-3xl font-bold tracking-[0.22em] uppercase bg-gradient-to-r from-[#8A6A2E] via-[#C9A25A] to-[#8A6A2E] bg-clip-text text-transparent dark:from-[#DAB87E] dark:via-[#F1DDB0] dark:to-[#DAB87E]">From Patient to Changemaker</p>
+        <p className="text-xl sm:text-3xl font-bold tracking-[0.22em] uppercase bg-gradient-to-r from-[#8A6A2E] via-[#A8823F] to-[#8A6A2E] bg-clip-text text-transparent dark:from-[#DAB87E] dark:via-[#F1DDB0] dark:to-[#DAB87E]">From Patient to Changemaker</p>
         <div className="w-24 h-1 bg-[#DAB87E] rounded-full mx-auto mt-4" aria-hidden="true" />
       </div>
 
