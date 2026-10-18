@@ -275,7 +275,8 @@ export default function Donate() {
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
             No child should fight cancer alone.
           </h2>
-          <p className="text-xl md:text-2xl font-bold text-[#DAB87E] mb-10">
+          <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
+          <p className="text-xl text-white/90 mb-10">
             Thank you for standing with our families.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -290,11 +291,11 @@ export default function Donate() {
                 </svg>
               }
             >
-              Give Now
+              Donate Now
             </DonationButton>
             <Link
               href="/fundraisers"
-              className="btn-primary bg-white/10 hover:bg-white/20 text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white"
+              className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors"
             >
               Start a Fundraiser
             </Link>
