@@ -108,7 +108,7 @@ export default function HomeContent() {
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Link href="/our-story" className="btn-primary btn-primary-violet py-3 px-8 rounded-full font-semibold text-center">
+                <Link href="/about-us" className="btn-primary btn-primary-violet py-3 px-8 rounded-full font-semibold text-center">
                   Read Her Story
                 </Link>
                 <FormButton 

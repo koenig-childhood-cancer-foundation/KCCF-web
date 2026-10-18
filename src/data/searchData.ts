@@ -15,17 +15,10 @@ export const searchData: SearchItem[] = [
     category: 'Pages'
   },
   {
-    title: 'Our Story',
-    description: 'Learn about our mission and the story behind KCCF',
-    href: '/our-story',
-    keywords: ['story', 'mission', 'about', 'elana', 'koenig', 'history', 'founder'],
-    category: 'About'
-  },
-  {
-    title: 'KCCF Family',
-    description: 'Meet the families we have helped',
-    href: '/kccf-family',
-    keywords: ['family', 'families', 'helped', 'support', 'children', 'kids'],
+    title: 'About Us',
+    description: "Elana's story, our mission and the KCCF team",
+    href: '/about-us',
+    keywords: ['about', 'about us', 'story', 'our story', 'mission', 'elana', 'koenig', 'history', 'founder', 'team', 'board', 'kccf family', 'speaker'],
     category: 'About'
   },
   {
