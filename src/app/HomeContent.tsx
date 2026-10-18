@@ -300,7 +300,7 @@ export default function HomeContent() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 max-w-7xl mx-auto">
             {[
               {
                 name: "Derek",
@@ -323,15 +323,15 @@ export default function HomeContent() {
                 image: "/images/cropped-Mishka-Belarus.jpg"
               }
             ].map((warrior, index) => (
-              <div key={index} className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-violet-400 p-4 shadow-md">
+              <div key={index} className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-violet-400 p-3 shadow-md">
                 <div className="relative mb-4">
-                  <div className="relative w-full aspect-square max-w-48 mx-auto">
+                  <div className="relative w-full aspect-square max-w-64 mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-violet-400 rounded-full opacity-20"></div>
                     <Image
                       src={warrior.image}
                       alt={warrior.name}
                       fill
-                      sizes="192px"
+                      sizes="256px"
                       className="rounded-full object-cover relative z-10"
                       loading="lazy"
                     />
