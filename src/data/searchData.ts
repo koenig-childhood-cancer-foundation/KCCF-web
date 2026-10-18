@@ -50,9 +50,9 @@ export const searchData: SearchItem[] = [
     category: 'Contact'
   },
   {
-    title: 'Volunteer',
-    description: 'Join our team of volunteers and make a difference',
-    href: '/volunteer',
+    title: 'Get Involved',
+    description: 'Start a fundraiser, sponsor a gift bag event, book Elana to speak, help build our camp or volunteer',
+    href: '/get-involved',
     keywords: ['volunteer', 'help', 'join', 'team', 'contribute', 'service'],
     category: 'Contact'
   },
@@ -64,9 +64,9 @@ export const searchData: SearchItem[] = [
     category: 'Pages'
   },
   {
-    title: 'Fundraisers',
-    description: 'Upcoming and past fundraising events',
-    href: '/fundraisers',
+    title: 'Start a Fundraiser',
+    description: 'Start your own peer-to-peer fundraiser for children with cancer',
+    href: '/get-involved#fundraisers',
     keywords: ['fundraisers', 'events', 'donate', 'charity', 'upcoming'],
     category: 'Pages'
   },

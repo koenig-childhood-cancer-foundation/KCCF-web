@@ -136,7 +136,7 @@ export default function Contact() {
               <p className="text-violet-600">
                 We welcome volunteers for various programs including Crazy Socks events, administrative support,
                 and fundraising activities. Visit our
-                <a href="/volunteer" className="text-orange-500 hover:text-orange-600 font-semibold"> Volunteer</a> page to learn more.
+                <a href="/get-involved#volunteer" className="text-orange-500 hover:text-orange-600 font-semibold"> Get Involved</a> page and choose &ldquo;Apply to Volunteer.&rdquo;
               </p>
             </div>
 

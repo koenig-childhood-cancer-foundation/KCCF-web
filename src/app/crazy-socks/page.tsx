@@ -404,7 +404,7 @@ export default function CrazySocks() {
               Sponsor an Event
             </FormButton>
             <Link
-              href="/fundraisers"
+              href="/get-involved#fundraisers"
               className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors"
             >
               Start a Fundraiser
