@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import CallToAction from '@/components/CallToAction';
 import { useFormModal } from '@/contexts/FormModalContext';
 import { IMPACT_STATS } from '@/constants/impactStats';
 
@@ -217,7 +216,22 @@ export default function GetInvolved() {
       </section>
 
 
-      <CallToAction />
+      {/* Plum ending: the page's main ask */}
+      <section className="py-20 bg-violet-600 dark:bg-gray-800">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">No child should fight cancer alone.</h2>
+          <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
+          <p className="text-xl text-white/90 mb-10">Start a fundraiser today, or give in one minute.</p>
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            <a href="#fundraisers" className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center">
+              Start a Fundraiser
+            </a>
+            <Link href="/donate" className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors">
+              Donate Now
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
