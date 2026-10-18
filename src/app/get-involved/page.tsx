@@ -208,9 +208,9 @@ export default function GetInvolved() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Ready to Make a Difference?</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
-          <p className="text-xl text-white/90 mb-10">
-            Start a fundraiser today, or tell us how you&rsquo;d like to help. KCCF is a 100% volunteer-run
-            organization, and we bring on skilled volunteers as needs come up.
+          <p className="text-xl text-white/90">Start a fundraiser today, or tell us how you&rsquo;d like to help.</p>
+          <p className="mt-2 mb-10 text-base text-[#F1DDB0]">
+            KCCF is a 100% volunteer-run organization. We bring on skilled volunteers as needs come up.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <a href="#fundraisers" className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center">
