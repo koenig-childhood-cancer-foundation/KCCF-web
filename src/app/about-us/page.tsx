@@ -190,6 +190,7 @@ export default function AboutUs() {
               my own battle had ended, the fight countless children and families were facing was far from over. That
               motivated me to start KCCF in 2020 with $900 in my piggy bank to help other children battling cancer.
             </p>
+            <p>Today I am a student at Cornell University, Class of 2030.</p>
           </div>
           <blockquote className="mt-12 text-center">
             <p className="text-3xl md:text-4xl font-bold text-violet-600 dark:text-saffron-400 leading-tight">&ldquo;No child should fight cancer alone.&rdquo;</p>
@@ -224,23 +225,6 @@ export default function AboutUs() {
             treatment. KCCF helps lift that financial strain so families can focus on their child.
           </p>
           <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">Worldwide figures: World Health Organization, 2026.</p>
-        </div>
-      </section>
-
-      {/* Meet Our Founder (facts from KCCF Current Facts – MASTER, Elana's story) */}
-      <section className="pb-4 pt-16 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
-        <div className="max-w-3xl mx-auto px-4">
-          <div className="text-center bg-white dark:bg-gray-800 rounded-[22px] border-t-4 border-violet-600 shadow-md px-6 py-10 md:px-12">
-            <p className="text-sm font-bold tracking-[0.2em] uppercase text-[#8A6A2E] dark:text-[#DAB87E]">Meet Our Founder</p>
-            <h3 className="mt-2 text-3xl font-bold text-violet-600 dark:text-saffron-400">Elana Koenig</h3>
-            <p className="mt-1 italic font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">Teen Cancer Survivor · Singer · Influencer · Founder</p>
-            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto my-5" aria-hidden="true" />
-            <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
-              Elana Koenig is a teen cancer survivor, singer, influencer and the founder of Koenig Childhood Cancer
-              Foundation (KCCF). Diagnosed with cancer at age 7, she founded KCCF in 2020, at age 11, with the $900 in
-              her piggy bank. Today she is a student at Cornell University, Class of 2030.
-            </p>
-          </div>
         </div>
       </section>
 
