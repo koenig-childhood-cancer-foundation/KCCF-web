@@ -113,7 +113,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block py-1 text-gray-300 hover:text-pink-500 transition-colors"
-                  aria-label="Follow Elana on Instagram"
+                  aria-label="Follow KCCF on Instagram"
                 >
                   <svg
                     className="w-6 h-6"
@@ -157,7 +157,7 @@ export default function Footer() {
                       href="/crazy-socks"
                       className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
-                      Sponsor Gift Bag Event
+                      Sponsor a Gift Bag Event
                     </Link>
                   </li>
                   <li>

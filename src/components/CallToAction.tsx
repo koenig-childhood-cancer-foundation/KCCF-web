@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useDonationModal } from '@/contexts/DonationModalContext';
 
 export default function CallToAction() {
-  const { openModal } = useDonationModal();
+  const { openModal, warmUp } = useDonationModal();
 
   return (
     <section className="py-20 bg-violet-600 dark:bg-gray-800 relative overflow-hidden">
@@ -22,7 +22,7 @@ export default function CallToAction() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <button type="button" onClick={() => openModal()} className="btn-primary btn-primary-orange group text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center cursor-pointer">
+          <button type="button" onClick={() => openModal()} onMouseEnter={warmUp} onFocus={warmUp} className="btn-primary btn-primary-orange group text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center cursor-pointer">
             <span>Donate Now</span>
             <svg className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />

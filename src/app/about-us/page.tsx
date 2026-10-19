@@ -38,7 +38,7 @@ const board: Person[] = [
     title: 'Secretary',
     photo: '/images/cropped-Bradley-Bailyn-1.png',
     bio: [
-      'A graduate of NYU Stern and Brooklyn Law School, Bradley is a leading corporate attorney, litigator, and founder of Bailyn Law. A proud lifelong Brooklyn resident, with his wife, two kids and a dog.',
+      'A graduate of NYU Stern and Brooklyn Law School, Bradley is a leading corporate attorney, litigator, and Partner at The Bailyn Law Firm, P.C. A proud lifelong Brooklyn resident, with his wife, two kids and a dog.',
     ],
   },
 ];
