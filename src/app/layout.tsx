@@ -5,8 +5,6 @@ import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { FormModalProvider } from "@/contexts/FormModalContext";
 import FormModal from "@/components/FormModal";
-import { ArticleModalProvider } from "@/contexts/ArticleModalContext";
-import ArticleModal from "@/components/ArticleModal";
 import { SlideshowProvider } from "@/contexts/SlideshowContext";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
@@ -59,7 +57,6 @@ export default function RootLayout({
             <SearchModalProvider>
               <DonationModalProvider>
                 <FormModalProvider>
-                  <ArticleModalProvider>
                     <SlideshowProvider>
                     <LoadingSpinner />
                     <Navigation />
@@ -70,14 +67,12 @@ export default function RootLayout({
                     <ConsentPreferencesModal />
                     <Footer />
                     <FormModal />
-                    <ArticleModal />
                     <SearchModal />
                     <DonationModal />
                     <Suspense fallback={null}>
                       <SubmissionModal />
                     </Suspense>
                     </SlideshowProvider>
-                  </ArticleModalProvider>
                 </FormModalProvider>
               </DonationModalProvider>
             </SearchModalProvider>

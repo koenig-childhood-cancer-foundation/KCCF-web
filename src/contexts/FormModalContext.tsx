@@ -33,38 +33,38 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
     height: '1900px'
   },
   'crazy-socks-sponsor': {
-    title: 'Thank you for your initiative in sponsoring the gift bag event!',
-    subtitle: 'The form may take a few seconds to load.',
+    title: 'Sponsor a Gift Bag Event',
+    subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
     src: 'https://forms.monday.com/forms/embed/78b71c024990383d274ad455e744923a?r=use1',
     height: '2000px'
   },
   'newsletter-signup': {
-    title: 'Thank you for your interest in our newsletter!',
-    subtitle: 'The form may take a few seconds to load.',
+    title: 'Join Our Newsletter',
+    subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
     src: 'https://thekccf.us17.list-manage.com/subscribe?u=041a777be61cc7e1bc20e3517&id=8696f27783',
     height: '650px'
   },
   'book-elana': {
-    title: 'Thank you for your interest in having Elana share her story!',
-    subtitle: 'The form may take a few seconds to load.',
+    title: 'Book Elana to Speak',
+    subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
     src: 'https://forms.monday.com/forms/embed/0caf48b3cfeede4c889e59ac52ce5fb1?r=use1',
     height: '1900px'
   },
   'volunteer': {
-    title: 'Thank you for your interest in becoming a volunteer!',
-    subtitle: 'The form may take a few seconds to load.',
+    title: 'Apply to Volunteer',
+    subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
     src: 'https://forms.monday.com/forms/embed/650d6c93433108a85097471c822b4cbf?r=use1',
     height: '3100px'
   },
   'contact': {
-    title: 'Thank you for reaching out - we\'re here to help!',
-    subtitle: 'The form may take a few seconds to load.',
+    title: 'Send Us a Message',
+    subtitle: 'We\'re here to help. The form takes a few seconds to load.',
     src: 'https://forms.monday.com/forms/embed/7d2a1baf81662443852a38886ac80dd4?r=use1',
     height: '1100px'
   },
   'aid-application': {
-    title: 'Apply for Financial Assistance',
-    subtitle: 'We are grateful to be part of your challenging journey. This form may take a few minutes to load.',
+    title: 'Apply for Family Aid',
+    subtitle: 'We are grateful to be part of your journey. The form may take a minute to load.',
     src: 'https://forms.monday.com/forms/embed/972de98e599d383218e348dd923eec38?r=use1',
     height: '2500px'
   }

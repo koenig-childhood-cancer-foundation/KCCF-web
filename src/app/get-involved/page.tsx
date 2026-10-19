@@ -56,7 +56,7 @@ export default function GetInvolved() {
       action: { label: 'Start a Fundraiser', href: '#fundraisers' },
     },
     {
-      title: 'Be a Crazy Socks Champion',
+      title: 'Sponsor a Gift Bag Event',
       text: 'Bring a Crazy Socks gift bag event to your company, school or community group. Check with your company\u2019s CSR team. Many match or sponsor events.',
       photo: '/images/yellow-shirt.jpg',
       alt: 'Teen volunteers in yellow KCCF shirts',
@@ -71,7 +71,7 @@ export default function GetInvolved() {
     },
     {
       title: 'Help Build Our Camp',
-      text: 'Bring your camp, medical or child-care experience to help plan and run the KCCF International Camp in Azerbaijan.',
+      text: 'Bring your camp, medical or child-care experience to help plan and run KCCF Camp in Azerbaijan.',
       photo: '/images/header_image_camp.jpg',
       alt: 'Campers and staff at the KCCF International Camp',
       action: { label: 'Learn More', href: '/camp' },

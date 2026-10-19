@@ -27,7 +27,7 @@ export const IMPACT_STATS = {
     },
     {
       value: "120",
-      label: "Summer Camp Children"
+      label: "Children at KCCF Camp"
     }
   ] as ImpactStat[],
 

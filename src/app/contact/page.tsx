@@ -17,7 +17,7 @@ type Action =
 // "How can we help?": the main ways to reach KCCF, and where each one goes
 const helps: { title: string; text: string; action: Action }[] = [
   {
-    title: 'Financial Help for a Family',
+    title: 'Family Aid',
     text: 'Families of children in active treatment can apply for emergency aid.',
     action: { label: 'Apply for Family Aid', form: 'aid-application' },
   },
