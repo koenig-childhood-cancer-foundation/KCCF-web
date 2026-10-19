@@ -210,14 +210,6 @@ export default function GetInvolved() {
               >
                 Start My Fundraiser
               </a>
-              <a
-                href={ZEFFY_CAMPAIGN}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white dark:border-white dark:text-white transition-colors"
-              >
-                Give to a Fundraiser
-              </a>
             </div>
           </div>
 

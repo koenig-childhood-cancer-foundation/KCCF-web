@@ -289,12 +289,12 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Brave Warriors Section */}
+      {/* KCCF Kids Section */}
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-violet-600 dark:text-white">
-              Thank You from Our Brave Warriors
+              Thank You from Our KCCF Kids
             </h2>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
