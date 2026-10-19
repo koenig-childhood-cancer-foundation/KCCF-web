@@ -12,9 +12,9 @@ export default function Privacy() {
       <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
         {/* Plum background (no photo on this page) */}
         <div className="absolute inset-0 top-24 bg-[#772D5E]">
-          {/* Thin gold lines on both sides, as in the brand's signature frame */}
-          <div className="absolute inset-y-0 left-1 w-[3px] bg-[#DAB87E]" aria-hidden="true" />
-          <div className="absolute inset-y-0 right-1 w-[3px] bg-[#DAB87E]" aria-hidden="true" />
+          {/* Thin gold lines above and below the plum header */}
+          <div className="absolute inset-x-0 top-0 h-[3px] bg-[#DAB87E]" aria-hidden="true" />
+          <div className="absolute inset-x-0 bottom-0 h-[3px] bg-[#DAB87E]" aria-hidden="true" />
         </div>
 
         {/* PageHeader */}
