@@ -54,14 +54,14 @@ const videos = [
   },
   {
     title: 'Elana & Sabrina on ABC7 New York',
-    text: 'A Valentine\'s Day "Be Kind" story about care packages. February 15, 2021.',
+    text: 'A Valentine\'s Day "Be Kind" story about Crazy Socks gift bags. February 15, 2021.',
     embed: 'https://abc7ny.com/video/embed/?pid=10340426',
     source: 'ABC7 New York',
     link: { label: 'Read the article', href: 'https://abc7ny.com/be-kind-valentines-day-cancer-care-packages/10340454/' },
   },
   {
     title: 'Elana & Sabrina on NBC 4 New York (2021)',
-    text: 'Elana, then 12, delivers care packages to kids with cancer. February 15, 2021.',
+    text: 'Elana, then 12, delivers Crazy Socks gift bags to kids with cancer. February 15, 2021.',
     embed: 'https://www.youtube.com/embed/pKssob6SdV4',
     link: { label: 'Read the article', href: 'https://www.nbcnewyork.com/news/local/12-year-old-survivor-delivers-heartfelt-packages-to-kids-with-cancer/2889964/' },
   },
