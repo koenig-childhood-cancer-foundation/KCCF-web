@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 type VideoEmbedProps = {
   // A YouTube or ABC7 embed URL
@@ -22,6 +22,12 @@ function youTubeId(src: string) {
 export default function VideoEmbed({ src, title, source, className = '' }: VideoEmbedProps) {
   const [playing, setPlaying] = useState(false)
   const id = youTubeId(src)
+  const frameRef = useRef<HTMLIFrameElement>(null)
+
+  // The play button disappears on click, so hand keyboard focus to the player
+  useEffect(() => {
+    if (playing) frameRef.current?.focus()
+  }, [playing])
 
   if (playing) {
     const playSrc = id
@@ -29,6 +35,7 @@ export default function VideoEmbed({ src, title, source, className = '' }: Video
       : src
     return (
       <iframe
+        ref={frameRef}
         className={`w-full h-full ${className}`}
         src={playSrc}
         title={title}
