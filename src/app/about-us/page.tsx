@@ -19,10 +19,10 @@ type Person = { name: string; title?: string; photo: string; bio: string[] };
 const board: Person[] = [
   {
     name: 'Rena Koenig, MBA',
-    title: 'Co-Founder, President & Keynote Speaker',
+    title: 'Co-Founder, Board Member and President',
     photo: '/images/Untitled-drawing-1.jpg',
     bio: [
-      "An NYU Stern graduate with 20 years of corporate leadership at firms like KPMG. She spent the past decade co-running a family business before fully dedicating herself to her daughter Elana's mission—Koenig Childhood Cancer Foundation.",
+      "An NYU Stern graduate with 20 years of corporate leadership at firms like KPMG. She spent the past decade co-running a family business before fully dedicating herself to her daughter Elana's mission—Koenig Childhood Cancer Foundation. Rena is also a keynote speaker at Fortune 500 companies, where she raises awareness of childhood cancer and inspires employees to take action.",
     ],
   },
   {
