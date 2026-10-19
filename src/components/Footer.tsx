@@ -210,7 +210,17 @@ export default function Footer() {
                       rel="noopener noreferrer"
                       className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
-                      W9
+                      W-9
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/documents/financial-review-2025-kccf.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      2025 Financial Review
                     </a>
                   </li>
                   <li className="text-gray-300">
