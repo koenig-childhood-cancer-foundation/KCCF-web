@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Financials | KCCF",
     description: "90.6% of expenses went to programs (KCCF's 2025 Financial Review). Download our Financial Review, Form 990s, IRS letter and W-9.",
     type: "website",
-    url: "https://thekccf.org/financials",
+    url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/financials` : "https://thekccf.org/financials",
   },
   alternates: {
     canonical: "https://thekccf.org/financials",
