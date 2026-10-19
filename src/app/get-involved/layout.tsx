@@ -2,15 +2,16 @@ import type { Metadata } from 'next';
 import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: "Get Involved - Start a Fundraiser or Volunteer | KCCF",
-  description: "Start a peer-to-peer fundraiser for Koenig Childhood Cancer Foundation (KCCF), bring a Crazy Socks gift bag event to your company, help build the KCCF International Camp, or volunteer your skills.",
+  title: "Get Involved: Fundraise, Volunteer, Sponsor | KCCF",
+  description: "Turn a birthday or school event into a fundraiser, bring a gift bag event to your company, or book Elana to speak. KCCF is 100% volunteer-run.",
   keywords: [
     "get involved", "volunteer", "start a fundraiser", "peer-to-peer fundraising", "gift bag event",
     "KCCF", "childhood cancer", "New York", "nonprofit volunteer",
   ],
   openGraph: {
-    title: "Get Involved - Start a Fundraiser or Volunteer | KCCF",
-    description: "Start a fundraiser for KCCF, bring a Crazy Socks gift bag event to your company, help build our camp, or volunteer your skills.",
+    images: ["https://thekccf.org/og-image.jpg"],
+    title: "Get Involved: Fundraise, Volunteer, Sponsor | KCCF",
+    description: "Turn a birthday or school event into a fundraiser, bring a gift bag event to your company, or book Elana to speak. KCCF is 100% volunteer-run.",
     type: "website",
     url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/get-involved` : "https://thekccf.org/get-involved",
   },
