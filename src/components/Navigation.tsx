@@ -18,15 +18,18 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileExpandedItems, setMobileExpandedItems] = useState<string[]>([])
-  const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
+  // Only the home page starts with a see-through header over the photo. Every other
+  // page starts with the white header and colored logo and icons, so they show
+  // even before the page's code has loaded.
+  const [isScrolled, setIsScrolled] = useState(!isHomePage)
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isHoveringRef = useRef(false)
   const { theme } = useTheme()
   const { openModal: openSearchModal } = useSearchModal()
   const { openModal } = useFormModal()
   const { openModal: openDonationModal } = useDonationModal()
-  const pathname = usePathname()
-  const isHomePage = pathname === '/'
 
   // Helper function to render dropdown items consistently
   const renderDropdownItem = (
@@ -75,6 +78,7 @@ export default function Navigation() {
       setIsScrolled(scrollTop > 10)
     }
 
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isHomePage])
