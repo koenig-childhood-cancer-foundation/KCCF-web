@@ -194,7 +194,7 @@ export default function HomeContent() {
               <div className="flex items-center justify-center mb-6 overflow-hidden rounded-xl">
                 <Image
                   src="/images/crazy-socks-impact-program.jpg"
-                  alt="Crazy Socks Program Image"
+                  alt="A KCCF child is happy to get a KCCF Crazy Socks gift bag"
                   width={500}
                   height={600}
                 />

@@ -141,13 +141,19 @@ export default function NotFound() {
               Try these popular pages or use your browser's back button to return to where you were.
             </p>
             <div className="flex flex-wrap gap-2 justify-center">
-              {['Crazy Socks', 'Media', 'Volunteer', 'KCCF Family', 'Contact'].map((page) => (
+              {[
+                { label: 'Crazy Socks', href: '/crazy-socks' },
+                { label: 'Media', href: '/media' },
+                { label: 'Get Involved', href: '/get-involved' },
+                { label: 'About Us', href: '/about-us' },
+                { label: 'Contact', href: '/contact' },
+              ].map(({ label, href }) => (
                 <Link
-                  key={page}
-                  href={`/${page.toLowerCase().replace(' ', '-')}`}
+                  key={href}
+                  href={href}
                   className="px-4 py-2 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded-full text-sm font-medium hover:bg-violet-200 dark:hover:bg-violet-900/50 transition-colors"
                 >
-                  {page}
+                  {label}
                 </Link>
               ))}
             </div>
