@@ -8,9 +8,9 @@ export const metadata: Metadata = {
       : 'https://thekccf.org',
   ),
   title:
-    'Koenig Childhood Cancer Foundation - Financial and emotional support to families fighting pediatric cancer | KCCF',
+    "Helping Children Beat Cancer | Koenig Childhood Cancer Foundation",
   description:
-    'Koenig Childhood Cancer Foundation — founded by cancer survivor Elana Koenig at age 11 with just $900 from her piggy bank. KCCF has supported 4,800+ families battling childhood cancer through financial aid, summer camp, and community programs, delivering over 135,000 gift bags — containing 315,000 items — to hospitalized children across the U.S. Featured on The Kelly Clarkson Show, People Magazine, ABC, NBC, CBS, and CNBC, as well as international media. Elana also sang the National Anthem at Citi Field during a New York Mets game.',
+    "KCCF \u2014 founded by cancer survivor Elana Koenig at age 11 \u2014 has helped 4,800+ families and delivered 135,000+ gift bags to children in the hospital.",
   keywords: [
     'childhood cancer foundation',
     'family run charity',
@@ -26,29 +26,29 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      'Koenig Childhood Cancer Foundation - Financial and emotional support to families fighting pediatric cancer | KCCF',
+      "Helping Children Beat Cancer | Koenig Childhood Cancer Foundation",
     description:
-      'Koenig Childhood Cancer Foundation — founded by cancer survivor Elana Koenig at age 11 with just $900 from her piggy bank. KCCF has supported 4,800+ families battling childhood cancer through financial aid, summer camp, and community programs, delivering over 135,000 gift bags — containing 315,000 items — to hospitalized children across the U.S. Featured on The Kelly Clarkson Show, People Magazine, ABC, NBC, CBS, and CNBC, as well as international media. Elana also sang the National Anthem at Citi Field during a New York Mets game.',
+      "KCCF \u2014 founded by cancer survivor Elana Koenig at age 11 \u2014 has helped 4,800+ families and delivered 135,000+ gift bags to children in the hospital.",
     type: 'website',
     url: process.env.NEXT_PUBLIC_VERCEL_URL
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
       : 'https://thekccf.org',
     images: [
       {
-        url: '/opengraph-image',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Koenig Childhood Cancer Foundation',
+        alt: 'Elana Koenig with a child in the hospital, and the words Helping Children Beat Cancer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title:
-      'Koenig Childhood Cancer Foundation - Financial and emotional support to families fighting pediatric cancer | KCCF',
+      "Helping Children Beat Cancer | Koenig Childhood Cancer Foundation",
     description:
-      'Koenig Childhood Cancer Foundation — founded by cancer survivor Elana Koenig at age 11 with just $900 from her piggy bank. KCCF has supported 4,800+ families battling childhood cancer through financial aid, summer camp, and community programs, delivering over 135,000 gift bags — containing 315,000 items — to hospitalized children across the U.S. Featured on The Kelly Clarkson Show, People Magazine, ABC, NBC, CBS, and CNBC, as well as international media. Elana also sang the National Anthem at Citi Field during a New York Mets game.',
-    images: ['/opengraph-image'],
+      "KCCF \u2014 founded by cancer survivor Elana Koenig at age 11 \u2014 has helped 4,800+ families and delivered 135,000+ gift bags to children in the hospital.",
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,

@@ -2,15 +2,16 @@ import type { Metadata } from 'next';
 import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: "About Us - Our Story and Team | KCCF",
-  description: "How Elana Koenig founded Koenig Childhood Cancer Foundation (KCCF) in 2020, at age 11, with the $900 in her piggy bank, and the team behind KCCF today. Book Elana as a keynote speaker.",
+  title: "About Us: Elana's Story and Our Team | KCCF",
+  description: "Diagnosed with cancer at 7, Elana started KCCF in 2020, at 11, with $900 from her piggy bank. Meet our board, advisers and honorary directors.",
   keywords: [
     "Elana Koenig", "KCCF", "about us", "our story", "KCCF team", "board of directors",
     "childhood cancer", "keynote speaker", "book Elana Koenig",
   ],
   openGraph: {
-    title: "About Us - Our Story and Team | KCCF",
-    description: "How Elana Koenig founded KCCF in 2020, at age 11, with the $900 in her piggy bank, and the team behind KCCF today.",
+    images: ["https://thekccf.org/og-image.jpg"],
+    title: "About Us: Elana's Story and Our Team | KCCF",
+    description: "Diagnosed with cancer at 7, Elana started KCCF in 2020, at 11, with $900 from her piggy bank. Meet our board, advisers and honorary directors.",
     type: "website",
     url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/about-us` : "https://thekccf.org/about-us",
   },

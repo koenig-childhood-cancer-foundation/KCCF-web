@@ -23,10 +23,9 @@ const giftImpacts: {
   },
   {
     title: 'Crazy Socks Gift Bags',
-    amounts: [
-      { amount: '$20', text: 'one gift bag for a child in the hospital' },
-      { amount: '$6,000', text: '300 gift bags for 300 children' },
-    ],
+    amounts: [],
+    note: 'Crazy Socks gift bags delivered to children in isolation wards.',
+    stat: '135,000+ gift bags delivered',
   },
   {
     title: 'KCCF International Camp',

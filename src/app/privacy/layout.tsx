@@ -3,11 +3,12 @@ import { type ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: "Privacy Policy | KCCF",
-  description: "Learn about how Koenig Childhood Cancer Foundation collects, uses, and protects your personal information. Our privacy policy covers GDPR compliance, California Consumer Privacy Act (CCPA) rights, and cookie usage.",
+  description: "How we collect, use and protect your information, and how to manage your cookie choices.",
   keywords: ["privacy policy", "GDPR", "California privacy", "CCPA", "cookie policy", "data protection", "personal information", "KCCF", "childhood cancer foundation"],
   openGraph: {
+    images: ["https://thekccf.org/og-image.jpg"],
     title: "Privacy Policy | KCCF",
-    description: "Learn about how Koenig Childhood Cancer Foundation collects, uses, and protects your personal information. Our privacy policy covers GDPR compliance, California Consumer Privacy Act (CCPA) rights, and cookie usage.",
+    description: "How we collect, use and protect your information, and how to manage your cookie choices.",
     type: "website",
     url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/privacy` : "https://thekccf.org/privacy",
   },
