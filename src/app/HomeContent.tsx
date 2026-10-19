@@ -356,7 +356,7 @@ export default function HomeContent() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
             {/* Kelly Clarkson Show */}
-            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
+            <div className="card-interactive group bg-[#FBF5EA] dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-[#F0E4CC] border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <VideoEmbed src="https://www.youtube.com/embed/clbbmsPRyS8?rel=0&start=380" title="Charles Esten Invites 15-Year-Old Cancer Survivor To Sing At Nashville Benefit Concert" />
               </div>
@@ -364,7 +364,7 @@ export default function HomeContent() {
             </div>
 
             {/* Mets Game */}
-            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
+            <div className="card-interactive group bg-[#FBF5EA] dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-[#F0E4CC] border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <VideoEmbed src="https://www.youtube.com/embed/dZmB8dH9X70" title="Elana, Teen Cancer Survivor, Sings National Anthem at Mets Game!" />
               </div>
@@ -372,7 +372,7 @@ export default function HomeContent() {
             </div>
 
             {/* WNBC: families from Ukraine */}
-            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
+            <div className="card-interactive group bg-[#FBF5EA] dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-[#F0E4CC] border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <VideoEmbed src="https://www.youtube.com/embed/Bgisln8H59w?rel=0" title="WNBC: Families from Ukraine supported by KCCF" />
               </div>
@@ -380,7 +380,7 @@ export default function HomeContent() {
             </div>
 
             {/* Nasdaq */}
-            <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
+            <div className="card-interactive group bg-[#FBF5EA] dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-[#F0E4CC] border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <VideoEmbed src="https://www.youtube.com/embed/tiamL9EdPC0" title="Nasdaq Honors Elana – Teen Cancer Survivor and Founder of KCCF!" />
               </div>
