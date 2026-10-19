@@ -67,7 +67,7 @@ export default function Footer() {
                   href="https://www.facebook.com/theKCCF"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-blue-500 transition-colors"
+                  className="inline-block py-1 text-gray-300 hover:text-blue-500 transition-colors"
                   aria-label="Follow us on Facebook"
                 >
                   <svg
@@ -97,7 +97,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/company/thekccf/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-blue-600 transition-colors"
+                  className="inline-block py-1 text-gray-300 hover:text-blue-600 transition-colors"
                   aria-label="Follow us on LinkedIn"
                 >
                   <svg
@@ -112,7 +112,7 @@ export default function Footer() {
                   href="https://www.instagram.com/elanalailakoenig/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-pink-500 transition-colors"
+                  className="inline-block py-1 text-gray-300 hover:text-pink-500 transition-colors"
                   aria-label="Follow Elana on Instagram"
                 >
                   <svg
