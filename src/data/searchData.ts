@@ -30,9 +30,9 @@ export const searchData: SearchItem[] = [
   },
   {
     title: 'Crazy Socks',
-    description: 'Our signature fundraising program with fun, colorful socks',
+    description: 'Gift bag making events for children in the hospital',
     href: '/crazy-socks',
-    keywords: ['crazy', 'socks', 'fundraising', 'merchandise', 'buy', 'sponsor'],
+    keywords: ['crazy socks', 'gift bags', 'corporate', 'csr', 'team building', 'employee volunteering', 'volunteer day', 'sponsor', 'company event'],
     category: 'Programs'
   },
   {
@@ -53,7 +53,7 @@ export const searchData: SearchItem[] = [
     title: 'Get Involved',
     description: 'Start a fundraiser, sponsor a gift bag event, book Elana to speak, help build our camp or volunteer',
     href: '/get-involved',
-    keywords: ['volunteer', 'help', 'join', 'team', 'contribute', 'service'],
+    keywords: ['volunteer', 'help', 'join', 'team', 'contribute', 'service', 'corporate', 'company', 'csr', 'team building'],
     category: 'Contact'
   },
   {
@@ -74,7 +74,7 @@ export const searchData: SearchItem[] = [
     title: 'Donate',
     description: 'Make a donation to support children fighting cancer',
     href: '/donate',
-    keywords: ['donate', 'donation', 'give', 'support', 'contribute', 'help'],
+    keywords: ['donate', 'donation', 'give', 'support', 'contribute', 'help', 'matching gift', 'workplace giving', 'benevity', 'employee giving'],
     category: 'Pages'
   },
   {

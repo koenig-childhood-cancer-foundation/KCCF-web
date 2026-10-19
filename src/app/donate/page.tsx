@@ -53,7 +53,7 @@ const waysToGive: { title: string; body: ReactNode; contact: boolean; ein?: 'num
   },
   {
     title: 'Corporate Matching',
-    body: 'Check if your company offers a matching gift program. KCCF is on Benevity.',
+    body: 'Many companies match employee gifts. Ask HR, or find KCCF on Benevity, to have your gift matched.',
     contact: true,
     ein: 'full',
   },
