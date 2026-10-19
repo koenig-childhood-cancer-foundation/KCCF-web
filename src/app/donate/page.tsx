@@ -113,14 +113,7 @@ export default function Donate() {
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-violet-600 dark:text-white">
-              Why Your Gift Matters
-            </h2>
-            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Your gift gives children battling cancer and their families financial and emotional support: treatment, meals, travel, lodging and care during long hospital stays.
-            </p>
-            <div className="mt-10 inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white dark:bg-gray-800 border border-[#DAB87E] rounded-[22px] shadow-md px-8 py-5 max-w-2xl">
+            <div className="mb-12 inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white dark:bg-gray-800 border border-[#DAB87E] rounded-[22px] shadow-md px-8 py-5 max-w-2xl">
               <span className="text-6xl font-extrabold text-violet-600 dark:text-saffron-400 leading-none">90&cent;</span>
               <div className="text-center sm:text-left">
                 <p className="text-xl font-bold text-[#2B2330] dark:text-white">
@@ -131,6 +124,13 @@ export default function Donate() {
                 </p>
               </div>
             </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-violet-600 dark:text-white">
+              Why Your Gift Matters
+            </h2>
+            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Your gift gives children battling cancer and their families financial and emotional support: treatment, meals, travel, lodging and care during long hospital stays.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-7 max-w-6xl mx-auto">
