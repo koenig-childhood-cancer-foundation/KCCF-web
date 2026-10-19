@@ -91,7 +91,11 @@ export default function Navigation() {
 
   useEffect(() => {
     const heroButton = isHomePage ? document.getElementById('hero-donate') : null
-    if (!heroButton) return
+    if (!heroButton) {
+      // Forget Home's last answer while away, so the next visit starts hidden again
+      setHeroDonate(prev => (prev.path === pathname ? prev : { path: pathname, visible: false }))
+      return
+    }
     // The fixed header is 96px tall, so a button hidden under it counts as scrolled away
     const observer = new IntersectionObserver(
       ([entry]) => setHeroDonate({ path: pathname, visible: entry.isIntersecting }),
