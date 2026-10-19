@@ -121,13 +121,13 @@ export default function Donate() {
               Your gift gives children battling cancer and their families financial and emotional support: treatment, meals, travel, lodging and care during long hospital stays.
             </p>
             <div className="mt-10 inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white dark:bg-gray-800 border border-[#DAB87E] rounded-[22px] shadow-md px-8 py-5 max-w-2xl">
-              <span className="text-6xl font-extrabold text-violet-600 dark:text-saffron-400 leading-none">90&cent;</span>
+              <span className="text-6xl font-extrabold text-violet-600 dark:text-saffron-400 leading-none">90.6%</span>
               <div className="text-center sm:text-left">
                 <p className="text-xl font-bold text-[#2B2330] dark:text-white">
-                  of every dollar goes directly to programs
+                  of expenses go directly to programs
                 </p>
                 <p className="text-sm italic text-[#8A6A2E] dark:text-[#DAB87E] mt-1">
-                  Program expenses were 90.6% of total expenses, per KCCF&apos;s 2025 Financial Review.
+                  (2025 Financial Review). 100% volunteer&#8209;run: no salaries.
                 </p>
               </div>
             </div>
