@@ -15,10 +15,10 @@ export default function CallToAction() {
         <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
         <p className="text-xl text-white/90 mb-6">No child should fight cancer alone.</p>
         <p className="text-2xl md:text-3xl font-extrabold text-[#ffb37a] mx-auto leading-tight">
-          90&cent; of every dollar goes directly to programs
+          90.6% of expenses go directly to programs
         </p>
         <p className="text-sm text-white/80 mt-2 mb-10">
-          Per KCCF&apos;s 2025 Financial Review.
+          (2025 Financial Review). 100% volunteer&#8209;run: no salaries.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
