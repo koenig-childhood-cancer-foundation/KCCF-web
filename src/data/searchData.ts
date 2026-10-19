@@ -9,7 +9,7 @@ export interface SearchItem {
 export const searchData: SearchItem[] = [
   {
     title: 'Home',
-    description: 'Welcome to the Koenig Childhood Cancer Foundation',
+    description: 'Welcome to Koenig Childhood Cancer Foundation (KCCF)',
     href: '/',
     keywords: ['home', 'welcome', 'kccf', 'foundation', 'childhood cancer'],
     category: 'Pages'

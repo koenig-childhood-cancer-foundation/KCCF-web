@@ -1,7 +1,6 @@
 "use client"
 
 import Image from 'next/image';
-import { useArticleModal } from '@/contexts/ArticleModalContext';
 import { useFormModal } from '@/contexts/FormModalContext';
 
 // "As seen on" items follow Credentials and media in KCCF Current Facts – MASTER.
@@ -87,7 +86,6 @@ const linkClass =
   'inline-flex items-center gap-1 font-semibold text-violet-600 dark:text-saffron-400 hover:text-violet-800 dark:hover:text-saffron-300';
 
 export default function Media() {
-  const { openModal: openArticle } = useArticleModal();
   const { openModal } = useFormModal();
 
   return (
@@ -164,12 +162,17 @@ export default function Media() {
         <div className="container mx-auto px-4">
           <SectionTitle title="Press Coverage" />
           <div className="grid md:grid-cols-3 gap-7 max-w-6xl mx-auto">
-            <button type="button" onClick={() => openArticle('people-magazine')} className={`${cardClass} p-6 text-left flex flex-col cursor-pointer`}>
+            <a
+              href="https://people.com/teen-beat-cancer-saves-boy-struggling-with-disease-ukraine-my-extraordinary-family-7559454"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${cardClass} p-6 flex flex-col`}
+            >
               <span className="text-sm font-bold uppercase tracking-wide text-[#8A6A2E] dark:text-[#DAB87E]">People Magazine</span>
-              <span className="mt-2 text-xl font-bold text-[#2B2330] dark:text-white">Teen Cancer Survivor Turns Her Pain Into Purpose</span>
-              <span className="mt-2 mb-4 text-gray-700 dark:text-gray-200 flex-1">How Elana founded KCCF to help families facing childhood cancer.</span>
+              <span className="mt-2 text-xl font-bold text-[#2B2330] dark:text-white">Teen Who Beat Cancer Saves Boy, 3, Struggling with Disease in Ukraine</span>
+              <span className="mt-2 mb-4 text-gray-700 dark:text-gray-200 flex-1">How Elana helped a young boy with cancer and his family reach treatment in New York.</span>
               <span className={linkClass}>Read the article &rarr;</span>
-            </button>
+            </a>
             <a
               href="https://www.cbsnews.com/newyork/news/14-year-old-cancer-survivor-giving-gift-bags-to-children-spending-the-holidays-in-the-hospital/"
               target="_blank"

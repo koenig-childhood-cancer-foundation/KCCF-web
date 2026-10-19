@@ -28,7 +28,7 @@ const giftImpacts: {
     stat: '135,000+ gift bags delivered',
   },
   {
-    title: 'KCCF International Camp',
+    title: 'KCCF Camp',
     amounts: [],
     note: 'International summer camp for emotional recovery.',
     stat: '120 children hosted',

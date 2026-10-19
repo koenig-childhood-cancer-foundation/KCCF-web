@@ -135,7 +135,7 @@ export default function CrazySocks() {
 
         {/* PageHeader */}
         <PageHeader
-          title="Crazy Socks<br/>Gift Bag Events"
+          title="Crazy Socks<br/>Gift Bags"
           subtitle="Elana shares her story, and your team packs gift bags for children in the hospital."
           headerStyle="pt-72 xl:pt-84 pb-12 xl:pl-14 2xl:pl-20"
           gridStyle="gap-0 lg:grid-cols-1"
@@ -212,7 +212,7 @@ export default function CrazySocks() {
                 <p>
                   Crazy Socks Gift Bag is KCCF's signature project, inspired by
                   founder Elana's personal journey with cancer at the age of 7.
-                  While battling Ewing's sarcoma, a rare and aggressive bone
+                  While battling a rare and aggressive bone
                   cancer, Elana was struck by how the dull hospital socks
                   mirrored the monotony and sadness of her days.
                 </p>
