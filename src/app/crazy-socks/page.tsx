@@ -121,7 +121,7 @@ export default function CrazySocks() {
         <div className="absolute inset-0 top-24 lg:left-[15%]">
           <Image
             src="/images/header_image_crazy_socks.jpg"
-            alt="Crazy Socks Gift Bags"
+            alt="Elana and her sister smiling and holding KCCF Crazy Socks gift bags"
             fill
             className="object-cover object-[45%_center] sm:object-[70%_center] lg:object-[center_20%]"
             sizes="100vw"

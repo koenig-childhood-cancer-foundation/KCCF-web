@@ -41,7 +41,7 @@ export default function Aid() {
         <div className="absolute inset-0 top-24">
           <Image
             src="/images/header_image_family_assistance.jpg"
-            alt="Family Aid"
+            alt="Elana visiting a child in the hospital room with the whole family"
             fill
             className="object-cover object-[65%_center] md:object-[right_30%]"
             sizes="100vw"
