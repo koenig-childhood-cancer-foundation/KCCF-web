@@ -11,6 +11,7 @@ interface DonationButtonProps {
   className?: string
   children?: ReactNode
   icon?: ReactNode
+  id?: string
 }
 
 export default function DonationButton({
@@ -20,7 +21,8 @@ export default function DonationButton({
   size = 'md',
   className = '',
   children,
-  icon
+  icon,
+  id
 }: DonationButtonProps) {
   const { openModal, warmUp } = useDonationModal()
 
@@ -45,6 +47,7 @@ export default function DonationButton({
 
   return (
     <button
+      id={id}
       type="button"
       onClick={handleClick}
       onMouseEnter={warmUp}

@@ -24,6 +24,9 @@ export default function Navigation() {
   // page starts with the white header and colored logo and icons, so they show
   // even before the page's code has loaded.
   const [isScrolled, setIsScrolled] = useState(!isHomePage)
+  // On Home the big "Donate Now" button is on the first screen, so the small phone
+  // Donate button waits until that one has scrolled out of view
+  const [heroDonateVisible, setHeroDonateVisible] = useState(isHomePage)
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isHoveringRef = useRef(false)
   const { theme } = useTheme()
@@ -81,6 +84,21 @@ export default function Navigation() {
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [isHomePage])
+
+  useEffect(() => {
+    const heroDonate = isHomePage ? document.getElementById('hero-donate') : null
+    if (!heroDonate) {
+      setHeroDonateVisible(false)
+      return
+    }
+    // The fixed header is 96px tall, so a button hidden under it counts as scrolled away
+    const observer = new IntersectionObserver(
+      ([entry]) => setHeroDonateVisible(entry.isIntersecting),
+      { rootMargin: '-96px 0px 0px 0px' }
+    )
+    observer.observe(heroDonate)
+    return () => observer.disconnect()
   }, [isHomePage])
 
   useEffect(() => {
@@ -302,7 +320,7 @@ export default function Navigation() {
               onFocus={warmUpDonation}
               className={`mr-1 px-4 py-2.5 rounded-full text-xs font-semibold leading-none tracking-wide bg-orange-600 hover:bg-orange-700 text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 ${
                 isScrolled ? '' : 'shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
-              }`}
+              } ${heroDonateVisible ? 'hidden' : ''}`}
             >
               DONATE
             </button>
