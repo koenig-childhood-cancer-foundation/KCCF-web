@@ -223,7 +223,6 @@ export default function CrazySocks() {
                   children fighting cancer. This is how the Crazy Socks Gift
                   Bags movement started.
                 </p>
-                <p>In 2020, at age 11, Elana founded KCCF with the $900 in her piggy bank.</p>
               </div>
               <div className="flex items-center gap-3.5 mt-7" aria-hidden="true">
                 <span className="h-0.5 w-16 bg-[#DAB87E]" />
