@@ -177,7 +177,7 @@ export default function AboutUs() {
               My name is Elana Koenig, and I am a cancer survivor, singer, and founder of Koenig Childhood Cancer Foundation (KCCF).
             </p>
             <p>
-              I was only 7 when I was diagnosed with an aggressive, rare childhood cancer. I
+              I was only 7 when I was diagnosed with a rare and aggressive bone cancer. I
               remember seeing my mother and father heartbroken, trying to hide it. I didn&apos;t yet understand the
               difficult journey that lay ahead.
             </p>

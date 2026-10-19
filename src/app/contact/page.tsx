@@ -34,7 +34,7 @@ const helps: { title: string; text: string; action: Action }[] = [
   {
     title: 'Sponsor a Gift Bag Event',
     text: 'Bring Crazy Socks to your company, school or community group.',
-    action: { label: 'Sponsor an Event', form: 'crazy-socks-sponsor' },
+    action: { label: 'Sponsor a Gift Bag Event', form: 'crazy-socks-sponsor' },
   },
   {
     title: 'Book Elana to Speak',
