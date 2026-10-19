@@ -45,7 +45,7 @@ export default function Privacy() {
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-violet-600 dark:text-saffron-400 mb-4">Introduction</h2>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                Koenig Childhood Cancer Foundation (&quot;KCCF,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at thekccf.org, make donations, or interact with our services.
+                Koenig Childhood Cancer Foundation (KCCF) (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at thekccf.org, make donations, or interact with our services.
               </p>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 Please read this Privacy Policy carefully. By using our website and services, you agree to the collection and use of information in accordance with this policy.
