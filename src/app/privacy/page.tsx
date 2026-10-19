@@ -270,6 +270,14 @@ export default function Privacy() {
               </p>
             </div>
 
+            {/* Equal Opportunity */}
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-violet-600 dark:text-saffron-400 mb-4">Equal Opportunity</h2>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                Koenig Childhood Cancer Foundation is committed to equal employment and volunteer opportunity without regard to age, ancestry, disability, national or ethnic origin, race, religious belief, sex, sexual orientation, gender identity, marital or veteran status.
+              </p>
+            </div>
+
             {/* Contact Information */}
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-violet-600 dark:text-saffron-400 mb-4">Contact Us</h2>

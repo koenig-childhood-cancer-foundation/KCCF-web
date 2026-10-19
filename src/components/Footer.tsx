@@ -143,9 +143,9 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="sm:col-span-full md:col-span-5 lg:col-span-9 xl:col-span-5 sm:order-1 lg:order-2">
+          <div className="sm:col-span-full md:col-span-5 lg:col-span-9 xl:col-span-8 sm:order-1 lg:order-2">
             <h2 className="sr-only">Quick Links</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
               {/* About & Events */}
               <div>
                 <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
@@ -287,23 +287,24 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
+
+              {/* Newsletter */}
+              <div>
+                <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
+                  A Little <span role="img" aria-label="love">❤️</span> in Your Inbox
+                </h3>
+                <FormButton
+                  formType="newsletter-signup"
+                  variant="outlineGold"
+                  size="sm"
+                  className="mt-1"
+                >
+                  Subscribe
+                </FormButton>
+              </div>
             </div>
           </div>
 
-          {/* Newsletter Signup */}
-          <div className="sm:col-span-3 md:col-span-3 lg:col-span-full xl:col-span-3 sm:order-3 flex flex-col items-center max-sm:max-w-xs max-sm:mx-auto lg:w-2/5 lg:mx-auto xl:w-full xl:mx-0 xl:self-center">
-            <h2 className="text-xl font-bold mb-4 text-white text-center">
-              A Little Love in Your Inbox
-            </h2>
-            <FormButton
-              formType="newsletter-signup"
-              variant="outlineGold"
-              size="md"
-              className="px-8"
-            >
-              Subscribe to Newsletter
-            </FormButton>
-          </div>
         </div>
 
         {/* Awards Section - Full Width */}
@@ -372,12 +373,6 @@ export default function Footer() {
           <p>
             ©2026 Koenig Childhood Cancer Foundation, 501(c)(3) tax-exempt, EIN:
             84-4892279
-          </p>
-          <p className="mt-2 text-xs text-gray-400 max-w-4xl mx-auto">
-            Koenig Childhood Cancer Foundation is committed to equal employment
-            and volunteer opportunity without regard to age, ancestry,
-            disability, national or ethnic origin, race, religious belief, sex,
-            sexual orientation, gender identity, marital or veteran status.
           </p>
           <div className="mt-3 flex items-center justify-center gap-4">
             <Link href="/privacy" className="hover:underline">
