@@ -4,6 +4,9 @@ import { createContext, useContext, useState, useCallback, type ReactNode } from
 
 interface DonationModalContextType {
   isOpen: boolean
+  // True once the donation form has started loading (kept loaded after closing)
+  isWarm: boolean
+  warmUp: () => void
   campaign: string | null
   openModal: (campaign?: string) => void
   closeModal: () => void
@@ -13,10 +16,15 @@ const DonationModalContext = createContext<DonationModalContextType | undefined>
 
 export function DonationModalProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false)
+  const [isWarm, setIsWarm] = useState(false)
   const [campaign, setCampaign] = useState<string | null>(null)
+
+  // Start loading the Zeffy form early, when the mouse reaches a Donate button
+  const warmUp = useCallback(() => setIsWarm(true), [])
 
   const openModal = useCallback((campaignName?: string) => {
     setCampaign(campaignName || null)
+    setIsWarm(true)
     setIsOpen(true)
     // Prevent body scroll when modal is open
     document.body.style.overflow = 'hidden'
@@ -30,7 +38,7 @@ export function DonationModalProvider({ children }: { children: ReactNode }) {
   }, [])
 
   return (
-    <DonationModalContext.Provider value={{ isOpen, campaign, openModal, closeModal }}>
+    <DonationModalContext.Provider value={{ isOpen, isWarm, warmUp, campaign, openModal, closeModal }}>
       {children}
     </DonationModalContext.Provider>
   )

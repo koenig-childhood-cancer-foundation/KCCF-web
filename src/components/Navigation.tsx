@@ -24,7 +24,7 @@ export default function Navigation() {
   const { theme } = useTheme()
   const { openModal: openSearchModal } = useSearchModal()
   const { openModal } = useFormModal()
-  const { openModal: openDonationModal } = useDonationModal()
+  const { openModal: openDonationModal, warmUp: warmUpDonation } = useDonationModal()
   const pathname = usePathname()
   const isHomePage = pathname === '/'
 
@@ -271,6 +271,8 @@ export default function Navigation() {
             <button
               type="button"
               onClick={() => openDonationModal()}
+              onMouseEnter={warmUpDonation}
+              onFocus={warmUpDonation}
               className={`px-6 py-3 rounded-full text-sm font-semibold leading-none transition-all duration-200 hover:opacity-90 hover:shadow-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:rounded-full ${
                 isScrolled 
                   ? 'bg-orange-600 hover:bg-orange-700 text-white' 

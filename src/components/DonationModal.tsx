@@ -78,18 +78,17 @@ function GiveLivelyWidget() {
 }
 
 export default function DonationModal() {
-  const { isOpen, closeModal } = useDonationModal()
+  const { isOpen, isWarm, closeModal } = useDonationModal()
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
   const [iframeLoaded, setIframeLoaded] = useState(false)
   const switchLinkClass =
     'inline-flex items-center gap-1 mt-2 px-6 py-2.5 rounded-full bg-white text-violet-700 font-bold shadow-md hover:bg-[#FBF5EA] transition-colors cursor-pointer'
 
-  // Reset iframeLoaded when modal opens or provider changes
+  // Reset iframeLoaded when the provider changes. The form stays loaded while
+  // the pop-up is closed, so reopening it is instant.
   useEffect(() => {
-    if (isOpen) {
-      setIframeLoaded(false)
-    }
-  }, [isOpen, selectedProvider])
+    setIframeLoaded(false)
+  }, [selectedProvider])
 
   // Close modal on escape key and prevent body scroll
   useEffect(() => {
@@ -111,13 +110,15 @@ export default function DonationModal() {
 
   // All previous step handlers removed
 
-  if (!isOpen) return null
+  if (!isOpen && !isWarm) return null
 
   // Stripe CardPaymentSection removed; using GiveLively iframe
 
   const modalContent = (
     <div 
-      className="fixed inset-0 z-50 flex items-start sm:items-center justify-center overflow-y-auto overflow-x-hidden p-2 sm:p-4"
+      aria-hidden={!isOpen}
+      inert={!isOpen}
+      className={`fixed inset-0 z-50 flex items-start sm:items-center justify-center overflow-y-auto overflow-x-hidden p-2 sm:p-4 ${isOpen ? '' : 'invisible pointer-events-none'}`}
       style={{ 
         paddingBottom: 'max(0.5rem, env(safe-area-inset-bottom))',
         paddingTop: 'max(0.5rem, env(safe-area-inset-top))',
