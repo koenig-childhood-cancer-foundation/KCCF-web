@@ -1,6 +1,7 @@
 "use client"
 
 import { createContext, useContext, useState, ReactNode } from 'react'
+import { trackEvent } from '@/lib/analytics'
 
 export type FormType = 
   | 'camp-camper'
@@ -86,6 +87,9 @@ export function FormModalProvider({ children }: { children: ReactNode }) {
   const openModal = (type: FormType) => {
     setFormType(type)
     setIsOpen(true)
+    // GA4 events for Ad Grants conversions
+    if (type === 'aid-application') trackEvent('aid_apply_open')
+    if (type === 'crazy-socks-sponsor') trackEvent('sponsor_click')
   }
 
   const closeModal = () => {

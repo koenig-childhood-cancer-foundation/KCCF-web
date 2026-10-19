@@ -1,6 +1,7 @@
 "use client"
 
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react'
+import { trackEvent } from '@/lib/analytics'
 
 interface DonationModalContextType {
   isOpen: boolean
@@ -26,6 +27,7 @@ export function DonationModalProvider({ children }: { children: ReactNode }) {
     setCampaign(campaignName || null)
     setIsWarm(true)
     setIsOpen(true)
+    trackEvent('donate_open', { campaign: campaignName || 'general' })
     // Prevent body scroll when modal is open
     document.body.style.overflow = 'hidden'
   }, [])
