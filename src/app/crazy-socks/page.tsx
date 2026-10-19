@@ -25,7 +25,7 @@ export default function CrazySocks() {
     },
     {
       title: 'A Child Opens Your Gift',
-      text: 'We deliver the bags to children in the hospital and send your team photos.',
+      text: 'We deliver the bags to children in the hospital and send you photos of your event and of the hospital delivery, ready for your CSR report.',
       image: '/images/IMG_6703-scaled.jpeg',
       alt: 'A child in the hospital holding a gift bag',
     },
@@ -366,6 +366,8 @@ export default function CrazySocks() {
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10">
             Bring Crazy Socks to your company, school or community group.
+            <br />
+            Already hosted an event? Make it a yearly tradition, or bring it to another office.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <FormButton
@@ -398,6 +400,9 @@ export default function CrazySocks() {
               Start a Fundraiser
             </Link>
           </div>
+          <p className="mt-8 text-lg text-white/90">
+            Employees can give through Benevity, and many companies match their gifts.
+          </p>
         </div>
       </section>
     </div>

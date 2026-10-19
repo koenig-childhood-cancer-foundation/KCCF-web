@@ -57,7 +57,7 @@ export default function GetInvolved() {
     },
     {
       title: 'Sponsor a Gift Bag Event',
-      text: 'Bring a Crazy Socks gift bag event to your company, school or community group. Check with your company\u2019s CSR team. Many match or sponsor events.',
+      text: 'A team-building event with heart for your company, school or group. Many companies pay for it from their CSR or volunteer budget.',
       photo: '/images/yellow-shirt.jpg',
       alt: 'Teen volunteers in yellow KCCF shirts',
       action: { label: 'Learn More', href: '/crazy-socks' },
