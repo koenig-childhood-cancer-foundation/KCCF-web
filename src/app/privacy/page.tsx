@@ -262,6 +262,16 @@ export default function Privacy() {
               </p>
             </div>
 
+            {/* New York disclosure (Executive Law § 174-b); here until Bradley confirms Donate page and footer */}
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-violet-600 dark:text-saffron-400 mb-4">New York Fundraising Disclosure</h2>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                A copy of our latest annual financial report may be obtained from Koenig Childhood Cancer Foundation, Inc., 1175 York Ave, Suite 15E, New York, NY 10065, or from the New York State Attorney General&apos;s Charities Bureau at{' '}
+                <a href="https://www.charitiesnys.com" target="_blank" rel="noopener noreferrer" className="text-violet-600 dark:text-saffron-400 underline underline-offset-2 hover:no-underline">www.charitiesnys.com</a>. For information about charities, call the Attorney General at{' '}
+                <a href="tel:+12124168686" className="text-violet-600 dark:text-saffron-400 underline underline-offset-2 hover:no-underline">(212) 416-8686</a>. A description of our programs is available from us on request.
+              </p>
+            </div>
+
             {/* Changes to Privacy Policy */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-violet-600 dark:text-saffron-400 mb-4">Changes to This Privacy Policy</h2>
