@@ -145,7 +145,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="sm:col-span-full md:col-span-5 lg:col-span-9 xl:col-span-8 sm:order-1 lg:order-2">
             <h2 className="sr-only">Quick Links</h2>
-            {/* Same groups as the top menu: Programs, Get Involved, Accountability (About Us, Media and Contact are in the bottom line) */}
+            {/* Same groups as the top menu: Programs, Get Involved, About */}
             <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-[1fr_1fr_1fr_auto] gap-6">
               {/* Programs (as in the menu) */}
               <div>
@@ -220,73 +220,43 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
-              {/* Accountability */}
+              {/* About: the documents are on the Financials page */}
               <div>
                 <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
-                  Accountability
+                  About
                 </h3>
                 <ul className="space-y-0.5">
                   <li>
-                    <a
-                      href="/documents/irs-determination.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      href="/about-us"
                       className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
-                      IRS Determination
-                    </a>
+                      About Us
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="/documents/w9-kccf.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      href="/financials"
                       className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
-                      W-9
-                    </a>
+                      Financials
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="/documents/financial-review-2025-kccf.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      href="/media"
                       className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
-                      2025 Financial Review
-                    </a>
+                      Media
+                    </Link>
                   </li>
-                  <li className="text-gray-300">
-                    990s:{' '}
-                    <a
-                      href="/documents/990-2025-kccf.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Form 990 for 2025"
-                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors"
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
-                      2025
-                    </a>
-                    {' · '}
-                    <a
-                      href="/documents/990-2024-kccf.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Form 990 for 2024"
-                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors"
-                    >
-                      2024
-                    </a>
-                    {' · '}
-                    <a
-                      href="/documents/990-2023-kccf.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Form 990 for 2023"
-                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors"
-                    >
-                      2023
-                    </a>
+                      Contact
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -378,15 +348,6 @@ export default function Footer() {
             84-4892279
           </p>
           <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
-            <Link href="/about-us" className="hover:underline">
-              About Us
-            </Link>
-            <Link href="/media" className="hover:underline">
-              Media
-            </Link>
-            <Link href="/contact" className="hover:underline">
-              Contact
-            </Link>
             <Link href="/privacy" className="hover:underline">
               Privacy
             </Link>
