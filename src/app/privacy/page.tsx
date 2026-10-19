@@ -30,7 +30,7 @@ export default function Privacy() {
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 md:p-12">
             {/* Last Updated */}
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">
-              Last Updated: November 2025
+              Last Updated: October 2026
             </p>
 
             {/* Introduction */}
@@ -106,6 +106,7 @@ export default function Privacy() {
                   <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-sm space-y-1 ml-2">
                     <li><strong>Google Tag Manager (GTM)</strong> - Manages the loading of other scripts and services</li>
                     <li><strong>Zeffy</strong> - Powers our donation forms and payment processing</li>
+                    <li><strong>GiveLively</strong> - Powers our PayPal, Venmo and donor-advised fund (DAF) donation form</li>
                     <li><strong>Monday.com Forms</strong> - Enables our contact, volunteer, and application forms</li>
                   </ul>
                 </div>
@@ -142,7 +143,7 @@ export default function Privacy() {
               <button
                 type="button"
                 onClick={openPreferences}
-                className="bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors cursor-pointer"
+                className="bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 px-6 rounded-full transition-colors cursor-pointer"
               >
                 Manage Cookie Preferences
               </button>
