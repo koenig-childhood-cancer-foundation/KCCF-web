@@ -16,55 +16,55 @@ const seenOn = [
 const videos = [
   {
     title: 'On The Kelly Clarkson Show: Charles Esten Invites Elana to Sing',
-    text: 'Charles Esten invites 15-year-old cancer survivor Elana Koenig to sing at a Nashville benefit concert.',
+    text: 'An invitation to sing at a Nashville benefit concert.',
     embed: 'https://www.youtube.com/embed/clbbmsPRyS8?rel=0&start=380',
     link: { label: 'Watch on YouTube', href: 'https://www.youtube.com/watch?v=clbbmsPRyS8' },
   },
   {
     title: 'National Anthem at a Mets Game',
-    text: 'Elana, teen cancer survivor, sings the National Anthem at a Mets game.',
+    text: 'Elana sings for a full stadium crowd.',
     embed: 'https://www.youtube.com/embed/dZmB8dH9X70',
     link: { label: 'Watch on YouTube', href: 'https://www.youtube.com/watch?v=dZmB8dH9X70' },
   },
   {
     title: 'Nasdaq Honors Elana',
-    text: 'Nasdaq honors Elana, teen cancer survivor and founder of KCCF.',
+    text: 'Elana and KCCF at the Nasdaq closing bell.',
     embed: 'https://www.youtube.com/embed/tiamL9EdPC0',
     link: { label: 'Watch on YouTube', href: 'https://www.youtube.com/watch?v=tiamL9EdPC0' },
   },
   {
     title: 'WNBC: Families From Ukraine',
-    text: 'WNBC coverage featuring Mark and Ukrainian families supported by KCCF.',
+    text: 'Mark shares how KCCF supports these families.',
     embed: 'https://www.youtube.com/embed/Bgisln8H59w',
     link: { label: 'Watch on YouTube', href: 'https://www.youtube.com/watch?v=Bgisln8H59w' },
   },
   {
-    title: 'Elana & Sabrina on NBC 4 New York',
-    text: 'Cancer survivor delivers smiles to hospitalized kids. July 8, 2022.',
+    title: 'Elana & Sabrina on NBC 4 New York (2022)',
+    text: 'Bringing smiles to kids in the hospital. July 8, 2022.',
     embed: 'https://www.youtube.com/embed/IYs6eX-1Rgg',
     link: { label: 'Read the article', href: 'https://www.nbcnewyork.com/news/cancer-survivor-delivers-smiles-to-hospitalized-kids/3767312/' },
   },
   {
     title: 'Elana on ABC7 New York',
-    text: "Be Kind: Father's Day cancer survivor coverage. June 20, 2021.",
+    text: 'A Father\'s Day "Be Kind" story. June 20, 2021.',
     embed: 'https://abc7ny.com/video/embed/?pid=10814909',
     link: { label: 'Read the article', href: 'https://abc7ny.com/be-kind-fathers-day-cancer-survivor/10814428/' },
   },
   {
     title: 'Elana & Sabrina on ABC7 New York',
-    text: "Be Kind: Valentine's Day cancer care packages. February 15, 2021.",
+    text: 'A Valentine\'s Day "Be Kind" story about care packages. February 15, 2021.',
     embed: 'https://abc7ny.com/video/embed/?pid=10340426',
     link: { label: 'Read the article', href: 'https://abc7ny.com/be-kind-valentines-day-cancer-care-packages/10340454/' },
   },
   {
-    title: 'Elana & Sabrina on NBC 4 New York',
-    text: '12-year-old survivor delivers heartfelt packages to kids with cancer. February 15, 2021.',
+    title: 'Elana & Sabrina on NBC 4 New York (2021)',
+    text: 'Elana, then 12, delivers care packages to kids with cancer. February 15, 2021.',
     embed: 'https://www.youtube.com/embed/pKssob6SdV4',
     link: { label: 'Read the article', href: 'https://www.nbcnewyork.com/news/local/12-year-old-survivor-delivers-heartfelt-packages-to-kids-with-cancer/2889964/' },
   },
   {
     title: 'Elana at World Net Summit',
-    text: 'World Net Summit 2020: Elana Koenig, founder of KCCF. December 17, 2020.',
+    text: 'Elana speaks as KCCF\'s founder. December 17, 2020.',
     embed: 'https://www.youtube.com/embed/nq52J4znyWI',
     link: { label: 'Visit World Net Summit', href: 'https://worldnetsummit.com/' },
   },
@@ -170,7 +170,7 @@ export default function Media() {
             >
               <span className="text-sm font-bold uppercase tracking-wide text-[#8A6A2E] dark:text-[#DAB87E]">People Magazine</span>
               <span className="mt-2 text-xl font-bold text-[#2B2330] dark:text-white">Teen Who Beat Cancer Saves Boy, 3, Struggling with Disease in Ukraine</span>
-              <span className="mt-2 mb-4 text-gray-700 dark:text-gray-200 flex-1">How Elana helped a young boy with cancer and his family reach treatment in New York.</span>
+              <span className="mt-2 mb-4 text-gray-700 dark:text-gray-200 flex-1">His family reached treatment in New York with Elana&rsquo;s help.</span>
               <span className={linkClass}>Read the article &rarr;</span>
             </a>
             <a
@@ -181,7 +181,7 @@ export default function Media() {
             >
               <span className="text-sm font-bold uppercase tracking-wide text-[#8A6A2E] dark:text-[#DAB87E]">CBS News</span>
               <span className="mt-2 text-xl font-bold text-[#2B2330] dark:text-white">14-Year-Old Cancer Survivor Giving Gift Bags to Children in the Hospital</span>
-              <span className="mt-2 mb-4 text-gray-700 dark:text-gray-200 flex-1">Elana brings Crazy Socks gift bags to children spending the holidays in the hospital.</span>
+              <span className="mt-2 mb-4 text-gray-700 dark:text-gray-200 flex-1">Her Crazy Socks bags bring some holiday joy to kids who can&rsquo;t go home.</span>
               <span className={linkClass}>Read the article &rarr;</span>
             </a>
             <a
@@ -192,7 +192,7 @@ export default function Media() {
             >
               <span className="text-sm font-bold uppercase tracking-wide text-[#8A6A2E] dark:text-[#DAB87E]">NYU Stern</span>
               <span className="mt-2 text-xl font-bold text-[#2B2330] dark:text-white">Rena Koenig MBA &rsquo;17 on Starting KCCF With Her Daughter</span>
-              <span className="mt-2 mb-4 text-gray-700 dark:text-gray-200 flex-1">How Rena used tools from business to start the foundation with Elana.</span>
+              <span className="mt-2 mb-4 text-gray-700 dark:text-gray-200 flex-1">Business-school lessons, put to work for a cause.</span>
               <span className={linkClass}>Read the article &rarr;</span>
             </a>
           </div>
