@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import FormButton from '@/components/FormButton';
+import { useFormModal } from '@/contexts/FormModalContext';
 
 // Elana's story and the team, combined from the Our Story and KCCF Family pages.
 // Facts and titles follow KCCF Current Facts – MASTER.
@@ -70,7 +71,7 @@ const honorary: Person[] = [
   { name: 'Dr. Wexler', title: "Saved Elana's Life", photo: '/images/Dr.-Wexler-Honorary-Director-copy.png', bio: ['Pediatric Hematologist – Oncologist', 'Memorial Sloan Kettering Cancer Center'] },
   { name: 'Dr. Morris', title: "Removed Elana's Tumor", photo: '/images/Carol-Morris-2-copy-2_FINAL.png', bio: ['Orthopaedic Surgeon', 'Memorial Sloan Kettering Cancer Center'] },
   { name: 'Dr. Prince', title: "Elana's Second Surgeon", photo: '/images/cropped-DrPrinceElana-scaled.jpg', bio: ['Orthopaedic Surgeon', 'Memorial Sloan Kettering Cancer Center'] },
-  { name: 'Dr. Charas', title: '', photo: '/images/Dr.-Tomas-copy.png', bio: ['Radiation Oncologist', 'Rambam Health Care Campus, Israel'] },
+  { name: 'Dr. Charas', title: "Volunteer Shani's dad", photo: '/images/Dr.-Tomas-copy.png', bio: ['Radiation Oncologist', 'Rambam Health Care Campus, Israel'] },
   { name: 'Dr. Kearney', title: "Elana's Therapist", photo: '/images/kearney_170721_02_3x2-copy.png', bio: ['Pediatric Psychiatrist', 'Memorial Sloan Kettering Cancer Center'] },
 ];
 
@@ -104,6 +105,7 @@ function PersonCard({ person, size = 'w-40 h-40', padding = 'px-8 py-9' }: { per
 }
 
 export default function AboutUs() {
+  const { openModal } = useFormModal();
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
       {/* Hero: home-page style (full photo, warm tint, soft shade behind the words) */}
@@ -125,12 +127,13 @@ export default function AboutUs() {
           <p className="mt-5 text-xl md:text-2xl font-semibold text-white max-w-xl mx-auto lg:mx-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]">
             A child cancer survivor&apos;s dream, now helping thousands of families.
           </p>
-          <Link
-            href="/media"
+          <button
+            type="button"
+            onClick={() => openModal('book-elana')}
             className="btn-primary mt-8 bg-white/10 hover:bg-white/20 border-2 border-white text-white py-3.5 px-8 rounded-full text-lg font-semibold inline-flex items-center justify-center"
           >
-            See Elana in the News
-          </Link>
+            Book Elana to Speak
+          </button>
         </div>
       </section>
 
