@@ -71,7 +71,7 @@ const honorary: Person[] = [
   { name: 'Dr. Wexler', title: "Saved Elana's Life", photo: '/images/Dr.-Wexler-Honorary-Director-copy.png', bio: ['Pediatric Hematologist – Oncologist', 'Memorial Sloan Kettering Cancer Center'] },
   { name: 'Dr. Morris', title: "Removed Elana's Tumor", photo: '/images/Carol-Morris-2-copy-2_FINAL.png', bio: ['Orthopaedic Surgeon', 'Memorial Sloan Kettering Cancer Center'] },
   { name: 'Dr. Prince', title: "Elana's Second Surgeon", photo: '/images/cropped-DrPrinceElana-scaled.jpg', bio: ['Orthopaedic Surgeon', 'Memorial Sloan Kettering Cancer Center'] },
-  { name: 'Dr. Charas', title: "Volunteer Shani's dad", photo: '/images/Dr.-Tomas-copy.png', bio: ['Radiation Oncologist', 'Rambam Health Care Campus, Israel'] },
+  { name: 'Dr. Charas', photo: '/images/Dr.-Tomas-copy.png', bio: ['Radiation Oncologist', 'Rambam Health Care Campus, Israel'] },
   { name: 'Dr. Kearney', title: "Elana's Therapist", photo: '/images/kearney_170721_02_3x2-copy.png', bio: ['Pediatric Psychiatrist', 'Memorial Sloan Kettering Cancer Center'] },
 ];
 
@@ -177,7 +177,7 @@ export default function AboutUs() {
               My name is Elana Koenig, and I am a cancer survivor, singer, and founder of Koenig Childhood Cancer Foundation (KCCF).
             </p>
             <p>
-              I was only 7 when I was diagnosed with an aggressive rare childhood cancer called Ewing&apos;s Sarcoma. I
+              I was only 7 when I was diagnosed with an aggressive, rare childhood cancer. I
               remember seeing my mother and father heartbroken, trying to hide it. I didn&apos;t yet understand the
               difficult journey that lay ahead.
             </p>

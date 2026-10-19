@@ -112,6 +112,16 @@ export default function Contact() {
               <span className="block text-lg md:text-xl font-extrabold text-violet-600 dark:text-saffron-400">1175 York Ave, Suite 15E, New York, NY 10065</span>
             </a>
           </li>
+          <li>
+            <div className="rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center">
+              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Call or email</span>
+              <span className="block text-lg md:text-xl font-extrabold text-violet-600 dark:text-saffron-400">
+                <a href="tel:+19177656272" className="hover:underline">(917) 765-6272</a>
+                {' · '}
+                <a href="mailto:join@thekccf.org" className="hover:underline">join@thekccf.org</a>
+              </span>
+            </div>
+          </li>
         </ul>
       </section>
 

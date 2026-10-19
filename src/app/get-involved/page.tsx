@@ -211,6 +211,7 @@ export default function GetInvolved() {
                 Start My Fundraiser
               </a>
             </div>
+            <p className="mt-4 text-sm text-gray-600 dark:text-gray-300">Opens Zeffy, our fundraising partner, in a new tab.</p>
           </div>
 
         </div>
