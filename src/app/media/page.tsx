@@ -1,6 +1,7 @@
 "use client"
 
 import Image from 'next/image';
+import VideoEmbed from '@/components/VideoEmbed';
 import { useArticleModal } from '@/contexts/ArticleModalContext';
 import { useFormModal } from '@/contexts/FormModalContext';
 
@@ -137,13 +138,10 @@ export default function Media() {
             {videos.map((video) => (
               <div key={video.embed} className={`${cardClass} p-4 flex flex-col`}>
                 <div className="aspect-video rounded-[14px] overflow-hidden bg-gray-100 dark:bg-gray-800">
-                  <iframe
-                    className="w-full h-full"
+                  <VideoEmbed
                     src={video.embed}
                     title={video.title}
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
+                    source={video.embed.includes('abc7ny.com') ? 'ABC7 New York' : undefined}
                   />
                 </div>
                 <div className="px-2 pt-5 pb-2 flex flex-col flex-1">

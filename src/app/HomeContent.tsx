@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import DonationButton from '@/components/DonationButton';
 import PartnersCarousel from '@/components/PartnersCarousel';
+import VideoEmbed from '@/components/VideoEmbed';
 import CallToAction from '@/components/CallToAction';
 import FormButton from '@/components/FormButton';
 import { IMPACT_STATS } from '@/constants/impactStats';
@@ -356,14 +357,7 @@ export default function HomeContent() {
             {/* Kelly Clarkson Show */}
             <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
-                <iframe
-                  className="w-full h-full group-hover:scale-105 transition-transform duration-300"
-                  src="https://www.youtube.com/embed/clbbmsPRyS8?rel=0&start=380"
-                  title="Charles Esten Invites 15-Year-Old Cancer Survivor To Sing At Nashville Benefit Concert"
-                  loading="lazy"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <VideoEmbed src="https://www.youtube.com/embed/clbbmsPRyS8?rel=0&start=380" title="Charles Esten Invites 15-Year-Old Cancer Survivor To Sing At Nashville Benefit Concert" />
               </div>
               <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana, 3× on The Kelly Clarkson Show as its youngest Rad Human</h3>
             </div>
@@ -371,14 +365,7 @@ export default function HomeContent() {
             {/* Mets Game */}
             <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
-                <iframe
-                  className="w-full h-full group-hover:scale-105 transition-transform duration-300"
-                  src="https://www.youtube.com/embed/dZmB8dH9X70"
-                  title="Elana, Teen Cancer Survivor, Sings National Anthem at Mets Game!"
-                  loading="lazy"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <VideoEmbed src="https://www.youtube.com/embed/dZmB8dH9X70" title="Elana, Teen Cancer Survivor, Sings National Anthem at Mets Game!" />
               </div>
               <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana singing the national anthem at a Mets game</h3>
             </div>
@@ -386,14 +373,7 @@ export default function HomeContent() {
             {/* WNBC: families from Ukraine */}
             <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
-                <iframe
-                  className="w-full h-full group-hover:scale-105 transition-transform duration-300"
-                  src="https://www.youtube.com/embed/Bgisln8H59w?rel=0"
-                  title="WNBC: Families from Ukraine supported by KCCF"
-                  loading="lazy"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <VideoEmbed src="https://www.youtube.com/embed/Bgisln8H59w?rel=0" title="WNBC: Families from Ukraine supported by KCCF" />
               </div>
               <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">WNBC: Families from Ukraine supported by KCCF</h3>
             </div>
@@ -401,14 +381,7 @@ export default function HomeContent() {
             {/* Nasdaq */}
             <div className="card-interactive group bg-white dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-gray-100 border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
-                <iframe
-                  className="w-full h-full group-hover:scale-105 transition-transform duration-300"
-                  src="https://www.youtube.com/embed/tiamL9EdPC0"
-                  title="Nasdaq Honors Elana – Teen Cancer Survivor and Founder of KCCF!"
-                  loading="lazy"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <VideoEmbed src="https://www.youtube.com/embed/tiamL9EdPC0" title="Nasdaq Honors Elana – Teen Cancer Survivor and Founder of KCCF!" />
               </div>
               <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana and KCCF honored by Nasdaq at the closing bell</h3>
             </div>
