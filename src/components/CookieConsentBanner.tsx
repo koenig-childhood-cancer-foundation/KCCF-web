@@ -32,7 +32,7 @@ export default function CookieConsentBanner() {
   if (!isVisible) return null
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[60] px-4 pb-4 md:pb-6">
+    <div role="region" aria-label="Cookie consent" className="fixed inset-x-0 bottom-0 z-[60] px-4 pb-4 md:pb-6">
       <div className="mx-auto w-full md:max-w-4xl rounded-2xl border border-gray-200/70 dark:border-white/10 bg-white/90 dark:bg-gray-900/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 supports-[backdrop-filter]:dark:bg-gray-900/70 shadow-2xl ring-1 ring-black/5 dark:ring-white/10">
         <div className="p-4 md:p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
           <div className="flex items-start gap-3 md:gap-4">
@@ -44,7 +44,7 @@ export default function CookieConsentBanner() {
             <div className="space-y-1">
               <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">We value your privacy</p>
               <p className="text-sm text-gray-700/90 dark:text-gray-300/90">
-                We use cookies to enhance your experience and analyze usage. Read our <a href="/privacy" className="underline hover:no-underline">Cookie Policy</a>.
+                We use cookies to enhance your experience and analyze usage. Read our <a href="/privacy" className="py-1.5 underline hover:no-underline">Cookie Policy</a>.
               </p>
             </div>
           </div>

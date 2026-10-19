@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     type: "website",
     url: process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/privacy` : "https://thekccf.org/privacy",
   },
+  alternates: {
+    canonical: "https://thekccf.org/privacy",
+  },
   robots: {
     index: true,
     follow: true,

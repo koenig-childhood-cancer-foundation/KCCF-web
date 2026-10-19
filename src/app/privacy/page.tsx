@@ -172,7 +172,7 @@ export default function Privacy() {
                 <li><strong>Right to Withdraw Consent:</strong> Where we rely on your consent to process your personal data, you have the right to withdraw that consent at any time.</li>
               </ul>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                To exercise any of these rights, please contact us at <a href="mailto:join@thekccf.org" className="text-violet-600 dark:text-saffron-400 hover:underline">join@thekccf.org</a>. We will respond to your request within 30 days.
+                To exercise any of these rights, please contact us at <a href="mailto:join@thekccf.org" className="text-violet-600 dark:text-saffron-400 underline underline-offset-2 hover:no-underline">join@thekccf.org</a>. We will respond to your request within 30 days.
               </p>
             </div>
 
@@ -212,7 +212,7 @@ export default function Privacy() {
 
               <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">How to Exercise Your Rights</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                To exercise your California privacy rights, please contact us at <a href="mailto:join@thekccf.org" className="text-violet-600 dark:text-saffron-400 hover:underline">join@thekccf.org</a> or call us at <a href="tel:+19177656272" className="text-violet-600 dark:text-saffron-400 hover:underline">+1 (917) 765-6272</a>. We will verify your identity before processing your request.
+                To exercise your California privacy rights, please contact us at <a href="mailto:join@thekccf.org" className="text-violet-600 dark:text-saffron-400 underline underline-offset-2 hover:no-underline">join@thekccf.org</a> or call us at <a href="tel:+19177656272" className="text-violet-600 dark:text-saffron-400 underline underline-offset-2 hover:no-underline">+1 (917) 765-6272</a>. We will verify your identity before processing your request.
               </p>
             </div>
 
@@ -281,10 +281,10 @@ export default function Privacy() {
                 <p className="text-gray-600 dark:text-gray-300">1175 York Ave., Suite 15E</p>
                 <p className="text-gray-600 dark:text-gray-300">New York, NY 10065</p>
                 <p className="text-gray-600 dark:text-gray-300 mt-2">
-                  Email: <a href="mailto:join@thekccf.org" className="text-violet-600 dark:text-saffron-400 hover:underline">join@thekccf.org</a>
+                  Email: <a href="mailto:join@thekccf.org" className="text-violet-600 dark:text-saffron-400 underline underline-offset-2 hover:no-underline">join@thekccf.org</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Phone: <a href="tel:+19177656272" className="text-violet-600 dark:text-saffron-400 hover:underline">+1 (917) 765-6272</a>
+                  Phone: <a href="tel:+19177656272" className="text-violet-600 dark:text-saffron-400 underline underline-offset-2 hover:no-underline">+1 (917) 765-6272</a>
                 </p>
               </div>
             </div>
