@@ -145,7 +145,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="sm:col-span-full md:col-span-5 lg:col-span-9 xl:col-span-8 sm:order-1 lg:order-2">
             <h2 className="sr-only">Quick Links</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-[1fr_1fr_1fr_auto] gap-6">
               {/* About & Events */}
               <div>
                 <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
@@ -289,17 +289,17 @@ export default function Footer() {
               </div>
 
               {/* Newsletter */}
-              <div>
-                <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
+              <div className="col-span-2 sm:col-span-3 xl:col-span-1">
+                <h3 className="text-xl font-bold mb-4 text-white">
                   A Little <span role="img" aria-label="love">❤️</span> in Your Inbox
                 </h3>
                 <FormButton
                   formType="newsletter-signup"
                   variant="outlineGold"
-                  size="sm"
-                  className="mt-1"
+                  size="md"
+                  className="px-8 whitespace-nowrap"
                 >
-                  Subscribe
+                  Subscribe to Newsletter
                 </FormButton>
               </div>
             </div>
