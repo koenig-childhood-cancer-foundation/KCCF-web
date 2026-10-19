@@ -26,7 +26,10 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(!isHomePage)
   // On Home the big "Donate Now" button is on the first screen, so the small phone
   // Donate button waits until that one has scrolled out of view
-  const [heroDonateVisible, setHeroDonateVisible] = useState(isHomePage)
+  // Each answer is tagged with its page, so arriving on Home counts as "big button showing"
+  // until it has been checked there
+  const [heroDonate, setHeroDonate] = useState({ path: pathname, visible: isHomePage })
+  const heroDonateVisible = isHomePage && (heroDonate.path !== pathname || heroDonate.visible)
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isHoveringRef = useRef(false)
   const { theme } = useTheme()
@@ -87,19 +90,16 @@ export default function Navigation() {
   }, [isHomePage])
 
   useEffect(() => {
-    const heroDonate = isHomePage ? document.getElementById('hero-donate') : null
-    if (!heroDonate) {
-      setHeroDonateVisible(false)
-      return
-    }
+    const heroButton = isHomePage ? document.getElementById('hero-donate') : null
+    if (!heroButton) return
     // The fixed header is 96px tall, so a button hidden under it counts as scrolled away
     const observer = new IntersectionObserver(
-      ([entry]) => setHeroDonateVisible(entry.isIntersecting),
+      ([entry]) => setHeroDonate({ path: pathname, visible: entry.isIntersecting }),
       { rootMargin: '-96px 0px 0px 0px' }
     )
-    observer.observe(heroDonate)
+    observer.observe(heroButton)
     return () => observer.disconnect()
-  }, [isHomePage])
+  }, [isHomePage, pathname])
 
   useEffect(() => {
     if (isMenuOpen) {
