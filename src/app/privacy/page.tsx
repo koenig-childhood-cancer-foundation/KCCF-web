@@ -11,7 +11,11 @@ export default function Privacy() {
       {/* Hero Section with Background */}
       <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden pt-24">
         {/* Plum background (no photo on this page) */}
-        <div className="absolute inset-0 top-24 bg-[#772D5E]"></div>
+        <div className="absolute inset-0 top-24 bg-[#772D5E]">
+          {/* Thin gold lines on both sides, as in the brand's signature frame */}
+          <div className="absolute inset-y-0 left-1 w-[3px] bg-[#DAB87E]" aria-hidden="true" />
+          <div className="absolute inset-y-0 right-1 w-[3px] bg-[#DAB87E]" aria-hidden="true" />
+        </div>
 
         {/* PageHeader */}
         <PageHeader
