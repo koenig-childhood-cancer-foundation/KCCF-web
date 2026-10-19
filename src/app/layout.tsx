@@ -34,6 +34,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
+        {/* Open the connection to Zeffy early so the donation pop-up loads faster */}
+        <link rel="preconnect" href="https://www.zeffy.com" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

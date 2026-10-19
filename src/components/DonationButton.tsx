@@ -22,7 +22,7 @@ export default function DonationButton({
   children,
   icon
 }: DonationButtonProps) {
-  const { openModal } = useDonationModal()
+  const { openModal, warmUp } = useDonationModal()
 
   const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#772D5E] cursor-pointer'
 
@@ -47,6 +47,8 @@ export default function DonationButton({
     <button
       type="button"
       onClick={handleClick}
+      onMouseEnter={warmUp}
+      onFocus={warmUp}
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
     >
       {children || `Donate $${amount}`}

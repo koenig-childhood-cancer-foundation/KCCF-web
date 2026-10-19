@@ -60,7 +60,7 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
 
 export default function Contact() {
   const { openModal } = useFormModal();
-  const { openModal: openDonationModal } = useDonationModal();
+  const { openModal: openDonationModal, warmUp: warmUpDonation } = useDonationModal();
   const linkClass =
     'mt-auto inline-flex items-center gap-1 font-semibold text-violet-600 dark:text-saffron-400 hover:text-violet-800 dark:hover:text-saffron-300 cursor-pointer';
 
@@ -128,7 +128,7 @@ export default function Contact() {
                 <h3 className="text-xl font-bold text-[#2B2330] dark:text-white">{help.title}</h3>
                 <p className="mt-2 mb-5 text-gray-700 dark:text-gray-200">{help.text}</p>
                 {'donate' in help.action ? (
-                  <button type="button" onClick={() => openDonationModal()} className={linkClass}>
+                  <button type="button" onClick={() => openDonationModal()} onMouseEnter={warmUpDonation} onFocus={warmUpDonation} className={linkClass}>
                     {help.action.label} &rarr;
                   </button>
                 ) : 'form' in help.action ? (
