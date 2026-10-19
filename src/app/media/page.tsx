@@ -40,7 +40,7 @@ const videos = [
     link: { label: 'Watch on YouTube', href: 'https://www.youtube.com/watch?v=Bgisln8H59w' },
   },
   {
-    title: 'Elana & Sabrina on NBC 4 New York (2022)',
+    title: 'Elana and her sister on NBC 4 New York (2022)',
     text: 'Bringing smiles to kids in the hospital. July 8, 2022.',
     embed: 'https://www.youtube.com/embed/IYs6eX-1Rgg',
     link: { label: 'Read the article', href: 'https://www.nbcnewyork.com/news/cancer-survivor-delivers-smiles-to-hospitalized-kids/3767312/' },
