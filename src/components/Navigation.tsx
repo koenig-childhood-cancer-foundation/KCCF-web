@@ -304,6 +304,8 @@ export default function Navigation() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
               className={`p-2 rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-800 ${
                 isScrolled 
                   ? 'text-violet-600 dark:text-white' 
@@ -323,9 +325,14 @@ export default function Navigation() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ease-in-out ${
-        isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-      }`}>
+      {/* inert while closed so keyboard users don't tab through the hidden menu */}
+      <div
+        id="mobile-menu"
+        inert={!isMenuOpen}
+        className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
         {/* Backdrop */}
         <div 
           className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${

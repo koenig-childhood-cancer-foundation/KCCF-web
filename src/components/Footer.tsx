@@ -29,21 +29,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-12 xl:grid-cols-10 gap-6 items-start">
           {/* Contact Info */}
           <div className="sm:col-span-2 md:col-span-2 lg:col-span-3 xl:col-span-2 sm:order-2 lg:order-1">
-            <div className="space-y-2 text-gray-300">
+            <div className="space-y-1 text-gray-300">
               <a
                 href="https://www.google.com/maps/search/?api=1&query=1175+York+Ave+Suite+15E+New+York+NY+10065"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block hover:text-white transition-colors"
-                aria-label="View our location on Google Maps"
               >
                 <p>1175 York Ave., Suite 15E</p>
-                <p>New York, NY 10065</p>
+                <p>New York, NY 10065<span className="sr-only"> (opens Google Maps)</span></p>
               </a>
               <p>
                 <a
                   href="tel:+19177656272"
-                  className="hover:text-white transition-colors"
+                  className="inline-block py-1 hover:text-white transition-colors"
                 >
                   +1 (917) 765-6272
                 </a>
@@ -51,7 +50,7 @@ export default function Footer() {
               <p>
                 <a
                   href="mailto:join@thekccf.org"
-                  className="hover:text-white transition-colors"
+                  className="inline-block py-1 hover:text-white transition-colors"
                 >
                   join@thekccf.org
                 </a>
@@ -60,9 +59,9 @@ export default function Footer() {
 
             {/* Social Media Links */}
             <div className="mt-4">
-              <h4 className="text-lg font-semibold mb-3 text-white">
+              <h2 className="text-lg font-semibold mb-3 text-white">
                 Follow Us
-              </h4>
+              </h2>
               <div className="flex space-x-4">
                 <a
                   href="https://www.facebook.com/theKCCF"
@@ -83,7 +82,7 @@ export default function Footer() {
                   href="https://x.com/TheKccf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="inline-block py-1 text-gray-300 hover:text-white transition-colors"
                   aria-label="Follow us on X (Twitter)"
                 >
                   <svg
@@ -128,7 +127,7 @@ export default function Footer() {
                   href="https://www.tiktok.com/@kccfofficial"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="inline-block py-1 text-gray-300 hover:text-white transition-colors"
                   aria-label="Follow us on TikTok"
                 >
                   <svg
@@ -145,18 +144,18 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="sm:col-span-full md:col-span-5 lg:col-span-9 xl:col-span-5 sm:order-1 lg:order-2">
-            <h4 className="sr-only">Quick Links</h4>
+            <h2 className="sr-only">Quick Links</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
               {/* About & Events */}
               <div>
-                <h5 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
+                <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
                   About & Events
-                </h5>
-                <ul className="space-y-2">
+                </h3>
+                <ul className="space-y-0.5">
                   <li>
                     <Link
                       href="/crazy-socks"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Sponsor Gift Bag Event
                     </Link>
@@ -173,7 +172,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/about-us"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       About Us
                     </Link>
@@ -181,7 +180,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/get-involved#fundraisers"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Start a Fundraiser
                     </Link>
@@ -190,16 +189,16 @@ export default function Footer() {
               </div>
               {/* Accountability */}
               <div>
-                <h5 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
+                <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
                   Accountability
-                </h5>
-                <ul className="space-y-2">
+                </h3>
+                <ul className="space-y-0.5">
                   <li>
                     <a
                       href="/documents/irs-determination.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       IRS Determination
                     </a>
@@ -209,7 +208,7 @@ export default function Footer() {
                       href="/documents/w9-kccf.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       W9
                     </a>
@@ -221,7 +220,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Form 990 for 2025"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors"
                     >
                       2025
                     </a>
@@ -231,7 +230,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Form 990 for 2024"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors"
                     >
                       2024
                     </a>
@@ -241,7 +240,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Form 990 for 2023"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors"
                     >
                       2023
                     </a>
@@ -250,14 +249,14 @@ export default function Footer() {
               </div>
               {/* Get Involved */}
               <div>
-                <h5 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
+                <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
                   Get Involved
-                </h5>
-                <ul className="space-y-2">
+                </h3>
+                <ul className="space-y-0.5">
                   <li>
                     <Link
                       href="/contact"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Contact
                     </Link>
@@ -265,7 +264,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/aid"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Family Aid
                     </Link>
@@ -273,7 +272,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/get-involved#volunteer"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       Volunteer
                     </Link>
@@ -281,7 +280,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/camp"
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
                       KCCF Camp
                     </Link>
@@ -293,9 +292,9 @@ export default function Footer() {
 
           {/* Newsletter Signup */}
           <div className="sm:col-span-3 md:col-span-3 lg:col-span-full xl:col-span-3 sm:order-3 flex flex-col items-center max-sm:max-w-xs max-sm:mx-auto lg:w-2/5 lg:mx-auto xl:w-full xl:mx-0 xl:self-center">
-            <h3 className="text-xl font-bold mb-4 text-white text-center">
+            <h2 className="text-xl font-bold mb-4 text-white text-center">
               A Little Love in Your Inbox
-            </h3>
+            </h2>
             <FormButton
               formType="newsletter-signup"
               variant="outlineGold"
@@ -309,7 +308,7 @@ export default function Footer() {
 
         {/* Awards Section - Full Width */}
         <div className="mt-6 pt-5 text-center">
-          <h4 className="sr-only">Recognition & Awards</h4>
+          <h2 className="sr-only">Recognition & Awards</h2>
           <div className="w-fit max-w-full mx-auto px-6 pb-6 border-b-2 border-[#DAB87E] flex flex-row flex-wrap items-center justify-center gap-6 md:gap-10">
             <div className="flex flex-col items-center">
               <a

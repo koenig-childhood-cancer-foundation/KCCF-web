@@ -72,7 +72,7 @@ const waysToGive: { title: string; body: ReactNode; contact: boolean; ein?: 'num
 ]
 
 const linkClass =
-  'font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 decoration-[#DAB87E] hover:text-violet-700 dark:hover:text-saffron-300'
+  'py-1.5 font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 decoration-[#DAB87E] hover:text-violet-700 dark:hover:text-saffron-300'
 const faqCardClass =
   'group bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md'
 const faqQuestionClass =
