@@ -26,7 +26,7 @@ const ratings = [
 function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <div className="text-center mb-10">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-violet-600 dark:text-white">{title}</h2>
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-violet-600 dark:text-white">{title}</h2>
       <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
       {subtitle && <p className="mt-5 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">{subtitle}</p>}
     </div>

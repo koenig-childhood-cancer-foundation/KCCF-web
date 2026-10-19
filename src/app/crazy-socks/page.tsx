@@ -162,7 +162,7 @@ export default function CrazySocks() {
                   </svg>
                 }
               >
-                Sponsor an Event
+                Sponsor a Gift Bag Event
               </FormButton>
               <a
                 href="/documents/KCCF-Brochure.pdf"
@@ -391,7 +391,7 @@ export default function CrazySocks() {
                 </svg>
               }
             >
-              Sponsor an Event
+              Sponsor a Gift Bag Event
             </FormButton>
             <Link
               href="/get-involved#fundraisers"
