@@ -12,8 +12,8 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white border-t-[3px] border-[#DAB87E] transition-colors duration-200 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
-        {/* Logo */}
-        <div className="flex justify-center pb-6 mb-6">
+        {/* Logo, with the newsletter on the same level (right side on large screens; below the logo on phones) */}
+        <div className="relative flex flex-col items-center gap-6 pb-6 mb-6">
           <Link href="/" aria-label="Koenig Childhood Cancer Foundation home">
             <Image
               src="/kccf_logo_light.png"
@@ -23,9 +23,22 @@ export default function Footer() {
               className="h-24 w-auto"
             />
           </Link>
+          <div className="text-center lg:text-left lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2">
+            <h2 className="text-xl font-bold mb-4 text-white">
+              A Little <span role="img" aria-label="love">❤️</span> in Your Inbox
+            </h2>
+            <FormButton
+              formType="newsletter-signup"
+              variant="outlineGold"
+              size="md"
+              className="px-8 whitespace-nowrap"
+            >
+              Subscribe to Newsletter
+            </FormButton>
+          </div>
         </div>
 
-        {/* Row 1: Contact Info, Quick Links, Newsletter Signup */}
+        {/* Row 1: Contact Info and Quick Links */}
         <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-12 xl:grid-cols-10 gap-6 items-start">
           {/* Contact Info */}
           <div className="sm:col-span-2 md:col-span-2 lg:col-span-3 xl:col-span-2 sm:order-2 lg:order-1">
@@ -145,13 +158,54 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="sm:col-span-full md:col-span-5 lg:col-span-9 xl:col-span-8 sm:order-1 lg:order-2">
             <h2 className="sr-only">Quick Links</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-[1fr_1fr_1fr_auto] gap-6">
-              {/* About & Events */}
+            {/* Same groups as the top menu: Programs, Get Involved, About, Accountability */}
+            <div className="grid grid-cols-2 xl:grid-cols-4 gap-6">
+              {/* Programs (as in the menu) */}
               <div>
                 <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
-                  About & Events
+                  Programs
                 </h3>
                 <ul className="space-y-0.5">
+                  <li>
+                    <Link
+                      href="/aid"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      Family Aid
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/crazy-socks"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      Crazy Socks Gift Bags
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/camp"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      KCCF Camp
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              {/* Get Involved (as on the Get Involved page) */}
+              <div>
+                <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
+                  Get Involved
+                </h3>
+                <ul className="space-y-0.5">
+                  <li>
+                    <Link
+                      href="/get-involved#fundraisers"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      Start a Fundraiser
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       href="/crazy-socks"
@@ -164,11 +218,27 @@ export default function Footer() {
                     <button
                       type="button"
                       onClick={() => openModal('book-elana')}
-                      className="text-gray-300 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
                     >
                       Book Elana to Speak
                     </button>
                   </li>
+                  <li>
+                    <Link
+                      href="/get-involved#volunteer"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      Volunteer
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              {/* About */}
+              <div>
+                <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
+                  About
+                </h3>
+                <ul className="space-y-0.5">
                   <li>
                     <Link
                       href="/about-us"
@@ -179,10 +249,18 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/get-involved#fundraisers"
+                      href="/media"
                       className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
-                      Start a Fundraiser
+                      Media
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      Contact
                     </Link>
                   </li>
                 </ul>
@@ -256,61 +334,6 @@ export default function Footer() {
                     </a>
                   </li>
                 </ul>
-              </div>
-              {/* Get Involved */}
-              <div>
-                <h3 className="text-sm font-medium mb-2 text-gray-400 uppercase tracking-wide">
-                  Get Involved
-                </h3>
-                <ul className="space-y-0.5">
-                  <li>
-                    <Link
-                      href="/contact"
-                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
-                    >
-                      Contact
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/aid"
-                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
-                    >
-                      Family Aid
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/get-involved#volunteer"
-                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
-                    >
-                      Volunteer
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/camp"
-                      className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
-                    >
-                      KCCF Camp
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Newsletter */}
-              <div className="col-span-2 sm:col-span-3 xl:col-span-1">
-                <h3 className="text-xl font-bold mb-4 text-white">
-                  A Little <span role="img" aria-label="love">❤️</span> in Your Inbox
-                </h3>
-                <FormButton
-                  formType="newsletter-signup"
-                  variant="outlineGold"
-                  size="md"
-                  className="px-8 whitespace-nowrap"
-                >
-                  Subscribe to Newsletter
-                </FormButton>
               </div>
             </div>
           </div>
