@@ -1,6 +1,7 @@
 "use client"
 
 import Image from 'next/image';
+import VideoEmbed from '@/components/VideoEmbed';
 import { useArticleModal } from '@/contexts/ArticleModalContext';
 import { useFormModal } from '@/contexts/FormModalContext';
 
@@ -49,12 +50,14 @@ const videos = [
     title: 'Elana on ABC7 New York',
     text: "Be Kind: Father's Day cancer survivor coverage. June 20, 2021.",
     embed: 'https://abc7ny.com/video/embed/?pid=10814909',
+    source: 'ABC7 New York',
     link: { label: 'Read the article', href: 'https://abc7ny.com/be-kind-fathers-day-cancer-survivor/10814428/' },
   },
   {
     title: 'Elana & Sabrina on ABC7 New York',
     text: "Be Kind: Valentine's Day cancer care packages. February 15, 2021.",
     embed: 'https://abc7ny.com/video/embed/?pid=10340426',
+    source: 'ABC7 New York',
     link: { label: 'Read the article', href: 'https://abc7ny.com/be-kind-valentines-day-cancer-care-packages/10340454/' },
   },
   {
@@ -137,13 +140,10 @@ export default function Media() {
             {videos.map((video) => (
               <div key={video.embed} className={`${cardClass} p-4 flex flex-col`}>
                 <div className="aspect-video rounded-[14px] overflow-hidden bg-gray-100 dark:bg-gray-800">
-                  <iframe
-                    className="w-full h-full"
+                  <VideoEmbed
                     src={video.embed}
                     title={video.title}
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
+                    source={video.source}
                   />
                 </div>
                 <div className="px-2 pt-5 pb-2 flex flex-col flex-1">
