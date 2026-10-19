@@ -24,6 +24,12 @@ export default function Navigation() {
   // page starts with the white header and colored logo and icons, so they show
   // even before the page's code has loaded.
   const [isScrolled, setIsScrolled] = useState(!isHomePage)
+  // On Home the big "Donate Now" button is on the first screen, so the small phone
+  // Donate button waits until that one has scrolled out of view
+  // Each answer is tagged with its page, so arriving on Home counts as "big button showing"
+  // until it has been checked there
+  const [heroDonate, setHeroDonate] = useState({ path: pathname, visible: isHomePage })
+  const heroDonateVisible = isHomePage && (heroDonate.path !== pathname || heroDonate.visible)
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isHoveringRef = useRef(false)
   const { theme } = useTheme()
@@ -82,6 +88,22 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isHomePage])
+
+  useEffect(() => {
+    const heroButton = isHomePage ? document.getElementById('hero-donate') : null
+    if (!heroButton) {
+      // Forget Home's last answer while away, so the next visit starts hidden again
+      setHeroDonate(prev => (prev.path === pathname ? prev : { path: pathname, visible: false }))
+      return
+    }
+    // The fixed header is 96px tall, so a button hidden under it counts as scrolled away
+    const observer = new IntersectionObserver(
+      ([entry]) => setHeroDonate({ path: pathname, visible: entry.isIntersecting }),
+      { rootMargin: '-96px 0px 0px 0px' }
+    )
+    observer.observe(heroButton)
+    return () => observer.disconnect()
+  }, [isHomePage, pathname])
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -302,7 +324,7 @@ export default function Navigation() {
               onFocus={warmUpDonation}
               className={`mr-1 px-4 py-2.5 rounded-full text-xs font-semibold leading-none tracking-wide bg-orange-600 hover:bg-orange-700 text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 ${
                 isScrolled ? '' : 'shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
-              }`}
+              } ${heroDonateVisible ? 'hidden' : ''}`}
             >
               DONATE
             </button>

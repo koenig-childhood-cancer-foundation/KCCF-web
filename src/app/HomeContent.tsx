@@ -55,6 +55,7 @@ export default function HomeContent() {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16 lg:mt-[72px] lg:mb-0">
               <DonationButton
+                id="hero-donate"
                 amount={50}
                 campaign="Donate to save lives"
                 variant="primary"
