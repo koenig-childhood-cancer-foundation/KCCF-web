@@ -298,6 +298,7 @@ export default function Navigation() {
             <button
               type="button"
               onClick={() => openDonationModal()}
+              onMouseEnter={warmUpDonation}
               onFocus={warmUpDonation}
               className={`mr-1 px-4 py-2.5 rounded-full text-xs font-semibold leading-none tracking-wide bg-orange-600 hover:bg-orange-700 text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 ${
                 isScrolled ? '' : 'shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
