@@ -174,7 +174,7 @@ export default function AboutUs() {
         <div className="container mx-auto px-4 xl:px-28">
           <div className="space-y-5 text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
             <p className="text-xl font-semibold text-[#2B2330] dark:text-white">
-              My name is Elana Koenig, and I am a cancer survivor, singer, and founder of Koenig Childhood Cancer Foundation.
+              My name is Elana Koenig, and I am a cancer survivor, singer, and founder of Koenig Childhood Cancer Foundation (KCCF).
             </p>
             <p>
               I was only 7 when I was diagnosed with an aggressive rare childhood cancer called Ewing&apos;s Sarcoma. I
