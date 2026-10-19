@@ -15,7 +15,7 @@ export default function Privacy() {
         <div className="absolute inset-0 top-24">
           <Image
             src="/images/Placeholder.jpg"
-            alt="Privacy & Cookie Policy"
+            alt=""
             fill
             className="object-cover"
             sizes="100vw"

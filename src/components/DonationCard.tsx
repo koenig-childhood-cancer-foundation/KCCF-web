@@ -70,6 +70,19 @@ function GiveLivelyWidgetCard() {
 export default function DonationCard() {
   // Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal, Venmo and DAF gifts
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
+  // Start the Zeffy form after the page's own photos have loaded, so the top photo
+  // isn't slowed down by the form downloading at the same time
+  const [pageLoaded, setPageLoaded] = useState(false)
+
+  useEffect(() => {
+    if (document.readyState === 'complete') {
+      setPageLoaded(true)
+      return
+    }
+    const onLoad = () => setPageLoaded(true)
+    window.addEventListener('load', onLoad)
+    return () => window.removeEventListener('load', onLoad)
+  }, [])
   const switchLinkClass =
     'inline-flex items-center gap-1 mt-2 px-6 py-2.5 rounded-full bg-white text-violet-700 font-bold shadow-md hover:bg-[#FBF5EA] transition-colors cursor-pointer'
 
@@ -91,18 +104,20 @@ export default function DonationCard() {
               <div className="w-8 h-8 rounded-full border-4 border-[#DAB87E] border-t-violet-600 animate-spin" />
               <p className="text-sm">Loading the secure donation form&hellip;</p>
             </div>
-            <iframe
-              className="relative block w-full h-full max-w-full border-0"
-              src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
-              title="Zeffy donation form"
-              scrolling="yes"
-              allow="payment"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-              style={{
-                WebkitOverflowScrolling: 'touch',
-                overflow: 'auto',
-              }}
-            />
+            {pageLoaded && (
+              <iframe
+                className="relative block w-full h-full max-w-full border-0"
+                src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
+                title="Zeffy donation form"
+                scrolling="yes"
+                allow="payment"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                style={{
+                  WebkitOverflowScrolling: 'touch',
+                  overflow: 'auto',
+                }}
+              />
+            )}
           </>
         ) : (
           <GiveLivelyWidgetCard />

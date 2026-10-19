@@ -30,7 +30,7 @@ export default function HomeContent() {
         <div className="absolute inset-0 overflow-hidden">
           <Image
             src="/images/banner.webp"
-            alt="KCCF Banner Background"
+            alt="Elana with a child in the hospital, entertaining her"
             fill
             sizes="100vw"
             className="object-cover object-[80%]"
@@ -172,7 +172,7 @@ export default function HomeContent() {
               <div className="flex items-center justify-center mb-6 overflow-hidden rounded-xl">
                 <Image
                   src="/images/family-assistance-impact-program.jpeg"
-                  alt="Financial Assistance Impact Program Image"
+                  alt="A smiling child in a hospital room with Elana, KCCF founder"
                   width={500}
                   height={600}
                 />
@@ -220,7 +220,7 @@ export default function HomeContent() {
               <div className="flex items-center justify-center mb-6 overflow-hidden rounded-xl">
                 <Image
                   src="/images/camp-impact-program.jpg"
-                  alt="Camp Impact Program Image"
+                  alt="KCCF children in yellow KCCF shirts cheering at KCCF Camp"
                   width={500}
                   height={600}
                 />
@@ -230,7 +230,7 @@ export default function HomeContent() {
                 An international summer camp in Azerbaijan for children with cancer and their siblings, free for families.
               </p>
               <Link href="/camp" className="inline-flex items-center text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto">
-                Learn More
+                Learn More About KCCF Camp
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
