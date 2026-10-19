@@ -211,7 +211,7 @@ export default function Media() {
               onClick={() => openModal('contact')}
               className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center cursor-pointer"
             >
-              Contact Us
+              Send Us a Message
             </button>
             <button
               type="button"

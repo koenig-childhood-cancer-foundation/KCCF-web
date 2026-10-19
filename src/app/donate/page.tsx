@@ -43,7 +43,7 @@ const waysToGive: { title: string; body: ReactNode; contact: boolean; ein?: 'num
       <>
         Payable to Koenig Childhood Cancer Foundation
         <br />
-        1175 York Ave, Ste. 15E
+        1175 York Ave, Suite 15E
         <br />
         New York, NY 10065
       </>

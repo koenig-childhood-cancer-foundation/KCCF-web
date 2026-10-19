@@ -346,6 +346,9 @@ export default function CrazySocks() {
                       &ldquo;
                     </span>
                     {company.quote}
+                    <span className="text-[#DAB87E] text-4xl font-serif leading-[0] relative top-[0.3em] ml-1" aria-hidden="true">
+                      &rdquo;
+                    </span>
                   </p>
                 </div>
               </div>

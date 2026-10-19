@@ -36,7 +36,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="block hover:text-white transition-colors"
               >
-                <p>1175 York Ave., Suite 15E</p>
+                <p>1175 York Ave, Suite 15E</p>
                 <p>New York, NY 10065<span className="sr-only"> (opens Google Maps)</span></p>
               </a>
               <p>
@@ -44,7 +44,7 @@ export default function Footer() {
                   href="tel:+19177656272"
                   className="inline-block py-1 hover:text-white transition-colors"
                 >
-                  +1 (917) 765-6272
+                  (917) 765-6272
                 </a>
               </p>
               <p>
