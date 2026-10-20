@@ -19,7 +19,7 @@ export default function CrazySocks() {
     },
     {
       title: 'Your Team Packs',
-      text: 'Elana shares her story. Your team writes notes of hope and fills the bags.',
+      text: 'Elana speaks to your team. Everyone writes notes of hope and fills the bags.',
       image: '/images/MetaLeadershipMakingfitBags-scaled.jpg',
       alt: 'A company team packing gift bags in their office',
     },
@@ -136,7 +136,7 @@ export default function CrazySocks() {
         {/* PageHeader */}
         <PageHeader
           title="Crazy Socks<br/>Gift Bags"
-          subtitle="A corporate team-building event with heart: Elana shares her story, and your team packs gift bags for children in the hospital."
+          subtitle="Corporate team building that gives back: your team packs gift bags for children in the hospital while Elana shares her story."
           headerStyle="pt-72 xl:pt-84 pb-12 xl:pl-14 2xl:pl-20"
           gridStyle="gap-0 lg:grid-cols-1"
           button={
