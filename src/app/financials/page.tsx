@@ -13,7 +13,6 @@ const documents = [
   { title: 'Form 990 (2025)', note: 'Annual IRS filing', href: '/documents/990-2025-kccf.pdf' },
   { title: 'Form 990 (2023)', note: 'Annual IRS filing', href: '/documents/990-2023-kccf.pdf' },
   { title: 'IRS Determination Letter', note: '501(c)(3) public charity', href: '/documents/irs-determination.pdf' },
-  { title: 'W-9', note: 'For company and foundation gifts', href: '/documents/w9-kccf.pdf' },
 ];
 
 const ratings = [
@@ -82,9 +81,10 @@ export default function Financials() {
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-4">
           <SectionTitle title="Our Documents" subtitle="Open or download any of them. Grant makers and companies often ask for these." />
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 list-none p-0">
+          {/* Flex-wrap so a short last row sits in the middle */}
+          <ul className="flex flex-wrap justify-center gap-5 list-none p-0">
             {documents.map((d) => (
-              <li key={d.title}>
+              <li key={d.title} className="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc((100%-2.5rem)/3)]">
                 <a
                   href={d.href}
                   target="_blank"
@@ -98,6 +98,11 @@ export default function Financials() {
               </li>
             ))}
           </ul>
+          <p className="mt-8 text-center text-gray-700 dark:text-gray-300">
+            Need our W-9? Email{' '}
+            <a href="mailto:join@thekccf.org" className="font-semibold text-violet-600 dark:text-saffron-400 hover:underline">join@thekccf.org</a>{' '}
+            and we will send it.
+          </p>
         </div>
       </section>
 
