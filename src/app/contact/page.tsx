@@ -98,7 +98,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Mailing address and Write to Us, on cream */}
+      {/* Mailing address, on cream */}
       <section className="py-12 bg-[#FBF5EA] dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-gray-700 dark:text-gray-200">
@@ -113,15 +113,6 @@ export default function Contact() {
               <span className="block">1175 York Ave, Suite 15E, New York, NY 10065</span>
             </a>
           </p>
-
-          <h2 className="mt-10 text-2xl md:text-3xl font-bold text-violet-600 dark:text-white">Write to Us</h2>
-          <button
-            type="button"
-            onClick={() => openModal('contact')}
-            className="mt-4 inline-block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center hover:bg-[#FBF5EA] cursor-pointer"
-          >
-            <span className="block text-xl md:text-2xl font-extrabold text-violet-600 dark:text-saffron-400">Send Us a Message</span>
-          </button>
         </div>
       </section>
 
