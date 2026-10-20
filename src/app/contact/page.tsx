@@ -93,7 +93,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Mailing address, General Inquiries, then the three stars */}
+      {/* Mailing address, Write to Us, then the three stars */}
       <section className="pt-12 pb-16 bg-white dark:bg-gray-800 border-b border-[#F1E7D6] dark:border-gray-700">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-gray-700 dark:text-gray-200">
@@ -102,19 +102,19 @@ export default function Contact() {
               href="https://www.google.com/maps/search/?api=1&query=1175+York+Ave+Suite+15E+New+York+NY+10065"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-semibold text-violet-600 dark:text-saffron-400 hover:underline"
+              className="inline-block text-lg font-semibold text-violet-600 dark:text-saffron-400 hover:underline"
             >
-              Koenig Childhood Cancer Foundation, Inc. · 1175 York Ave, Suite 15E, New York, NY 10065
+              <span className="block">Koenig Childhood Cancer Foundation, Inc.</span>
+              <span className="block">1175 York Ave, Suite 15E, New York, NY 10065</span>
             </a>
           </p>
 
-          <h2 className="mt-10 text-2xl md:text-3xl font-bold text-violet-600 dark:text-white">General Inquiries</h2>
+          <h2 className="mt-10 text-2xl md:text-3xl font-bold text-violet-600 dark:text-white">Write to Us</h2>
           <button
             type="button"
             onClick={() => openModal('contact')}
             className="mt-4 inline-block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center hover:bg-[#FBF5EA] cursor-pointer"
           >
-            <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Write to us</span>
             <span className="block text-xl md:text-2xl font-extrabold text-violet-600 dark:text-saffron-400">Send Us a Message</span>
           </button>
 
