@@ -79,7 +79,7 @@ export const searchData: SearchItem[] = [
   },
   {
     title: 'Financials',
-    description: 'Where every gift goes, plus our Financial Review, Form 990s, IRS letter and W-9',
+    description: 'Where every gift goes, plus our Financial Review, Form 990s and IRS letter',
     href: '/financials',
     keywords: ['financials', 'financial review', '990', 'form 990', 'w-9', 'w9', 'irs', '501c3', 'annual report', 'ratings', 'charity navigator', 'candid', 'transparency'],
     category: 'About'
