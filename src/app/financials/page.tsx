@@ -11,7 +11,6 @@ const split = [
 const documents = [
   { title: '2025 Financial Review', note: 'CPA review by Davis, Ward & Hochman, March 2026', href: '/documents/financial-review-2025-kccf.pdf' },
   { title: 'Form 990 (2025)', note: 'Annual IRS filing', href: '/documents/990-2025-kccf.pdf' },
-  { title: 'Form 990 (2024)', note: 'Annual IRS filing', href: '/documents/990-2024-kccf.pdf' },
   { title: 'Form 990 (2023)', note: 'Annual IRS filing', href: '/documents/990-2023-kccf.pdf' },
   { title: 'IRS Determination Letter', note: '501(c)(3) public charity', href: '/documents/irs-determination.pdf' },
   { title: 'W-9', note: 'For company and foundation gifts', href: '/documents/w9-kccf.pdf' },
