@@ -368,7 +368,7 @@ export default function HomeContent() {
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <VideoEmbed src="https://www.youtube.com/embed/dZmB8dH9X70" title="Elana, Teen Cancer Survivor, Sings National Anthem at Mets Game!" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana singing the national anthem at a Mets game</h3>
+              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Singing for 50,000 at a Mets Game</h3>
             </div>
 
             {/* WNBC: families from Ukraine */}
@@ -384,7 +384,7 @@ export default function HomeContent() {
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <VideoEmbed src="https://www.youtube.com/embed/tiamL9EdPC0" title="Nasdaq Honors Elana – Teen Cancer Survivor and Founder of KCCF!" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana and KCCF honored by Nasdaq at the closing bell</h3>
+              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Nasdaq Honors Elana and KCCF</h3>
             </div>
           </div>
 

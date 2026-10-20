@@ -22,8 +22,8 @@ const videos = [
     link: { label: 'Watch on YouTube', href: 'https://www.youtube.com/watch?v=clbbmsPRyS8' },
   },
   {
-    title: 'Singing for 50,000 at Citi Field',
-    text: 'Elana sings the national anthem at a Mets game and brings KCCF\'s mission to the whole stadium.',
+    title: 'Singing for 50,000 at a Mets Game',
+    text: 'Elana sings the national anthem at Citi Field and brings KCCF\'s mission to the whole stadium.',
     embed: 'https://www.youtube.com/embed/dZmB8dH9X70',
     link: { label: 'Watch on YouTube', href: 'https://www.youtube.com/watch?v=dZmB8dH9X70' },
   },
