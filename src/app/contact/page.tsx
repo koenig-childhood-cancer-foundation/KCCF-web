@@ -180,6 +180,24 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* Plum ending: the action */}
+      <section className="py-20 bg-violet-600 dark:bg-gray-800">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Send Us a Message</h2>
+          <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
+          <p className="text-xl text-white/90 mb-10">Anything else on your mind? Write to us and we will get back to you.</p>
+          <div className="flex justify-center">
+            <button
+              type="button"
+              onClick={() => openModal('contact')}
+              className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center cursor-pointer"
+            >
+              Send Us a Message
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
