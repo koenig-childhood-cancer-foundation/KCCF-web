@@ -1,14 +1,40 @@
 "use client"
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useFormModal } from '@/contexts/FormModalContext';
+import { useDonationModal } from '@/contexts/DonationModalContext';
 import type { FormType } from '@/contexts/FormModalContext';
 
-// No phone number on this page, to cut down on solicitation: every topic opens a form.
-// The address and phone are still in the footer.
+// Giving options follow KCCF Current Facts – MASTER. The page offers forms instead of
+// a phone number, to cut down on solicitation (the footer still shows it).
 
-// The three ways to reach KCCF, each with its own form (Rena's RD-7 layout)
-const contacts: { title: string; text: string; label: string; form: FormType }[] = [
+type Action =
+  | { label: string; href: string }
+  | { label: string; form: FormType }
+  | { label: string; donate: true };
+
+// The remaining ways to reach KCCF, shown as cards under the stars
+const helps: { title: string; text: string; action: Action }[] = [
+  {
+    title: 'Family Aid',
+    text: 'Families of children in active treatment can apply for emergency aid.',
+    action: { label: 'Apply for Family Aid', form: 'aid-application' },
+  },
+  {
+    title: 'Make a Donation',
+    text: 'Give online, or by stock, crypto, donor-advised fund, wire or check.',
+    action: { label: 'Donate Now', donate: true },
+  },
+  {
+    title: 'Start a Fundraiser',
+    text: 'Turn a birthday, a game, a run or a school event into help for a child.',
+    action: { label: 'Start a Fundraiser', href: '/get-involved#fundraisers' },
+  },
+];
+
+// The three stars: each opens its own form
+const stars: { title: string; text: string; label: string; form: FormType }[] = [
   {
     title: 'Corporate Partnerships',
     text: 'Bring a Crazy Socks gift bag event to your company, school or group. Many companies fund it from their CSR or volunteer budget.',
@@ -16,16 +42,16 @@ const contacts: { title: string; text: string; label: string; form: FormType }[]
     form: 'crazy-socks-sponsor',
   },
   {
-    title: 'Media & Speaking Engagements',
+    title: 'Media, PR & Speaking Engagements',
     text: 'Interviews, press, and booking Elana to speak or sing at your event.',
     label: 'Book Elana to Speak',
     form: 'book-elana',
   },
   {
-    title: 'General Inquiries',
-    text: 'Anything else on your mind? Write to us and we will get back to you.',
-    label: 'Send Us a Message',
-    form: 'contact',
+    title: 'Volunteer',
+    text: 'KCCF is a 100% volunteer-run organization. Tell us about your skills.',
+    label: 'Apply to Volunteer',
+    form: 'volunteer',
   },
 ];
 
@@ -39,6 +65,9 @@ function Star() {
 
 export default function Contact() {
   const { openModal } = useFormModal();
+  const { openModal: openDonationModal, warmUp: warmUpDonation } = useDonationModal();
+  const linkClass =
+    'mt-auto inline-flex items-center gap-1 font-semibold text-violet-600 dark:text-saffron-400 hover:text-violet-800 dark:hover:text-saffron-300 cursor-pointer';
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
@@ -64,36 +93,78 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Mailing address above the three ways to reach us */}
-      <section className="pt-14 pb-20 bg-white dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center">
+      {/* Mailing address, General Inquiries, then the three stars */}
+      <section className="pt-12 pb-16 bg-white dark:bg-gray-800 border-b border-[#F1E7D6] dark:border-gray-700">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <p className="text-gray-700 dark:text-gray-200">
+            <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Mailing address</span>
             <a
               href="https://www.google.com/maps/search/?api=1&query=1175+York+Ave+Suite+15E+New+York+NY+10065"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-3 hover:bg-[#FBF5EA]"
+              className="text-lg font-semibold text-violet-600 dark:text-saffron-400 hover:underline"
             >
-              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Mailing address</span>
-              <span className="block text-base md:text-lg font-extrabold text-violet-600 dark:text-saffron-400">
-                Koenig Childhood Cancer Foundation, Inc. · 1175 York Ave, Suite 15E, New York, NY 10065
-              </span>
+              Koenig Childhood Cancer Foundation, Inc. · 1175 York Ave, Suite 15E, New York, NY 10065
             </a>
-          </div>
+          </p>
+
+          <h2 className="mt-10 text-2xl md:text-3xl font-bold text-violet-600 dark:text-white">General Inquiries</h2>
+          <button
+            type="button"
+            onClick={() => openModal('contact')}
+            className="mt-4 inline-block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center hover:bg-[#FBF5EA] cursor-pointer"
+          >
+            <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Write to us</span>
+            <span className="block text-xl md:text-2xl font-extrabold text-violet-600 dark:text-saffron-400">Send Us a Message</span>
+          </button>
 
           <div className="mt-14 grid md:grid-cols-3 gap-12 md:gap-8">
-            {contacts.map((c) => (
-              <div key={c.title} className="text-center flex flex-col items-center">
+            {stars.map((s) => (
+              <div key={s.title} className="flex flex-col items-center">
                 <Star />
-                <h2 className="mt-3 text-2xl font-bold text-violet-600 dark:text-white">{c.title}</h2>
-                <p className="mt-3 mb-6 text-gray-700 dark:text-gray-200 max-w-xs">{c.text}</p>
+                <h3 className="mt-3 text-2xl font-bold text-violet-600 dark:text-white">{s.title}</h3>
+                <p className="mt-3 mb-6 text-gray-700 dark:text-gray-200 max-w-xs">{s.text}</p>
                 <button
                   type="button"
-                  onClick={() => openModal(c.form)}
+                  onClick={() => openModal(s.form)}
                   className="mt-auto btn-primary btn-primary-orange text-white py-3 px-7 rounded-full font-semibold inline-flex items-center justify-center cursor-pointer"
                 >
-                  {c.label}
+                  {s.label}
                 </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The remaining ways to reach KCCF */}
+      <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
+        <div className="container mx-auto px-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 max-w-6xl mx-auto">
+            {helps.map((help) => (
+              <div
+                key={help.title}
+                className="bg-white dark:bg-gray-700 rounded-[22px] border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-6 py-7 text-center flex flex-col items-center"
+              >
+                <h3 className="text-xl font-bold text-[#2B2330] dark:text-white">{help.title}</h3>
+                <p className="mt-2 mb-5 text-gray-700 dark:text-gray-200">{help.text}</p>
+                {'donate' in help.action ? (
+                  <button type="button" onClick={() => openDonationModal()} onMouseEnter={warmUpDonation} onFocus={warmUpDonation} className={linkClass}>
+                    {help.action.label} &rarr;
+                  </button>
+                ) : 'form' in help.action ? (
+                  <button type="button" onClick={() => openModal((help.action as { form: FormType }).form)} className={linkClass}>
+                    {help.action.label} &rarr;
+                  </button>
+                ) : help.action.href.startsWith('/') ? (
+                  <Link href={help.action.href} className={linkClass}>
+                    {help.action.label} &rarr;
+                  </Link>
+                ) : (
+                  <a href={help.action.href} className={linkClass}>
+                    {help.action.label} &rarr;
+                  </a>
+                )}
               </div>
             ))}
           </div>
