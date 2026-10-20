@@ -31,6 +31,11 @@ const helps: { title: string; text: string; action: Action }[] = [
     text: 'Turn a birthday, a game, a run or a school event into help for a child.',
     action: { label: 'Start a Fundraiser', href: '/get-involved#fundraisers' },
   },
+  {
+    title: 'Volunteer',
+    text: 'KCCF is a 100% volunteer-run organization. Tell us about your skills.',
+    action: { label: 'Apply to Volunteer', form: 'volunteer' },
+  },
 ];
 
 // The three stars: each opens its own form
@@ -48,10 +53,10 @@ const stars: { title: string; text: string; label: string; form: FormType }[] = 
     form: 'book-elana',
   },
   {
-    title: 'Volunteer',
-    text: 'KCCF is a 100% volunteer-run organization. Tell us about your skills.',
-    label: 'Apply to Volunteer',
-    form: 'volunteer',
+    title: 'Organize a Benefit Event',
+    text: 'Host a gala, concert, game or school event for children with cancer. Tell us your idea and we will get back to you.',
+    label: 'Tell Us About Your Event',
+    form: 'contact',
   },
 ];
 
@@ -140,7 +145,7 @@ export default function Contact() {
       {/* The remaining ways to reach KCCF */}
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {helps.map((help) => (
               <div
                 key={help.title}
