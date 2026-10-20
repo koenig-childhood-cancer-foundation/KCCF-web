@@ -79,6 +79,58 @@ const faqQuestionClass =
   'flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden px-6 py-5 text-lg font-semibold text-[#2B2330] dark:text-white'
 const faqAnswerClass = 'px-6 pb-6 -mt-1 text-gray-600 dark:text-gray-300'
 
+// Each answer is shown on the page; `text` is the same answer in plain words for
+// the FAQPage data that search engines and AI tools read. Keep the two the same.
+const faqs: { question: string; answer: ReactNode; text: string }[] = [
+  {
+    question: 'Is my donation secure?',
+    answer: 'Your donation is protected by industry-standard SSL encryption. Payments are processed securely through Zeffy or GiveLively using PCI-compliant technology.',
+    text: 'Your donation is protected by industry-standard SSL encryption. Payments are processed securely through Zeffy or GiveLively using PCI-compliant technology.',
+  },
+  {
+    question: 'Is this donation tax-deductible?',
+    answer: 'Yes. Koenig Childhood Cancer Foundation is a registered 501(c)(3) nonprofit. Donations are tax-deductible to the extent permitted by U.S. law. EIN: 84-4892279',
+    text: 'Yes. Koenig Childhood Cancer Foundation is a registered 501(c)(3) nonprofit. Donations are tax-deductible to the extent permitted by U.S. law. EIN: 84-4892279',
+  },
+  {
+    question: 'Will I receive a tax receipt?',
+    answer: 'Yes. A donation receipt will be emailed to you immediately after your gift is submitted.',
+    text: 'Yes. A donation receipt will be emailed to you immediately after your gift is submitted.',
+  },
+  {
+    question: 'Can I cancel my recurring donation?',
+    answer: (
+      <>
+        Yes. Monthly donations can be changed or canceled at any time. Just contact us at{' '}
+        <a href="mailto:join@thekccf.org" className={linkClass}>
+          join@thekccf.org
+        </a>{' '}
+        for help.
+      </>
+    ),
+    text: 'Yes. Monthly donations can be changed or canceled at any time. Just contact us at join@thekccf.org for help.',
+  },
+  {
+    question: "What's the difference between Zeffy and GiveLively?",
+    answer: (
+      <>
+        Zeffy charges no platform or processing fees, so <span className="font-bold text-violet-600 dark:text-saffron-400">100% of your gift supports KCCF</span>. GiveLively offers more payment options (PayPal, Venmo, bank transfers, donor-advised funds) but applies standard payment processing fees.
+      </>
+    ),
+    text: 'Zeffy charges no platform or processing fees, so 100% of your gift supports KCCF. GiveLively offers more payment options (PayPal, Venmo, bank transfers, donor-advised funds) but applies standard payment processing fees.',
+  },
+]
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.text },
+  })),
+}
+
 export default function Donate() {
 
   return (
@@ -211,6 +263,7 @@ export default function Donate() {
       </section>
 
       {/* FAQ Section */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-violet-600 dark:text-white">
@@ -219,59 +272,15 @@ export default function Donate() {
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-12" aria-hidden="true" />
 
           <div className="space-y-4">
-            <details className={faqCardClass}>
-              <summary className={faqQuestionClass}>
-                Is my donation secure?
-                <span className="shrink-0 text-[#8A6A2E] dark:text-[#DAB87E] text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
-              </summary>
-              <p className={faqAnswerClass}>
-                Your donation is protected by industry-standard SSL encryption. Payments are processed securely through Zeffy or GiveLively using PCI-compliant technology.
-              </p>
-            </details>
-
-            <details className={faqCardClass}>
-              <summary className={faqQuestionClass}>
-                Is this donation tax-deductible?
-                <span className="shrink-0 text-[#8A6A2E] dark:text-[#DAB87E] text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
-              </summary>
-              <p className={faqAnswerClass}>
-                Yes. Koenig Childhood Cancer Foundation is a registered 501(c)(3) nonprofit. Donations are tax-deductible to the extent permitted by U.S. law. EIN: 84-4892279
-              </p>
-            </details>
-
-            <details className={faqCardClass}>
-              <summary className={faqQuestionClass}>
-                Will I receive a tax receipt?
-                <span className="shrink-0 text-[#8A6A2E] dark:text-[#DAB87E] text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
-              </summary>
-              <p className={faqAnswerClass}>
-                Yes. A donation receipt will be emailed to you immediately after your gift is submitted.
-              </p>
-            </details>
-
-            <details className={faqCardClass}>
-              <summary className={faqQuestionClass}>
-                Can I cancel my recurring donation?
-                <span className="shrink-0 text-[#8A6A2E] dark:text-[#DAB87E] text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
-              </summary>
-              <p className={faqAnswerClass}>
-                Yes. Monthly donations can be changed or canceled at any time. Just contact us at{' '}
-                <a href="mailto:join@thekccf.org" className={linkClass}>
-                  join@thekccf.org
-                </a>{' '}
-                for help.
-              </p>
-            </details>
-
-            <details className={faqCardClass}>
-              <summary className={faqQuestionClass}>
-                What&apos;s the difference between Zeffy and GiveLively?
-                <span className="shrink-0 text-[#8A6A2E] dark:text-[#DAB87E] text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
-              </summary>
-              <p className={faqAnswerClass}>
-                Zeffy charges no platform or processing fees, so <span className="font-bold text-violet-600 dark:text-saffron-400">100% of your gift supports KCCF</span>. GiveLively offers more payment options (PayPal, Venmo, bank transfers, donor-advised funds) but applies standard payment processing fees.
-              </p>
-            </details>
+            {faqs.map((faq) => (
+              <details key={faq.question} className={faqCardClass}>
+                <summary className={faqQuestionClass}>
+                  {faq.question}
+                  <span className="shrink-0 text-[#8A6A2E] dark:text-[#DAB87E] text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className={faqAnswerClass}>{faq.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
