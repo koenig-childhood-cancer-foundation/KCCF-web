@@ -368,15 +368,15 @@ export default function HomeContent() {
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <VideoEmbed src="https://www.youtube.com/embed/dZmB8dH9X70" title="Elana, Teen Cancer Survivor, Sings National Anthem at Mets Game!" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana singing the national anthem at a Mets game</h3>
+              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Singing for 50,000 at a Mets Game</h3>
             </div>
 
             {/* WNBC: families from Ukraine */}
             <div className="card-interactive group bg-[#FBF5EA] dark:bg-gray-700 p-4 md:p-6 rounded-[22px] overflow-hidden border border-[#F0E4CC] border-t-4 border-t-violet-600 dark:border-gray-600 dark:border-t-violet-400">
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
-                <VideoEmbed src="https://www.youtube.com/embed/Bgisln8H59w?rel=0" title="WNBC: Families from Ukraine supported by KCCF" />
+                <VideoEmbed src="https://www.youtube.com/embed/Bgisln8H59w?rel=0" title="WNBC: A Toddler from Ukraine Supported by KCCF" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">WNBC: Families from Ukraine supported by KCCF</h3>
+              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">WNBC: A Toddler from Ukraine Supported by KCCF</h3>
             </div>
 
             {/* Nasdaq */}
@@ -384,7 +384,7 @@ export default function HomeContent() {
               <div className="aspect-video mb-3 md:mb-4 rounded-xl overflow-hidden">
                 <VideoEmbed src="https://www.youtube.com/embed/tiamL9EdPC0" title="Nasdaq Honors Elana – Teen Cancer Survivor and Founder of KCCF!" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Elana and KCCF honored by Nasdaq at the closing bell</h3>
+              <h3 className="text-lg md:text-xl font-bold text-[#2B2330] dark:text-saffron-400 leading-tight group-hover:text-violet-700 dark:group-hover:text-saffron-300 transition-colors">Nasdaq Honors Elana and KCCF</h3>
             </div>
           </div>
 
