@@ -80,7 +80,7 @@ export default function Financials() {
       {/* Documents */}
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-4">
-          <SectionTitle title="Our Documents" subtitle="Open or download any of them. Grant makers and companies often ask for these." />
+          <SectionTitle title="Accountability Documents" subtitle="Open or download any of them. Grant makers and companies often ask for these." />
           {/* Flex-wrap so a short last row sits in the middle */}
           <ul className="flex flex-wrap justify-center gap-5 list-none p-0">
             {documents.map((d) => (
