@@ -46,6 +46,7 @@ const organizationJsonLd = {
   logo: "https://thekccf.org/android-chrome-512x512.png",
   description:
     "KCCF provides life-saving financial and emotional support to children battling cancer and their families.",
+  slogan: "No child should fight cancer alone.",
   nonprofitStatus: "Nonprofit501c3",
   taxID: "84-4892279",
   foundingDate: "2020-02-21",
@@ -66,7 +67,53 @@ const organizationJsonLd = {
     "https://www.linkedin.com/company/thekccf/",
     "https://www.instagram.com/elanalailakoenig/",
     "https://www.tiktok.com/@kccfofficial",
+    "https://www.guidestar.org/profile/84-4892279",
+    "https://www.charitynavigator.org/ein/844892279",
+    "https://greatnonprofits.org/org/koenig-childhood-cancer-foundation",
   ],
+  // Ratings without a year, so they don't go out of date
+  award: [
+    "Candid Platinum Seal of Transparency",
+    "Charity Navigator 4-star rating",
+    "GreatNonprofits Top-Rated Nonprofit since 2021",
+  ],
+  // Programs as named on the website
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "KCCF programs",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        url: "https://thekccf.org/aid",
+        itemOffered: {
+          "@type": "Service",
+          name: "Family Aid",
+          description:
+            "Emergency aid for co-pays, rent or mortgage, lodging, travel and food for families of children in active treatment.",
+        },
+      },
+      {
+        "@type": "Offer",
+        url: "https://thekccf.org/crazy-socks",
+        itemOffered: {
+          "@type": "Service",
+          name: "Crazy Socks Gift Bags",
+          description:
+            "Crazy Socks gift bags delivered to children in isolation wards, packed by company teams at corporate team-building events.",
+        },
+      },
+      {
+        "@type": "Offer",
+        url: "https://thekccf.org/camp",
+        itemOffered: {
+          "@type": "Service",
+          name: "KCCF Camp (International Camp in Azerbaijan)",
+          description:
+            "A free international summer camp in Azerbaijan where children with cancer and their siblings heal, play and feel included.",
+        },
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

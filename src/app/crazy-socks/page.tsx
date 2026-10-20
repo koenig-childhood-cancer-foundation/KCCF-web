@@ -136,7 +136,7 @@ export default function CrazySocks() {
         {/* PageHeader */}
         <PageHeader
           title="Crazy Socks<br/>Gift Bags"
-          subtitle="Elana shares her story, and your team packs gift bags for children in the hospital."
+          subtitle="A corporate team-building event with heart: Elana shares her story, and your team packs gift bags for children in the hospital."
           headerStyle="pt-72 xl:pt-84 pb-12 xl:pl-14 2xl:pl-20"
           gridStyle="gap-0 lg:grid-cols-1"
           button={
