@@ -6,15 +6,15 @@ import { useFormModal } from '@/contexts/FormModalContext';
 import { useDonationModal } from '@/contexts/DonationModalContext';
 import type { FormType } from '@/contexts/FormModalContext';
 
-// Giving options follow KCCF Current Facts – MASTER. The page offers the contact form
-// instead of a phone number or email address, to cut down on solicitation.
+// Giving options follow KCCF Current Facts – MASTER. The page offers forms instead of
+// a phone number, to cut down on solicitation (the footer still shows it).
 
 type Action =
   | { label: string; href: string }
   | { label: string; form: FormType }
   | { label: string; donate: true };
 
-// "How can we help?": the main ways to reach KCCF, and where each one goes
+// The remaining ways to reach KCCF, shown as cards under the stars
 const helps: { title: string; text: string; action: Action }[] = [
   {
     title: 'Family Aid',
@@ -32,29 +32,39 @@ const helps: { title: string; text: string; action: Action }[] = [
     action: { label: 'Start a Fundraiser', href: '/get-involved#fundraisers' },
   },
   {
-    title: 'Sponsor a Gift Bag Event',
-    text: 'Bring Crazy Socks to your company, school or community group.',
-    action: { label: 'Sponsor a Gift Bag Event', form: 'crazy-socks-sponsor' },
-  },
-  {
-    title: 'Book Elana to Speak',
-    text: 'For graduations, galas, corporate events and media.',
-    action: { label: 'Book Elana to Speak', form: 'book-elana' },
-  },
-  {
     title: 'Volunteer',
     text: 'KCCF is a 100% volunteer-run organization. Tell us about your skills.',
     action: { label: 'Apply to Volunteer', form: 'volunteer' },
   },
 ];
 
-function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
+// The three stars: each opens its own form
+const stars: { title: string; text: string; label: string; form: FormType }[] = [
+  {
+    title: 'Corporate Partnerships',
+    text: 'Bring a Crazy Socks gift bag event to your company, school or group. Many companies fund it from their CSR or volunteer budget.',
+    label: 'Sponsor a Gift Bag Event',
+    form: 'crazy-socks-sponsor',
+  },
+  {
+    title: 'Media, PR & Speaking Engagements',
+    text: 'Interviews, press, and booking Elana to speak or sing at your event.',
+    label: 'Book Elana to Speak',
+    form: 'book-elana',
+  },
+  {
+    title: 'Organize a Benefit Event',
+    text: 'Host a gala, concert, game or school event for children with cancer. Tell us your idea and we will get back to you.',
+    label: 'Tell Us About Your Event',
+    form: 'contact',
+  },
+];
+
+function Star() {
   return (
-    <div className="text-center mb-12">
-      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-violet-600 dark:text-white">{title}</h2>
-      <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
-      {subtitle && <p className="mt-5 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">{subtitle}</p>}
-    </div>
+    <svg width="46" height="46" viewBox="0 0 24 24" className="mx-auto fill-violet-600 dark:fill-saffron-400" aria-hidden="true">
+      <path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L2 9.5l7.1-.6z" />
+    </svg>
   );
 }
 
@@ -88,48 +98,50 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact form and mailing address in gold ovals */}
-      <section className="py-12 bg-white dark:bg-gray-800 border-b border-[#F1E7D6] dark:border-gray-700">
-        <ul className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 md:gap-6 max-w-6xl mx-auto px-4 list-none">
-          <li>
-            <button
-              type="button"
-              onClick={() => openModal('contact')}
-              className="block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center hover:bg-[#FBF5EA] cursor-pointer"
-            >
-              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Write to us</span>
-              <span className="block text-xl md:text-2xl font-extrabold text-violet-600 dark:text-saffron-400">Send Us a Message</span>
-            </button>
-          </li>
-          <li>
+      {/* Mailing address, on cream */}
+      <section className="py-12 bg-[#FBF5EA] dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <p className="text-gray-700 dark:text-gray-200">
+            <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Mailing address</span>
             <a
               href="https://www.google.com/maps/search/?api=1&query=1175+York+Ave+Suite+15E+New+York+NY+10065"
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center hover:bg-[#FBF5EA]"
+              className="inline-block text-lg font-semibold text-violet-600 dark:text-saffron-400 hover:underline"
             >
-              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Mail</span>
-              <span className="block text-lg md:text-xl font-extrabold text-violet-600 dark:text-saffron-400">1175 York Ave, Suite 15E, New York, NY 10065</span>
+              <span className="block">Koenig Childhood Cancer Foundation, Inc.</span>
+              <span className="block">1175 York Ave, Suite 15E, New York, NY 10065</span>
             </a>
-          </li>
-          <li>
-            <div className="rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center">
-              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Call or email</span>
-              <span className="block text-lg md:text-xl font-extrabold text-violet-600 dark:text-saffron-400">
-                <a href="tel:+19177656272" className="hover:underline">(917) 765-6272</a>
-                {' · '}
-                <a href="mailto:join@thekccf.org" className="hover:underline">join@thekccf.org</a>
-              </span>
-            </div>
-          </li>
-        </ul>
+          </p>
+        </div>
       </section>
 
-      {/* How can we help: every way to reach KCCF */}
+      {/* The three stars */}
+      <section className="pt-14 pb-16 bg-white dark:bg-gray-800 border-b border-[#F1E7D6] dark:border-gray-700">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-8">
+            {stars.map((s) => (
+              <div key={s.title} className="flex flex-col items-center">
+                <Star />
+                <h3 className="mt-3 text-2xl font-bold text-violet-600 dark:text-white">{s.title}</h3>
+                <p className="mt-3 mb-6 text-gray-700 dark:text-gray-200 max-w-xs">{s.text}</p>
+                <button
+                  type="button"
+                  onClick={() => openModal(s.form)}
+                  className="mt-auto btn-primary btn-primary-orange text-white py-3 px-7 rounded-full font-semibold inline-flex items-center justify-center cursor-pointer"
+                >
+                  {s.label}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The remaining ways to reach KCCF */}
       <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
         <div className="container mx-auto px-4">
-          <SectionTitle title="How Can We Help?" subtitle="Choose what you need, and we will take you to the right place." />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {helps.map((help) => (
               <div
                 key={help.title}
