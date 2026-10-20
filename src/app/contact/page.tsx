@@ -98,8 +98,8 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Mailing address, Write to Us, then the three stars */}
-      <section className="pt-12 pb-16 bg-white dark:bg-gray-800 border-b border-[#F1E7D6] dark:border-gray-700">
+      {/* Mailing address and Write to Us, on cream */}
+      <section className="py-12 bg-[#FBF5EA] dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-gray-700 dark:text-gray-200">
             <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Mailing address</span>
@@ -122,8 +122,13 @@ export default function Contact() {
           >
             <span className="block text-xl md:text-2xl font-extrabold text-violet-600 dark:text-saffron-400">Send Us a Message</span>
           </button>
+        </div>
+      </section>
 
-          <div className="mt-14 grid md:grid-cols-3 gap-12 md:gap-8">
+      {/* The three stars */}
+      <section className="pt-14 pb-16 bg-white dark:bg-gray-800 border-b border-[#F1E7D6] dark:border-gray-700">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-8">
             {stars.map((s) => (
               <div key={s.title} className="flex flex-col items-center">
                 <Star />
