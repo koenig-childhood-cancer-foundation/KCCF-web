@@ -123,7 +123,7 @@ export default function Contact() {
             {stars.map((s) => (
               <div key={s.title} className="flex flex-col items-center">
                 <Star />
-                <h3 className="mt-3 text-2xl font-bold text-violet-600 dark:text-white">{s.title}</h3>
+                <h2 className="mt-3 text-2xl font-bold text-violet-600 dark:text-white">{s.title}</h2>
                 <p className="mt-3 mb-6 text-gray-700 dark:text-gray-200 max-w-xs">{s.text}</p>
                 <button
                   type="button"
