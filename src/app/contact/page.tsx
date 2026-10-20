@@ -1,68 +1,44 @@
 "use client"
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useFormModal } from '@/contexts/FormModalContext';
-import { useDonationModal } from '@/contexts/DonationModalContext';
 import type { FormType } from '@/contexts/FormModalContext';
 
-// Giving options follow KCCF Current Facts – MASTER. The page offers the contact form
-// instead of a phone number or email address, to cut down on solicitation.
+// No phone number on this page, to cut down on solicitation: every topic opens a form.
+// The address and phone are still in the footer.
 
-type Action =
-  | { label: string; href: string }
-  | { label: string; form: FormType }
-  | { label: string; donate: true };
-
-// "How can we help?": the main ways to reach KCCF, and where each one goes
-const helps: { title: string; text: string; action: Action }[] = [
+// The three ways to reach KCCF, each with its own form (Rena's RD-7 layout)
+const contacts: { title: string; text: string; label: string; form: FormType }[] = [
   {
-    title: 'Family Aid',
-    text: 'Families of children in active treatment can apply for emergency aid.',
-    action: { label: 'Apply for Family Aid', form: 'aid-application' },
+    title: 'Corporate Partnerships',
+    text: 'Bring a Crazy Socks gift bag event to your company, school or group. Many companies fund it from their CSR or volunteer budget.',
+    label: 'Sponsor a Gift Bag Event',
+    form: 'crazy-socks-sponsor',
   },
   {
-    title: 'Make a Donation',
-    text: 'Give online, or by stock, crypto, donor-advised fund, wire or check.',
-    action: { label: 'Donate Now', donate: true },
+    title: 'Media & Speaking Engagements',
+    text: 'Interviews, press, and booking Elana to speak or sing at your event.',
+    label: 'Book Elana to Speak',
+    form: 'book-elana',
   },
   {
-    title: 'Start a Fundraiser',
-    text: 'Turn a birthday, a game, a run or a school event into help for a child.',
-    action: { label: 'Start a Fundraiser', href: '/get-involved#fundraisers' },
-  },
-  {
-    title: 'Sponsor a Gift Bag Event',
-    text: 'Bring Crazy Socks to your company, school or community group.',
-    action: { label: 'Sponsor a Gift Bag Event', form: 'crazy-socks-sponsor' },
-  },
-  {
-    title: 'Book Elana to Speak',
-    text: 'For graduations, galas, corporate events and media.',
-    action: { label: 'Book Elana to Speak', form: 'book-elana' },
-  },
-  {
-    title: 'Volunteer',
-    text: 'KCCF is a 100% volunteer-run organization. Tell us about your skills.',
-    action: { label: 'Apply to Volunteer', form: 'volunteer' },
+    title: 'General Inquiries',
+    text: 'Anything else on your mind? Write to us and we will get back to you.',
+    label: 'Send Us a Message',
+    form: 'contact',
   },
 ];
 
-function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
+function Star() {
   return (
-    <div className="text-center mb-12">
-      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-violet-600 dark:text-white">{title}</h2>
-      <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto" aria-hidden="true" />
-      {subtitle && <p className="mt-5 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">{subtitle}</p>}
-    </div>
+    <svg width="46" height="46" viewBox="0 0 24 24" className="mx-auto fill-violet-600 dark:fill-saffron-400" aria-hidden="true">
+      <path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L2 9.5l7.1-.6z" />
+    </svg>
   );
 }
 
 export default function Contact() {
   const { openModal } = useFormModal();
-  const { openModal: openDonationModal, warmUp: warmUpDonation } = useDonationModal();
-  const linkClass =
-    'mt-auto inline-flex items-center gap-1 font-semibold text-violet-600 dark:text-saffron-400 hover:text-violet-800 dark:hover:text-saffron-300 cursor-pointer';
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
@@ -88,92 +64,38 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact form and mailing address in gold ovals */}
-      <section className="py-12 bg-white dark:bg-gray-800 border-b border-[#F1E7D6] dark:border-gray-700">
-        <ul className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 md:gap-6 max-w-6xl mx-auto px-4 list-none">
-          <li>
-            <button
-              type="button"
-              onClick={() => openModal('contact')}
-              className="block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center hover:bg-[#FBF5EA] cursor-pointer"
-            >
-              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Write to us</span>
-              <span className="block text-xl md:text-2xl font-extrabold text-violet-600 dark:text-saffron-400">Send Us a Message</span>
-            </button>
-          </li>
-          <li>
+      {/* Mailing address above the three ways to reach us */}
+      <section className="pt-14 pb-20 bg-white dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center">
             <a
               href="https://www.google.com/maps/search/?api=1&query=1175+York+Ave+Suite+15E+New+York+NY+10065"
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center hover:bg-[#FBF5EA]"
+              className="inline-block rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-3 hover:bg-[#FBF5EA]"
             >
-              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Mail</span>
-              <span className="block text-lg md:text-xl font-extrabold text-violet-600 dark:text-saffron-400">1175 York Ave, Suite 15E, New York, NY 10065</span>
-            </a>
-          </li>
-          <li>
-            <div className="rounded-full border-2 border-[#DAB87E] bg-[#FFFDF9] dark:bg-gray-700 px-8 py-4 text-center">
-              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Call or email</span>
-              <span className="block text-lg md:text-xl font-extrabold text-violet-600 dark:text-saffron-400">
-                <a href="tel:+19177656272" className="hover:underline">(917) 765-6272</a>
-                {' · '}
-                <a href="mailto:join@thekccf.org" className="hover:underline">join@thekccf.org</a>
+              <span className="block text-sm font-bold text-[#8A6A2E] dark:text-[#DAB87E]">Mailing address</span>
+              <span className="block text-base md:text-lg font-extrabold text-violet-600 dark:text-saffron-400">
+                Koenig Childhood Cancer Foundation, Inc. · 1175 York Ave, Suite 15E, New York, NY 10065
               </span>
-            </div>
-          </li>
-        </ul>
-      </section>
+            </a>
+          </div>
 
-      {/* How can we help: every way to reach KCCF */}
-      <section className="py-20 bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-700">
-        <div className="container mx-auto px-4">
-          <SectionTitle title="How Can We Help?" subtitle="Choose what you need, and we will take you to the right place." />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 max-w-6xl mx-auto">
-            {helps.map((help) => (
-              <div
-                key={help.title}
-                className="bg-white dark:bg-gray-700 rounded-[22px] border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-6 py-7 text-center flex flex-col items-center"
-              >
-                <h3 className="text-xl font-bold text-[#2B2330] dark:text-white">{help.title}</h3>
-                <p className="mt-2 mb-5 text-gray-700 dark:text-gray-200">{help.text}</p>
-                {'donate' in help.action ? (
-                  <button type="button" onClick={() => openDonationModal()} onMouseEnter={warmUpDonation} onFocus={warmUpDonation} className={linkClass}>
-                    {help.action.label} &rarr;
-                  </button>
-                ) : 'form' in help.action ? (
-                  <button type="button" onClick={() => openModal((help.action as { form: FormType }).form)} className={linkClass}>
-                    {help.action.label} &rarr;
-                  </button>
-                ) : help.action.href.startsWith('/') ? (
-                  <Link href={help.action.href} className={linkClass}>
-                    {help.action.label} &rarr;
-                  </Link>
-                ) : (
-                  <a href={help.action.href} className={linkClass}>
-                    {help.action.label} &rarr;
-                  </a>
-                )}
+          <div className="mt-14 grid md:grid-cols-3 gap-12 md:gap-8">
+            {contacts.map((c) => (
+              <div key={c.title} className="text-center flex flex-col items-center">
+                <Star />
+                <h2 className="mt-3 text-2xl font-bold text-violet-600 dark:text-white">{c.title}</h2>
+                <p className="mt-3 mb-6 text-gray-700 dark:text-gray-200 max-w-xs">{c.text}</p>
+                <button
+                  type="button"
+                  onClick={() => openModal(c.form)}
+                  className="mt-auto btn-primary btn-primary-orange text-white py-3 px-7 rounded-full font-semibold inline-flex items-center justify-center cursor-pointer"
+                >
+                  {c.label}
+                </button>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Plum ending: the action */}
-      <section className="py-20 bg-violet-600 dark:bg-gray-800">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Send Us a Message</h2>
-          <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
-          <p className="text-xl text-white/90 mb-10">Anything else on your mind? Write to us and we will get back to you.</p>
-          <div className="flex justify-center">
-            <button
-              type="button"
-              onClick={() => openModal('contact')}
-              className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center cursor-pointer"
-            >
-              Send Us a Message
-            </button>
           </div>
         </div>
       </section>
