@@ -70,8 +70,8 @@ export default function GetInvolved() {
       action: { label: 'Book Elana to Speak', onClick: () => openModal('book-elana') },
     },
     {
-      title: 'Help Build Our Camp',
-      text: 'Bring your camp, medical or child-care experience to help plan and run KCCF Camp in Azerbaijan.',
+      title: 'Share Your Expertise',
+      text: 'Are you a doctor, nurse, psychologist or art therapist? Help us plan KCCF Camp in Azerbaijan for children with cancer and their siblings.',
       photo: '/images/header_image_camp.jpg',
       alt: 'Campers and staff at the KCCF International Camp',
       action: { label: 'Learn More', href: '/camp' },
