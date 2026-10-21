@@ -278,7 +278,7 @@ export default function AboutUs() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Book Elana to Speak</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10">
-            For graduations, galas, corporate events and media.
+            A keynote speaker for schools, companies, health events, galas, graduations and media.
           </p>
           <FormButton formType="book-elana" variant="orange" size="lg" className="py-4 px-10 text-lg">
             Book Elana to Speak
