@@ -64,7 +64,7 @@ export default function GetInvolved() {
     },
     {
       title: 'Book Elana to Speak',
-      text: 'Invite Elana as a keynote speaker at your school, company, health event, gala or graduation.',
+      text: 'Invite Elana to share her story at your school, company, gala or graduation.',
       photo: '/images/elana-speaking-stage.jpg',
       alt: 'Elana Koenig speaking on stage in front of the KCCF banner',
       action: { label: 'Book Elana to Speak', onClick: () => openModal('book-elana') },
