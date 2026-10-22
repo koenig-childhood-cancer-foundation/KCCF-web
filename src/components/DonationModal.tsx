@@ -82,7 +82,7 @@ export default function DonationModal() {
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
   const [iframeLoaded, setIframeLoaded] = useState(false)
   const switchLinkClass =
-    'inline-flex items-center gap-1 mt-2 px-6 py-2.5 rounded-full bg-[#DAB87E] text-[#2B2330] font-bold shadow-md ring-2 ring-white/70 hover:bg-[#F1DDB0] transition-colors cursor-pointer'
+    'inline-flex items-center gap-1 mt-2 px-6 py-2.5 whitespace-nowrap rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors cursor-pointer'
 
   // Reset iframeLoaded when the provider changes. The form stays loaded while
   // the pop-up is closed, so reopening it is instant.
@@ -171,7 +171,7 @@ export default function DonationModal() {
             <Link
               href="/donate?nomodal=1#ways-to-give"
               onClick={closeModal}
-              className="mx-auto inline-flex items-center gap-1 px-6 py-2.5 rounded-full bg-[#DAB87E] text-[#2B2330] font-bold shadow-md ring-2 ring-white/70 hover:bg-[#F1DDB0] transition-colors text-sm xl:text-base"
+              className="mx-auto inline-flex items-center gap-1 px-6 py-2.5 whitespace-nowrap rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors text-sm xl:text-base"
             >
               Other ways to give: stock, DAF, crypto, check
               <svg className="w-4 h-4 xl:w-5 xl:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -241,7 +241,7 @@ export default function DonationModal() {
             {selectedProvider === 'zeffy' ? (
               <>
                 <button type="button" onClick={() => setSelectedProvider('givelively')} className={switchLinkClass}>
-                  Give with PayPal or Venmo &rarr;
+                  Or give with PayPal or Venmo &rarr;
                 </button>
               </>
             ) : (

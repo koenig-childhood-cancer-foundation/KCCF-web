@@ -84,7 +84,7 @@ export default function DonationCard() {
     return () => window.removeEventListener('load', onLoad)
   }, [])
   const switchLinkClass =
-    'inline-flex items-center gap-1 px-6 py-2.5 rounded-full bg-[#DAB87E] text-[#2B2330] font-bold shadow-md ring-2 ring-white/70 hover:bg-[#F1DDB0] transition-colors cursor-pointer'
+    'inline-flex items-center gap-1 px-6 py-2.5 whitespace-nowrap rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors cursor-pointer'
 
   return (
     <div className="w-full flex flex-col min-h-0 h-[calc(66vh-8rem)] md:h-[calc(85vh-6rem)] bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
@@ -128,7 +128,7 @@ export default function DonationCard() {
         {selectedProvider === 'zeffy' ? (
           <>
             <button type="button" onClick={() => setSelectedProvider('givelively')} className={switchLinkClass}>
-              Give with PayPal or Venmo &rarr;
+              Or give with PayPal or Venmo &rarr;
             </button>
           </>
         ) : (
