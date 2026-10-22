@@ -82,7 +82,7 @@ export default function DonationModal() {
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
   const [iframeLoaded, setIframeLoaded] = useState(false)
   const switchLinkClass =
-    'inline-flex items-center gap-1 mt-2 px-6 py-2.5 rounded-full bg-white text-violet-700 font-bold shadow-md hover:bg-[#FBF5EA] transition-colors cursor-pointer'
+    'inline-flex items-center gap-1 mt-2 px-6 py-2.5 rounded-full bg-[#DAB87E] text-[#2B2330] font-bold shadow-md ring-2 ring-white/70 hover:bg-[#F1DDB0] transition-colors cursor-pointer'
 
   // Reset iframeLoaded when the provider changes. The form stays loaded while
   // the pop-up is closed, so reopening it is instant.
@@ -163,38 +163,26 @@ export default function DonationModal() {
               <p className="mt-2 xl:mt-4 text-sm xl:text-base text-white/90">
                 <strong className="text-[#DAB87E]">$50</strong> = a dinner for a family &middot; <strong className="text-[#DAB87E]">$360</strong> = 3 nights of lodging
               </p>
+              <p className="mt-2 xl:mt-3 flex items-center justify-center text-sm xl:text-base text-white/90">
+                <svg className="w-4 h-4 xl:w-5 xl:h-5 mr-1.5 xl:mr-2 text-[#DAB87E]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                Charity Navigator 4-Star
+              </p>
             </div>
           </div>
           
           <div className="px-4 xl:px-6 py-4 xl:py-5 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-white flex-shrink-0 text-center h-28 flex flex-col justify-center">
-            <div className="flex items-center justify-center text-white text-sm xl:text-base">
-              <div className="flex items-center space-x-4 xl:space-x-6">
-                <div className="flex items-center">
-                  <svg className="w-4 h-4 xl:w-5 xl:h-5 mr-1.5 xl:mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>Charity Navigator 4-Star</span>
-                </div>
-                <div className="flex items-center">
-                  <svg className="w-4 h-4 xl:w-5 xl:h-5 mr-1.5 xl:mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>Tax Deductible</span>
-                </div>
-              </div>
-            </div>
-            <div className="mt-2 xl:mt-3 min-[1800px]:mt-4">
-              <Link 
-                href="/donate?nomodal=1#ways-to-give"
-                onClick={closeModal}
-                className="inline-flex items-center text-white/90 hover:text-white underline underline-offset-2 transition-colors font-semibold text-sm xl:text-base"
-              >
-                Other ways to give: stock, DAF, crypto, check
-                <svg className="w-4 h-4 xl:w-5 xl:h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
-            </div>
+            <Link
+              href="/donate?nomodal=1#ways-to-give"
+              onClick={closeModal}
+              className="mx-auto inline-flex items-center gap-1 px-6 py-2.5 rounded-full bg-[#DAB87E] text-[#2B2330] font-bold shadow-md ring-2 ring-white/70 hover:bg-[#F1DDB0] transition-colors text-sm xl:text-base"
+            >
+              Other ways to give: stock, DAF, crypto, check
+              <svg className="w-4 h-4 xl:w-5 xl:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
           </div>
         </div>
         
@@ -202,14 +190,14 @@ export default function DonationModal() {
         <div className="lg:w-1/2 w-full h-full flex flex-col bg-white dark:bg-gray-800 rounded-[28px] overflow-hidden shadow-xl">
           <div className="flex-shrink-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
             {/* Top row: title + close button */}
-            <div className="flex items-center p-2 sm:p-3 lg:p-4">
-              <h2 className="flex-1 pl-2 sm:pl-3 text-lg sm:text-xl font-bold text-[#2B2330] dark:text-white">
-                Help Children <span className="text-violet-600 dark:text-saffron-400">Beat Cancer.</span>
+            <div className="relative flex items-center justify-center p-2 sm:p-3 lg:p-4">
+              <h2 className="px-10 text-center text-lg sm:text-xl font-bold text-violet-600 dark:text-saffron-400">
+                Help Children Beat Cancer.
               </h2>
               
               <button
                 onClick={closeModal}
-                className="flex-shrink-0 ml-auto p-1.5 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors cursor-pointer"
+                className="absolute right-2 sm:right-3 lg:right-4 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -253,13 +241,13 @@ export default function DonationModal() {
             )}
           </div>
 
-          {/* Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal, Venmo and DAF gifts */}
+          {/* Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal and Venmo */}
           <div className="flex-shrink-0 h-28 flex flex-col justify-center items-center px-5 py-4 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-center">
             {selectedProvider === 'zeffy' ? (
               <>
-                <span className="block text-base font-semibold text-white">Prefer PayPal, Venmo or a donor-advised fund?</span>
+                <span className="block text-base font-semibold text-white">Prefer PayPal or Venmo?</span>
                 <button type="button" onClick={() => setSelectedProvider('givelively')} className={switchLinkClass}>
-                  Give through GiveLively &rarr;
+                  Give with PayPal or Venmo &rarr;
                 </button>
               </>
             ) : (
