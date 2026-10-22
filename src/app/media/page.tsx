@@ -113,6 +113,14 @@ export default function Media() {
           <p className="mt-5 text-xl md:text-2xl font-semibold text-white max-w-xl mx-auto lg:mx-0 drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]">
             Elana and KCCF in the news.
           </p>
+          <button
+            type="button"
+            onClick={() => openModal('book-elana')}
+            {...warmProps('book-elana')}
+            className="btn-primary mt-8 bg-white/10 hover:bg-white/20 border-2 border-white text-white py-3.5 px-8 rounded-full text-lg font-semibold inline-flex items-center justify-center"
+          >
+            Book Elana to Speak
+          </button>
         </div>
       </section>
 
