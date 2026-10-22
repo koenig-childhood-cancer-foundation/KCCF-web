@@ -105,8 +105,8 @@ export default function Privacy() {
                   </p>
                   <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-sm space-y-1 ml-2">
                     <li><strong>Google Tag Manager (GTM)</strong> - Manages the loading of other scripts and services</li>
-                    <li><strong>Zeffy</strong> - Powers our donation forms and payment processing</li>
-                    <li><strong>GiveLively</strong> - Powers our PayPal, Venmo and donor-advised fund (DAF) donation form</li>
+                    <li><strong>Zeffy</strong> - Powers our donation forms, donor-advised fund (DAF) gifts and payment processing</li>
+                    <li><strong>GiveLively</strong> - Powers our PayPal and Venmo donation form</li>
                     <li><strong>Monday.com Forms</strong> - Enables our contact, volunteer, and application forms</li>
                   </ul>
                 </div>
