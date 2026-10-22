@@ -126,6 +126,10 @@ export default function RootLayout({
       <head>
         {/* Open the connection to Zeffy early so the donation pop-up loads faster */}
         <link rel="preconnect" href="https://www.zeffy.com" />
+        {/* Same for the monday.com forms (Book Elana, Sponsor, Volunteer and others) */}
+        <link rel="preconnect" href="https://forms.monday.com" />
+        <link rel="preconnect" href="https://cdn.monday.com" />
+        <link rel="preconnect" href="https://microfrontends.monday.com" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -105,7 +105,7 @@ function PersonCard({ person, size = 'w-40 h-40', padding = 'px-8 py-9' }: { per
 }
 
 export default function AboutUs() {
-  const { openModal } = useFormModal();
+  const { openModal, warmProps } = useFormModal();
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
       {/* Hero: home-page style (full photo, warm tint, soft shade behind the words) */}
@@ -130,6 +130,7 @@ export default function AboutUs() {
           <button
             type="button"
             onClick={() => openModal('book-elana')}
+            {...warmProps('book-elana')}
             className="btn-primary mt-8 bg-white/10 hover:bg-white/20 border-2 border-white text-white py-3.5 px-8 rounded-full text-lg font-semibold inline-flex items-center justify-center"
           >
             Book Elana to Speak

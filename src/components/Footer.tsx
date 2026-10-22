@@ -7,7 +7,7 @@ import FormButton from '@/components/FormButton';
 
 export default function Footer() {
   const { openPreferences } = useCookieConsent();
-  const { openModal } = useFormModal();
+  const { openModal, warmProps } = useFormModal();
 
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white border-t-[3px] border-[#DAB87E] transition-colors duration-200 overflow-x-hidden">
@@ -205,6 +205,7 @@ export default function Footer() {
                     <button
                       type="button"
                       onClick={() => openModal('book-elana')}
+                      {...warmProps('book-elana')}
                       className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
                     >
                       Book Elana to Speak

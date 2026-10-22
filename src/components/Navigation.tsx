@@ -34,7 +34,7 @@ export default function Navigation() {
   const isHoveringRef = useRef(false)
   const { theme } = useTheme()
   const { openModal: openSearchModal } = useSearchModal()
-  const { openModal } = useFormModal()
+  const { openModal, warmProps } = useFormModal()
   const { openModal: openDonationModal, warmUp: warmUpDonation } = useDonationModal()
 
   // Helper function to render dropdown items consistently
@@ -52,6 +52,7 @@ export default function Navigation() {
             openModal(dropdownItem.formType)
             onClickCallback()
           }}
+          {...warmProps(dropdownItem.formType)}
           role="menuitem"
           className={`${itemClasses} w-full text-left`}
         >

@@ -69,7 +69,7 @@ function Star() {
 }
 
 export default function Contact() {
-  const { openModal } = useFormModal();
+  const { openModal, warmProps } = useFormModal();
   const { openModal: openDonationModal, warmUp: warmUpDonation } = useDonationModal();
   const linkClass =
     'mt-auto inline-flex items-center gap-1 font-semibold text-violet-600 dark:text-saffron-400 hover:text-violet-800 dark:hover:text-saffron-300 cursor-pointer';
@@ -128,6 +128,7 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={() => openModal(s.form)}
+                  {...warmProps(s.form)}
                   className="mt-auto btn-primary btn-primary-orange text-white py-3 px-7 rounded-full font-semibold inline-flex items-center justify-center cursor-pointer"
                 >
                   {s.label}
@@ -154,7 +155,7 @@ export default function Contact() {
                     {help.action.label} &rarr;
                   </button>
                 ) : 'form' in help.action ? (
-                  <button type="button" onClick={() => openModal((help.action as { form: FormType }).form)} className={linkClass}>
+                  <button type="button" onClick={() => openModal((help.action as { form: FormType }).form)} {...warmProps((help.action as { form: FormType }).form)} className={linkClass}>
                     {help.action.label} &rarr;
                   </button>
                 ) : help.action.href.startsWith('/') ? (
@@ -182,6 +183,7 @@ export default function Contact() {
             <button
               type="button"
               onClick={() => openModal('contact')}
+              {...warmProps('contact')}
               className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center cursor-pointer"
             >
               Send Us a Message

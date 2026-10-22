@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useCallback, useContext, useRef, useState, ReactNode } from 'react'
 import { trackEvent } from '@/lib/analytics'
 
 export type FormType = 
@@ -76,6 +76,8 @@ interface FormModalContextType {
   formType: FormType | null
   openModal: (type: FormType) => void
   closeModal: () => void
+  warmUp: (type: FormType) => void
+  warmProps: (type: FormType) => { onMouseEnter: () => void; onFocus: () => void; onTouchStart: () => void }
 }
 
 const FormModalContext = createContext<FormModalContextType | undefined>(undefined)
@@ -92,6 +94,29 @@ export function FormModalProvider({ children }: { children: ReactNode }) {
     if (type === 'crazy-socks-sponsor') trackEvent('sponsor_click')
   }
 
+  // Start loading a monday.com form in a hidden frame when a visitor points at
+  // or focuses its button, so its files are cached before the click
+  const warmed = useRef(new Set<string>())
+  const warmUp = useCallback((type: FormType) => {
+    const src = FORM_CONFIGS[type]?.src
+    if (!src || new URL(src).hostname !== 'forms.monday.com' || warmed.current.has(src)) return
+    warmed.current.add(src)
+    const frame = document.createElement('iframe')
+    frame.src = src
+    frame.title = ''
+    frame.tabIndex = -1
+    frame.setAttribute('aria-hidden', 'true')
+    frame.style.cssText = 'position:fixed;left:-9999px;top:0;width:1px;height:1px;border:0;opacity:0;pointer-events:none'
+    document.body.appendChild(frame)
+  }, [])
+
+  // Spread on any button that opens a form: {...warmProps('book-elana')}
+  const warmProps = useCallback((type: FormType) => ({
+    onMouseEnter: () => warmUp(type),
+    onFocus: () => warmUp(type),
+    onTouchStart: () => warmUp(type),
+  }), [warmUp])
+
   const closeModal = () => {
     setIsOpen(false)
     setFormType(null)
@@ -103,7 +128,9 @@ export function FormModalProvider({ children }: { children: ReactNode }) {
         isOpen,
         formType,
         openModal,
-        closeModal
+        closeModal,
+        warmUp,
+        warmProps
       }}
     >
       {children}
