@@ -269,7 +269,7 @@ export default function Donate() {
                 <span className="shrink-0 text-[#8A6A2E] dark:text-[#DAB87E] text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
               </summary>
               <p className={faqAnswerClass}>
-                Give through Zeffy, using the Donate button above. Zeffy charges no fees. PayPal and Venmo charge transaction fees, so choosing Zeffy instead avoids them. At checkout, Zeffy asks if you&apos;d like to add an optional contribution to Zeffy. It is never required. You can choose not to add it, so <span className="font-bold text-violet-600 dark:text-saffron-400">100% of your gift goes to KCCF</span>.
+                Give through Zeffy, using the Donate button above. Zeffy charges no fees. PayPal and Venmo charge transaction fees, so choosing Zeffy instead avoids them. At checkout, Zeffy shows an optional contribution under &ldquo;Help keep Zeffy free.&rdquo; To skip it, open the dropdown, choose <strong>Other</strong>, and enter <strong>0</strong> in the Contribution box or leave it empty. Then <span className="font-bold text-violet-600 dark:text-saffron-400">100% of your gift goes to KCCF</span>.
               </p>
             </details>
 
