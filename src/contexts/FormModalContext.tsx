@@ -99,7 +99,7 @@ export function FormModalProvider({ children }: { children: ReactNode }) {
   const warmed = useRef(new Set<string>())
   const warmUp = useCallback((type: FormType) => {
     const src = FORM_CONFIGS[type]?.src
-    if (!src || !src.includes('forms.monday.com') || warmed.current.has(src)) return
+    if (!src || new URL(src).hostname !== 'forms.monday.com' || warmed.current.has(src)) return
     warmed.current.add(src)
     const frame = document.createElement('iframe')
     frame.src = src
