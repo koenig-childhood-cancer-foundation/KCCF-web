@@ -68,7 +68,7 @@ function GiveLivelyWidgetCard() {
 }
 
 export default function DonationCard() {
-  // Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal, Venmo and DAF gifts
+  // Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal and Venmo
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
   // Start the Zeffy form after the page's own photos have loaded, so the top photo
   // isn't slowed down by the form downloading at the same time
@@ -84,14 +84,14 @@ export default function DonationCard() {
     return () => window.removeEventListener('load', onLoad)
   }, [])
   const switchLinkClass =
-    'inline-flex items-center gap-1 mt-2 px-6 py-2.5 rounded-full bg-white text-violet-700 font-bold shadow-md hover:bg-[#FBF5EA] transition-colors cursor-pointer'
+    'inline-flex items-center gap-1 px-6 py-2.5 rounded-full bg-[#DAB87E] text-[#2B2330] font-bold shadow-md ring-2 ring-white/70 hover:bg-[#F1DDB0] transition-colors cursor-pointer'
 
   return (
     <div className="w-full flex flex-col min-h-0 h-[calc(66vh-8rem)] md:h-[calc(85vh-6rem)] bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
       <div className="flex-shrink-0">
         <div className="flex items-center justify-center p-6 border-b border-gray-200 dark:border-gray-700">
-          <h1 className="text-2xl font-bold text-center leading-tight text-[#2B2330] dark:text-white">
-            Help Children <span className="text-violet-600 dark:text-saffron-400">Beat Cancer.</span>
+          <h1 className="text-2xl font-bold text-center leading-tight text-violet-600 dark:text-saffron-400">
+            Help Children Beat Cancer.
           </h1>
         </div>
       </div>
@@ -127,9 +127,8 @@ export default function DonationCard() {
       <div className="flex-shrink-0 px-5 py-4 bg-violet-600 dark:bg-violet-800 text-center">
         {selectedProvider === 'zeffy' ? (
           <>
-            <span className="block text-base font-semibold text-white">Prefer PayPal, Venmo or a donor-advised fund?</span>
             <button type="button" onClick={() => setSelectedProvider('givelively')} className={switchLinkClass}>
-              Give through GiveLively &rarr;
+              Give with PayPal or Venmo &rarr;
             </button>
           </>
         ) : (

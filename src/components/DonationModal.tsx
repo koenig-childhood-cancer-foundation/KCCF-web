@@ -160,15 +160,10 @@ export default function DonationModal() {
                 KCCF provides life-saving financial and emotional support to children battling cancer and their families.
               </p>
               {/* Gift levels from KCCF Current Facts – MASTER */}
-              <p className="mt-2 xl:mt-4 text-sm xl:text-base text-white/90">
-                <strong className="text-[#DAB87E]">$50</strong> = a dinner for a family &middot; <strong className="text-[#DAB87E]">$360</strong> = 3 nights of lodging
-              </p>
-              <p className="mt-2 xl:mt-3 flex items-center justify-center text-sm xl:text-base text-white/90">
-                <svg className="w-4 h-4 xl:w-5 xl:h-5 mr-1.5 xl:mr-2 text-[#DAB87E]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                Charity Navigator 4-Star
-              </p>
+              <ul className="mt-4 xl:mt-6 space-y-3 text-sm xl:text-base text-white/90 text-left inline-block mx-auto">
+                <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#DAB87E] flex-shrink-0" aria-hidden="true" /><span><strong className="text-[#DAB87E]">$50</strong> = a dinner for a family</span></li>
+                <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#DAB87E] flex-shrink-0" aria-hidden="true" /><span><strong className="text-[#DAB87E]">$360</strong> = 3 nights of lodging</span></li>
+              </ul>
             </div>
           </div>
           
@@ -245,7 +240,6 @@ export default function DonationModal() {
           <div className="flex-shrink-0 h-28 flex flex-col justify-center items-center px-5 py-4 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-center">
             {selectedProvider === 'zeffy' ? (
               <>
-                <span className="block text-base font-semibold text-white">Prefer PayPal or Venmo?</span>
                 <button type="button" onClick={() => setSelectedProvider('givelively')} className={switchLinkClass}>
                   Give with PayPal or Venmo &rarr;
                 </button>
