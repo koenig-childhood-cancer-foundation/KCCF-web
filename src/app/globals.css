@@ -7,6 +7,19 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ==========================================================================
+   Pointer Cursor on Buttons
+   Tailwind v4 no longer gives buttons a hand cursor; form buttons should
+   feel as clickable as links (VW-1)
+   ========================================================================== */
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}
+
+/* ==========================================================================
    Custom Scrollbar Styles
    ========================================================================== */
 
