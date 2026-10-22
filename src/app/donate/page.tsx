@@ -36,7 +36,7 @@ const giftImpacts: {
 ]
 
 // Legal name and EIN from KCCF Current Facts – MASTER; brokers, DAF sponsors and Benevity ask for them.
-const waysToGive: { title: string; body: ReactNode; contact: boolean; ein?: 'number' | 'full' }[] = [
+const waysToGive: { title: string; body: ReactNode; ein?: 'number' | 'full' }[] = [
   {
     title: 'Check by Mail',
     body: (
@@ -48,25 +48,21 @@ const waysToGive: { title: string; body: ReactNode; contact: boolean; ein?: 'num
         New York, NY 10065
       </>
     ),
-    contact: false,
     ein: 'number',
   },
   {
     title: 'Corporate Matching',
     body: 'Many companies match employee gifts. Ask HR, or find KCCF on Benevity, to have your gift matched.',
-    contact: true,
     ein: 'full',
   },
   {
     title: 'Donor Advised Funds (DAF)',
     body: 'Give from your Donor Advised Fund with the Donate button above. Choose a one-time gift (not monthly) and enter $1,000 or more, and the DAF option appears. 100% reaches KCCF.',
-    contact: true,
     ein: 'full',
   },
   {
     title: 'Stock, Crypto & Wire Transfers',
     body: 'We accept gifts of stock, crypto (including Bitcoin) and wire transfers. Email us and we will send you the transfer details.',
-    contact: true,
     ein: 'full',
   },
 ]
@@ -267,24 +263,22 @@ export default function Donate() {
                     <span className="whitespace-nowrap">EIN 84-4892279</span>
                   </p>
                 )}
-                {way.contact && (
-                  <p className="mt-4 text-sm text-gray-600 dark:text-gray-300">
-                    Questions?{' '}
-                    <a href="mailto:join@thekccf.org" className={linkClass}>
-                      join@thekccf.org
-                    </a>
-                    {' '}
-                    <span className="whitespace-nowrap">
-                      or{' '}
-                      <a href="tel:+19177656272" className={linkClass}>
-                        (917) 765&#8209;6272
-                      </a>
-                    </span>
-                  </p>
-                )}
               </div>
             ))}
           </div>
+          <p className="mt-10 text-center text-gray-600 dark:text-gray-300">
+            Questions about any of these ways to give? Email{' '}
+            <a href="mailto:join@thekccf.org" className={linkClass}>
+              join@thekccf.org
+            </a>{' '}
+            <span className="whitespace-nowrap">
+              or call{' '}
+              <a href="tel:+19177656272" className={linkClass}>
+                (917) 765&#8209;6272
+              </a>
+              .
+            </span>
+          </p>
         </div>
       </section>
 
