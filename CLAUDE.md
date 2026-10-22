@@ -21,6 +21,11 @@ and the Rules & Folder Map ever differ, the Rules & Folder Map wins.
   marked, with before/after pictures showing changes in red.
 - Time: all dates and times are New York time. Convert from UTC before
   writing "today" or "tomorrow".
+- Usage: before any heavy task (sub-agents, whole-map or all-page reviews,
+  speed tests or pictures of every page, PDF builds, large file reads), say
+  "⚠️ heavy", offer a lighter option, and wait for Rena's OK. When Rena says
+  "light", keep the task small. Keep the Website Map clean as you go: move
+  each finished item to the Change log in one line right away.
 
 ## Website work
 - Safety rounds: Round 1 tsc, eslint, jest, build. Round 2 check every page.
