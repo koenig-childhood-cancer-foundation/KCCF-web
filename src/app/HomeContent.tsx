@@ -12,7 +12,7 @@ import { IMPACT_STATS } from '@/constants/impactStats';
 import { useFormModal } from '@/contexts/FormModalContext';
 
 export default function HomeContent() {
-  const { openModal } = useFormModal();
+  const { openModal, warmProps } = useFormModal();
 
   // Old newsletter links land on /?subscribe=1: show the sign-up pop-up, then tidy the address.
   useEffect(() => {
@@ -206,6 +206,7 @@ export default function HomeContent() {
               <button
                 type="button"
                 onClick={() => openModal('crazy-socks-sponsor')}
+                {...warmProps('crazy-socks-sponsor')}
                 className="inline-flex items-center self-start text-violet-600 dark:text-saffron-600 hover:text-violet-700 dark:hover:text-violet-300 font-semibold transition-colors mt-auto cursor-pointer"
               >
                 Sponsor a Gift Bag Event

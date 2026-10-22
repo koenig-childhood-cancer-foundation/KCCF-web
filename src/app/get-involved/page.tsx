@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useFormModal } from '@/contexts/FormModalContext';
+import { useFormModal, type FormType } from '@/contexts/FormModalContext';
 import { IMPACT_STATS } from '@/constants/impactStats';
 
 // Volunteer and Fundraisers combined into one page.
@@ -30,7 +30,7 @@ type Way = {
   photo: string;
   alt: string;
   position?: string;
-  action: { label: string; href: string } | { label: string; onClick: () => void };
+  action: { label: string; href: string } | { label: string; onClick: () => void; form: FormType };
 };
 
 function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
@@ -44,7 +44,7 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
 }
 
 export default function GetInvolved() {
-  const { openModal } = useFormModal();
+  const { openModal, warmProps } = useFormModal();
 
   const ways: Way[] = [
     {
@@ -67,7 +67,7 @@ export default function GetInvolved() {
       text: 'Invite Elana as a keynote speaker to share how she turned pain into purpose at your school, company, health event, gala or graduation.',
       photo: '/images/elana-speaking-stage.jpg',
       alt: 'Elana Koenig speaking on stage in front of the KCCF banner',
-      action: { label: 'Book Elana to Speak', onClick: () => openModal('book-elana') },
+      action: { label: 'Book Elana to Speak', onClick: () => openModal('book-elana'), form: 'book-elana' },
     },
     {
       title: 'Share Your Expertise',
@@ -81,7 +81,7 @@ export default function GetInvolved() {
       text: 'Give your time and skills, on your own or with a group.',
       photo: '/images/volunteer-with-child.jpg',
       alt: 'A KCCF volunteer with a child',
-      action: { label: 'Apply to Volunteer', onClick: () => openModal('volunteer') },
+      action: { label: 'Apply to Volunteer', onClick: () => openModal('volunteer'), form: 'volunteer' },
     },
   ];
 
@@ -160,7 +160,7 @@ export default function GetInvolved() {
                   <h3 className="text-xl font-bold text-[#2B2330] dark:text-white">{way.title}</h3>
                   <p className="mt-2 mb-5 text-gray-700 dark:text-gray-200">{way.text}</p>
                   {'onClick' in way.action ? (
-                    <button type="button" onClick={way.action.onClick} className={linkClass}>
+                    <button type="button" onClick={way.action.onClick} {...warmProps(way.action.form)} className={linkClass}>
                       {way.action.label} &rarr;
                     </button>
                   ) : (
@@ -228,6 +228,7 @@ export default function GetInvolved() {
           <button
             type="button"
             onClick={() => openModal('volunteer')}
+            {...warmProps('volunteer')}
             className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center cursor-pointer"
           >
             Apply to Volunteer

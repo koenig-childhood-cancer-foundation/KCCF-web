@@ -22,7 +22,7 @@ export default function FormButton({
   icon,
   fullWidth = false
 }: FormButtonProps) {
-  const { openModal } = useFormModal()
+  const { openModal, warmProps } = useFormModal()
 
   const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer'
 
@@ -53,6 +53,7 @@ export default function FormButton({
   return (
     <button
       onClick={handleClick}
+      {...warmProps(formType)}
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClass} ${className}`}
     >
       {children}
