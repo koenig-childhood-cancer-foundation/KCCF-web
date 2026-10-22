@@ -59,7 +59,7 @@ const waysToGive: { title: string; body: ReactNode; contact: boolean; ein?: 'num
   },
   {
     title: 'Donor Advised Funds (DAF)',
-    body: 'You can make a donation through your Donor Advised Fund.',
+    body: 'Give from your Donor Advised Fund with the Donate button above. Choose a one-time gift (not monthly) and enter $1,000 or more, and the DAF option appears. 100% reaches KCCF.',
     contact: true,
     ein: 'full',
   },
@@ -255,21 +255,49 @@ export default function Donate() {
                 <span className="shrink-0 text-[#8A6A2E] dark:text-[#DAB87E] text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
               </summary>
               <p className={faqAnswerClass}>
-                Yes. Monthly donations can be changed or canceled at any time. Just contact us at{' '}
+                Yes. Sign in to your Zeffy, PayPal or Venmo account and change or cancel your monthly gift there. Need help? Email us at{' '}
                 <a href="mailto:join@thekccf.org" className={linkClass}>
                   join@thekccf.org
-                </a>{' '}
-                for help.
+                </a>
+                .
               </p>
             </details>
 
             <details className={faqCardClass}>
               <summary className={faqQuestionClass}>
-                What&apos;s the difference between Zeffy and GiveLively?
+                How do I avoid fees?
                 <span className="shrink-0 text-[#8A6A2E] dark:text-[#DAB87E] text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
               </summary>
               <p className={faqAnswerClass}>
-                Zeffy charges no platform or processing fees, so <span className="font-bold text-violet-600 dark:text-saffron-400">100% of your gift supports KCCF</span>. GiveLively offers more payment options (PayPal, Venmo, bank transfers, donor-advised funds) but applies standard payment processing fees.
+                Give through Zeffy, using the Donate button above. Zeffy charges no fees. PayPal and Venmo charge transaction fees, so choosing Zeffy instead avoids them. At checkout, Zeffy asks if you&apos;d like to add an optional contribution to Zeffy. It is never required. You can choose not to add it, so <span className="font-bold text-violet-600 dark:text-saffron-400">100% of your gift goes to KCCF</span>.
+              </p>
+            </details>
+
+            <details className={faqCardClass}>
+              <summary className={faqQuestionClass}>
+                How can I give through my Donor Advised Fund (DAF)?
+                <span className="shrink-0 text-[#8A6A2E] dark:text-[#DAB87E] text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+              </summary>
+              <p className={faqAnswerClass}>
+                Use the Donate button above. Choose a one-time gift (not monthly) and enter $1,000 or more, and the DAF option appears. Questions? Email us at{' '}
+                <a href="mailto:join@thekccf.org" className={linkClass}>
+                  join@thekccf.org
+                </a>
+                .
+              </p>
+            </details>
+
+            <details className={faqCardClass}>
+              <summary className={faqQuestionClass}>
+                How can I donate stock?
+                <span className="shrink-0 text-[#8A6A2E] dark:text-[#DAB87E] text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+              </summary>
+              <p className={faqAnswerClass}>
+                Email us at{' '}
+                <a href="mailto:join@thekccf.org" className={linkClass}>
+                  join@thekccf.org
+                </a>{' '}
+                and we will send you the transfer details for your broker. Our legal name is Koenig Childhood Cancer Foundation, Inc., EIN 84-4892279.
               </p>
             </details>
           </div>
