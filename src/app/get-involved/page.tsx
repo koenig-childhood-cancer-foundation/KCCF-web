@@ -16,7 +16,7 @@ const stats = [
   { value: IMPACT_STATS.CRAZY_SOCKS[3].value, label: 'volunteer hours' },
 ];
 
-const ZEFFY_CAMPAIGN = 'https://www.zeffy.com/en-US/peer-to-peer/peer-to-peer-fundraisers';
+const ZEFFY_CAMPAIGN = 'https://www.zeffy.com/en-US/peer-to-peer/peer-to-peer-fundraisers?openFundraiser=true';
 
 const fundraiserSteps = [
   { title: 'Start Your Page', text: 'Create your own fundraising page in a few minutes. It is free.' },
