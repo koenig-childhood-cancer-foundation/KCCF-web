@@ -1,5 +1,6 @@
 'use client';
 
+import { Fragment } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useFormModal, type FormType } from '@/contexts/FormModalContext';
@@ -19,9 +20,9 @@ const stats = [
 const ZEFFY_CAMPAIGN = 'https://www.zeffy.com/en-US/peer-to-peer/peer-to-peer-fundraisers?openFundraiser=true';
 
 const fundraiserSteps = [
-  { title: 'Start Your Page', text: 'Create your own fundraising page in a few minutes. It is free.' },
-  { title: 'Share It', text: 'Send it to family, friends, your team, school or company.' },
-  { title: 'Help a Child', text: 'Every gift goes to children battling cancer and their families.' },
+  { title: 'Start Your Page', text: 'Create a free fundraising page in minutes.' },
+  { title: 'Share It', text: 'Send it to family, friends and coworkers.' },
+  { title: 'Help a Child', text: 'Every gift helps children with cancer.' },
 ];
 
 type Way = {
@@ -53,7 +54,7 @@ export default function GetInvolved() {
       photo: '/images/fundraiser-table.jpg',
       alt: 'KCCF supporters at a fundraising table with gift bags',
       position: 'center 30%',
-      action: { label: 'Start a Fundraiser', href: '#fundraisers' },
+      action: { label: 'Start a Fundraiser', href: ZEFFY_CAMPAIGN },
     },
     {
       title: 'Sponsor a Gift Bag Event',
@@ -163,6 +164,10 @@ export default function GetInvolved() {
                     <button type="button" onClick={way.action.onClick} {...warmProps(way.action.form)} className={linkClass}>
                       {way.action.label} &rarr;
                     </button>
+                  ) : way.action.href.startsWith('http') ? (
+                    <a href={way.action.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      {way.action.label} &rarr;
+                    </a>
                   ) : (
                     <Link href={way.action.href} className={linkClass}>
                       {way.action.label} &rarr;
@@ -179,41 +184,42 @@ export default function GetInvolved() {
       <section id="fundraisers" className="py-20 bg-white dark:bg-gray-900 scroll-mt-24">
         <div className="container mx-auto px-4">
           <SectionTitle title="Start a Peer-to-Peer Fundraiser" subtitle="Turn a birthday, a bar or bat mitzvah, a game, a run or a school event into help for a child with cancer." />
-          <ol className="grid md:grid-cols-3 gap-7 max-w-5xl mx-auto list-none">
+          {/* Same numbered steps with arrows as Crazy Socks "How It Works" */}
+          <ol className="flex flex-col lg:flex-row items-stretch max-w-sm lg:max-w-5xl mx-auto list-none">
             {fundraiserSteps.map((step, index) => (
-              <li
-                key={step.title}
-                className="bg-white dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-6 py-8 text-center"
-              >
-                <span className="mx-auto mb-4 flex w-12 h-12 items-center justify-center rounded-full bg-violet-600 text-xl font-bold text-white">
-                  {index + 1}
-                </span>
-                <h3 className="text-xl font-bold text-[#2B2330] dark:text-white">{step.title}</h3>
-                <p className="mt-2 text-gray-700 dark:text-gray-200">{step.text}</p>
-              </li>
+              <Fragment key={step.title}>
+                {index > 0 && (
+                  <li
+                    className="flex items-center justify-center text-[#8A6A2E] dark:text-[#DAB87E] text-[2.6rem] font-bold py-2 lg:py-0 lg:px-4"
+                    aria-hidden="true"
+                  >
+                    <span className="lg:hidden">&darr;</span>
+                    <span className="hidden lg:inline">&rarr;</span>
+                  </li>
+                )}
+                <li className="flex-1 bg-[#FAF6F2] dark:bg-gray-700 rounded-[22px] overflow-hidden border-t-4 border-violet-600 dark:border-saffron-400 shadow-md px-6 py-8 text-center">
+                  <div className="w-16 h-16 rounded-full bg-[#8A6A2E] text-white text-3xl font-bold flex items-center justify-center mx-auto mb-4">
+                    {index + 1}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{step.title}</h3>
+                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed">{step.text}</p>
+                </li>
+              </Fragment>
             ))}
           </ol>
 
-          {/* Zeffy's campaign page opens in a new tab; embedded, it showed as a page inside the page with its own scroll bar */}
-          <div className="mt-14 max-w-3xl mx-auto rounded-[40px] border-2 border-[#DAB87E] bg-gradient-to-b from-[#FBF5EA] to-[#FDF9F2] dark:from-gray-800 dark:to-gray-800 px-6 py-12 md:px-14 text-center shadow-md">
-            <h3 className="text-3xl md:text-4xl font-bold text-violet-600 dark:text-white">Ready to Start?</h3>
-            <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mt-5 mb-6" aria-hidden="true" />
-            <p className="text-lg text-gray-700 dark:text-gray-200 max-w-xl mx-auto">
-              Set up your fundraising page on Zeffy, our giving platform. It takes a few minutes and it is free.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-5 justify-center">
-              <a
-                href={ZEFFY_CAMPAIGN}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center"
-              >
-                Start My Fundraiser
-              </a>
-            </div>
+          {/* Zeffy's fundraiser page opens in a new tab; embedded, it showed as a page inside the page with its own scroll bar */}
+          <div className="mt-12 text-center">
+            <a
+              href={ZEFFY_CAMPAIGN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary btn-primary-orange text-white py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center"
+            >
+              Start My Fundraiser
+            </a>
             <p className="mt-4 text-sm text-gray-600 dark:text-gray-300">Opens Zeffy, our fundraising partner, in a new tab.</p>
           </div>
-
         </div>
       </section>
 
