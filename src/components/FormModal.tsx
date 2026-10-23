@@ -47,7 +47,7 @@ export default function FormModal() {
       />
 
       {/* Modal */}
-      <div className="relative bg-white dark:bg-gray-800 rounded-[22px] border-t-4 border-violet-600 dark:border-saffron-400 shadow-2xl max-w-4xl w-full h-[90vh] sm:h-[85vh] flex flex-col overflow-hidden">
+      <div className="relative bg-white dark:bg-gray-800 rounded-[22px] border-t-4 border-[#DAB87E] dark:border-saffron-400 shadow-2xl max-w-4xl w-full h-[90vh] sm:h-[85vh] flex flex-col overflow-hidden">
         {/* Header */}
         <div className="flex items-center justify-between p-3 sm:p-6 bg-violet-600 dark:bg-gray-800 border-b-[3px] border-[#DAB87E] dark:border-gray-700">
           <div className="flex-1 text-center">
