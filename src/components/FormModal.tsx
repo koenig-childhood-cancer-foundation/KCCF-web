@@ -47,15 +47,15 @@ export default function FormModal() {
       />
 
       {/* Modal */}
-      <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-4xl w-full h-[90vh] sm:h-[85vh] flex flex-col overflow-hidden">
+      <div className="relative bg-white dark:bg-gray-800 rounded-[22px] border-t-4 border-violet-600 dark:border-saffron-400 shadow-2xl max-w-4xl w-full h-[90vh] sm:h-[85vh] flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between p-3 sm:p-6 border-b border-gray-200 dark:border-gray-700">
+        <div className="flex items-center justify-between p-3 sm:p-6 bg-violet-600 dark:bg-gray-800 border-b-[3px] border-[#DAB87E] dark:border-gray-700">
           <div className="flex-1 text-center">
-            <h2 className="text-lg sm:text-2xl font-bold text-violet-600 dark:text-white">
+            <h2 className="text-lg sm:text-2xl font-bold text-white">
               {config.title}
             </h2>
             {config.subtitle && !(config.subtitleWhileLoading && iframeLoaded) && (
-              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-1">
+              <p className="text-xs sm:text-sm text-white/85 dark:text-gray-300 mt-1">
                 {config.subtitle}
               </p>
             )}
@@ -64,10 +64,10 @@ export default function FormModal() {
           {/* Close button */}
           <button
             onClick={closeModal}
-            className="ml-2 sm:ml-4 p-1.5 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors cursor-pointer"
+            className="ml-2 sm:ml-4 p-1.5 sm:p-2 hover:bg-white/15 dark:hover:bg-gray-700 rounded-full transition-colors cursor-pointer"
             aria-label="Close modal"
           >
-            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white/85 dark:text-gray-400 hover:text-white dark:hover:text-gray-200 transition-colors cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
