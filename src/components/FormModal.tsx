@@ -51,7 +51,7 @@ export default function FormModal() {
         {/* Header */}
         <div className="flex items-center justify-between p-3 sm:p-6 border-b border-gray-200 dark:border-gray-700">
           <div className="flex-1 text-center">
-            <h2 className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-lg sm:text-2xl font-bold text-violet-600 dark:text-white">
               {config.title}
             </h2>
             {config.subtitle && !(config.subtitleWhileLoading && iframeLoaded) && (
