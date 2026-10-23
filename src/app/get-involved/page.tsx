@@ -54,7 +54,7 @@ export default function GetInvolved() {
       photo: '/images/fundraiser-table.jpg',
       alt: 'KCCF supporters at a fundraising table with gift bags',
       position: 'center 30%',
-      action: { label: 'Start a Fundraiser', href: ZEFFY_CAMPAIGN },
+      action: { label: 'Start a Fundraiser', href: '#fundraisers' },
     },
     {
       title: 'Sponsor a Gift Bag Event',
@@ -164,10 +164,6 @@ export default function GetInvolved() {
                     <button type="button" onClick={way.action.onClick} {...warmProps(way.action.form)} className={linkClass}>
                       {way.action.label} &rarr;
                     </button>
-                  ) : way.action.href.startsWith('http') ? (
-                    <a href={way.action.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                      {way.action.label} &rarr;
-                    </a>
                   ) : (
                     <Link href={way.action.href} className={linkClass}>
                       {way.action.label} &rarr;
