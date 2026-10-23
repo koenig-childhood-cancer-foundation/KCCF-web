@@ -201,7 +201,7 @@ export default function HomeContent() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Crazy Socks Gift Bags</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
-                Sponsor a team-building gift bag event through your company's CSR program. Your team packs gift bags for children in the hospital.
+                Sponsor a team-building event for your company or community group. Hear Elana’s story, then pack gift bags for children in the hospital.
               </p>
               <button
                 type="button"
