@@ -61,7 +61,7 @@ export default function PageHeader({
             {title.includes('<br/>') ? title.split('<br/>').map((line, index, lines) => (
               <React.Fragment key={index}>
                 {line}
-                {index < lines.length - 1 && <br />}
+                {index < lines.length - 1 && <>{' '}<br /></>}
               </React.Fragment>
             )) : title}
           </h1>
