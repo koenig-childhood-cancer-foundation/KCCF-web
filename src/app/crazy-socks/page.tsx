@@ -13,19 +13,19 @@ export default function CrazySocks() {
   const howItWorksSteps = [
     {
       title: 'You Sponsor',
-      text: 'Your sponsorship covers the supplies. We bring everything to you and set up.',
+      text: 'Your sponsorship covers the supplies. We ship them to your office and guide you through every step.',
       image: '/images/bankofamerica-scaled.jpeg',
       alt: 'Gift bag supplies set out on a table before an event',
     },
     {
       title: 'Your Team Packs',
-      text: 'Elana speaks to your team. Everyone writes notes of hope and fills the bags.',
+      text: 'Your team hears Elana’s story, assembles bags and writes notes of hope.',
       image: '/images/MetaLeadershipMakingfitBags-scaled.jpg',
       alt: 'A company team packing gift bags in their office',
     },
     {
       title: 'A Child Opens Your Gift',
-      text: 'We deliver the bags to children in the hospital and send you photos of your event and of the hospital delivery, ready for your CSR report.',
+      text: 'We deliver the bags to children in the hospital and send you photos for your CSR report.',
       image: '/images/IMG_6703-scaled.jpeg',
       alt: 'A child in the hospital holding a gift bag',
     },
@@ -136,7 +136,7 @@ export default function CrazySocks() {
         {/* PageHeader */}
         <PageHeader
           title="Crazy Socks<br/>Gift Bags"
-          subtitle="Corporate team building that gives back: your team packs gift bags for children in the hospital while Elana shares her story."
+          subtitle="Corporate team building that gives back: your team packs gift bags for children in the hospital and hears Elana's story."
           headerStyle="pt-72 xl:pt-84 pb-12 xl:pl-14 2xl:pl-20"
           gridStyle="gap-0 lg:grid-cols-1"
           button={
