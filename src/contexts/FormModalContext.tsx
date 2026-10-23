@@ -36,7 +36,7 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
     height: '1900px'
   },
   'crazy-socks-sponsor': {
-    title: "Let's plan your event together",
+    title: 'Sponsor a Gift Bag Event',
     subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
     subtitleWhileLoading: true,
     src: 'https://forms.monday.com/forms/embed/78b71c024990383d274ad455e744923a?r=use1',
