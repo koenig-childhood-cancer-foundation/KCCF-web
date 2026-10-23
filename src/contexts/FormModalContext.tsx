@@ -16,6 +16,8 @@ export type FormType =
 interface FormConfig {
   title: string
   subtitle?: string
+  // Show the subtitle only until the form has loaded
+  subtitleWhileLoading?: boolean
   src: string
   height: string
 }
@@ -36,6 +38,7 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   'crazy-socks-sponsor': {
     title: 'Sponsor a Gift Bag Event',
     subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
+    subtitleWhileLoading: true,
     src: 'https://forms.monday.com/forms/embed/78b71c024990383d274ad455e744923a?r=use1',
     height: '2000px'
   },
