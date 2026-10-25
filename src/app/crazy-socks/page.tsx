@@ -6,9 +6,11 @@ import { Fragment, useEffect, useRef } from 'react';
 import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 import { IMPACT_STATS } from '@/constants/impactStats';
+import { useFormModal } from '@/contexts/FormModalContext';
 
 export default function CrazySocks() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const { openModal } = useFormModal();
 
   const howItWorksSteps = [
     {
@@ -101,6 +103,17 @@ export default function CrazySocks() {
 
     return () => observer.disconnect();
   }, []);
+
+  // Outreach links land on /crazy-socks?sponsor=1: open the sponsor form, then drop only that flag (tracking tags stay).
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sponsor') === '1') {
+      openModal('crazy-socks-sponsor');
+      params.delete('sponsor');
+      const rest = params.toString();
+      window.history.replaceState(null, '', window.location.pathname + (rest ? `?${rest}` : '') + window.location.hash);
+    }
+  }, [openModal]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
