@@ -99,7 +99,7 @@ const organizationJsonLd = {
           "@type": "Service",
           name: "Crazy Socks Gift Bags",
           description:
-            "Crazy Socks gift bags delivered to children in isolation wards, packed by company teams at corporate team-building events.",
+            "Crazy Socks gift bags delivered to children fighting cancer in hospitals, packed by company teams at corporate team-building events.",
         },
       },
       {

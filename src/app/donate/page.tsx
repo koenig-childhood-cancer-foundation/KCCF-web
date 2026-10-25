@@ -24,7 +24,7 @@ const giftImpacts: {
   {
     title: 'Crazy Socks Gift Bags',
     amounts: [],
-    note: 'Crazy Socks gift bags delivered to children in isolation wards.',
+    note: 'Crazy Socks gift bags delivered to children fighting cancer in hospitals.',
     stat: '135,000+ gift bags delivered',
   },
   {
