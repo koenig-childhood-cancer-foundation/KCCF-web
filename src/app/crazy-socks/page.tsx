@@ -27,7 +27,7 @@ export default function CrazySocks() {
     },
     {
       title: 'A Child Opens Your Gift',
-      text: 'We deliver the bags to children in the hospital and send you photos for your CSR report.',
+      text: 'We deliver the bags to children fighting cancer in hospitals and send you photos for your CSR report.',
       image: '/images/IMG_6703-scaled.jpeg',
       alt: 'A child in the hospital holding a gift bag',
     },
@@ -149,7 +149,7 @@ export default function CrazySocks() {
         {/* PageHeader */}
         <PageHeader
           title="Crazy Socks<br/>Gift Bags"
-          subtitle="Team building that gives back: hear Elana’s story, then pack gift bags for children in the hospital."
+          subtitle="Team building that gives back: hear Elana’s story, then pack gift bags for children fighting cancer in hospitals."
           headerStyle="pt-72 xl:pt-84 pb-12 xl:pl-14 2xl:pl-20"
           gridStyle="gap-0 lg:grid-cols-1"
           button={
@@ -327,7 +327,7 @@ export default function CrazySocks() {
             </h2>
             <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-6" aria-hidden="true" />
             <p className="text-sm md:text-base font-bold uppercase tracking-[0.14em] leading-loose text-[#8A6A2E] dark:text-[#DAB87E] max-w-4xl mx-auto">
-              Meta &middot; Bank of America &middot; Aflac &middot; Forvis Mazars &middot; Sumitomo Mitsui Bank &middot; UBS
+              Meta &middot; Bank of America &middot; Amazon &middot; Aflac &middot; Forvis Mazars &middot; Sumitomo Mitsui Bank &middot; UBS
             </p>
             <p className="mt-7 italic text-gray-600 dark:text-gray-300">In their words:</p>
           </div>
