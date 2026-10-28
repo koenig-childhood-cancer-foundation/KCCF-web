@@ -144,7 +144,7 @@ export default function Aid() {
             ))}
           </ol>
           <p className="mt-10 max-w-3xl mx-auto bg-white dark:bg-gray-800 border border-[#DAB87E] rounded-[22px] px-6 py-4 font-semibold text-[#8A6A2E] dark:text-[#DAB87E]">
-            Applications will not be reviewed until both the parent and social worker portions are fully completed.
+            Applications will not be reviewed until both the parent and social worker portions are fully completed. Funding is limited, and we cannot approve every application.
           </p>
         </div>
       </section>
