@@ -173,7 +173,7 @@ export default function DonationModal() {
               onClick={closeModal}
               className="mx-auto inline-flex items-center gap-1 px-6 py-2.5 whitespace-nowrap rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors text-sm xl:text-base"
             >
-              Other ways to give: stock, DAF, crypto, check
+              Other ways to give: stock, crypto, check
               <svg className="w-4 h-4 xl:w-5 xl:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -237,12 +237,19 @@ export default function DonationModal() {
           </div>
 
           {/* Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal and Venmo */}
-          <div className="flex-shrink-0 h-28 flex flex-col justify-center items-center px-5 py-4 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-center">
+          <div className="flex-shrink-0 h-28 flex flex-col justify-center items-center px-5 py-3 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-center">
             {selectedProvider === 'zeffy' ? (
               <>
                 <button type="button" onClick={() => setSelectedProvider('givelively')} className={switchLinkClass}>
                   Or give with PayPal or Venmo &rarr;
                 </button>
+                {/* DAF rule from KCCF Current Facts – MASTER (Ways to give); the left card with other ways is computer-only */}
+                <p className="mt-2 text-xs sm:text-sm leading-snug text-white/90">
+                  Giving from a DAF? Choose a one-time gift of $1,000 or more.
+                  <Link href="/donate?nomodal=1#ways-to-give" onClick={closeModal} className="lg:hidden ml-1 font-bold underline whitespace-nowrap">
+                    Stock, crypto or check &rarr;
+                  </Link>
+                </p>
               </>
             ) : (
               <button type="button" onClick={() => setSelectedProvider('zeffy')} className={switchLinkClass}>
