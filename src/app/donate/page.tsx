@@ -85,8 +85,8 @@ const faqs: { question: string; answer: ReactNode; text: string }[] = [
   },
   {
     question: 'Is this donation tax-deductible?',
-    answer: 'Yes. Koenig Childhood Cancer Foundation is a registered 501(c)(3) nonprofit. Donations are tax-deductible to the extent permitted by U.S. law. EIN: 84-4892279',
-    text: 'Yes. Koenig Childhood Cancer Foundation is a registered 501(c)(3) nonprofit. Donations are tax-deductible to the extent permitted by U.S. law. EIN: 84-4892279',
+    answer: 'Yes. Koenig Childhood Cancer Foundation (KCCF) is a registered 501(c)(3) nonprofit. Donations are tax-deductible to the extent permitted by U.S. law. EIN: 84-4892279',
+    text: 'Yes. Koenig Childhood Cancer Foundation (KCCF) is a registered 501(c)(3) nonprofit. Donations are tax-deductible to the extent permitted by U.S. law. EIN: 84-4892279',
   },
   {
     question: 'Will I receive a tax receipt?',
@@ -110,10 +110,10 @@ const faqs: { question: string; answer: ReactNode; text: string }[] = [
     question: 'How do I avoid fees?',
     answer: (
       <>
-        Give through Zeffy, using the Donate button above. Zeffy charges no fees. PayPal and Venmo charge transaction fees, so choosing Zeffy instead avoids them. At checkout, Zeffy shows an optional contribution under &ldquo;Help keep Zeffy free.&rdquo; To skip it, open the dropdown, choose <strong>Other</strong>, and enter <strong>0</strong> in the Contribution box or leave it empty. Then <span className="font-bold text-violet-600 dark:text-saffron-400">100% of your gift goes to KCCF</span>.
+        At checkout, Zeffy, our donation processing platform, asks for an optional contribution under &ldquo;Help keep Zeffy free.&rdquo; To skip it, choose <strong>Other</strong> and enter <strong>0</strong>. Then <span className="font-bold text-violet-600 dark:text-saffron-400">100% of your gift goes to KCCF</span>.
       </>
     ),
-    text: 'Give through Zeffy, using the Donate button above. Zeffy charges no fees. PayPal and Venmo charge transaction fees, so choosing Zeffy instead avoids them. At checkout, Zeffy shows an optional contribution under "Help keep Zeffy free." To skip it, open the dropdown, choose Other, and enter 0 in the Contribution box or leave it empty. Then 100% of your gift goes to KCCF.',
+    text: 'At checkout, Zeffy, our donation processing platform, asks for an optional contribution under "Help keep Zeffy free." To skip it, choose Other and enter 0. Then 100% of your gift goes to KCCF.',
   },
   {
     question: 'How can I give through my Donor Advised Fund (DAF)?',
