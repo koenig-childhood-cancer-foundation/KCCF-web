@@ -11,6 +11,9 @@ type DonationProvider = 'zeffy' | 'givelively'
 
 const ZEFFY_FORM_PATH = '/embed/donation-form/donate-to-make-a-difference-18649'
 const ZEFFY_EMBED_SCRIPT = 'https://www.zeffy.com/embed/v2/zeffy-embed.js'
+// About the height of the form's first step, so the box starts at its final
+// size instead of growing (and shaking) when the form arrives.
+const ZEFFY_START_HEIGHT = '520'
 
 type ZeffyWindow = Window & { Zeffy?: { embed?: { init: () => void } } }
 
@@ -59,7 +62,7 @@ function ZeffyEmbed() {
   }
 
   // Zeffy's script fills this box; React leaves its contents alone.
-  return <div className="p-2 sm:p-3"><div data-zeffy-embed data-form-url={ZEFFY_FORM_PATH} /></div>
+  return <div className="p-2 sm:p-3"><div data-zeffy-embed data-form-url={ZEFFY_FORM_PATH} data-min-height={ZEFFY_START_HEIGHT} /></div>
 }
 
 // GiveLively widget component that loads the donation form via script
@@ -171,7 +174,7 @@ export default function DonationModal() {
     <div 
       aria-hidden={!isOpen}
       inert={!isOpen}
-      className={`fixed inset-0 z-50 flex items-start sm:items-center justify-center overflow-y-auto overflow-x-hidden p-2 sm:p-4 ${isOpen ? '' : 'invisible pointer-events-none'}`}
+      className={`fixed inset-0 z-50 flex items-start lg:items-center justify-center overflow-y-auto overflow-x-hidden p-2 sm:p-4 ${isOpen ? '' : 'invisible pointer-events-none'}`}
       style={{ 
         paddingBottom: 'max(0.5rem, env(safe-area-inset-bottom))',
         paddingTop: 'max(0.5rem, env(safe-area-inset-top))',
@@ -185,7 +188,7 @@ export default function DonationModal() {
       />
       
       {/* Modal */}
-      <div className="relative rounded-2xl max-w-5xl w-full lg:h-[75vh] min-[1800px]:h-[65vh] lg:min-h-[600px] flex items-stretch gap-4 my-auto">
+      <div className="relative rounded-2xl max-w-5xl w-full lg:h-[75vh] min-[1800px]:h-[65vh] lg:min-h-[600px] flex items-stretch gap-4 lg:my-auto">
         {/* Campaign Card - Left Side */}
          <div className="hidden lg:flex lg:w-1/2 h-full bg-violet-600 dark:bg-violet-800 text-white flex-col justify-between rounded-[28px] overflow-hidden shadow-xl">
           <div className="flex-1 min-h-0 flex flex-col">
@@ -235,7 +238,7 @@ export default function DonationModal() {
         </div>
         
         {/* Donation Form - Right Side replaced entirely by Zeffy */}
-        <div className="lg:w-1/2 w-full max-h-[calc(100dvh-1rem)] lg:max-h-none lg:h-full flex flex-col bg-white dark:bg-gray-800 rounded-[28px] overflow-hidden shadow-xl">
+        <div className="lg:w-1/2 w-full min-h-[min(660px,calc(100dvh-1rem))] lg:min-h-0 max-h-[calc(100dvh-1rem)] lg:max-h-none lg:h-full flex flex-col bg-white dark:bg-gray-800 rounded-[28px] overflow-hidden shadow-xl">
           <div className="flex-shrink-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
             {/* Top row: title + close button */}
             <div className="relative flex items-center justify-center p-2 sm:p-3 lg:p-4">
