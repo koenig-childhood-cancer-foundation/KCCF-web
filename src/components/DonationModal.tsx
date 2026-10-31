@@ -9,6 +9,59 @@ import Spinner from '@/components/Spinner'
 
 type DonationProvider = 'zeffy' | 'givelively'
 
+const ZEFFY_FORM_PATH = '/embed/donation-form/donate-to-make-a-difference-18649'
+const ZEFFY_EMBED_SCRIPT = 'https://www.zeffy.com/embed/v2/zeffy-embed.js'
+
+type ZeffyWindow = Window & { Zeffy?: { embed?: { init: () => void } } }
+
+// Zeffy's own embed (v2). Their script puts the form inside our box and
+// changes the box height at every step, so phones show no empty space.
+// If the script cannot load, we fall back to the plain fixed-size form.
+function ZeffyEmbed() {
+  const [failed, setFailed] = useState(false)
+  const [fallbackLoaded, setFallbackLoaded] = useState(false)
+
+  useEffect(() => {
+    const win = window as ZeffyWindow
+    if (win.Zeffy?.embed) {
+      win.Zeffy.embed.init()
+      return
+    }
+    let script = document.querySelector<HTMLScriptElement>(`script[src="${ZEFFY_EMBED_SCRIPT}"]`)
+    if (!script) {
+      script = document.createElement('script')
+      script.src = ZEFFY_EMBED_SCRIPT
+      script.async = true
+      document.head.appendChild(script)
+    }
+    const onError = () => setFailed(true)
+    script.addEventListener('error', onError)
+    return () => script?.removeEventListener('error', onError)
+  }, [])
+
+  if (failed) {
+    return (
+      <div className="relative h-[70vh] lg:h-full">
+        {!fallbackLoaded && (
+          <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-gray-800/80">
+            <Spinner text="Loading donation form..." />
+          </div>
+        )}
+        <iframe
+          className="block w-full h-full border-0"
+          src={`https://www.zeffy.com${ZEFFY_FORM_PATH}`}
+          title="Zeffy donation form"
+          allow="payment"
+          onLoad={() => setFallbackLoaded(true)}
+        />
+      </div>
+    )
+  }
+
+  // Zeffy's script fills this box; React leaves its contents alone.
+  return <div className="p-2 sm:p-3"><div data-zeffy-embed data-form-url={ZEFFY_FORM_PATH} /></div>
+}
+
 // GiveLively widget component that loads the donation form via script
 // Uses a ref callback to create a container that React won't try to manage
 function GiveLivelyWidget() {
@@ -80,15 +133,8 @@ function GiveLivelyWidget() {
 export default function DonationModal() {
   const { isOpen, isWarm, closeModal } = useDonationModal()
   const [selectedProvider, setSelectedProvider] = useState<DonationProvider>('zeffy')
-  const [iframeLoaded, setIframeLoaded] = useState(false)
   const switchLinkClass =
     'inline-flex items-center gap-1 mt-2 px-6 py-2.5 whitespace-nowrap rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors cursor-pointer'
-
-  // Reset iframeLoaded when the provider changes. The form stays loaded while
-  // the pop-up is closed, so reopening it is instant.
-  useEffect(() => {
-    setIframeLoaded(false)
-  }, [selectedProvider])
 
   // Close modal on escape key and prevent body scroll
   useEffect(() => {
@@ -132,7 +178,7 @@ export default function DonationModal() {
       />
       
       {/* Modal */}
-      <div className="relative rounded-2xl max-w-5xl w-full h-[90vh] sm:h-[85vh] lg:h-[75vh] min-[1800px]:h-[65vh] min-h-[600px] flex items-stretch gap-4 my-auto">
+      <div className="relative rounded-2xl max-w-5xl w-full lg:h-[75vh] min-[1800px]:h-[65vh] lg:min-h-[600px] flex items-stretch gap-4 my-auto">
         {/* Campaign Card - Left Side */}
          <div className="hidden lg:flex lg:w-1/2 h-full bg-violet-600 dark:bg-violet-800 text-white flex-col justify-between rounded-[28px] overflow-hidden shadow-xl">
           <div className="flex-1 min-h-0 flex flex-col">
@@ -182,7 +228,7 @@ export default function DonationModal() {
         </div>
         
         {/* Donation Form - Right Side replaced entirely by Zeffy */}
-        <div className="lg:w-1/2 w-full h-full flex flex-col bg-white dark:bg-gray-800 rounded-[28px] overflow-hidden shadow-xl">
+        <div className="lg:w-1/2 w-full max-h-[calc(100dvh-1rem)] lg:max-h-none lg:h-full flex flex-col bg-white dark:bg-gray-800 rounded-[28px] overflow-hidden shadow-xl">
           <div className="flex-shrink-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
             {/* Top row: title + close button */}
             <div className="relative flex items-center justify-center p-2 sm:p-3 lg:p-4">
@@ -207,30 +253,11 @@ export default function DonationModal() {
             {/* Zeffy/GiveLively donation forms are loaded as strictly necessary services */}
             
             {selectedProvider === 'zeffy' ? (
-              <div className="flex-1 min-h-[200px] overflow-auto relative">
-                {!iframeLoaded && (
-                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-gray-800/80">
-                    <Spinner text="Loading donation form..." />
-                  </div>
-                )}
-                <iframe
-                  className={`block w-full h-full max-w-full border-0 ${!iframeLoaded ? 'opacity-0' : 'opacity-100'}`}
-                  src="https://www.zeffy.com/embed/donation-form/donate-to-make-a-difference-18649"
-                  title="Zeffy donation form"
-                  scrolling="yes"
-                  allow="payment"
-                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                  style={{
-                    WebkitOverflowScrolling: 'touch',
-                    overflow: 'auto',
-                    minHeight: '200px',
-                    height: '100%'
-                  }}
-                  onLoad={() => setIframeLoaded(true)}
-                />
+              <div className="flex-1 min-h-0 overflow-auto">
+                <ZeffyEmbed />
               </div>
             ) : (
-              <div className="flex-1 min-h-[200px] overflow-auto">
+              <div className="flex-1 min-h-[70vh] lg:min-h-0 overflow-auto">
                 <GiveLivelyWidget />
               </div>
             )}
