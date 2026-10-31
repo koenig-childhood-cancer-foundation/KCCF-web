@@ -136,6 +136,13 @@ export default function DonationModal() {
   const switchLinkClass =
     'inline-flex items-center gap-1 mt-2 px-6 py-2.5 whitespace-nowrap rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors cursor-pointer'
 
+  // When the pop-up closes, go back to the Zeffy form. This removes the
+  // PayPal/Venmo form, which otherwise stays visible on the page after the
+  // pop-up is hidden (for example after "Other ways to give").
+  useEffect(() => {
+    if (!isOpen) setSelectedProvider('zeffy')
+  }, [isOpen])
+
   // Close modal on escape key and prevent body scroll
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
