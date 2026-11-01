@@ -50,6 +50,7 @@ const videos = [
     text: 'Elana honors the dad who danced with her through treatment and helped deliver gift bags to children in the hospital. ABC7 New York, June 20, 2021.',
     embed: 'https://abc7ny.com/video/embed/?pid=10814909',
     source: 'ABC7 New York',
+    thumbnail: '/images/media/abc7-fathers-day-2021.jpg',
     link: { label: 'Read the article', href: 'https://abc7ny.com/be-kind-fathers-day-cancer-survivor/10814428/' },
   },
   {
@@ -57,6 +58,7 @@ const videos = [
     text: 'Elana, 12, brings Crazy Socks gift bags to children in the hospital. ABC7 New York, February 15, 2021.',
     embed: 'https://abc7ny.com/video/embed/?pid=10340426',
     source: 'ABC7 New York',
+    thumbnail: '/images/media/kccf-hospital-gift-bags.jpg',
     link: { label: 'Read the article', href: 'https://abc7ny.com/be-kind-valentines-day-cancer-care-packages/10340454/' },
   },
   {
@@ -151,6 +153,7 @@ export default function Media() {
                     src={video.embed}
                     title={video.title}
                     source={video.source}
+                    thumbnail={video.thumbnail}
                   />
                 </div>
                 <div className="px-2 pt-5 pb-2 flex flex-col flex-1">

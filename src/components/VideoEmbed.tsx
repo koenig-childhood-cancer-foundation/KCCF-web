@@ -8,6 +8,8 @@ type VideoEmbedProps = {
   title: string
   // Shown on the placeholder when there is no YouTube thumbnail
   source?: string
+  // Picture for videos that are not on YouTube (ABC7)
+  thumbnail?: string
   className?: string
 }
 
@@ -19,7 +21,7 @@ function youTubeId(src: string) {
 // Shows a picture with a play button and loads the real video player only when
 // the visitor clicks. This keeps pages fast and stops YouTube and ABC from
 // setting cookies before the visitor chooses to watch.
-export default function VideoEmbed({ src, title, source, className = '' }: VideoEmbedProps) {
+export default function VideoEmbed({ src, title, source, thumbnail, className = '' }: VideoEmbedProps) {
   const [playing, setPlaying] = useState(false)
   const id = youTubeId(src)
   const frameRef = useRef<HTMLIFrameElement>(null)
@@ -52,10 +54,10 @@ export default function VideoEmbed({ src, title, source, className = '' }: Video
       aria-label={`Play video: ${title}`}
       className={`group/video relative block w-full h-full overflow-hidden bg-violet-900 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-saffron-400 ${className}`}
     >
-      {id ? (
+      {id || thumbnail ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`}
+          src={id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : thumbnail}
           alt=""
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover"
