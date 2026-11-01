@@ -321,7 +321,7 @@ export default function CrazySocks() {
             onClick={() => openModal('crazy-socks-sponsor')}
             className="mt-8 text-lg font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 hover:text-violet-800 dark:hover:text-saffron-300 transition-colors"
           >
-            Questions? Tell us about your team &rarr;
+            Learn more about the event &rarr;
           </button>
         </div>
       </section>
