@@ -198,7 +198,7 @@ export default function Footer() {
                       href="/crazy-socks"
                       className="inline-block py-1 text-gray-300 hover:text-white transition-colors whitespace-nowrap"
                     >
-                      Sponsor a Gift Bag Event
+                      Plan a Gift Bag Event
                     </Link>
                   </li>
                   <li>

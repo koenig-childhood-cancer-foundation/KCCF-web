@@ -43,7 +43,7 @@ const stars: { title: string; text: string; label: string; form: FormType }[] = 
   {
     title: 'Corporate Partnerships',
     text: 'Bring a Crazy Socks gift bag event to your company, school or group. Many companies fund it from their CSR or volunteer budget.',
-    label: 'Sponsor a Gift Bag Event',
+    label: 'Plan a Gift Bag Event',
     form: 'crazy-socks-sponsor',
   },
   {
