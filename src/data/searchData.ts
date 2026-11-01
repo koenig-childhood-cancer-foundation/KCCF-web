@@ -51,7 +51,7 @@ export const searchData: SearchItem[] = [
   },
   {
     title: 'Get Involved',
-    description: 'Start a fundraiser, sponsor a gift bag event, book Elana to speak, help build our camp or volunteer',
+    description: 'Start a fundraiser, plan a gift bag event, book Elana to speak, help build our camp or volunteer',
     href: '/get-involved',
     keywords: ['volunteer', 'help', 'join', 'team', 'contribute', 'service', 'corporate', 'company', 'csr', 'team building'],
     category: 'Contact'

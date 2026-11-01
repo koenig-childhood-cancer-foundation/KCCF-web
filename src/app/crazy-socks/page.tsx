@@ -175,15 +175,8 @@ export default function CrazySocks() {
                   </svg>
                 }
               >
-                Sponsor a Gift Bag Event
+                Plan a Gift Bag Event
               </FormButton>
-              <a
-                href="/documents/KCCF-Brochure.pdf"
-                download="KCCF-Brochure"
-                className="btn-primary inline-flex items-center justify-center rounded-full border-2 border-white bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 text-lg 2xl:text-[1.3rem]"
-              >
-                Download the Brochure
-              </a>
             </div>
           }
         />
@@ -373,7 +366,7 @@ export default function CrazySocks() {
       <section className="py-20 bg-violet-600 dark:bg-gray-800">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Sponsor a Gift Bag Event
+            Plan a Gift Bag Event
           </h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10">
@@ -403,7 +396,7 @@ export default function CrazySocks() {
                 </svg>
               }
             >
-              Sponsor a Gift Bag Event
+              Plan a Gift Bag Event
             </FormButton>
             <Link
               href="/get-involved#fundraisers"

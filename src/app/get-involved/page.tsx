@@ -57,7 +57,7 @@ export default function GetInvolved() {
       action: { label: 'Start a Fundraiser', href: '#fundraisers' },
     },
     {
-      title: 'Sponsor a Gift Bag Event',
+      title: 'Plan a Gift Bag Event',
       text: 'A team-building event with heart for your company, school or group. Many companies pay for it from their CSR or volunteer budget.',
       photo: '/images/yellow-shirt.jpg',
       alt: 'Teen volunteers in yellow KCCF shirts',
