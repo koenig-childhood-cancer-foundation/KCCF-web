@@ -10,7 +10,7 @@ import { useFormModal } from '@/contexts/FormModalContext';
 
 export default function CrazySocks() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const { openModal } = useFormModal();
+  const { openModal, warmProps } = useFormModal();
 
   const howItWorksSteps = [
     {
@@ -319,6 +319,7 @@ export default function CrazySocks() {
           <button
             type="button"
             onClick={() => openModal('crazy-socks-sponsor')}
+            {...warmProps('crazy-socks-sponsor')}
             className="mt-8 text-lg font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 hover:text-violet-800 dark:hover:text-saffron-300 transition-colors"
           >
             Learn more about the event &rarr;
