@@ -204,21 +204,17 @@ export default function DonationModal() {
             </div>
             
             <div className="campaign-body p-4 xl:p-6 min-[1800px]:p-8 pt-4 xl:pt-5 min-[1800px]:pt-6 flex-1 min-h-0 text-center">
-              <h2 
-                className="font-bold mb-2 xl:mb-3 min-[1800px]:mb-4 text-xl xl:text-2xl text-white"
-              >
-                No child should fight cancer alone.
-              </h2>
-              <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-3 xl:mb-4" aria-hidden="true" />
-              <p 
-                className="text-white/90 leading-relaxed text-sm xl:text-base"
+              <p
+                className="text-white font-semibold leading-relaxed text-sm xl:text-base"
               >
                 KCCF provides life-saving financial and emotional support to children battling cancer and their families.
               </p>
+              <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mt-3 xl:mt-4" aria-hidden="true" />
               {/* Gift levels from KCCF Current Facts – MASTER */}
-              <ul className="mt-4 xl:mt-6 space-y-3 text-sm xl:text-base text-white/90 text-left inline-block mx-auto">
+              <ul className="mt-3 xl:mt-4 space-y-2 text-sm text-white/90 text-left inline-block mx-auto">
                 <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#DAB87E] flex-shrink-0" aria-hidden="true" /><span><strong className="text-[#DAB87E]">$50</strong> = a dinner for a family</span></li>
                 <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#DAB87E] flex-shrink-0" aria-hidden="true" /><span><strong className="text-[#DAB87E]">$360</strong> = 3 nights of lodging</span></li>
+                <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#DAB87E] flex-shrink-0" aria-hidden="true" /><span><strong className="text-[#DAB87E]">$1,000</strong> = medication for one chemo cycle that insurance doesn&rsquo;t cover</span></li>
               </ul>
             </div>
           </div>
@@ -274,7 +270,7 @@ export default function DonationModal() {
           </div>
 
           {/* Zeffy (no fees) shows first; GiveLively is a one-tap switch for PayPal and Venmo */}
-          <div className="flex-shrink-0 h-28 flex flex-col justify-center items-center px-5 py-4 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-center">
+          <div className="flex-shrink-0 lg:h-28 flex flex-col justify-center items-center px-5 py-4 bg-violet-600 dark:bg-violet-800 border-t-2 border-[#DAB87E] text-center">
             {selectedProvider === 'zeffy' ? (
               <>
                 <button type="button" onClick={() => setSelectedProvider('givelively')} className={switchLinkClass}>
@@ -286,6 +282,14 @@ export default function DonationModal() {
                 &larr; Back to card or bank transfer (no fees)
               </button>
             )}
+            {/* Phones and tablets: the left side (with this link) is hidden, so show it here */}
+            <Link
+              href="/donate?nomodal=1#ways-to-give"
+              onClick={closeModal}
+              className="lg:hidden mt-3 text-sm font-semibold text-white underline underline-offset-4 hover:text-[#DAB87E] transition-colors"
+            >
+              Other ways to give: stock, DAF, crypto, check &rarr;
+            </Link>
           </div>
         </div>
       </div>
