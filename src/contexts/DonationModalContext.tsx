@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, useCallback, type ReactNode } from 'react'
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react'
 import { trackEvent } from '@/lib/analytics'
 
 interface DonationModalContextType {
@@ -22,6 +22,20 @@ export function DonationModalProvider({ children }: { children: ReactNode }) {
 
   // Start loading the Zeffy form early, when the mouse reaches a Donate button
   const warmUp = useCallback(() => setIsWarm(true), [])
+
+  // Also start loading it quietly a few seconds after the page has finished
+  // loading (phones have no mouse, so the hover above never happens there).
+  // Waiting for the page first keeps the page's own photos fast.
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | undefined
+    const start = () => { timer = setTimeout(() => setIsWarm(true), 3000) }
+    if (document.readyState === 'complete') start()
+    else window.addEventListener('load', start, { once: true })
+    return () => {
+      window.removeEventListener('load', start)
+      if (timer) clearTimeout(timer)
+    }
+  }, [])
 
   const openModal = useCallback((campaignName?: string) => {
     setCampaign(campaignName || null)
