@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"Now in New York: $(TZ=America/New_York date '+%A, %B %-d, %Y, %-I:%M %p %Z'). Use New York time for every day or date. The date given elsewhere in the system prompt is UTC. Re-check before writing today/tomorrow/tonight in a long session.\""
+          }
+        ]
+      }
+    ]
+  }
+}
