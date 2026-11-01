@@ -214,7 +214,7 @@ export default function DonationModal() {
               <ul className="mt-3 xl:mt-4 space-y-2 text-sm text-white/90 text-left inline-block mx-auto">
                 <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#DAB87E] flex-shrink-0" aria-hidden="true" /><span><strong className="text-[#DAB87E]">$50</strong> = a dinner for a family</span></li>
                 <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#DAB87E] flex-shrink-0" aria-hidden="true" /><span><strong className="text-[#DAB87E]">$360</strong> = 3 nights of lodging</span></li>
-                <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#DAB87E] flex-shrink-0" aria-hidden="true" /><span><strong className="text-[#DAB87E]">$1,000</strong> = medication for one chemo cycle that insurance doesn&rsquo;t cover</span></li>
+                <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#DAB87E] flex-shrink-0" aria-hidden="true" /><span><strong className="text-[#DAB87E]">$1,000</strong> = medication for one chemo cycle</span></li>
               </ul>
             </div>
           </div>
