@@ -288,7 +288,7 @@ export default function DonationModal() {
               onClick={closeModal}
               className="lg:hidden mt-3 text-sm font-semibold text-white underline underline-offset-4 hover:text-[#DAB87E] transition-colors"
             >
-              Other ways to give: stock, DAF, crypto, check &rarr;
+              Other ways to give: stock, DAF, crypto, check
             </Link>
           </div>
         </div>
