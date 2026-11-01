@@ -57,7 +57,7 @@ const waysToGive: { title: string; body: ReactNode; ein?: 'number' | 'full' }[] 
   },
   {
     title: 'Donor Advised Funds (DAF)',
-    body: 'Give from your Donor Advised Fund with the Donate button above. Choose a one-time gift (not monthly) and enter $1,000 or more, and the DAF option appears. 100% reaches KCCF.',
+    body: 'Ask your fund to send a grant to KCCF, using our legal name and EIN below. Questions? Email join@thekccf.org.',
     ein: 'full',
   },
   {
@@ -119,14 +119,14 @@ const faqs: { question: string; answer: ReactNode; text: string }[] = [
     question: 'How can I give through my Donor Advised Fund (DAF)?',
     answer: (
       <>
-        Use the Donate button above. Choose a one-time gift (not monthly) and enter $1,000 or more, and the DAF option appears. Questions? Email us at{' '}
+        Ask your fund to send a grant to Koenig Childhood Cancer Foundation, Inc., EIN 84-4892279. Questions? Email us at{' '}
         <a href="mailto:join@thekccf.org" className={linkClass}>
           join@thekccf.org
         </a>
         .
       </>
     ),
-    text: 'Use the Donate button above. Choose a one-time gift (not monthly) and enter $1,000 or more, and the DAF option appears. Questions? Email us at join@thekccf.org.',
+    text: 'Ask your fund to send a grant to Koenig Childhood Cancer Foundation, Inc., EIN 84-4892279. Questions? Email us at join@thekccf.org.',
   },
   {
     question: 'How can I donate stock?',
