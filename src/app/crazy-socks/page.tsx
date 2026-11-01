@@ -308,6 +308,21 @@ export default function CrazySocks() {
               </Fragment>
             ))}
           </ol>
+          {/* Quick facts from KCCF Current Facts – MASTER (Crazy Socks row); no price on purpose */}
+          <ul className="mt-12 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-6 max-w-4xl mx-auto list-none">
+            {['Any group size', '1+ hours', 'In person or hybrid'].map((fact) => (
+              <li key={fact} className="px-6 py-3 rounded-full border-2 border-[#DAB87E] text-[#5B3A10] dark:text-[#F1DDB0] font-semibold text-lg">
+                {fact}
+              </li>
+            ))}
+          </ul>
+          <button
+            type="button"
+            onClick={() => openModal('crazy-socks-sponsor')}
+            className="mt-8 text-lg font-semibold text-violet-600 dark:text-saffron-400 underline underline-offset-4 hover:text-violet-800 dark:hover:text-saffron-300 transition-colors"
+          >
+            Questions? Tell us about your team &rarr;
+          </button>
         </div>
       </section>
 
