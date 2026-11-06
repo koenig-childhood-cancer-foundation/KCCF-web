@@ -64,8 +64,8 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
     height: '1900px'
   },
   'volunteer': {
-    // Heading moved here from the Monday form (Rena, 11.5.26)
-    title: 'KCCF Volunteer Application',
+    // Warmer title chosen by Rena (11.5.26); Monday heading to be removed after merge
+    title: 'Join Our Volunteer Family',
     subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
     src: 'https://forms.monday.com/forms/embed/650d6c93433108a85097471c822b4cbf?r=use1',
     height: '3100px',
