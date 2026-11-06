@@ -194,7 +194,7 @@ export default function Aid() {
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Apply for Family Aid</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10">
-            Thank you for trusting us to be part of your journey. We are here for you.
+            Thank you for trusting us to be part of your journey.
           </p>
           <FormButton formType="aid-application" variant="orange" size="lg" className="py-4 px-10 text-lg">
             Apply for Family Aid
