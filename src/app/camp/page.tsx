@@ -3,16 +3,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { IMPACT_STATS } from '@/constants/impactStats';
+import { useFormModal } from '@/contexts/FormModalContext';
+import PreloadForms from '@/components/PreloadForms';
 
 // Facts from KCCF Current Facts – MASTER: KCCF International Camp (in Azerbaijan),
 // an international summer camp for emotional recovery; 120 children hosted.
 // Free for families: confirmed by Rena (October 2026).
 // Elvira's story: from KCCF's September 2026 email "Elvira's 16th Birthday Wish" (Rena's request).
-// Registration is not open yet, so families send an interest email instead of a form.
-
-const CAMP_EMAIL = 'join@thekccf.org';
-const interestLink = `mailto:${CAMP_EMAIL}?subject=${encodeURIComponent('KCCF Camp: please tell me when registration opens')}&body=${encodeURIComponent("Hello KCCF,\n\nPlease let me know when registration for the KCCF International Camp opens.\n\nMy name:\nMy child's age:\nCountry:\n\nThank you!")}`;
-const volunteerLink = `mailto:${CAMP_EMAIL}?subject=${encodeURIComponent('KCCF Camp: I would like to volunteer')}&body=${encodeURIComponent('Hello KCCF,\n\nI would like to help at the KCCF International Camp.\n\nMy name:\nMy experience (camp, medical, child care, other):\n\nThank you!')}`;
+// Registration is not open yet: families join the newsletter to hear when it opens,
+// volunteers use the volunteer form (it has a "KCCF Camp" choice) (Rena, 11.5.26).
 
 const stats = [
   { value: IMPACT_STATS.HOME[3].value, label: 'children hosted' },
@@ -43,11 +42,13 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
 }
 
 export default function Camp() {
+  const { openModal, warmProps } = useFormModal();
   const outline =
     'py-4 px-10 rounded-full font-semibold text-lg inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-violet-700 transition-colors';
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
+      <PreloadForms forms={['volunteer', 'newsletter-signup']} />
       {/* Hero: same style as Get Involved (full photo, soft shade behind the words) */}
       <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-end overflow-hidden pt-24">
         <div className="absolute inset-0 top-24">
@@ -162,15 +163,15 @@ export default function Camp() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Join Us at Camp</h2>
           <div className="w-14 h-1 bg-[#DAB87E] rounded-full mx-auto mb-8" aria-hidden="true" />
           <p className="text-xl text-white/90 mb-10 text-balance">
-            Camp is free for families. Registration is not open yet. Email us to hear when it opens, or to volunteer.
+            Camp is free for families. Registration is not open yet. Join our newsletter to hear when it opens, or apply to volunteer.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <a href={volunteerLink} className="btn-primary btn-primary-orange text-white py-4 px-8 rounded-full font-semibold text-lg inline-flex items-center justify-center">
+            <button type="button" onClick={() => openModal('volunteer')} {...warmProps('volunteer')} className="btn-primary btn-primary-orange text-white py-4 px-8 rounded-full font-semibold text-lg inline-flex items-center justify-center cursor-pointer">
               Volunteer at Camp
-            </a>
-            <a href={interestLink} className={outline}>
-              Email Me When Registration Opens
-            </a>
+            </button>
+            <button type="button" onClick={() => openModal('newsletter-signup')} {...warmProps('newsletter-signup')} className={`${outline} cursor-pointer`}>
+              Get Camp News
+            </button>
           </div>
         </div>
       </section>
