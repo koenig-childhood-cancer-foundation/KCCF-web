@@ -42,7 +42,7 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   'crazy-socks-sponsor': {
     // Heading moved here from the Monday form (Rena, 11.5.26)
     title: 'Let us plan your event together!',
-    subtitle: 'Thank you for your interest! It only takes a few minutes.',
+    subtitle: 'Thank you for your interest! It takes about 2 minutes.',
     src: 'https://forms.monday.com/forms/embed/78b71c024990383d274ad455e744923a?r=use1',
     height: '2000px',
     narrow: true
