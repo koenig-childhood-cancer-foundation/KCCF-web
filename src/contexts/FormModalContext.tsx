@@ -20,6 +20,8 @@ interface FormConfig {
   subtitleWhileLoading?: boolean
   src: string
   height: string
+  // Short forms: a small pop-up sized to the form (uses height) instead of the tall one
+  compact?: boolean
 }
 
 export const FORM_CONFIGS: Record<FormType, FormConfig> = {
@@ -45,9 +47,11 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   'newsletter-signup': {
     title: 'Join Our Newsletter',
     subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
+    subtitleWhileLoading: true,
     // Zeffy newsletter sign-up form "Join Our Newsletter" (Rena, 11.5.26; was Mailchimp).
     src: 'https://www.zeffy.com/en-US/embed/newsletter-form/join-our-newsletter-16',
-    height: '650px'
+    height: '380px',
+    compact: true
   },
   'book-elana': {
     title: 'Book Elana to Speak',
