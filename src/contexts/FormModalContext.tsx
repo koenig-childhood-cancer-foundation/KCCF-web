@@ -56,7 +56,7 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
     subtitleWhileLoading: true,
     // Zeffy newsletter sign-up form "Join Our Newsletter" (Rena, 11.5.26; was Mailchimp).
     src: 'https://www.zeffy.com/en-US/embed/newsletter-form/join-our-newsletter-16',
-    height: '440px',
+    height: '310px',
     compact: true
   },
   'book-elana': {
