@@ -38,8 +38,8 @@ describe('FORM_CONFIGS integrity', () => {
   })
 
   it('routes each configured form to its expected provider', () => {
-    // The newsletter is the deliberate exception: Mailchimp, not Monday.com.
-    expect(FORM_CONFIGS['newsletter-signup'].src).toContain('list-manage.com')
+    // The newsletter is the deliberate exception: Zeffy, not Monday.com.
+    expect(FORM_CONFIGS['newsletter-signup'].src).toContain('zeffy.com/en-US/embed/newsletter-form/')
 
     for (const type of configuredTypes.filter((t) => t !== 'newsletter-signup')) {
       expect(FORM_CONFIGS[type].src).toContain('forms.monday.com')

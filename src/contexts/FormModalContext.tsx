@@ -45,7 +45,8 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   'newsletter-signup': {
     title: 'Join Our Newsletter',
     subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
-    src: 'https://thekccf.us17.list-manage.com/subscribe?u=041a777be61cc7e1bc20e3517&id=8696f27783',
+    // Zeffy newsletter sign-up form "Join Our Newsletter" (Rena, 11.5.26; was Mailchimp).
+    src: 'https://www.zeffy.com/en-US/embed/newsletter-form/join-our-newsletter-16',
     height: '650px'
   },
   'book-elana': {

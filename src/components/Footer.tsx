@@ -273,7 +273,7 @@ export default function Footer() {
                   size="md"
                   className="px-8 whitespace-nowrap"
                 >
-                  Subscribe to Newsletter
+                  Join Our Newsletter
                 </FormButton>
               </div>
             </div>
