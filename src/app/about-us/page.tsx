@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FormButton from '@/components/FormButton';
 import { useFormModal } from '@/contexts/FormModalContext';
+import PreloadForms from '@/components/PreloadForms';
 
 // Elana's story and the team, combined from the Our Story and KCCF Family pages.
 // Facts and titles follow KCCF Current Facts – MASTER.
@@ -108,6 +109,7 @@ export default function AboutUs() {
   const { openModal, warmProps } = useFormModal();
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
+      <PreloadForms forms={['book-elana']} />
       {/* Hero: home-page style (full photo, warm tint, soft shade behind the words) */}
       <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-end overflow-hidden pt-24">
         <div className="absolute inset-0 top-24">

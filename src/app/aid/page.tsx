@@ -5,6 +5,7 @@ import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 import { Fragment } from 'react';
 import { IMPACT_STATS } from '@/constants/impactStats';
+import PreloadForms from '@/components/PreloadForms';
 
 const aidCards = [
   {
@@ -35,6 +36,7 @@ const applySteps = [
 export default function Aid() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
+      <PreloadForms forms={['aid-application']} />
       {/* Hero Section with Background */}
       <div className="relative min-h-[66vh] flex justify-center overflow-hidden pt-0">
         {/* Background Image */}

@@ -10,6 +10,7 @@ import CallToAction from '@/components/CallToAction';
 import FormButton from '@/components/FormButton';
 import { IMPACT_STATS } from '@/constants/impactStats';
 import { useFormModal } from '@/contexts/FormModalContext';
+import PreloadForms from '@/components/PreloadForms';
 
 export default function HomeContent() {
   const { openModal, warmProps } = useFormModal();
@@ -24,6 +25,7 @@ export default function HomeContent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
+      <PreloadForms forms={['newsletter-signup', 'crazy-socks-sponsor']} />
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center pt-40 md:pt-52 pb-10 overflow-hidden">
         {/* Full vibrant image */}

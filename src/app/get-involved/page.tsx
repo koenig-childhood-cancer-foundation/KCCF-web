@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useFormModal, type FormType } from '@/contexts/FormModalContext';
 import { IMPACT_STATS } from '@/constants/impactStats';
+import PreloadForms from '@/components/PreloadForms';
 
 // Volunteer and Fundraisers combined into one page.
 // Numbers follow KCCF Current Facts – MASTER.
@@ -91,6 +92,7 @@ export default function GetInvolved() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
+      <PreloadForms forms={['volunteer', 'book-elana']} />
       {/* Hero: home-page style (full photo, warm tint, soft shade behind the words) */}
       <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-end overflow-hidden pt-24">
         <div className="absolute inset-0 top-24">

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useFormModal } from '@/contexts/FormModalContext';
 import { useDonationModal } from '@/contexts/DonationModalContext';
 import type { FormType } from '@/contexts/FormModalContext';
+import PreloadForms from '@/components/PreloadForms';
 
 // Giving options follow KCCF Current Facts – MASTER. The page offers forms instead of
 // a phone number, to cut down on solicitation (the footer still shows it).
@@ -76,6 +77,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
+      <PreloadForms forms={['contact']} />
       {/* Hero: same style as Get Involved */}
       <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-end overflow-hidden pt-24">
         <div className="absolute inset-0 top-24">
