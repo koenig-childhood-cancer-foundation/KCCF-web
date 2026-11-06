@@ -22,6 +22,8 @@ interface FormConfig {
   height: string
   // Short forms: a small pop-up sized to the form (uses height) instead of the tall one
   compact?: boolean
+  // Narrower pop-up (max-w-2xl instead of max-w-4xl)
+  narrow?: boolean
 }
 
 export const FORM_CONFIGS: Record<FormType, FormConfig> = {
@@ -38,11 +40,13 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
     height: '1900px'
   },
   'crazy-socks-sponsor': {
-    title: 'Plan a Gift Bag Event',
+    // Heading moved here from the Monday form (Rena, 11.5.26)
+    title: 'Let us plan your event together!',
     subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
     subtitleWhileLoading: true,
     src: 'https://forms.monday.com/forms/embed/78b71c024990383d274ad455e744923a?r=use1',
-    height: '2000px'
+    height: '2000px',
+    narrow: true
   },
   'newsletter-signup': {
     title: 'Join Our Newsletter',
@@ -60,10 +64,12 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
     height: '1900px'
   },
   'volunteer': {
-    title: 'Apply to Volunteer',
+    // Warmer title chosen by Rena (11.5.26); Monday heading to be removed after merge
+    title: 'Join Our Volunteer Family',
     subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
     src: 'https://forms.monday.com/forms/embed/650d6c93433108a85097471c822b4cbf?r=use1',
-    height: '3100px'
+    height: '3100px',
+    narrow: true
   },
   'contact': {
     title: 'Send Us a Message',
