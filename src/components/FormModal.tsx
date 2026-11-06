@@ -37,6 +37,7 @@ export default function FormModal() {
   if (!isOpen || !formType) return null
 
   const config = FORM_CONFIGS[formType]
+  const compact = !!config.compact
 
   const modalContent = (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4">
@@ -47,7 +48,7 @@ export default function FormModal() {
       />
 
       {/* Modal */}
-      <div className="relative bg-white dark:bg-gray-800 rounded-[22px] border-t-4 border-[#DAB87E] dark:border-saffron-400 shadow-2xl max-w-4xl w-full h-[90vh] sm:h-[85vh] flex flex-col overflow-hidden">
+      <div className={`relative ${compact ? 'bg-[#FBF5EA]' : 'bg-white'} dark:bg-gray-800 rounded-[22px] border-t-4 border-[#DAB87E] dark:border-saffron-400 shadow-2xl w-full flex flex-col overflow-hidden ${compact ? 'max-w-lg max-h-[90vh]' : 'max-w-4xl h-[90vh] sm:h-[85vh]'}`}>
         {/* Header */}
         <div className="flex items-center justify-between p-3 sm:p-6 bg-violet-600 dark:bg-gray-800 border-b-[3px] border-[#DAB87E] dark:border-gray-700">
           <div className="flex-1 text-center">
@@ -74,7 +75,12 @@ export default function FormModal() {
         </div>
 
         {/* Form Content */}
-        <div className="flex-1 min-h-0 flex flex-col relative">
+        <div
+          // Compact: the form's own height, but allowed to shrink inside max-h-[90vh]
+          // on short screens (phone in landscape); the form then scrolls inside its frame.
+          className={`flex flex-col relative min-h-0 ${compact ? 'shrink' : 'flex-1'}`}
+          style={compact ? { height: config.height } : undefined}
+        >
           {/* Monday.com forms are loaded as strictly necessary services */}
           <>
             {!iframeLoaded && (

@@ -20,6 +20,8 @@ interface FormConfig {
   subtitleWhileLoading?: boolean
   src: string
   height: string
+  // Short forms: a small pop-up sized to the form (uses height) instead of the tall one
+  compact?: boolean
 }
 
 export const FORM_CONFIGS: Record<FormType, FormConfig> = {
@@ -45,9 +47,11 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   'newsletter-signup': {
     title: 'Join Our Newsletter',
     subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
+    subtitleWhileLoading: true,
     // Zeffy newsletter sign-up form "Join Our Newsletter" (Rena, 11.5.26; was Mailchimp).
     src: 'https://www.zeffy.com/en-US/embed/newsletter-form/join-our-newsletter-16',
-    height: '650px'
+    height: '380px',
+    compact: true
   },
   'book-elana': {
     title: 'Book Elana to Speak',
@@ -98,12 +102,13 @@ export function FormModalProvider({ children }: { children: ReactNode }) {
     if (type === 'crazy-socks-sponsor') trackEvent('sponsor_click')
   }
 
-  // Start loading a monday.com form in a hidden frame when a visitor points at
+  // Start loading a monday.com or Zeffy form in a hidden frame when a visitor points at
   // or focuses its button, so its files are cached before the click
   const warmed = useRef(new Set<string>())
   const warmUp = useCallback((type: FormType) => {
     const src = FORM_CONFIGS[type]?.src
-    if (!src || new URL(src).hostname !== 'forms.monday.com' || warmed.current.has(src)) return
+    const host = src ? new URL(src).hostname : ''
+    if (!src || !['forms.monday.com', 'www.zeffy.com'].includes(host) || warmed.current.has(src)) return
     warmed.current.add(src)
     const frame = document.createElement('iframe')
     frame.src = src
