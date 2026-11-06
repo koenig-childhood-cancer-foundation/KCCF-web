@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import VideoEmbed from '@/components/VideoEmbed';
 import { useFormModal } from '@/contexts/FormModalContext';
+import PreloadForms from '@/components/PreloadForms';
 
 // "As seen on" items follow Credentials and media in KCCF Current Facts – MASTER.
 const seenOn = [
@@ -96,6 +97,7 @@ export default function Media() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
+      <PreloadForms forms={['book-elana', 'contact']} />
       {/* Hero: same style as Get Involved */}
       <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-end overflow-hidden pt-24">
         <div className="absolute inset-0 top-24">

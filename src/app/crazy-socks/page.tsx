@@ -7,6 +7,7 @@ import PageHeader from '@/components/PageHeader';
 import FormButton from '@/components/FormButton';
 import { IMPACT_STATS } from '@/constants/impactStats';
 import { useFormModal } from '@/contexts/FormModalContext';
+import PreloadForms from '@/components/PreloadForms';
 
 export default function CrazySocks() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -117,6 +118,7 @@ export default function CrazySocks() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-platinum-50 via-white to-platinum-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden">
+      <PreloadForms forms={['crazy-socks-sponsor']} />
       {/* Hero Section with Background */}
       <div className="relative min-h-[66vh] flex items-center justify-center overflow-hidden bg-[#3a2e33]">
         {/* Blurred copy fills the left side once the photo shifts right on large screens */}

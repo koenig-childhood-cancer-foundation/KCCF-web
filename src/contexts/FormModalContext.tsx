@@ -63,7 +63,8 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
     title: 'Book Elana to Speak',
     subtitle: 'It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/0caf48b3cfeede4c889e59ac52ce5fb1?r=use1',
-    height: '1900px'
+    height: '1900px',
+    narrow: true
   },
   'volunteer': {
     // Warmer title chosen by Rena (11.5.26); Monday heading to be removed after merge
@@ -75,15 +76,17 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   },
   'contact': {
     title: 'Send Us a Message',
-    subtitle: 'We\'re here to help. It only takes a few minutes.',
+    subtitle: 'It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/7d2a1baf81662443852a38886ac80dd4?r=use1',
-    height: '1100px'
+    height: '1100px',
+    narrow: true
   },
   'aid-application': {
     title: 'Apply for Family Aid',
-    subtitle: 'We are grateful to be part of your journey. It only takes a few minutes.',
+    subtitle: 'It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/972de98e599d383218e348dd923eec38?r=use1',
-    height: '2500px'
+    height: '2500px',
+    narrow: true
   }
 }
 
