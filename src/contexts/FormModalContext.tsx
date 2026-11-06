@@ -102,12 +102,13 @@ export function FormModalProvider({ children }: { children: ReactNode }) {
     if (type === 'crazy-socks-sponsor') trackEvent('sponsor_click')
   }
 
-  // Start loading a monday.com form in a hidden frame when a visitor points at
+  // Start loading a monday.com or Zeffy form in a hidden frame when a visitor points at
   // or focuses its button, so its files are cached before the click
   const warmed = useRef(new Set<string>())
   const warmUp = useCallback((type: FormType) => {
     const src = FORM_CONFIGS[type]?.src
-    if (!src || new URL(src).hostname !== 'forms.monday.com' || warmed.current.has(src)) return
+    const host = src ? new URL(src).hostname : ''
+    if (!src || !['forms.monday.com', 'www.zeffy.com'].includes(host) || warmed.current.has(src)) return
     warmed.current.add(src)
     const frame = document.createElement('iframe')
     frame.src = src
