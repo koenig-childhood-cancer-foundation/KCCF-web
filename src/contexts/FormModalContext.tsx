@@ -76,7 +76,7 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   },
   'contact': {
     title: 'Send Us a Message',
-    subtitle: 'We\'re here to help. It only takes a few minutes.',
+    subtitle: 'It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/7d2a1baf81662443852a38886ac80dd4?r=use1',
     height: '1100px',
     narrow: true
