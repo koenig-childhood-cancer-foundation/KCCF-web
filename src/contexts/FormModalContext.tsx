@@ -29,21 +29,20 @@ interface FormConfig {
 export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   'camp-camper': {
     title: 'Thank you for your interest in the KCCF Summer Camp 2026.',
-    subtitle: 'The form may take a few seconds to load.',
+    subtitle: 'It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/6d7260392d585e6fd7cb1b13795638ab?r=use1',
     height: '1550px'
   },
   'camp-counselor': {
     title: 'Thank you for your interest in becoming a camp volunteer!',
-    subtitle: 'The form may take a few seconds to load.',
+    subtitle: 'It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/87920448930e50b7a0554e414662d32b?r=use1',
     height: '1900px'
   },
   'crazy-socks-sponsor': {
     // Heading moved here from the Monday form (Rena, 11.5.26)
     title: 'Let us plan your event together!',
-    subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
-    subtitleWhileLoading: true,
+    subtitle: 'Thank you for your interest! It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/78b71c024990383d274ad455e744923a?r=use1',
     height: '2000px',
     narrow: true
@@ -54,32 +53,32 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
     subtitleWhileLoading: true,
     // Zeffy newsletter sign-up form "Join Our Newsletter" (Rena, 11.5.26; was Mailchimp).
     src: 'https://www.zeffy.com/en-US/embed/newsletter-form/join-our-newsletter-16',
-    height: '380px',
+    height: '440px',
     compact: true
   },
   'book-elana': {
     title: 'Book Elana to Speak',
-    subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
+    subtitle: 'Thank you for your interest! It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/0caf48b3cfeede4c889e59ac52ce5fb1?r=use1',
     height: '1900px'
   },
   'volunteer': {
     // Warmer title chosen by Rena (11.5.26); Monday heading to be removed after merge
     title: 'Join Our Volunteer Family',
-    subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
+    subtitle: 'Thank you for your interest! It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/650d6c93433108a85097471c822b4cbf?r=use1',
     height: '3100px',
     narrow: true
   },
   'contact': {
     title: 'Send Us a Message',
-    subtitle: 'We\'re here to help. The form takes a few seconds to load.',
+    subtitle: 'We\'re here to help. It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/7d2a1baf81662443852a38886ac80dd4?r=use1',
     height: '1100px'
   },
   'aid-application': {
     title: 'Apply for Family Aid',
-    subtitle: 'We are grateful to be part of your journey. The form may take a minute to load.',
+    subtitle: 'We are grateful to be part of your journey. It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/972de98e599d383218e348dd923eec38?r=use1',
     height: '2500px'
   }
