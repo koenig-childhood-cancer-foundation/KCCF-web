@@ -78,7 +78,7 @@ export default function FormModal() {
         <div
           // Compact: the form's own height, but allowed to shrink inside max-h-[90vh]
           // on short screens (phone in landscape); the form then scrolls inside its frame.
-          className={`flex flex-col relative min-h-0 ${compact ? 'shrink' : 'flex-1'}`}
+          className={`flex flex-col relative min-h-0 overflow-hidden ${compact ? 'shrink' : 'flex-1'}`}
           style={compact ? { height: config.height } : undefined}
         >
           {/* Monday.com forms are loaded as strictly necessary services */}
@@ -95,6 +95,8 @@ export default function FormModal() {
               frameBorder={0}
               scrolling="auto"
               allow="payment"
+              // trimTop hides the empty space at the top of the embedded form
+              style={config.trimTop ? { marginTop: -config.trimTop } : undefined}
               sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
               onLoad={() => setIframeLoaded(true)}
             />

@@ -24,6 +24,8 @@ interface FormConfig {
   compact?: boolean
   // Narrower pop-up (max-w-2xl instead of max-w-4xl)
   narrow?: boolean
+  // Pixels of empty space to hide at the top of the embedded form
+  trimTop?: number
 }
 
 export const FORM_CONFIGS: Record<FormType, FormConfig> = {
@@ -45,11 +47,12 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
     subtitle: 'It takes about 2 minutes.',
     src: 'https://forms.monday.com/forms/embed/78b71c024990383d274ad455e744923a?r=use1',
     height: '2000px',
-    narrow: true
+    narrow: true,
+    trimTop: 24
   },
   'newsletter-signup': {
     title: 'Join Our Newsletter',
-    subtitle: 'Thank you for your interest! The form takes a few seconds to load.',
+    subtitle: 'The form takes a few seconds to load.',
     subtitleWhileLoading: true,
     // Zeffy newsletter sign-up form "Join Our Newsletter" (Rena, 11.5.26; was Mailchimp).
     src: 'https://www.zeffy.com/en-US/embed/newsletter-form/join-our-newsletter-16',
@@ -58,14 +61,14 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   },
   'book-elana': {
     title: 'Book Elana to Speak',
-    subtitle: 'Thank you for your interest! It only takes a few minutes.',
+    subtitle: 'It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/0caf48b3cfeede4c889e59ac52ce5fb1?r=use1',
     height: '1900px'
   },
   'volunteer': {
     // Warmer title chosen by Rena (11.5.26); Monday heading to be removed after merge
     title: 'Join Our Volunteer Family',
-    subtitle: 'Thank you for your interest! It only takes a few minutes.',
+    subtitle: 'It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/650d6c93433108a85097471c822b4cbf?r=use1',
     height: '3100px',
     narrow: true
