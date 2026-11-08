@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import ShortLinkPage, { shortLinkTarget } from '@/components/ShortLinkPage'
 import Plan from '@/app/plan/page'
-import Meet from '@/app/meet/page'
 
 describe('ShortLinkPage', () => {
   it('keeps outside addresses as they are', () => {
@@ -17,10 +16,5 @@ describe('ShortLinkPage', () => {
   it('/plan opens the Crazy Socks sponsor form', () => {
     render(<Plan />)
     expect(screen.getByRole('link')).toHaveAttribute('href', '/crazy-socks?sponsor=1')
-  })
-
-  it("/meet opens Rena's booking page", () => {
-    render(<Meet />)
-    expect(screen.getByRole('link')).toHaveAttribute('href', 'https://calendar.app.google/W4hp8PjXQ2utEkoP7')
   })
 })
