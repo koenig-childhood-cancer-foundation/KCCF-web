@@ -83,7 +83,6 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   },
   'aid-application': {
     title: 'Apply for Family Aid',
-    subtitle: 'It only takes a few minutes.',
     src: 'https://forms.monday.com/forms/embed/972de98e599d383218e348dd923eec38?r=use1',
     height: '2500px',
     narrow: true
