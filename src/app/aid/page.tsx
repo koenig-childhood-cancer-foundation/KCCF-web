@@ -30,7 +30,7 @@ const aidCards = [
 const applySteps = [
   { title: 'Family Applies', text: 'The family completes and submits their portion.' },
   { title: 'Social Worker Verifies', text: 'The listed social worker receives and submits their portion.' },
-  { title: 'Board Reviews', text: 'The Board reviews the application and decides.' },
+  { title: 'Foundation Reviews', text: 'The Foundation reviews the application and decides.' },
 ];
 
 export default function Aid() {
