@@ -63,7 +63,7 @@ const advisers: Person[] = [
     name: 'Oliwia Caes',
     photo: '/images/Oliwia-Caes.JPEG',
     bio: [
-      'A UCLA Biochemistry student, Oliwia is passionate about medicinal chemistry, oncology, and biomedical research. She manages vital communications for oncology families and donors, ensuring clear and compassionate outreach. Oliwia is a dedicated advocate for the cause and has been a proud member of the KCCF family since its inception.',
+      'A UCLA Biochemistry student, Oliwia is passionate about medicinal chemistry, oncology, and biomedical research. She is a dedicated advocate for the cause and has been a proud member of the KCCF family since its inception.',
     ],
   },
 ];
