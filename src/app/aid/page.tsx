@@ -20,6 +20,7 @@ const aidCards = [
   {
     title: 'Eligibility Requirements',
     items: [
+      'Child must be under 18 and diagnosed with cancer',
       'Expenses must be directly related to the child’s diagnosis',
       'Child must be receiving treatment at a credentialed hospital',
       'Funds are paid directly to creditors or service providers',
