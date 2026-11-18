@@ -52,8 +52,7 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   },
   'newsletter-signup': {
     title: 'Join Our Newsletter',
-    subtitle: 'The form takes a few seconds to load.',
-    subtitleWhileLoading: true,
+    // No line under the title: the round "Loading form..." spinner shows while Zeffy loads (Rena, 11.18.26).
     // Zeffy newsletter sign-up form "Join Our Newsletter" (Rena, 11.5.26; was Mailchimp).
     src: 'https://www.zeffy.com/en-US/embed/newsletter-form/join-our-newsletter-16',
     height: '310px',
@@ -61,7 +60,7 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   },
   'book-elana': {
     title: 'Book Elana to Speak',
-    subtitle: 'It only takes a few minutes.',
+    subtitle: 'Tell us about your event, and we’ll be in touch.',
     src: 'https://forms.monday.com/forms/embed/0caf48b3cfeede4c889e59ac52ce5fb1?r=use1',
     height: '1900px',
     narrow: true
@@ -69,14 +68,14 @@ export const FORM_CONFIGS: Record<FormType, FormConfig> = {
   'volunteer': {
     // Warmer title chosen by Rena (11.5.26); Monday heading to be removed after merge
     title: 'Join Our Volunteer Family',
-    subtitle: 'It only takes a few minutes.',
+    // No line under the title (Rena, 11.18.26)
     src: 'https://forms.monday.com/forms/embed/650d6c93433108a85097471c822b4cbf?r=use1',
     height: '3100px',
     narrow: true
   },
   'contact': {
     title: 'Send Us a Message',
-    subtitle: 'It only takes a few minutes.',
+    // No line under the title (Rena, 11.18.26)
     src: 'https://forms.monday.com/forms/embed/7d2a1baf81662443852a38886ac80dd4?r=use1',
     height: '1100px',
     narrow: true
