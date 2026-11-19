@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   title: 'KCCF Volunteer Agreement | KCCF',
   description: 'The KCCF Volunteer Agreement, Version 1, November 2026.',
   alternates: { canonical: 'https://thekccf.org/volunteer-agreement' },
-  robots: { index: true, follow: true },
+  // Hidden from Google search (Rena, 11.19.26); open to anyone with the link
+  robots: { index: false, follow: false },
 }
 
 export default function VolunteerAgreement() {
