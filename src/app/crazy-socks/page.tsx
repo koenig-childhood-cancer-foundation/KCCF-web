@@ -16,7 +16,7 @@ export default function CrazySocks() {
   const howItWorksSteps = [
     {
       title: 'You Sponsor',
-      text: 'Your sponsorship covers the supplies. We ship them to your office and guide you through every step.',
+      text: 'Your sponsorship covers the supplies. We ship them to you and guide you through every step.',
       image: '/images/bankofamerica-scaled.jpeg',
       alt: 'Gift bag supplies set out on a table before an event',
     },
