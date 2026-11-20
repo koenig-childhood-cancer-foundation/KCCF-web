@@ -56,7 +56,7 @@ export default function FormModal() {
               {config.title}
             </h2>
             {config.subtitle && !(config.subtitleWhileLoading && iframeLoaded) && (
-              <p className="text-xs sm:text-sm text-white/85 dark:text-gray-300 mt-1">
+              <p className="text-xs sm:text-sm text-white/85 dark:text-gray-300 mt-2 sm:mt-3">
                 {config.subtitle}
               </p>
             )}
