@@ -1,48 +1,76 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
-import { useFormModal, FORM_CONFIGS } from '@/contexts/FormModalContext'
+import { useFormModal, FORM_CONFIGS, type FormType } from '@/contexts/FormModalContext'
 import Spinner from '@/components/Spinner'
 
+// The pop-up stays on the page, hidden, so forms can load inside it before anyone clicks.
+// Each form that is warmed up (button pointed at, or PreloadForms after page load) gets its
+// own frame here; opening the pop-up only shows the frame that is already loaded.
 export default function FormModal() {
-  const { isOpen, formType, closeModal } = useFormModal()
-  const [iframeLoaded, setIframeLoaded] = useState(false);
+  const { isOpen, formType, closeModal, warmedForms } = useFormModal()
+  const [mounted, setMounted] = useState(false)
+  // Which frames have finished loading, and a counter per form to reload it after use
+  const [loaded, setLoaded] = useState<Partial<Record<FormType, boolean>>>({})
+  const [resets, setResets] = useState<Partial<Record<FormType, number>>>({})
+  // The last form shown, so the pop-up keeps its size while hidden and can reset it on close
+  const lastShown = useRef<FormType | null>(null)
 
-  // Reset iframeLoaded every time modal opens (isOpen changes to true)
+  useEffect(() => setMounted(true), [])
+
   useEffect(() => {
-    if (isOpen) {
-      setIframeLoaded(false);
+    if (isOpen && formType) {
+      lastShown.current = formType
+      return
     }
-  }, [isOpen]);
+    // Closed: reload the form that was just used, so the next visitor sees a blank form
+    // (not their typed answers or the thank-you screen). It reloads hidden, in the background.
+    const used = lastShown.current
+    if (!isOpen && used) {
+      setLoaded(prev => ({ ...prev, [used]: false }))
+      setResets(prev => ({ ...prev, [used]: (prev[used] ?? 0) + 1 }))
+    }
+  }, [isOpen, formType])
 
   // Close modal on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeModal()
     }
-    
+
     if (isOpen) {
       document.addEventListener('keydown', handleEscape)
       // Prevent body scroll when modal is open
       document.body.style.overflow = 'hidden'
     }
-    
+
     return () => {
       document.removeEventListener('keydown', handleEscape)
       document.body.style.overflow = 'unset'
     }
   }, [isOpen, closeModal])
 
-  if (!isOpen || !formType) return null
+  if (!mounted) return null
 
-  const config = FORM_CONFIGS[formType]
+  // Forms to keep in the pop-up: every warmed form, plus the open one
+  const forms: FormType[] = [...warmedForms]
+  if (formType && !forms.includes(formType)) forms.push(formType)
+  if (forms.length === 0) return null
+
+  const shown = isOpen && formType ? formType : null
+  const sizeFor = shown ?? lastShown.current ?? forms[0]
+  const config = FORM_CONFIGS[sizeFor]
   const compact = !!config.compact
+  const shownLoaded = shown ? !!loaded[shown] : false
 
   const modalContent = (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4">
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 ${shown ? '' : 'invisible pointer-events-none'}`}
+      aria-hidden={shown ? undefined : true}
+    >
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={closeModal}
       />
@@ -55,7 +83,7 @@ export default function FormModal() {
             <h2 className="text-lg sm:text-2xl font-bold text-white">
               {config.title}
             </h2>
-            {config.subtitle && !(config.subtitleWhileLoading && iframeLoaded) && (
+            {config.subtitle && !(config.subtitleWhileLoading && shownLoaded) && (
               <p className="text-xs sm:text-sm text-white/85 dark:text-gray-300 mt-2 sm:mt-3">
                 {config.subtitle}
               </p>
@@ -65,6 +93,7 @@ export default function FormModal() {
           {/* Close button */}
           <button
             onClick={closeModal}
+            tabIndex={shown ? undefined : -1}
             className="ml-2 sm:ml-4 p-1.5 sm:p-2 hover:bg-white/15 dark:hover:bg-gray-700 rounded-full transition-colors cursor-pointer"
             aria-label="Close modal"
           >
@@ -82,25 +111,33 @@ export default function FormModal() {
           style={compact ? { height: config.height } : undefined}
         >
           {/* Monday.com forms are loaded as strictly necessary services */}
-          <>
-            {!iframeLoaded && (
-              <div className="absolute inset-0 z-10 flex items-center justify-center bg-[#FBF5EA]/80 dark:bg-gray-800/80">
-                <Spinner text="Loading form..." />
-              </div>
-            )}
-            <iframe
-              className={`flex-1 w-full ${!iframeLoaded ? 'hidden' : ''}`}
-              src={config.src}
-              title={config.title}
-              frameBorder={0}
-              scrolling="auto"
-              allow="payment"
-              // trimTop hides the empty space at the top of the embedded form
-              style={config.trimTop ? { marginTop: -config.trimTop } : undefined}
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-              onLoad={() => setIframeLoaded(true)}
-            />
-          </>
+          {shown && !shownLoaded && (
+            <div className="absolute inset-0 z-10 flex items-center justify-center bg-[#FBF5EA]/80 dark:bg-gray-800/80">
+              <Spinner text="Loading form..." />
+            </div>
+          )}
+          {forms.map(type => {
+            const c = FORM_CONFIGS[type]
+            const active = type === sizeFor
+            return (
+              <iframe
+                key={`${type}-${resets[type] ?? 0}`}
+                // The active form fills the pop-up; the others wait hidden behind it.
+                // Hidden with visibility (not display:none) so they load at full size.
+                className={`w-full ${active ? 'flex-1' : 'absolute inset-0 h-full'} ${active && shownLoaded ? '' : 'invisible'}`}
+                src={c.src}
+                title={c.title}
+                tabIndex={active && shown ? undefined : -1}
+                frameBorder={0}
+                scrolling="auto"
+                allow="payment"
+                // trimTop hides the empty space at the top of the embedded form
+                style={c.trimTop ? { marginTop: -c.trimTop } : undefined}
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+                onLoad={() => setLoaded(prev => ({ ...prev, [type]: true }))}
+              />
+            )
+          })}
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useCallback, useContext, useRef, useState, ReactNode } from 'react'
+import { createContext, useCallback, useContext, useState, ReactNode } from 'react'
 import { trackEvent } from '@/lib/analytics'
 
 export type FormType = 
@@ -94,6 +94,8 @@ interface FormModalContextType {
   openModal: (type: FormType) => void
   closeModal: () => void
   warmUp: (type: FormType) => void
+  // Forms already loading (hidden) in the pop-up, so they show at once when opened
+  warmedForms: FormType[]
   warmProps: (type: FormType) => { onMouseEnter: () => void; onFocus: () => void; onTouchStart: () => void }
 }
 
@@ -103,30 +105,25 @@ export function FormModalProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false)
   const [formType, setFormType] = useState<FormType | null>(null)
 
+  // Start loading a monday.com or Zeffy form inside the (still hidden) pop-up when a visitor
+  // points at or focuses its button, or a few seconds after the page loads (PreloadForms).
+  // The pop-up keeps that same frame, so the click only shows a form that is already there.
+  const [warmedForms, setWarmedForms] = useState<FormType[]>([])
+  const warmUp = useCallback((type: FormType) => {
+    const src = FORM_CONFIGS[type]?.src
+    const host = src ? new URL(src).hostname : ''
+    if (!src || !['forms.monday.com', 'www.zeffy.com'].includes(host)) return
+    setWarmedForms(prev => (prev.includes(type) ? prev : [...prev, type]))
+  }, [])
+
   const openModal = (type: FormType) => {
+    warmUp(type)
     setFormType(type)
     setIsOpen(true)
     // GA4 events for Ad Grants conversions
     if (type === 'aid-application') trackEvent('aid_apply_open')
     if (type === 'crazy-socks-sponsor') trackEvent('sponsor_click')
   }
-
-  // Start loading a monday.com or Zeffy form in a hidden frame when a visitor points at
-  // or focuses its button, so its files are cached before the click
-  const warmed = useRef(new Set<string>())
-  const warmUp = useCallback((type: FormType) => {
-    const src = FORM_CONFIGS[type]?.src
-    const host = src ? new URL(src).hostname : ''
-    if (!src || !['forms.monday.com', 'www.zeffy.com'].includes(host) || warmed.current.has(src)) return
-    warmed.current.add(src)
-    const frame = document.createElement('iframe')
-    frame.src = src
-    frame.title = ''
-    frame.tabIndex = -1
-    frame.setAttribute('aria-hidden', 'true')
-    frame.style.cssText = 'position:fixed;left:-9999px;top:0;width:1px;height:1px;border:0;opacity:0;pointer-events:none'
-    document.body.appendChild(frame)
-  }, [])
 
   // Spread on any button that opens a form: {...warmProps('book-elana')}
   const warmProps = useCallback((type: FormType) => ({
@@ -148,6 +145,7 @@ export function FormModalProvider({ children }: { children: ReactNode }) {
         openModal,
         closeModal,
         warmUp,
+        warmedForms,
         warmProps
       }}
     >
