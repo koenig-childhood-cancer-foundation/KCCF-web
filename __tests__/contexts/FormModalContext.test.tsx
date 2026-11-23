@@ -45,4 +45,20 @@ describe('FormModalContext', () => {
     act(() => result.current.openModal('aid-application'))
     expect(w.dataLayer).toBeUndefined()
   })
+
+  it('warmUp keeps each monday.com or Zeffy form once, ready in the pop-up', () => {
+    const { result } = renderHook(() => useFormModal(), { wrapper })
+    expect(result.current.warmedForms).toEqual([])
+    act(() => result.current.warmUp('aid-application'))
+    act(() => result.current.warmUp('aid-application'))
+    act(() => result.current.warmUp('newsletter-signup'))
+    expect(result.current.warmedForms).toEqual(['aid-application', 'newsletter-signup'])
+  })
+
+  it('opening a form also keeps it ready for next time', () => {
+    const { result } = renderHook(() => useFormModal(), { wrapper })
+    act(() => result.current.openModal('contact'))
+    act(() => result.current.closeModal())
+    expect(result.current.warmedForms).toEqual(['contact'])
+  })
 })
