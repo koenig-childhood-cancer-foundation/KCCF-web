@@ -5,20 +5,28 @@ Rena Koenig (KCCF) decides; she is not technical. Explain in plain words.
 **Read first, every session:** "KCCF Rules & Folder Map" (Google Drive,
 00_KCCF_HQ_CLAUDE):
 https://docs.google.com/document/d/1lZFYxvoPdfF3JrvxMRQ1DXggecfWQ340VRhAJNHztKM/edit
-It is the one home for KCCF rules. Its numbers are used below; if this file
-and the Rules & Folder Map ever differ, the Rules & Folder Map wins.
+It is the one home for KCCF rules. Rules below are named, not numbered (its
+numbers change when rules are added); if this file and the Rules & Folder Map
+ever differ, the Rules & Folder Map wins.
 
 ## Most used on the website
-- Facts only from "KCCF Current Facts – MASTER" (rule 4). When a fact is new,
-  changed or different anywhere (the website, a form, Monday, a document, or
-  something Rena says in chat), remind Rena to update MASTER first, give her
-  the exact wording, and use the fact only after it is in MASTER.
-- Check the live site before reporting anything (rule 11): every page it
-  applies to, computer and phone, top of the page and after scrolling. Mark
-  each item "Verified" or "Not checked". No proof means don't report it.
-- Look before asking, and re-check every item before a to-do list (rule 13).
-- Fixed codes, at most 5 items at a time (rule 14), in a table with your pick
-  marked, with before/after pictures showing changes in red.
+- Never guess ("NEVER GUESS"): state only what you have seen or checked;
+  mark everything else "Not checked". Check before listing ("CHECK BEFORE
+  LISTING"): check every to-do item yourself first and give Rena only what is
+  still open, marked "Verified".
+- Facts only from "KCCF Current Facts – MASTER". When a fact is new, changed
+  or different anywhere (the website, a form, Monday, a document, or something
+  Rena says in chat), remind Rena to update MASTER first, give her the exact
+  wording, and use the fact only after it is in MASTER.
+- Check the live site before reporting anything ("Website and fact checks"):
+  every page it applies to, computer and phone, top of the page and after
+  scrolling. Mark each item "Verified" or "Not checked". No proof means
+  don't report it.
+- Look before asking, and re-check every item before a to-do list
+  ("Look before asking").
+- Fixed codes, at most 5 items at a time ("Every item in a list gets a
+  code"), in a table with your pick marked, with before/after pictures
+  showing changes in red.
 - Time: all dates and times are New York time. Convert from UTC before
   writing "today" or "tomorrow".
 - Usage: before any heavy task (sub-agents, whole-map or all-page reviews,
