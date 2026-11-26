@@ -15,6 +15,9 @@ differ, the Rules & Folder Map wins.
   MASTER").
 - Check the live site before reporting anything (Rules Map: "Website and
   fact checks").
+- Before heavy tasks say "⚠️ heavy" and wait for Rena's OK; show changes as
+  before/after pictures in red, and choices in a table with your pick
+  (Rules Map: section 1).
 - Safety rounds: Round 1 tsc, eslint, jest, build. Round 2 check every page.
   Round 3 live check after merge.
 - Rena clicks Merge. Claude prepares draft PRs and never merges.
